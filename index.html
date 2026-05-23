@@ -536,10 +536,10 @@
 
     <section>
       <h2>Cadence Shape</h2>
-      <p class="section-lede">The median is fast, but the tail is real. This is why a regime model beats a simple average.</p>
+      <p class="section-lede">The archive is grouped by streamed-live date, so this is a day-level gap histogram, not exact hour-by-hour timing. It uses 532 gaps from 533 grouped stream dates.</p>
       <div class="grid">
         <div class="panel span-7">
-          <h3>Gap Distribution Between Archive Stream Dates</h3>
+          <h3>Bucketed Gaps Between Archive Stream Dates</h3>
           <canvas id="gapChart" width="760" height="300" aria-label="Gap distribution chart"></canvas>
         </div>
         <div class="panel span-5">
@@ -555,9 +555,9 @@
             </tbody>
           </table>
           <div class="pill-list">
-            <span class="pill">Active median: 1 day</span>
-            <span class="pill">Heavy tail</span>
-            <span class="pill">Break regimes exist</span>
+            <span class="pill">532 grouped-date gaps</span>
+            <span class="pill">Day-level resolution</span>
+            <span class="pill">9 gaps were 15+ days</span>
           </div>
         </div>
       </div>
@@ -736,17 +736,32 @@
       const canvas = document.querySelector('#gapChart');
       const { ctx, width, height } = setupCanvas(canvas);
       const data = [
-        { label: 'Median', value: 1, color: colors.green },
-        { label: '75th', value: 3, color: colors.blue },
-        { label: '90th', value: 5, color: colors.gold },
-        { label: '95th', value: 7, color: colors.red },
-        { label: 'Max', value: 122, color: colors.violet }
+        { label: '1d', value: 289, color: colors.green },
+        { label: '2d', value: 96, color: colors.blue },
+        { label: '3d', value: 55, color: colors.blue },
+        { label: '4-5d', value: 53, color: colors.gold },
+        { label: '6-7d', value: 15, color: colors.gold },
+        { label: '8-14d', value: 15, color: colors.red },
+        { label: '15+d', value: 9, color: colors.violet }
       ];
       const left = 54;
       const bottom = 42;
       const top = 18;
-      const max = 122;
+      const max = 300;
       drawAxes(ctx, width, height, left, bottom);
+      ctx.strokeStyle = 'rgba(153, 170, 173, .16)';
+      ctx.lineWidth = 1;
+      [100, 200, 300].forEach(tick => {
+        const y = height - bottom - (height - bottom - top) * (tick / max);
+        ctx.beginPath();
+        ctx.moveTo(left, y);
+        ctx.lineTo(width - 10, y);
+        ctx.stroke();
+        ctx.fillStyle = colors.muted;
+        ctx.font = '12px system-ui';
+        ctx.textAlign = 'right';
+        ctx.fillText(tick, left - 8, y + 4);
+      });
       const barW = Math.max(34, (width - left - 38) / data.length - 22);
       data.forEach((d, i) => {
         const x = left + 20 + i * ((width - left - 38) / data.length);
@@ -757,11 +772,15 @@
         ctx.fillStyle = colors.ink;
         ctx.font = '700 13px system-ui';
         ctx.textAlign = 'center';
-        ctx.fillText(d.value + 'd', x + barW / 2, y - 8);
+        ctx.fillText(d.value, x + barW / 2, y - 8);
         ctx.fillStyle = colors.muted;
         ctx.font = '700 12px system-ui';
         ctx.fillText(d.label, x + barW / 2, height - 16);
       });
+      ctx.fillStyle = colors.muted;
+      ctx.font = '12px system-ui';
+      ctx.textAlign = 'left';
+      ctx.fillText('count of gaps', left, 14);
     }
 
     function drawMonthChart() {
