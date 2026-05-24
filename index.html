@@ -178,7 +178,7 @@
     }
 
     .dial {
-      --pct: 78%;
+      --pct: 74%;
       width: min(270px, 100%);
       aspect-ratio: 1;
       margin: 18px auto;
@@ -465,7 +465,7 @@
         <div>
           <h1>When does cyr go live next?</h1>
           <p class="lede">
-            A compact predictive dashboard using stream cadence, title semantics, VOD archive dates, and recent Twitch metadata.
+            A compact predictive dashboard using SullyGnome exact cadence, title semantics, VOD archive context, and recent Twitch metadata.
             The model treats cyr as a regime-switching streamer: active arcs recur fast, events recover slower, and rare breaks create the long tail.
           </p>
           <div class="prediction">
@@ -475,9 +475,9 @@
               <span>Evening ET, roughly 7:00-11:00 PM.</span>
             </div>
             <div class="metric">
-              <small>48h Window</small>
-              <strong>70-80%</strong>
-              <span>Current title pattern matches an active gameplay arc.</span>
+              <small>Next 48h</small>
+              <strong>74%</strong>
+              <span>Conditional on already waiting 77.4 hours since the last stream.</span>
             </div>
             <div class="metric">
               <small>Fallback</small>
@@ -492,17 +492,17 @@
             <div class="gauge-top">
               <div>
                 <h2>Active-Regime Signal</h2>
-                <p class="muted">Recent stream titles are game-arc and first-time-playthrough driven, the archive's fastest-return class.</p>
+                <p class="muted">Recent stream titles are game-arc and first-time-playthrough driven, layered over SullyGnome's exact timing history.</p>
               </div>
               <span class="live-dot" aria-hidden="true"></span>
             </div>
-            <div class="dial" style="--pct: 78%;">
+            <div class="dial" style="--pct: 74%;">
               <div>
-                <strong>78</strong>
-                <span>48h confidence</span>
+                <strong>74</strong>
+                <span>next-48h confidence</span>
               </div>
             </div>
-            <p class="muted">Not certainty. This is a behavioral hazard estimate with recovery-break risk.</p>
+            <p class="muted">Conditional hazard estimate from the Sully gap curve, adjusted for current active-arc title signals.</p>
           </div>
         </aside>
       </div>
@@ -646,16 +646,16 @@
           <h3>Weighted Ensemble</h3>
           <div class="model-stack">
             <div class="stack-row">
-              <div class="weight">60%</div>
-              <p><strong>Current regime.</strong><br><span class="muted">Recent starts, titles, and late-day timing.</span></p>
+              <div class="weight">70%</div>
+              <p><strong>Sully exact cadence.</strong><br><span class="muted">2,419 exact stream-to-stream gaps from 2017-2026.</span></p>
             </div>
             <div class="stack-row">
-              <div class="weight">25%</div>
-              <p><strong>Post-2022 baseline.</strong><br><span class="muted">Modern cadence after the older near-daily years.</span></p>
+              <div class="weight">20%</div>
+              <p><strong>Current regime.</strong><br><span class="muted">Recent starts, games, titles, and late-day timing.</span></p>
             </div>
             <div class="stack-row">
-              <div class="weight">15%</div>
-              <p><strong>Long-run identity.</strong><br><span class="muted">cyr is fundamentally a frequent streamer.</span></p>
+              <div class="weight">10%</div>
+              <p><strong>Title semantics.</strong><br><span class="muted">Archive and TwitchMetrics labels for active arcs, collabs, travel, and recovery risk.</span></p>
             </div>
           </div>
         </div>
@@ -723,10 +723,11 @@
           <h3>Probability Windows</h3>
           <table class="table">
             <tbody>
-              <tr><th>24 hours</th><td>~48%</td></tr>
-              <tr><th>48 hours</th><td>~70-80%</td></tr>
-              <tr><th>4 days</th><td>~90%</td></tr>
-              <tr><th>7 days</th><td>~95%+</td></tr>
+              <tr><th>24h from last stream</th><td>45.8%</td></tr>
+              <tr><th>48h from last stream</th><td>83.0%</td></tr>
+              <tr><th>Next 24h from snapshot</th><td>50.4%</td></tr>
+              <tr><th>Next 48h from snapshot</th><td>74.0%</td></tr>
+              <tr><th>Next 7d from snapshot</th><td>94.3%</td></tr>
             </tbody>
           </table>
         </div>
