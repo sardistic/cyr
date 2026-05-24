@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T00:38:44Z",
+  "generated_at": "2026-05-24T00:49:12Z",
   "sources": {
     "sullygnome_stream_table": 2420,
     "twitchmetrics_stream_logs": 15,
@@ -216,6 +216,196 @@
       "2024": 238,
       "2025": 233,
       "2026": 84
+    },
+    "semantic_analysis": {
+      "title_analysis": {
+        "sample_size": 548,
+        "features": {
+          "challenge": {
+            "count": 18,
+            "share": 3.3,
+            "median_gap_days": 1.0,
+            "p90_gap_days": 4.3
+          },
+          "collab": {
+            "count": 189,
+            "share": 34.5,
+            "median_gap_days": 2,
+            "p90_gap_days": 5.0
+          },
+          "event_drops": {
+            "count": 8,
+            "share": 1.5,
+            "median_gap_days": 1.0,
+            "p90_gap_days": 2.3
+          },
+          "food_cooking": {
+            "count": 83,
+            "share": 15.1,
+            "median_gap_days": 1,
+            "p90_gap_days": 5.0
+          },
+          "gameplay_arc": {
+            "count": 330,
+            "share": 60.2,
+            "median_gap_days": 1.0,
+            "p90_gap_days": 4.0
+          },
+          "recovery_risk": {
+            "count": 28,
+            "share": 5.1,
+            "median_gap_days": 2.0,
+            "p90_gap_days": 5.0
+          },
+          "return_marker": {
+            "count": 18,
+            "share": 3.3,
+            "median_gap_days": 1.5,
+            "p90_gap_days": 5.0
+          },
+          "travel_irl": {
+            "count": 59,
+            "share": 10.8,
+            "median_gap_days": 2,
+            "p90_gap_days": 5.0
+          },
+          "unclassified": {
+            "count": 76,
+            "share": 13.9,
+            "median_gap_days": 1.0,
+            "p90_gap_days": 5.0
+          }
+        },
+        "sentiment": {
+          "negative": {
+            "count": 27,
+            "share": 4.9,
+            "median_gap_days": 1,
+            "p90_gap_days": 4.0
+          },
+          "neutral": {
+            "count": 516,
+            "share": 94.2,
+            "median_gap_days": 1.0,
+            "p90_gap_days": 5.0
+          },
+          "positive": {
+            "count": 5,
+            "share": 0.9,
+            "median_gap_days": 1,
+            "p90_gap_days": 3.2
+          }
+        },
+        "intensity": {
+          "high": {
+            "count": 22,
+            "share": 4.0,
+            "median_gap_days": 1.0,
+            "p90_gap_days": 2.0
+          },
+          "low": {
+            "count": 199,
+            "share": 36.3,
+            "median_gap_days": 2,
+            "p90_gap_days": 6.0
+          },
+          "medium": {
+            "count": 327,
+            "share": 59.7,
+            "median_gap_days": 1,
+            "p90_gap_days": 4.0
+          }
+        }
+      },
+      "game_analysis": {
+        "categories": {
+          "Just Chatting only": {
+            "count": 461,
+            "share": 19.1,
+            "median_gap_hours": 26.51,
+            "p90_gap_hours": 72.55,
+            "avg_viewers": 3833.0
+          },
+          "Other games": {
+            "count": 663,
+            "share": 27.4,
+            "median_gap_hours": 25.36,
+            "p90_gap_hours": 72.24,
+            "avg_viewers": 2466.0
+          },
+          "Social sandbox/RP": {
+            "count": 1053,
+            "share": 43.5,
+            "median_gap_hours": 23.88,
+            "p90_gap_hours": 48.28,
+            "avg_viewers": 1601.0
+          },
+          "Story/survival arc": {
+            "count": 18,
+            "share": 0.7,
+            "median_gap_hours": 23.77,
+            "p90_gap_hours": 62.76,
+            "avg_viewers": 2295.0
+          },
+          "Variety stack": {
+            "count": 224,
+            "share": 9.3,
+            "median_gap_hours": 24.69,
+            "p90_gap_hours": 65.62,
+            "avg_viewers": 2626.0
+          }
+        },
+        "top_games": [
+          {
+            "game": "Just Chatting",
+            "count": 1544
+          },
+          {
+            "game": "Grand Theft Auto V",
+            "count": 897
+          },
+          {
+            "game": "IRL",
+            "count": 153
+          },
+          {
+            "game": "VRChat",
+            "count": 102
+          },
+          {
+            "game": "Rust",
+            "count": 63
+          },
+          {
+            "game": "World of Warcraft",
+            "count": 49
+          },
+          {
+            "game": "Unlisted on Twitch",
+            "count": 44
+          },
+          {
+            "game": "Sea of Thieves",
+            "count": 22
+          },
+          {
+            "game": "Minecraft",
+            "count": 21
+          },
+          {
+            "game": "Weed Shop 3",
+            "count": 21
+          },
+          {
+            "game": "Poker",
+            "count": 20
+          },
+          {
+            "game": "Subnautica",
+            "count": 19
+          }
+        ]
+      }
     }
   },
   "sully_streams": [
@@ -3065,8 +3255,8 @@
       "duration_seconds": 175500,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "SOMA"
+        "SOMA",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 39,
       "peak_viewers": 161,
@@ -5456,9 +5646,9 @@
       "games": [
         "Grand Theft Auto V",
         "Monopoly",
+        "Desolate",
         "Monopoly Plus",
-        "Unlisted on Twitch",
-        "Desolate"
+        "Unlisted on Twitch"
       ],
       "avg_viewers": 78,
       "peak_viewers": 140,
@@ -17732,8 +17922,8 @@
       "duration_seconds": 24180,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Poker"
+        "Poker",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 912,
       "peak_viewers": 1342,
@@ -17793,8 +17983,8 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
-        "Just Chatting",
-        "Minecraft"
+        "Minecraft",
+        "Just Chatting"
       ],
       "avg_viewers": 1047,
       "peak_viewers": 1399,
@@ -17833,9 +18023,9 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
-        "Unlisted on Twitch",
         "Raid: Shadow Legends",
-        "Minecraft"
+        "Minecraft",
+        "Unlisted on Twitch"
       ],
       "avg_viewers": 2707,
       "peak_viewers": 4991,
@@ -17976,9 +18166,9 @@
       "duration_seconds": 76140,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
+        "Unlisted on Twitch",
         "Just Chatting",
-        "Unlisted on Twitch"
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1685,
       "peak_viewers": 2233,
@@ -18425,8 +18615,8 @@
       "duration_seconds": 28920,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Mafia II"
+        "Mafia II",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1117,
       "peak_viewers": 1593,
@@ -18504,9 +18694,9 @@
       "duration_seconds": 8940,
       "title": null,
       "games": [
-        "Just Chatting",
         "Grand Theft Auto V",
-        "Mafia II"
+        "Mafia II",
+        "Just Chatting"
       ],
       "avg_viewers": 702,
       "peak_viewers": 934,
@@ -18566,8 +18756,8 @@
       "duration_seconds": 31560,
       "title": null,
       "games": [
-        "Just Chatting",
         "Watch Parties",
+        "Just Chatting",
         "Monopoly"
       ],
       "avg_viewers": 1075,
@@ -18667,8 +18857,8 @@
       "duration_seconds": 30000,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1888,
       "peak_viewers": 4746,
@@ -18707,10 +18897,10 @@
       "duration_seconds": 30180,
       "title": null,
       "games": [
+        "Watch Parties",
         "Grand Theft Auto V",
         "Poker",
-        "Just Chatting",
-        "Watch Parties"
+        "Just Chatting"
       ],
       "avg_viewers": 1121,
       "peak_viewers": 1672,
@@ -19050,9 +19240,9 @@
       "duration_seconds": 21600,
       "title": null,
       "games": [
-        "Just Chatting",
         "Special Events",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1383,
       "peak_viewers": 2718,
@@ -19328,10 +19518,10 @@
       "title": null,
       "games": [
         "Just Chatting",
+        "Unlisted on Twitch",
         "The Coin Game",
         "Golf It!",
-        "Pummel Party",
-        "Unlisted on Twitch"
+        "Pummel Party"
       ],
       "avg_viewers": 1707,
       "peak_viewers": 2407,
@@ -25696,8 +25886,8 @@
       "duration_seconds": 17580,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1652,
       "peak_viewers": 2505,
@@ -27018,8 +27208,8 @@
       "duration_seconds": 33660,
       "title": null,
       "games": [
-        "Back 4 Blood",
         "Just Chatting",
+        "Back 4 Blood",
         "Unlisted on Twitch"
       ],
       "avg_viewers": 2160,
@@ -29008,8 +29198,8 @@
       "duration_seconds": 11640,
       "title": null,
       "games": [
-        "HITMAN 3",
-        "Just Chatting"
+        "Just Chatting",
+        "HITMAN 3"
       ],
       "avg_viewers": 3966,
       "peak_viewers": 5931,
@@ -29412,8 +29602,8 @@
       "duration_seconds": 19380,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Lost Ark"
+        "Lost Ark",
+        "Just Chatting"
       ],
       "avg_viewers": 3234,
       "peak_viewers": 3887,
@@ -36527,8 +36717,8 @@
       "duration_seconds": 34680,
       "title": null,
       "games": [
-        "Just Chatting",
-        "World of Warcraft"
+        "World of Warcraft",
+        "Just Chatting"
       ],
       "avg_viewers": 3078,
       "peak_viewers": 6406,
@@ -36867,8 +37057,8 @@
       "duration_seconds": 40140,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 8530,
       "peak_viewers": 14086,
@@ -43238,8 +43428,8 @@
       "duration_seconds": 21120,
       "title": null,
       "games": [
-        "Just Chatting",
-        "The Elder Scrolls IV: Oblivion Remastered"
+        "The Elder Scrolls IV: Oblivion Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 2506,
       "peak_viewers": 3412,
@@ -43258,8 +43448,8 @@
       "duration_seconds": 17580,
       "title": null,
       "games": [
-        "Just Chatting",
-        "The Elder Scrolls IV: Oblivion Remastered"
+        "The Elder Scrolls IV: Oblivion Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 2386,
       "peak_viewers": 3282,
@@ -43278,8 +43468,8 @@
       "duration_seconds": 31080,
       "title": null,
       "games": [
-        "Just Chatting",
-        "The Elder Scrolls IV: Oblivion Remastered"
+        "The Elder Scrolls IV: Oblivion Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 2813,
       "peak_viewers": 3923,
@@ -43357,8 +43547,8 @@
       "duration_seconds": 18480,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Muck"
+        "Muck",
+        "Just Chatting"
       ],
       "avg_viewers": 3100,
       "peak_viewers": 4191,
@@ -45226,9 +45416,9 @@
       "duration_seconds": 27000,
       "title": null,
       "games": [
+        "Rust",
         "Just Chatting",
-        "HITMAN World of Assassination",
-        "Rust"
+        "HITMAN World of Assassination"
       ],
       "avg_viewers": 4607,
       "peak_viewers": 9255,
@@ -45351,8 +45541,8 @@
       "duration_seconds": 21720,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Megabonk"
+        "Megabonk",
+        "Just Chatting"
       ],
       "avg_viewers": 3992,
       "peak_viewers": 5517,
@@ -45414,8 +45604,8 @@
       "duration_seconds": 14580,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Battlefield 6"
+        "Battlefield 6",
+        "Just Chatting"
       ],
       "avg_viewers": 3419,
       "peak_viewers": 4285,
@@ -45747,8 +45937,8 @@
       "duration_seconds": 15900,
       "title": null,
       "games": [
-        "Music",
-        "Just Chatting"
+        "Just Chatting",
+        "Music"
       ],
       "avg_viewers": 3647,
       "peak_viewers": 4404,
@@ -56936,6 +57126,6297 @@
       "urls": [
         "https://www.youtube.com/watch?v=VYgx46NnwQM"
       ]
+    }
+  ],
+  "title_semantic_rows": [
+    {
+      "date": "2022-03-09",
+      "gap_days": 23,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-04-01",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-03",
+      "gap_days": 1,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-04",
+      "gap_days": 1,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-05",
+      "gap_days": 2,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-07",
+      "gap_days": 1,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-08",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-09",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-10",
+      "gap_days": 1,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-11",
+      "gap_days": 1,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-12",
+      "gap_days": 2,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-14",
+      "gap_days": 1,
+      "features": [
+        "travel_irl",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-15",
+      "gap_days": 3,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-18",
+      "gap_days": 1,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-04-19",
+      "gap_days": 81,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-07-09",
+      "gap_days": 6,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-07-15",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-07-17",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-07-18",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2022-07-20",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-07-21",
+      "gap_days": 3,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-07-24",
+      "gap_days": 35,
+      "features": [
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-08-28",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-08-29",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-09-01",
+      "gap_days": 9,
+      "features": [
+        "gameplay_arc",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-09-10",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2022-09-12",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-09-13",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-09-15",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-09-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-09-17",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-09-18",
+      "gap_days": 21,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-10-09",
+      "gap_days": 4,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-10-13",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-10-15",
+      "gap_days": 8,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-10-23",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2022-10-24",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2022-10-25",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-10-29",
+      "gap_days": 2,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-10-31",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-11-02",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-11-03",
+      "gap_days": 4,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-11-07",
+      "gap_days": 7,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-11-14",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-11-15",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-11-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2022-11-17",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-11-18",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-11-22",
+      "gap_days": 5,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-11-27",
+      "gap_days": 5,
+      "features": [
+        "gameplay_arc",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-12-02",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-12-05",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-12-06",
+      "gap_days": 9,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2022-12-15",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2022-12-16",
+      "gap_days": 17,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-01-02",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-01-03",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-01-04",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-01-05",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-01-06",
+      "gap_days": 7,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-01-13",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-01-15",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-01-17",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-01-19",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-01-20",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-01-22",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-01-23",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-01-25",
+      "gap_days": 11,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-05",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-06",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-07",
+      "gap_days": 6,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-02-13",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-14",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-15",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-18",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-19",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2023-02-21",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-22",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-23",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-25",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-02-27",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2023-03-01",
+      "gap_days": 8,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-03-09",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-03-13",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-03-16",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-03-20",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-03-22",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-03-23",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-03-27",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2023-03-28",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-03-29",
+      "gap_days": 5,
+      "features": [
+        "travel_irl",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-04-03",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-04-04",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2023-04-05",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-04-06",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-04-10",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-04-11",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-04-12",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-04-13",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-04-17",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-04-18",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-04-19",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-04-20",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-04-21",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-04-24",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-04-25",
+      "gap_days": 6,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2023-05-01",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-05-03",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-05-05",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-05-06",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-05-08",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-05-09",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-05-10",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-05-11",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-05-13",
+      "gap_days": 3,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-05-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-05-17",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-05-18",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-05-19",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-05-22",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-05-23",
+      "gap_days": 33,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-06-25",
+      "gap_days": 5,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-06-30",
+      "gap_days": 5,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-07-05",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-07-07",
+      "gap_days": 5,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-07-12",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-07-14",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-07-15",
+      "gap_days": 10,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-07-25",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-07-28",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-07-30",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-07-31",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-08-02",
+      "gap_days": 5,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-08-07",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-08-08",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "travel_irl",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2023-08-09",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-08-10",
+      "gap_days": 8,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-08-18",
+      "gap_days": 6,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2023-08-24",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2023-08-28",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-08-30",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-08-31",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-09-04",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-09-05",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-09-06",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2023-09-07",
+      "gap_days": 5,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-09-12",
+      "gap_days": 3,
+      "features": [
+        "collab",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-09-15",
+      "gap_days": 6,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-09-21",
+      "gap_days": 4,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-09-25",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-09-26",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-09-27",
+      "gap_days": 13,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-10-10",
+      "gap_days": 6,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-10-16",
+      "gap_days": 2,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-10-18",
+      "gap_days": 7,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-10-25",
+      "gap_days": 5,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-10-30",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-11-01",
+      "gap_days": 16,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-11-17",
+      "gap_days": 23,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-12-10",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-12-11",
+      "gap_days": 4,
+      "features": [
+        "collab",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-12-15",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-12-18",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-12-19",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-12-20",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-12-21",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-12-22",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-12-26",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-12-27",
+      "gap_days": 8,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-01-04",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-01-06",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-01-10",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-01-11",
+      "gap_days": 2,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-01-13",
+      "gap_days": 2,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-01-15",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-01-16",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-01-18",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-01-20",
+      "gap_days": 6,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-01-26",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-01-27",
+      "gap_days": 2,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-01-29",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-01-30",
+      "gap_days": 3,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-02-02",
+      "gap_days": 2,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-02-04",
+      "gap_days": 3,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-02-07",
+      "gap_days": 4,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-02-11",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-02-12",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-02-13",
+      "gap_days": 3,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-02-16",
+      "gap_days": 4,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-02-20",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-02-21",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-02-22",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-02-23",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-02-27",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-02-29",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-03-01",
+      "gap_days": 4,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-03-05",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-03-06",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-03-07",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-03-09",
+      "gap_days": 3,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-03-12",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-03-13",
+      "gap_days": 7,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-03-20",
+      "gap_days": 47,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-05-06",
+      "gap_days": 5,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-05-11",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-05-13",
+      "gap_days": 13,
+      "features": [
+        "collab",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-05-26",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-05-27",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-05-29",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-05-30",
+      "gap_days": 10,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-06-09",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2024-06-10",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-06-11",
+      "gap_days": 7,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-06-18",
+      "gap_days": 3,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-06-21",
+      "gap_days": 7,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-06-28",
+      "gap_days": 3,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-07-01",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-07-02",
+      "gap_days": 10,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2024-07-12",
+      "gap_days": 3,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-07-15",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-07-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-07-17",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-07-18",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-07-22",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-07-24",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-07-25",
+      "gap_days": 3,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-07-28",
+      "gap_days": 3,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-07-31",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-08-01",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-08-02",
+      "gap_days": 3,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-08-05",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-08-06",
+      "gap_days": 3,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-08-09",
+      "gap_days": 3,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-08-12",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-08-13",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-08-14",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-08-16",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-08-19",
+      "gap_days": 2,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-08-21",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-08-22",
+      "gap_days": 3,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-08-25",
+      "gap_days": 1,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-08-26",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-08-27",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-08-29",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-08-30",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-08-31",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-09-01",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-09-03",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-09-06",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-09-07",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-09-09",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-09-10",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-09-12",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-09-13",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-09-14",
+      "gap_days": 2,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-09-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-09-17",
+      "gap_days": 8,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-09-25",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-09-26",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-09-27",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2024-09-28",
+      "gap_days": 3,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-10-01",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-10-02",
+      "gap_days": 5,
+      "features": [
+        "gameplay_arc",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-10-07",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-10-08",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-10-09",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-10-10",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-10-12",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-10-13",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-10-14",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-10-15",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-10-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2024-10-17",
+      "gap_days": 4,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-10-21",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-10-22",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-10-24",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-10-26",
+      "gap_days": 2,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-10-28",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-10-31",
+      "gap_days": 1,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-11-01",
+      "gap_days": 4,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-11-05",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-11-07",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-11-08",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-11-10",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-11-11",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "event_drops"
+      ],
+      "sentiment": "positive",
+      "sentiment_score": 2,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2024-11-12",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-11-13",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "event_drops"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-11-14",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-11-17",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-11-19",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-11-20",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-11-21",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-11-22",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-11-25",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-11-26",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-11-27",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-11-28",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-12-02",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-12-03",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-12-04",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-12-05",
+      "gap_days": 5,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-12-10",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "event_drops",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-12-11",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-12-12",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "event_drops"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-12-15",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-12-16",
+      "gap_days": 1,
+      "features": [
+        "event_drops"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-12-17",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "event_drops"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-12-18",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-12-19",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-12-20",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-12-21",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2024-12-22",
+      "gap_days": 5,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-12-27",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2024-12-30",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2024-12-31",
+      "gap_days": 2,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-01-02",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-01-03",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-01-04",
+      "gap_days": 4,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-01-08",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-01-10",
+      "gap_days": 3,
+      "features": [
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-01-13",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-01-14",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-01-15",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-01-16",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-01-17",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2025-01-19",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-01-20",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-01-21",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-01-22",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-01-23",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 4
+    },
+    {
+      "date": "2025-01-24",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-01-26",
+      "gap_days": 1,
+      "features": [
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-01-27",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-01-28",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-01-29",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-01-30",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-01-31",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 6
+    },
+    {
+      "date": "2025-02-02",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-02-03",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-04",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-05",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-06",
+      "gap_days": 4,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-10",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-02-12",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-13",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-17",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-18",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-02-19",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-20",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2025-02-21",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-02-23",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-24",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-02-25",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-26",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-27",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-02-28",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-03-03",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-03-04",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2025-03-05",
+      "gap_days": 1,
+      "features": [
+        "food_cooking",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-03-06",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-03-07",
+      "gap_days": 3,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-03-10",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-03-11",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -2,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-03-12",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-03-13",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2025-03-14",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-03-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-03-17",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-03-18",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-03-19",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-03-23",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-03-24",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-03-25",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-03-26",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2025-03-27",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-03-28",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-03-31",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-04-01",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-04-02",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2025-04-03",
+      "gap_days": 19,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-04-22",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-04-23",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-04-24",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-04-25",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-04-27",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-04-28",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "travel_irl",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-04-29",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-04-30",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-01",
+      "gap_days": 4,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-05",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-08",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-09",
+      "gap_days": 1,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-10",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-11",
+      "gap_days": 2,
+      "features": [
+        "return_marker",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-13",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-14",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-15",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-05-16",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-18",
+      "gap_days": 1,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-19",
+      "gap_days": 1,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-05-20",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-05-21",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-22",
+      "gap_days": 4,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -3,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-05-26",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-05-27",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-05-29",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "high",
+      "intensity_score": 4
+    },
+    {
+      "date": "2025-05-30",
+      "gap_days": 2,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-06-01",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-06-02",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-06-04",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "travel_irl",
+        "return_marker"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-06-05",
+      "gap_days": 1,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-06-06",
+      "gap_days": 4,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-06-10",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-06-11",
+      "gap_days": 5,
+      "features": [
+        "collab",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-06-16",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-06-18",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-06-19",
+      "gap_days": 5,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-06-24",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-06-26",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-06-27",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-06-29",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-07-01",
+      "gap_days": 6,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "travel_irl",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-07-07",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-07-10",
+      "gap_days": 1,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-07-11",
+      "gap_days": 3,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-07-14",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-07-15",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "positive",
+      "sentiment_score": 2,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-07-16",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-07-17",
+      "gap_days": 9,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-07-26",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "travel_irl",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2025-07-27",
+      "gap_days": 3,
+      "features": [
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-07-30",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-07-31",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-08-01",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 4
+    },
+    {
+      "date": "2025-08-02",
+      "gap_days": 2,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-08-04",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-08-05",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-08-06",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-08-07",
+      "gap_days": 3,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-08-10",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-08-11",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-08-12",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-08-13",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-08-14",
+      "gap_days": 4,
+      "features": [
+        "collab",
+        "food_cooking",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-08-18",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-08-19",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2025-08-20",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2025-08-21",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "high",
+      "intensity_score": 4
+    },
+    {
+      "date": "2025-08-22",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 4
+    },
+    {
+      "date": "2025-08-24",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-08-25",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-08-26",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-08-27",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-08-29",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-08-30",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-09-01",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-09-02",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-09-04",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-09-06",
+      "gap_days": 2,
+      "features": [
+        "travel_irl",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-09-08",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-09-09",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-09-10",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-09-11",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-09-14",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2025-09-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-09-17",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-09-18",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-09-22",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-09-23",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-09-24",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-09-25",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-09-26",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-09-27",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-09-30",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-10-02",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-10-06",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-10-07",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-10-09",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -2,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-10-10",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-10-11",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-10-12",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2025-10-14",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-10-15",
+      "gap_days": 4,
+      "features": [
+        "recovery_risk"
+      ],
+      "sentiment": "positive",
+      "sentiment_score": 2,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-10-19",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-10-21",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-10-23",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-10-24",
+      "gap_days": 3,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-10-27",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-10-28",
+      "gap_days": 1,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-10-29",
+      "gap_days": 3,
+      "features": [
+        "collab",
+        "travel_irl",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-11-01",
+      "gap_days": 2,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-11-03",
+      "gap_days": 4,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-11-07",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-11-08",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-11-10",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-11-11",
+      "gap_days": 3,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-11-14",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-11-18",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -3,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-11-19",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -4,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-11-20",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-11-21",
+      "gap_days": 3,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-11-24",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-11-25",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-11-26",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "challenge"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-11-28",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "positive",
+      "sentiment_score": 2,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-11-30",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-12-01",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-12-03",
+      "gap_days": 6,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-12-09",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-12-10",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-12-12",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-12-13",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "event_drops"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-12-15",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-12-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "event_drops"
+      ],
+      "sentiment": "positive",
+      "sentiment_score": 3,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-12-17",
+      "gap_days": 6,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-12-23",
+      "gap_days": 3,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2025-12-26",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-12-27",
+      "gap_days": 2,
+      "features": [
+        "travel_irl",
+        "food_cooking",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2025-12-29",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "recovery_risk"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2025-12-30",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2026-01-02",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-01-03",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-01-04",
+      "gap_days": 5,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-01-09",
+      "gap_days": 2,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-01-11",
+      "gap_days": 2,
+      "features": [
+        "travel_irl"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-01-13",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-01-14",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-01-17",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2026-01-19",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-01-20",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-01-21",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-01-22",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2026-01-23",
+      "gap_days": 5,
+      "features": [
+        "gameplay_arc",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-01-28",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-01-29",
+      "gap_days": 1,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-01-30",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-02-02",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-02-04",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-02-05",
+      "gap_days": 5,
+      "features": [
+        "collab",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-02-10",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-02-12",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-02-15",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-02-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-02-17",
+      "gap_days": 3,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2026-02-20",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-02-21",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 4
+    },
+    {
+      "date": "2026-02-22",
+      "gap_days": 1,
+      "features": [
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
     }
   ]
 }

@@ -612,29 +612,41 @@
 
     <section>
       <h2>Title Signals</h2>
-      <p class="section-lede">Instead of generic sentiment, titles are parsed as intent signals: gameplay arcs, collabs, events, return markers, and recovery-risk formats.</p>
+      <p class="section-lede">Titles are parsed two ways: light sentiment/intensity, and intent features. Most titles are sentiment-neutral, so the useful signal is more about stream mode: arc, collab, food, travel, recovery, or high-energy event language.</p>
       <div class="grid">
         <div class="panel span-7">
-          <h3>Feature Effects From Full Archive</h3>
+          <h3>Archive Title Feature Effects</h3>
           <div class="bars" id="featureBars"></div>
         </div>
         <div class="panel span-5">
-          <h3>Feature Table</h3>
+          <h3>Feature Gap Table</h3>
           <table class="table">
             <thead>
               <tr><th>Feature</th><th>Share</th><th>Median Gap</th><th>90th</th></tr>
             </thead>
             <tbody>
-              <tr><td>Gameplay / arc</td><td>59%</td><td>1 day</td><td>4 days</td></tr>
-              <tr><td>Collab</td><td>40%</td><td>2 days</td><td>5 days</td></tr>
-              <tr><td>Event / drops</td><td>23%</td><td>2 days</td><td>7 days</td></tr>
-              <tr><td>Cooking / food</td><td>15%</td><td>2 days</td><td>5 days</td></tr>
-              <tr><td>Therapy / cuh bit</td><td>7%</td><td>1 day</td><td>4 days</td></tr>
-              <tr><td>Travel</td><td>5%</td><td>2 days</td><td>4 days</td></tr>
-              <tr><td>Return marker</td><td>4%</td><td>1 day</td><td>5 days</td></tr>
-              <tr><td>Challenge</td><td>4%</td><td>1 day</td><td>4 days</td></tr>
+              <tr><td>Gameplay / arc</td><td>60.2%</td><td>1.0 day</td><td>4.0 days</td></tr>
+              <tr><td>Collab</td><td>34.5%</td><td>2.0 days</td><td>5.0 days</td></tr>
+              <tr><td>Food / cooking</td><td>15.1%</td><td>1.0 day</td><td>5.0 days</td></tr>
+              <tr><td>Travel / IRL</td><td>10.8%</td><td>2.0 days</td><td>5.0 days</td></tr>
+              <tr><td>Recovery risk</td><td>5.1%</td><td>2.0 days</td><td>5.0 days</td></tr>
+              <tr><td>Challenge</td><td>3.3%</td><td>1.0 day</td><td>4.3 days</td></tr>
+              <tr><td>Return marker</td><td>3.3%</td><td>1.5 days</td><td>5.0 days</td></tr>
+              <tr><td>Event / drops</td><td>1.5%</td><td>1.0 day</td><td>2.3 days</td></tr>
             </tbody>
           </table>
+        </div>
+        <div class="panel span-6">
+          <h3>Sentiment And Intensity</h3>
+          <div class="bars" id="sentimentBars"></div>
+        </div>
+        <div class="panel span-6">
+          <h3>Sully Game Categories</h3>
+          <div class="bars" id="gameCategoryBars"></div>
+        </div>
+        <div class="panel span-12">
+          <h3>Top Game Signals</h3>
+          <div class="bars" id="topGameBars"></div>
         </div>
       </div>
     </section>
@@ -735,7 +747,7 @@
     </section>
 
     <footer>
-      This is a fan-made statistical snapshot, not an official schedule. Sources include public SullyGnome stream tables, TwitchMetrics stream logs, TwitchMetrics VOD pages, Twitch VOD metadata, and public Cyr Uncut YouTube archive metadata. Data files: <a href="data/stream-data.json">JSON</a>, <a href="data/sully-streams.csv">Sully exact CSV</a>, <a href="data/exact-streams.csv">TwitchMetrics exact CSV</a>, <a href="data/archive-grouped-dates.csv">archive CSV</a>.
+      This is a fan-made statistical snapshot, not an official schedule. Sources include public SullyGnome stream tables, TwitchMetrics stream logs, TwitchMetrics VOD pages, Twitch VOD metadata, and public Cyr Uncut YouTube archive metadata. Data files: <a href="data/stream-data.json">JSON</a>, <a href="data/sully-streams.csv">Sully exact CSV</a>, <a href="data/exact-streams.csv">TwitchMetrics exact CSV</a>, <a href="data/archive-grouped-dates.csv">archive CSV</a>, <a href="data/title-semantics.csv">title semantics CSV</a>.
     </footer>
   </main>
 
@@ -873,28 +885,77 @@
     function buildFeatureBars() {
       const target = document.querySelector('#featureBars');
       const data = [
-        ['Gameplay / arc', 59, '1d median', colors.green],
-        ['Collab', 40, '2d median', colors.violet],
-        ['Event / drops', 23, '2d median', colors.red],
-        ['Cooking / food', 15, '2d median', colors.gold],
-        ['Therapy / cuh bit', 7, '1d median', colors.blue],
-        ['Travel', 5, '2d median', colors.gold],
-        ['Return marker', 4, '1d median', colors.green],
-        ['Challenge', 4, '1d median', colors.red]
+        ['Gameplay / arc', 60.2, '1.0d median, 4.0d p90', colors.green],
+        ['Collab', 34.5, '2.0d median, 5.0d p90', colors.violet],
+        ['Food / cooking', 15.1, '1.0d median, 5.0d p90', colors.gold],
+        ['Travel / IRL', 10.8, '2.0d median, 5.0d p90', colors.blue],
+        ['Recovery risk', 5.1, '2.0d median, 5.0d p90', colors.red],
+        ['Challenge', 3.3, '1.0d median, 4.3d p90', colors.red],
+        ['Return marker', 3.3, '1.5d median, 5.0d p90', colors.green],
+        ['Event / drops', 1.5, '1.0d median, 2.3d p90', colors.gold]
       ];
       target.innerHTML = data.map(([name, share, label, color]) => `
         <div class="bar">
           <strong>${name}</strong>
           <div class="track"><div class="fill" style="--w:${share}%;--c:${color}"></div></div>
-          <span class="muted">${label}</span>
+          <span class="muted">${share}% · ${label}</span>
         </div>
       `).join('');
+    }
+
+    function buildNamedBars(selector, data, maxValue) {
+      const target = document.querySelector(selector);
+      target.innerHTML = data.map(([name, value, label, color]) => {
+        const width = Math.max(2, Math.min(100, (value / maxValue) * 100));
+        return `
+          <div class="bar">
+            <strong>${name}</strong>
+            <div class="track"><div class="fill" style="--w:${width}%;--c:${color}"></div></div>
+            <span class="muted">${label}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function buildSemanticBars() {
+      buildNamedBars('#sentimentBars', [
+        ['Neutral titles', 94.2, '94.2% · 1.0d median, 5.0d p90', colors.blue],
+        ['Negative titles', 4.9, '4.9% · 1.0d median, 4.0d p90', colors.red],
+        ['Positive titles', 0.9, '0.9% · 1.0d median, 3.2d p90', colors.green],
+        ['High intensity', 4.0, '4.0% · 1.0d median, 2.0d p90', colors.violet],
+        ['Medium intensity', 59.7, '59.7% · 1.0d median, 4.0d p90', colors.gold],
+        ['Low intensity', 36.3, '36.3% · 2.0d median, 6.0d p90', colors.muted]
+      ], 100);
+
+      buildNamedBars('#gameCategoryBars', [
+        ['Social sandbox/RP', 43.5, '43.5% · 23.9h median, 48.3h p90', colors.green],
+        ['Other games', 27.4, '27.4% · 25.4h median, 72.2h p90', colors.blue],
+        ['Just Chatting only', 19.1, '19.1% · 26.5h median, 72.6h p90', colors.violet],
+        ['Variety stack', 9.3, '9.3% · 24.7h median, 65.6h p90', colors.gold],
+        ['Story/survival arc', 0.7, '0.7% · 23.8h median, 62.8h p90', colors.red]
+      ], 45);
+
+      buildNamedBars('#topGameBars', [
+        ['Just Chatting', 1544, '1,544 stream rows', colors.green],
+        ['Grand Theft Auto V', 897, '897 stream rows', colors.blue],
+        ['IRL', 153, '153 stream rows', colors.gold],
+        ['VRChat', 102, '102 stream rows', colors.violet],
+        ['Rust', 63, '63 stream rows', colors.red],
+        ['World of Warcraft', 49, '49 stream rows', colors.blue],
+        ['Unlisted on Twitch', 44, '44 stream rows', colors.muted],
+        ['Sea of Thieves', 22, '22 stream rows', colors.gold],
+        ['Minecraft', 21, '21 stream rows', colors.green],
+        ['Weed Shop 3', 21, '21 stream rows', colors.violet],
+        ['Poker', 20, '20 stream rows', colors.red],
+        ['Subnautica', 19, '19 stream rows', colors.blue]
+      ], 1544);
     }
 
     function render() {
       drawGapChart();
       drawMonthChart();
       buildFeatureBars();
+      buildSemanticBars();
     }
 
     window.addEventListener('resize', () => {

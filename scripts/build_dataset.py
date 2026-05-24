@@ -297,6 +297,171 @@ def median(values):
     return (values[mid - 1] + values[mid]) / 2
 
 
+def percentile(values, q):
+    if not values:
+        return 0
+    values = sorted(values)
+    pos = (len(values) - 1) * q
+    lower = int(pos)
+    upper = min(lower + 1, len(values) - 1)
+    if lower == upper:
+        return values[lower]
+    return values[lower] * (upper - pos) + values[upper] * (pos - lower)
+
+
+TITLE_FEATURES = {
+    "gameplay_arc": [
+        "first time", "finishing", "final", "part", "playthrough", "playing", "beat", "ending",
+        "death stranding", "subnautica", "minecraft", "gta", "rp", "rust", "elden", "game",
+    ],
+    "collab": ["@", "with ", "ft ", "feat", "friends", "boys", "girls", "party", "crew"],
+    "event_drops": ["drops", "giveaway", "birthday", "event", "sponsored", "keys", "award", "tourney"],
+    "challenge": ["not ending", "until", "challenge", "hardcore", "impossible", "speedrun", "marathon"],
+    "travel_irl": ["travel", "trip", "japan", "korea", "vegas", "austin", "irl", "hotel", "airport"],
+    "food_cooking": ["cook", "cooking", "food", "baking", "pizza", "cake", "eat", "kitchen"],
+    "return_marker": ["back", "returned", "return", "been a while", "missed", "hi bb", "i'm back"],
+    "recovery_risk": ["sick", "tired", "sleep", "hungover", "late", "short", "recover", "break"],
+}
+
+POSITIVE_WORDS = [
+    "love", "good", "great", "best", "fun", "cozy", "happy", "finally", "pog", "win",
+    "birthday", "free", "giveaway", "drops", "first time", "hi bb",
+]
+NEGATIVE_WORDS = [
+    "bad", "wrong", "hate", "fear", "scary", "cursed", "pain", "dead", "death", "sick",
+    "tired", "impossible", "rage", "suffering", "cry", "disaster", "worst",
+]
+
+
+def title_text(row):
+    titles = row.get("titles")
+    if titles:
+        return " ".join(titles)
+    return row.get("title") or row.get("primary_title") or ""
+
+
+def classify_title(text):
+    lowered = (text or "").lower()
+    features = [name for name, words in TITLE_FEATURES.items() if any(word in lowered for word in words)]
+    pos = sum(lowered.count(word) for word in POSITIVE_WORDS)
+    neg = sum(lowered.count(word) for word in NEGATIVE_WORDS)
+    intensity = 0
+    intensity += min(3, (text or "").count("!"))
+    intensity += min(2, (text or "").count("?"))
+    intensity += 1 if "@" in text else 0
+    intensity += 1 if len(re.findall(r"\b[A-Z]{4,}\b", text or "")) >= 3 else 0
+    score = pos - neg
+    if score >= 2:
+        sentiment = "positive"
+    elif score <= -1:
+        sentiment = "negative"
+    else:
+        sentiment = "neutral"
+    if intensity >= 3:
+        intensity_label = "high"
+    elif intensity >= 1:
+        intensity_label = "medium"
+    else:
+        intensity_label = "low"
+    return {
+        "features": features or ["unclassified"],
+        "sentiment": sentiment,
+        "sentiment_score": score,
+        "intensity": intensity_label,
+        "intensity_score": intensity,
+    }
+
+
+def summarize_labeled_gaps(labels_to_gaps, total):
+    summary = {}
+    for label, gaps in sorted(labels_to_gaps.items()):
+        if not gaps:
+            continue
+        summary[label] = {
+            "count": len(gaps),
+            "share": round(len(gaps) / total * 100, 1) if total else 0,
+            "median_gap_days": round(median(gaps), 2),
+            "p90_gap_days": round(percentile(gaps, 0.9), 2),
+        }
+    return summary
+
+
+def analyze_titles(archive_groups):
+    rows = sorted(archive_groups, key=lambda r: r["date"])
+    labels_to_gaps = defaultdict(list)
+    sentiment_to_gaps = defaultdict(list)
+    intensity_to_gaps = defaultdict(list)
+    analyzed = []
+    for idx, row in enumerate(rows[:-1]):
+        cur = datetime.fromisoformat(row["date"])
+        nxt = datetime.fromisoformat(rows[idx + 1]["date"])
+        gap = (nxt - cur).days
+        classified = classify_title(title_text(row))
+        analyzed.append({"date": row["date"], "gap_days": gap, **classified})
+        for feature in classified["features"]:
+            labels_to_gaps[feature].append(gap)
+        sentiment_to_gaps[classified["sentiment"]].append(gap)
+        intensity_to_gaps[classified["intensity"]].append(gap)
+    total = len(analyzed)
+    return {
+        "sample_size": total,
+        "features": summarize_labeled_gaps(labels_to_gaps, total),
+        "sentiment": summarize_labeled_gaps(sentiment_to_gaps, total),
+        "intensity": summarize_labeled_gaps(intensity_to_gaps, total),
+        "rows": analyzed,
+    }
+
+
+def classify_game(games):
+    game_set = {g.lower() for g in games or []}
+    if any(g in game_set for g in ["just chatting", "special events"]):
+        if len(game_set) == 1:
+            return "Just Chatting only"
+    if any(g in game_set for g in ["grand theft auto v", "rust", "vrchat"]):
+        return "Social sandbox/RP"
+    if any(g in game_set for g in ["subnautica", "subnautica 2", "death stranding", "kerbal space program"]):
+        return "Story/survival arc"
+    if any(g in game_set for g in ["food & drink", "cooking simulator"]):
+        return "Food/cooking"
+    if not games:
+        return "Unknown"
+    if len(games) >= 3:
+        return "Variety stack"
+    return "Other games"
+
+
+def analyze_games(sully_rows):
+    rows = sorted(sully_rows, key=lambda r: r["started_at"] or "")
+    category_gaps = defaultdict(list)
+    category_viewers = defaultdict(list)
+    game_counts = Counter()
+    for idx, row in enumerate(rows[:-1]):
+        if not row.get("started_at") or not rows[idx + 1].get("started_at"):
+            continue
+        cur = datetime.fromisoformat(row["started_at"].replace("Z", "+00:00"))
+        nxt = datetime.fromisoformat(rows[idx + 1]["started_at"].replace("Z", "+00:00"))
+        gap = (nxt - cur).total_seconds() / 3600
+        category = classify_game(row.get("games") or [])
+        category_gaps[category].append(gap)
+        if row.get("avg_viewers") is not None:
+            category_viewers[category].append(row["avg_viewers"])
+        for game in row.get("games") or []:
+            game_counts[game] += 1
+    categories = {}
+    for category, gaps in sorted(category_gaps.items()):
+        categories[category] = {
+            "count": len(gaps),
+            "share": round(len(gaps) / max(1, len(rows) - 1) * 100, 1),
+            "median_gap_hours": round(median(gaps), 2),
+            "p90_gap_hours": round(percentile(gaps, 0.9), 2),
+            "avg_viewers": round(mean(category_viewers[category]), 0) if category_viewers[category] else 0,
+        }
+    return {
+        "categories": categories,
+        "top_games": [{"game": game, "count": count} for game, count in game_counts.most_common(12)],
+    }
+
+
 def main():
     sully_rows = parse_sullygnome_streams()
     stream_logs = parse_twitchmetrics_stream_logs()
@@ -313,6 +478,8 @@ def main():
     archive_gaps, archive_bins = gap_bins_from_dates(archive_dates)
     exact_gaps = exact_gap_hours(exact_rows)
     sully_gap_values = exact_gap_hours(sully_rows)
+    title_analysis = analyze_titles(archive_groups)
+    game_analysis = analyze_games(sully_rows)
     monthly = Counter(d[:7] for d in archive_dates)
     sully_monthly = Counter(r["started_at"][:7] for r in sully_rows if r.get("started_at"))
     sully_yearly = Counter(r["started_at"][:4] for r in sully_rows if r.get("started_at"))
@@ -351,10 +518,15 @@ def main():
             "archive_monthly_counts": dict(sorted(monthly.items())),
             "sully_monthly_counts": dict(sorted(sully_monthly.items())),
             "sully_yearly_counts": dict(sorted(sully_yearly.items())),
+            "semantic_analysis": {
+                "title_analysis": {k: v for k, v in title_analysis.items() if k != "rows"},
+                "game_analysis": game_analysis,
+            },
         },
         "sully_streams": sully_rows,
         "exact_rows": exact_rows,
         "archive_grouped_dates": archive_groups,
+        "title_semantic_rows": title_analysis["rows"],
     }
 
     (DATA_DIR / "stream-data.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
@@ -411,10 +583,22 @@ def main():
         for row in archive_groups:
             writer.writerow({k: row.get(k) for k in writer.fieldnames})
 
+    with (DATA_DIR / "title-semantics.csv").open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=["date", "gap_days", "features", "sentiment", "sentiment_score", "intensity", "intensity_score"],
+        )
+        writer.writeheader()
+        for row in title_analysis["rows"]:
+            output = {k: row.get(k) for k in writer.fieldnames}
+            output["features"] = ", ".join(row.get("features") or [])
+            writer.writerow(output)
+
     print(json.dumps(payload["sources"], indent=2))
     print(json.dumps(payload["stats"]["sully_gap_hours"], indent=2))
     print(json.dumps(payload["stats"]["exact_gap_hours"], indent=2))
     print(json.dumps(payload["stats"]["archive_gap_days"], indent=2))
+    print(json.dumps(payload["stats"]["semantic_analysis"], indent=2))
 
 
 if __name__ == "__main__":
