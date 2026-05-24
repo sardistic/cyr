@@ -226,7 +226,7 @@
       place-items: center;
       background:
         radial-gradient(circle, var(--panel) 0 56%, transparent 57%),
-        conic-gradient(var(--green) 74%, rgba(98,185,223,.38) 74% 89%, #273238 0);
+        conic-gradient(var(--green) 63%, rgba(98,185,223,.38) 63% 76%, #273238 0);
       filter: drop-shadow(0 0 28px rgba(98,211,148,.24));
       animation: glowPulse 3.8s ease-in-out infinite;
     }
@@ -537,9 +537,9 @@
     .elapsed-fill {
       position: absolute;
       left: 0; top: 0; bottom: 0;
-      width: 80.6%;
-      background: linear-gradient(90deg, var(--green) 0%, var(--blue) 50%, var(--gold) 100%);
-      box-shadow: 0 0 16px rgba(228,184,93,.25);
+      width: 17.7%;
+      background: linear-gradient(90deg, var(--green) 0%, var(--blue) 100%);
+      box-shadow: 0 0 10px rgba(98,185,223,.3);
     }
     .elapsed-cursor {
       position: absolute;
@@ -595,6 +595,7 @@
     .sdot.arc   { background: var(--green);  box-shadow: 0 0 10px rgba(98,211,148,.5); }
     .sdot.collab{ background: var(--violet); box-shadow: 0 0 10px rgba(173,145,255,.5); }
     .sdot.event { background: var(--gold);   box-shadow: 0 0 10px rgba(228,184,93,.5); }
+    .sdot.chat  { background: var(--blue);   box-shadow: 0 0 10px rgba(98,185,223,.5); }
     .sdot.now {
       background: rgba(228,184,93,.08);
       border: 2px dashed rgba(228,184,93,.6);
@@ -607,9 +608,10 @@
       display: inline-block; margin-top: 2px; padding: 1px 5px;
       font-size: 9px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
     }
-    .sdot-info .tag.arc    { background: rgba(98,211,148,.12); color: var(--green); }
+    .sdot-info .tag.arc    { background: rgba(98,211,148,.12);  color: var(--green); }
     .sdot-info .tag.collab { background: rgba(173,145,255,.12); color: var(--violet); }
     .sdot-info .tag.event  { background: rgba(228,184,93,.12);  color: var(--gold); }
+    .sdot-info .tag.chat   { background: rgba(98,185,223,.12);  color: var(--blue); }
     .sdot-info .tag.now    { background: rgba(228,184,93,.12);  color: var(--gold); }
 
     /* ── Hero stat chips ── */
@@ -744,23 +746,23 @@
       <div class="hero">
         <div>
           <h1>When does cyr go live next?</h1>
-          <p class="lede">Exact SullyGnome cadence plus title/game signals. Active arc, fast-return profile, Sunday night lean.</p>
+          <p class="lede">Last prediction hit: streamed Sun May 24 ~9 PM ET. Arc paused for a JC session — median return puts next stream tonight.</p>
 
           <div class="prediction">
             <div class="metric">
               <small>Top Prediction</small>
-              <strong>Sun May 24</strong>
-              <span>Evening ET, roughly 4–9 PM window.</span>
+              <strong>Tonight</strong>
+              <span>Sun May 24, ~9 PM ET. Median gap lands exactly here.</span>
             </div>
             <div class="metric">
               <small>Next 48h confidence</small>
-              <strong>74%</strong>
-              <span>77.4 h elapsed · 93rd percentile gap.</span>
+              <strong>86%</strong>
+              <span>17h elapsed · 25th percentile gap.</span>
             </div>
             <div class="metric">
               <small>Fallback</small>
               <strong>Mon May 25</strong>
-              <span>Most likely if he skips Sunday.</span>
+              <span>If he skips tonight.</span>
             </div>
           </div>
 
@@ -768,8 +770,8 @@
           <div class="elapsed-panel">
             <div class="elapsed-head">
               <span>Time since last stream</span>
-              <strong>77.4 h</strong>
-              <span class="elapsed-badge">≈ 93rd percentile</span>
+              <strong>17 h</strong>
+              <span class="elapsed-badge">≈ 25th percentile</span>
             </div>
             <div class="elapsed-track">
               <div class="elapsed-fill">
@@ -785,7 +787,7 @@
               <div class="e-tick" style="left:75%">
                 <div class="e-tick-label">72h<br>p93</div>
               </div>
-              <div class="e-tick-label you" style="left:80.6%;top:13px;position:absolute;transform:translateX(-50%)">77.4h ↑<br>you</div>
+              <div class="e-tick-label you" style="left:17.7%;top:13px;position:absolute;transform:translateX(-50%)">17h ↑<br>you</div>
             </div>
           </div>
 
@@ -794,24 +796,24 @@
             <div class="stl-label">Recent streams</div>
             <div class="stream-dots">
               <div class="sitem">
-                <div class="sdot arc"></div>
-                <div class="sdot-info"><span class="d">May 18</span>Subnautica<br>finish · 7h<span class="tag arc">arc</span></div>
-              </div>
-              <div class="sitem">
                 <div class="sdot collab"></div>
                 <div class="sdot-info"><span class="d">May 19</span>Subnautica 2<br>collab · 5h<span class="tag collab">collab</span></div>
               </div>
               <div class="sitem">
                 <div class="sdot arc"></div>
-                <div class="sdot-info"><span class="d">May 20</span>Death Strand.<br>first time · 5h<span class="tag arc">arc</span></div>
+                <div class="sdot-info"><span class="d">May 20</span>Death Strand.<br>session 1 · 5h<span class="tag arc">arc</span></div>
               </div>
               <div class="sitem">
                 <div class="sdot arc"></div>
                 <div class="sdot-info"><span class="d">May 20</span>Death Strand.<br>session 2 · 4h<span class="tag arc">arc</span></div>
               </div>
               <div class="sitem">
+                <div class="sdot chat"></div>
+                <div class="sdot-info"><span class="d">May 24</span>Just Chatting<br>arc break · 6h<span class="tag chat">chat</span></div>
+              </div>
+              <div class="sitem">
                 <div class="sdot now"></div>
-                <div class="sdot-info"><span class="d g">+77.4h</span>waiting<br>since May 20<span class="tag now">← now</span></div>
+                <div class="sdot-info"><span class="d g">+17h</span>waiting<br>since May 24<span class="tag now">← now</span></div>
               </div>
             </div>
           </div>
@@ -827,7 +829,7 @@
               <span class="hstat-k">median gap</span>
             </div>
             <div class="hstat">
-              <span class="hstat-v" style="color:var(--blue)">2,420</span>
+              <span class="hstat-v" style="color:var(--blue)">2,421</span>
               <span class="hstat-k">exact streams</span>
             </div>
             <div class="hstat">
@@ -847,30 +849,30 @@
               <span class="live-dot" aria-hidden="true"></span>
             </div>
             <div class="signal-score">
-              <div class="score-orb"><strong>74</strong></div>
+              <div class="score-orb"><strong>55</strong></div>
               <div class="mini-signals">
-                <div class="mini-signal"><span>time</span><div class="mini-track"><div class="mini-fill" style="--w:83%;--c:var(--green)"></div></div><span>83</span></div>
-                <div class="mini-signal"><span>title</span><div class="mini-track"><div class="mini-fill" style="--w:60%;--c:var(--blue)"></div></div><span>60</span></div>
-                <div class="mini-signal"><span>game</span><div class="mini-track"><div class="mini-fill" style="--w:44%;--c:var(--violet)"></div></div><span>44</span></div>
-                <div class="mini-signal"><span>risk</span><div class="mini-track"><div class="mini-fill" style="--w:17%;--c:var(--red)"></div></div><span>17</span></div>
+                <div class="mini-signal"><span>time</span><div class="mini-track"><div class="mini-fill" style="--w:63%;--c:var(--green)"></div></div><span>63</span></div>
+                <div class="mini-signal"><span>title</span><div class="mini-track"><div class="mini-fill" style="--w:50%;--c:var(--blue)"></div></div><span>50</span></div>
+                <div class="mini-signal"><span>game</span><div class="mini-track"><div class="mini-fill" style="--w:46%;--c:var(--violet)"></div></div><span>46</span></div>
+                <div class="mini-signal"><span>risk</span><div class="mini-track"><div class="mini-fill" style="--w:10%;--c:var(--red)"></div></div><span>10</span></div>
               </div>
             </div>
             <canvas class="signal-curve" id="signalCurve" width="400" height="100" aria-label="Signal probability curve"></canvas>
             <div class="signal-chips">
-              <div class="signal-chip"><strong>50%</strong><span>next 24h</span></div>
-              <div class="signal-chip"><strong>74%</strong><span>next 48h</span></div>
-              <div class="signal-chip"><strong>94%</strong><span>next 7d</span></div>
+              <div class="signal-chip"><strong>63%</strong><span>next 24h</span></div>
+              <div class="signal-chip"><strong>86%</strong><span>next 48h</span></div>
+              <div class="signal-chip"><strong>99%</strong><span>next 7d</span></div>
             </div>
           </div>
 
           <!-- Active arc context -->
           <div class="arc-card">
-            <div class="arc-card-kicker">Active arc</div>
+            <div class="arc-card-kicker">Arc status · paused</div>
             <div class="arc-card-title">Death Stranding</div>
             <div class="arc-card-meta">
               <span>First-time playthrough</span>
-              <span>2 sessions so far</span>
-              <span>~9h streamed</span>
+              <span>2 sessions · ~9h</span>
+              <span>JC break May 24</span>
             </div>
             <div class="arc-bar">
               <div class="arc-session">
@@ -883,13 +885,18 @@
                 <div class="arc-session-fill" style="--w:44%"></div>
                 <span>4h</span>
               </div>
+              <div class="arc-session" style="opacity:.5">
+                <span>May 24</span>
+                <div class="arc-session-fill" style="--w:100%;background:var(--blue);box-shadow:none"></div>
+                <span style="color:var(--blue)">JC</span>
+              </div>
             </div>
           </div>
         </aside>
       </div>
 
       <div class="source-note">
-        2,420 exact Sully streams · 548 title-semantic archive gaps · 37 recent title rows · data: May 24, 2026
+        2,421 exact Sully streams · 548 title-semantic archive gaps · refreshed May 24, 2026
       </div>
     </header>
 
@@ -898,18 +905,18 @@
       <div class="grid">
         <div class="panel span-4">
           <h3>Answer</h3>
-          <p class="big-number">Sunday evening ET</p>
-          <p class="muted">May 24, roughly 7:00-11:00 PM ET.</p>
+          <p class="big-number">Tonight ~9 PM ET</p>
+          <p class="muted">Sun May 24. Median gap from 00:50 UTC lands at ~01:11 UTC May 25 = ~9 PM EDT.</p>
         </div>
         <div class="panel span-4">
           <h3>Probability Windows</h3>
           <table class="table">
             <tbody>
-              <tr><th>24h from last stream</th><td>45.8%</td></tr>
-              <tr><th>48h from last stream</th><td>83.0%</td></tr>
-              <tr><th>Next 24h from snapshot</th><td>50.4%</td></tr>
-              <tr><th>Next 48h from snapshot</th><td>74.0%</td></tr>
-              <tr><th>Next 7d from snapshot</th><td>94.3%</td></tr>
+              <tr><th>24h from last stream</th><td>45.4%</td></tr>
+              <tr><th>48h from last stream</th><td>82.9%</td></tr>
+              <tr><th>Next 24h from snapshot</th><td>62.9%</td></tr>
+              <tr><th>Next 48h from snapshot</th><td>86.4%</td></tr>
+              <tr><th>Next 7d from snapshot</th><td>~99%</td></tr>
             </tbody>
           </table>
         </div>
@@ -925,24 +932,24 @@
           <h3>Recent Evidence</h3>
           <div class="timeline">
             <div class="timeline-row">
+              <div class="date">May 24</div>
+              <div class="title">00:50 UTC · Just Chatting · 6h · arc pause · 2,998 avg viewers</div>
+              <div class="tag" style="background:rgba(98,185,223,.15);color:var(--blue)">Chat</div>
+            </div>
+            <div class="timeline-row">
               <div class="date">May 20</div>
-              <div class="title">19:14 UTC · Death Stranding first-time arc · 4h</div>
+              <div class="title">19:14 UTC · Death Stranding first-time arc · 4h · 2,779 avg viewers</div>
               <div class="tag arc">Arc</div>
             </div>
             <div class="timeline-row">
               <div class="date">May 20</div>
-              <div class="title">02:51 UTC · Death Stranding first-time arc · 5h</div>
+              <div class="title">02:51 UTC · Death Stranding first-time arc · 5h · 2,871 avg viewers</div>
               <div class="tag arc">Arc</div>
             </div>
             <div class="timeline-row">
               <div class="date">May 19</div>
               <div class="title">02:57 UTC · Subnautica 2 with @WillNeff + drops · 5h</div>
               <div class="tag event">Event</div>
-            </div>
-            <div class="timeline-row">
-              <div class="date">May 18</div>
-              <div class="title">00:27 UTC · finishing Subnautica · 7h</div>
-              <div class="tag arc">Arc</div>
             </div>
           </div>
         </div>
@@ -954,12 +961,12 @@
       <div class="grid">
         <div class="panel span-3">
           <h3>Exact Streams</h3>
-          <div class="big-number">2,420</div>
+          <div class="big-number">2,421</div>
           <p class="muted">SullyGnome rows</p>
         </div>
         <div class="panel span-3">
           <h3>Exact Gaps</h3>
-          <div class="big-number">2,419</div>
+          <div class="big-number">2,420</div>
           <p class="muted">hour-level cadence</p>
         </div>
         <div class="panel span-3">
@@ -1298,7 +1305,7 @@
     function drawSignalCurve() {
       const canvas = document.querySelector('#signalCurve');
       const { ctx, width, height } = setupCanvas(canvas);
-      const points = [['now', 0], ['24h', 50.4], ['48h', 74.0], ['7d', 94.3]];
+      const points = [['now', 0], ['24h', 63], ['48h', 86], ['7d', 99]];
       const padX = 32, padY = 14;
       ctx.clearRect(0, 0, width, height);
 
