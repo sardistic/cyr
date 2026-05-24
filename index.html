@@ -211,34 +211,96 @@
       animation: dotPulse 2.4s ease-in-out infinite;
     }
 
-    .dial {
-      --pct: 74%;
-      width: min(270px, 100%);
+    .signal-score {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 16px;
+      align-items: center;
+      margin: 14px 0 12px;
+    }
+
+    .score-orb {
       aspect-ratio: 1;
-      margin: 18px auto;
       border-radius: 50%;
       display: grid;
       place-items: center;
       background:
-        radial-gradient(circle, var(--panel) 0 57%, transparent 58%),
-        conic-gradient(var(--green) var(--pct), #273238 0);
-      filter: drop-shadow(0 0 28px rgba(98,211,148,.20));
+        radial-gradient(circle, var(--panel) 0 56%, transparent 57%),
+        conic-gradient(var(--green) 74%, rgba(98,185,223,.38) 74% 89%, #273238 0);
+      filter: drop-shadow(0 0 28px rgba(98,211,148,.24));
       animation: glowPulse 3.8s ease-in-out infinite;
     }
 
-    .dial strong {
-      font-size: 54px;
+    .score-orb strong {
+      font-size: 40px;
       line-height: .9;
     }
 
-    .dial span {
-      display: block;
+    .mini-signals {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mini-signal {
+      display: grid;
+      grid-template-columns: 62px 1fr 42px;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
       color: var(--muted);
-      text-align: center;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .08em;
+      font-weight: 750;
+    }
+
+    .mini-track {
+      height: 8px;
+      overflow: hidden;
+      background: #263238;
+    }
+
+    .mini-fill {
+      width: var(--w);
+      height: 100%;
+      background: var(--c);
+      animation: growX .85s cubic-bezier(.2,.8,.2,1) both;
+      transform-origin: left center;
+      box-shadow: 0 0 14px color-mix(in srgb, var(--c) 50%, transparent);
+    }
+
+    .signal-curve {
+      width: 100%;
+      height: 92px;
+      margin: 4px 0 8px;
+      display: block;
+      border: 1px solid rgba(98,185,223,.16);
+      background: rgba(9,13,16,.30);
+    }
+
+    .signal-chips {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .signal-chip {
+      padding: 9px;
+      border: 1px solid var(--line);
+      background: rgba(21,31,36,.74);
+    }
+
+    .signal-chip strong {
+      display: block;
+      font-size: 19px;
+      line-height: 1;
+    }
+
+    .signal-chip span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
       text-transform: uppercase;
+      letter-spacing: .04em;
     }
 
     section {
@@ -540,13 +602,21 @@
               </div>
               <span class="live-dot" aria-hidden="true"></span>
             </div>
-            <div class="dial" style="--pct: 74%;">
-              <div>
-                <strong>74</strong>
-                <span>next-48h confidence</span>
+            <div class="signal-score">
+              <div class="score-orb"><strong>74</strong></div>
+              <div class="mini-signals">
+                <div class="mini-signal"><span>time</span><div class="mini-track"><div class="mini-fill" style="--w:83%;--c:var(--green)"></div></div><span>83</span></div>
+                <div class="mini-signal"><span>title</span><div class="mini-track"><div class="mini-fill" style="--w:60%;--c:var(--blue)"></div></div><span>60</span></div>
+                <div class="mini-signal"><span>game</span><div class="mini-track"><div class="mini-fill" style="--w:44%;--c:var(--violet)"></div></div><span>44</span></div>
+                <div class="mini-signal"><span>risk</span><div class="mini-track"><div class="mini-fill" style="--w:17%;--c:var(--red)"></div></div><span>17</span></div>
               </div>
             </div>
-            <p class="muted">Conditional next-48h estimate from snapshot time.</p>
+            <canvas class="signal-curve" id="signalCurve" width="360" height="92" aria-label="Signal probability curve"></canvas>
+            <div class="signal-chips">
+              <div class="signal-chip"><strong>50%</strong><span>next 24h</span></div>
+              <div class="signal-chip"><strong>74%</strong><span>next 48h</span></div>
+              <div class="signal-chip"><strong>94%</strong><span>next 7d</span></div>
+            </div>
           </div>
         </aside>
       </div>
@@ -821,6 +891,60 @@
       });
     }
 
+    function drawSignalCurve() {
+      const canvas = document.querySelector('#signalCurve');
+      const { ctx, width, height } = setupCanvas(canvas);
+      const points = [
+        ['now', 0],
+        ['24h', 50.4],
+        ['48h', 74.0],
+        ['7d', 94.3]
+      ];
+      const padX = 26;
+      const padY = 14;
+      ctx.clearRect(0, 0, width, height);
+      ctx.strokeStyle = 'rgba(153, 170, 173, .16)';
+      ctx.lineWidth = 1;
+      [25, 50, 75].forEach(tick => {
+        const y = height - padY - (height - padY * 2) * (tick / 100);
+        ctx.beginPath();
+        ctx.moveTo(padX, y);
+        ctx.lineTo(width - padX, y);
+        ctx.stroke();
+      });
+      const coords = points.map(([label, value], i) => [
+        padX + (width - padX * 2) * (i / (points.length - 1)),
+        height - padY - (height - padY * 2) * (value / 100),
+        label,
+        value
+      ]);
+      const gradient = ctx.createLinearGradient(0, 0, width, 0);
+      gradient.addColorStop(0, colors.blue);
+      gradient.addColorStop(1, colors.green);
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      coords.forEach(([x, y], i) => {
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+      coords.forEach(([x, y, label, value]) => {
+        ctx.fillStyle = colors.green;
+        ctx.beginPath();
+        ctx.arc(x, y, 4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = colors.muted;
+        ctx.font = '700 11px system-ui';
+        ctx.textAlign = 'center';
+        ctx.fillText(label, x, height - 3);
+        if (value > 0) {
+          ctx.fillStyle = colors.ink;
+          ctx.fillText(`${Math.round(value)}%`, x, Math.max(12, y - 8));
+        }
+      });
+    }
+
     function buildFeatureBars() {
       const target = document.querySelector('#featureBars');
       const data = [
@@ -893,6 +1017,7 @@
     function render() {
       drawGapChart();
       drawMonthChart();
+      drawSignalCurve();
       buildFeatureBars();
       buildSemanticBars();
     }
