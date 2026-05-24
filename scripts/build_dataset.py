@@ -283,6 +283,25 @@ def exact_gap_hours(rows):
     ]
 
 
+def compute_gap_cdf(gap_values):
+    """Sparse CDF: [[hours, cumulative_pct], ...] used by the dashboard for live interpolation."""
+    if not gap_values:
+        return []
+    sv = sorted(gap_values)
+    n = len(sv)
+    marks = (
+        list(range(0, 24, 3))       # 0,3,6,9,12,15,18,21
+        + list(range(24, 72, 6))    # 24,30,36,...,66
+        + list(range(72, 168, 12))  # 72,84,...,156
+        + [168, 240, 336, 504, 720]
+    )
+    result = []
+    for h in marks:
+        count = sum(1 for g in sv if g <= h)
+        result.append([h, round(count / n * 100, 2)])
+    return result
+
+
 def compute_dow_hour(rows):
     dow_labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     dow_counts = Counter()
@@ -539,6 +558,15 @@ def main():
             "sully_monthly_counts": dict(sorted(sully_monthly.items())),
             "sully_yearly_counts": dict(sorted(sully_yearly.items())),
             "dow_hour": compute_dow_hour(sully_rows),
+            "gap_cdf": compute_gap_cdf(sully_gap_values),
+            "last_stream": (lambda r: {
+                "started_at": r.get("started_at"),
+                "games": r.get("games", []),
+                "duration_label": r.get("duration_label", ""),
+            })(sorted(
+                (r for r in sully_rows if r.get("started_at")),
+                key=lambda r: r["started_at"]
+            )[-1] if any(r.get("started_at") for r in sully_rows) else {}),
             "semantic_analysis": {
                 "title_analysis": {k: v for k, v in title_analysis.items() if k != "rows"},
                 "game_analysis": game_analysis,

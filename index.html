@@ -666,6 +666,80 @@
       box-shadow: 0 0 8px rgba(173,145,255,.4);
     }
 
+    /* ── Rationale expander ── */
+    .rationale {
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      background: rgba(17,24,28,.78);
+      animation: riseIn .7s ease-out .3s both;
+    }
+    .rationale summary {
+      padding: 13px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue);
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      transition: color .15s;
+    }
+    .rationale summary:hover { color: var(--ink); }
+    .rationale summary::-webkit-details-marker { display: none; }
+    .rationale summary::after { content: '▾'; font-size: 14px; letter-spacing: 0; }
+    .rationale[open] summary { border-bottom: 1px solid var(--line); }
+    .rationale[open] summary::after { content: '▴'; }
+    .rationale-body {
+      padding: 20px 18px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--muted);
+      display: grid;
+      gap: 18px;
+    }
+    .rationale-step h4 {
+      margin: 0 0 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--ink);
+    }
+    .rationale-step p { margin: 0; }
+    .rationale-math {
+      margin-top: 8px;
+      padding: 10px 14px;
+      border-left: 3px solid var(--blue);
+      background: rgba(98,185,223,.07);
+      font-family: 'Courier New', Consolas, monospace;
+      font-size: 12.5px;
+      color: var(--ink);
+      line-height: 1.7;
+      white-space: pre;
+    }
+    .rationale-math strong { color: var(--green); }
+
+    /* ── Prob split in signal chip note ── */
+    .signal-chip-note {
+      font-size: 11px;
+      color: var(--muted);
+      padding: 2px 2px 0;
+      line-height: 1.4;
+    }
+
+    /* ── Elapsed explain line ── */
+    .elapsed-explain {
+      margin: -4px 0 10px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
     footer {
       margin-top: 44px;
       padding-top: 20px;
@@ -746,23 +820,23 @@
       <div class="hero">
         <div>
           <h1>When does cyr go live next?</h1>
-          <p class="lede">Last prediction hit: streamed Sun May 24 ~9 PM ET. Arc paused for a JC session — median return puts next stream tonight.</p>
+          <p class="lede" id="hero-lede">Last prediction hit: streamed Sun May 24 ~9 PM ET. Arc paused for a JC session — median return puts next stream tonight.</p>
 
           <div class="prediction">
             <div class="metric">
               <small>Top Prediction</small>
-              <strong>Tonight</strong>
-              <span>Sun May 24, ~9 PM ET. Median gap lands exactly here.</span>
+              <strong id="pred-label">Tonight</strong>
+              <span id="pred-label-sub">Sun May 24, ~9 PM ET. Median gap lands exactly here.</span>
             </div>
             <div class="metric">
-              <small>Next 48h confidence</small>
-              <strong>86%</strong>
-              <span>17h elapsed · 25th percentile gap.</span>
+              <small id="prob-now-label">Probability · tonight</small>
+              <strong id="prob-now" style="color:var(--green)">~51%</strong>
+              <span id="prob-now-sub">Conditional on 17h wait. <span style="opacity:.55;font-size:12px">(63% raw 24h)</span></span>
             </div>
             <div class="metric">
-              <small>Fallback</small>
-              <strong>Mon May 25</strong>
-              <span>If he skips tonight.</span>
+              <small id="prob-next-label">Fallback · Mon May 25</small>
+              <strong id="prob-next">~81%</strong>
+              <span id="prob-next-sub">Conditional probability by tomorrow. If tonight is a miss.</span>
             </div>
           </div>
 
@@ -770,11 +844,12 @@
           <div class="elapsed-panel">
             <div class="elapsed-head">
               <span>Time since last stream</span>
-              <strong>17 h</strong>
-              <span class="elapsed-badge">≈ 25th percentile</span>
+              <strong id="elapsed-h">17 h</strong>
+              <span class="elapsed-badge" id="elapsed-pct">≈ 25th percentile</span>
             </div>
+            <p class="elapsed-explain" id="elapsed-explain">25th percentile means 25% of gaps ended before this point — 75% of gaps are <em>longer</em> than now. The bulk of the distribution is still ahead.</p>
             <div class="elapsed-track">
-              <div class="elapsed-fill">
+              <div class="elapsed-fill" id="elapsed-fill">
                 <div class="elapsed-cursor"></div>
               </div>
               <!-- ticks at 24h/48h/72h on a 0–96h scale -->
@@ -787,7 +862,7 @@
               <div class="e-tick" style="left:75%">
                 <div class="e-tick-label">72h<br>p93</div>
               </div>
-              <div class="e-tick-label you" style="left:17.7%;top:13px;position:absolute;transform:translateX(-50%)">17h ↑<br>you</div>
+              <div class="e-tick-label you" id="elapsed-you" style="left:17.7%;top:13px;position:absolute;transform:translateX(-50%)">17h ↑<br>you</div>
             </div>
           </div>
 
@@ -837,6 +912,55 @@
               <span class="hstat-k">p95 threshold</span>
             </div>
           </div>
+
+          <!-- Rationale expander -->
+          <details class="rationale">
+            <summary>How did we arrive at this?</summary>
+            <div class="rationale-body">
+              <div class="rationale-step">
+                <h4>Step 1 — The Raw Data</h4>
+                <p>We pulled 2,421 exact stream start timestamps from SullyGnome (Jan 2017 – May 2026). Each one is the moment cyr's Twitch broadcast actually went live.</p>
+              </div>
+              <div class="rationale-step">
+                <h4>Step 2 — Gap Distribution</h4>
+                <p>For every consecutive pair of streams we measure how many hours elapsed between starts, producing 2,420 gap observations. This is the core distribution the forecast draws from.</p>
+                <div class="rationale-math">median = 24.3h   ·   mean = 33.7h   ·   p95 = 77.9h
+25th pct ≈ 17h   ·   75th pct ≈ 40h</div>
+              </div>
+              <div class="rationale-step">
+                <h4>Step 3 — Where We Are Right Now</h4>
+                <p>Last stream started May 24 at 00:50 UTC. 17 hours have elapsed. Only 25% of historical gaps are shorter than 17h, meaning we're at the 25th percentile. The other 75% of gaps are longer than where we currently sit — so the bulk of the probability mass is still in front of us.</p>
+              </div>
+              <div class="rationale-step">
+                <h4>Step 4 — Conditional vs Unconditional Probability</h4>
+                <p>The raw survival function says 63% chance of a stream within 24h of the last start — that's unconditional. But since we already know 17h passed with no stream, we update:</p>
+                <div class="rationale-math">P(stream tonight | 17h elapsed already)
+= [P(gap ≤ 24h) − P(gap ≤ 17h)] ÷ P(gap > 17h)
+= (63% − 25%) ÷ (100% − 25%)
+= 38% ÷ 75%
+≈ <strong>51%</strong> for the ~7h window remaining tonight</div>
+                <p style="margin-top:8px">Same logic for tomorrow: (86% − 25%) ÷ 75% ≈ <strong>81%</strong>. This is why the chips show ~51% and ~81%, not 63% and 86%.</p>
+              </div>
+              <div class="rationale-step">
+                <h4>Step 5 — The "Tonight ~9 PM ET" Point Estimate</h4>
+                <p>The median gap (24.3h) added to the last stream start (00:50 UTC May 24) lands at 01:11 UTC May 25 = ~9:11 PM EDT May 24. That's the single most probable moment — a median estimate, not a hard window.</p>
+              </div>
+              <div class="rationale-step">
+                <h4>Step 6 — The Signal Score (55/100)</h4>
+                <p>Signal is a weighted ensemble of three inputs blended into a 0–100 composite:</p>
+                <div class="rationale-math">70% × time/cadence signal    = 63 × 0.70 = 44.1
+20% × game/title regime      = 46 × 0.20 =  9.2
+10% × semantic modifiers     = 20 × 0.10 =  2.0
+───────────────────────────────────────────────
+composite                               ≈ <strong>55</strong></div>
+                <p style="margin-top:8px">Title/game score is depressed (46) because Death Stranding is on pause and the May 24 session was Just Chatting — a break signal rather than arc continuation.</p>
+              </div>
+              <div class="rationale-step">
+                <h4>Caveat — Start-to-Start Gaps</h4>
+                <p>All gaps are measured start-to-start, not end-to-start. The May 24 stream ended at ~06:45 UTC (2:45 AM EDT). If you applied end-to-start gaps instead, the expected next stream would shift later — likely tomorrow evening. The "tonight" call is statistically valid from the model's perspective but doesn't account for the fact that he just finished a 6-hour session at 3 AM.</p>
+              </div>
+            </div>
+          </details>
         </div>
 
         <aside class="signal-box" aria-label="Model confidence">
@@ -859,10 +983,11 @@
             </div>
             <canvas class="signal-curve" id="signalCurve" width="400" height="100" aria-label="Signal probability curve"></canvas>
             <div class="signal-chips">
-              <div class="signal-chip"><strong>63%</strong><span>next 24h</span></div>
-              <div class="signal-chip"><strong>86%</strong><span>next 48h</span></div>
-              <div class="signal-chip"><strong>99%</strong><span>next 7d</span></div>
+              <div class="signal-chip"><strong id="chip-24h" style="color:var(--green)">~51%</strong><span id="chip-24h-label">tonight · cond.</span></div>
+              <div class="signal-chip"><strong id="chip-48h">~81%</strong><span>tomorrow · cond.</span></div>
+              <div class="signal-chip"><strong>≈99%</strong><span>this week</span></div>
             </div>
+            <div class="signal-chip-note" id="chip-note">Conditioned on 17h elapsed. Unconditional from last start: 63% / 86% / ≈99%.</div>
           </div>
 
           <!-- Active arc context -->
@@ -911,12 +1036,22 @@
         <div class="panel span-4">
           <h3>Probability Windows</h3>
           <table class="table">
+            <thead>
+              <tr><th>Window</th><th>Probability</th></tr>
+            </thead>
             <tbody>
-              <tr><th>24h from last stream</th><td>45.4%</td></tr>
-              <tr><th>48h from last stream</th><td>82.9%</td></tr>
-              <tr><th>Next 24h from snapshot</th><td>62.9%</td></tr>
-              <tr><th>Next 48h from snapshot</th><td>86.4%</td></tr>
-              <tr><th>Next 7d from snapshot</th><td>~99%</td></tr>
+              <tr style="border-bottom:1px solid rgba(98,185,223,.18)">
+                <th colspan="2" style="color:var(--blue);padding-top:10px">Unconditional · from last stream start</th>
+              </tr>
+              <tr><th>Within 24h of start</th><td>63%</td></tr>
+              <tr><th>Within 48h of start</th><td>86%</td></tr>
+              <tr><th>Within 7d of start</th><td>≈99%</td></tr>
+              <tr style="border-bottom:1px solid rgba(98,211,148,.18)">
+                <th colspan="2" style="color:var(--green);padding-top:14px">Conditional · given 17h elapsed, no stream yet</th>
+              </tr>
+              <tr><th>Tonight (next ~7h)</th><td style="color:var(--green);font-weight:800">~51%</td></tr>
+              <tr><th>By tomorrow (next ~31h)</th><td>~81%</td></tr>
+              <tr><th>This week</th><td>≈99%</td></tr>
             </tbody>
           </table>
         </div>
@@ -1302,71 +1437,6 @@
       ctx.fillText('streams/year  ·  green = growth era  ·  red = decline  ·  blue = recovery  ·  gold = partial year', left, 14);
     }
 
-    function drawSignalCurve() {
-      const canvas = document.querySelector('#signalCurve');
-      const { ctx, width, height } = setupCanvas(canvas);
-      const points = [['now', 0], ['24h', 63], ['48h', 86], ['7d', 99]];
-      const padX = 32, padY = 14;
-      ctx.clearRect(0, 0, width, height);
-
-      ctx.strokeStyle = 'rgba(153,170,173,.14)';
-      ctx.lineWidth = 1;
-      [25, 50, 75].forEach(tick => {
-        const y = height - padY - (height - padY * 2) * (tick / 100);
-        ctx.beginPath();
-        ctx.moveTo(padX, y);
-        ctx.lineTo(width - padX, y);
-        ctx.stroke();
-      });
-
-      const coords = points.map(([label, value], i) => [
-        padX + (width - padX * 2) * (i / (points.length - 1)),
-        height - padY - (height - padY * 2) * (value / 100),
-        label,
-        value
-      ]);
-      const pts = coords.map(c => [c[0], c[1]]);
-
-      // Fill area under curve
-      const fillGrad = ctx.createLinearGradient(0, 0, 0, height);
-      fillGrad.addColorStop(0, 'rgba(98,211,148,.16)');
-      fillGrad.addColorStop(1, 'rgba(98,211,148,.02)');
-      ctx.beginPath();
-      ctx.moveTo(pts[0][0], height - padY);
-      ctx.lineTo(pts[0][0], pts[0][1]);
-      smoothPath(ctx, pts);
-      ctx.lineTo(pts[pts.length - 1][0], height - padY);
-      ctx.closePath();
-      ctx.fillStyle = fillGrad;
-      ctx.fill();
-
-      // Curve stroke
-      const lineGrad = ctx.createLinearGradient(0, 0, width, 0);
-      lineGrad.addColorStop(0, colors.blue);
-      lineGrad.addColorStop(1, colors.green);
-      ctx.strokeStyle = lineGrad;
-      ctx.lineWidth = 2.5;
-      ctx.beginPath();
-      smoothPath(ctx, pts);
-      ctx.stroke();
-
-      // Dots and labels
-      coords.forEach(([x, y, label, value]) => {
-        ctx.fillStyle = colors.green;
-        ctx.beginPath();
-        ctx.arc(x, y, 4, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.fillStyle = colors.muted;
-        ctx.font = '700 11px system-ui';
-        ctx.textAlign = 'center';
-        ctx.fillText(label, x, height - 3);
-        if (value > 0) {
-          ctx.fillStyle = colors.ink;
-          ctx.fillText(Math.round(value) + '%', x, Math.max(12, y - 8));
-        }
-      });
-    }
-
     function drawDowChart() {
       const canvas = document.querySelector('#dowChart');
       if (!canvas) return;
@@ -1550,6 +1620,270 @@
     });
 
     render();
+
+    // ── Live forecast (recalculates from current time every minute) ──
+
+    function cdfLookup(hours) {
+      const cdf = stats.gap_cdf;
+      if (!cdf || !cdf.length) return null;
+      if (hours <= 0) return 0;
+      if (hours >= cdf[cdf.length - 1][0]) return cdf[cdf.length - 1][1];
+      for (let i = 1; i < cdf.length; i++) {
+        if (cdf[i][0] >= hours) {
+          const [h0, p0] = cdf[i - 1];
+          const [h1, p1] = cdf[i];
+          const t = (hours - h0) / (h1 - h0);
+          return +(p0 + t * (p1 - p0)).toFixed(1);
+        }
+      }
+      return cdf[cdf.length - 1][1];
+    }
+
+    function conditionalProb(elapsedH, targetH) {
+      const pE = (cdfLookup(elapsedH) ?? 0) / 100;
+      const pT = (cdfLookup(targetH) ?? 0) / 100;
+      if (pE >= 1) return 0;
+      return Math.max(0, Math.min(1, (pT - pE) / (1 - pE)));
+    }
+
+    function fmtElapsed(h) {
+      if (h < 1) return `${Math.round(h * 60)}m`;
+      const hh = Math.floor(h);
+      const mm = Math.round((h - hh) * 60);
+      return mm > 0 ? `${hh}h ${mm}m` : `${hh}h`;
+    }
+
+    function ordinal(n) {
+      const s = ['th','st','nd','rd'];
+      const v = n % 100;
+      return n + (s[(v - 20) % 10] || s[v] || s[0]);
+    }
+
+    function fmtPct(p) {
+      const pct = Math.round(p * 100);
+      return pct >= 99 ? '≈99%' : `~${pct}%`;
+    }
+
+    function updateForecast() {
+      const lastStartStr = stats.last_stream?.started_at;
+      if (!lastStartStr || !stats.gap_cdf) return;
+
+      const lastStart = new Date(lastStartStr);
+      const now = new Date();
+      const elapsedH = (now - lastStart) / 3600000;
+
+      // Progress bar (track spans 0–96h)
+      const TRACK_H = 96;
+      const fillPct = Math.min(100, (elapsedH / TRACK_H) * 100);
+      const pctPos = fillPct.toFixed(1) + '%';
+
+      const elapsedFill = document.getElementById('elapsed-fill');
+      if (elapsedFill) elapsedFill.style.width = pctPos;
+
+      const elapsedYou = document.getElementById('elapsed-you');
+      if (elapsedYou) {
+        elapsedYou.style.left = pctPos;
+        elapsedYou.innerHTML = fmtElapsed(elapsedH) + ' ↑<br>you';
+      }
+
+      // Elapsed display + percentile badge
+      const pctAtNow = cdfLookup(elapsedH);
+      const elapsedHEl = document.getElementById('elapsed-h');
+      if (elapsedHEl) elapsedHEl.textContent = fmtElapsed(elapsedH);
+
+      const elapsedPctEl = document.getElementById('elapsed-pct');
+      if (elapsedPctEl && pctAtNow !== null) {
+        elapsedPctEl.textContent = `≈ ${ordinal(Math.round(pctAtNow))} percentile`;
+      }
+
+      const explainEl = document.getElementById('elapsed-explain');
+      if (explainEl && pctAtNow !== null) {
+        const rPct = Math.round(pctAtNow);
+        explainEl.innerHTML = `${ordinal(rPct)} percentile means ${rPct}% of gaps ended before this point — ${100 - rPct}% of gaps are <em>longer</em> than now. The bulk of the distribution is still ahead.`;
+      }
+
+      // Conditional probabilities
+      const p24cond = conditionalProb(elapsedH, elapsedH + 24);  // next 24h from now
+      const p48cond = conditionalProb(elapsedH, elapsedH + 48);  // next 48h from now
+
+      // Expected next stream (median gap from last start)
+      const medianH = stats.sully_gap_hours?.median ?? 24.3;
+      const expectedNext = new Date(lastStart.getTime() + medianH * 3600000);
+
+      // Format expected time in ET
+      const etFmt = { timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true };
+      const etDate = { timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric' };
+      const expectedStr = expectedNext.toLocaleString('en-US', etFmt);
+      const expectedDateStr = expectedNext.toLocaleString('en-US', etDate);
+
+      // Is expected time "today" or "tomorrow" in ET?
+      const nowDateET = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+      const expectedDateET = expectedNext.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+      const tomorrowET = new Date(now);
+      tomorrowET.setDate(tomorrowET.getDate() + 1);
+      const tomorrowDateET = tomorrowET.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+
+      let predLabel, predSub;
+      if (elapsedH > medianH) {
+        // Past median — could be any time now
+        predLabel = 'Overdue';
+        predSub = `Past median gap (${medianH}h). Now ${Math.round(pctAtNow ?? 50)}th pct — stream likely soon.`;
+      } else if (expectedDateET === nowDateET) {
+        predLabel = 'Tonight';
+        predSub = `${expectedStr} ET. Median gap lands here.`;
+      } else if (expectedDateET === tomorrowDateET) {
+        predLabel = 'Tomorrow';
+        predSub = `${expectedStr} ET. Median gap lands here.`;
+      } else {
+        predLabel = expectedDateStr;
+        predSub = `${expectedStr} ET. Median gap lands here.`;
+      }
+
+      // Fallback label = median + 24h from now
+      const fallbackNext = new Date(lastStart.getTime() + (medianH + 24) * 3600000);
+      const fallbackDateStr = fallbackNext.toLocaleString('en-US', etDate);
+
+      const probNowEl = document.getElementById('prob-now');
+      if (probNowEl) probNowEl.textContent = fmtPct(p24cond);
+
+      const probNowLabelEl = document.getElementById('prob-now-label');
+      if (probNowLabelEl) probNowLabelEl.textContent = `Probability · next 24h`;
+
+      const probNowSubEl = document.getElementById('prob-now-sub');
+      if (probNowSubEl) {
+        const rawPct = Math.round((cdfLookup(elapsedH + 24) ?? 0));
+        probNowSubEl.innerHTML = `Conditional on ${fmtElapsed(elapsedH)} elapsed. <span style="opacity:.55;font-size:12px">(${rawPct}% unconditional from start)</span>`;
+      }
+
+      const probNextEl = document.getElementById('prob-next');
+      if (probNextEl) probNextEl.textContent = fmtPct(p48cond);
+
+      const probNextLabelEl = document.getElementById('prob-next-label');
+      if (probNextLabelEl) probNextLabelEl.textContent = `Fallback · ${fallbackDateStr}`;
+
+      const probNextSubEl = document.getElementById('prob-next-sub');
+      if (probNextSubEl) probNextSubEl.textContent = `Conditional probability next 48h. If next 24h is a miss.`;
+
+      const predLabelEl = document.getElementById('pred-label');
+      if (predLabelEl) predLabelEl.textContent = predLabel;
+      const predSubEl = document.getElementById('pred-label-sub');
+      if (predSubEl) predSubEl.textContent = predSub;
+
+      // Signal chips
+      const chip24 = document.getElementById('chip-24h');
+      if (chip24) chip24.textContent = fmtPct(p24cond);
+      const chip48 = document.getElementById('chip-48h');
+      if (chip48) chip48.textContent = fmtPct(p48cond);
+
+      const chipNote = document.getElementById('chip-note');
+      if (chipNote && pctAtNow !== null) {
+        const u24 = Math.round(cdfLookup(elapsedH + 24) ?? 0);
+        const u48 = Math.round(cdfLookup(elapsedH + 48) ?? 0);
+        chipNote.textContent = `Conditioned on ${fmtElapsed(elapsedH)} elapsed (${ordinal(Math.round(pctAtNow))} pct). Unconditional from last start: ${u24}% / ${u48}% / ≈99%.`;
+      }
+
+      // Redraw signal curve with updated elapsed position marked
+      drawSignalCurve(elapsedH, p24cond, p48cond);
+    }
+
+    // Signal curve — redrawn each minute with current elapsed position
+    function drawSignalCurve(elapsedH, p24cond, p48cond) {
+      const canvas = document.querySelector('#signalCurve');
+      const { ctx, width, height } = setupCanvas(canvas);
+
+      // Use conditional values if provided, else fallback to unconditional
+      const c24 = p24cond !== undefined ? Math.round(p24cond * 100) : 63;
+      const c48 = p48cond !== undefined ? Math.round(p48cond * 100) : 81;
+      const elapsed = elapsedH !== undefined ? elapsedH : 17;
+
+      const points = [['now', 0], ['24h', c24], ['48h', c48], ['7d', 99]];
+      const padX = 32, padY = 14;
+      ctx.clearRect(0, 0, width, height);
+
+      ctx.strokeStyle = 'rgba(153,170,173,.14)';
+      ctx.lineWidth = 1;
+      [25, 50, 75].forEach(tick => {
+        const y = height - padY - (height - padY * 2) * (tick / 100);
+        ctx.beginPath();
+        ctx.moveTo(padX, y);
+        ctx.lineTo(width - padX, y);
+        ctx.stroke();
+      });
+
+      const coords = points.map(([label, value], i) => [
+        padX + (width - padX * 2) * (i / (points.length - 1)),
+        height - padY - (height - padY * 2) * (value / 100),
+        label,
+        value
+      ]);
+      const pts = coords.map(c => [c[0], c[1]]);
+
+      const fillGrad = ctx.createLinearGradient(0, 0, 0, height);
+      fillGrad.addColorStop(0, 'rgba(98,211,148,.16)');
+      fillGrad.addColorStop(1, 'rgba(98,211,148,.02)');
+      ctx.beginPath();
+      ctx.moveTo(pts[0][0], height - padY);
+      ctx.lineTo(pts[0][0], pts[0][1]);
+      smoothPath(ctx, pts);
+      ctx.lineTo(pts[pts.length - 1][0], height - padY);
+      ctx.closePath();
+      ctx.fillStyle = fillGrad;
+      ctx.fill();
+
+      const lineGrad = ctx.createLinearGradient(0, 0, width, 0);
+      lineGrad.addColorStop(0, colors.blue);
+      lineGrad.addColorStop(1, colors.green);
+      ctx.strokeStyle = lineGrad;
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      smoothPath(ctx, pts);
+      ctx.stroke();
+
+      // "You are here" marker at elapsed position
+      // x-axis: now(0)=padX, 24h, 48h, 7d. Map elapsed to x.
+      const horizMarks = [0, 24, 48, 168];
+      let elapsedX = padX;
+      for (let i = 1; i < horizMarks.length; i++) {
+        if (elapsed <= horizMarks[i]) {
+          const t = (elapsed - horizMarks[i - 1]) / (horizMarks[i] - horizMarks[i - 1]);
+          const x0 = coords[i - 1][0];
+          const x1 = coords[i][0];
+          elapsedX = x0 + (x1 - x0) * t;
+          break;
+        }
+        elapsedX = coords[coords.length - 1][0];
+      }
+      ctx.strokeStyle = colors.gold;
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath();
+      ctx.moveTo(elapsedX, padY);
+      ctx.lineTo(elapsedX, height - padY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = colors.gold;
+      ctx.font = '700 10px system-ui';
+      ctx.textAlign = 'center';
+      ctx.fillText('now', elapsedX, padY + 8);
+
+      coords.forEach(([x, y, label, value]) => {
+        ctx.fillStyle = colors.green;
+        ctx.beginPath();
+        ctx.arc(x, y, 4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = colors.muted;
+        ctx.font = '700 11px system-ui';
+        ctx.textAlign = 'center';
+        ctx.fillText(label, x, height - 3);
+        if (value > 0) {
+          ctx.fillStyle = colors.ink;
+          ctx.fillText(Math.round(value) + '%', x, Math.max(12, y - 8));
+        }
+      });
+    }
+
+    updateForecast();
+    setInterval(updateForecast, 60000);
   </script>
 </body>
 </html>
