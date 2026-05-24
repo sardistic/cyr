@@ -18,6 +18,8 @@ UA = {"User-Agent": "Mozilla/5.0"}
 CHANNEL_ID = "37522866"
 TWITCHMETRICS = f"https://www.twitchmetrics.net/c/{CHANNEL_ID}-cyr"
 YOUTUBE_ARCHIVE = "https://www.youtube.com/channel/UCtqSew92vbH79xuLLVssbIA/videos"
+SULLY_PAGE = "https://sullygnome.com/channel/cyr/5000/streams"
+SULLY_CHANNEL_ID = "9451380"
 
 
 def clean_html(value):
@@ -137,6 +139,71 @@ def parse_youtube_archive():
     return rows
 
 
+def parse_sully_page_info():
+    text = requests.get(SULLY_PAGE, headers=UA, timeout=30).text
+    match = re.search(r"var PageInfo = (.*?);", text)
+    if not match:
+        raise RuntimeError("Could not find SullyGnome PageInfo")
+    return json.loads(match.group(1))
+
+
+def parse_sully_games(value):
+    parts = (value or "").split("|")
+    return [parts[i] for i in range(0, len(parts), 3) if parts[i]]
+
+
+def fetch_sully_range(session, page_info, range_name, start=0, length=500):
+    url = (
+        "https://sullygnome.com/api/tables/channeltables/streams/"
+        f"{range_name}/{SULLY_CHANNEL_ID}/%20/1/1/desc/{start}/{length}"
+    )
+    headers = {
+        **UA,
+        "Referer": SULLY_PAGE,
+        "Timecode": page_info["timecode"],
+    }
+    response = session.get(url, headers=headers, timeout=30)
+    response.raise_for_status()
+    return response.json()
+
+
+def parse_sullygnome_streams():
+    page_info = parse_sully_page_info()
+    filter_info = page_info.get("filterInfo", {})
+    min_year = int(filter_info.get("minYear", 2017))
+    max_year = int(filter_info.get("maxYear", datetime.utcnow().year))
+    session = requests.Session()
+    rows_by_id = {}
+    for year in range(min_year, max_year + 1):
+        start = 0
+        while True:
+            payload = fetch_sully_range(session, page_info, str(year), start=start)
+            data = payload.get("data", [])
+            for item in data:
+                stream_id = str(item.get("streamId") or item.get("startDateTime"))
+                rows_by_id[stream_id] = {
+                    "source": "sullygnome_stream_table",
+                    "precision": "exact_utc_start",
+                    "id": stream_id,
+                    "started_at": item.get("startDateTime"),
+                    "ended_at": item.get("endtime"),
+                    "duration_label": f"{item.get('length', 0)} minutes",
+                    "duration_seconds": int(item.get("length") or 0) * 60,
+                    "title": None,
+                    "games": parse_sully_games(item.get("gamesplayed")),
+                    "avg_viewers": item.get("avgviewers"),
+                    "peak_viewers": item.get("maxviewers"),
+                    "followers_gained": item.get("followergain"),
+                    "view_minutes": item.get("viewminutes"),
+                    "stream_url": item.get("streamUrl"),
+                    "range": str(year),
+                }
+            start += len(data)
+            if len(data) == 0 or start >= int(payload.get("recordsTotal") or 0):
+                break
+    return sorted(rows_by_id.values(), key=lambda r: r["started_at"] or "")
+
+
 def group_archive_segments(rows):
     groups = defaultdict(list)
     for row in rows:
@@ -184,6 +251,26 @@ def gap_bins_from_dates(dates):
     return gaps, dict(bins)
 
 
+def gap_bins_from_hours(hours):
+    bins = Counter({"0-12h": 0, "12-24h": 0, "1-2d": 0, "2-3d": 0, "3-5d": 0, "5-7d": 0, "7+d": 0})
+    for gap in hours:
+        if gap < 12:
+            bins["0-12h"] += 1
+        elif gap < 24:
+            bins["12-24h"] += 1
+        elif gap < 48:
+            bins["1-2d"] += 1
+        elif gap < 72:
+            bins["2-3d"] += 1
+        elif gap < 120:
+            bins["3-5d"] += 1
+        elif gap < 168:
+            bins["5-7d"] += 1
+        else:
+            bins["7+d"] += 1
+    return dict(bins)
+
+
 def exact_gap_hours(rows):
     parsed = sorted(
         datetime.fromisoformat(r["started_at"].replace("Z", "+00:00"))
@@ -211,6 +298,7 @@ def median(values):
 
 
 def main():
+    sully_rows = parse_sullygnome_streams()
     stream_logs = parse_twitchmetrics_stream_logs()
     vods = parse_twitchmetrics_vods()
     exact_by_key = {}
@@ -224,11 +312,15 @@ def main():
     archive_dates = [g["date"] for g in archive_groups]
     archive_gaps, archive_bins = gap_bins_from_dates(archive_dates)
     exact_gaps = exact_gap_hours(exact_rows)
+    sully_gap_values = exact_gap_hours(sully_rows)
     monthly = Counter(d[:7] for d in archive_dates)
+    sully_monthly = Counter(r["started_at"][:7] for r in sully_rows if r.get("started_at"))
+    sully_yearly = Counter(r["started_at"][:4] for r in sully_rows if r.get("started_at"))
 
     payload = {
         "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
         "sources": {
+            "sullygnome_stream_table": len(sully_rows),
             "twitchmetrics_stream_logs": len(stream_logs),
             "twitchmetrics_vods": len(vods),
             "exact_merged_rows": len(exact_rows),
@@ -236,6 +328,13 @@ def main():
             "youtube_archive_grouped_dates": len(archive_groups),
         },
         "stats": {
+            "sully_gap_hours": {
+                "count": len(sully_gap_values),
+                "mean": round(mean(sully_gap_values), 2),
+                "median": round(median(sully_gap_values), 2),
+                "max": round(max(sully_gap_values), 2) if sully_gap_values else 0,
+                "bins": gap_bins_from_hours(sully_gap_values),
+            },
             "exact_gap_hours": {
                 "count": len(exact_gaps),
                 "mean": round(mean(exact_gaps), 2),
@@ -250,7 +349,10 @@ def main():
                 "bins": archive_bins,
             },
             "archive_monthly_counts": dict(sorted(monthly.items())),
+            "sully_monthly_counts": dict(sorted(sully_monthly.items())),
+            "sully_yearly_counts": dict(sorted(sully_yearly.items())),
         },
+        "sully_streams": sully_rows,
         "exact_rows": exact_rows,
         "archive_grouped_dates": archive_groups,
     }
@@ -275,6 +377,26 @@ def main():
         for row in exact_rows:
             writer.writerow({k: row.get(k) for k in writer.fieldnames})
 
+    with (DATA_DIR / "sully-streams.csv").open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=[
+                "id",
+                "started_at",
+                "duration_seconds",
+                "avg_viewers",
+                "peak_viewers",
+                "followers_gained",
+                "games",
+                "stream_url",
+            ],
+        )
+        writer.writeheader()
+        for row in sully_rows:
+            output = {k: row.get(k) for k in writer.fieldnames}
+            output["games"] = ", ".join(row.get("games") or [])
+            writer.writerow(output)
+
     with (DATA_DIR / "archive-grouped-dates.csv").open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f,
@@ -290,6 +412,7 @@ def main():
             writer.writerow({k: row.get(k) for k in writer.fieldnames})
 
     print(json.dumps(payload["sources"], indent=2))
+    print(json.dumps(payload["stats"]["sully_gap_hours"], indent=2))
     print(json.dumps(payload["stats"]["exact_gap_hours"], indent=2))
     print(json.dumps(payload["stats"]["archive_gap_days"], indent=2))
 
