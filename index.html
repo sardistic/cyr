@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CYR Stream Forecast</title>
   <meta name="description" content="A static predictive model dashboard estimating when cyr will stream next.">
+  <script src="data/stream-data.js"></script>
   <style>
     :root {
       color-scheme: dark;
@@ -65,9 +66,8 @@
     }
 
     header {
-      min-height: 92vh;
       display: grid;
-      grid-template-rows: auto 1fr auto;
+      grid-template-rows: auto auto auto;
       gap: 28px;
     }
 
@@ -105,15 +105,15 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 400px;
-      align-items: center;
+      grid-template-columns: minmax(0, 1fr) 440px;
+      align-items: start;
       gap: 36px;
     }
 
     h1 {
       margin: 0;
       max-width: 820px;
-      font-size: clamp(48px, 7vw, 96px);
+      font-size: clamp(36px, 5vw, 66px);
       line-height: .92;
       letter-spacing: 0;
       text-shadow: 0 0 36px rgba(98, 211, 148, .14);
@@ -178,15 +178,16 @@
 
     .signal-box {
       align-self: stretch;
-      display: grid;
+      display: flex;
+      flex-direction: column;
       gap: 12px;
     }
 
     .gauge {
-      min-height: 360px;
       padding: 22px;
       display: grid;
-      align-content: space-between;
+      gap: 14px;
+      align-content: start;
       border: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(23,33,39,.96), rgba(14,20,24,.96));
       box-shadow: var(--shadow);
@@ -216,7 +217,6 @@
       grid-template-columns: 112px 1fr;
       gap: 16px;
       align-items: center;
-      margin: 14px 0 12px;
     }
 
     .score-orb {
@@ -497,6 +497,173 @@
       box-shadow: none;
     }
 
+    /* ── Elapsed progress bar ── */
+    .elapsed-panel {
+      margin-top: 16px;
+      padding: 14px 18px 16px;
+      border: 1px solid var(--line);
+      background: rgba(17,24,28,.78);
+      box-shadow: var(--shadow);
+      animation: riseIn .65s ease-out .18s both;
+    }
+    .elapsed-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .elapsed-head strong { color: var(--gold); font-size: 16px; letter-spacing: 0; font-weight: 900; }
+    .elapsed-badge {
+      margin-left: auto;
+      padding: 2px 8px;
+      border: 1px solid rgba(228,184,93,.32);
+      background: rgba(228,184,93,.10);
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+    .elapsed-track {
+      position: relative;
+      height: 8px;
+      background: #172127;
+      margin-bottom: 26px;
+    }
+    .elapsed-fill {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 80.6%;
+      background: linear-gradient(90deg, var(--green) 0%, var(--blue) 50%, var(--gold) 100%);
+      box-shadow: 0 0 16px rgba(228,184,93,.25);
+    }
+    .elapsed-cursor {
+      position: absolute;
+      right: -1px; top: -5px;
+      width: 2px; height: 18px;
+      background: var(--gold);
+      box-shadow: 0 0 10px rgba(228,184,93,.9);
+    }
+    .e-tick {
+      position: absolute; top: 0; bottom: 0;
+      width: 1px; background: rgba(255,255,255,.2);
+    }
+    .e-tick-label {
+      position: absolute;
+      top: 13px;
+      transform: translateX(-50%);
+      font-size: 10px; font-weight: 700;
+      color: var(--muted);
+      white-space: nowrap; text-align: center; line-height: 1.3;
+    }
+    .e-tick-label.you { color: var(--gold); font-size: 11px; }
+
+    /* ── Stream dots timeline ── */
+    .stream-timeline {
+      margin-top: 10px;
+      padding: 13px 18px 15px;
+      border: 1px solid var(--line);
+      background: rgba(17,24,28,.78);
+      box-shadow: var(--shadow);
+      animation: riseIn .7s ease-out .22s both;
+    }
+    .stl-label {
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--muted); margin-bottom: 14px;
+    }
+    .stream-dots { display: flex; align-items: flex-start; }
+    .sitem {
+      flex: 1; min-width: 0;
+      display: flex; flex-direction: column; align-items: center;
+      position: relative;
+    }
+    .sitem:not(:last-child)::after {
+      content: '';
+      position: absolute; top: 8px; left: 50%; width: 100%; height: 1px;
+      background: var(--line); z-index: 0;
+    }
+    .sdot {
+      width: 16px; height: 16px; border-radius: 50%;
+      border: 2px solid var(--panel);
+      position: relative; z-index: 1; flex-shrink: 0;
+    }
+    .sdot.arc   { background: var(--green);  box-shadow: 0 0 10px rgba(98,211,148,.5); }
+    .sdot.collab{ background: var(--violet); box-shadow: 0 0 10px rgba(173,145,255,.5); }
+    .sdot.event { background: var(--gold);   box-shadow: 0 0 10px rgba(228,184,93,.5); }
+    .sdot.now {
+      background: rgba(228,184,93,.08);
+      border: 2px dashed rgba(228,184,93,.6);
+      animation: dotPulse 2.4s ease-in-out infinite;
+    }
+    .sdot-info { margin-top: 8px; text-align: center; font-size: 10px; color: var(--muted); line-height: 1.4; padding: 0 3px; }
+    .sdot-info .d { display: block; font-size: 11px; font-weight: 800; color: var(--ink); }
+    .sdot-info .d.g { color: var(--gold); }
+    .sdot-info .tag {
+      display: inline-block; margin-top: 2px; padding: 1px 5px;
+      font-size: 9px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+    }
+    .sdot-info .tag.arc    { background: rgba(98,211,148,.12); color: var(--green); }
+    .sdot-info .tag.collab { background: rgba(173,145,255,.12); color: var(--violet); }
+    .sdot-info .tag.event  { background: rgba(228,184,93,.12);  color: var(--gold); }
+    .sdot-info .tag.now    { background: rgba(228,184,93,.12);  color: var(--gold); }
+
+    /* ── Hero stat chips ── */
+    .hero-stats {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      animation: riseIn .75s ease-out .28s both;
+    }
+    .hstat {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: rgba(17,24,28,.6);
+    }
+    .hstat-v { display: block; font-size: 20px; font-weight: 800; line-height: 1; }
+    .hstat-k { display: block; margin-top: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+
+    /* ── Arc context card ── */
+    .arc-card {
+      padding: 16px 18px;
+      border: 1px solid rgba(173,145,255,.22);
+      background: linear-gradient(135deg, rgba(20,28,34,.95), rgba(17,24,28,.95));
+      box-shadow: var(--shadow), 0 0 30px rgba(173,145,255,.06);
+      animation: riseIn .6s ease-out .12s both;
+    }
+    .arc-card-kicker {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .09em; color: var(--violet); margin-bottom: 8px;
+    }
+    .arc-card-title { font-size: 18px; font-weight: 800; color: var(--ink); margin: 0 0 6px; }
+    .arc-card-meta { font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; }
+    .arc-card-meta span { display: flex; align-items: center; gap: 5px; }
+    .arc-card-meta span::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--violet); flex-shrink: 0;
+    }
+    .arc-bar {
+      margin-top: 12px; display: grid; gap: 5px;
+    }
+    .arc-session {
+      display: grid; grid-template-columns: 60px 1fr 42px;
+      gap: 8px; align-items: center; font-size: 11px; color: var(--muted); font-weight: 700;
+    }
+    .arc-session-fill {
+      height: 5px; background: rgba(173,145,255,.22);
+      position: relative;
+    }
+    .arc-session-fill::after {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: var(--w); background: var(--violet);
+      box-shadow: 0 0 8px rgba(173,145,255,.4);
+    }
+
     footer {
       margin-top: 44px;
       padding-top: 20px;
@@ -516,6 +683,10 @@
 
       .prediction {
         grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-12 {
@@ -573,22 +744,95 @@
       <div class="hero">
         <div>
           <h1>When does cyr go live next?</h1>
-          <p class="lede">Exact SullyGnome cadence plus title/game signals. Short version: active arc, fast-return profile, Sunday night lean.</p>
+          <p class="lede">Exact SullyGnome cadence plus title/game signals. Active arc, fast-return profile, Sunday night lean.</p>
+
           <div class="prediction">
             <div class="metric">
               <small>Top Prediction</small>
               <strong>Sun May 24</strong>
-              <span>Evening ET, roughly 7:00-11:00 PM.</span>
+              <span>Evening ET, roughly 4–9 PM window.</span>
             </div>
             <div class="metric">
-              <small>Next 48h</small>
+              <small>Next 48h confidence</small>
               <strong>74%</strong>
-              <span>Conditional on already waiting 77.4 hours since the last stream.</span>
+              <span>77.4 h elapsed · 93rd percentile gap.</span>
             </div>
             <div class="metric">
               <small>Fallback</small>
               <strong>Mon May 25</strong>
-              <span>Most likely backup if he skips Sunday.</span>
+              <span>Most likely if he skips Sunday.</span>
+            </div>
+          </div>
+
+          <!-- Gap elapsed progress -->
+          <div class="elapsed-panel">
+            <div class="elapsed-head">
+              <span>Time since last stream</span>
+              <strong>77.4 h</strong>
+              <span class="elapsed-badge">≈ 93rd percentile</span>
+            </div>
+            <div class="elapsed-track">
+              <div class="elapsed-fill">
+                <div class="elapsed-cursor"></div>
+              </div>
+              <!-- ticks at 24h/48h/72h on a 0–96h scale -->
+              <div class="e-tick" style="left:25%">
+                <div class="e-tick-label">24h<br>median</div>
+              </div>
+              <div class="e-tick" style="left:50%">
+                <div class="e-tick-label">48h<br>p83</div>
+              </div>
+              <div class="e-tick" style="left:75%">
+                <div class="e-tick-label">72h<br>p93</div>
+              </div>
+              <div class="e-tick-label you" style="left:80.6%;top:13px;position:absolute;transform:translateX(-50%)">77.4h ↑<br>you</div>
+            </div>
+          </div>
+
+          <!-- Recent stream dots -->
+          <div class="stream-timeline">
+            <div class="stl-label">Recent streams</div>
+            <div class="stream-dots">
+              <div class="sitem">
+                <div class="sdot arc"></div>
+                <div class="sdot-info"><span class="d">May 18</span>Subnautica<br>finish · 7h<span class="tag arc">arc</span></div>
+              </div>
+              <div class="sitem">
+                <div class="sdot collab"></div>
+                <div class="sdot-info"><span class="d">May 19</span>Subnautica 2<br>collab · 5h<span class="tag collab">collab</span></div>
+              </div>
+              <div class="sitem">
+                <div class="sdot arc"></div>
+                <div class="sdot-info"><span class="d">May 20</span>Death Strand.<br>first time · 5h<span class="tag arc">arc</span></div>
+              </div>
+              <div class="sitem">
+                <div class="sdot arc"></div>
+                <div class="sdot-info"><span class="d">May 20</span>Death Strand.<br>session 2 · 4h<span class="tag arc">arc</span></div>
+              </div>
+              <div class="sitem">
+                <div class="sdot now"></div>
+                <div class="sdot-info"><span class="d g">+77.4h</span>waiting<br>since May 20<span class="tag now">← now</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stat chips -->
+          <div class="hero-stats">
+            <div class="hstat">
+              <span class="hstat-v" style="color:var(--green)">~20</span>
+              <span class="hstat-k">streams / month</span>
+            </div>
+            <div class="hstat">
+              <span class="hstat-v">24.3h</span>
+              <span class="hstat-k">median gap</span>
+            </div>
+            <div class="hstat">
+              <span class="hstat-v" style="color:var(--blue)">2,420</span>
+              <span class="hstat-k">exact streams</span>
+            </div>
+            <div class="hstat">
+              <span class="hstat-v" style="color:var(--gold)">77.9h</span>
+              <span class="hstat-k">p95 threshold</span>
             </div>
           </div>
         </div>
@@ -598,7 +842,7 @@
             <div class="gauge-top">
               <div>
                 <h2>Active-Regime Signal</h2>
-                <p class="muted">Sully gap curve + active-arc title/game state.</p>
+                <p class="muted">Sully gap survival + active-arc title/game state.</p>
               </div>
               <span class="live-dot" aria-hidden="true"></span>
             </div>
@@ -611,18 +855,41 @@
                 <div class="mini-signal"><span>risk</span><div class="mini-track"><div class="mini-fill" style="--w:17%;--c:var(--red)"></div></div><span>17</span></div>
               </div>
             </div>
-            <canvas class="signal-curve" id="signalCurve" width="360" height="92" aria-label="Signal probability curve"></canvas>
+            <canvas class="signal-curve" id="signalCurve" width="400" height="100" aria-label="Signal probability curve"></canvas>
             <div class="signal-chips">
               <div class="signal-chip"><strong>50%</strong><span>next 24h</span></div>
               <div class="signal-chip"><strong>74%</strong><span>next 48h</span></div>
               <div class="signal-chip"><strong>94%</strong><span>next 7d</span></div>
             </div>
           </div>
+
+          <!-- Active arc context -->
+          <div class="arc-card">
+            <div class="arc-card-kicker">Active arc</div>
+            <div class="arc-card-title">Death Stranding</div>
+            <div class="arc-card-meta">
+              <span>First-time playthrough</span>
+              <span>2 sessions so far</span>
+              <span>~9h streamed</span>
+            </div>
+            <div class="arc-bar">
+              <div class="arc-session">
+                <span>May 20 a</span>
+                <div class="arc-session-fill" style="--w:56%"></div>
+                <span>5h</span>
+              </div>
+              <div class="arc-session">
+                <span>May 20 b</span>
+                <div class="arc-session-fill" style="--w:44%"></div>
+                <span>4h</span>
+              </div>
+            </div>
+          </div>
         </aside>
       </div>
 
       <div class="source-note">
-        2,420 exact Sully streams · 548 title-semantic archive gaps · 37 recent exact title rows
+        2,420 exact Sully streams · 548 title-semantic archive gaps · 37 recent title rows · data: May 24, 2026
       </div>
     </header>
 
@@ -727,8 +994,26 @@
           <canvas id="gapChart" width="760" height="300" aria-label="Gap distribution chart"></canvas>
         </div>
         <div class="panel span-6">
-          <h3>Modern Monthly Baseline</h3>
+          <h3>Monthly Stream Count</h3>
           <canvas id="monthChart" width="1100" height="320" aria-label="Monthly stream counts chart"></canvas>
+        </div>
+        <div class="panel span-12">
+          <h3>Year-by-Year Volume</h3>
+          <canvas id="yearChart" width="1180" height="240" aria-label="Yearly stream counts chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Schedule Patterns</h2>
+      <div class="grid">
+        <div class="panel span-6">
+          <h3>Day of Week <span class="muted" style="font-size:13px;font-weight:400">(UTC — Mon UTC ≈ Sun night ET)</span></h3>
+          <canvas id="dowChart" width="760" height="260" aria-label="Day of week chart"></canvas>
+        </div>
+        <div class="panel span-6">
+          <h3>Start Hour <span class="muted" style="font-size:13px;font-weight:400">(UTC — peak 20–23 h ≈ 4–7 PM ET)</span></h3>
+          <canvas id="hourChart" width="760" height="260" aria-label="Start hour chart"></canvas>
         </div>
       </div>
     </section>
@@ -761,6 +1046,9 @@
   </main>
 
   <script>
+    const D = window.__SD || {};
+    const stats = D.stats || {};
+
     const css = getComputedStyle(document.documentElement);
     const colors = {
       green: css.getPropertyValue('--green').trim(),
@@ -793,26 +1081,10 @@
       ctx.stroke();
     }
 
-    function drawGapChart() {
-      const canvas = document.querySelector('#gapChart');
-      const { ctx, width, height } = setupCanvas(canvas);
-      const data = [
-        { label: '0-12h', value: 240, color: colors.green },
-        { label: '12-24h', value: 859, color: colors.green },
-        { label: '1-2d', value: 907, color: colors.blue },
-        { label: '2-3d', value: 235, color: colors.gold },
-        { label: '3-5d', value: 142, color: colors.gold },
-        { label: '5-7d', value: 19, color: colors.red },
-        { label: '7+d', value: 17, color: colors.violet }
-      ];
-      const left = 54;
-      const bottom = 42;
-      const top = 18;
-      const max = 1000;
-      drawAxes(ctx, width, height, left, bottom);
-      ctx.strokeStyle = 'rgba(153, 170, 173, .16)';
+    function drawGrid(ctx, width, height, left, bottom, top, ticks, max) {
+      ctx.strokeStyle = 'rgba(153,170,173,.14)';
       ctx.lineWidth = 1;
-      [250, 500, 750, 1000].forEach(tick => {
+      ticks.forEach(tick => {
         const y = height - bottom - (height - bottom - top) * (tick / max);
         ctx.beginPath();
         ctx.moveTo(left, y);
@@ -823,10 +1095,77 @@
         ctx.textAlign = 'right';
         ctx.fillText(tick, left - 8, y + 4);
       });
-      const barW = Math.max(34, (width - left - 38) / data.length - 22);
+    }
+
+    // Catmull-Rom spline through pts = [[x,y], ...]
+    function smoothPath(ctx, pts) {
+      if (pts.length < 2) return;
+      ctx.moveTo(pts[0][0], pts[0][1]);
+      for (let i = 0; i < pts.length - 1; i++) {
+        const p0 = pts[Math.max(0, i - 1)];
+        const p1 = pts[i];
+        const p2 = pts[i + 1];
+        const p3 = pts[Math.min(pts.length - 1, i + 2)];
+        const t = 0.45;
+        const cp1x = p1[0] + (p2[0] - p0[0]) * t / 3;
+        const cp1y = p1[1] + (p2[1] - p0[1]) * t / 3;
+        const cp2x = p2[0] - (p3[0] - p1[0]) * t / 3;
+        const cp2y = p2[1] - (p3[1] - p1[1]) * t / 3;
+        ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2[0], p2[1]);
+      }
+    }
+
+    function drawGapChart() {
+      const canvas = document.querySelector('#gapChart');
+      const { ctx, width, height } = setupCanvas(canvas);
+      const bins = stats.sully_gap_hours?.bins || {};
+      const data = [
+        { label: '0-12h',  value: bins['0-12h']  || 240, color: colors.green },
+        { label: '12-24h', value: bins['12-24h'] || 859, color: colors.green },
+        { label: '1-2d',   value: bins['1-2d']   || 907, color: colors.blue },
+        { label: '2-3d',   value: bins['2-3d']   || 235, color: colors.gold },
+        { label: '3-5d',   value: bins['3-5d']   || 142, color: colors.gold },
+        { label: '5-7d',   value: bins['5-7d']   || 19,  color: colors.red },
+        { label: '7+d',    value: bins['7+d']    || 17,  color: colors.violet }
+      ];
+      const left = 54, bottom = 42, top = 18, rightPad = 48;
+      const barMax = 1000;
+      const axisRight = width - rightPad;
+
+      ctx.strokeStyle = colors.line;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(left, 16);
+      ctx.lineTo(left, height - bottom);
+      ctx.lineTo(axisRight, height - bottom);
+      ctx.stroke();
+
+      drawGrid(ctx, axisRight + 10, height, left, bottom, top, [250, 500, 750, 1000], barMax);
+
+      // Right axis (cumulative %)
+      ctx.strokeStyle = colors.line;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(axisRight, top);
+      ctx.lineTo(axisRight, height - bottom);
+      ctx.stroke();
+      [25, 50, 75, 100].forEach(pct => {
+        const y = height - bottom - (height - bottom - top) * (pct / 100);
+        ctx.fillStyle = 'rgba(173,145,255,.55)';
+        ctx.font = '11px system-ui';
+        ctx.textAlign = 'left';
+        ctx.fillText(pct + '%', axisRight + 6, y + 4);
+      });
+
+      const step = (axisRight - left - 28) / data.length;
+      const barW = Math.max(28, step - 18);
+      const total = data.reduce((s, d) => s + d.value, 0);
+      let cum = 0;
+      const cumCoords = [[left + 14, height - bottom]]; // start at 0%
+
       data.forEach((d, i) => {
-        const x = left + 20 + i * ((width - left - 38) / data.length);
-        const h = (height - bottom - top) * (d.value / max);
+        const x = left + 14 + i * step;
+        const h = (height - bottom - top) * (d.value / barMax);
         const y = height - bottom - h;
         ctx.fillStyle = d.color;
         ctx.fillRect(x, y, barW, h);
@@ -837,49 +1176,68 @@
         ctx.fillStyle = colors.muted;
         ctx.font = '700 12px system-ui';
         ctx.fillText(d.label, x + barW / 2, height - 16);
+
+        cum += d.value;
+        const cumPct = cum / total * 100;
+        const cumX = x + barW;
+        const cumY = height - bottom - (height - bottom - top) * (cumPct / 100);
+        cumCoords.push([cumX, cumY, cumPct]);
       });
+
+      // Cumulative line
+      ctx.strokeStyle = colors.violet;
+      ctx.lineWidth = 2;
+      ctx.setLineDash([5, 3]);
+      ctx.beginPath();
+      smoothPath(ctx, cumCoords);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Label key cumulative milestones
+      cumCoords.slice(1).forEach(([x, y, pct], i) => {
+        if (i === 1 || i === 2 || i === cumCoords.length - 2) {
+          ctx.fillStyle = colors.violet;
+          ctx.beginPath();
+          ctx.arc(x, y, 4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.font = '700 11px system-ui';
+          ctx.textAlign = 'center';
+          const labelY = i === 1 ? y - 10 : Math.max(12, y - 10);
+          ctx.fillText(Math.round(pct) + '%', x, labelY);
+        }
+      });
+
       ctx.fillStyle = colors.muted;
       ctx.font = '12px system-ui';
       ctx.textAlign = 'left';
-      ctx.fillText('count of gaps', left, 14);
+      ctx.fillText('gap count', left, 14);
+      ctx.textAlign = 'right';
+      ctx.fillStyle = 'rgba(173,145,255,.7)';
+      ctx.fillText('cumulative', axisRight - 4, 14);
     }
 
     function drawMonthChart() {
       const canvas = document.querySelector('#monthChart');
       const { ctx, width, height } = setupCanvas(canvas);
-      const months = [
-        ['2024-12',19], ['2025-01',24], ['2025-02',21], ['2025-03',21],
-        ['2025-04',17], ['2025-05',24], ['2025-06',16], ['2025-07',16],
-        ['2025-08',22], ['2025-09',21], ['2025-10',17], ['2025-11',16],
-        ['2025-12',18], ['2026-01',18], ['2026-02',14], ['2026-03',21],
-        ['2026-04',17], ['2026-05',14]
-      ];
-      const left = 44;
-      const bottom = 56;
-      const top = 18;
-      const max = 26;
+      const raw = stats.sully_monthly_counts || {};
+      const all = Object.entries(raw).sort(([a], [b]) => a.localeCompare(b));
+      const months = all.slice(-24); // last 24 months
+      const left = 44, bottom = 56, top = 18;
+      const max = 28;
       drawAxes(ctx, width, height, left, bottom);
-      ctx.strokeStyle = 'rgba(153, 170, 173, .16)';
-      ctx.lineWidth = 1;
-      [6, 12, 18, 24].forEach(tick => {
-        const y = height - bottom - (height - bottom - top) * (tick / max);
-        ctx.beginPath();
-        ctx.moveTo(left, y);
-        ctx.lineTo(width - 10, y);
-        ctx.stroke();
-        ctx.fillStyle = colors.muted;
-        ctx.font = '12px system-ui';
-        ctx.textAlign = 'right';
-        ctx.fillText(tick, left - 8, y + 4);
-      });
-      const barW = Math.max(12, (width - left - 28) / months.length - 6);
+      drawGrid(ctx, width, height, left, bottom, top, [6, 12, 18, 24], max);
+      const step = (width - left - 28) / months.length;
+      const barW = Math.max(10, step - 6);
       months.forEach(([label, value], i) => {
-        const step = (width - left - 28) / months.length;
         const x = left + 12 + i * step;
         const h = (height - bottom - top) * (value / max);
         const y = height - bottom - h;
-        ctx.fillStyle = value >= 20 ? colors.green : value >= 16 ? colors.blue : value >= 13 ? colors.gold : colors.red;
+        ctx.fillStyle = value >= 20 ? colors.green : value >= 16 ? colors.blue : value >= 12 ? colors.gold : colors.red;
         ctx.fillRect(x, y, barW, h);
+        ctx.fillStyle = colors.ink;
+        ctx.font = '700 11px system-ui';
+        ctx.textAlign = 'center';
+        ctx.fillText(value, x + barW / 2, y - 5);
         ctx.save();
         ctx.translate(x + barW / 2, height - 17);
         ctx.rotate(-Math.PI / 5);
@@ -891,19 +1249,60 @@
       });
     }
 
+    function drawYearChart() {
+      const canvas = document.querySelector('#yearChart');
+      if (!canvas) return;
+      const { ctx, width, height } = setupCanvas(canvas);
+      const raw = stats.sully_yearly_counts || {};
+      const entries = Object.entries(raw).sort(([a], [b]) => a.localeCompare(b));
+      if (!entries.length) return;
+      const left = 44, bottom = 42, top = 18;
+      const yMax = 420;
+      drawAxes(ctx, width, height, left, bottom);
+      drawGrid(ctx, width, height, left, bottom, top, [100, 200, 300, 400], yMax);
+
+      const currentYear = String(new Date().getFullYear());
+      const step = (width - left - 28) / entries.length;
+      const barW = Math.max(22, step - 10);
+
+      entries.forEach(([year, value], i) => {
+        const x = left + 12 + i * step;
+        const isPartial = year === currentYear;
+        const yr = parseInt(year, 10);
+        let c = yr <= 2020 ? colors.green : yr <= 2022 ? colors.red : colors.blue;
+        if (isPartial) c = colors.gold;
+
+        const h = (height - bottom - top) * (value / yMax);
+        const y = height - bottom - h;
+        ctx.globalAlpha = isPartial ? 0.65 : 1;
+        ctx.fillStyle = c;
+        ctx.fillRect(x, y, barW, h);
+        ctx.globalAlpha = 1;
+
+        ctx.fillStyle = colors.ink;
+        ctx.font = '700 11px system-ui';
+        ctx.textAlign = 'center';
+        ctx.fillText(value, x + barW / 2, y - 5);
+
+        ctx.fillStyle = colors.muted;
+        ctx.font = '700 11px system-ui';
+        ctx.fillText(year.slice(2), x + barW / 2, height - 16);
+      });
+
+      ctx.fillStyle = colors.muted;
+      ctx.font = '11px system-ui';
+      ctx.textAlign = 'left';
+      ctx.fillText('streams/year  ·  green = growth era  ·  red = decline  ·  blue = recovery  ·  gold = partial year', left, 14);
+    }
+
     function drawSignalCurve() {
       const canvas = document.querySelector('#signalCurve');
       const { ctx, width, height } = setupCanvas(canvas);
-      const points = [
-        ['now', 0],
-        ['24h', 50.4],
-        ['48h', 74.0],
-        ['7d', 94.3]
-      ];
-      const padX = 26;
-      const padY = 14;
+      const points = [['now', 0], ['24h', 50.4], ['48h', 74.0], ['7d', 94.3]];
+      const padX = 32, padY = 14;
       ctx.clearRect(0, 0, width, height);
-      ctx.strokeStyle = 'rgba(153, 170, 173, .16)';
+
+      ctx.strokeStyle = 'rgba(153,170,173,.14)';
       ctx.lineWidth = 1;
       [25, 50, 75].forEach(tick => {
         const y = height - padY - (height - padY * 2) * (tick / 100);
@@ -912,23 +1311,39 @@
         ctx.lineTo(width - padX, y);
         ctx.stroke();
       });
+
       const coords = points.map(([label, value], i) => [
         padX + (width - padX * 2) * (i / (points.length - 1)),
         height - padY - (height - padY * 2) * (value / 100),
         label,
         value
       ]);
-      const gradient = ctx.createLinearGradient(0, 0, width, 0);
-      gradient.addColorStop(0, colors.blue);
-      gradient.addColorStop(1, colors.green);
-      ctx.strokeStyle = gradient;
-      ctx.lineWidth = 3;
+      const pts = coords.map(c => [c[0], c[1]]);
+
+      // Fill area under curve
+      const fillGrad = ctx.createLinearGradient(0, 0, 0, height);
+      fillGrad.addColorStop(0, 'rgba(98,211,148,.16)');
+      fillGrad.addColorStop(1, 'rgba(98,211,148,.02)');
       ctx.beginPath();
-      coords.forEach(([x, y], i) => {
-        if (i === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      });
+      ctx.moveTo(pts[0][0], height - padY);
+      ctx.lineTo(pts[0][0], pts[0][1]);
+      smoothPath(ctx, pts);
+      ctx.lineTo(pts[pts.length - 1][0], height - padY);
+      ctx.closePath();
+      ctx.fillStyle = fillGrad;
+      ctx.fill();
+
+      // Curve stroke
+      const lineGrad = ctx.createLinearGradient(0, 0, width, 0);
+      lineGrad.addColorStop(0, colors.blue);
+      lineGrad.addColorStop(1, colors.green);
+      ctx.strokeStyle = lineGrad;
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      smoothPath(ctx, pts);
       ctx.stroke();
+
+      // Dots and labels
       coords.forEach(([x, y, label, value]) => {
         ctx.fillStyle = colors.green;
         ctx.beginPath();
@@ -940,84 +1355,184 @@
         ctx.fillText(label, x, height - 3);
         if (value > 0) {
           ctx.fillStyle = colors.ink;
-          ctx.fillText(`${Math.round(value)}%`, x, Math.max(12, y - 8));
+          ctx.fillText(Math.round(value) + '%', x, Math.max(12, y - 8));
         }
       });
     }
 
+    function drawDowChart() {
+      const canvas = document.querySelector('#dowChart');
+      if (!canvas) return;
+      const { ctx, width, height } = setupCanvas(canvas);
+      const dowData = stats.dow_hour?.dow;
+      if (!dowData) return;
+
+      const labels    = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+      const etApprox  = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']; // UTC day → approx ET night
+      const values = labels.map(l => dowData[l] || 0);
+      const max = Math.max(...values);
+
+      const left = 44, bottom = 52, top = 18;
+      drawAxes(ctx, width, height, left, bottom);
+      const gridMax = Math.ceil(max / 50) * 50 + 50;
+      drawGrid(ctx, width, height, left, bottom, top,
+        [100, 200, 300, 400].filter(t => t <= gridMax), gridMax);
+
+      const step = (width - left - 28) / 7;
+      const barW = Math.max(36, step - 16);
+
+      values.forEach((v, i) => {
+        const x = left + 12 + i * step;
+        // Mon UTC (i=0) = Sun night ET — highlight weekstart + Mon
+        const isHighlight = i === 0 || i >= 5;
+        const c = isHighlight ? colors.green : colors.blue;
+        const h = (height - bottom - top) * (v / gridMax);
+        const y = height - bottom - h;
+        ctx.fillStyle = c;
+        ctx.fillRect(x, y, barW, h);
+        ctx.fillStyle = colors.ink;
+        ctx.font = '700 12px system-ui';
+        ctx.textAlign = 'center';
+        ctx.fillText(v, x + barW / 2, y - 6);
+        ctx.fillStyle = colors.muted;
+        ctx.font = '700 12px system-ui';
+        ctx.fillText(labels[i], x + barW / 2, height - 30);
+        ctx.fillStyle = 'rgba(153,170,173,.55)';
+        ctx.font = '10px system-ui';
+        ctx.fillText('≈' + etApprox[i] + ' ET', x + barW / 2, height - 14);
+      });
+
+      ctx.fillStyle = colors.muted;
+      ctx.font = '11px system-ui';
+      ctx.textAlign = 'left';
+      ctx.fillText('green = Mon UTC (Sun night ET) · Sat/Sun UTC', left, 14);
+    }
+
+    function drawHourChart() {
+      const canvas = document.querySelector('#hourChart');
+      if (!canvas) return;
+      const { ctx, width, height } = setupCanvas(canvas);
+      const hourData = stats.dow_hour?.hour_utc;
+      if (!hourData) return;
+
+      const values = Array.from({ length: 24 }, (_, h) => hourData[String(h)] || 0);
+      const max = Math.max(...values);
+      const left = 44, bottom = 42, top = 18;
+      drawAxes(ctx, width, height, left, bottom);
+      const gridMax = Math.ceil(max / 50) * 50 + 50;
+      drawGrid(ctx, width, height, left, bottom, top,
+        [50, 100, 150, 200, 250].filter(t => t <= gridMax), gridMax);
+
+      const step = (width - left - 16) / 24;
+      const barW = Math.max(4, step - 2);
+
+      values.forEach((v, h) => {
+        const x = left + 4 + h * step;
+        // 20-23 UTC ≈ 4-7 PM ET (peak zone); 0-4 UTC ≈ 8 PM-midnight ET
+        const isEveningET = (h >= 19 && h <= 23) || h <= 4;
+        const c = isEveningET ? colors.green : colors.blue;
+        const bH = (height - bottom - top) * (v / gridMax);
+        const y = height - bottom - bH;
+        ctx.fillStyle = c;
+        ctx.fillRect(x, y, barW, bH);
+        if (h % 4 === 0) {
+          ctx.fillStyle = colors.muted;
+          ctx.font = '11px system-ui';
+          ctx.textAlign = 'center';
+          ctx.fillText(String(h).padStart(2, '0'), x + barW / 2, height - 16);
+        }
+      });
+
+      ctx.fillStyle = colors.muted;
+      ctx.font = '11px system-ui';
+      ctx.textAlign = 'left';
+      ctx.fillText('stream start hour UTC  ·  green ≈ ET evening window', left, 14);
+    }
+
     function buildFeatureBars() {
       const target = document.querySelector('#featureBars');
-      const data = [
-        ['Gameplay / arc', 60.2, '1.0d median, 4.0d p90', colors.green],
-        ['Collab', 34.5, '2.0d median, 5.0d p90', colors.violet],
-        ['Food / cooking', 15.1, '1.0d median, 5.0d p90', colors.gold],
-        ['Travel / IRL', 10.8, '2.0d median, 5.0d p90', colors.blue],
-        ['Recovery risk', 5.1, '2.0d median, 5.0d p90', colors.red],
-        ['Challenge', 3.3, '1.0d median, 4.3d p90', colors.red],
-        ['Return marker', 3.3, '1.5d median, 5.0d p90', colors.green],
-        ['Event / drops', 1.5, '1.0d median, 2.3d p90', colors.gold]
-      ];
-      target.innerHTML = data.map(([name, share, label, color]) => `
+      if (!target) return;
+      const features = stats.semantic_analysis?.title_analysis?.features || {};
+      const cfg = {
+        gameplay_arc:   ['Gameplay / arc',  colors.green],
+        collab:         ['Collab',           colors.violet],
+        food_cooking:   ['Food / cooking',   colors.gold],
+        travel_irl:     ['Travel / IRL',     colors.blue],
+        recovery_risk:  ['Recovery risk',    colors.red],
+        challenge:      ['Challenge',        colors.red],
+        return_marker:  ['Return marker',    colors.green],
+        event_drops:    ['Event / drops',    colors.gold],
+      };
+      const data = Object.entries(cfg).map(([key, [name, color]]) => {
+        const f = features[key] || {};
+        return { name, share: f.share || 0, median: f.median_gap_days || 0, p90: f.p90_gap_days || 0, color };
+      }).filter(d => d.share > 0).sort((a, b) => b.share - a.share);
+      target.innerHTML = data.map(d => `
         <div class="bar">
-          <strong>${name}</strong>
-          <div class="track"><div class="fill" style="--w:${share}%;--c:${color}"></div></div>
-          <span class="muted">${share}% · ${label}</span>
-        </div>
-      `).join('');
+          <strong>${d.name}</strong>
+          <div class="track"><div class="fill" style="--w:${d.share}%;--c:${d.color}"></div></div>
+          <span class="muted">${d.share}% · ${d.median}d median, ${d.p90}d p90</span>
+        </div>`).join('');
     }
 
     function buildNamedBars(selector, data, maxValue) {
       const target = document.querySelector(selector);
+      if (!target) return;
       target.innerHTML = data.map(([name, value, label, color]) => {
-        const width = Math.max(2, Math.min(100, (value / maxValue) * 100));
-        return `
-          <div class="bar">
-            <strong>${name}</strong>
-            <div class="track"><div class="fill" style="--w:${width}%;--c:${color}"></div></div>
-            <span class="muted">${label}</span>
-          </div>
-        `;
+        const w = Math.max(2, Math.min(100, (value / maxValue) * 100));
+        return `<div class="bar">
+          <strong>${name}</strong>
+          <div class="track"><div class="fill" style="--w:${w}%;--c:${color}"></div></div>
+          <span class="muted">${label}</span>
+        </div>`;
       }).join('');
     }
 
     function buildSemanticBars() {
-      buildNamedBars('#sentimentBars', [
-        ['Neutral titles', 94.2, '94.2% · 1.0d median, 5.0d p90', colors.blue],
-        ['Negative titles', 4.9, '4.9% · 1.0d median, 4.0d p90', colors.red],
-        ['Positive titles', 0.9, '0.9% · 1.0d median, 3.2d p90', colors.green],
-        ['High intensity', 4.0, '4.0% · 1.0d median, 2.0d p90', colors.violet],
-        ['Medium intensity', 59.7, '59.7% · 1.0d median, 4.0d p90', colors.gold],
-        ['Low intensity', 36.3, '36.3% · 2.0d median, 6.0d p90', colors.muted]
-      ], 100);
+      const ta = stats.semantic_analysis?.title_analysis || {};
+      const ga = stats.semantic_analysis?.game_analysis || {};
 
-      buildNamedBars('#gameCategoryBars', [
-        ['Social sandbox/RP', 43.5, '43.5% · 23.9h median, 48.3h p90', colors.green],
-        ['Other games', 27.4, '27.4% · 25.4h median, 72.2h p90', colors.blue],
-        ['Just Chatting only', 19.1, '19.1% · 26.5h median, 72.6h p90', colors.violet],
-        ['Variety stack', 9.3, '9.3% · 24.7h median, 65.6h p90', colors.gold],
-        ['Story/survival arc', 0.7, '0.7% · 23.8h median, 62.8h p90', colors.red]
-      ], 45);
+      // Sentiment + intensity
+      const sent = ta.sentiment || {};
+      const intens = ta.intensity || {};
+      const sentRows = [
+        ['Neutral titles',   sent.neutral?.share   || 94.2, `${sent.neutral?.share   || 94.2}% · ${sent.neutral?.median_gap_days   || 1}d median`, colors.blue],
+        ['Negative titles',  sent.negative?.share  || 4.9,  `${sent.negative?.share  || 4.9}% · ${sent.negative?.median_gap_days  || 1}d median`, colors.red],
+        ['Positive titles',  sent.positive?.share  || 0.9,  `${sent.positive?.share  || 0.9}% · ${sent.positive?.median_gap_days  || 1}d median`, colors.green],
+        ['High intensity',   intens.high?.share    || 4.0,  `${intens.high?.share    || 4}% · ${intens.high?.median_gap_days    || 1}d median`, colors.violet],
+        ['Medium intensity', intens.medium?.share  || 59.7, `${intens.medium?.share  || 59.7}% · ${intens.medium?.median_gap_days  || 1}d median`, colors.gold],
+        ['Low intensity',    intens.low?.share     || 36.3, `${intens.low?.share     || 36.3}% · ${intens.low?.median_gap_days     || 2}d median`, colors.muted],
+      ];
+      buildNamedBars('#sentimentBars', sentRows, 100);
 
-      buildNamedBars('#topGameBars', [
-        ['Just Chatting', 1544, '1,544 stream rows', colors.green],
-        ['Grand Theft Auto V', 897, '897 stream rows', colors.blue],
-        ['IRL', 153, '153 stream rows', colors.gold],
-        ['VRChat', 102, '102 stream rows', colors.violet],
-        ['Rust', 63, '63 stream rows', colors.red],
-        ['World of Warcraft', 49, '49 stream rows', colors.blue],
-        ['Unlisted on Twitch', 44, '44 stream rows', colors.muted],
-        ['Sea of Thieves', 22, '22 stream rows', colors.gold],
-        ['Minecraft', 21, '21 stream rows', colors.green],
-        ['Weed Shop 3', 21, '21 stream rows', colors.violet],
-        ['Poker', 20, '20 stream rows', colors.red],
-        ['Subnautica', 19, '19 stream rows', colors.blue]
-      ], 1544);
+      // Game categories
+      const cats = ga.categories || {};
+      const catOrder = ['Social sandbox/RP','Other games','Just Chatting only','Variety stack','Story/survival arc'];
+      const catColors = [colors.green, colors.blue, colors.violet, colors.gold, colors.red];
+      const catRows = catOrder.map((name, i) => {
+        const c = cats[name] || {};
+        return [name, c.share || 0, `${c.share || 0}% · ${c.median_gap_hours || 0}h median, ${c.p90_gap_hours || 0}h p90`, catColors[i]];
+      });
+      buildNamedBars('#gameCategoryBars', catRows, Math.max(...catRows.map(r => r[1])) * 1.1 || 45);
+
+      // Top games
+      const topGames = (ga.top_games || []).slice(0, 12);
+      const gameColors = [colors.green, colors.blue, colors.gold, colors.violet, colors.red,
+                          colors.blue, colors.muted, colors.gold, colors.green, colors.violet, colors.red, colors.blue];
+      const gameMax = topGames[0]?.count || 1;
+      const gameRows = topGames.map((g, i) => [
+        g.game, g.count, g.count.toLocaleString() + ' streams', gameColors[i % gameColors.length]
+      ]);
+      buildNamedBars('#topGameBars', gameRows, gameMax);
     }
 
     function render() {
       drawGapChart();
       drawMonthChart();
+      drawYearChart();
       drawSignalCurve();
+      drawDowChart();
+      drawHourChart();
       buildFeatureBars();
       buildSemanticBars();
     }

@@ -283,6 +283,26 @@ def exact_gap_hours(rows):
     ]
 
 
+def compute_dow_hour(rows):
+    dow_labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    dow_counts = Counter()
+    hour_counts = Counter()
+    for row in rows:
+        started = row.get("started_at")
+        if not started:
+            continue
+        try:
+            dt = datetime.fromisoformat(started.replace("Z", "+00:00"))
+            dow_counts[dow_labels[dt.weekday()]] += 1
+            hour_counts[dt.hour] += 1
+        except ValueError:
+            continue
+    return {
+        "dow": {label: dow_counts[label] for label in dow_labels},
+        "hour_utc": {str(h): hour_counts[h] for h in range(24)},
+    }
+
+
 def mean(values):
     return sum(values) / len(values) if values else 0
 
@@ -518,6 +538,7 @@ def main():
             "archive_monthly_counts": dict(sorted(monthly.items())),
             "sully_monthly_counts": dict(sorted(sully_monthly.items())),
             "sully_yearly_counts": dict(sorted(sully_yearly.items())),
+            "dow_hour": compute_dow_hour(sully_rows),
             "semantic_analysis": {
                 "title_analysis": {k: v for k, v in title_analysis.items() if k != "rows"},
                 "game_analysis": game_analysis,
@@ -530,6 +551,9 @@ def main():
     }
 
     (DATA_DIR / "stream-data.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
+    dash = {"generated_at": payload["generated_at"], "sources": payload["sources"], "stats": payload["stats"]}
+    (DATA_DIR / "stream-data.js").write_text("window.__SD=" + json.dumps(dash) + ";", encoding="utf-8")
 
     with (DATA_DIR / "exact-streams.csv").open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
