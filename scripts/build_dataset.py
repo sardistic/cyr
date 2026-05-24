@@ -4,7 +4,7 @@ import json
 import re
 import subprocess
 from collections import Counter, defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
@@ -283,6 +283,40 @@ def exact_gap_hours(rows):
     ]
 
 
+def parse_ended_at(s):
+    """Parse SullyGnome ended_at strings like 'Sunday 24th May 2026 06:45' → UTC datetime."""
+    if not s:
+        return None
+    try:
+        return datetime.strptime(
+            re.sub(r"(\d+)(st|nd|rd|th)", r"\1", s), "%A %d %B %Y %H:%M"
+        ).replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
+
+
+def end_to_start_gap_hours(rows):
+    """Gap from each stream's end to the next stream's start, in hours."""
+    pairs = []
+    for r in rows:
+        if not r.get("started_at"):
+            continue
+        started = datetime.fromisoformat(r["started_at"].replace("Z", "+00:00"))
+        ended = parse_ended_at(r.get("ended_at", ""))
+        pairs.append((started, ended))
+    pairs.sort(key=lambda x: x[0])
+    gaps = []
+    for i in range(1, len(pairs)):
+        prev_ended = pairs[i - 1][1]
+        cur_started = pairs[i][0]
+        if prev_ended is None:
+            continue
+        g = (cur_started - prev_ended).total_seconds() / 3600
+        if g >= 0:
+            gaps.append(round(g, 3))
+    return gaps
+
+
 def compute_gap_cdf(gap_values):
     """Sparse CDF: [[hours, cumulative_pct], ...] used by the dashboard for live interpolation."""
     if not gap_values:
@@ -516,7 +550,7 @@ def main():
     archive_dates = [g["date"] for g in archive_groups]
     archive_gaps, archive_bins = gap_bins_from_dates(archive_dates)
     exact_gaps = exact_gap_hours(exact_rows)
-    sully_gap_values = exact_gap_hours(sully_rows)
+    sully_gap_values = end_to_start_gap_hours(sully_rows)
     title_analysis = analyze_titles(archive_groups)
     game_analysis = analyze_games(sully_rows)
     monthly = Counter(d[:7] for d in archive_dates)
@@ -561,6 +595,9 @@ def main():
             "gap_cdf": compute_gap_cdf(sully_gap_values),
             "last_stream": (lambda r: {
                 "started_at": r.get("started_at"),
+                "ended_at_iso": (lambda e: e.isoformat() if e else None)(
+                    parse_ended_at(r.get("ended_at", ""))
+                ),
                 "games": r.get("games", []),
                 "duration_label": r.get("duration_label", ""),
             })(sorted(

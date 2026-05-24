@@ -820,13 +820,13 @@
       <div class="hero">
         <div>
           <h1>When does cyr go live next?</h1>
-          <p class="lede" id="hero-lede">Last prediction hit: streamed Sun May 24 ~9 PM ET. Arc paused for a JC session — median return puts next stream tonight.</p>
+          <p class="lede" id="hero-lede">Last stream ended Sun May 24 at 2:45 AM ET. End-to-start median gap is 17.8h — expected return tonight.</p>
 
           <div class="prediction">
             <div class="metric">
               <small>Top Prediction</small>
               <strong id="pred-label">Tonight</strong>
-              <span id="pred-label-sub">Sun May 24, ~9 PM ET. Median gap lands exactly here.</span>
+              <span id="pred-label-sub">End-to-start median gap from last stream end.</span>
             </div>
             <div class="metric">
               <small id="prob-now-label">Probability · tonight</small>
@@ -843,7 +843,7 @@
           <!-- Gap elapsed progress -->
           <div class="elapsed-panel">
             <div class="elapsed-head">
-              <span>Time since last stream</span>
+              <span>Time since last stream ended</span>
               <strong id="elapsed-h">17 h</strong>
               <span class="elapsed-badge" id="elapsed-pct">≈ 25th percentile</span>
             </div>
@@ -900,15 +900,15 @@
               <span class="hstat-k">streams / month</span>
             </div>
             <div class="hstat">
-              <span class="hstat-v">24.3h</span>
-              <span class="hstat-k">median gap</span>
+              <span class="hstat-v">17.8h</span>
+              <span class="hstat-k">median gap (end→start)</span>
             </div>
             <div class="hstat">
               <span class="hstat-v" style="color:var(--blue)">2,421</span>
               <span class="hstat-k">exact streams</span>
             </div>
             <div class="hstat">
-              <span class="hstat-v" style="color:var(--gold)">77.9h</span>
+              <span class="hstat-v" style="color:var(--gold)">73.6h</span>
               <span class="hstat-k">p95 threshold</span>
             </div>
           </div>
@@ -922,28 +922,25 @@
                 <p>We pulled 2,421 exact stream start timestamps from SullyGnome (Jan 2017 – May 2026). Each one is the moment cyr's Twitch broadcast actually went live.</p>
               </div>
               <div class="rationale-step">
-                <h4>Step 2 — Gap Distribution</h4>
-                <p>For every consecutive pair of streams we measure how many hours elapsed between starts, producing 2,420 gap observations. This is the core distribution the forecast draws from.</p>
-                <div class="rationale-math">median = 24.3h   ·   mean = 33.7h   ·   p95 = 77.9h
-25th pct ≈ 17h   ·   75th pct ≈ 40h</div>
+                <h4>Step 2 — Gap Distribution (end-to-start)</h4>
+                <p>For every consecutive pair of streams we measure the gap from when the previous stream <em>ended</em> to when the next one <em>started</em>. This is more meaningful than start-to-start because it measures actual rest time — not contaminated by how long each session ran.</p>
+                <div class="rationale-math">median = 17.8h  ·  mean = 27.8h  ·  p95 = 73.6h
+p25 ≈ 13h  ·  p50 ≈ 17.8h  ·  p75 ≈ 31.5h</div>
               </div>
               <div class="rationale-step">
                 <h4>Step 3 — Where We Are Right Now</h4>
-                <p>Last stream started May 24 at 00:50 UTC. 17 hours have elapsed. Only 25% of historical gaps are shorter than 17h, meaning we're at the 25th percentile. The other 75% of gaps are longer than where we currently sit — so the bulk of the probability mass is still in front of us.</p>
+                <p>The last stream ended May 24 at 06:45 UTC (2:45 AM EDT). The elapsed bar above shows how far into the end-to-start gap distribution we currently sit. The percentile tells you what fraction of historical gaps ended before this point — updated live every minute.</p>
               </div>
               <div class="rationale-step">
                 <h4>Step 4 — Conditional vs Unconditional Probability</h4>
-                <p>The raw survival function says 63% chance of a stream within 24h of the last start — that's unconditional. But since we already know 17h passed with no stream, we update:</p>
-                <div class="rationale-math">P(stream tonight | 17h elapsed already)
-= [P(gap ≤ 24h) − P(gap ≤ 17h)] ÷ P(gap > 17h)
-= (63% − 25%) ÷ (100% − 25%)
-= 38% ÷ 75%
-≈ <strong>51%</strong> for the ~7h window remaining tonight</div>
-                <p style="margin-top:8px">Same logic for tomorrow: (86% − 25%) ÷ 75% ≈ <strong>81%</strong>. This is why the chips show ~51% and ~81%, not 63% and 86%.</p>
+                <p>The raw survival function gives the probability of a stream within any future window from the last stream end. Once time has elapsed without a stream, we condition on having already survived that long:</p>
+                <div class="rationale-math">P(stream before T more hours | already waited E hours)
+= [P(gap ≤ E+T) − P(gap ≤ E)] ÷ [1 − P(gap ≤ E)]</div>
+                <p style="margin-top:8px">The chips and metric cards always show this conditional probability, updated live from your current elapsed time.</p>
               </div>
               <div class="rationale-step">
-                <h4>Step 5 — The "Tonight ~9 PM ET" Point Estimate</h4>
-                <p>The median gap (24.3h) added to the last stream start (00:50 UTC May 24) lands at 01:11 UTC May 25 = ~9:11 PM EDT May 24. That's the single most probable moment — a median estimate, not a hard window.</p>
+                <h4>Step 5 — The Point Estimate</h4>
+                <p>Median end-to-start gap (17.8h) added to last stream end (06:45 UTC May 24) = ~00:30 UTC May 25 = ~8:30 PM EDT May 24. That's the single most probable next-stream moment — a median estimate, not a guaranteed window.</p>
               </div>
               <div class="rationale-step">
                 <h4>Step 6 — The Signal Score (55/100)</h4>
@@ -954,10 +951,6 @@
 ───────────────────────────────────────────────
 composite                               ≈ <strong>55</strong></div>
                 <p style="margin-top:8px">Title/game score is depressed (46) because Death Stranding is on pause and the May 24 session was Just Chatting — a break signal rather than arc continuation.</p>
-              </div>
-              <div class="rationale-step">
-                <h4>Caveat — Start-to-Start Gaps</h4>
-                <p>All gaps are measured start-to-start, not end-to-start. The May 24 stream ended at ~06:45 UTC (2:45 AM EDT). If you applied end-to-start gaps instead, the expected next stream would shift later — likely tomorrow evening. The "tonight" call is statistically valid from the model's perspective but doesn't account for the fact that he just finished a 6-hour session at 3 AM.</p>
               </div>
             </div>
           </details>
@@ -1118,9 +1111,9 @@ composite                               ≈ <strong>55</strong></div>
           <h3>Core Math</h3>
           <table class="table">
             <tbody>
-              <tr><th>Mean exact gap</th><td>33.7 hours</td></tr>
-              <tr><th>Median exact gap</th><td>24.3 hours</td></tr>
-              <tr><th>95th percentile</th><td>77.9 hours</td></tr>
+              <tr><th>Mean gap (end→start)</th><td>27.8 hours</td></tr>
+              <tr><th>Median gap (end→start)</th><td>17.8 hours</td></tr>
+              <tr><th>95th percentile</th><td>73.6 hours</td></tr>
               <tr><th>Largest exact gap</th><td>50.0 days</td></tr>
             </tbody>
           </table>
@@ -1665,12 +1658,12 @@ composite                               ≈ <strong>55</strong></div>
     }
 
     function updateForecast() {
-      const lastStartStr = stats.last_stream?.started_at;
-      if (!lastStartStr || !stats.gap_cdf) return;
+      const lastEndStr = stats.last_stream?.ended_at_iso ?? stats.last_stream?.started_at;
+      if (!lastEndStr || !stats.gap_cdf) return;
 
-      const lastStart = new Date(lastStartStr);
+      const lastEnd = new Date(lastEndStr);
       const now = new Date();
-      const elapsedH = (now - lastStart) / 3600000;
+      const elapsedH = (now - lastEnd) / 3600000;
 
       // Progress bar (track spans 0–96h)
       const TRACK_H = 96;
@@ -1706,9 +1699,9 @@ composite                               ≈ <strong>55</strong></div>
       const p24cond = conditionalProb(elapsedH, elapsedH + 24);  // next 24h from now
       const p48cond = conditionalProb(elapsedH, elapsedH + 48);  // next 48h from now
 
-      // Expected next stream (median gap from last start)
-      const medianH = stats.sully_gap_hours?.median ?? 24.3;
-      const expectedNext = new Date(lastStart.getTime() + medianH * 3600000);
+      // Expected next stream (median end-to-start gap from last stream end)
+      const medianH = stats.sully_gap_hours?.median ?? 17.8;
+      const expectedNext = new Date(lastEnd.getTime() + medianH * 3600000);
 
       // Format expected time in ET
       const etFmt = { timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true };
@@ -1739,8 +1732,8 @@ composite                               ≈ <strong>55</strong></div>
         predSub = `${expectedStr} ET. Median gap lands here.`;
       }
 
-      // Fallback label = median + 24h from now
-      const fallbackNext = new Date(lastStart.getTime() + (medianH + 24) * 3600000);
+      // Fallback label = median + 24h from last end
+      const fallbackNext = new Date(lastEnd.getTime() + (medianH + 24) * 3600000);
       const fallbackDateStr = fallbackNext.toLocaleString('en-US', etDate);
 
       const probNowEl = document.getElementById('prob-now');
