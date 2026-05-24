@@ -508,7 +508,7 @@
       </div>
 
       <div class="source-note">
-        Data basis: TwitchMetrics exact recent stream logs, Twitch recent VOD metadata, SullyGnome/TwitchTracker summaries, and public Cyr Uncut YouTube archive metadata grouped by streamed-live date.
+        Data basis: TwitchMetrics exact stream logs/VOD pages, Twitch recent VOD metadata, SullyGnome/TwitchTracker summaries, and public Cyr Uncut YouTube archive metadata grouped by streamed-live date.
       </div>
     </header>
 
@@ -518,12 +518,12 @@
       <div class="grid">
         <div class="panel span-4">
           <h3>Archive Videos Scanned</h3>
-          <div class="big-number">1,063</div>
-          <p class="muted">Public Cyr Uncut entries with stream-date patterns.</p>
+          <div class="big-number">1,000</div>
+          <p class="muted">Public Cyr Uncut entries with stream-date patterns and usable durations.</p>
         </div>
         <div class="panel span-4">
           <h3>Unique Stream Dates</h3>
-          <div class="big-number">533</div>
+          <div class="big-number">549</div>
           <p class="muted">Grouped by dates like [12/15/2025].</p>
         </div>
         <div class="panel span-4">
@@ -547,7 +547,8 @@
             <tbody>
               <tr><td>TwitchMetrics stream logs</td><td>Recent exact starts, title, duration, VOD link</td><td>Exact UTC start</td><td>15 public rows</td></tr>
               <tr><td>Twitch VOD metadata</td><td>Recent title/duration confirmation</td><td>Exact UTC VOD publish time</td><td>Current VOD window</td></tr>
-              <tr><td>Cyr Uncut archive</td><td>Older title semantics and stream-date recurrence</td><td>Day-level grouped dates</td><td>533 stream dates</td></tr>
+              <tr><td>TwitchMetrics VOD pages</td><td>Extra exact VOD timestamps and durations, excluding highlights</td><td>Exact UTC VOD time</td><td>36 public rows</td></tr>
+              <tr><td>Cyr Uncut archive</td><td>Older title semantics, segment counts, and summed durations</td><td>Day-level grouped dates</td><td>549 stream dates</td></tr>
               <tr><td>SullyGnome / TwitchTracker</td><td>Monthly/yearly calibration</td><td>Aggregate only</td><td>Multi-year</td></tr>
             </tbody>
           </table>
@@ -556,11 +557,11 @@
           <h3>Exact Recent Window</h3>
           <table class="table">
             <tbody>
-              <tr><th>Rows</th><td>15 TwitchMetrics stream logs</td></tr>
-              <tr><th>Date range</th><td>Apr 30-May 20, 2026</td></tr>
-              <tr><th>Mean exact gap</th><td>34.2 hours</td></tr>
-              <tr><th>Median exact gap</th><td>26.4 hours</td></tr>
-              <tr><th>Largest exact gap</th><td>71.5 hours</td></tr>
+              <tr><th>Rows</th><td>37 exact TwitchMetrics rows</td></tr>
+              <tr><th>Date range</th><td>Mar 24-May 20, 2026</td></tr>
+              <tr><th>Mean exact gap</th><td>38.5 hours</td></tr>
+              <tr><th>Median exact gap</th><td>26.8 hours</td></tr>
+              <tr><th>Largest exact gap</th><td>116.8 hours</td></tr>
             </tbody>
           </table>
           <div class="pill-list">
@@ -574,7 +575,7 @@
 
     <section>
       <h2>Cadence Shape</h2>
-      <p class="section-lede">The archive is grouped by streamed-live date, so this is a day-level gap histogram, not exact hour-by-hour timing. It uses 532 gaps from 533 grouped stream dates.</p>
+      <p class="section-lede">The archive is grouped by streamed-live date, so this is a day-level gap histogram, not exact hour-by-hour timing. It uses 548 gaps from 549 grouped stream dates.</p>
       <div class="grid">
         <div class="panel span-7">
           <h3>Bucketed Gaps Between Archive Stream Dates</h3>
@@ -584,18 +585,18 @@
           <h3>Summary</h3>
           <table class="table">
             <tbody>
-              <tr><th>Mean gap</th><td>2.72 days</td></tr>
+            <tr><th>Mean gap</th><td>2.64 days</td></tr>
               <tr><th>Median gap</th><td>1.0 day</td></tr>
               <tr><th>75th percentile</th><td>3.0 days</td></tr>
               <tr><th>90th percentile</th><td>5.0 days</td></tr>
               <tr><th>95th percentile</th><td>7.0 days</td></tr>
-              <tr><th>Max observed gap</th><td>122 days</td></tr>
+              <tr><th>Max observed gap</th><td>81 days</td></tr>
             </tbody>
           </table>
           <div class="pill-list">
-            <span class="pill">532 grouped-date gaps</span>
+            <span class="pill">548 grouped-date gaps</span>
             <span class="pill">Day-level resolution</span>
-            <span class="pill">9 gaps were 15+ days</span>
+            <span class="pill">10 gaps were 15+ days</span>
           </div>
         </div>
       </div>
@@ -715,7 +716,7 @@
           <h3>One-Line Answer</h3>
           <p class="big-number">Sunday evening ET</p>
           <p class="muted">
-            Most likely Sunday, May 24, 2026 around 7:00-11:00 PM ET, because the exact recent stream-log median gap is 26.4 hours and the current title sequence is an active gameplay arc.
+            Most likely Sunday, May 24, 2026 around 7:00-11:00 PM ET, because the expanded exact TwitchMetrics median gap is 26.8 hours and the current title sequence is an active gameplay arc.
           </p>
         </div>
         <div class="panel span-4">
@@ -733,7 +734,7 @@
     </section>
 
     <footer>
-      This is a fan-made statistical snapshot, not an official schedule. Sources include public TwitchMetrics stream logs, SullyGnome/TwitchTracker summaries, Twitch VOD metadata, and public Cyr Uncut YouTube archive metadata.
+      This is a fan-made statistical snapshot, not an official schedule. Sources include public TwitchMetrics stream logs, TwitchMetrics VOD pages, SullyGnome/TwitchTracker summaries, Twitch VOD metadata, and public Cyr Uncut YouTube archive metadata. Data files: <a href="data/stream-data.json">JSON</a>, <a href="data/exact-streams.csv">exact CSV</a>, <a href="data/archive-grouped-dates.csv">archive CSV</a>.
     </footer>
   </main>
 
@@ -774,13 +775,13 @@
       const canvas = document.querySelector('#gapChart');
       const { ctx, width, height } = setupCanvas(canvas);
       const data = [
-        { label: '1d', value: 289, color: colors.green },
-        { label: '2d', value: 96, color: colors.blue },
+        { label: '1d', value: 299, color: colors.green },
+        { label: '2d', value: 101, color: colors.blue },
         { label: '3d', value: 55, color: colors.blue },
         { label: '4-5d', value: 53, color: colors.gold },
-        { label: '6-7d', value: 15, color: colors.gold },
-        { label: '8-14d', value: 15, color: colors.red },
-        { label: '15+d', value: 9, color: colors.violet }
+        { label: '6-7d', value: 16, color: colors.gold },
+        { label: '8-14d', value: 14, color: colors.red },
+        { label: '15+d', value: 10, color: colors.violet }
       ];
       const left = 54;
       const bottom = 42;
