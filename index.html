@@ -508,7 +508,7 @@
       </div>
 
       <div class="source-note">
-        Data basis: SullyGnome yearly/current channel summaries, Twitch recent VOD metadata, and public Cyr Uncut YouTube archive metadata grouped by streamed-live date.
+        Data basis: TwitchMetrics exact recent stream logs, Twitch recent VOD metadata, SullyGnome/TwitchTracker summaries, and public Cyr Uncut YouTube archive metadata grouped by streamed-live date.
       </div>
     </header>
 
@@ -530,6 +530,44 @@
           <h3>Archive Coverage</h3>
           <div class="big-number">2022-26</div>
           <p class="muted">March 9, 2022 through February 23, 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Better Data Stack</h2>
+      <p class="section-lede">The model now separates exact recent rows from long-range reconstructed rows. Exact timing gets priority; older archive data is used for behavioral shape and title semantics, not minute-level prediction.</p>
+      <div class="grid">
+        <div class="panel span-7">
+          <h3>Source Hierarchy</h3>
+          <table class="table">
+            <thead>
+              <tr><th>Source</th><th>Use</th><th>Precision</th><th>Coverage</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>TwitchMetrics stream logs</td><td>Recent exact starts, title, duration, VOD link</td><td>Exact UTC start</td><td>15 public rows</td></tr>
+              <tr><td>Twitch VOD metadata</td><td>Recent title/duration confirmation</td><td>Exact UTC VOD publish time</td><td>Current VOD window</td></tr>
+              <tr><td>Cyr Uncut archive</td><td>Older title semantics and stream-date recurrence</td><td>Day-level grouped dates</td><td>533 stream dates</td></tr>
+              <tr><td>SullyGnome / TwitchTracker</td><td>Monthly/yearly calibration</td><td>Aggregate only</td><td>Multi-year</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel span-5">
+          <h3>Exact Recent Window</h3>
+          <table class="table">
+            <tbody>
+              <tr><th>Rows</th><td>15 TwitchMetrics stream logs</td></tr>
+              <tr><th>Date range</th><td>Apr 30-May 20, 2026</td></tr>
+              <tr><th>Mean exact gap</th><td>34.2 hours</td></tr>
+              <tr><th>Median exact gap</th><td>26.4 hours</td></tr>
+              <tr><th>Largest exact gap</th><td>71.5 hours</td></tr>
+            </tbody>
+          </table>
+          <div class="pill-list">
+            <span class="pill">Highest-confidence layer</span>
+            <span class="pill">Exact timestamps</span>
+            <span class="pill">Recent-regime weighted</span>
+          </div>
         </div>
       </div>
     </section>
@@ -640,31 +678,31 @@
 
     <section>
       <h2>Recent Evidence</h2>
-      <p class="section-lede">Recent Twitch VOD titles point to a continuing game arc rather than a post-marathon recovery phase.</p>
+      <p class="section-lede">Recent TwitchMetrics rows give exact UTC starts; Twitch VOD metadata confirms the same title sequence. This is the high-confidence slice used for near-term timing.</p>
       <div class="timeline">
         <div class="timeline-row">
           <div class="date">May 20, 2026</div>
-          <div class="title">HI BB IT'S ME - TIME TO PLAY DEATH STRANDING 1ST TIME EVER</div>
+          <div class="title">19:14 UTC · HI BB IT'S ME - TIME TO PLAY DEATH STRANDING 1ST TIME EVER · 4h</div>
           <div class="tag arc">Arc</div>
         </div>
         <div class="timeline-row">
           <div class="date">May 20, 2026</div>
-          <div class="title">DEATH STRANDING FIRST TIME EVER - IS IT GOOD?</div>
+          <div class="title">02:51 UTC · DEATH STRANDING FIRST TIME EVER - IS IT GOOD? · 5h</div>
           <div class="tag arc">Arc</div>
         </div>
         <div class="timeline-row">
           <div class="date">May 19, 2026</div>
-          <div class="title">SUBNAUTICA 2 WITH @WILLNEFF - DROPS & GIVING AWAY A FREE KEY</div>
+          <div class="title">02:57 UTC · SUBNAUTICA 2 WITH @WILLNEFF - DROPS & GIVING AWAY A FREE KEY · 5h</div>
           <div class="tag event">Event</div>
         </div>
         <div class="timeline-row">
           <div class="date">May 18, 2026</div>
-          <div class="title">FINALLY FINISHING SUBNAUTICA - FIRST TIME, FINAL DAY</div>
+          <div class="title">00:27 UTC · FINALLY FINISHING SUBNAUTICA - FIRST TIME, FINAL DAY · 7h</div>
           <div class="tag arc">Arc</div>
         </div>
         <div class="timeline-row">
           <div class="date">May 16, 2026</div>
-          <div class="title">ROCK CLIMBING WITH @MISTERARTHER - WHAT COULD POSSIBLY GO WRONG</div>
+          <div class="title">19:23 UTC · ROCK CLIMBING WITH @MISTERARTHER - WHAT COULD POSSIBLY GO WRONG · 13h</div>
           <div class="tag collab">Collab</div>
         </div>
       </div>
@@ -677,7 +715,7 @@
           <h3>One-Line Answer</h3>
           <p class="big-number">Sunday evening ET</p>
           <p class="muted">
-            Most likely Sunday, May 24, 2026 around 7:00-11:00 PM ET, because the current title sequence is an active gameplay arc and archive arcs usually recur within 1-2 days.
+            Most likely Sunday, May 24, 2026 around 7:00-11:00 PM ET, because the exact recent stream-log median gap is 26.4 hours and the current title sequence is an active gameplay arc.
           </p>
         </div>
         <div class="panel span-4">
@@ -695,7 +733,7 @@
     </section>
 
     <footer>
-      This is a fan-made statistical snapshot, not an official schedule. Sources include public SullyGnome summaries, Twitch VOD metadata, and public Cyr Uncut YouTube archive metadata.
+      This is a fan-made statistical snapshot, not an official schedule. Sources include public TwitchMetrics stream logs, SullyGnome/TwitchTracker summaries, Twitch VOD metadata, and public Cyr Uncut YouTube archive metadata.
     </footer>
   </main>
 
