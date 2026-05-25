@@ -236,34 +236,16 @@
       line-height: .9;
     }
 
-    .mini-signals {
-      display: grid;
-      gap: 8px;
+    .mini-spark {
+      width: 100%;
+      height: 88px;
+      display: block;
     }
 
-    .mini-signal {
-      display: grid;
-      grid-template-columns: 62px 1fr 42px;
-      gap: 8px;
-      align-items: center;
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 750;
-    }
-
-    .mini-track {
-      height: 8px;
-      overflow: hidden;
-      background: #263238;
-    }
-
-    .mini-fill {
-      width: var(--w);
-      height: 100%;
-      background: var(--c);
-      animation: growX .85s cubic-bezier(.2,.8,.2,1) both;
-      transform-origin: left center;
-      box-shadow: 0 0 14px color-mix(in srgb, var(--c) 50%, transparent);
+    .dow-mini {
+      width: 100%;
+      height: 38px;
+      display: block;
     }
 
     .signal-curve {
@@ -966,14 +948,10 @@ composite                               ≈ <strong>55</strong></div>
               <span class="live-dot" aria-hidden="true"></span>
             </div>
             <div class="signal-score">
-              <div class="score-orb"><strong>55</strong></div>
-              <div class="mini-signals">
-                <div class="mini-signal"><span>time</span><div class="mini-track"><div class="mini-fill" style="--w:63%;--c:var(--green)"></div></div><span>63</span></div>
-                <div class="mini-signal"><span>title</span><div class="mini-track"><div class="mini-fill" style="--w:50%;--c:var(--blue)"></div></div><span>50</span></div>
-                <div class="mini-signal"><span>game</span><div class="mini-track"><div class="mini-fill" style="--w:46%;--c:var(--violet)"></div></div><span>46</span></div>
-                <div class="mini-signal"><span>risk</span><div class="mini-track"><div class="mini-fill" style="--w:10%;--c:var(--red)"></div></div><span>10</span></div>
-              </div>
+              <div class="score-orb"><strong id="orb-val">—</strong></div>
+              <canvas id="recentGapsSpark" class="mini-spark" aria-label="Recent end-to-start gaps"></canvas>
             </div>
+            <canvas id="dowMini" class="dow-mini" aria-label="Day of week frequency"></canvas>
             <canvas class="signal-curve" id="signalCurve" width="400" height="100" aria-label="Signal probability curve"></canvas>
             <div class="signal-chips">
               <div class="signal-chip"><strong id="chip-24h" style="color:var(--green)">~51%</strong><span id="chip-24h-label">tonight · cond.</span></div>
@@ -1596,6 +1574,96 @@ composite                               ≈ <strong>55</strong></div>
       buildNamedBars('#topGameBars', gameRows, gameMax);
     }
 
+    function drawRecentGapsSpark() {
+      const canvas = document.getElementById('recentGapsSpark');
+      if (!canvas) return;
+      const { ctx, width, height } = setupCanvas(canvas);
+      const gaps = stats.recent_gaps;
+      if (!gaps || !gaps.length) return;
+
+      const median = stats.sully_gap_hours?.median ?? 17.8;
+      const displayMax = Math.max(...gaps.map(g => g.gap_h), median * 2.5);
+      const padL = 2, padR = 2, padT = 14, padB = 16;
+      const chartW = width - padL - padR;
+      const chartH = height - padT - padB;
+      const n = gaps.length;
+      const slotW = chartW / n;
+      const barW = Math.max(3, slotW - 3);
+
+      // Median line
+      const medY = padT + chartH * (1 - median / displayMax);
+      ctx.strokeStyle = 'rgba(98,185,223,.35)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath();
+      ctx.moveTo(padL, medY);
+      ctx.lineTo(width - padR, medY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Label
+      ctx.fillStyle = 'rgba(98,185,223,.55)';
+      ctx.font = '700 9px system-ui';
+      ctx.textAlign = 'left';
+      ctx.fillText('recent gaps  end→start', padL + 2, 10);
+      ctx.textAlign = 'right';
+      ctx.fillText('med ' + median.toFixed(0) + 'h', width - padR, medY - 3);
+
+      gaps.forEach((g, i) => {
+        const x = padL + i * slotW + (slotW - barW) / 2;
+        const bH = Math.max(2, (g.gap_h / displayMax) * chartH);
+        const y = padT + chartH - bH;
+
+        const c = g.gap_h <= median ? colors.green
+                : g.gap_h <= median * 2 ? colors.gold
+                : colors.red;
+        ctx.fillStyle = c;
+        ctx.fillRect(x, y, barW, bH);
+
+        // X-axis date label every 3rd bar + last
+        if (i % 3 === 0 || i === n - 1) {
+          const d = new Date(g.started_at);
+          const label = (d.getMonth() + 1) + '/' + d.getDate();
+          ctx.fillStyle = colors.muted;
+          ctx.font = '9px system-ui';
+          ctx.textAlign = 'center';
+          ctx.fillText(label, x + barW / 2, height - 3);
+        }
+      });
+    }
+
+    function drawDowMini() {
+      const canvas = document.getElementById('dowMini');
+      if (!canvas) return;
+      const { ctx, width, height } = setupCanvas(canvas);
+      const dowData = stats.dow_hour?.dow;
+      if (!dowData) return;
+
+      const labels   = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+      const etLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      const values = labels.map(l => dowData[l] || 0);
+      const max = Math.max(...values);
+      const padB = 12;
+      const n = 7;
+      const slotW = width / n;
+      const barW = Math.max(4, slotW - 4);
+
+      values.forEach((v, i) => {
+        const x = i * slotW + (slotW - barW) / 2;
+        const bH = Math.max(2, ((height - padB) * 0.85) * (v / max));
+        const y = height - padB - bH;
+        const isHighlight = i === 0 || i >= 5;
+        ctx.fillStyle = isHighlight ? colors.green : 'rgba(98,185,223,.32)';
+        ctx.globalAlpha = 0.85 + 0.15 * (v / max);
+        ctx.fillRect(x, y, barW, bH);
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = i === 0 ? colors.green : colors.muted;
+        ctx.font = '700 9px system-ui';
+        ctx.textAlign = 'center';
+        ctx.fillText('≈' + etLabels[i], x + barW / 2, height - 1);
+      });
+    }
+
     function render() {
       drawGapChart();
       drawMonthChart();
@@ -1603,13 +1671,15 @@ composite                               ≈ <strong>55</strong></div>
       drawSignalCurve();
       drawDowChart();
       drawHourChart();
+      drawRecentGapsSpark();
+      drawDowMini();
       buildFeatureBars();
       buildSemanticBars();
     }
 
     window.addEventListener('resize', () => {
       clearTimeout(window.__chartTimer);
-      window.__chartTimer = setTimeout(render, 120);
+      window.__chartTimer = setTimeout(() => { render(); updateForecast(); }, 120);
     });
 
     render();
@@ -1735,6 +1805,19 @@ composite                               ≈ <strong>55</strong></div>
       // Fallback label = median + 24h from last end
       const fallbackNext = new Date(lastEnd.getTime() + (medianH + 24) * 3600000);
       const fallbackDateStr = fallbackNext.toLocaleString('en-US', etDate);
+
+      // Update orb with live conditional 24h probability
+      const orbVal = document.getElementById('orb-val');
+      if (orbVal) orbVal.textContent = Math.round(p24cond * 100);
+      const orbEl = orbVal?.closest('.score-orb');
+      if (orbEl) {
+        const pct = Math.round(p24cond * 100);
+        const p48pct = Math.round(p48cond * 100);
+        orbEl.style.background = [
+          `radial-gradient(circle, var(--panel) 0 56%, transparent 57%)`,
+          `conic-gradient(var(--green) ${pct}%, rgba(98,185,223,.38) ${pct}% ${p48pct}%, #273238 0)`
+        ].join(', ');
+      }
 
       const probNowEl = document.getElementById('prob-now');
       if (probNowEl) probNowEl.textContent = fmtPct(p24cond);

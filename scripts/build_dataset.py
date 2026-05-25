@@ -317,6 +317,32 @@ def end_to_start_gap_hours(rows):
     return gaps
 
 
+def last_n_gap_details(rows, n=20):
+    """Last N end-to-start gaps with stream metadata for sparkline display."""
+    pairs = []
+    for r in rows:
+        if not r.get("started_at"):
+            continue
+        started = datetime.fromisoformat(r["started_at"].replace("Z", "+00:00"))
+        ended = parse_ended_at(r.get("ended_at", ""))
+        pairs.append((started, ended, r.get("games", []), r.get("started_at")))
+    pairs.sort(key=lambda x: x[0])
+    result = []
+    for i in range(1, len(pairs)):
+        prev_ended = pairs[i - 1][1]
+        cur_started = pairs[i][0]
+        if prev_ended is None:
+            continue
+        g = (cur_started - prev_ended).total_seconds() / 3600
+        if g >= 0:
+            result.append({
+                "gap_h": round(g, 1),
+                "started_at": pairs[i][3],
+                "game": pairs[i][2][0] if pairs[i][2] else "",
+            })
+    return result[-n:]
+
+
 def compute_gap_cdf(gap_values):
     """Sparse CDF: [[hours, cumulative_pct], ...] used by the dashboard for live interpolation."""
     if not gap_values:
@@ -593,6 +619,7 @@ def main():
             "sully_yearly_counts": dict(sorted(sully_yearly.items())),
             "dow_hour": compute_dow_hour(sully_rows),
             "gap_cdf": compute_gap_cdf(sully_gap_values),
+            "recent_gaps": last_n_gap_details(sully_rows, n=20),
             "last_stream": (lambda r: {
                 "started_at": r.get("started_at"),
                 "ended_at_iso": (lambda e: e.isoformat() if e else None)(
