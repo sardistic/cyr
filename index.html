@@ -796,13 +796,13 @@
     <header>
       <nav>
         <div class="brand"><span class="mark">CYR</span> Stream Forecast Lab</div>
-        <div>Static model snapshot · May 24, 2026 · America/New_York</div>
+        <div>Static model snapshot · May 26, 2026 · America/New_York</div>
       </nav>
 
       <div class="hero">
         <div>
           <h1>When does cyr go live next?</h1>
-          <p class="lede" id="hero-lede">Last stream ended Sun May 24 at 2:45 AM ET. End-to-start median gap is 17.8h — expected return tonight.</p>
+          <p class="lede" id="hero-lede">Last stream ended Mon May 25 at 10:45 PM ET (JC · 4h · 3,946 avg). Past median gap now — model in overdue zone.</p>
 
           <div class="prediction">
             <div class="metric">
@@ -869,8 +869,12 @@
                 <div class="sdot-info"><span class="d">May 24</span>Just Chatting<br>arc break · 6h<span class="tag chat">chat</span></div>
               </div>
               <div class="sitem">
+                <div class="sdot chat"></div>
+                <div class="sdot-info"><span class="d">May 25</span>Just Chatting<br>arc break · 4h<span class="tag chat">chat</span></div>
+              </div>
+              <div class="sitem">
                 <div class="sdot now"></div>
-                <div class="sdot-info"><span class="d g">+17h</span>waiting<br>since May 24<span class="tag now">← now</span></div>
+                <div class="sdot-info"><span class="d g" id="now-elapsed">+23h</span>waiting<br>since May 25<span class="tag now">← now</span></div>
               </div>
             </div>
           </div>
@@ -886,7 +890,7 @@
               <span class="hstat-k">median gap (end→start)</span>
             </div>
             <div class="hstat">
-              <span class="hstat-v" style="color:var(--blue)">2,421</span>
+              <span class="hstat-v" style="color:var(--blue)">2,422</span>
               <span class="hstat-k">exact streams</span>
             </div>
             <div class="hstat">
@@ -901,7 +905,7 @@
             <div class="rationale-body">
               <div class="rationale-step">
                 <h4>Step 1 — The Raw Data</h4>
-                <p>We pulled 2,421 exact stream start timestamps from SullyGnome (Jan 2017 – May 2026). Each one is the moment cyr's Twitch broadcast actually went live.</p>
+                <p>We pulled 2,422 exact stream start timestamps from SullyGnome (Jan 2017 – May 2026). Each one is the moment cyr's Twitch broadcast actually went live.</p>
               </div>
               <div class="rationale-step">
                 <h4>Step 2 — Gap Distribution (end-to-start)</h4>
@@ -911,7 +915,7 @@ p25 ≈ 13h  ·  p50 ≈ 17.8h  ·  p75 ≈ 31.5h</div>
               </div>
               <div class="rationale-step">
                 <h4>Step 3 — Where We Are Right Now</h4>
-                <p>The last stream ended May 24 at 06:45 UTC (2:45 AM EDT). The elapsed bar above shows how far into the end-to-start gap distribution we currently sit. The percentile tells you what fraction of historical gaps ended before this point — updated live every minute.</p>
+                <p>The last stream ended May 26 at 02:45 UTC (May 25, 10:45 PM EDT). The elapsed bar above shows how far into the end-to-start gap distribution we currently sit. The percentile tells you what fraction of historical gaps ended before this point — updated live every minute.</p>
               </div>
               <div class="rationale-step">
                 <h4>Step 4 — Conditional vs Unconditional Probability</h4>
@@ -922,7 +926,7 @@ p25 ≈ 13h  ·  p50 ≈ 17.8h  ·  p75 ≈ 31.5h</div>
               </div>
               <div class="rationale-step">
                 <h4>Step 5 — The Point Estimate</h4>
-                <p>Median end-to-start gap (17.8h) added to last stream end (06:45 UTC May 24) = ~00:30 UTC May 25 = ~8:30 PM EDT May 24. That's the single most probable next-stream moment — a median estimate, not a guaranteed window.</p>
+                <p>Median end-to-start gap (17.8h) added to last stream end (02:45 UTC May 26) = ~20:36 UTC May 26 = ~4:36 PM EDT May 26. We're currently past that — elapsed is in the overdue zone but still well within normal range (p75 ≈ 31.5h, p95 ≈ 73.6h).</p>
               </div>
               <div class="rationale-step">
                 <h4>Step 6 — The Signal Score (55/100)</h4>
@@ -968,7 +972,7 @@ composite                               ≈ <strong>55</strong></div>
             <div class="arc-card-meta">
               <span>First-time playthrough</span>
               <span>2 sessions · ~9h</span>
-              <span>JC break May 24</span>
+              <span>2× JC breaks</span>
             </div>
             <div class="arc-bar">
               <div class="arc-session">
@@ -986,13 +990,18 @@ composite                               ≈ <strong>55</strong></div>
                 <div class="arc-session-fill" style="--w:100%;background:var(--blue);box-shadow:none"></div>
                 <span style="color:var(--blue)">JC</span>
               </div>
+              <div class="arc-session" style="opacity:.5">
+                <span>May 25</span>
+                <div class="arc-session-fill" style="--w:67%;background:var(--blue);box-shadow:none"></div>
+                <span style="color:var(--blue)">JC</span>
+              </div>
             </div>
           </div>
         </aside>
       </div>
 
       <div class="source-note">
-        2,421 exact Sully streams · 548 title-semantic archive gaps · refreshed May 24, 2026
+        2,422 exact Sully streams · 548 title-semantic archive gaps · refreshed May 26, 2026
       </div>
     </header>
 
@@ -1038,8 +1047,13 @@ composite                               ≈ <strong>55</strong></div>
           <h3>Recent Evidence</h3>
           <div class="timeline">
             <div class="timeline-row">
+              <div class="date">May 25</div>
+              <div class="title">22:33 UTC · Just Chatting · 4h · 3,946 avg / 4,845 peak · +19 followers</div>
+              <div class="tag" style="background:rgba(98,185,223,.15);color:var(--blue)">Chat</div>
+            </div>
+            <div class="timeline-row">
               <div class="date">May 24</div>
-              <div class="title">00:50 UTC · Just Chatting · 6h · arc pause · 2,998 avg viewers</div>
+              <div class="title">00:50 UTC · Just Chatting · 6h · 2,998 avg viewers · arc pause</div>
               <div class="tag" style="background:rgba(98,185,223,.15);color:var(--blue)">Chat</div>
             </div>
             <div class="timeline-row">
@@ -1052,11 +1066,6 @@ composite                               ≈ <strong>55</strong></div>
               <div class="title">02:51 UTC · Death Stranding first-time arc · 5h · 2,871 avg viewers</div>
               <div class="tag arc">Arc</div>
             </div>
-            <div class="timeline-row">
-              <div class="date">May 19</div>
-              <div class="title">02:57 UTC · Subnautica 2 with @WillNeff + drops · 5h</div>
-              <div class="tag event">Event</div>
-            </div>
           </div>
         </div>
       </div>
@@ -1067,12 +1076,12 @@ composite                               ≈ <strong>55</strong></div>
       <div class="grid">
         <div class="panel span-3">
           <h3>Exact Streams</h3>
-          <div class="big-number">2,421</div>
+          <div class="big-number">2,422</div>
           <p class="muted">SullyGnome rows</p>
         </div>
         <div class="panel span-3">
           <h3>Exact Gaps</h3>
-          <div class="big-number">2,420</div>
+          <div class="big-number">2,421</div>
           <p class="muted">hour-level cadence</p>
         </div>
         <div class="panel span-3">
@@ -1753,6 +1762,9 @@ composite                               ≈ <strong>55</strong></div>
       const pctAtNow = cdfLookup(elapsedH);
       const elapsedHEl = document.getElementById('elapsed-h');
       if (elapsedHEl) elapsedHEl.textContent = fmtElapsed(elapsedH);
+
+      const nowElapsedEl = document.getElementById('now-elapsed');
+      if (nowElapsedEl) nowElapsedEl.textContent = '+' + fmtElapsed(elapsedH);
 
       const elapsedPctEl = document.getElementById('elapsed-pct');
       if (elapsedPctEl && pctAtNow !== null) {
