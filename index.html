@@ -1116,8 +1116,8 @@ composite                               ≈ <strong>55</strong></div>
       <div class="grid">
         <div class="panel span-4">
           <h3>Answer</h3>
-          <p class="big-number">Tonight ~9 PM ET</p>
-          <p class="muted">Sun May 24. Median gap from 00:50 UTC lands at ~01:11 UTC May 25 = ~9 PM EDT.</p>
+          <p class="big-number" id="answer-headline">—</p>
+          <p class="muted" id="answer-sub" style="font-size:13px;line-height:1.5"></p>
         </div>
         <div class="panel span-4">
           <h3>Probability Windows</h3>
@@ -1129,14 +1129,14 @@ composite                               ≈ <strong>55</strong></div>
               <tr style="border-bottom:1px solid rgba(98,185,223,.18)">
                 <th colspan="2" style="color:var(--blue);padding-top:10px">Unconditional · from last stream start</th>
               </tr>
-              <tr><th>Within 24h of start</th><td>63%</td></tr>
-              <tr><th>Within 48h of start</th><td>86%</td></tr>
+              <tr><th>Within 24h of start</th><td id="pw-u24">—</td></tr>
+              <tr><th>Within 48h of start</th><td id="pw-u48">—</td></tr>
               <tr><th>Within 7d of start</th><td>≈99%</td></tr>
               <tr style="border-bottom:1px solid rgba(98,211,148,.18)">
-                <th colspan="2" style="color:var(--green);padding-top:14px">Conditional · given 17h elapsed, no stream yet</th>
+                <th colspan="2" id="pw-cond-header" style="color:var(--green);padding-top:14px">Conditional · given elapsed time</th>
               </tr>
-              <tr><th>Tonight (next ~7h)</th><td style="color:var(--green);font-weight:800">~51%</td></tr>
-              <tr><th>By tomorrow (next ~31h)</th><td>~81%</td></tr>
+              <tr><th id="pw-cond-label-24">Tonight</th><td id="pw-c24" style="color:var(--green);font-weight:800">—</td></tr>
+              <tr><th id="pw-cond-label-48">By tomorrow</th><td id="pw-c48">—</td></tr>
               <tr><th>This week</th><td>≈99%</td></tr>
             </tbody>
           </table>
@@ -1850,6 +1850,21 @@ composite                               ≈ <strong>55</strong></div>
       const now = new Date();
       const elapsedH = (now - lastEnd) / 3600000;
 
+      // Hero lede — dynamic summary of last stream + current state
+      const heroLede = document.getElementById('hero-lede');
+      if (heroLede && stats.last_stream) {
+        const ls = stats.last_stream;
+        const endedET = lastEnd.toLocaleString('en-US', {
+          timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric',
+          hour: 'numeric', minute: '2-digit'
+        });
+        const game = ls.games?.[0] ?? 'stream';
+        const dur = ls.duration_label ? ` · ${ls.duration_label}` : '';
+        const medH = stats.sully_gap_hours?.median ?? 17.85;
+        const state = elapsedH >= medH ? 'Past median gap — model in overdue zone.' : `${fmtElapsed(medH - elapsedH)} until median target.`;
+        heroLede.textContent = `Last stream ended ${endedET} ET (${game}${dur}). ${state}`;
+      }
+
       // Progress bar (track spans 0–96h)
       const TRACK_H = 96;
       const fillPct = Math.min(100, (elapsedH / TRACK_H) * 100);
@@ -1978,6 +1993,51 @@ composite                               ≈ <strong>55</strong></div>
 
       // Update schedule strip
       buildSchedule(elapsedH);
+
+      // ── Answer panel + Probability Windows table ──
+      const medianH = stats.sully_gap_hours?.median ?? 17.85;
+      const medianTarget = new Date(lastEnd.getTime() + medianH * 3600000);
+      const etOpts = { timeZone: 'America/New_York' };
+      const etTime = medianTarget.toLocaleTimeString('en-US', { ...etOpts, hour: 'numeric', minute: '2-digit' });
+      const etDate = medianTarget.toLocaleDateString('en-US', { ...etOpts, weekday: 'short', month: 'short', day: 'numeric' });
+      const endedET = lastEnd.toLocaleString('en-US', { ...etOpts, weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+
+      const answerHeadEl = document.getElementById('answer-headline');
+      const answerSubEl  = document.getElementById('answer-sub');
+      if (answerHeadEl) {
+        if (elapsedH < medianH) {
+          answerHeadEl.textContent = `Median target: ${etTime} ET`;
+        } else {
+          answerHeadEl.textContent = 'Overdue zone — any time now';
+        }
+      }
+      if (answerSubEl) {
+        const pastMedian = elapsedH >= medianH;
+        answerSubEl.textContent = pastMedian
+          ? `Last ended ${endedET} ET. Gap is past the ${medianH.toFixed(1)}h median (${fmtElapsed(elapsedH)} elapsed) — elevated probability right now.`
+          : `Last ended ${endedET} ET. Median ${medianH.toFixed(1)}h gap puts target around ${etDate} at ${etTime} ET. ${fmtElapsed(elapsedH)} elapsed.`;
+      }
+
+      // Probability Windows — unconditional
+      const u24el = document.getElementById('pw-u24');
+      const u48el = document.getElementById('pw-u48');
+      if (u24el) u24el.textContent = Math.round(cdfLookup(24) ?? 0) + '%';
+      if (u48el) u48el.textContent = Math.round(cdfLookup(48) ?? 0) + '%';
+
+      // Probability Windows — conditional
+      const nowET = new Date(now.toLocaleDateString('en-US', etOpts));
+      nowET.setDate(nowET.getDate() + 1); // midnight tonight ET
+      const hoursToMidnight = Math.max(0, (nowET - now) / 3600000);
+      const condHeader = document.getElementById('pw-cond-header');
+      const condLabel24 = document.getElementById('pw-cond-label-24');
+      const condLabel48 = document.getElementById('pw-cond-label-48');
+      const condC24 = document.getElementById('pw-c24');
+      const condC48 = document.getElementById('pw-c48');
+      if (condHeader) condHeader.textContent = `Conditional · given ${fmtElapsed(elapsedH)} elapsed`;
+      if (condLabel24) condLabel24.textContent = `Tonight (next ~${Math.round(hoursToMidnight)}h)`;
+      if (condLabel48) condLabel48.textContent = `By tomorrow (next ~${Math.round(hoursToMidnight + 24)}h)`;
+      if (condC24) condC24.textContent = fmtPct(conditionalProb(elapsedH, elapsedH + hoursToMidnight));
+      if (condC48) condC48.textContent = fmtPct(conditionalProb(elapsedH, elapsedH + hoursToMidnight + 24));
 
       // Redraw signal curve with updated elapsed position marked
       drawSignalCurve(elapsedH, p24cond, p48cond);
