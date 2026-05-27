@@ -648,6 +648,103 @@
       box-shadow: 0 0 8px rgba(173,145,255,.4);
     }
 
+    /* ── 7-day schedule strip ── */
+    .schedule-strip {
+      padding: 20px 24px 22px;
+      border: 1px solid var(--line);
+      background: rgba(17,24,28,.84);
+      box-shadow: var(--shadow);
+      animation: riseIn .5s ease-out .08s both;
+    }
+    .schedule-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+    .schedule-summary {
+      margin: 0 0 18px;
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 900px;
+      line-height: 1.6;
+    }
+    .schedule-summary strong { color: var(--ink); font-weight: 700; }
+    .schedule-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+    }
+    .sday {
+      padding: 11px 8px 10px;
+      border: 1px solid var(--line);
+      background: rgba(9,13,16,.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .2s, transform .2s;
+    }
+    .sday:hover { transform: translateY(-2px); }
+    .sday.today { border-color: rgba(98,211,148,.45); background: rgba(98,211,148,.04); }
+    .sday.peak  { border-color: rgba(228,184,93,.28); }
+    .sday.arc-watch { border-color: rgba(173,145,255,.28); }
+    .sday-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .sday-dow {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      line-height: 1;
+    }
+    .sday-date {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .sday-icon {
+      font-size: 18px;
+      line-height: 1;
+      margin: 1px 0;
+    }
+    .sday-prob {
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .sday-type {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--muted);
+      line-height: 1.2;
+    }
+    .sday-desc {
+      font-size: 9px;
+      color: rgba(153,170,173,.7);
+      line-height: 1.3;
+    }
+    @media (max-width: 900px) {
+      .schedule-days { grid-template-columns: repeat(4, 1fr); }
+      .sday:nth-child(n+5) { display: none; }
+    }
+    @media (max-width: 560px) {
+      .schedule-days { grid-template-columns: repeat(3, 1fr); }
+      .sday:nth-child(n+4) { display: none; }
+    }
+
     /* ── Rationale expander ── */
     .rationale {
       margin-top: 12px;
@@ -798,6 +895,87 @@
         <div class="brand"><span class="mark">CYR</span> Stream Forecast Lab</div>
         <div>Static model snapshot · May 26, 2026 · America/New_York</div>
       </nav>
+
+      <!-- 7-Day Schedule Forecast -->
+      <div class="schedule-strip">
+        <div class="schedule-kicker">7-Day Stream Schedule · issued May 26, 2026</div>
+        <p class="schedule-summary" id="schedule-summary">
+          <strong>Tonight:</strong> Conditions are unfavorable — less than 2 hours remain in the evening window with only a slim probability of a late start. <strong>Tuesday</strong> represents the strongest single-day outlook this week, with the gap entering the 65th–80th percentile zone and arc-resumption conditions elevated after two consecutive Just Chatting breaks. <strong>Mid-week</strong> carries continued elevated probability; if Death Stranding resumes expect back-to-back sessions Wednesday. <strong>Thursday</strong> historically runs quiet and may serve as a natural rest day. <strong>The weekend</strong> brings moderate social or collab potential, with <strong>Sunday June 1</strong> locking in as the strongest long-range signal — aligning with the historically peak Monday UTC start window (430 streams, highest day in dataset).
+        </p>
+        <div class="schedule-days">
+
+          <div class="sday today">
+            <div class="sday-bar" style="background:linear-gradient(90deg,var(--muted),rgba(153,170,173,.3))"></div>
+            <div class="sday-dow">Mon</div>
+            <div class="sday-date">May 26</div>
+            <div class="sday-icon">🌧</div>
+            <div class="sday-prob" style="color:var(--muted)">Slim</div>
+            <div class="sday-type">JC likely</div>
+            <div class="sday-desc">2h window<br>remaining</div>
+          </div>
+
+          <div class="sday arc-watch">
+            <div class="sday-bar" style="background:linear-gradient(90deg,var(--green),var(--blue))"></div>
+            <div class="sday-dow">Tue</div>
+            <div class="sday-date">May 27</div>
+            <div class="sday-icon">⛈</div>
+            <div class="sday-prob" style="color:var(--green)">High</div>
+            <div class="sday-type">Arc watch</div>
+            <div class="sday-desc">Best 24h<br>window</div>
+          </div>
+
+          <div class="sday arc-watch">
+            <div class="sday-bar" style="background:linear-gradient(90deg,var(--violet),rgba(173,145,255,.3))"></div>
+            <div class="sday-dow">Wed</div>
+            <div class="sday-date">May 28</div>
+            <div class="sday-icon">🌤</div>
+            <div class="sday-prob" style="color:var(--violet)">Likely</div>
+            <div class="sday-type">DS arc</div>
+            <div class="sday-desc">Continuation<br>if arc resumes</div>
+          </div>
+
+          <div class="sday">
+            <div class="sday-bar" style="background:linear-gradient(90deg,var(--blue),rgba(98,185,223,.2))"></div>
+            <div class="sday-dow">Thu</div>
+            <div class="sday-date">May 29</div>
+            <div class="sday-icon">⛅</div>
+            <div class="sday-prob" style="color:var(--blue)">Mod</div>
+            <div class="sday-type">JC / rest</div>
+            <div class="sday-desc">Quiet day<br>risk elevated</div>
+          </div>
+
+          <div class="sday">
+            <div class="sday-bar" style="background:linear-gradient(90deg,var(--blue),rgba(98,185,223,.2))"></div>
+            <div class="sday-dow">Fri</div>
+            <div class="sday-date">May 30</div>
+            <div class="sday-icon">🌤</div>
+            <div class="sday-prob" style="color:var(--blue)">Mod</div>
+            <div class="sday-type">Social</div>
+            <div class="sday-desc">Weekend<br>ramp-up</div>
+          </div>
+
+          <div class="sday">
+            <div class="sday-bar" style="background:linear-gradient(90deg,var(--gold),rgba(228,184,93,.3))"></div>
+            <div class="sday-dow">Sat</div>
+            <div class="sday-date">May 31</div>
+            <div class="sday-icon">🌤</div>
+            <div class="sday-prob" style="color:var(--gold)">Good</div>
+            <div class="sday-type">Collab?</div>
+            <div class="sday-desc">Fri night ET<br>social window</div>
+          </div>
+
+          <div class="sday peak">
+            <div class="sday-bar" style="background:linear-gradient(90deg,var(--green),var(--gold))"></div>
+            <div class="sday-dow">Sun</div>
+            <div class="sday-date">Jun 1</div>
+            <div class="sday-icon">⛈</div>
+            <div class="sday-prob" style="color:var(--green)">Peak</div>
+            <div class="sday-type">Peak DOW</div>
+            <div class="sday-desc">Mon UTC high<br>Sun night ET</div>
+          </div>
+
+        </div>
+      </div>
 
       <div class="hero">
         <div>
@@ -1870,6 +2048,9 @@ composite                               ≈ <strong>55</strong></div>
         chipNote.textContent = `Conditioned on ${fmtElapsed(elapsedH)} elapsed (${ordinal(Math.round(pctAtNow))} pct). Unconditional from last start: ${u24}% / ${u48}% / ≈99%.`;
       }
 
+      // Update tonight's schedule card
+      updateScheduleTonight(elapsedH, p24cond);
+
       // Redraw signal curve with updated elapsed position marked
       drawSignalCurve(elapsedH, p24cond, p48cond);
     }
@@ -1968,6 +2149,39 @@ composite                               ≈ <strong>55</strong></div>
           ctx.fillText(Math.round(value) + '%', x, Math.max(12, y - 8));
         }
       });
+    }
+
+    function updateScheduleTonight(elapsedH, p24cond) {
+      // Update tonight's card based on how much time is left
+      const todayCard = document.querySelector('.sday.today');
+      if (!todayCard) return;
+      const probEl = todayCard.querySelector('.sday-prob');
+      const descEl = todayCard.querySelector('.sday-desc');
+      const iconEl = todayCard.querySelector('.sday-icon');
+
+      // How many hours left until midnight ET (ET = UTC-4 in EDT)
+      const now = new Date();
+      const midnightET = new Date(now.toLocaleDateString('en-US', { timeZone: 'America/New_York' }));
+      midnightET.setDate(midnightET.getDate() + 1);
+      const hoursLeft = (midnightET - now) / 3600000;
+
+      // Prob of stream in remaining window tonight (conditional on elapsed)
+      const pTonightWindow = conditionalProb(elapsedH, hoursLeft);
+      const pctTonight = Math.round(pTonightWindow * 100);
+
+      if (pctTonight < 20) {
+        if (probEl) { probEl.textContent = 'Slim'; probEl.style.color = 'var(--muted)'; }
+        if (iconEl) iconEl.textContent = '🌧';
+        if (descEl) descEl.innerHTML = Math.round(hoursLeft * 10) / 10 + 'h window<br>remaining';
+      } else if (pctTonight < 45) {
+        if (probEl) { probEl.textContent = '~' + pctTonight + '%'; probEl.style.color = 'var(--blue)'; }
+        if (iconEl) iconEl.textContent = '⛅';
+        if (descEl) descEl.innerHTML = Math.round(hoursLeft * 10) / 10 + 'h window<br>remaining';
+      } else {
+        if (probEl) { probEl.textContent = '~' + pctTonight + '%'; probEl.style.color = 'var(--green)'; }
+        if (iconEl) iconEl.textContent = '🌤';
+        if (descEl) descEl.innerHTML = Math.round(hoursLeft * 10) / 10 + 'h window<br>remaining';
+      }
     }
 
     updateForecast();
