@@ -367,6 +367,28 @@ def last_n_gap_details(rows, n=20):
     return result[-n:]
 
 
+def last_n_stream_details(rows, n=8):
+    """Last N streams with full metadata for timeline and arc card."""
+    sorted_rows = sorted(
+        (r for r in rows if r.get("started_at")),
+        key=lambda r: r["started_at"]
+    )
+    result = []
+    for r in sorted_rows[-n:]:
+        ended_dt = parse_ended_at(r.get("ended_at", ""))
+        result.append({
+            "started_at": r["started_at"],
+            "ended_at_iso": ended_dt.isoformat() if ended_dt else None,
+            "games": r.get("games", []),
+            "duration_h": round(r.get("duration_seconds", 0) / 3600, 1),
+            "duration_label": r.get("duration_label", ""),
+            "avg_viewers": r.get("avg_viewers", 0),
+            "peak_viewers": r.get("peak_viewers", 0),
+            "followers_gained": r.get("followers_gained", 0),
+        })
+    return result
+
+
 def compute_gap_cdf(gap_values):
     """Sparse CDF: [[hours, cumulative_pct], ...] used by the dashboard for live interpolation."""
     if not gap_values:
@@ -650,6 +672,7 @@ def main():
             "dow_hour": compute_dow_hour(sully_rows),
             "gap_cdf": compute_gap_cdf(sully_gap_values),
             "recent_gaps": last_n_gap_details(sully_rows, n=20),
+            "recent_streams": last_n_stream_details(sully_rows, n=8),
             "last_stream": (lambda r: {
                 "started_at": r.get("started_at"),
                 "ended_at_iso": (lambda e: e.isoformat() if e else None)(

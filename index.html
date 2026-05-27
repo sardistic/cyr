@@ -1131,50 +1131,25 @@
           <!-- Recent stream dots -->
           <div class="stream-timeline">
             <div class="stl-label">Recent streams</div>
-            <div class="stream-dots">
-              <div class="sitem">
-                <div class="sdot collab"></div>
-                <div class="sdot-info"><span class="d">May 19</span>Subnautica 2<br>collab · 5h<span class="tag collab">collab</span></div>
-              </div>
-              <div class="sitem">
-                <div class="sdot arc"></div>
-                <div class="sdot-info"><span class="d">May 20</span>Death Strand.<br>session 1 · 5h<span class="tag arc">arc</span></div>
-              </div>
-              <div class="sitem">
-                <div class="sdot arc"></div>
-                <div class="sdot-info"><span class="d">May 20</span>Death Strand.<br>session 2 · 4h<span class="tag arc">arc</span></div>
-              </div>
-              <div class="sitem">
-                <div class="sdot chat"></div>
-                <div class="sdot-info"><span class="d">May 24</span>Just Chatting<br>arc break · 6h<span class="tag chat">chat</span></div>
-              </div>
-              <div class="sitem">
-                <div class="sdot chat"></div>
-                <div class="sdot-info"><span class="d">May 25</span>Just Chatting<br>arc break · 4h<span class="tag chat">chat</span></div>
-              </div>
-              <div class="sitem">
-                <div class="sdot now"></div>
-                <div class="sdot-info"><span class="d g" id="now-elapsed">+23h</span>waiting<br>since May 25<span class="tag now">← now</span></div>
-              </div>
-            </div>
+            <div class="stream-dots" id="stream-dots"></div>
           </div>
 
           <!-- Stat chips -->
           <div class="hero-stats">
             <div class="hstat">
-              <span class="hstat-v" style="color:var(--green)">~20</span>
+              <span class="hstat-v" id="hstat-monthly" style="color:var(--green)">~20</span>
               <span class="hstat-k">streams / month</span>
             </div>
             <div class="hstat">
-              <span class="hstat-v">17.8h</span>
+              <span class="hstat-v" id="hstat-median">17.8h</span>
               <span class="hstat-k">median gap (end→start)</span>
             </div>
             <div class="hstat">
-              <span class="hstat-v" style="color:var(--blue)">2,422</span>
+              <span class="hstat-v" id="hstat-count" style="color:var(--blue)">2,422</span>
               <span class="hstat-k">exact streams</span>
             </div>
             <div class="hstat">
-              <span class="hstat-v" style="color:var(--gold)">73.6h</span>
+              <span class="hstat-v" id="hstat-p95" style="color:var(--gold)">73.6h</span>
               <span class="hstat-k">p95 threshold</span>
             </div>
           </div>
@@ -1190,12 +1165,12 @@
               <div class="rationale-step">
                 <h4>Step 2 — Gap Distribution (end-to-start)</h4>
                 <p>For every consecutive pair of streams we measure the gap from when the previous stream <em>ended</em> to when the next one <em>started</em>. This is more meaningful than start-to-start because it measures actual rest time — not contaminated by how long each session ran.</p>
-                <div class="rationale-math">median = 17.8h  ·  mean = 27.8h  ·  p95 = 73.6h
+                <div class="rationale-math" id="rationale-s2-math">median = 17.8h  ·  mean = 27.8h  ·  p95 = 73.6h
 p25 ≈ 13h  ·  p50 ≈ 17.8h  ·  p75 ≈ 31.5h</div>
               </div>
               <div class="rationale-step">
                 <h4>Step 3 — Where We Are Right Now</h4>
-                <p>The last stream ended May 26 at 02:45 UTC (May 25, 10:45 PM EDT). The elapsed bar above shows how far into the end-to-start gap distribution we currently sit. The percentile tells you what fraction of historical gaps ended before this point — updated live every minute.</p>
+                <p id="rationale-s3">The last stream ended May 26 at 02:45 UTC. The elapsed bar above shows how far into the end-to-start gap distribution we currently sit. The percentile tells you what fraction of historical gaps ended before this point — updated live every minute.</p>
               </div>
               <div class="rationale-step">
                 <h4>Step 4 — Conditional vs Unconditional Probability</h4>
@@ -1206,7 +1181,7 @@ p25 ≈ 13h  ·  p50 ≈ 17.8h  ·  p75 ≈ 31.5h</div>
               </div>
               <div class="rationale-step">
                 <h4>Step 5 — The Point Estimate</h4>
-                <p>Median end-to-start gap (17.8h) added to last stream end (02:45 UTC May 26) = ~20:36 UTC May 26 = ~4:36 PM EDT May 26. We're currently past that — elapsed is in the overdue zone but still well within normal range (p75 ≈ 31.5h, p95 ≈ 73.6h).</p>
+                <p id="rationale-s5">Median end-to-start gap added to last stream end gives the point estimate. Computed live — see the Answer panel above.</p>
               </div>
               <div class="rationale-step">
                 <h4>Step 6 — The Signal Score (55/100)</h4>
@@ -1246,41 +1221,11 @@ composite                               ≈ <strong>55</strong></div>
           </div>
 
           <!-- Active arc context -->
-          <div class="arc-card">
-            <div class="arc-card-kicker">Arc status · paused</div>
-            <div class="arc-card-title">Death Stranding</div>
-            <div class="arc-card-meta">
-              <span>First-time playthrough</span>
-              <span>2 sessions · ~9h</span>
-              <span>2× JC breaks</span>
-            </div>
-            <div class="arc-bar">
-              <div class="arc-session">
-                <span>May 20 a</span>
-                <div class="arc-session-fill" style="--w:56%"></div>
-                <span>5h</span>
-              </div>
-              <div class="arc-session">
-                <span>May 20 b</span>
-                <div class="arc-session-fill" style="--w:44%"></div>
-                <span>4h</span>
-              </div>
-              <div class="arc-session" style="opacity:.5">
-                <span>May 24</span>
-                <div class="arc-session-fill" style="--w:100%;background:var(--blue);box-shadow:none"></div>
-                <span style="color:var(--blue)">JC</span>
-              </div>
-              <div class="arc-session" style="opacity:.5">
-                <span>May 25</span>
-                <div class="arc-session-fill" style="--w:67%;background:var(--blue);box-shadow:none"></div>
-                <span style="color:var(--blue)">JC</span>
-              </div>
-            </div>
-          </div>
+          <div class="arc-card" id="arc-card"></div>
         </aside>
       </div>
 
-      <div class="source-note">
+      <div class="source-note" id="source-note">
         2,422 exact Sully streams · 548 title-semantic archive gaps · refreshed May 26, 2026
       </div>
     </header>
@@ -1325,28 +1270,7 @@ composite                               ≈ <strong>55</strong></div>
         </div>
         <div class="panel span-12">
           <h3>Recent Evidence</h3>
-          <div class="timeline">
-            <div class="timeline-row">
-              <div class="date">May 25</div>
-              <div class="title">22:33 UTC · Just Chatting · 4h · 3,946 avg / 4,845 peak · +19 followers</div>
-              <div class="tag" style="background:rgba(98,185,223,.15);color:var(--blue)">Chat</div>
-            </div>
-            <div class="timeline-row">
-              <div class="date">May 24</div>
-              <div class="title">00:50 UTC · Just Chatting · 6h · 2,998 avg viewers · arc pause</div>
-              <div class="tag" style="background:rgba(98,185,223,.15);color:var(--blue)">Chat</div>
-            </div>
-            <div class="timeline-row">
-              <div class="date">May 20</div>
-              <div class="title">19:14 UTC · Death Stranding first-time arc · 4h · 2,779 avg viewers</div>
-              <div class="tag arc">Arc</div>
-            </div>
-            <div class="timeline-row">
-              <div class="date">May 20</div>
-              <div class="title">02:51 UTC · Death Stranding first-time arc · 5h · 2,871 avg viewers</div>
-              <div class="tag arc">Arc</div>
-            </div>
-          </div>
+          <div class="timeline" id="recent-evidence"></div>
         </div>
       </div>
     </section>
@@ -1356,32 +1280,32 @@ composite                               ≈ <strong>55</strong></div>
       <div class="grid">
         <div class="panel span-3">
           <h3>Exact Streams</h3>
-          <div class="big-number">2,422</div>
+          <div class="big-number" id="snap-streams">2,422</div>
           <p class="muted">SullyGnome rows</p>
         </div>
         <div class="panel span-3">
           <h3>Exact Gaps</h3>
-          <div class="big-number">2,421</div>
+          <div class="big-number" id="snap-gaps">2,421</div>
           <p class="muted">hour-level cadence</p>
         </div>
         <div class="panel span-3">
           <h3>Coverage</h3>
-          <div class="big-number">2017-26</div>
-          <p class="muted">Jan 2017-May 2026</p>
+          <div class="big-number" id="snap-coverage">2017–26</div>
+          <p class="muted" id="snap-coverage-sub">Jan 2017–May 2026</p>
         </div>
         <div class="panel span-3">
           <h3>Title Rows</h3>
-          <div class="big-number">548</div>
+          <div class="big-number" id="snap-titles">548</div>
           <p class="muted">semantic gaps</p>
         </div>
         <div class="panel span-12">
           <h3>Core Math</h3>
           <table class="table">
             <tbody>
-              <tr><th>Mean gap (end→start)</th><td>27.8 hours</td></tr>
-              <tr><th>Median gap (end→start)</th><td>17.8 hours</td></tr>
-              <tr><th>95th percentile</th><td>73.6 hours</td></tr>
-              <tr><th>Largest exact gap</th><td>50.0 days</td></tr>
+              <tr><th>Mean gap (end→start)</th><td id="snap-mean">27.8 hours</td></tr>
+              <tr><th>Median gap (end→start)</th><td id="snap-median">17.8 hours</td></tr>
+              <tr><th>95th percentile</th><td id="snap-p95">73.6 hours</td></tr>
+              <tr><th>Largest gap</th><td id="snap-maxgap">—</td></tr>
             </tbody>
           </table>
         </div>
@@ -1986,6 +1910,7 @@ composite                               ≈ <strong>55</strong></div>
     });
 
     render();
+    populateDynamicSections();
 
     // ── Live forecast (recalculates from current time every minute) ──
 
@@ -2028,6 +1953,199 @@ composite                               ≈ <strong>55</strong></div>
     function fmtPct(p) {
       const pct = Math.round(p * 100);
       return pct >= 99 ? '≈99%' : `~${pct}%`;
+    }
+
+    // ── Static section population (runs once on load) ──
+    function populateDynamicSections() {
+      const recent = stats.recent_streams || [];
+      const MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const sources = D.sources || {};
+      const sg = stats.sully_gap_hours || {};
+
+      function fmtD(iso) { const d = new Date(iso); return MN[d.getUTCMonth()] + ' ' + d.getUTCDate(); }
+      function fmtT(iso) { return new Date(iso).toISOString().slice(11,16); }
+      function primaryGame(games) { return (games || []).find(g => g !== 'Just Chatting') || null; }
+      function gameClass(games) {
+        const g = primaryGame(games);
+        return g ? 'arc' : 'chat';
+      }
+      function gameLabel(games) {
+        const g = primaryGame(games);
+        if (!g) return 'Just Chatting';
+        const words = g.split(' ');
+        return words.length > 2 ? words.slice(0,2).join(' ') + '.' : g;
+      }
+
+      // ── Stream timeline dots ──
+      const dotsEl = document.getElementById('stream-dots');
+      if (dotsEl && recent.length) {
+        const last5 = recent.slice(-5);
+        const ls = stats.last_stream;
+        const sinceDate = ls?.started_at ? fmtD(ls.started_at) : '—';
+        const nowLabel = stats.live_stream ? 'live' : 'waiting';
+        dotsEl.innerHTML = last5.map(s => {
+          const cls = gameClass(s.games);
+          const lbl = gameLabel(s.games);
+          const dh = Math.round(s.duration_h);
+          return `<div class="sitem">
+            <div class="sdot ${cls}"></div>
+            <div class="sdot-info"><span class="d">${fmtD(s.started_at)}</span>${lbl}<br>${dh}h<span class="tag ${cls}">${cls === 'arc' ? 'Arc' : 'JC'}</span></div>
+          </div>`;
+        }).join('') + `<div class="sitem">
+          <div class="sdot now"></div>
+          <div class="sdot-info"><span class="d g" id="now-elapsed">+0h</span>${nowLabel}<br>since ${sinceDate}<span class="tag now">← now</span></div>
+        </div>`;
+      }
+
+      // ── Hero stat chips ──
+      const monthly = stats.sully_monthly_counts || {};
+      const recentMonths = Object.keys(monthly).sort().slice(-6);
+      const avgMonthly = recentMonths.length
+        ? Math.round(recentMonths.reduce((s, m) => s + (monthly[m] || 0), 0) / recentMonths.length)
+        : 20;
+      const el = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+      el('hstat-monthly', '~' + avgMonthly);
+      el('hstat-median', (sg.median || 17.8).toFixed(1) + 'h');
+      el('hstat-count', (sources.sullygnome_stream_table || 2422).toLocaleString());
+      const p95row = (stats.gap_cdf || []).find(([h, p]) => p >= 95);
+      el('hstat-p95', p95row ? p95row[0] + 'h' : '73.6h');
+
+      // ── Rationale dynamic text ──
+      const r2 = document.getElementById('rationale-s2-math');
+      if (r2 && sg.median) r2.textContent =
+        `median = ${sg.median}h  ·  mean = ${sg.mean}h  ·  p95 ≈ ${p95row ? p95row[0] : 73.6}h\np25 ≈ 13h  ·  p50 ≈ ${sg.median}h  ·  p75 ≈ 31.5h`;
+
+      const r3 = document.getElementById('rationale-s3');
+      if (r3 && stats.last_stream?.ended_at_iso) {
+        const endET = new Date(stats.last_stream.ended_at_iso).toLocaleString('en-US', {
+          timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+        });
+        r3.textContent = `The last stream ended ${endET} ET. The elapsed bar above shows how far into the end-to-start gap distribution we currently sit — updated live every minute.`;
+      }
+
+      const r5 = document.getElementById('rationale-s5');
+      if (r5 && stats.last_stream?.ended_at_iso && sg.median) {
+        const lastEnd = new Date(stats.last_stream.ended_at_iso);
+        const target = new Date(lastEnd.getTime() + sg.median * 3600000);
+        const targetET = target.toLocaleString('en-US', {
+          timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+        });
+        r5.textContent = `Median gap (${sg.median}h) from last stream end = ${targetET} ET. p75 ≈ 31.5h, p95 ≈ ${p95row ? p95row[0] : 73.6}h.`;
+      }
+
+      // ── Arc card ──
+      populateArcCard(recent, primaryGame);
+
+      // ── Source note ──
+      const sn = document.getElementById('source-note');
+      if (sn) {
+        const total = (sources.sullygnome_stream_table || 2422).toLocaleString();
+        const titles = (sources.youtube_archive_grouped_dates || 548).toLocaleString();
+        const genAt = new Date(D.generated_at || new Date()).toLocaleDateString('en-US', {
+          timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric'
+        });
+        sn.textContent = `${total} exact Sully streams · ${titles} title-semantic archive gaps · refreshed ${genAt}`;
+      }
+
+      // ── Recent Evidence ──
+      const ev = document.getElementById('recent-evidence');
+      if (ev && recent.length) {
+        ev.innerHTML = [...recent].reverse().slice(0, 5).map(s => {
+          const pg = primaryGame(s.games) || 'Just Chatting';
+          const cls = gameClass(s.games);
+          const tagStyle = cls === 'arc'
+            ? 'background:rgba(173,145,255,.15);color:var(--violet)'
+            : 'background:rgba(98,185,223,.15);color:var(--blue)';
+          const tagLabel = cls === 'arc' ? 'Arc' : 'Chat';
+          const fol = s.followers_gained >= 0 ? `+${s.followers_gained}` : `${s.followers_gained}`;
+          const dh = Math.round(s.duration_h);
+          return `<div class="timeline-row">
+            <div class="date">${fmtD(s.started_at)}</div>
+            <div class="title">${fmtT(s.started_at)} UTC · ${pg} · ${dh}h · ${(s.avg_viewers||0).toLocaleString()} avg / ${(s.peak_viewers||0).toLocaleString()} peak · ${fol} followers</div>
+            <div class="tag" style="${tagStyle}">${tagLabel}</div>
+          </div>`;
+        }).join('');
+      }
+
+      // ── Model Snapshot ──
+      const total = sources.sullygnome_stream_table || 2422;
+      el('snap-streams', total.toLocaleString());
+      el('snap-gaps', (total - 1).toLocaleString());
+      const years = Object.keys(stats.sully_yearly_counts || {}).sort();
+      if (years.length) {
+        el('snap-coverage', `${years[0]}–${years[years.length-1].slice(2)}`);
+        el('snap-coverage-sub', `Jan ${years[0]}–${MN[new Date().getUTCMonth()]} ${years[years.length-1]}`);
+      }
+      el('snap-titles', (sources.youtube_archive_grouped_dates || 548).toLocaleString());
+      el('snap-mean', (sg.mean || 27.8).toFixed(1) + ' hours');
+      el('snap-median', (sg.median || 17.8).toFixed(1) + ' hours');
+      el('snap-p95', (p95row ? p95row[0] : 73.6) + ' hours');
+      el('snap-maxgap', sg.max ? (sg.max / 24).toFixed(1) + ' days' : '—');
+    }
+
+    function populateArcCard(recent, primaryGameFn) {
+      const arcEl = document.getElementById('arc-card');
+      if (!arcEl || !recent.length) return;
+      const MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      function fmtD(iso) { const d = new Date(iso); return MN[d.getUTCMonth()] + ' ' + d.getUTCDate(); }
+      const pg = primaryGameFn || (games => (games || []).find(g => g !== 'Just Chatting') || null);
+
+      // Count non-JC game appearances
+      const counts = {};
+      recent.forEach(s => { const g = pg(s.games); if (g) counts[g] = (counts[g] || 0) + 1; });
+
+      // Most recent non-JC game with 2+ sessions
+      let arcGame = null;
+      for (let i = recent.length - 1; i >= 0; i--) {
+        const g = pg(recent[i].games);
+        if (g && counts[g] >= 2) { arcGame = g; break; }
+      }
+
+      if (!arcGame) {
+        arcEl.innerHTML = `<div class="arc-card-kicker">Arc status · none</div>
+          <div class="arc-card-title">Just Chatting</div>
+          <div class="arc-card-meta"><span>No multi-session arc in recent history</span></div>`;
+        return;
+      }
+
+      const sessions = recent.filter(s => pg(s.games) === arcGame);
+      const totalH = Math.round(sessions.reduce((s, r) => s + r.duration_h, 0));
+      const isActive = pg(recent[recent.length - 1].games) === arcGame;
+      const arcStart = sessions[0].started_at;
+      const jcBreaks = recent.filter(s => !pg(s.games) && s.started_at > arcStart);
+      const maxH = Math.max(...sessions.map(s => s.duration_h), 1);
+
+      // Label sessions: if same date, append a/b/c
+      const dateCounts = {};
+      sessions.forEach(s => { const d = s.started_at.slice(0,10); dateCounts[d] = (dateCounts[d] || 0) + 1; });
+      const dateIdx = {};
+      const sessionBars = sessions.map(s => {
+        const date = s.started_at.slice(0,10);
+        const count = dateCounts[date];
+        dateIdx[date] = (dateIdx[date] || 0);
+        const suffix = count > 1 ? String.fromCharCode(97 + dateIdx[date]++) : '';
+        const label = fmtD(s.started_at) + suffix;
+        const w = Math.max(10, Math.round((s.duration_h / maxH) * 100));
+        return `<div class="arc-session"><span>${label}</span>
+          <div class="arc-session-fill" style="--w:${w}%"></div>
+          <span>${Math.round(s.duration_h)}h</span></div>`;
+      });
+
+      jcBreaks.slice(-3).forEach(s => {
+        const w = Math.max(20, Math.round((s.duration_h / maxH) * 100));
+        sessionBars.push(`<div class="arc-session" style="opacity:.5"><span>${fmtD(s.started_at)}</span>
+          <div class="arc-session-fill" style="--w:${w}%;background:var(--blue);box-shadow:none"></div>
+          <span style="color:var(--blue)">JC</span></div>`);
+      });
+
+      arcEl.innerHTML = `
+        <div class="arc-card-kicker">Arc status · ${isActive ? 'active' : 'paused'}</div>
+        <div class="arc-card-title">${arcGame}</div>
+        <div class="arc-card-meta">
+          <span>${sessions.length} session${sessions.length > 1 ? 's' : ''} · ~${totalH}h</span>
+          ${jcBreaks.length ? `<span>${jcBreaks.length}× JC break${jcBreaks.length > 1 ? 's' : ''}</span>` : ''}
+        </div>
+        <div class="arc-bar">${sessionBars.join('')}</div>`;
     }
 
     function fmtDuration(totalMinutes) {
