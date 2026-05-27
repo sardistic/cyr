@@ -898,83 +898,11 @@
 
       <!-- 7-Day Schedule Forecast -->
       <div class="schedule-strip">
-        <div class="schedule-kicker">7-Day Stream Schedule · issued May 26, 2026</div>
+        <div class="schedule-kicker" id="schedule-kicker">7-Day Stream Schedule</div>
         <p class="schedule-summary" id="schedule-summary">
           <strong>Tonight:</strong> Slim — under 2 hours remain in the window. <strong>Tuesday</strong> is the primary target: the gap is in the 65th–80th percentile zone and arc-resumption conditions are elevated after two consecutive JC breaks — most gaps resolve here. <strong>Wednesday</strong> likely follows if Death Stranding picks back up. <strong>Thursday and Friday</strong> are genuine lows — the quietest UTC days in 9 years of data (Wed–Thu night ET), and by then any gap would be a long-tail outlier. <strong>Saturday</strong> ticks back up slightly. <strong>Sunday June 1</strong> is the strongest long-range signal — Monday UTC has the highest stream count of any day in the dataset (430 streams), equivalent to Sunday night ET.
         </p>
-        <div class="schedule-days">
-
-          <div class="sday today">
-            <div class="sday-bar" style="background:linear-gradient(90deg,var(--muted),rgba(153,170,173,.3))"></div>
-            <div class="sday-dow">Mon</div>
-            <div class="sday-date">May 26</div>
-            <div class="sday-icon">🌧</div>
-            <div class="sday-prob" style="color:var(--muted)">Slim</div>
-            <div class="sday-type">JC likely</div>
-            <div class="sday-desc">2h window<br>remaining</div>
-          </div>
-
-          <div class="sday arc-watch">
-            <div class="sday-bar" style="background:linear-gradient(90deg,var(--green),var(--blue))"></div>
-            <div class="sday-dow">Tue</div>
-            <div class="sday-date">May 27</div>
-            <div class="sday-icon">⛈</div>
-            <div class="sday-prob" style="color:var(--green)">High</div>
-            <div class="sday-type">Arc watch</div>
-            <div class="sday-desc">Best 24h<br>window</div>
-          </div>
-
-          <div class="sday arc-watch">
-            <div class="sday-bar" style="background:linear-gradient(90deg,var(--violet),rgba(173,145,255,.3))"></div>
-            <div class="sday-dow">Wed</div>
-            <div class="sday-date">May 28</div>
-            <div class="sday-icon">🌤</div>
-            <div class="sday-prob" style="color:var(--violet)">Likely</div>
-            <div class="sday-type">DS arc cont.</div>
-            <div class="sday-desc">2nd session<br>if Tue streams</div>
-          </div>
-
-          <div class="sday">
-            <div class="sday-bar" style="background:linear-gradient(90deg,rgba(153,170,173,.3),transparent)"></div>
-            <div class="sday-dow">Thu</div>
-            <div class="sday-date">May 29</div>
-            <div class="sday-icon">🌧</div>
-            <div class="sday-prob" style="color:var(--muted)">Low</div>
-            <div class="sday-type">Rest day</div>
-            <div class="sday-desc">Quietest DOW<br>in dataset</div>
-          </div>
-
-          <div class="sday">
-            <div class="sday-bar" style="background:linear-gradient(90deg,rgba(153,170,173,.3),transparent)"></div>
-            <div class="sday-dow">Fri</div>
-            <div class="sday-date">May 30</div>
-            <div class="sday-icon">🌧</div>
-            <div class="sday-prob" style="color:var(--muted)">Low</div>
-            <div class="sday-type">Rest / JC</div>
-            <div class="sday-desc">Wed–Thu ET<br>low-activity band</div>
-          </div>
-
-          <div class="sday">
-            <div class="sday-bar" style="background:linear-gradient(90deg,var(--blue),rgba(98,185,223,.2))"></div>
-            <div class="sday-dow">Sat</div>
-            <div class="sday-date">May 31</div>
-            <div class="sday-icon">⛅</div>
-            <div class="sday-prob" style="color:var(--blue)">Possible</div>
-            <div class="sday-type">Collab / JC</div>
-            <div class="sday-desc">Fri night ET<br>uptick begins</div>
-          </div>
-
-          <div class="sday peak">
-            <div class="sday-bar" style="background:linear-gradient(90deg,var(--green),var(--gold))"></div>
-            <div class="sday-dow">Sun</div>
-            <div class="sday-date">Jun 1</div>
-            <div class="sday-icon">⛈</div>
-            <div class="sday-prob" style="color:var(--green)">Peak</div>
-            <div class="sday-type">Peak DOW</div>
-            <div class="sday-desc">Mon UTC high<br>Sun night ET</div>
-          </div>
-
-        </div>
+        <div class="schedule-days" id="schedule-days"></div>
       </div>
 
       <div class="hero">
@@ -2048,8 +1976,8 @@ composite                               ≈ <strong>55</strong></div>
         chipNote.textContent = `Conditioned on ${fmtElapsed(elapsedH)} elapsed (${ordinal(Math.round(pctAtNow))} pct). Unconditional from last start: ${u24}% / ${u48}% / ≈99%.`;
       }
 
-      // Update tonight's schedule card
-      updateScheduleTonight(elapsedH, p24cond);
+      // Update schedule strip
+      buildSchedule(elapsedH);
 
       // Redraw signal curve with updated elapsed position marked
       drawSignalCurve(elapsedH, p24cond, p48cond);
@@ -2151,36 +2079,115 @@ composite                               ≈ <strong>55</strong></div>
       });
     }
 
-    function updateScheduleTonight(elapsedH, p24cond) {
-      // Update tonight's card based on how much time is left
-      const todayCard = document.querySelector('.sday.today');
-      if (!todayCard) return;
-      const probEl = todayCard.querySelector('.sday-prob');
-      const descEl = todayCard.querySelector('.sday-desc');
-      const iconEl = todayCard.querySelector('.sday-icon');
+    function buildSchedule(elapsedH) {
+      const container = document.getElementById('schedule-days');
+      if (!container) return;
 
-      // How many hours left until midnight ET (ET = UTC-4 in EDT)
+      const dowCounts = stats.dow_hour?.dow || {};
+      const utcDowNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      const etDowNames  = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      const monthNames  = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const dowMin = 291, dowMax = 430;
+
+      const lastEndStr = stats.last_stream?.ended_at_iso;
+      const lastEnd = lastEndStr ? new Date(lastEndStr) : null;
       const now = new Date();
-      const midnightET = new Date(now.toLocaleDateString('en-US', { timeZone: 'America/New_York' }));
-      midnightET.setDate(midnightET.getDate() + 1);
-      const hoursLeft = (midnightET - now) / 3600000;
 
-      // Prob of stream in remaining window tonight (conditional on elapsed)
-      const pTonightWindow = conditionalProb(elapsedH, hoursLeft);
-      const pctTonight = Math.round(pTonightWindow * 100);
+      // Today midnight in ET as a UTC timestamp
+      const todayETStr = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+      const todayMidnightET = new Date(todayETStr);
 
-      if (pctTonight < 20) {
-        if (probEl) { probEl.textContent = 'Slim'; probEl.style.color = 'var(--muted)'; }
-        if (iconEl) iconEl.textContent = '🌧';
-        if (descEl) descEl.innerHTML = Math.round(hoursLeft * 10) / 10 + 'h window<br>remaining';
-      } else if (pctTonight < 45) {
-        if (probEl) { probEl.textContent = '~' + pctTonight + '%'; probEl.style.color = 'var(--blue)'; }
-        if (iconEl) iconEl.textContent = '⛅';
-        if (descEl) descEl.innerHTML = Math.round(hoursLeft * 10) / 10 + 'h window<br>remaining';
-      } else {
-        if (probEl) { probEl.textContent = '~' + pctTonight + '%'; probEl.style.color = 'var(--green)'; }
-        if (iconEl) iconEl.textContent = '🌤';
-        if (descEl) descEl.innerHTML = Math.round(hoursLeft * 10) / 10 + 'h window<br>remaining';
+      const cards = [];
+      for (let i = 0; i < 7; i++) {
+        const dayStart = new Date(todayMidnightET);
+        dayStart.setDate(todayMidnightET.getDate() + i);
+        const dayEnd = new Date(dayStart);
+        dayEnd.setDate(dayStart.getDate() + 1);
+
+        const dow = etDowNames[dayStart.getDay()];
+        const utcDow = utcDowNames[dayStart.getUTCDay()];
+        const dateLabel = monthNames[dayStart.getMonth()] + ' ' + dayStart.getDate();
+
+        // DOW score (0–1) from historical frequency
+        const dowCount = dowCounts[utcDow] || 320;
+        const dowScore = (dowCount - dowMin) / (dowMax - dowMin);
+
+        // Hours-from-lastEnd for this day's window
+        const winStartH = lastEnd ? (dayStart - lastEnd) / 3600000 : i * 24;
+        const winEndH   = lastEnd ? (dayEnd   - lastEnd) / 3600000 : (i + 1) * 24;
+        const hoursLeftToday = Math.max(0, (dayEnd - now) / 3600000);
+
+        // Score: blend gap model (early days) + DOW frequency (later days)
+        let score;
+        if (i === 0) {
+          score = conditionalProb(elapsedH, hoursLeftToday);
+        } else {
+          const pE = (cdfLookup(Math.max(winStartH, elapsedH)) ?? 0) / 100;
+          const pT = (cdfLookup(winEndH) ?? 0) / 100;
+          const pGap = Math.max(0, (pT - pE) / Math.max(1 - pE, 0.01));
+          const gapWeight = Math.max(0, 1 - i * 0.35); // fades out after day 2
+          score = pGap * gapWeight + dowScore * (1 - gapWeight) * 0.85 + 0.15;
+        }
+
+        // Map score to card config
+        let label, icon, color, cls, barColor, type, desc;
+
+        if (i === 0) {
+          type = 'Gap overdue zone';
+          desc = Math.round(hoursLeftToday) + 'h left tonight';
+          if (score < 0.15) {
+            label = 'Slim'; icon = '🌧'; color = 'var(--muted)'; cls = 'today';
+            barColor = 'linear-gradient(90deg,var(--muted),transparent)';
+          } else if (score < 0.40) {
+            label = '~' + Math.round(score * 100) + '%'; icon = '⛅'; color = 'var(--blue)'; cls = 'today';
+            barColor = 'linear-gradient(90deg,var(--blue),transparent)';
+          } else {
+            label = '~' + Math.round(score * 100) + '%'; icon = '⛈'; color = 'var(--green)'; cls = 'today';
+            barColor = 'linear-gradient(90deg,var(--green),var(--blue))';
+          }
+        } else if (dow === 'Mon') {
+          // Monday UTC = Sunday ET night = peak DOW in dataset
+          label = 'Peak'; icon = '⛈'; color = 'var(--green)'; cls = 'peak';
+          barColor = 'linear-gradient(90deg,var(--green),var(--gold))';
+          type = 'Peak DOW'; desc = 'Mon UTC · Sun ET night';
+        } else if (score > 0.60) {
+          label = 'High'; icon = '⛈'; color = 'var(--green)'; cls = 'arc-watch';
+          barColor = 'linear-gradient(90deg,var(--green),var(--blue))';
+          type = 'Arc / JC'; desc = 'Strong window';
+        } else if (score > 0.42) {
+          label = 'Likely'; icon = '🌤'; color = 'var(--violet)'; cls = 'arc-watch';
+          barColor = 'linear-gradient(90deg,var(--violet),rgba(173,145,255,.3))';
+          type = 'Continuation'; desc = 'Elevated';
+        } else if (score > 0.30) {
+          label = 'Possible'; icon = '⛅'; color = 'var(--blue)'; cls = '';
+          barColor = 'linear-gradient(90deg,var(--blue),rgba(98,185,223,.2))';
+          type = 'JC / arc'; desc = 'Moderate';
+        } else {
+          label = 'Low'; icon = '🌧'; color = 'var(--muted)'; cls = '';
+          barColor = 'linear-gradient(90deg,rgba(153,170,173,.25),transparent)';
+          type = 'Rest likely'; desc = dowScore < 0.25 ? 'Quietest DOW' : 'Quiet zone';
+        }
+
+        cards.push(`<div class="sday ${cls}">
+          <div class="sday-bar" style="background:${barColor}"></div>
+          <div class="sday-dow">${dow}</div>
+          <div class="sday-date">${dateLabel}</div>
+          <div class="sday-icon">${icon}</div>
+          <div class="sday-prob" style="color:${color}">${label}</div>
+          <div class="sday-type">${type}</div>
+          <div class="sday-desc">${desc}</div>
+        </div>`);
+      }
+
+      container.innerHTML = cards.join('');
+
+      // Update kicker date
+      const kicker = document.getElementById('schedule-kicker');
+      if (kicker) {
+        const etDate = now.toLocaleDateString('en-US', {
+          timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric', year: 'numeric'
+        });
+        kicker.textContent = '7-Day Stream Schedule · issued ' + etDate;
       }
     }
 
