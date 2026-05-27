@@ -2126,18 +2126,17 @@ composite                               ≈ <strong>55</strong></div>
       buildSchedule(elapsedH);
 
       // ── Answer panel + Probability Windows table ──
-      const medianH = stats.sully_gap_hours?.median ?? 17.85;
-      const medianTarget = new Date(lastEnd.getTime() + medianH * 3600000);
       const etOpts = { timeZone: 'America/New_York' };
-      const etTime = medianTarget.toLocaleTimeString('en-US', { ...etOpts, hour: 'numeric', minute: '2-digit' });
-      const etDate = medianTarget.toLocaleDateString('en-US', { ...etOpts, weekday: 'short', month: 'short', day: 'numeric' });
+      const medianTarget = new Date(lastEnd.getTime() + medianH * 3600000);
+      const medianTimeET = medianTarget.toLocaleTimeString('en-US', { ...etOpts, hour: 'numeric', minute: '2-digit' });
+      const medianDateET = medianTarget.toLocaleDateString('en-US', { ...etOpts, weekday: 'short', month: 'short', day: 'numeric' });
       const endedET = lastEnd.toLocaleString('en-US', { ...etOpts, weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
 
       const answerHeadEl = document.getElementById('answer-headline');
       const answerSubEl  = document.getElementById('answer-sub');
       if (answerHeadEl) {
         if (elapsedH < medianH) {
-          answerHeadEl.textContent = `Median target: ${etTime} ET`;
+          answerHeadEl.textContent = `Median target: ${medianTimeET} ET`;
         } else {
           answerHeadEl.textContent = 'Overdue zone — any time now';
         }
@@ -2146,7 +2145,7 @@ composite                               ≈ <strong>55</strong></div>
         const pastMedian = elapsedH >= medianH;
         answerSubEl.textContent = pastMedian
           ? `Last ended ${endedET} ET. Gap is past the ${medianH.toFixed(1)}h median (${fmtElapsed(elapsedH)} elapsed) — elevated probability right now.`
-          : `Last ended ${endedET} ET. Median ${medianH.toFixed(1)}h gap puts target around ${etDate} at ${etTime} ET. ${fmtElapsed(elapsedH)} elapsed.`;
+          : `Last ended ${endedET} ET. Median ${medianH.toFixed(1)}h gap puts target around ${medianDateET} at ${medianTimeET} ET. ${fmtElapsed(elapsedH)} elapsed.`;
       }
 
       // Probability Windows — unconditional
