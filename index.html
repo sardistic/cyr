@@ -827,6 +827,35 @@
       font-size: 13px;
     }
 
+    /* ── Live Banner ── */
+    .live-banner {
+      display: none;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 24px;
+      background: linear-gradient(90deg, rgba(98,211,148,.12), rgba(98,211,148,.04));
+      border: 1px solid rgba(98,211,148,.35);
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .live-banner.visible { display: flex; }
+    .live-dot {
+      width: 10px; height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 0 rgba(98,211,148,.6);
+      animation: livepulse 1.6s ease-out infinite;
+    }
+    @keyframes livepulse {
+      0%   { box-shadow: 0 0 0 0 rgba(98,211,148,.6); }
+      70%  { box-shadow: 0 0 0 8px rgba(98,211,148,0); }
+      100% { box-shadow: 0 0 0 0 rgba(98,211,148,0); }
+    }
+    .live-text { font-size: 14px; font-weight: 700; color: var(--green); }
+    .live-meta { font-size: 13px; color: var(--muted); }
+    .live-viewers { margin-left: auto; font-size: 13px; color: var(--muted); }
+
     /* ── Magic 8-Ball ── */
     .ball-section {
       margin: 64px 0 0;
@@ -1031,6 +1060,15 @@
         <div class="brand"><span class="mark">CYR</span> Stream Forecast Lab</div>
         <div>Static model snapshot · May 26, 2026 · America/New_York</div>
       </nav>
+
+      <div class="live-banner" id="live-banner">
+        <div class="live-dot"></div>
+        <div>
+          <div class="live-text">LIVE NOW</div>
+          <div class="live-meta" id="live-meta"></div>
+        </div>
+        <div class="live-viewers" id="live-viewers"></div>
+      </div>
 
       <!-- 7-Day Schedule Forecast -->
       <div class="schedule-strip">
@@ -1993,6 +2031,23 @@ composite                               ≈ <strong>55</strong></div>
     }
 
     function updateForecast() {
+      // Live stream banner
+      const liveBanner = document.getElementById('live-banner');
+      const live = stats.live_stream;
+      if (liveBanner && live) {
+        liveBanner.classList.add('visible');
+        const startedAt = new Date(live.started_at);
+        const durationH = (new Date() - startedAt) / 3600000;
+        const dMin = Math.round(durationH * 60);
+        const dLabel = dMin >= 60 ? `${Math.floor(dMin/60)}h ${dMin%60}m` : `${dMin}m`;
+        const metaEl = document.getElementById('live-meta');
+        if (metaEl) metaEl.textContent = `${live.game} · ${dLabel} in`;
+        const viewEl = document.getElementById('live-viewers');
+        if (viewEl) viewEl.textContent = live.viewers.toLocaleString() + ' viewers at last check';
+      } else if (liveBanner) {
+        liveBanner.classList.remove('visible');
+      }
+
       const lastEndStr = stats.last_stream?.ended_at_iso ?? stats.last_stream?.started_at;
       if (!lastEndStr || !stats.gap_cdf) return;
 

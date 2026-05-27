@@ -20,6 +20,30 @@ TWITCHMETRICS = f"https://www.twitchmetrics.net/c/{CHANNEL_ID}-cyr"
 YOUTUBE_ARCHIVE = "https://www.youtube.com/channel/UCtqSew92vbH79xuLLVssbIA/videos"
 SULLY_PAGE = "https://sullygnome.com/channel/cyr/5000/streams"
 SULLY_CHANNEL_ID = "9451380"
+TWITCH_GQL = "https://gql.twitch.tv/gql"
+TWITCH_CLIENT_ID = "kimne78kx3ncx6brgo4mv6wki5h1ko"  # public web client ID
+
+
+def fetch_twitch_live():
+    """Return live stream info dict if cyr is live, else None."""
+    try:
+        r = requests.post(
+            TWITCH_GQL,
+            headers={"Client-Id": TWITCH_CLIENT_ID},
+            json={"query": '{user(login:"cyr"){stream{id title game{name} createdAt viewersCount}}}'},
+            timeout=10,
+        )
+        stream = r.json().get("data", {}).get("user", {}).get("stream")
+        if not stream:
+            return None
+        return {
+            "started_at": stream["createdAt"],
+            "game": stream.get("game", {}).get("name", ""),
+            "title": stream.get("title", ""),
+            "viewers": stream.get("viewersCount", 0),
+        }
+    except Exception:
+        return None
 
 
 def clean_html(value):
@@ -562,6 +586,12 @@ def analyze_games(sully_rows):
 
 
 def main():
+    live_stream = fetch_twitch_live()
+    if live_stream:
+        print(f"LIVE: {live_stream['game']} · {live_stream['viewers']} viewers · started {live_stream['started_at']}")
+    else:
+        print("Not live right now.")
+
     sully_rows = parse_sullygnome_streams()
     stream_logs = parse_twitchmetrics_stream_logs()
     vods = parse_twitchmetrics_vods()
@@ -635,6 +665,7 @@ def main():
                 "title_analysis": {k: v for k, v in title_analysis.items() if k != "rows"},
                 "game_analysis": game_analysis,
             },
+            "live_stream": live_stream,
         },
         "sully_streams": sully_rows,
         "exact_rows": exact_rows,
