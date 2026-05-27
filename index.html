@@ -1081,7 +1081,7 @@
 
       <div class="hero">
         <div>
-          <h1>When does cyr go live next?</h1>
+          <h1 id="hero-h1">When does cyr go live next?</h1>
           <p class="lede" id="hero-lede">Last stream ended Mon May 25 at 10:45 PM ET (JC · 4h · 3,946 avg). Past median gap now — model in overdue zone.</p>
 
           <div class="prediction">
@@ -1105,7 +1105,7 @@
           <!-- Gap elapsed progress -->
           <div class="elapsed-panel">
             <div class="elapsed-head">
-              <span>Time since last stream ended</span>
+              <span id="elapsed-head-label">Time since last stream ended</span>
               <strong id="elapsed-h">17 h</strong>
               <span class="elapsed-badge" id="elapsed-pct">≈ 25th percentile</span>
             </div>
@@ -2030,6 +2030,109 @@ composite                               ≈ <strong>55</strong></div>
       return pct >= 99 ? '≈99%' : `~${pct}%`;
     }
 
+    function fmtDuration(totalMinutes) {
+      const h = Math.floor(totalMinutes / 60);
+      const m = totalMinutes % 60;
+      return h > 0 ? `${h}h ${m}m` : `${m}m`;
+    }
+
+    function applyLiveMode(live) {
+      const now = new Date();
+      const startedAt = new Date(live.started_at);
+      const dMin = Math.round((now - startedAt) / 60000);
+      const dLabel = fmtDuration(dMin);
+      const etStart = startedAt.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
+      const etDay = startedAt.toLocaleDateString('en-US', { timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric' });
+
+      // H1 + lede
+      const h1 = document.getElementById('hero-h1');
+      if (h1) h1.textContent = 'cyr is live right now.';
+
+      const lede = document.getElementById('hero-lede');
+      if (lede) lede.textContent = `Streaming ${live.game} · started ${etDay} at ${etStart} ET · ${dLabel} in. ${live.viewers.toLocaleString()} viewers as of last data refresh.`;
+
+      // Top prediction card → stream status
+      const predLabel = document.getElementById('pred-label');
+      if (predLabel) { predLabel.textContent = 'LIVE'; predLabel.style.color = 'var(--green)'; }
+      const predSub = document.getElementById('pred-label-sub');
+      if (predSub) predSub.textContent = `${live.game} · started ${etStart} ET`;
+
+      // Prob-now → stream duration
+      const probNowLabel = document.getElementById('prob-now-label');
+      if (probNowLabel) probNowLabel.textContent = 'Streaming for';
+      const probNow = document.getElementById('prob-now');
+      if (probNow) { probNow.textContent = dLabel; probNow.style.color = 'var(--green)'; }
+      const probNowSub = document.getElementById('prob-now-sub');
+      if (probNowSub) probNowSub.innerHTML = live.title
+        ? `<span style="opacity:.7;font-size:11px">"${live.title.slice(0, 80)}${live.title.length > 80 ? '…' : ''}"</span>`
+        : '';
+
+      // Prob-next → next stream estimate after this one ends
+      const medianH = stats.sully_gap_hours?.median ?? 17.85;
+      const probNextLabel = document.getElementById('prob-next-label');
+      if (probNextLabel) probNextLabel.textContent = 'Next stream · after this ends';
+      const probNextSub = document.getElementById('prob-next-sub');
+      if (probNextSub) probNextSub.textContent = `Median ${medianH}h gap from stream end. Next one likely ${Math.round(medianH)}–${Math.round(medianH + 12)}h after he goes offline.`;
+
+      // Elapsed bar → repurpose as stream duration (0–6h reference)
+      const REF_H = 6;
+      const fillPct = Math.min(100, (dMin / 60 / REF_H) * 100).toFixed(1) + '%';
+      const elFill = document.getElementById('elapsed-fill');
+      if (elFill) elFill.style.width = fillPct;
+      const elYou = document.getElementById('elapsed-you');
+      if (elYou) { elYou.style.left = fillPct; elYou.innerHTML = dLabel + ' ↑<br>now'; }
+      const elH = document.getElementById('elapsed-h');
+      if (elH) elH.textContent = dLabel;
+      const elPct = document.getElementById('elapsed-pct');
+      if (elPct) elPct.textContent = `${live.viewers.toLocaleString()} viewers`;
+      const elLabel = document.getElementById('elapsed-head-label');
+      if (elLabel) elLabel.textContent = 'Current stream duration';
+      const elExplain = document.getElementById('elapsed-explain');
+      if (elExplain) elExplain.textContent = `He's been live for ${dLabel}. Recent streams have run 4–6h. Bar spans 0–6h.`;
+
+      // Answer panel
+      const answerHead = document.getElementById('answer-headline');
+      if (answerHead) { answerHead.textContent = "He's live."; answerHead.style.color = 'var(--green)'; }
+      const answerSub = document.getElementById('answer-sub');
+      if (answerSub) answerSub.textContent = `${live.game} since ${etStart} ET (${dLabel} in). ${live.viewers.toLocaleString()} viewers at last check. Check back after he goes offline for updated next-stream predictions.`;
+
+      // Probability windows — reframe for next stream after this ends
+      const cdfAtMedian = Math.round(cdfLookup(medianH) ?? 0);
+      const u24 = document.getElementById('pw-u24');
+      const u48 = document.getElementById('pw-u48');
+      if (u24) u24.textContent = Math.round(cdfLookup(24) ?? 0) + '%';
+      if (u48) u48.textContent = Math.round(cdfLookup(48) ?? 0) + '%';
+      const condHeader = document.getElementById('pw-cond-header');
+      if (condHeader) condHeader.textContent = 'After this stream ends (unconditional)';
+      const cl24 = document.getElementById('pw-cond-label-24'); if (cl24) cl24.textContent = `Within 24h of end`;
+      const cl48 = document.getElementById('pw-cond-label-48'); if (cl48) cl48.textContent = `Within 48h of end`;
+      const cc24 = document.getElementById('pw-c24');
+      const cc48 = document.getElementById('pw-c48');
+      if (cc24) { cc24.textContent = Math.round(cdfLookup(24) ?? 0) + '%'; cc24.style.color = ''; }
+      if (cc48) { cc48.textContent = Math.round(cdfLookup(48) ?? 0) + '%'; }
+
+      // Signal chips
+      const chip24 = document.getElementById('chip-24h');
+      if (chip24) chip24.textContent = Math.round(cdfLookup(24) ?? 0) + '%';
+      const chip48 = document.getElementById('chip-48h');
+      if (chip48) chip48.textContent = Math.round(cdfLookup(48) ?? 0) + '%';
+      const chipNote = document.getElementById('chip-note');
+      if (chipNote) chipNote.textContent = `Unconditional gap model — probability next stream starts within X hours of this one ending. Median gap: ${medianH}h.`;
+
+      // Orb
+      const orbVal = document.getElementById('orb-val');
+      if (orbVal) orbVal.textContent = '▶';
+      const orbEl = orbVal?.closest('.score-orb');
+      if (orbEl) orbEl.style.background = [
+        'radial-gradient(circle, var(--panel) 0 56%, transparent 57%)',
+        'conic-gradient(var(--green) 100%, #273238 0)'
+      ].join(', ');
+
+      // Schedule summary
+      const summary = document.getElementById('schedule-summary');
+      if (summary) summary.innerHTML = `<strong>He's live right now</strong> — streaming ${live.game} (${dLabel} in). The schedule below shows historical probability for the <em>next</em> stream after this one ends.`;
+    }
+
     function updateForecast() {
       // Live stream banner
       const liveBanner = document.getElementById('live-banner');
@@ -2245,6 +2348,9 @@ composite                               ≈ <strong>55</strong></div>
 
       // Redraw signal curve with updated elapsed position marked
       drawSignalCurve(elapsedH, p24cond, p48cond);
+
+      // Override everything when live
+      if (live) applyLiveMode(live);
     }
 
     // Signal curve — redrawn each minute with current elapsed position
@@ -2396,7 +2502,12 @@ composite                               ≈ <strong>55</strong></div>
         // Map score to card config
         let label, icon, color, cls, barColor, type, desc;
 
-        if (i === 0) {
+        if (i === 0 && stats.live_stream) {
+          const lMin = Math.round((now - new Date(stats.live_stream.started_at)) / 60000);
+          label = 'LIVE'; icon = '🔴'; color = 'var(--green)'; cls = 'today';
+          barColor = 'linear-gradient(90deg,var(--green),rgba(98,211,148,.3))';
+          type = stats.live_stream.game; desc = fmtDuration(lMin) + ' in';
+        } else if (i === 0) {
           type = 'Gap overdue zone';
           desc = Math.round(hoursLeftToday) + 'h left tonight';
           if (score < 0.15) {
