@@ -827,6 +827,123 @@
       font-size: 13px;
     }
 
+    /* ── Magic 8-Ball ── */
+    .ball-section {
+      margin: 64px 0 0;
+      padding: 52px 24px 60px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+    .ball-section h2 {
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 800;
+      letter-spacing: -.5px;
+      margin: 0 0 6px;
+    }
+    .ball-section .ball-tagline {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 40px;
+    }
+    .ball-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+    .ball8 {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 36% 30%, #2e2e2e 0%, #111 45%, #000 100%);
+      border-radius: 50%;
+      box-shadow:
+        0 12px 50px rgba(0,0,0,.85),
+        inset -6px -6px 18px rgba(255,255,255,.04),
+        inset 4px 4px 10px rgba(255,255,255,.06),
+        0 0 0 2px #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      transition: transform .15s ease;
+      user-select: none;
+    }
+    .ball8:hover { transform: scale(1.03); }
+    .ball8.shaking { animation: shake8 .65s ease-in-out; }
+    @keyframes shake8 {
+      0%,100% { transform: rotate(0deg) translate(0,0); }
+      12%     { transform: rotate(-9deg) translate(-7px,-3px); }
+      25%     { transform: rotate(7deg)  translate(6px, 4px); }
+      37%     { transform: rotate(-6deg) translate(-5px,-2px); }
+      50%     { transform: rotate(5deg)  translate(4px, 3px); }
+      62%     { transform: rotate(-3deg) translate(-3px,-1px); }
+      75%     { transform: rotate(2deg)  translate(2px, 1px); }
+      88%     { transform: rotate(-1deg) translate(-1px, 0); }
+    }
+    .ball8-num {
+      position: absolute;
+      top: 26px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 38px;
+      height: 38px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      color: #000;
+      font-family: Georgia, serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .ball8-window {
+      width: 118px;
+      height: 118px;
+      background: radial-gradient(circle at 38% 38%, #1c2f7a, #080e2a 70%, #040812);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,.6);
+    }
+    .ball8-answer {
+      text-align: center;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: rgba(160,200,255,.95);
+      line-height: 1.4;
+      letter-spacing: .3px;
+      opacity: 0;
+      filter: blur(6px);
+      transition: opacity 1.8s ease-in, filter 1.8s ease-in;
+      pointer-events: none;
+    }
+    .ball8-answer.revealed {
+      opacity: 1;
+      filter: blur(0);
+    }
+    .ask-btn {
+      padding: 12px 32px;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      border: 1px solid rgba(98,185,223,.35);
+      border-radius: 8px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      cursor: pointer;
+      transition: background .2s, border-color .2s, transform .1s;
+      font-family: inherit;
+    }
+    .ask-btn:hover { background: linear-gradient(135deg, #20203e, #1c2848); border-color: var(--blue); }
+    .ask-btn:active { transform: scale(.97); }
+    .ask-btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
     @media (max-width: 900px) {
       header {
         min-height: auto;
@@ -1267,6 +1384,20 @@ composite                               ≈ <strong>55</strong></div>
         </div>
       </div>
     </section>
+
+    <div class="ball-section">
+      <h2>Don't like those predictions?</h2>
+      <p class="ball-tagline">Consult the omniscient AI Magic 8-Ball for a second opinion.</p>
+      <div class="ball-wrap">
+        <div class="ball8" id="ball8" onclick="shake8Ball()">
+          <div class="ball8-num">8</div>
+          <div class="ball8-window">
+            <span class="ball8-answer" id="ball8-answer">ask me</span>
+          </div>
+        </div>
+        <button class="ask-btn" id="ask-btn" onclick="shake8Ball()">Ask the 8-Ball</button>
+      </div>
+    </div>
 
     <footer>
       Fan-made model, not an official schedule. Data: <a href="data/stream-data.json">JSON</a>, <a href="data/sully-streams.csv">Sully CSV</a>, <a href="data/exact-streams.csv">TwitchMetrics CSV</a>, <a href="data/title-semantics.csv">semantics CSV</a>.
@@ -2253,6 +2384,95 @@ composite                               ≈ <strong>55</strong></div>
 
     updateForecast();
     setInterval(updateForecast, 60000);
+
+    // ── Magic 8-Ball ──
+    (function() {
+      const answers = [
+        // Negative (vast majority)
+        "Don't count on it.",
+        "Very doubtful.",
+        "My sources say no.",
+        "Outlook not so good.",
+        "My reply is no.",
+        "Extremely doubtful.",
+        "Not in this timeline.",
+        "He's playing Elden Ring and forgot you exist.",
+        "The council has deliberated. Not tonight.",
+        "Bro is literally asleep right now.",
+        "Touch grass. He is.",
+        "He tweeted 'might stream' 6 hours ago. Classic no.",
+        "The vibes say no.",
+        "Outlook is grim, king.",
+        "He's watching YouTube. Definitely not streaming.",
+        "The model says ~51%. The 8-Ball says lol.",
+        "Have you tried coping?",
+        "Cannot predict now. (It's no.)",
+        "The spirits are silent. Like his stream page.",
+        "My algorithm says no. Twice.",
+        "Not happening. Go touch a book.",
+        "He's in his off-arc. Deeply.",
+        "Concentrate and ask again. Same answer: no.",
+        "Sources within the couch confirm: no stream.",
+        "It is not looking good for you, bestie.",
+        "The fog of uncertainty is very foggy. And it says no.",
+        "Even the median gap says 'maybe chill.'",
+        "Overdue doesn't mean soon. Ask again never.",
+        // Neutral / evasive
+        "Reply hazy — mostly because the answer is no.",
+        "Ask again later. (It will still be no.)",
+        "Better not tell you now... okay fine. No.",
+        "Cannot predict now. Have you tried refreshing?",
+        "The future is unclear. The no is very clear.",
+        "Signs point to tomorrow. (Also probably no.)",
+        // Very rare positive (2 out of 37 = ~5%)
+        "Signs point to tonight. (But I've been wrong before.)",
+        "It is decidedly... actually maybe. Check the schedule.",
+      ];
+
+      // Weight the positive ones much lower by expanding the negative pool
+      // Array is already ~35 negative + 2 positive ≈ 5% positive
+
+      let shaking = false;
+
+      window.shake8Ball = function() {
+        if (shaking) return;
+        shaking = true;
+
+        const ball    = document.getElementById('ball8');
+        const answer  = document.getElementById('ball8-answer');
+        const btn     = document.getElementById('ask-btn');
+        if (!ball || !answer || !btn) return;
+
+        // Reset display
+        answer.classList.remove('revealed');
+        answer.textContent = '';
+        btn.disabled = true;
+
+        // Trigger shake
+        ball.classList.remove('shaking');
+        void ball.offsetWidth; // reflow to restart animation
+        ball.classList.add('shaking');
+
+        // After shake settles, surface the answer slowly
+        setTimeout(() => {
+          ball.classList.remove('shaking');
+          const pick = answers[Math.floor(Math.random() * answers.length)];
+          answer.textContent = pick;
+          setTimeout(() => answer.classList.add('revealed'), 80);
+          setTimeout(() => { btn.disabled = false; shaking = false; }, 2200);
+        }, 750);
+      };
+
+      // Show "ask me" text faintly on load
+      const initAnswer = document.getElementById('ball8-answer');
+      if (initAnswer) {
+        initAnswer.textContent = 'ask me';
+        initAnswer.style.opacity = '0.35';
+        initAnswer.style.filter = 'none';
+        initAnswer.style.fontSize = '12px';
+        initAnswer.style.color = 'rgba(120,160,220,.7)';
+      }
+    })();
   </script>
 </body>
 </html>
