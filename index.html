@@ -2591,6 +2591,7 @@ composite                               ≈ <strong>55</strong></div>
       const todayMidnightET = new Date(todayETStr);
 
       const cards = [];
+      const cardMeta = [];
       for (let i = 0; i < 7; i++) {
         const dayStart = new Date(todayMidnightET);
         dayStart.setDate(todayMidnightET.getDate() + i);
@@ -2666,6 +2667,7 @@ composite                               ≈ <strong>55</strong></div>
           type = 'Rest likely'; desc = dowScore < 0.25 ? 'Quietest DOW' : 'Quiet zone';
         }
 
+        cardMeta.push({ i, dow, dateLabel, score, label, hoursLeftToday });
         cards.push(`<div class="sday ${cls}">
           <div class="sday-bar" style="background:${barColor}"></div>
           <div class="sday-dow">${dow}</div>
@@ -2686,6 +2688,47 @@ composite                               ≈ <strong>55</strong></div>
           timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric', year: 'numeric'
         });
         kicker.textContent = '7-Day Stream Schedule · issued ' + etDate;
+      }
+
+      // Generate summary from card data
+      const summary = document.getElementById('schedule-summary');
+      if (summary && cardMeta.length === 7) {
+        const today = cardMeta[0];
+        const future = cardMeta.slice(1);
+
+        // Best non-peak future day by score
+        const peakDay = future.find(c => c.dow === 'Mon');
+        const bestFuture = future.filter(c => c.dow !== 'Mon').sort((a, b) => b.score - a.score)[0];
+        const lowDays = future.filter(c => c.label === 'Low');
+
+        let parts = [];
+
+        // Today
+        if (stats.live_stream) {
+          parts.push(`<strong>Today:</strong> He's live right now — schedule shows next stream probability after this one ends.`);
+        } else {
+          const todayPct = today.label === 'Slim' ? 'slim odds' : today.label;
+          const hrLeft = Math.round(today.hoursLeftToday);
+          parts.push(`<strong>${today.dow} ${today.dateLabel}:</strong> ${todayPct} — ${hrLeft}h left in the window.`);
+        }
+
+        // Strongest near-term day
+        if (bestFuture && bestFuture.score > 0.30) {
+          parts.push(`<strong>${bestFuture.dow} ${bestFuture.dateLabel}</strong> is the strongest near-term target (${bestFuture.label}).`);
+        }
+
+        // Low days
+        if (lowDays.length) {
+          const lowNames = lowDays.map(c => `<strong>${c.dow}</strong>`).join(' and ');
+          parts.push(`${lowNames} ${lowDays.length > 1 ? 'are' : 'is'} historically quiet — lowest stream-count day${lowDays.length > 1 ? 's' : ''} in the dataset.`);
+        }
+
+        // Peak DOW
+        if (peakDay) {
+          parts.push(`<strong>${peakDay.dow} ${peakDay.dateLabel}</strong> carries the strongest historical signal — Mon UTC (Sun ET night) leads all days at ${dowCounts['Mon']} streams.`);
+        }
+
+        summary.innerHTML = parts.join(' ');
       }
     }
 
