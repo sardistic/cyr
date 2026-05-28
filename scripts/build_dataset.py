@@ -3,6 +3,8 @@ import html
 import json
 import re
 import subprocess
+import sys
+import traceback
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -607,6 +609,22 @@ def analyze_games(sully_rows):
     }
 
 
+def update_live_only(live_stream):
+    """Patch live_stream into existing data files without re-fetching all sources."""
+    json_path = DATA_DIR / "stream-data.json"
+    if not json_path.exists():
+        print("No existing stream-data.json to update.")
+        return False
+    payload = json.loads(json_path.read_text(encoding="utf-8"))
+    payload["generated_at"] = datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+    payload["stats"]["live_stream"] = live_stream
+    (DATA_DIR / "stream-data.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    dash = {"generated_at": payload["generated_at"], "sources": payload["sources"], "stats": payload["stats"]}
+    (DATA_DIR / "stream-data.js").write_text("window.__SD=" + json.dumps(dash) + ";", encoding="utf-8")
+    print(f"Patched live_stream in existing data (generated_at: {payload['generated_at']}).")
+    return True
+
+
 def main():
     live_stream = fetch_twitch_live()
     if live_stream:
@@ -614,16 +632,45 @@ def main():
     else:
         print("Not live right now.")
 
-    sully_rows = parse_sullygnome_streams()
-    stream_logs = parse_twitchmetrics_stream_logs()
-    vods = parse_twitchmetrics_vods()
+    try:
+        sully_rows = parse_sullygnome_streams()
+        print(f"SullyGnome: {len(sully_rows)} streams")
+    except Exception as e:
+        print(f"SullyGnome FAILED: {e}")
+        traceback.print_exc()
+        if update_live_only(live_stream):
+            print("Exiting cleanly — live status updated, historical data unchanged.")
+            return
+        sys.exit(1)
+
+    try:
+        stream_logs = parse_twitchmetrics_stream_logs()
+        print(f"TwitchMetrics stream logs: {len(stream_logs)}")
+    except Exception as e:
+        print(f"TwitchMetrics stream logs FAILED (skipping): {e}")
+        traceback.print_exc()
+        stream_logs = []
+
+    try:
+        vods = parse_twitchmetrics_vods()
+        print(f"TwitchMetrics VODs: {len(vods)}")
+    except Exception as e:
+        print(f"TwitchMetrics VODs FAILED (skipping): {e}")
+        traceback.print_exc()
+        vods = []
     exact_by_key = {}
     for row in vods + stream_logs:
         key = row.get("id") or row["started_at"]
         exact_by_key[key] = {**exact_by_key.get(key, {}), **row}
     exact_rows = sorted(exact_by_key.values(), key=lambda r: r["started_at"])
 
-    archive_segments = parse_youtube_archive()
+    try:
+        archive_segments = parse_youtube_archive()
+        print(f"YouTube archive: {len(archive_segments)} segments")
+    except Exception as e:
+        print(f"YouTube archive FAILED (skipping): {e}")
+        traceback.print_exc()
+        archive_segments = []
     archive_groups = group_archive_segments(archive_segments)
     archive_dates = [g["date"] for g in archive_groups]
     archive_gaps, archive_bins = gap_bins_from_dates(archive_dates)
