@@ -1086,7 +1086,7 @@
 
           <div class="prediction">
             <div class="metric">
-              <small>Top Prediction</small>
+              <small>Median Target <span style="font-weight:400;opacity:.6">(50th pct)</span></small>
               <strong id="pred-label">Tonight</strong>
               <span id="pred-label-sub">End-to-start median gap from last stream end.</span>
             </div>
@@ -2402,7 +2402,12 @@ composite                               ≈ <strong>55</strong></div>
       const predLabelEl = document.getElementById('pred-label');
       if (predLabelEl) predLabelEl.textContent = predLabel;
       const predSubEl = document.getElementById('pred-label-sub');
-      if (predSubEl) predSubEl.textContent = predSub;
+      if (predSubEl) {
+        const windowPct = Math.round(p24cond * 100);
+        predSubEl.textContent = elapsedH > medianH
+          ? `Past median (${medianH}h). ${windowPct}% chance in next 24h — any time now.`
+          : `Median gap lands ${predLabel.toLowerCase()}. ${windowPct}% chance in next 24h — distribution is wide, not a confident call.`;
+      }
 
       // Signal chips
       const chip24 = document.getElementById('chip-24h');
