@@ -2608,7 +2608,7 @@ composite                               ≈ <strong>55</strong></div>
         // Score: blend gap model (early days) + DOW frequency (later days)
         let score;
         if (i === 0) {
-          score = conditionalProb(elapsedH, hoursLeftToday);
+          score = conditionalProb(elapsedH, elapsedH + hoursLeftToday);
         } else {
           const pE = (cdfLookup(Math.max(winStartH, elapsedH)) ?? 0) / 100;
           const pT = (cdfLookup(winEndH) ?? 0) / 100;
