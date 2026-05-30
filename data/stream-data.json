@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-30T00:10:07Z",
+  "generated_at": "2026-05-30T04:35:32Z",
   "sources": {
-    "sullygnome_stream_table": 2424,
+    "sullygnome_stream_table": 2425,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 37,
     "exact_merged_rows": 37,
@@ -10,13 +10,13 @@
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2423,
-      "mean": 27.79,
-      "median": 17.86,
+      "count": 2424,
+      "mean": 27.78,
+      "median": 17.87,
       "max": 1197.0,
       "bins": {
         "0-12h": 481,
-        "12-24h": 1234,
+        "12-24h": 1235,
         "1-2d": 412,
         "2-3d": 167,
         "3-5d": 99,
@@ -203,7 +203,7 @@
       "2026-02": 14,
       "2026-03": 21,
       "2026-04": 17,
-      "2026-05": 18
+      "2026-05": 19
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -215,7 +215,7 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 88
+      "2026": 89
     },
     "dow_hour": {
       "dow": {
@@ -224,11 +224,11 @@
         "Wed": 427,
         "Thu": 382,
         "Fri": 346,
-        "Sat": 236,
+        "Sat": 237,
         "Sun": 205
       },
       "hour_utc": {
-        "0": 186,
+        "0": 187,
         "1": 113,
         "2": 118,
         "3": 119,
@@ -269,39 +269,39 @@
       ],
       [
         9,
-        11.02
+        11.01
       ],
       [
         12,
-        20.02
+        20.01
       ],
       [
         15,
-        33.97
+        33.95
       ],
       [
         18,
-        50.93
+        50.91
       ],
       [
         21,
-        64.18
+        64.15
       ],
       [
         24,
-        70.82
+        70.83
       ],
       [
         30,
-        74.7
+        74.71
       ],
       [
         36,
-        76.76
+        76.77
       ],
       [
         42,
-        82.21
+        82.22
       ],
       [
         48,
@@ -325,7 +325,7 @@
       ],
       [
         84,
-        95.58
+        95.59
       ],
       [
         96,
@@ -373,11 +373,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 14.8,
-        "started_at": "2026-04-29T20:49:20Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 17.0,
         "started_at": "2026-04-30T20:16:13Z",
@@ -472,23 +467,14 @@
         "gap_h": 33.3,
         "started_at": "2026-05-28T17:32:04Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 22.5,
+        "started_at": "2026-05-30T00:00:13Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-05-18T00:27:16Z",
-        "ended_at_iso": "2026-05-18T07:45:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Subnautica",
-          "Subnautica 2"
-        ],
-        "duration_h": 7.3,
-        "duration_label": "438 minutes",
-        "avg_viewers": 2920,
-        "peak_viewers": 3718,
-        "followers_gained": -33
-      },
       {
         "started_at": "2026-05-19T02:57:34Z",
         "ended_at_iso": "2026-05-19T08:15:00+00:00",
@@ -575,15 +561,27 @@
         "avg_viewers": 1165,
         "peak_viewers": 1252,
         "followers_gained": -32
+      },
+      {
+        "started_at": "2026-05-30T00:00:13Z",
+        "ended_at_iso": "2026-05-30T02:45:00+00:00",
+        "games": [
+          "Just Chatting"
+        ],
+        "duration_h": 2.8,
+        "duration_label": "165 minutes",
+        "avg_viewers": 1107,
+        "peak_viewers": 1240,
+        "followers_gained": 0
       }
     ],
     "last_stream": {
-      "started_at": "2026-05-28T17:32:04Z",
-      "ended_at_iso": "2026-05-29T01:30:00+00:00",
+      "started_at": "2026-05-30T00:00:13Z",
+      "ended_at_iso": "2026-05-30T02:45:00+00:00",
       "games": [
         "Just Chatting"
       ],
-      "duration_label": "478 minutes"
+      "duration_label": "165 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -688,11 +686,11 @@
       "game_analysis": {
         "categories": {
           "Just Chatting only": {
-            "count": 464,
-            "share": 19.1,
-            "median_gap_hours": 26.56,
-            "p90_gap_hours": 72.4,
-            "avg_viewers": 3830.0
+            "count": 465,
+            "share": 19.2,
+            "median_gap_hours": 26.57,
+            "p90_gap_hours": 72.35,
+            "avg_viewers": 3824.0
           },
           "Other games": {
             "count": 663,
@@ -703,7 +701,7 @@
           },
           "Social sandbox/RP": {
             "count": 1053,
-            "share": 43.5,
+            "share": 43.4,
             "median_gap_hours": 23.88,
             "p90_gap_hours": 48.28,
             "avg_viewers": 1601.0
@@ -726,7 +724,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1548
+            "count": 1549
           },
           {
             "game": "Grand Theft Auto V",
@@ -779,7 +777,7 @@
       "started_at": "2026-05-30T00:00:13Z",
       "game": "Just Chatting",
       "title": "DIVING INTO WARHAMMER 40K LORE FOR THE FIRST TIME EVER WITH @PHINTTV & @WILLNEFF. IS IT AS GOOD AS THEY SAY IT IS?",
-      "viewers": 336
+      "viewers": 1223
     }
   },
   "sully_streams": [
@@ -9514,8 +9512,8 @@
       "duration_seconds": 9120,
       "title": null,
       "games": [
-        "Atlas",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Atlas"
       ],
       "avg_viewers": 43,
       "peak_viewers": 50,
@@ -9629,8 +9627,8 @@
       "duration_seconds": 25560,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 103,
       "peak_viewers": 171,
@@ -31144,8 +31142,8 @@
       "duration_seconds": 31320,
       "title": null,
       "games": [
-        "DayZ",
-        "Just Chatting"
+        "Just Chatting",
+        "DayZ"
       ],
       "avg_viewers": 3310,
       "peak_viewers": 5392,
@@ -34304,9 +34302,9 @@
       "duration_seconds": 29220,
       "title": null,
       "games": [
-        "Dark Souls: Remastered",
         "Just Chatting",
-        "Dark Souls"
+        "Dark Souls",
+        "Dark Souls: Remastered"
       ],
       "avg_viewers": 3199,
       "peak_viewers": 5438,
@@ -34545,9 +34543,9 @@
       "duration_seconds": 18240,
       "title": null,
       "games": [
-        "DARK SOULS III",
         "Just Chatting",
-        "The Lord of the Rings: Gollum"
+        "The Lord of the Rings: Gollum",
+        "DARK SOULS III"
       ],
       "avg_viewers": 3612,
       "peak_viewers": 5528,
@@ -34566,9 +34564,9 @@
       "duration_seconds": 48900,
       "title": null,
       "games": [
-        "DARK SOULS III",
         "Just Chatting",
         "PowerWash Simulator",
+        "DARK SOULS III",
         "Poker"
       ],
       "avg_viewers": 2884,
@@ -35141,9 +35139,9 @@
       "duration_seconds": 47880,
       "title": null,
       "games": [
-        "Unlisted on Twitch",
         "Just Chatting",
-        "NARAKA: BLADEPOINT"
+        "NARAKA: BLADEPOINT",
+        "Unlisted on Twitch"
       ],
       "avg_viewers": 3391,
       "peak_viewers": 6455,
@@ -41234,8 +41232,8 @@
       "duration_seconds": 17580,
       "title": null,
       "games": [
-        "Just Chatting",
-        "TCG Card Shop Simulator"
+        "TCG Card Shop Simulator",
+        "Just Chatting"
       ],
       "avg_viewers": 1795,
       "peak_viewers": 2420,
@@ -46447,8 +46445,8 @@
       "duration_seconds": 22200,
       "title": null,
       "games": [
-        "Minecraft",
-        "Just Chatting"
+        "Just Chatting",
+        "Minecraft"
       ],
       "avg_viewers": 4040,
       "peak_viewers": 5657,
@@ -48019,8 +48017,8 @@
       "duration_seconds": 27720,
       "title": null,
       "games": [
-        "Starfield",
-        "Just Chatting"
+        "Just Chatting",
+        "Starfield"
       ],
       "avg_viewers": 2332,
       "peak_viewers": 3716,
@@ -48233,8 +48231,8 @@
       "duration_seconds": 23160,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Retro Rewind: Video Store Simulator"
+        "Retro Rewind: Video Store Simulator",
+        "Just Chatting"
       ],
       "avg_viewers": 2533,
       "peak_viewers": 3497,
@@ -48614,6 +48612,25 @@
       "view_minutes": 556870,
       "stream_url": "https://sullygnome.com/channel/stream/319526464602",
       "range": "2026"
+    },
+    {
+      "source": "sullygnome_stream_table",
+      "precision": "exact_utc_start",
+      "id": "319655130331",
+      "started_at": "2026-05-30T00:00:13Z",
+      "ended_at": "Saturday 30th May 2026 02:45",
+      "duration_label": "165 minutes",
+      "duration_seconds": 9900,
+      "title": null,
+      "games": [
+        "Just Chatting"
+      ],
+      "avg_viewers": 1107,
+      "peak_viewers": 1240,
+      "followers_gained": 0,
+      "view_minutes": 182655,
+      "stream_url": "https://sullygnome.com/channel/stream/319655130331",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -48828,14 +48845,14 @@
       "views": 115207
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2767408259",
-      "started_at": "2026-05-08T22:29:22Z",
-      "duration_label": "6 hours",
-      "duration_seconds": null,
+      "started_at": "2026-05-08T22:29:27Z",
+      "duration_label": "05:34:10",
+      "duration_seconds": 20050,
       "title": "FRIDAY FUNDAY - DOING HOUSE CHORES WITH CHAT - IM SURE EVERYONE WILL BE NORMAL ABOUT THIS",
-      "views": null
+      "views": 97244
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -48978,14 +48995,14 @@
       "views": null
     },
     {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
       "id": "2783029438",
-      "started_at": "2026-05-28T17:32:09Z",
-      "duration_label": "01:20:58",
-      "duration_seconds": 4858,
+      "started_at": "2026-05-28T17:32:04Z",
+      "duration_label": "8 hours",
+      "duration_seconds": null,
       "title": "ROCK CLIMBING WITH @ALINITY WOOOOOOOOOOOOO",
-      "views": 41
+      "views": null
     }
   ],
   "archive_grouped_dates": [
