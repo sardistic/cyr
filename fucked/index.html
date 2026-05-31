@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cyr.mom</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #090d10;
+      color: #edf7f1;
+      font-family: system-ui, -apple-system, sans-serif;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .question {
+      font-size: clamp(2rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 16ch;
+      margin-bottom: 2.5rem;
+      color: #edf7f1;
+    }
+
+    .enter-btn {
+      background: transparent;
+      border: 2px solid #2a383d;
+      color: #99aaad;
+      font-size: 1.1rem;
+      font-family: inherit;
+      padding: .75rem 2.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: border-color .2s, color .2s;
+    }
+
+    .enter-btn:hover {
+      border-color: #62d394;
+      color: #edf7f1;
+    }
+
+    .answer {
+      font-size: clamp(4rem, 18vw, 12rem);
+      font-weight: 800;
+      color: #62d394;
+      opacity: 0;
+      transform: scale(.85);
+      transition: opacity .4s ease, transform .4s ease;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .answer.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .back {
+      position: fixed;
+      top: 1.25rem;
+      left: 1.5rem;
+      color: #2a383d;
+      text-decoration: none;
+      font-size: .85rem;
+      letter-spacing: .06em;
+      transition: color .2s;
+    }
+
+    .back:hover { color: #62d394; }
+  </style>
+</head>
+<body>
+
+  <a class="back" href="/">← forecast</a>
+
+  <p class="question" id="question">Did cyr fuck my mom?</p>
+  <button class="enter-btn" id="btn">Enter</button>
+  <p class="answer" id="answer">Yes.</p>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const question = document.getElementById('question');
+    const answer = document.getElementById('answer');
+
+    btn.addEventListener('click', () => {
+      question.style.display = 'none';
+      btn.style.display = 'none';
+      answer.classList.add('visible');
+    });
+  </script>
+
+</body>
+</html>
