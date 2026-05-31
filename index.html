@@ -1077,7 +1077,7 @@
     <header>
       <nav>
         <div class="brand"><span class="mark">CYR</span> Stream Forecast Lab</div>
-        <div>Static model snapshot · May 26, 2026 · America/New_York</div>
+        <div>Static model snapshot · May 26, 2026 · America/Chicago</div>
       </nav>
 
       <div class="live-banner" id="live-banner">
@@ -1353,11 +1353,11 @@ composite                               ≈ <strong>55</strong></div>
       <h2>Schedule Patterns</h2>
       <div class="grid">
         <div class="panel span-6">
-          <h3>Day of Week <span class="muted" style="font-size:13px;font-weight:400">(UTC — Mon UTC ≈ Sun night ET)</span></h3>
+          <h3>Day of Week <span class="muted" style="font-size:13px;font-weight:400">(UTC — Mon UTC ≈ Sun night CT)</span></h3>
           <canvas id="dowChart" width="760" height="260" aria-label="Day of week chart"></canvas>
         </div>
         <div class="panel span-6">
-          <h3>Start Hour <span class="muted" style="font-size:13px;font-weight:400">(UTC — peak 20–23 h ≈ 4–7 PM ET)</span></h3>
+          <h3>Start Hour <span class="muted" style="font-size:13px;font-weight:400">(UTC — peak 20–23 h ≈ 3–6 PM CT)</span></h3>
           <canvas id="hourChart" width="760" height="260" aria-label="Start hour chart"></canvas>
         </div>
       </div>
@@ -1698,13 +1698,13 @@ composite                               ≈ <strong>55</strong></div>
         ctx.fillText(labels[i], x + barW / 2, height - 30);
         ctx.fillStyle = 'rgba(153,170,173,.55)';
         ctx.font = '10px system-ui';
-        ctx.fillText('≈' + etApprox[i] + ' ET', x + barW / 2, height - 14);
+        ctx.fillText('≈' + etApprox[i] + ' CT', x + barW / 2, height - 14);
       });
 
       ctx.fillStyle = colors.muted;
       ctx.font = '11px system-ui';
       ctx.textAlign = 'left';
-      ctx.fillText('green = Mon UTC (Sun night ET) · Sat/Sun UTC', left, 14);
+      ctx.fillText('green = Mon UTC (Sun night CT) · Sat/Sun UTC', left, 14);
     }
 
     function drawHourChart() {
@@ -1745,7 +1745,7 @@ composite                               ≈ <strong>55</strong></div>
       ctx.fillStyle = colors.muted;
       ctx.font = '11px system-ui';
       ctx.textAlign = 'left';
-      ctx.fillText('stream start hour UTC  ·  green ≈ ET evening window', left, 14);
+      ctx.fillText('stream start hour UTC  ·  green ≈ CT evening window', left, 14);
     }
 
     function buildFeatureBars() {
@@ -2042,9 +2042,9 @@ composite                               ≈ <strong>55</strong></div>
       const r3 = document.getElementById('rationale-s3');
       if (r3 && stats.last_stream?.ended_at_iso) {
         const endET = new Date(stats.last_stream.ended_at_iso).toLocaleString('en-US', {
-          timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+          timeZone: 'America/Chicago', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
         });
-        r3.textContent = `The last stream ended ${endET} ET. The elapsed bar above shows how far into the end-to-start gap distribution we currently sit — updated live every minute.`;
+        r3.textContent = `The last stream ended ${endET} CT. The elapsed bar above shows how far into the end-to-start gap distribution we currently sit — updated live every minute.`;
       }
 
       const r5 = document.getElementById('rationale-s5');
@@ -2052,9 +2052,9 @@ composite                               ≈ <strong>55</strong></div>
         const lastEnd = new Date(stats.last_stream.ended_at_iso);
         const target = new Date(lastEnd.getTime() + sg.median * 3600000);
         const targetET = target.toLocaleString('en-US', {
-          timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+          timeZone: 'America/Chicago', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
         });
-        r5.textContent = `Median gap (${sg.median}h) from last stream end = ${targetET} ET. p75 ≈ 31.5h, p95 ≈ ${p95row ? p95row[0] : 73.6}h.`;
+        r5.textContent = `Median gap (${sg.median}h) from last stream end = ${targetET} CT. p75 ≈ 31.5h, p95 ≈ ${p95row ? p95row[0] : 73.6}h.`;
       }
 
       // ── Arc card ──
@@ -2184,21 +2184,21 @@ composite                               ≈ <strong>55</strong></div>
       const startedAt = new Date(live.started_at);
       const dMin = Math.round((now - startedAt) / 60000);
       const dLabel = fmtDuration(dMin);
-      const etStart = startedAt.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
-      const etDay = startedAt.toLocaleDateString('en-US', { timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric' });
+      const etStart = startedAt.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' });
+      const etDay = startedAt.toLocaleDateString('en-US', { timeZone: 'America/Chicago', weekday: 'short', month: 'short', day: 'numeric' });
 
       // H1 + lede
       const h1 = document.getElementById('hero-h1');
       if (h1) h1.textContent = 'cyr is live right now.';
 
       const lede = document.getElementById('hero-lede');
-      if (lede) lede.textContent = `Streaming ${live.game} · started ${etDay} at ${etStart} ET · ${dLabel} in. ${live.viewers.toLocaleString()} viewers as of last data refresh.`;
+      if (lede) lede.textContent = `Streaming ${live.game} · started ${etDay} at ${etStart} CT · ${dLabel} in. ${live.viewers.toLocaleString()} viewers as of last data refresh.`;
 
       // Top prediction card → stream status
       const predLabel = document.getElementById('pred-label');
       if (predLabel) { predLabel.textContent = 'LIVE'; predLabel.style.color = 'var(--green)'; }
       const predSub = document.getElementById('pred-label-sub');
-      if (predSub) predSub.textContent = `${live.game} · started ${etStart} ET`;
+      if (predSub) predSub.textContent = `${live.game} · started ${etStart} CT`;
 
       // Prob-now → stream duration
       const probNowLabel = document.getElementById('prob-now-label');
@@ -2237,7 +2237,7 @@ composite                               ≈ <strong>55</strong></div>
       const answerHead = document.getElementById('answer-headline');
       if (answerHead) { answerHead.textContent = "He's live."; answerHead.style.color = 'var(--green)'; }
       const answerSub = document.getElementById('answer-sub');
-      if (answerSub) answerSub.textContent = `${live.game} since ${etStart} ET (${dLabel} in). ${live.viewers.toLocaleString()} viewers at last check. Check back after he goes offline for updated next-stream predictions.`;
+      if (answerSub) answerSub.textContent = `${live.game} since ${etStart} CT (${dLabel} in). ${live.viewers.toLocaleString()} viewers at last check. Check back after he goes offline for updated next-stream predictions.`;
 
       // Probability windows — reframe for next stream after this ends
       const cdfAtMedian = Math.round(cdfLookup(medianH) ?? 0);
@@ -2306,14 +2306,14 @@ composite                               ≈ <strong>55</strong></div>
       if (heroLede && stats.last_stream) {
         const ls = stats.last_stream;
         const endedET = lastEnd.toLocaleString('en-US', {
-          timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric',
+          timeZone: 'America/Chicago', weekday: 'short', month: 'short', day: 'numeric',
           hour: 'numeric', minute: '2-digit'
         });
         const game = ls.games?.[0] ?? 'stream';
         const dur = ls.duration_label ? ` · ${ls.duration_label}` : '';
         const medH = stats.sully_gap_hours?.median ?? 17.85;
         const state = elapsedH >= medH ? 'Past median gap — model in overdue zone.' : `${fmtElapsed(medH - elapsedH)} until median target.`;
-        heroLede.textContent = `Last stream ended ${endedET} ET (${game}${dur}). ${state}`;
+        heroLede.textContent = `Last stream ended ${endedET} CT (${game}${dur}). ${state}`;
       }
 
       // Progress bar (track spans 0–96h)
@@ -2358,17 +2358,17 @@ composite                               ≈ <strong>55</strong></div>
       const expectedNext = new Date(lastEnd.getTime() + medianH * 3600000);
 
       // Format expected time in ET
-      const etFmt = { timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true };
-      const etDate = { timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric' };
+      const etFmt = { timeZone: 'America/Chicago', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true };
+      const etDate = { timeZone: 'America/Chicago', weekday: 'short', month: 'short', day: 'numeric' };
       const expectedStr = expectedNext.toLocaleString('en-US', etFmt);
       const expectedDateStr = expectedNext.toLocaleString('en-US', etDate);
 
       // Is expected time "today" or "tomorrow" in ET?
-      const nowDateET = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
-      const expectedDateET = expectedNext.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+      const nowDateET = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
+      const expectedDateET = expectedNext.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
       const tomorrowET = new Date(now);
       tomorrowET.setDate(tomorrowET.getDate() + 1);
-      const tomorrowDateET = tomorrowET.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+      const tomorrowDateET = tomorrowET.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
 
       let predLabel, predSub;
       if (elapsedH > medianH) {
@@ -2377,13 +2377,13 @@ composite                               ≈ <strong>55</strong></div>
         predSub = `Past median gap (${medianH}h). Now ${Math.round(pctAtNow ?? 50)}th pct — stream likely soon.`;
       } else if (expectedDateET === nowDateET) {
         predLabel = 'Tonight';
-        predSub = `${expectedStr} ET. Median gap lands here.`;
+        predSub = `${expectedStr} CT. Median gap lands here.`;
       } else if (expectedDateET === tomorrowDateET) {
         predLabel = 'Tomorrow';
-        predSub = `${expectedStr} ET. Median gap lands here.`;
+        predSub = `${expectedStr} CT. Median gap lands here.`;
       } else {
         predLabel = expectedDateStr;
-        predSub = `${expectedStr} ET. Median gap lands here.`;
+        predSub = `${expectedStr} CT. Median gap lands here.`;
       }
 
       // Fallback label = median + 24h from last end
@@ -2451,7 +2451,7 @@ composite                               ≈ <strong>55</strong></div>
       buildSchedule(elapsedH);
 
       // ── Answer panel + Probability Windows table ──
-      const etOpts = { timeZone: 'America/New_York' };
+      const etOpts = { timeZone: 'America/Chicago' };
       const medianTarget = new Date(lastEnd.getTime() + medianH * 3600000);
       const medianTimeET = medianTarget.toLocaleTimeString('en-US', { ...etOpts, hour: 'numeric', minute: '2-digit' });
       const medianDateET = medianTarget.toLocaleDateString('en-US', { ...etOpts, weekday: 'short', month: 'short', day: 'numeric' });
@@ -2461,7 +2461,7 @@ composite                               ≈ <strong>55</strong></div>
       const answerSubEl  = document.getElementById('answer-sub');
       if (answerHeadEl) {
         if (elapsedH < medianH) {
-          answerHeadEl.textContent = `Median target: ${medianTimeET} ET`;
+          answerHeadEl.textContent = `Median target: ${medianTimeET} CT`;
         } else {
           answerHeadEl.textContent = 'Overdue zone — any time now';
         }
@@ -2469,8 +2469,8 @@ composite                               ≈ <strong>55</strong></div>
       if (answerSubEl) {
         const pastMedian = elapsedH >= medianH;
         answerSubEl.textContent = pastMedian
-          ? `Last ended ${endedET} ET. Gap is past the ${medianH.toFixed(1)}h median (${fmtElapsed(elapsedH)} elapsed) — elevated probability right now.`
-          : `Last ended ${endedET} ET. Median ${medianH.toFixed(1)}h gap puts target around ${medianDateET} at ${medianTimeET} ET. ${fmtElapsed(elapsedH)} elapsed.`;
+          ? `Last ended ${endedET} CT. Gap is past the ${medianH.toFixed(1)}h median (${fmtElapsed(elapsedH)} elapsed) — elevated probability right now.`
+          : `Last ended ${endedET} CT. Median ${medianH.toFixed(1)}h gap puts target around ${medianDateET} at ${medianTimeET} CT. ${fmtElapsed(elapsedH)} elapsed.`;
       }
 
       // Probability Windows — unconditional
@@ -2612,7 +2612,7 @@ composite                               ≈ <strong>55</strong></div>
       const now = new Date();
 
       // Today midnight in ET as a UTC timestamp
-      const todayETStr = now.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+      const todayETStr = now.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
       const todayMidnightET = new Date(todayETStr);
 
       const cards = [];
@@ -2673,7 +2673,7 @@ composite                               ≈ <strong>55</strong></div>
           // Monday UTC = Sunday ET night = peak DOW in dataset
           label = 'Peak'; icon = '⛈'; color = 'var(--green)'; cls = 'peak';
           barColor = 'linear-gradient(90deg,var(--green),var(--gold))';
-          type = 'Peak DOW'; desc = 'Mon UTC · Sun ET night';
+          type = 'Peak DOW'; desc = 'Mon UTC · Sun CT night';
         } else if (score > 0.60) {
           label = 'High'; icon = '⛈'; color = 'var(--green)'; cls = 'arc-watch';
           barColor = 'linear-gradient(90deg,var(--green),var(--blue))';
@@ -2710,7 +2710,7 @@ composite                               ≈ <strong>55</strong></div>
       const kicker = document.getElementById('schedule-kicker');
       if (kicker) {
         const etDate = now.toLocaleDateString('en-US', {
-          timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric', year: 'numeric'
+          timeZone: 'America/Chicago', weekday: 'short', month: 'short', day: 'numeric', year: 'numeric'
         });
         kicker.textContent = '7-Day Stream Schedule · issued ' + etDate;
       }
@@ -2750,7 +2750,7 @@ composite                               ≈ <strong>55</strong></div>
 
         // Peak DOW
         if (peakDay) {
-          parts.push(`<strong>${peakDay.dow} ${peakDay.dateLabel}</strong> carries the strongest historical signal — Mon UTC (Sun ET night) leads all days at ${dowCounts['Mon']} streams.`);
+          parts.push(`<strong>${peakDay.dow} ${peakDay.dateLabel}</strong> carries the strongest historical signal — Mon UTC (Sun CT night) leads all days at ${dowCounts['Mon']} streams.`);
         }
 
         summary.innerHTML = parts.join(' ');
