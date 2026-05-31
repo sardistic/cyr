@@ -953,28 +953,46 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 22px;
+      padding: 10px;
       box-shadow:
         inset 0 3px 14px rgba(0,0,0,.7),
         inset 0 -1px 4px rgba(30,80,200,.15),
         0 0 0 1px rgba(0,0,60,.8);
       margin-top: 16px;
+      overflow: hidden;
     }
-    .ball8-answer {
-      text-align: center;
-      font-size: 14px;
+    /* triangle */
+    .tri-bob { width: 112px; height: 98px; }
+    .tri-bob.bobbing { animation: triBob 3.5s ease-in-out infinite; }
+    @keyframes triBob {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-7px); }
+    }
+    .tri-wrap {
+      width: 100%; height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tri-shape {
+      position: absolute;
+      inset: 0;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      background: linear-gradient(165deg, #2a4ccc 0%, #0c1a6a 50%, #060e3a 100%);
+    }
+    .tri-text {
+      position: relative;
+      z-index: 1;
+      font-size: 11px;
       font-weight: 800;
       color: #fff;
-      line-height: 1.4;
-      letter-spacing: .2px;
-      opacity: 0;
-      filter: blur(8px);
-      transition: opacity 2s ease-in, filter 2s ease-in;
+      text-align: center;
+      line-height: 1.38;
+      max-width: 66px;
+      margin-top: 22px;
+      text-shadow: 0 0 10px rgba(120,160,255,.7);
       pointer-events: none;
-    }
-    .ball8-answer.revealed {
-      opacity: 1;
-      filter: blur(0);
     }
     .ask-btn {
       padding: 11px 36px;
@@ -1374,7 +1392,12 @@ composite                               ≈ <strong>55</strong></div>
         <div class="ball8" id="ball8" onclick="shake8Ball()">
           <div class="ball8-num">8</div>
           <div class="ball8-window">
-            <span class="ball8-answer" id="ball8-answer">ask me</span>
+            <div class="tri-bob" id="tri-bob">
+              <div class="tri-wrap" id="tri-wrap">
+                <div class="tri-shape"></div>
+                <span class="tri-text" id="ball8-answer"></span>
+              </div>
+            </div>
           </div>
         </div>
         <button class="ask-btn" id="ask-btn" onclick="shake8Ball()">Ask the 8-Ball</button>
@@ -2786,44 +2809,48 @@ composite                               ≈ <strong>55</strong></div>
 
       let shaking = false;
 
+      const ball8el  = document.getElementById('ball8');
+      const answer8  = document.getElementById('ball8-answer');
+      const btn8     = document.getElementById('ask-btn');
+      const triWrap8 = document.getElementById('tri-wrap');
+      const triBob8  = document.getElementById('tri-bob');
+
+      if (answer8) {
+        answer8.textContent = 'ask me';
+        triWrap8.style.cssText = 'opacity:0.45; transform:translateY(0); transition:none;';
+      }
+
       window.shake8Ball = function() {
         if (shaking) return;
+        if (!ball8el || !answer8 || !btn8) return;
         shaking = true;
 
-        const ball    = document.getElementById('ball8');
-        const answer  = document.getElementById('ball8-answer');
-        const btn     = document.getElementById('ask-btn');
-        if (!ball || !answer || !btn) return;
+        // sink triangle
+        triBob8.classList.remove('bobbing');
+        triWrap8.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+        triWrap8.style.opacity = '0';
+        triWrap8.style.transform = 'translateY(20px)';
+        btn8.disabled = true;
 
-        // Reset display
-        answer.classList.remove('revealed');
-        answer.textContent = '';
-        btn.disabled = true;
+        ball8el.classList.remove('shaking');
+        void ball8el.offsetWidth;
+        ball8el.classList.add('shaking');
 
-        // Trigger shake
-        ball.classList.remove('shaking');
-        void ball.offsetWidth; // reflow to restart animation
-        ball.classList.add('shaking');
-
-        // After shake settles, surface the answer slowly
         setTimeout(() => {
-          ball.classList.remove('shaking');
-          const pick = answers[Math.floor(Math.random() * answers.length)];
-          answer.textContent = pick;
-          setTimeout(() => answer.classList.add('revealed'), 80);
-          setTimeout(() => { btn.disabled = false; shaking = false; }, 2200);
+          ball8el.classList.remove('shaking');
+          answer8.textContent = answers[Math.floor(Math.random() * answers.length)];
+
+          // float triangle in
+          triWrap8.style.transition = 'opacity 1.4s ease, transform 1.4s ease';
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            triWrap8.style.opacity = '1';
+            triWrap8.style.transform = 'translateY(0)';
+          }));
+
+          setTimeout(() => triBob8.classList.add('bobbing'), 1500);
+          setTimeout(() => { btn8.disabled = false; shaking = false; }, 1800);
         }, 750);
       };
-
-      // Show "ask me" text faintly on load
-      const initAnswer = document.getElementById('ball8-answer');
-      if (initAnswer) {
-        initAnswer.textContent = 'ask me';
-        initAnswer.style.opacity = '0.5';
-        initAnswer.style.filter = 'none';
-        initAnswer.style.fontSize = '14px';
-        initAnswer.style.color = 'rgba(180,210,255,.9)';
-      }
     })();
   </script>
 </body>
