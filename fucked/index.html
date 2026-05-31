@@ -123,6 +123,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      opacity: 0.45;
     }
     .tri-shape {
       position: absolute;
@@ -185,7 +186,7 @@
         <div class="tri-bob" id="tri-bob">
           <div class="tri-wrap" id="tri-wrap">
             <div class="tri-shape"></div>
-            <span class="tri-text" id="ball8-answer"></span>
+            <span class="tri-text" id="ball8-answer">ask me</span>
           </div>
         </div>
       </div>
@@ -240,10 +241,6 @@
     const triWrap = document.getElementById('tri-wrap');
     const triBob  = document.getElementById('tri-bob');
 
-    // init: show "ask me" faintly, triangle visible
-    answer.textContent = 'ask me';
-    triWrap.style.cssText = 'opacity:0.45; transform:translateY(0); transition:none;';
-
     window.shake8Ball = function() {
       if (shaking) return;
       shaking = true;
@@ -265,6 +262,7 @@
         answer.textContent = answers[Math.floor(Math.random() * answers.length)];
 
         // float triangle in
+        triWrap.style.transform = 'translateY(20px)';
         triWrap.style.transition = 'opacity 1.4s ease, transform 1.4s ease';
         requestAnimationFrame(() => requestAnimationFrame(() => {
           triWrap.style.opacity = '1';
