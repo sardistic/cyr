@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-03T23:44:31Z",
+  "generated_at": "2026-06-04T04:06:32Z",
   "sources": {
     "sullygnome_stream_table": 2427,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 36,
-    "exact_merged_rows": 36,
+    "exact_merged_rows": 37,
     "youtube_archive_segments": 1000,
     "youtube_archive_grouped_dates": 549
   },
@@ -25,9 +25,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 35,
-      "mean": 37.81,
-      "median": 27.53,
+      "count": 36,
+      "mean": 39.4,
+      "median": 27.58,
       "max": 119.59
     },
     "archive_gap_days": {
@@ -564,28 +564,30 @@
       },
       {
         "started_at": "2026-06-03T18:19:57Z",
-        "ended_at_iso": "2026-06-03T22:45:00+00:00",
+        "ended_at_iso": "2026-06-04T00:15:00+00:00",
         "games": [
           "Just Chatting",
           "Dishonored",
-          "Nested Lands"
+          "Nested Lands",
+          "Warhammer 40,000: Dawn of War"
         ],
-        "duration_h": 4.4,
-        "duration_label": "266 minutes",
-        "avg_viewers": 1095,
+        "duration_h": 5.9,
+        "duration_label": "356 minutes",
+        "avg_viewers": 1121,
         "peak_viewers": 1243,
-        "followers_gained": 0
+        "followers_gained": -41
       }
     ],
     "last_stream": {
       "started_at": "2026-06-03T18:19:57Z",
-      "ended_at_iso": "2026-06-03T22:45:00+00:00",
+      "ended_at_iso": "2026-06-04T00:15:00+00:00",
       "games": [
         "Just Chatting",
         "Dishonored",
-        "Nested Lands"
+        "Nested Lands",
+        "Warhammer 40,000: Dawn of War"
       ],
-      "duration_label": "266 minutes"
+      "duration_label": "356 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -777,12 +779,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-06-03T18:19:57Z",
-      "game": "Warhammer 40,000: Dawn of War",
-      "title": "YOU WILL NEVER BE JAPANESE",
-      "viewers": 1203
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -795,8 +792,8 @@
       "duration_seconds": 11700,
       "title": null,
       "games": [
-        "IRL",
         "Dragon Age: Inquisition",
+        "IRL",
         "Rust"
       ],
       "avg_viewers": 108,
@@ -7709,8 +7706,8 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
-        "IRL",
-        "Super Seducer 2"
+        "Super Seducer 2",
+        "IRL"
       ],
       "avg_viewers": 93,
       "peak_viewers": 235,
@@ -7888,8 +7885,8 @@
       "duration_seconds": 6300,
       "title": null,
       "games": [
-        "Unlisted on Twitch",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Unlisted on Twitch"
       ],
       "avg_viewers": 173,
       "peak_viewers": 250,
@@ -45369,9 +45366,9 @@
       "duration_seconds": 24480,
       "title": null,
       "games": [
-        "Just Chatting",
+        "Midnight Murder Club",
         "Waterpark Simulator",
-        "Midnight Murder Club"
+        "Just Chatting"
       ],
       "avg_viewers": 3879,
       "peak_viewers": 5140,
@@ -45491,8 +45488,8 @@
       "duration_seconds": 20460,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Waterpark Simulator"
+        "Waterpark Simulator",
+        "Just Chatting"
       ],
       "avg_viewers": 3702,
       "peak_viewers": 5551,
@@ -45653,8 +45650,8 @@
       "duration_seconds": 15360,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Planet Crafter"
+        "Planet Crafter",
+        "Just Chatting"
       ],
       "avg_viewers": 3045,
       "peak_viewers": 3809,
@@ -45752,8 +45749,8 @@
       "duration_seconds": 39600,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Rust"
+        "Rust",
+        "Just Chatting"
       ],
       "avg_viewers": 6280,
       "peak_viewers": 8189,
@@ -45937,11 +45934,11 @@
       "duration_seconds": 32880,
       "title": null,
       "games": [
+        "Baby Steps",
         "Just Chatting",
         "Halo: Combat Evolved Anniversary",
         "Halo: The Master Chief Collection",
-        "Waterpark Simulator",
-        "Baby Steps"
+        "Waterpark Simulator"
       ],
       "avg_viewers": 3960,
       "peak_viewers": 6555,
@@ -46469,9 +46466,9 @@
       "duration_seconds": 18720,
       "title": null,
       "games": [
+        "Minecraft",
         "Just Chatting",
-        "Ultimate Epic Battle Simulator 2",
-        "Minecraft"
+        "Ultimate Epic Battle Simulator 2"
       ],
       "avg_viewers": 3549,
       "peak_viewers": 4373,
@@ -46510,8 +46507,8 @@
       "duration_seconds": 14640,
       "title": null,
       "games": [
-        "Where Winds Meet",
-        "Just Chatting"
+        "Just Chatting",
+        "Where Winds Meet"
       ],
       "avg_viewers": 2667,
       "peak_viewers": 4190,
@@ -46707,8 +46704,8 @@
       "duration_seconds": 14580,
       "title": null,
       "games": [
-        "Just Chatting",
-        "ARC Raiders"
+        "ARC Raiders",
+        "Just Chatting"
       ],
       "avg_viewers": 3228,
       "peak_viewers": 4163,
@@ -46864,8 +46861,8 @@
       "duration_seconds": 15240,
       "title": null,
       "games": [
-        "Brotato",
-        "Just Chatting"
+        "Just Chatting",
+        "Brotato"
       ],
       "avg_viewers": 4671,
       "peak_viewers": 6639,
@@ -47509,8 +47506,8 @@
       "duration_seconds": 270000,
       "title": null,
       "games": [
-        "Just Chatting",
         "Special Events",
+        "Just Chatting",
         "IRL",
         "Kingdom Come: Deliverance II",
         "Marathon"
@@ -47590,8 +47587,8 @@
       "duration_seconds": 22200,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Where Winds Meet"
+        "Where Winds Meet",
+        "Just Chatting"
       ],
       "avg_viewers": 2065,
       "peak_viewers": 3171,
@@ -47942,8 +47939,8 @@
       "duration_seconds": 33240,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Horsey Game"
+        "Horsey Game",
+        "Just Chatting"
       ],
       "avg_viewers": 2746,
       "peak_viewers": 4133,
@@ -47981,8 +47978,8 @@
       "duration_seconds": 14460,
       "title": null,
       "games": [
-        "Just Chatting",
-        "The Elder Scrolls V: Skyrim"
+        "The Elder Scrolls V: Skyrim",
+        "Just Chatting"
       ],
       "avg_viewers": 2860,
       "peak_viewers": 4573,
@@ -48021,8 +48018,8 @@
       "duration_seconds": 27720,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Starfield"
+        "Starfield",
+        "Just Chatting"
       ],
       "avg_viewers": 2332,
       "peak_viewers": 3716,
@@ -48661,19 +48658,20 @@
       "precision": "exact_utc_start",
       "id": "319573718361",
       "started_at": "2026-06-03T18:19:57Z",
-      "ended_at": "Wednesday 3rd June 2026 22:45",
-      "duration_label": "266 minutes",
-      "duration_seconds": 15960,
+      "ended_at": "Thursday 4th June 2026 00:15",
+      "duration_label": "356 minutes",
+      "duration_seconds": 21360,
       "title": null,
       "games": [
         "Just Chatting",
         "Dishonored",
-        "Nested Lands"
+        "Nested Lands",
+        "Warhammer 40,000: Dawn of War"
       ],
-      "avg_viewers": 1095,
+      "avg_viewers": 1121,
       "peak_viewers": 1243,
-      "followers_gained": 0,
-      "view_minutes": 291270,
+      "followers_gained": -41,
+      "view_minutes": 399076,
       "stream_url": "https://sullygnome.com/channel/stream/319573718361",
       "range": "2026"
     }
@@ -48890,14 +48888,14 @@
       "views": 87235
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2769857411",
-      "started_at": "2026-05-12T00:39:22Z",
-      "duration_label": "6 hours",
-      "duration_seconds": null,
+      "started_at": "2026-05-12T00:39:27Z",
+      "duration_label": "06:06:30",
+      "duration_seconds": 21990,
       "title": "FILM FLOP MONDAY : GYMKATA w. @WAKEWILDER - THEN WE PLAY SUBNAUTICUH INTO THE NIGHT",
-      "views": null
+      "views": 113396
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -49037,6 +49035,16 @@
       "duration_label": "6 hours",
       "duration_seconds": null,
       "title": "DIVING INTO WARHAMMER 40K LORE FOR THE FIRST TIME EVER WITH @PHINTTV & @WILLNEFF. IS IT AS GOOD AS THEY SAY IT IS?",
+      "views": null
+    },
+    {
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
+      "id": null,
+      "started_at": "2026-06-02T22:51:11Z",
+      "duration_label": "7 hours",
+      "duration_seconds": null,
+      "title": "BACK AND NOT DISCOURAGED - CUHCORD THRIVES - 2NITE HOMEMADE KAVA FOR @MISTERARTHER - AND A LITTLE SECRET SOMETHING ELSE",
       "views": null
     }
   ],
