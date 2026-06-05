@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-04T23:46:29Z",
+  "generated_at": "2026-06-05T03:49:14Z",
   "sources": {
     "sullygnome_stream_table": 2427,
     "twitchmetrics_stream_logs": 15,
-    "twitchmetrics_vods": 36,
+    "twitchmetrics_vods": 37,
     "exact_merged_rows": 37,
     "youtube_archive_segments": 1000,
     "youtube_archive_grouped_dates": 549
@@ -26,7 +26,7 @@
     },
     "exact_gap_hours": {
       "count": 36,
-      "mean": 39.4,
+      "mean": 39.25,
       "median": 27.58,
       "max": 119.59
     },
@@ -397,7 +397,7 @@
       {
         "gap_h": 16.7,
         "started_at": "2026-05-12T00:39:22Z",
-        "game": "Subnautica"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 18.0,
@@ -412,7 +412,7 @@
       {
         "gap_h": 10.3,
         "started_at": "2026-05-14T19:45:26Z",
-        "game": "Just Chatting"
+        "game": "Subnautica"
       },
       {
         "gap_h": 43.6,
@@ -432,7 +432,7 @@
       {
         "gap_h": 18.6,
         "started_at": "2026-05-20T02:51:27Z",
-        "game": "Death Stranding"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 11.7,
@@ -472,7 +472,7 @@
       {
         "gap_h": 12.8,
         "started_at": "2026-06-03T18:19:57Z",
-        "game": "Nested Lands"
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
@@ -566,9 +566,9 @@
         "started_at": "2026-06-03T18:19:57Z",
         "ended_at_iso": "2026-06-04T00:15:00+00:00",
         "games": [
-          "Nested Lands",
           "Just Chatting",
           "Dishonored",
+          "Nested Lands",
           "Warhammer 40,000: Dawn of War"
         ],
         "duration_h": 5.9,
@@ -582,9 +582,9 @@
       "started_at": "2026-06-03T18:19:57Z",
       "ended_at_iso": "2026-06-04T00:15:00+00:00",
       "games": [
-        "Nested Lands",
         "Just Chatting",
         "Dishonored",
+        "Nested Lands",
         "Warhammer 40,000: Dawn of War"
       ],
       "duration_label": "356 minutes"
@@ -9105,9 +9105,9 @@
       "duration_seconds": 51900,
       "title": null,
       "games": [
+        "Just Chatting",
         "Grand Theft Auto V",
-        "Identity",
-        "Just Chatting"
+        "Identity"
       ],
       "avg_viewers": 193,
       "peak_viewers": 381,
@@ -31101,9 +31101,9 @@
       "duration_seconds": 51900,
       "title": null,
       "games": [
-        "Just Chatting",
         "Cafe Owner Simulator",
         "Planet Crafter",
+        "Just Chatting",
         "DayZ"
       ],
       "avg_viewers": 2533,
@@ -42440,9 +42440,9 @@
       "duration_seconds": 25440,
       "title": null,
       "games": [
+        "Project Zomboid",
         "Just Chatting",
-        "Baldur's Gate 3",
-        "Project Zomboid"
+        "Baldur's Gate 3"
       ],
       "avg_viewers": 2316,
       "peak_viewers": 3271,
@@ -47486,8 +47486,8 @@
       "duration_seconds": 344460,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Fortnite"
+        "Fortnite",
+        "Just Chatting"
       ],
       "avg_viewers": 5818,
       "peak_viewers": 19854,
@@ -47821,8 +47821,8 @@
       "duration_seconds": 21840,
       "title": null,
       "games": [
-        "Just Chatting",
         "Kingdom Come: Deliverance II",
+        "Just Chatting",
         "Content King"
       ],
       "avg_viewers": 2077,
@@ -48018,8 +48018,8 @@
       "duration_seconds": 27720,
       "title": null,
       "games": [
-        "Starfield",
-        "Just Chatting"
+        "Just Chatting",
+        "Starfield"
       ],
       "avg_viewers": 2332,
       "peak_viewers": 3716,
@@ -48367,8 +48367,8 @@
       "duration_seconds": 21960,
       "title": null,
       "games": [
-        "Subnautica",
-        "Just Chatting"
+        "Just Chatting",
+        "Subnautica"
       ],
       "avg_viewers": 3035,
       "peak_viewers": 5060,
@@ -48427,8 +48427,8 @@
       "duration_seconds": 14400,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 2381,
       "peak_viewers": 2803,
@@ -48508,8 +48508,8 @@
       "duration_seconds": 16740,
       "title": null,
       "games": [
-        "Death Stranding",
-        "Just Chatting"
+        "Just Chatting",
+        "Death Stranding"
       ],
       "avg_viewers": 2871,
       "peak_viewers": 3430,
@@ -48663,9 +48663,9 @@
       "duration_seconds": 21360,
       "title": null,
       "games": [
-        "Nested Lands",
         "Just Chatting",
         "Dishonored",
+        "Nested Lands",
         "Warhammer 40,000: Dawn of War"
       ],
       "avg_viewers": 1121,
@@ -48680,22 +48680,12 @@
     {
       "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
-      "id": "2740025868",
-      "started_at": "2026-04-04T20:31:21Z",
-      "duration_label": "09:16:55",
-      "duration_seconds": 33415,
-      "title": "HEY CHAT, WANT TO SPEND SOME QUALITY TIME TOGETHER CUH?",
-      "views": 128569
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
       "id": "2740897001",
       "started_at": "2026-04-05T21:16:11Z",
       "duration_label": "06:11:53",
       "duration_seconds": 22313,
       "title": "MASSIVE EASTER EGG ADVENTURE - I DONT KNOW WHO IS INVOLVED I DONT KNOW HOW MANY STREAMERS THERE ARE - THIS IS THE BEST POV",
-      "views": 70317
+      "views": 70322
     },
     {
       "source": "twitchmetrics_vod",
@@ -48705,7 +48695,7 @@
       "duration_label": "04:13:10",
       "duration_seconds": 15190,
       "title": "NIGHT OF A LIFETIME WITH CHAT",
-      "views": 43526
+      "views": 43530
     },
     {
       "source": "twitchmetrics_vod",
@@ -48715,7 +48705,7 @@
       "duration_label": "05:58:10",
       "duration_seconds": 21490,
       "title": "SKYRIM RP. I AM TOO ADDICTED. WHAT CAN WE GET INTO TODAY?",
-      "views": 59597
+      "views": 59601
     },
     {
       "source": "twitchmetrics_vod",
@@ -48725,7 +48715,7 @@
       "duration_label": "07:42:00",
       "duration_seconds": 27720,
       "title": "LIVE PIANO LESSON WITH @miamakesmusic & @thesushidragon - ZERO SKILL MAXIMUM CONFIDENCE - PLEASE FORGIVE THE NOISE - STARFIELD DLC AFTER",
-      "views": 167815
+      "views": 167816
     },
     {
       "source": "twitchmetrics_vod",
@@ -48735,7 +48725,7 @@
       "duration_label": "05:50:30",
       "duration_seconds": 21030,
       "title": "IN THE END. THERE CAN BE ONLY ONE (YOU KNOW WHAT THIS MEANS)",
-      "views": 97456
+      "views": 97457
     },
     {
       "source": "twitchmetrics_vod",
@@ -48755,7 +48745,7 @@
       "duration_label": "07:52:10",
       "duration_seconds": 28330,
       "title": "SEE YOU THIS EVENING (DONT PANIC)",
-      "views": 77522
+      "views": 77525
     },
     {
       "source": "twitchmetrics_vod",
@@ -48785,7 +48775,7 @@
       "duration_label": "04:09:30",
       "duration_seconds": 14970,
       "title": "TODAY I AM CUTTING HAIR WITH ZERO TRAINING - I AM NOT QUALIFIED - I DONT KNOW WHAT @THESUSHIDRAGON WILL LOOK LIKE WHEN THIS ENDS - HELP",
-      "views": 91150
+      "views": 91151
     },
     {
       "source": "twitchmetrics_vod",
@@ -48805,7 +48795,7 @@
       "duration_label": "02:18:32",
       "duration_seconds": 8312,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH @WILLNEFF \ud83c\udf55 2 MEN 1 PIE \ud83c\udf55 POST PHOTOS IN !DISCORD , WE WILL REVIEW LATER",
-      "views": 49056
+      "views": 49060
     },
     {
       "source": "twitchmetrics_vod",
@@ -48835,7 +48825,7 @@
       "duration_label": "06:39:10",
       "duration_seconds": 23950,
       "title": "SPENDING QUALITY TIME WITH CHAT - CLEANING MY MOLD INFESTED ARMOR OUTSIDE - THE SPORES ARE FLYING - I CHOSE TO IGNORE THE WARNING SIGNS",
-      "views": 101968
+      "views": 101970
     },
     {
       "source": "twitchmetrics_vod",
@@ -48845,7 +48835,7 @@
       "duration_label": "07:24:30",
       "duration_seconds": 26670,
       "title": "OVERCOMING MY FEAR OF HEIGHTS - INDOOR ROCK CLIMBING WITH @THESUSHIDRAGON - IVE NEVER COMMITTED TO THE WALL - TODAY I SHUT UP AND CLIMB",
-      "views": 123079
+      "views": 123082
     },
     {
       "source": "twitchmetrics_vod",
@@ -48855,7 +48845,7 @@
       "duration_label": "20:55:00",
       "duration_seconds": 75300,
       "title": "NOT ENDING STREAM UNTIL WE FINISH THIS 1000 PIECE PUZZLE - 1 SUB = REMOVE 1 PIECE - WILL WE BEAT CHAT?",
-      "views": 268618
+      "views": 268620
     },
     {
       "source": "twitchmetrics_vod",
@@ -48865,7 +48855,7 @@
       "duration_label": "06:12:50",
       "duration_seconds": 22370,
       "title": "TODAY I LEARN PIANO WITH @MIAMAKESMUSIC THEN WE THROW HER INTO ROCK CLIMBING - FIRST TIME USING CHALK - BAN REQUEST WITH ARTHER TOMORROW",
-      "views": 115221
+      "views": 115227
     },
     {
       "source": "twitchmetrics_vod",
@@ -48875,7 +48865,7 @@
       "duration_label": "05:34:10",
       "duration_seconds": 20050,
       "title": "FRIDAY FUNDAY - DOING HOUSE CHORES WITH CHAT - IM SURE EVERYONE WILL BE NORMAL ABOUT THIS",
-      "views": 97251
+      "views": 97254
     },
     {
       "source": "twitchmetrics_vod",
@@ -48885,7 +48875,7 @@
       "duration_label": "05:36:22",
       "duration_seconds": 20182,
       "title": "HAIL WATCH PARTY TONIGHT? SUBNAUTICUH & KITCHEN STREAM WITH CHAT",
-      "views": 87235
+      "views": 87237
     },
     {
       "source": "twitchmetrics_vod",
@@ -49040,12 +49030,22 @@
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": null,
+      "id": "2787200613",
       "started_at": "2026-06-02T22:51:11Z",
       "duration_label": "7 hours",
       "duration_seconds": null,
       "title": "BACK AND NOT DISCOURAGED - CUHCORD THRIVES - 2NITE HOMEMADE KAVA FOR @MISTERARTHER - AND A LITTLE SECRET SOMETHING ELSE",
       "views": null
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2787804532",
+      "started_at": "2026-06-03T18:20:02Z",
+      "duration_label": "06:05:20",
+      "duration_seconds": 21920,
+      "title": "FINDING WHAT GAME IVE SOMEHOW NEVER PLAYED THAT EVERYONE ELSE HAS - CHAT WILL JUDGE MY IGNORANCE !discord",
+      "views": 96972
     }
   ],
   "archive_grouped_dates": [
