@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-06-08T23:47:33Z",
+  "generated_at": "2026-06-09T03:35:01Z",
   "sources": {
-    "sullygnome_stream_table": 2429,
+    "sullygnome_stream_table": 2430,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 37,
-    "exact_merged_rows": 37,
+    "exact_merged_rows": 38,
     "youtube_archive_segments": 1000,
     "youtube_archive_grouped_dates": 549
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2428,
-      "mean": 27.82,
+      "count": 2429,
+      "mean": 27.81,
       "median": 17.87,
       "max": 1197.0,
       "bins": {
         "0-12h": 481,
-        "12-24h": 1236,
+        "12-24h": 1237,
         "1-2d": 413,
         "2-3d": 168,
         "3-5d": 100,
@@ -25,9 +25,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 36,
-      "mean": 39.3,
-      "median": 27.58,
+      "count": 37,
+      "mean": 39.61,
+      "median": 27.62,
       "max": 119.59
     },
     "archive_gap_days": {
@@ -204,7 +204,7 @@
       "2026-03": 21,
       "2026-04": 17,
       "2026-05": 19,
-      "2026-06": 4
+      "2026-06": 5
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -216,11 +216,11 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 93
+      "2026": 94
     },
     "dow_hour": {
       "dow": {
-        "Mon": 432,
+        "Mon": 433,
         "Tue": 398,
         "Wed": 428,
         "Thu": 382,
@@ -252,7 +252,7 @@
         "20": 253,
         "21": 289,
         "22": 280,
-        "23": 243
+        "23": 244
       }
     },
     "gap_cdf": [
@@ -270,35 +270,35 @@
       ],
       [
         9,
-        11.0
+        10.99
       ],
       [
         12,
-        19.98
+        19.97
       ],
       [
         15,
-        33.94
+        33.92
       ],
       [
         18,
-        50.86
+        50.89
       ],
       [
         21,
-        64.09
+        64.1
       ],
       [
         24,
-        70.76
+        70.77
       ],
       [
         30,
-        74.63
+        74.64
       ],
       [
         36,
-        76.69
+        76.7
       ],
       [
         42,
@@ -318,7 +318,7 @@
       ],
       [
         66,
-        92.17
+        92.18
       ],
       [
         72,
@@ -374,11 +374,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 42.2,
-        "started_at": "2026-05-08T22:29:22Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 46.6,
         "started_at": "2026-05-11T02:35:36Z",
@@ -473,21 +468,14 @@
         "gap_h": 45.7,
         "started_at": "2026-06-08T03:10:59Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 15.2,
+        "started_at": "2026-06-08T23:43:15Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-05-25T22:33:36Z",
-        "ended_at_iso": "2026-05-26T02:45:00+00:00",
-        "games": [
-          "Just Chatting"
-        ],
-        "duration_h": 4.2,
-        "duration_label": "252 minutes",
-        "avg_viewers": 3946,
-        "peak_viewers": 4845,
-        "followers_gained": 19
-      },
       {
         "started_at": "2026-05-27T02:10:43Z",
         "ended_at_iso": "2026-05-27T08:15:00+00:00",
@@ -576,16 +564,29 @@
         "avg_viewers": 1183,
         "peak_viewers": 1257,
         "followers_gained": -11
+      },
+      {
+        "started_at": "2026-06-08T23:43:15Z",
+        "ended_at_iso": "2026-06-09T02:45:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Forza Horizon 6"
+        ],
+        "duration_h": 3.0,
+        "duration_label": "182 minutes",
+        "avg_viewers": 1126,
+        "peak_viewers": 1258,
+        "followers_gained": 0
       }
     ],
     "last_stream": {
-      "started_at": "2026-06-08T03:10:59Z",
-      "ended_at_iso": "2026-06-08T08:30:00+00:00",
+      "started_at": "2026-06-08T23:43:15Z",
+      "ended_at_iso": "2026-06-09T02:45:00+00:00",
       "games": [
         "Just Chatting",
         "Forza Horizon 6"
       ],
-      "duration_label": "320 minutes"
+      "duration_label": "182 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -697,11 +698,11 @@
             "avg_viewers": 3812.0
           },
           "Other games": {
-            "count": 664,
-            "share": 27.3,
+            "count": 665,
+            "share": 27.4,
             "median_gap_hours": 25.36,
             "p90_gap_hours": 72.23,
-            "avg_viewers": 2464.0
+            "avg_viewers": 2462.0
           },
           "Social sandbox/RP": {
             "count": 1053,
@@ -728,7 +729,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1553
+            "count": 1554
           },
           {
             "game": "Grand Theft Auto V",
@@ -779,9 +780,9 @@
     },
     "live_stream": {
       "started_at": "2026-06-08T23:43:15Z",
-      "game": "Just Chatting",
-      "title": "FILM FLOP MONDAY - SAMURAI COP - FORZA WINNER POV LATER",
-      "viewers": 8
+      "game": "Forza Horizon 6",
+      "title": "RED GO FAST",
+      "viewers": 1171
     }
   },
   "sully_streams": [
@@ -24754,8 +24755,8 @@
       "duration_seconds": 40500,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 3422,
       "peak_viewers": 5095,
@@ -29352,8 +29353,8 @@
       "duration_seconds": 22560,
       "title": null,
       "games": [
-        "Monopoly Plus",
-        "Just Chatting"
+        "Just Chatting",
+        "Monopoly Plus"
       ],
       "avg_viewers": 2140,
       "peak_viewers": 4677,
@@ -33110,8 +33111,8 @@
       "duration_seconds": 19260,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Fallout: New Vegas"
+        "Fallout: New Vegas",
+        "Just Chatting"
       ],
       "avg_viewers": 2009,
       "peak_viewers": 2488,
@@ -34446,8 +34447,8 @@
       "duration_seconds": 25140,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Dark Souls: Remastered"
+        "Dark Souls: Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 1819,
       "peak_viewers": 2443,
@@ -35244,10 +35245,10 @@
       "duration_seconds": 37320,
       "title": null,
       "games": [
+        "Vaudeville",
         "Just Chatting",
         "Forever Skies",
-        "Kenshi",
-        "Vaudeville"
+        "Kenshi"
       ],
       "avg_viewers": 2814,
       "peak_viewers": 5662,
@@ -37413,8 +37414,8 @@
       "duration_seconds": 25260,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 6173,
       "peak_viewers": 9584,
@@ -38848,8 +38849,8 @@
       "duration_seconds": 12960,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Hell Let Loose"
+        "Hell Let Loose",
+        "Just Chatting"
       ],
       "avg_viewers": 3188,
       "peak_viewers": 4863,
@@ -40152,8 +40153,8 @@
       "duration_seconds": 36540,
       "title": null,
       "games": [
-        "Just Chatting",
         "Drug Dealer Simulator 2",
+        "Just Chatting",
         "Subnautica"
       ],
       "avg_viewers": 1915,
@@ -40252,8 +40253,8 @@
       "duration_seconds": 28200,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 1861,
       "peak_viewers": 2583,
@@ -41950,8 +41951,8 @@
       "duration_seconds": 38640,
       "title": null,
       "games": [
-        "Just Chatting",
-        "World of Warcraft"
+        "World of Warcraft",
+        "Just Chatting"
       ],
       "avg_viewers": 1681,
       "peak_viewers": 2298,
@@ -42404,8 +42405,8 @@
       "duration_seconds": 23040,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Storage Hunter Simulator"
+        "Storage Hunter Simulator",
+        "Just Chatting"
       ],
       "avg_viewers": 2215,
       "peak_viewers": 2799,
@@ -45174,8 +45175,8 @@
       "duration_seconds": 27780,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Abiotic Factor"
+        "Abiotic Factor",
+        "Just Chatting"
       ],
       "avg_viewers": 3250,
       "peak_viewers": 4047,
@@ -47804,8 +47805,8 @@
       "duration_seconds": 20280,
       "title": null,
       "games": [
-        "Crimson Desert",
-        "Just Chatting"
+        "Just Chatting",
+        "Crimson Desert"
       ],
       "avg_viewers": 1887,
       "peak_viewers": 3309,
@@ -47903,8 +47904,8 @@
       "duration_seconds": 25800,
       "title": null,
       "games": [
-        "Teardown",
-        "Just Chatting"
+        "Just Chatting",
+        "Teardown"
       ],
       "avg_viewers": 2162,
       "peak_viewers": 2825,
@@ -48001,8 +48002,8 @@
       "duration_seconds": 20640,
       "title": null,
       "games": [
-        "The Elder Scrolls V: Skyrim - Special Edition",
-        "Just Chatting"
+        "Just Chatting",
+        "The Elder Scrolls V: Skyrim - Special Edition"
       ],
       "avg_viewers": 2485,
       "peak_viewers": 3349,
@@ -48215,8 +48216,8 @@
       "duration_seconds": 26340,
       "title": null,
       "games": [
-        "The Elder Scrolls V: Skyrim - Special Edition",
-        "Just Chatting"
+        "Just Chatting",
+        "The Elder Scrolls V: Skyrim - Special Edition"
       ],
       "avg_viewers": 2850,
       "peak_viewers": 3542,
@@ -48716,6 +48717,26 @@
       "view_minutes": 378560,
       "stream_url": "https://sullygnome.com/channel/stream/319826970843",
       "range": "2026"
+    },
+    {
+      "source": "sullygnome_stream_table",
+      "precision": "exact_utc_start",
+      "id": "316746354295",
+      "started_at": "2026-06-08T23:43:15Z",
+      "ended_at": "Tuesday 9th June 2026 02:45",
+      "duration_label": "182 minutes",
+      "duration_seconds": 10920,
+      "title": null,
+      "games": [
+        "Just Chatting",
+        "Forza Horizon 6"
+      ],
+      "avg_viewers": 1126,
+      "peak_viewers": 1258,
+      "followers_gained": 0,
+      "view_minutes": 204932,
+      "stream_url": "https://sullygnome.com/channel/stream/316746354295",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -48930,24 +48951,24 @@
       "views": 76103
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2771389144",
-      "started_at": "2026-05-14T00:23:26Z",
-      "duration_label": "9 hours",
-      "duration_seconds": null,
+      "started_at": "2026-05-14T00:23:31Z",
+      "duration_label": "09:13:50",
+      "duration_seconds": 33230,
       "title": "ACTUALLY BEATING SUBNAUTICUH TONIGHT. NO COMPLAINING. NO RAGING. ORGANIZED. MOTIVATED. BEAUTIFUL",
-      "views": null
+      "views": 126761
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2772005922",
-      "started_at": "2026-05-14T19:45:26Z",
-      "duration_label": "4 hours",
-      "duration_seconds": null,
+      "started_at": "2026-05-14T19:45:31Z",
+      "duration_label": "04:03:30",
+      "duration_seconds": 14610,
       "title": "FINALLY BEATING SUBNAUTICA 1 FOR THE FIRST TIME EVER (EVERYONE IS PLAYING SUBNAUTICA 2 AND HERE I AM ALL ALONE)",
-      "views": null
+      "views": 64598
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -49080,14 +49101,24 @@
       "views": null
     },
     {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
       "id": "2789686239",
-      "started_at": "2026-06-06T00:23:48Z",
-      "duration_label": "05:10:09",
-      "duration_seconds": 18609,
+      "started_at": "2026-06-06T00:23:42Z",
+      "duration_label": "5 hours",
+      "duration_seconds": null,
       "title": "TONIGHT WE ATTEMPT TO MAKE CINEMA MAGIC  - READING CHAT'S MONOLOGUES AND SCRIPTS AND TRYING NOT TO LAUGH . WITH @phinttv .",
-      "views": 64530
+      "views": null
+    },
+    {
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
+      "id": null,
+      "started_at": "2026-06-08T03:10:59Z",
+      "duration_label": "6 hours",
+      "duration_seconds": null,
+      "title": "LATE NIGHT CYR TIME - THERAPIST SAID MY VIEWCAP ISN'T AS BAD AS MY STREAM SETUP - SO I ROTATED MY DESK, NEW SETUP.",
+      "views": null
     }
   ],
   "archive_grouped_dates": [
