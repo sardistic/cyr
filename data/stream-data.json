@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-09T22:59:41Z",
+  "generated_at": "2026-06-10T00:22:14Z",
   "sources": {
     "sullygnome_stream_table": 2430,
     "twitchmetrics_stream_logs": 15,
-    "twitchmetrics_vods": 37,
-    "exact_merged_rows": 38,
+    "twitchmetrics_vods": 36,
+    "exact_merged_rows": 37,
     "youtube_archive_segments": 1000,
     "youtube_archive_grouped_dates": 549
   },
@@ -25,9 +25,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 37,
-      "mean": 39.61,
-      "median": 27.62,
+      "count": 36,
+      "mean": 39.34,
+      "median": 28.34,
       "max": 119.59
     },
     "archive_gap_days": {
@@ -377,7 +377,7 @@
       {
         "gap_h": 46.6,
         "started_at": "2026-05-11T02:35:36Z",
-        "game": "Subnautica"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 16.7,
@@ -417,7 +417,7 @@
       {
         "gap_h": 18.6,
         "started_at": "2026-05-20T02:51:27Z",
-        "game": "Death Stranding"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 11.7,
@@ -6214,8 +6214,8 @@
       "duration_seconds": 19800,
       "title": null,
       "games": [
-        "IRL",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "IRL"
       ],
       "avg_viewers": 128,
       "peak_viewers": 193,
@@ -9627,8 +9627,8 @@
       "duration_seconds": 25560,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 103,
       "peak_viewers": 171,
@@ -29751,9 +29751,9 @@
       "duration_seconds": 14400,
       "title": null,
       "games": [
-        "The Elder Scrolls V: Skyrim",
         "Just Chatting",
-        "Zenith: The Last City"
+        "Zenith: The Last City",
+        "The Elder Scrolls V: Skyrim"
       ],
       "avg_viewers": 4050,
       "peak_viewers": 5414,
@@ -34482,9 +34482,9 @@
       "duration_seconds": 39000,
       "title": null,
       "games": [
+        "Poker",
         "Just Chatting",
-        "Dark Souls: Remastered",
-        "Poker"
+        "Dark Souls: Remastered"
       ],
       "avg_viewers": 2426,
       "peak_viewers": 3586,
@@ -34564,10 +34564,10 @@
       "duration_seconds": 48900,
       "title": null,
       "games": [
+        "Poker",
         "Just Chatting",
         "PowerWash Simulator",
-        "DARK SOULS III",
-        "Poker"
+        "DARK SOULS III"
       ],
       "avg_viewers": 2884,
       "peak_viewers": 6231,
@@ -35951,8 +35951,8 @@
       "duration_seconds": 28680,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Starfield"
+        "Starfield",
+        "Just Chatting"
       ],
       "avg_viewers": 2395,
       "peak_viewers": 5593,
@@ -40974,8 +40974,8 @@
       "duration_seconds": 17880,
       "title": null,
       "games": [
-        "Just Chatting",
-        "TCG Card Shop Simulator"
+        "TCG Card Shop Simulator",
+        "Just Chatting"
       ],
       "avg_viewers": 5996,
       "peak_viewers": 10677,
@@ -40994,8 +40994,8 @@
       "duration_seconds": 43560,
       "title": null,
       "games": [
-        "Just Chatting",
-        "TCG Card Shop Simulator"
+        "TCG Card Shop Simulator",
+        "Just Chatting"
       ],
       "avg_viewers": 3118,
       "peak_viewers": 5231,
@@ -47505,8 +47505,8 @@
       "duration_seconds": 270000,
       "title": null,
       "games": [
-        "Just Chatting",
         "Special Events",
+        "Just Chatting",
         "IRL",
         "Kingdom Come: Deliverance II",
         "Marathon"
@@ -48017,8 +48017,8 @@
       "duration_seconds": 27720,
       "title": null,
       "games": [
-        "Starfield",
-        "Just Chatting"
+        "Just Chatting",
+        "Starfield"
       ],
       "avg_viewers": 2332,
       "peak_viewers": 3716,
@@ -48346,8 +48346,8 @@
       "duration_seconds": 19500,
       "title": null,
       "games": [
-        "Subnautica",
-        "Just Chatting"
+        "Just Chatting",
+        "Subnautica"
       ],
       "avg_viewers": 2552,
       "peak_viewers": 3135,
@@ -48507,8 +48507,8 @@
       "duration_seconds": 16740,
       "title": null,
       "games": [
-        "Death Stranding",
-        "Just Chatting"
+        "Just Chatting",
+        "Death Stranding"
       ],
       "avg_viewers": 2871,
       "peak_viewers": 3430,
@@ -48738,42 +48738,12 @@
     {
       "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
-      "id": "2742653014",
-      "started_at": "2026-04-08T01:29:45Z",
-      "duration_label": "04:13:10",
-      "duration_seconds": 15190,
-      "title": "NIGHT OF A LIFETIME WITH CHAT",
-      "views": 43539
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2743360848",
-      "started_at": "2026-04-08T23:31:05Z",
-      "duration_label": "05:58:10",
-      "duration_seconds": 21490,
-      "title": "SKYRIM RP. I AM TOO ADDICTED. WHAT CAN WE GET INTO TODAY?",
-      "views": 59604
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2744014721",
-      "started_at": "2026-04-09T20:03:58Z",
-      "duration_label": "07:42:00",
-      "duration_seconds": 27720,
-      "title": "LIVE PIANO LESSON WITH @miamakesmusic & @thesushidragon - ZERO SKILL MAXIMUM CONFIDENCE - PLEASE FORGIVE THE NOISE - STARFIELD DLC AFTER",
-      "views": 167817
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
       "id": "2744976961",
       "started_at": "2026-04-10T23:36:01Z",
       "duration_label": "05:50:30",
       "duration_seconds": 21030,
       "title": "IN THE END. THERE CAN BE ONLY ONE (YOU KNOW WHAT THIS MEANS)",
-      "views": 97457
+      "views": 97459
     },
     {
       "source": "twitchmetrics_vod",
@@ -48783,7 +48753,7 @@
       "duration_label": "09:11:00",
       "duration_seconds": 33060,
       "title": "2 MEN 1 BIKE - LETTING A USELESS AI NAVIGATE 2 GROWN MEN ON ONE BIKE TO A DESTINATION IT WONT TELL US (THIS FAILED LAST TIME)",
-      "views": 86893
+      "views": 86894
     },
     {
       "source": "twitchmetrics_vod",
@@ -48793,7 +48763,7 @@
       "duration_label": "07:52:10",
       "duration_seconds": 28330,
       "title": "SEE YOU THIS EVENING (DONT PANIC)",
-      "views": 77528
+      "views": 77530
     },
     {
       "source": "twitchmetrics_vod",
@@ -48803,7 +48773,7 @@
       "duration_label": "06:22:20",
       "duration_seconds": 22940,
       "title": "TRYING CHINESE FOOD FOR THE FIRST TIME EVER REACTION (TOTALLY NOT A LIE BUT SOME PEOPLE WILL BELIEVE IT AND ASK IN CHAT ANYWAYS)",
-      "views": 87994
+      "views": 87997
     },
     {
       "source": "twitchmetrics_vod",
@@ -48813,7 +48783,7 @@
       "duration_label": "06:47:10",
       "duration_seconds": 24430,
       "title": "WE ARE BACK BABY. OH WE ARE BACK. W33D SHOP 4 IS OUT.",
-      "views": 78054
+      "views": 78055
     },
     {
       "source": "twitchmetrics_vod",
@@ -48823,7 +48793,7 @@
       "duration_label": "04:09:30",
       "duration_seconds": 14970,
       "title": "TODAY I AM CUTTING HAIR WITH ZERO TRAINING - I AM NOT QUALIFIED - I DONT KNOW WHAT @THESUSHIDRAGON WILL LOOK LIKE WHEN THIS ENDS - HELP",
-      "views": 91152
+      "views": 91154
     },
     {
       "source": "twitchmetrics_vod",
@@ -48843,7 +48813,7 @@
       "duration_label": "02:18:32",
       "duration_seconds": 8312,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH @WILLNEFF \ud83c\udf55 2 MEN 1 PIE \ud83c\udf55 POST PHOTOS IN !DISCORD , WE WILL REVIEW LATER",
-      "views": 49076
+      "views": 49079
     },
     {
       "source": "twitchmetrics_vod",
@@ -48853,7 +48823,7 @@
       "duration_label": "06:04:50",
       "duration_seconds": 21890,
       "title": "FULL WEEK! NEW SEGMENT: FLOP FILM MONDAY , YOU KNOW THIS WILL BE GOOD. STREAMING A PARTY THIS EVENING - NMP FRIED CHICKEN COLLAB TOMORROW",
-      "views": 88306
+      "views": 88307
     },
     {
       "source": "twitchmetrics_vod",
@@ -48863,7 +48833,7 @@
       "duration_label": "07:22:30",
       "duration_seconds": 26550,
       "title": "STOP SAYING I LOOK LIKE GOSLING - SKYRIM RP - DEBRA THE ADOPTED CABBAGE BORN - LET'S SEE WHAT HAPPENS.",
-      "views": 127956
+      "views": 127958
     },
     {
       "source": "twitchmetrics_vod",
@@ -48873,7 +48843,7 @@
       "duration_label": "06:39:10",
       "duration_seconds": 23950,
       "title": "SPENDING QUALITY TIME WITH CHAT - CLEANING MY MOLD INFESTED ARMOR OUTSIDE - THE SPORES ARE FLYING - I CHOSE TO IGNORE THE WARNING SIGNS",
-      "views": 101972
+      "views": 101973
     },
     {
       "source": "twitchmetrics_vod",
@@ -48883,7 +48853,7 @@
       "duration_label": "07:24:30",
       "duration_seconds": 26670,
       "title": "OVERCOMING MY FEAR OF HEIGHTS - INDOOR ROCK CLIMBING WITH @THESUSHIDRAGON - IVE NEVER COMMITTED TO THE WALL - TODAY I SHUT UP AND CLIMB",
-      "views": 123082
+      "views": 123083
     },
     {
       "source": "twitchmetrics_vod",
@@ -48893,7 +48863,7 @@
       "duration_label": "20:55:00",
       "duration_seconds": 75300,
       "title": "NOT ENDING STREAM UNTIL WE FINISH THIS 1000 PIECE PUZZLE - 1 SUB = REMOVE 1 PIECE - WILL WE BEAT CHAT?",
-      "views": 268621
+      "views": 268622
     },
     {
       "source": "twitchmetrics_vod",
@@ -48903,7 +48873,7 @@
       "duration_label": "06:12:50",
       "duration_seconds": 22370,
       "title": "TODAY I LEARN PIANO WITH @MIAMAKESMUSIC THEN WE THROW HER INTO ROCK CLIMBING - FIRST TIME USING CHALK - BAN REQUEST WITH ARTHER TOMORROW",
-      "views": 115229
+      "views": 115231
     },
     {
       "source": "twitchmetrics_vod",
@@ -48913,7 +48883,7 @@
       "duration_label": "05:34:10",
       "duration_seconds": 20050,
       "title": "FRIDAY FUNDAY - DOING HOUSE CHORES WITH CHAT - IM SURE EVERYONE WILL BE NORMAL ABOUT THIS",
-      "views": 97259
+      "views": 97260
     },
     {
       "source": "twitchmetrics_vod",
@@ -48933,7 +48903,7 @@
       "duration_label": "06:06:30",
       "duration_seconds": 21990,
       "title": "FILM FLOP MONDAY : GYMKATA w. @WAKEWILDER - THEN WE PLAY SUBNAUTICUH INTO THE NIGHT",
-      "views": 113401
+      "views": 113402
     },
     {
       "source": "twitchmetrics_vod",
@@ -48953,7 +48923,7 @@
       "duration_label": "09:13:50",
       "duration_seconds": 33230,
       "title": "ACTUALLY BEATING SUBNAUTICUH TONIGHT. NO COMPLAINING. NO RAGING. ORGANIZED. MOTIVATED. BEAUTIFUL",
-      "views": 126761
+      "views": 126764
     },
     {
       "source": "twitchmetrics_vod",
@@ -49114,6 +49084,26 @@
       "duration_seconds": null,
       "title": "LATE NIGHT CYR TIME - THERAPIST SAID MY VIEWCAP ISN'T AS BAD AS MY STREAM SETUP - SO I ROTATED MY DESK, NEW SETUP.",
       "views": null
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2791457675",
+      "started_at": "2026-06-08T03:11:04Z",
+      "duration_label": "05:30:00",
+      "duration_seconds": 19800,
+      "title": "LATE NIGHT CYR TIME - THERAPIST SAID MY VIEWCAP ISN'T AS BAD AS MY STREAM SETUP - SO I ROTATED MY DESK, NEW SETUP.",
+      "views": 77613
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2792087792",
+      "started_at": "2026-06-08T23:43:20Z",
+      "duration_label": "07:06:59",
+      "duration_seconds": 25619,
+      "title": "FILM FLOP MONDAY - SAMURAI COP - FORZA WINNER POV LATER",
+      "views": 116285
     }
   ],
   "archive_grouped_dates": [
