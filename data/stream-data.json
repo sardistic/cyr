@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-11T02:01:30Z",
+  "generated_at": "2026-06-11T07:15:53Z",
   "sources": {
     "sullygnome_stream_table": 2431,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 36,
-    "exact_merged_rows": 36,
+    "exact_merged_rows": 37,
     "youtube_archive_segments": 1000,
     "youtube_archive_grouped_dates": 549
   },
@@ -25,9 +25,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 35,
-      "mean": 40.46,
-      "median": 29.06,
+      "count": 36,
+      "mean": 40.16,
+      "median": 29.43,
       "max": 119.59
     },
     "archive_gap_days": {
@@ -382,7 +382,7 @@
       {
         "gap_h": 18.0,
         "started_at": "2026-05-13T00:44:44Z",
-        "game": "Just Chatting"
+        "game": "Subnautica"
       },
       {
         "gap_h": 18.9,
@@ -417,7 +417,7 @@
       {
         "gap_h": 11.7,
         "started_at": "2026-05-20T19:14:52Z",
-        "game": "Just Chatting"
+        "game": "Death Stranding"
       },
       {
         "gap_h": 73.6,
@@ -17267,8 +17267,8 @@
       "duration_seconds": 9840,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1487,
       "peak_viewers": 2911,
@@ -24468,10 +24468,10 @@
       "duration_seconds": 28440,
       "title": null,
       "games": [
-        "VRChat",
         "Just Chatting",
         "Super Mario 64",
-        "Unrailed!"
+        "Unrailed!",
+        "VRChat"
       ],
       "avg_viewers": 1913,
       "peak_viewers": 3603,
@@ -25209,8 +25209,8 @@
       "duration_seconds": 42720,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 3958,
       "peak_viewers": 10538,
@@ -25450,8 +25450,8 @@
       "duration_seconds": 12780,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
         "Just Chatting",
+        "Grand Theft Auto V",
         "The Elder Scrolls V: Skyrim"
       ],
       "avg_viewers": 1247,
@@ -25602,9 +25602,9 @@
       "duration_seconds": 45540,
       "title": null,
       "games": [
+        "Just Chatting",
         "Grand Theft Auto V",
-        "Happy's Humble Burger Farm",
-        "Just Chatting"
+        "Happy's Humble Burger Farm"
       ],
       "avg_viewers": 1699,
       "peak_viewers": 2520,
@@ -25623,8 +25623,8 @@
       "duration_seconds": 23160,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 2498,
       "peak_viewers": 4157,
@@ -25747,8 +25747,8 @@
       "duration_seconds": 34980,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 2379,
       "peak_viewers": 3819,
@@ -25768,9 +25768,9 @@
       "title": null,
       "games": [
         "Just Chatting",
+        "Grand Theft Auto V",
         "Sea of Thieves",
-        "For the King",
-        "Grand Theft Auto V"
+        "For the King"
       ],
       "avg_viewers": 3104,
       "peak_viewers": 7728,
@@ -25870,9 +25870,9 @@
       "duration_seconds": 20400,
       "title": null,
       "games": [
+        "Just Chatting",
         "Hobo: Tough Life",
         "Sea of Thieves",
-        "Just Chatting",
         "Grand Theft Auto V"
       ],
       "avg_viewers": 1824,
@@ -28565,8 +28565,8 @@
       "duration_seconds": 16260,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Monopoly Plus"
+        "Monopoly Plus",
+        "Just Chatting"
       ],
       "avg_viewers": 5617,
       "peak_viewers": 18394,
@@ -38506,8 +38506,8 @@
       "duration_seconds": 29460,
       "title": null,
       "games": [
-        "ELDEN RING",
-        "Just Chatting"
+        "Just Chatting",
+        "ELDEN RING"
       ],
       "avg_viewers": 3297,
       "peak_viewers": 7494,
@@ -39890,8 +39890,8 @@
       "duration_seconds": 14220,
       "title": null,
       "games": [
-        "Dark and Darker",
-        "Just Chatting"
+        "Just Chatting",
+        "Dark and Darker"
       ],
       "avg_viewers": 1533,
       "peak_viewers": 2573,
@@ -39910,8 +39910,8 @@
       "duration_seconds": 16560,
       "title": null,
       "games": [
-        "ASKA",
-        "Just Chatting"
+        "Just Chatting",
+        "ASKA"
       ],
       "avg_viewers": 1240,
       "peak_viewers": 1628,
@@ -40619,8 +40619,8 @@
       "duration_seconds": 12060,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Unlisted on Twitch"
+        "Unlisted on Twitch",
+        "Just Chatting"
       ],
       "avg_viewers": 10193,
       "peak_viewers": 14784,
@@ -41607,8 +41607,8 @@
       "duration_seconds": 43440,
       "title": null,
       "games": [
-        "Rust",
-        "Just Chatting"
+        "Just Chatting",
+        "Rust"
       ],
       "avg_viewers": 9580,
       "peak_viewers": 17510,
@@ -41667,8 +41667,8 @@
       "duration_seconds": 40500,
       "title": null,
       "games": [
-        "Rust",
-        "Just Chatting"
+        "Just Chatting",
+        "Rust"
       ],
       "avg_viewers": 9367,
       "peak_viewers": 17898,
@@ -41883,8 +41883,8 @@
       "duration_seconds": 31860,
       "title": null,
       "games": [
-        "King Arthur: Legends Rise",
         "Just Chatting",
+        "King Arthur: Legends Rise",
         "World of Warcraft"
       ],
       "avg_viewers": 2072,
@@ -45687,8 +45687,8 @@
       "duration_seconds": 29340,
       "title": null,
       "games": [
-        "Dying Light: The Beast",
-        "Just Chatting"
+        "Just Chatting",
+        "Dying Light: The Beast"
       ],
       "avg_viewers": 3556,
       "peak_viewers": 5811,
@@ -45787,8 +45787,8 @@
       "duration_seconds": 27000,
       "title": null,
       "games": [
-        "HITMAN World of Assassination",
         "Just Chatting",
+        "HITMAN World of Assassination",
         "Rust"
       ],
       "avg_viewers": 4607,
@@ -46464,9 +46464,9 @@
       "duration_seconds": 18720,
       "title": null,
       "games": [
-        "Minecraft",
         "Just Chatting",
-        "Ultimate Epic Battle Simulator 2"
+        "Ultimate Epic Battle Simulator 2",
+        "Minecraft"
       ],
       "avg_viewers": 3549,
       "peak_viewers": 4373,
@@ -47605,8 +47605,8 @@
       "duration_seconds": 26160,
       "title": null,
       "games": [
-        "Just Catting",
-        "Just Chatting"
+        "Just Chatting",
+        "Just Catting"
       ],
       "avg_viewers": 3052,
       "peak_viewers": 4188,
@@ -47819,8 +47819,8 @@
       "duration_seconds": 21840,
       "title": null,
       "games": [
-        "Just Chatting",
         "Kingdom Come: Deliverance II",
+        "Just Chatting",
         "Content King"
       ],
       "avg_viewers": 2077,
@@ -47937,8 +47937,8 @@
       "duration_seconds": 33240,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Horsey Game"
+        "Horsey Game",
+        "Just Chatting"
       ],
       "avg_viewers": 2746,
       "peak_viewers": 4133,
@@ -47976,8 +47976,8 @@
       "duration_seconds": 14460,
       "title": null,
       "games": [
-        "The Elder Scrolls V: Skyrim",
-        "Just Chatting"
+        "Just Chatting",
+        "The Elder Scrolls V: Skyrim"
       ],
       "avg_viewers": 2860,
       "peak_viewers": 4573,
@@ -48113,9 +48113,9 @@
       "duration_seconds": 23640,
       "title": null,
       "games": [
-        "Retro Rewind: Video Store Simulator",
         "Just Chatting",
-        "Weed Shop 4: Highland"
+        "Weed Shop 4: Highland",
+        "Retro Rewind: Video Store Simulator"
       ],
       "avg_viewers": 2815,
       "peak_viewers": 4742,
@@ -48210,8 +48210,8 @@
       "duration_seconds": 26340,
       "title": null,
       "games": [
-        "The Elder Scrolls V: Skyrim - Special Edition",
-        "Just Chatting"
+        "Just Chatting",
+        "The Elder Scrolls V: Skyrim - Special Edition"
       ],
       "avg_viewers": 2850,
       "peak_viewers": 3542,
@@ -48230,8 +48230,8 @@
       "duration_seconds": 23160,
       "title": null,
       "games": [
-        "Retro Rewind: Video Store Simulator",
-        "Just Chatting"
+        "Just Chatting",
+        "Retro Rewind: Video Store Simulator"
       ],
       "avg_viewers": 2533,
       "peak_viewers": 3497,
@@ -48385,8 +48385,8 @@
       "duration_seconds": 17160,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 2686,
       "peak_viewers": 3425,
@@ -48526,8 +48526,8 @@
       "duration_seconds": 14460,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Death Stranding"
+        "Death Stranding",
+        "Just Chatting"
       ],
       "avg_viewers": 2779,
       "peak_viewers": 3310,
@@ -48954,24 +48954,24 @@
       "views": 64598
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2773660571",
-      "started_at": "2026-05-16T19:23:37Z",
-      "duration_label": "13 hours",
-      "duration_seconds": null,
+      "started_at": "2026-05-16T19:23:41Z",
+      "duration_label": "13:05:20",
+      "duration_seconds": 47120,
       "title": "ROCK CLIMBING WITH @MISTERARTHER - IT'S HIS FIRST TIME - WHAT COULD POSSIBLY GO WRONG",
-      "views": null
+      "views": 196719
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2774691425",
-      "started_at": "2026-05-18T00:27:16Z",
-      "duration_label": "7 hours",
-      "duration_seconds": null,
+      "started_at": "2026-05-18T00:27:21Z",
+      "duration_label": "07:20:20",
+      "duration_seconds": 26420,
       "title": "FINALLY FINISHING SUBNAUTICA - FIRST TIME , FINAL DAY - HUGE REACTION - VIRAL HD1080P",
-      "views": null
+      "views": 107989
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -49104,14 +49104,24 @@
       "views": null
     },
     {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
       "id": "2792087792",
-      "started_at": "2026-06-08T23:43:20Z",
-      "duration_label": "07:06:59",
-      "duration_seconds": 25619,
+      "started_at": "2026-06-08T23:43:15Z",
+      "duration_label": "7 hours",
+      "duration_seconds": null,
       "title": "FILM FLOP MONDAY - SAMURAI COP - FORZA WINNER POV LATER",
-      "views": 116285
+      "views": null
+    },
+    {
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
+      "id": null,
+      "started_at": "2026-06-10T05:31:16Z",
+      "duration_label": "3 hours",
+      "duration_seconds": null,
+      "title": "LATE NIGHT CYR - 40K FIGURINE BUILD SPEEDRUN - WILL NAME THEM AFTER CHATTERSj",
+      "views": null
     }
   ],
   "archive_grouped_dates": [
