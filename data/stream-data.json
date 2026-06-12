@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-11T23:24:31Z",
+  "generated_at": "2026-06-12T01:57:19Z",
   "sources": {
     "sullygnome_stream_table": 2431,
     "twitchmetrics_stream_logs": 15,
-    "twitchmetrics_vods": 36,
-    "exact_merged_rows": 37,
+    "twitchmetrics_vods": 35,
+    "exact_merged_rows": 36,
     "youtube_archive_segments": 1000,
     "youtube_archive_grouped_dates": 549
   },
@@ -25,9 +25,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 36,
-      "mean": 40.16,
-      "median": 29.43,
+      "count": 35,
+      "mean": 37.98,
+      "median": 29.8,
       "max": 119.59
     },
     "archive_gap_days": {
@@ -392,7 +392,7 @@
       {
         "gap_h": 10.3,
         "started_at": "2026-05-14T19:45:26Z",
-        "game": "Subnautica"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 43.6,
@@ -2165,8 +2165,8 @@
       "duration_seconds": 10800,
       "title": null,
       "games": [
-        "IRL",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "IRL"
       ],
       "avg_viewers": 48,
       "peak_viewers": 75,
@@ -23623,9 +23623,9 @@
       "duration_seconds": 45600,
       "title": null,
       "games": [
+        "VRChat",
         "Just Chatting",
-        "Tanuki Sunset",
-        "VRChat"
+        "Tanuki Sunset"
       ],
       "avg_viewers": 1198,
       "peak_viewers": 2634,
@@ -23824,9 +23824,9 @@
       "duration_seconds": 39360,
       "title": null,
       "games": [
-        "Just Chatting",
         "Rust",
-        "Jackbox Party Packs"
+        "Jackbox Party Packs",
+        "Just Chatting"
       ],
       "avg_viewers": 1662,
       "peak_viewers": 2728,
@@ -27579,9 +27579,9 @@
       "duration_seconds": 33660,
       "title": null,
       "games": [
-        "Just Chatting",
         "Back 4 Blood",
-        "Unlisted on Twitch"
+        "Unlisted on Twitch",
+        "Just Chatting"
       ],
       "avg_viewers": 2160,
       "peak_viewers": 3019,
@@ -29049,10 +29049,10 @@
       "duration_seconds": 49080,
       "title": null,
       "games": [
-        "Special Events",
-        "RimWorld",
         "Just Chatting",
-        "Propnight"
+        "Propnight",
+        "RimWorld",
+        "Special Events"
       ],
       "avg_viewers": 2394,
       "peak_viewers": 3961,
@@ -29110,8 +29110,8 @@
       "duration_seconds": 21960,
       "title": null,
       "games": [
-        "RimWorld",
-        "Just Chatting"
+        "Just Chatting",
+        "RimWorld"
       ],
       "avg_viewers": 2355,
       "peak_viewers": 3025,
@@ -45747,8 +45747,8 @@
       "duration_seconds": 39600,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Rust"
+        "Rust",
+        "Just Chatting"
       ],
       "avg_viewers": 6280,
       "peak_viewers": 8189,
@@ -47976,8 +47976,8 @@
       "duration_seconds": 14460,
       "title": null,
       "games": [
-        "The Elder Scrolls V: Skyrim",
-        "Just Chatting"
+        "Just Chatting",
+        "The Elder Scrolls V: Skyrim"
       ],
       "avg_viewers": 2860,
       "peak_viewers": 4573,
@@ -48345,8 +48345,8 @@
       "duration_seconds": 19500,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 2552,
       "peak_viewers": 3135,
@@ -48425,8 +48425,8 @@
       "duration_seconds": 14400,
       "title": null,
       "games": [
-        "Subnautica",
-        "Just Chatting"
+        "Just Chatting",
+        "Subnautica"
       ],
       "avg_viewers": 2381,
       "peak_viewers": 2803,
@@ -48756,22 +48756,12 @@
     {
       "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
-      "id": "2744976961",
-      "started_at": "2026-04-10T23:36:01Z",
-      "duration_label": "05:50:30",
-      "duration_seconds": 21030,
-      "title": "IN THE END. THERE CAN BE ONLY ONE (YOU KNOW WHAT THIS MEANS)",
-      "views": 97459
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
       "id": "2748918118",
       "started_at": "2026-04-15T20:22:01Z",
       "duration_label": "09:11:00",
       "duration_seconds": 33060,
       "title": "2 MEN 1 BIKE - LETTING A USELESS AI NAVIGATE 2 GROWN MEN ON ONE BIKE TO A DESTINATION IT WONT TELL US (THIS FAILED LAST TIME)",
-      "views": 86894
+      "views": 86899
     },
     {
       "source": "twitchmetrics_vod",
@@ -48781,7 +48771,7 @@
       "duration_label": "07:52:10",
       "duration_seconds": 28330,
       "title": "SEE YOU THIS EVENING (DONT PANIC)",
-      "views": 77530
+      "views": 77534
     },
     {
       "source": "twitchmetrics_vod",
@@ -48791,7 +48781,7 @@
       "duration_label": "06:22:20",
       "duration_seconds": 22940,
       "title": "TRYING CHINESE FOOD FOR THE FIRST TIME EVER REACTION (TOTALLY NOT A LIE BUT SOME PEOPLE WILL BELIEVE IT AND ASK IN CHAT ANYWAYS)",
-      "views": 87997
+      "views": 87998
     },
     {
       "source": "twitchmetrics_vod",
@@ -48801,7 +48791,7 @@
       "duration_label": "06:47:10",
       "duration_seconds": 24430,
       "title": "WE ARE BACK BABY. OH WE ARE BACK. W33D SHOP 4 IS OUT.",
-      "views": 78055
+      "views": 78056
     },
     {
       "source": "twitchmetrics_vod",
@@ -48811,7 +48801,7 @@
       "duration_label": "04:09:30",
       "duration_seconds": 14970,
       "title": "TODAY I AM CUTTING HAIR WITH ZERO TRAINING - I AM NOT QUALIFIED - I DONT KNOW WHAT @THESUSHIDRAGON WILL LOOK LIKE WHEN THIS ENDS - HELP",
-      "views": 91154
+      "views": 91156
     },
     {
       "source": "twitchmetrics_vod",
@@ -48821,7 +48811,7 @@
       "duration_label": "05:04:40",
       "duration_seconds": 18280,
       "title": "AUTHENTIC CHINESE FOOD NIGHT - CRITICS WONT SHUT UP ABOUT THIS PLACE - PRAYING THEY HAVE LEFT HANDED CHOPSTICKS",
-      "views": 51509
+      "views": 51511
     },
     {
       "source": "twitchmetrics_vod",
@@ -48831,7 +48821,7 @@
       "duration_label": "02:18:32",
       "duration_seconds": 8312,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH @WILLNEFF \ud83c\udf55 2 MEN 1 PIE \ud83c\udf55 POST PHOTOS IN !DISCORD , WE WILL REVIEW LATER",
-      "views": 49079
+      "views": 49087
     },
     {
       "source": "twitchmetrics_vod",
@@ -48841,7 +48831,7 @@
       "duration_label": "06:04:50",
       "duration_seconds": 21890,
       "title": "FULL WEEK! NEW SEGMENT: FLOP FILM MONDAY , YOU KNOW THIS WILL BE GOOD. STREAMING A PARTY THIS EVENING - NMP FRIED CHICKEN COLLAB TOMORROW",
-      "views": 88307
+      "views": 88310
     },
     {
       "source": "twitchmetrics_vod",
@@ -48861,17 +48851,7 @@
       "duration_label": "06:39:10",
       "duration_seconds": 23950,
       "title": "SPENDING QUALITY TIME WITH CHAT - CLEANING MY MOLD INFESTED ARMOR OUTSIDE - THE SPORES ARE FLYING - I CHOSE TO IGNORE THE WARNING SIGNS",
-      "views": 101973
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2760944462",
-      "started_at": "2026-04-30T20:16:18Z",
-      "duration_label": "07:24:30",
-      "duration_seconds": 26670,
-      "title": "OVERCOMING MY FEAR OF HEIGHTS - INDOOR ROCK CLIMBING WITH @THESUSHIDRAGON - IVE NEVER COMMITTED TO THE WALL - TODAY I SHUT UP AND CLIMB",
-      "views": 123083
+      "views": 101976
     },
     {
       "source": "twitchmetrics_vod",
@@ -48881,7 +48861,7 @@
       "duration_label": "20:55:00",
       "duration_seconds": 75300,
       "title": "NOT ENDING STREAM UNTIL WE FINISH THIS 1000 PIECE PUZZLE - 1 SUB = REMOVE 1 PIECE - WILL WE BEAT CHAT?",
-      "views": 268622
+      "views": 268626
     },
     {
       "source": "twitchmetrics_vod",
@@ -48891,7 +48871,7 @@
       "duration_label": "06:12:50",
       "duration_seconds": 22370,
       "title": "TODAY I LEARN PIANO WITH @MIAMAKESMUSIC THEN WE THROW HER INTO ROCK CLIMBING - FIRST TIME USING CHALK - BAN REQUEST WITH ARTHER TOMORROW",
-      "views": 115231
+      "views": 115234
     },
     {
       "source": "twitchmetrics_vod",
@@ -48901,7 +48881,7 @@
       "duration_label": "05:34:10",
       "duration_seconds": 20050,
       "title": "FRIDAY FUNDAY - DOING HOUSE CHORES WITH CHAT - IM SURE EVERYONE WILL BE NORMAL ABOUT THIS",
-      "views": 97260
+      "views": 97262
     },
     {
       "source": "twitchmetrics_vod",
@@ -48931,7 +48911,7 @@
       "duration_label": "04:46:00",
       "duration_seconds": 17160,
       "title": "Just Chatting",
-      "views": 76103
+      "views": 76104
     },
     {
       "source": "twitchmetrics_vod",
@@ -48941,7 +48921,7 @@
       "duration_label": "09:13:50",
       "duration_seconds": 33230,
       "title": "ACTUALLY BEATING SUBNAUTICUH TONIGHT. NO COMPLAINING. NO RAGING. ORGANIZED. MOTIVATED. BEAUTIFUL",
-      "views": 126764
+      "views": 126765
     },
     {
       "source": "twitchmetrics_vod",
@@ -48951,7 +48931,7 @@
       "duration_label": "04:03:30",
       "duration_seconds": 14610,
       "title": "FINALLY BEATING SUBNAUTICA 1 FOR THE FIRST TIME EVER (EVERYONE IS PLAYING SUBNAUTICA 2 AND HERE I AM ALL ALONE)",
-      "views": 64598
+      "views": 64601
     },
     {
       "source": "twitchmetrics_vod",
@@ -48961,7 +48941,7 @@
       "duration_label": "13:05:20",
       "duration_seconds": 47120,
       "title": "ROCK CLIMBING WITH @MISTERARTHER - IT'S HIS FIRST TIME - WHAT COULD POSSIBLY GO WRONG",
-      "views": 196719
+      "views": 196725
     },
     {
       "source": "twitchmetrics_vod",
@@ -48971,7 +48951,7 @@
       "duration_label": "07:20:20",
       "duration_seconds": 26420,
       "title": "FINALLY FINISHING SUBNAUTICA - FIRST TIME , FINAL DAY - HUGE REACTION - VIRAL HD1080P",
-      "views": 107989
+      "views": 107990
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -49122,6 +49102,16 @@
       "duration_seconds": null,
       "title": "LATE NIGHT CYR - 40K FIGURINE BUILD SPEEDRUN - WILL NAME THEM AFTER CHATTERSj",
       "views": null
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2793101996",
+      "started_at": "2026-06-10T05:31:21Z",
+      "duration_label": "02:50:40",
+      "duration_seconds": 10240,
+      "title": "LATE NIGHT CYR - 40K FIGURINE SPEEDRUN - WILL NAME THEM AFTER CHATTERSj",
+      "views": 51426
     }
   ],
   "archive_grouped_dates": [
