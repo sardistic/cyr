@@ -827,6 +827,29 @@
       color: var(--muted);
       font-size: 13px;
     }
+    .footer-credit {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+    .footer-credit .sigil {
+      color: var(--green);
+      font-weight: 900;
+    }
+    .footer-credit .footer-gif {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+    .footer-credit a {
+      color: var(--ink);
+      text-underline-offset: 3px;
+    }
+    .footer-credit .slash { color: rgba(154, 170, 170, .55); }
 
     /* ── Live Banner ── */
     .live-banner {
@@ -1405,6 +1428,9 @@ composite                               ≈ <strong>55</strong></div>
     </div>
 
     <footer>
+      <div class="footer-credit">
+        <span>by</span><span class="sigil">$</span><img class="footer-gif" src="liquid_transparent.gif" alt=""><a href="https://sardistic.com/">sardistic.com</a><span class="slash">/</span><a href="https://github.com/sardistic/cyr">GitHub</a>
+      </div>
       Fan-made model, not an official schedule. Data: <a href="data/stream-data.json">JSON</a>, <a href="data/sully-streams.csv">Sully CSV</a>, <a href="data/exact-streams.csv">TwitchMetrics CSV</a>, <a href="data/title-semantics.csv">semantics CSV</a>.
     </footer>
   </main>
@@ -2792,6 +2818,47 @@ composite                               ≈ <strong>55</strong></div>
         "The fog of uncertainty is very foggy. And it says no.",
         "Even the median gap says 'maybe chill.'",
         "Overdue doesn't mean soon. Ask again never.",
+        "The schedule has entered witness protection.",
+        "No stream detected. Only crumbs and dashboard refreshes.",
+        "The answer is no, but with charts.",
+        "Tonight's forecast: 0% stream, 100% bargaining.",
+        "He opened OBS, saw the vibes, and closed it respectfully.",
+        "The stream key is emotionally unavailable.",
+        "Your hopium shipment has been delayed indefinitely.",
+        "All signs point to a tab titled 'YouTube - Home'.",
+        "The prophecy says: log off before you embarrass us both.",
+        "The ball checked the archives and sighed.",
+        "No. The math put on sunglasses and walked away.",
+        "A stream tonight? In this economy?",
+        "The model says possible. Reality says behave.",
+        "The stream page is doing its best impression of furniture.",
+        "I asked the dataset. It asked me to stop.",
+        "He is busy entering a new era called 'not live'.",
+        "No, but the denial stage is beautifully rendered.",
+        "The odds are wearing fake mustaches and avoiding you.",
+        "Current status: spiritually AFK.",
+        "The answer is no, and the no brought receipts.",
+        "Tonight has been downgraded from 'maybe' to 'please stop'.",
+        "The 8-Ball has unionized against optimism.",
+        "He might stream if the moon files paperwork. So, no.",
+        "No stream. The vibes are buffering forever.",
+        "The forecast is a firm shrug with negative intent.",
+        "Your refresh key deserves workers' comp.",
+        "The data says wait. The ball says get a hobby.",
+        "An ancient curse prevents live notifications tonight.",
+        "The stream is in another castle, allegedly.",
+        "No. Even the copium has moved on.",
+        "The probability curve just made a face at you.",
+        "Tonight is giving 'check back never'.",
+        "The ball rolled under the couch to avoid saying yes.",
+        "If hope were a stream, it would still be offline.",
+        "Respectfully, absolutely not.",
+        "The universe has marked your request as read.",
+        "The answer is no with a tiny decorative no.",
+        "The calendar looked at me and laughed.",
+        "No, but you can admire the charts while suffering.",
+        "He's not late. You're just early for disappointment.",
+        "The stream oracle says no, and it seems annoyed.",
         // Neutral / evasive
         "Reply hazy — mostly because the answer is no.",
         "Ask again later. (It will still be no.)",
@@ -2799,13 +2866,17 @@ composite                               ≈ <strong>55</strong></div>
         "Cannot predict now. Have you tried refreshing?",
         "The future is unclear. The no is very clear.",
         "Signs point to tomorrow. (Also probably no.)",
-        // Very rare positive (2 out of 37 = ~5%)
+        "Ask again after one more refresh. Then another no.",
+        "Maybe, if you define 'stream' as 'not streaming'.",
+        "Unclear. Suspiciously shaped like no.",
+        "The answer is loading... no.",
+        // Very rare positive (2 out of 81 = ~2.5%)
         "Signs point to tonight. (But I've been wrong before.)",
         "It is decidedly... actually maybe. Check the schedule.",
       ];
 
-      // Weight the positive ones much lower by expanding the negative pool
-      // Array is already ~35 negative + 2 positive ≈ 5% positive
+      // Weight the positive ones much lower by expanding the negative pool.
+      // Array is mostly no with only two maybe-yes outcomes.
 
       let shaking = false;
 
