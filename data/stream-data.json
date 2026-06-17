@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-17T16:12:55Z",
+  "generated_at": "2026-06-17T18:42:08Z",
   "sources": {
     "sullygnome_stream_table": 2434,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 37,
     "exact_merged_rows": 37,
-    "youtube_archive_segments": 971,
-    "youtube_archive_grouped_dates": 532
+    "youtube_archive_segments": 1000,
+    "youtube_archive_grouped_dates": 549
   },
   "stats": {
     "sully_gap_hours": {
@@ -31,18 +31,18 @@
       "max": 119.59
     },
     "archive_gap_days": {
-      "count": 531,
-      "mean": 2.73,
-      "median": 1,
+      "count": 548,
+      "mean": 2.64,
+      "median": 1.0,
       "max": 81,
       "bins": {
-        "1": 291,
-        "2": 96,
-        "3": 54,
-        "4-5": 50,
+        "1": 299,
+        "2": 101,
+        "3": 55,
+        "4-5": 53,
         "6-7": 16,
-        "8-14": 13,
-        "15+": 11
+        "8-14": 14,
+        "15+": 10
       }
     },
     "archive_monthly_counts": {
@@ -55,8 +55,9 @@
       "2022-11": 10,
       "2022-12": 5,
       "2023-01": 13,
-      "2023-02": 9,
-      "2023-04": 12,
+      "2023-02": 13,
+      "2023-03": 10,
+      "2023-04": 15,
       "2023-05": 15,
       "2023-06": 2,
       "2023-07": 9,
@@ -587,18 +588,18 @@
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 531,
+        "sample_size": 548,
         "features": {
           "challenge": {
             "count": 18,
-            "share": 3.4,
+            "share": 3.3,
             "median_gap_days": 1.0,
             "p90_gap_days": 4.3
           },
           "collab": {
-            "count": 184,
-            "share": 34.7,
-            "median_gap_days": 2.0,
+            "count": 189,
+            "share": 34.5,
+            "median_gap_days": 2,
             "p90_gap_days": 5.0
           },
           "event_drops": {
@@ -608,38 +609,38 @@
             "p90_gap_days": 2.3
           },
           "food_cooking": {
-            "count": 80,
+            "count": 83,
             "share": 15.1,
-            "median_gap_days": 1.0,
+            "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
           "gameplay_arc": {
-            "count": 316,
-            "share": 59.5,
+            "count": 330,
+            "share": 60.2,
             "median_gap_days": 1.0,
             "p90_gap_days": 4.0
           },
           "recovery_risk": {
             "count": 28,
-            "share": 5.3,
+            "share": 5.1,
             "median_gap_days": 2.0,
             "p90_gap_days": 5.0
           },
           "return_marker": {
             "count": 18,
-            "share": 3.4,
+            "share": 3.3,
             "median_gap_days": 1.5,
             "p90_gap_days": 5.0
           },
           "travel_irl": {
-            "count": 57,
-            "share": 10.7,
+            "count": 59,
+            "share": 10.8,
             "median_gap_days": 2,
-            "p90_gap_days": 4.4
+            "p90_gap_days": 5.0
           },
           "unclassified": {
             "count": 76,
-            "share": 14.3,
+            "share": 13.9,
             "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           }
@@ -647,14 +648,14 @@
         "sentiment": {
           "negative": {
             "count": 27,
-            "share": 5.1,
+            "share": 4.9,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 499,
-            "share": 94.0,
-            "median_gap_days": 1,
+            "count": 516,
+            "share": 94.2,
+            "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           },
           "positive": {
@@ -667,18 +668,18 @@
         "intensity": {
           "high": {
             "count": 22,
-            "share": 4.1,
+            "share": 4.0,
             "median_gap_days": 1.0,
             "p90_gap_days": 2.0
           },
           "low": {
-            "count": 192,
-            "share": 36.2,
-            "median_gap_days": 2.0,
+            "count": 199,
+            "share": 36.3,
+            "median_gap_days": 2,
             "p90_gap_days": 6.0
           },
           "medium": {
-            "count": 317,
+            "count": 327,
             "share": 59.7,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
@@ -788,8 +789,8 @@
       "duration_seconds": 11700,
       "title": null,
       "games": [
-        "Dragon Age: Inquisition",
         "IRL",
+        "Dragon Age: Inquisition",
         "Rust"
       ],
       "avg_viewers": 108,
@@ -18413,10 +18414,10 @@
       "duration_seconds": 46080,
       "title": null,
       "games": [
+        "Just Chatting",
         "Grand Theft Auto V",
         "Poker",
-        "Minecraft",
-        "Just Chatting"
+        "Minecraft"
       ],
       "avg_viewers": 1192,
       "peak_viewers": 2462,
@@ -23322,8 +23323,8 @@
       "duration_seconds": 34680,
       "title": null,
       "games": [
-        "Cyberpunk 2077",
         "Just Chatting",
+        "Cyberpunk 2077",
         "VRChat"
       ],
       "avg_viewers": 1003,
@@ -23362,8 +23363,8 @@
       "duration_seconds": 36900,
       "title": null,
       "games": [
-        "VRChat",
-        "Just Chatting"
+        "Just Chatting",
+        "VRChat"
       ],
       "avg_viewers": 1138,
       "peak_viewers": 1301,
@@ -23481,8 +23482,8 @@
       "duration_seconds": 28620,
       "title": null,
       "games": [
-        "VRChat",
-        "Just Chatting"
+        "Just Chatting",
+        "VRChat"
       ],
       "avg_viewers": 1075,
       "peak_viewers": 1236,
@@ -24925,8 +24926,8 @@
       "duration_seconds": 33360,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 2600,
       "peak_viewers": 3710,
@@ -24945,8 +24946,8 @@
       "duration_seconds": 56340,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 3293,
       "peak_viewers": 4989,
@@ -25128,8 +25129,8 @@
       "duration_seconds": 34680,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 2768,
       "peak_viewers": 4418,
@@ -25187,8 +25188,8 @@
       "duration_seconds": 34380,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 4059,
       "peak_viewers": 8285,
@@ -27478,8 +27479,8 @@
       "duration_seconds": 41160,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Rust"
+        "Rust",
+        "Just Chatting"
       ],
       "avg_viewers": 2706,
       "peak_viewers": 4936,
@@ -32778,9 +32779,9 @@
       "duration_seconds": 32100,
       "title": null,
       "games": [
-        "Goat Simulator 3",
         "Warhammer 40,000: Darktide",
         "Just Chatting",
+        "Goat Simulator 3",
         "Farmer's Life",
         "Dwarf Fortress",
         "Fall Guys"
@@ -32943,8 +32944,8 @@
       "duration_seconds": 17640,
       "title": null,
       "games": [
-        "Fallout: New Vegas",
-        "Just Chatting"
+        "Just Chatting",
+        "Fallout: New Vegas"
       ],
       "avg_viewers": 2142,
       "peak_viewers": 2989,
@@ -33103,8 +33104,8 @@
       "duration_seconds": 19260,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Fallout: New Vegas"
+        "Fallout: New Vegas",
+        "Just Chatting"
       ],
       "avg_viewers": 2009,
       "peak_viewers": 2488,
@@ -34439,8 +34440,8 @@
       "duration_seconds": 25140,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Dark Souls: Remastered"
+        "Dark Souls: Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 1819,
       "peak_viewers": 2443,
@@ -35237,10 +35238,10 @@
       "duration_seconds": 37320,
       "title": null,
       "games": [
+        "Vaudeville",
         "Just Chatting",
         "Forever Skies",
-        "Kenshi",
-        "Vaudeville"
+        "Kenshi"
       ],
       "avg_viewers": 2814,
       "peak_viewers": 5662,
@@ -35342,10 +35343,10 @@
       "duration_seconds": 14220,
       "title": null,
       "games": [
-        "Conan Exiles",
         "Just Chatting",
         "Green Hell",
-        "Muck"
+        "Muck",
+        "Conan Exiles"
       ],
       "avg_viewers": 1740,
       "peak_viewers": 2396,
@@ -37406,8 +37407,8 @@
       "duration_seconds": 25260,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 6173,
       "peak_viewers": 9584,
@@ -37781,8 +37782,8 @@
       "duration_seconds": 37500,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 3862,
       "peak_viewers": 6410,
@@ -38841,8 +38842,8 @@
       "duration_seconds": 12960,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Hell Let Loose"
+        "Hell Let Loose",
+        "Just Chatting"
       ],
       "avg_viewers": 3188,
       "peak_viewers": 4863,
@@ -40145,8 +40146,8 @@
       "duration_seconds": 36540,
       "title": null,
       "games": [
-        "Just Chatting",
         "Drug Dealer Simulator 2",
+        "Just Chatting",
         "Subnautica"
       ],
       "avg_viewers": 1915,
@@ -40245,8 +40246,8 @@
       "duration_seconds": 28200,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 1861,
       "peak_viewers": 2583,
@@ -41943,8 +41944,8 @@
       "duration_seconds": 38640,
       "title": null,
       "games": [
-        "Just Chatting",
-        "World of Warcraft"
+        "World of Warcraft",
+        "Just Chatting"
       ],
       "avg_viewers": 1681,
       "peak_viewers": 2298,
@@ -41963,8 +41964,8 @@
       "duration_seconds": 15720,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Conquest Dark"
+        "Conquest Dark",
+        "Just Chatting"
       ],
       "avg_viewers": 1509,
       "peak_viewers": 2482,
@@ -42003,8 +42004,8 @@
       "duration_seconds": 25440,
       "title": null,
       "games": [
-        "Just Chatting",
-        "World of Warcraft"
+        "World of Warcraft",
+        "Just Chatting"
       ],
       "avg_viewers": 2099,
       "peak_viewers": 3261,
@@ -42023,8 +42024,8 @@
       "duration_seconds": 15240,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Path of Exile 2"
+        "Path of Exile 2",
+        "Just Chatting"
       ],
       "avg_viewers": 705,
       "peak_viewers": 972,
@@ -42140,8 +42141,8 @@
       "duration_seconds": 20280,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Baldur's Gate 3"
+        "Baldur's Gate 3",
+        "Just Chatting"
       ],
       "avg_viewers": 2108,
       "peak_viewers": 4188,
@@ -42160,8 +42161,8 @@
       "duration_seconds": 25860,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Baldur's Gate 3"
+        "Baldur's Gate 3",
+        "Just Chatting"
       ],
       "avg_viewers": 2160,
       "peak_viewers": 2879,
@@ -42200,8 +42201,8 @@
       "duration_seconds": 22800,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Baldur's Gate 3"
+        "Baldur's Gate 3",
+        "Just Chatting"
       ],
       "avg_viewers": 2115,
       "peak_viewers": 2678,
@@ -42397,8 +42398,8 @@
       "duration_seconds": 23040,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Storage Hunter Simulator"
+        "Storage Hunter Simulator",
+        "Just Chatting"
       ],
       "avg_viewers": 2215,
       "peak_viewers": 2799,
@@ -42951,8 +42952,8 @@
       "duration_seconds": 22260,
       "title": null,
       "games": [
-        "Just Chatting",
-        "No Man's Sky"
+        "No Man's Sky",
+        "Just Chatting"
       ],
       "avg_viewers": 2744,
       "peak_viewers": 6133,
@@ -43582,8 +43583,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "inZOI",
         "Schedule I",
+        "inZOI",
         "Shawarma Legend"
       ],
       "avg_viewers": 3772,
@@ -43817,8 +43818,8 @@
       "duration_seconds": 17580,
       "title": null,
       "games": [
-        "Just Chatting",
-        "The Elder Scrolls IV: Oblivion Remastered"
+        "The Elder Scrolls IV: Oblivion Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 2386,
       "peak_viewers": 3282,
@@ -43837,8 +43838,8 @@
       "duration_seconds": 31080,
       "title": null,
       "games": [
-        "Just Chatting",
-        "The Elder Scrolls IV: Oblivion Remastered"
+        "The Elder Scrolls IV: Oblivion Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 2813,
       "peak_viewers": 3923,
@@ -43896,8 +43897,8 @@
       "duration_seconds": 38160,
       "title": null,
       "games": [
-        "Just Chatting",
-        "The Elder Scrolls IV: Oblivion Remastered"
+        "The Elder Scrolls IV: Oblivion Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 2995,
       "peak_viewers": 4153,
@@ -48228,8 +48229,8 @@
       "duration_seconds": 23160,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Retro Rewind: Video Store Simulator"
+        "Retro Rewind: Video Store Simulator",
+        "Just Chatting"
       ],
       "avg_viewers": 2533,
       "peak_viewers": 3497,
@@ -50321,6 +50322,34 @@
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
+      "date": "2023-02-21",
+      "segment_count": 1,
+      "duration_seconds_sum": 8813,
+      "primary_title": "Cyr Plays Kingdom Come Deliverance - FULL GAMEPLAY #003 [02/21/2023] | OTK Cyr VODs",
+      "titles": [
+        "Cyr Plays Kingdom Come Deliverance - FULL GAMEPLAY #003 [02/21/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=h_PfmQEYrn4"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-02-22",
+      "segment_count": 1,
+      "duration_seconds_sum": 4465,
+      "primary_title": "Cyr Plays Kingdom Come Deliverance - FULL GAMEPLAY #004 [02/22/2023] | OTK Cyr VODs",
+      "titles": [
+        "Cyr Plays Kingdom Come Deliverance - FULL GAMEPLAY #004 [02/22/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=DpYNOhFglJA"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
       "date": "2023-02-23",
       "segment_count": 1,
       "duration_seconds_sum": 19851,
@@ -50335,15 +50364,249 @@
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
-      "date": "2023-04-06",
+      "date": "2023-02-25",
       "segment_count": 1,
-      "duration_seconds_sum": 5954,
-      "primary_title": "Cyr Plays Valheim #001 - FULL GAMEPLAY [04/06/2023] | Cyr VODs",
+      "duration_seconds_sum": 10513,
+      "primary_title": "Walking around Austin w/ @WillNeff & @nmplol (Just Chatting) - [02/25/2023] | OTK Cyr VODs",
       "titles": [
-        "Cyr Plays Valheim #001 - FULL GAMEPLAY [04/06/2023] | Cyr VODs"
+        "Walking around Austin w/ @WillNeff & @nmplol (Just Chatting) - [02/25/2023] | OTK Cyr VODs"
       ],
       "urls": [
-        "https://www.youtube.com/watch?v=ooOtLDdOdDc"
+        "https://www.youtube.com/watch?v=fs-HFIK10Fo"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-02-27",
+      "segment_count": 3,
+      "duration_seconds_sum": 47212,
+      "primary_title": "Cyr Plays Sons of the Forest w/ @WillNeff - FULL GAMEPLAY #003 (Part 1) [02/27/2023] | OTK Cyr VODs",
+      "titles": [
+        "Cyr Plays Sons of the Forest w/ @WillNeff  - FULL GAMEPLAY #003 (Part 2) [02/27/2023] | OTK Cyr VODs",
+        "Cyr Plays Sons of the Forest w/ @WillNeff - FULL GAMEPLAY #003 (Part 1) [02/27/2023] | OTK Cyr VODs",
+        "Cyr Plays Sons of the Forest - FULL GAMEPLAY #002 [02/27/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=uyQ0wRW4Ndg",
+        "https://www.youtube.com/watch?v=Wt7XsOT7skU",
+        "https://www.youtube.com/watch?v=SnAvq6nMBB0"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-03-01",
+      "segment_count": 1,
+      "duration_seconds_sum": 10860,
+      "primary_title": "Cyr Plays Sons of the Forest w/ @WillNeff  - FULL GAMEPLAY #004 [03/01/2023] | OTK Cyr VODs",
+      "titles": [
+        "Cyr Plays Sons of the Forest w/ @WillNeff  - FULL GAMEPLAY #004 [03/01/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=Sb78a1cBZK0"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-03-09",
+      "segment_count": 1,
+      "duration_seconds_sum": 11535,
+      "primary_title": "Cyr Plays Contraband Police  - FULL GAMEPLAY [03/09/2023] | OTK Cyr VODs",
+      "titles": [
+        "Cyr Plays Contraband Police  - FULL GAMEPLAY [03/09/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=1Voe9zXquJE"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-03-13",
+      "segment_count": 2,
+      "duration_seconds_sum": 24257,
+      "primary_title": "Cyr Plays Kingdom Come Deliverance - FULL GAMEPLAY #005 (Part 1) [03/13/2023] | OTK Cyr VODs",
+      "titles": [
+        "Cyr Plays Kingdom Come Deliverance - FULL GAMEPLAY #005 (Part 2) [03/13/2023] | OTK Cyr VODs",
+        "Cyr Plays Kingdom Come Deliverance - FULL GAMEPLAY #005 (Part 1) [03/13/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=yqftZCIo8lM",
+        "https://www.youtube.com/watch?v=TOgI_oWc7qk"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-03-16",
+      "segment_count": 1,
+      "duration_seconds_sum": 5415,
+      "primary_title": "Cyr Plays Kingdom Come Deliverance - FULL GAMEPLAY #006 [03/16/2023] | OTK Cyr VODs",
+      "titles": [
+        "Cyr Plays Kingdom Come Deliverance - FULL GAMEPLAY #006 [03/16/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=kbQiwwVQc_0"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-03-20",
+      "segment_count": 1,
+      "duration_seconds_sum": 21230,
+      "primary_title": "Cyr Plays Living Skyrim - FULL GAMEPLAY #001 [03/20/2023] | OTK Cyr VODs",
+      "titles": [
+        "Cyr Plays Living Skyrim - FULL GAMEPLAY #001 [03/20/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=OF0jlMz9z8Q"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-03-22",
+      "segment_count": 1,
+      "duration_seconds_sum": 18068,
+      "primary_title": "Cyr Plays Living Skyrim - FULL GAMEPLAY #002 [03/22/2023] | OTK Cyr VODs",
+      "titles": [
+        "Cyr Plays Living Skyrim - FULL GAMEPLAY #002 [03/22/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=vTPNM2vazkI"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-03-23",
+      "segment_count": 1,
+      "duration_seconds_sum": 9316,
+      "primary_title": "Cyr Plays Living Skyrim - FULL GAMEPLAY #003 [03/23/2023] | OTK Cyr VODs",
+      "titles": [
+        "Cyr Plays Living Skyrim - FULL GAMEPLAY #003 [03/23/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=2coPsem4aUY"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-03-27",
+      "segment_count": 1,
+      "duration_seconds_sum": 6596,
+      "primary_title": "Who Can Cook The Best Fries? w/@nmplol & @Squeex  (Just Chatting) - [03/27/2023] | OTK Cyr VODs",
+      "titles": [
+        "Who Can Cook The Best Fries? w/@nmplol & @Squeex  (Just Chatting) - [03/27/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=NphzFDREG-Y"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-03-28",
+      "segment_count": 3,
+      "duration_seconds_sum": 23803,
+      "primary_title": "Cyr Plays Living Skyrim - FULL GAMEPLAY #004 [03/28/2023] | OTK Cyr VODs",
+      "titles": [
+        "Asking AI if Redditors are A**holes (Just Chatting) - [03/28/2023] | OTK Cyr VODs",
+        "Cyr Plays Living Skyrim - FULL GAMEPLAY #004 [03/28/2023] | OTK Cyr VODs",
+        "Cyr Reacts To INSANE Cooking Videos (Just Chatting) - [03/28/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=BAki4Jmqbrg",
+        "https://www.youtube.com/watch?v=8xfPRwQrOqc",
+        "https://www.youtube.com/watch?v=uScnBhnFWdI"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-03-29",
+      "segment_count": 1,
+      "duration_seconds_sum": 11557,
+      "primary_title": "Which FOODTRUCK offers the SPICIEST Food + Trip to Mall (Just Chatting) - [03/29/2023] | Cyr VODs",
+      "titles": [
+        "Which FOODTRUCK offers the SPICIEST Food + Trip to Mall (Just Chatting) - [03/29/2023] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=Dl28oZzdm2Y"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-04-03",
+      "segment_count": 3,
+      "duration_seconds_sum": 35792,
+      "primary_title": "Deep Dive Into Pure Nostalgia (Just Chatting) - [04/03/2023] | OTK Cyr VODs",
+      "titles": [
+        "Deep Dive Into Pure Nostalgia (Just Chatting) - [04/03/2023] | OTK Cyr VODs",
+        "Cyr Plays Living Skyrim - FULL GAMEPLAY #006 [04/03/2023] | OTK Cyr VODs",
+        "Cyr Plays Living Skyrim - FULL GAMEPLAY #005 [04/03/2023] | OTK Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=z-FmadO7mMY",
+        "https://www.youtube.com/watch?v=6NXC7HR2IRk",
+        "https://www.youtube.com/watch?v=7hFtmstk2T8"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-04-04",
+      "segment_count": 3,
+      "duration_seconds_sum": 21594,
+      "primary_title": "Cyr Plays The Long Drive  - FULL GAMEPLAY #003 [04/04/2023] | Cyr VODs",
+      "titles": [
+        "Cyr Plays Crab Champions w/@WillNeff - FULL GAMEPLAY [04/04/2023] | Cyr VODs",
+        "Cyr Plays No Man's Sky w/@WillNeff - FULL GAMEPLAY #001 [04/04/2023] | Cyr VODs",
+        "Cyr Plays The Long Drive  - FULL GAMEPLAY #003 [04/04/2023] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=AjOdtB8rKL0",
+        "https://www.youtube.com/watch?v=8AmLKxEF778",
+        "https://www.youtube.com/watch?v=aKoDqtMMFy0"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-04-05",
+      "segment_count": 3,
+      "duration_seconds_sum": 16585,
+      "primary_title": "Cyr Plays No Man's Sky - FULL GAMEPLAY #002 [04/05/2023] | Cyr VODs",
+      "titles": [
+        "Ban Appeals but CYR lets ChatGPT decide if you stay banned (Just Chatting) - [04/05/2023] | Cyr VODs",
+        "Cyr Plays Black & White 2 - FULL GAMEPLAY [04/05/2023] | Cyr VODs",
+        "Cyr Plays No Man's Sky - FULL GAMEPLAY #002 [04/05/2023] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=Wm72v7KypqE",
+        "https://www.youtube.com/watch?v=9Uf4iJXxJoQ",
+        "https://www.youtube.com/watch?v=JJOOgPbCbPE"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-04-06",
+      "segment_count": 2,
+      "duration_seconds_sum": 13622,
+      "primary_title": "Ranking the BEST EUROPEAN COUNTRIES *NOT SERIOUS* (Just Chatting) [04/06/2023] | Cyr VODs",
+      "titles": [
+        "Cyr Plays Valheim #001 - FULL GAMEPLAY [04/06/2023] | Cyr VODs",
+        "Ranking the BEST EUROPEAN COUNTRIES *NOT SERIOUS* (Just Chatting) [04/06/2023] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=ooOtLDdOdDc",
+        "https://www.youtube.com/watch?v=QjGm6Lm8NLo"
       ]
     },
     {
@@ -58370,7 +58633,7 @@
     },
     {
       "date": "2023-02-19",
-      "gap_days": 4,
+      "gap_days": 2,
       "features": [
         "gameplay_arc",
         "collab"
@@ -58381,8 +58644,8 @@
       "intensity_score": 2
     },
     {
-      "date": "2023-02-23",
-      "gap_days": 42,
+      "date": "2023-02-21",
+      "gap_days": 1,
       "features": [
         "gameplay_arc"
       ],
@@ -58392,7 +58655,65 @@
       "intensity_score": 0
     },
     {
-      "date": "2023-04-06",
+      "date": "2023-02-22",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-23",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-02-25",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-02-27",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2023-03-01",
+      "gap_days": 8,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-03-09",
       "gap_days": 4,
       "features": [
         "gameplay_arc"
@@ -58401,6 +58722,142 @@
       "sentiment_score": 0,
       "intensity": "low",
       "intensity_score": 0
+    },
+    {
+      "date": "2023-03-13",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-03-16",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-03-20",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-03-22",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-03-23",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-03-27",
+      "gap_days": 1,
+      "features": [
+        "collab",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2023-03-28",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-03-29",
+      "gap_days": 5,
+      "features": [
+        "travel_irl",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2023-04-03",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-04-04",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2023-04-05",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2023-04-06",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
     },
     {
       "date": "2023-04-10",
