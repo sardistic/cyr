@@ -835,10 +835,6 @@
       margin-bottom: 10px;
       font-size: 12px;
     }
-    .footer-credit .sigil {
-      color: var(--green);
-      font-weight: 900;
-    }
     .footer-credit .footer-gif {
       width: 18px;
       height: 18px;
@@ -1100,7 +1096,7 @@
     <header>
       <nav>
         <div class="brand"><span class="mark">CYR</span> Stream Forecast Lab</div>
-        <div>Static model snapshot · May 26, 2026 · America/Chicago</div>
+        <div>Live forecast model · continuously recalculated · America/Chicago</div>
       </nav>
 
       <div class="live-banner" id="live-banner">
@@ -1187,7 +1183,7 @@
               <span class="hstat-k">median gap (end→start)</span>
             </div>
             <div class="hstat">
-              <span class="hstat-v" id="hstat-count" style="color:var(--blue)">2,422</span>
+              <span class="hstat-v" id="hstat-count" style="color:var(--blue)">2,436</span>
               <span class="hstat-k">exact streams</span>
             </div>
             <div class="hstat">
@@ -1202,7 +1198,7 @@
             <div class="rationale-body">
               <div class="rationale-step">
                 <h4>Step 1 — The Raw Data</h4>
-                <p>We pulled 2,422 exact stream start timestamps from SullyGnome (Jan 2017 – May 2026). Each one is the moment cyr's Twitch broadcast actually went live.</p>
+                <p>We pulled 2,436 exact stream start timestamps from SullyGnome (Jan 2017 – Jun 2026). Each one is the moment cyr's Twitch broadcast actually went live.</p>
               </div>
               <div class="rationale-step">
                 <h4>Step 2 — Gap Distribution (end-to-start)</h4>
@@ -1212,7 +1208,7 @@ p25 ≈ 13h  ·  p50 ≈ 17.8h  ·  p75 ≈ 31.5h</div>
               </div>
               <div class="rationale-step">
                 <h4>Step 3 — Where We Are Right Now</h4>
-                <p id="rationale-s3">The last stream ended May 26 at 02:45 UTC. The elapsed bar above shows how far into the end-to-start gap distribution we currently sit. The percentile tells you what fraction of historical gaps ended before this point — updated live every minute.</p>
+                <p id="rationale-s3">The last stream ended Jun 19 at 02:15 UTC. The elapsed bar above shows how far into the end-to-start gap distribution we currently sit. The percentile tells you what fraction of historical gaps ended before this point — updated live every minute.</p>
               </div>
               <div class="rationale-step">
                 <h4>Step 4 — Conditional vs Unconditional Probability</h4>
@@ -1268,7 +1264,7 @@ composite                               ≈ <strong>55</strong></div>
       </div>
 
       <div class="source-note" id="source-note">
-        2,422 exact Sully streams · 548 title-semantic archive gaps · refreshed May 26, 2026
+        2,436 exact Sully streams · 550 title-semantic archive gaps · refreshed Jun 21, 2026
       </div>
     </header>
 
@@ -1322,22 +1318,22 @@ composite                               ≈ <strong>55</strong></div>
       <div class="grid">
         <div class="panel span-3">
           <h3>Exact Streams</h3>
-          <div class="big-number" id="snap-streams">2,422</div>
+          <div class="big-number" id="snap-streams">2,436</div>
           <p class="muted">SullyGnome rows</p>
         </div>
         <div class="panel span-3">
           <h3>Exact Gaps</h3>
-          <div class="big-number" id="snap-gaps">2,421</div>
+          <div class="big-number" id="snap-gaps">2,435</div>
           <p class="muted">hour-level cadence</p>
         </div>
         <div class="panel span-3">
           <h3>Coverage</h3>
           <div class="big-number" id="snap-coverage">2017–26</div>
-          <p class="muted" id="snap-coverage-sub">Jan 2017–May 2026</p>
+          <p class="muted" id="snap-coverage-sub">Jan 2017–Jun 2026</p>
         </div>
         <div class="panel span-3">
           <h3>Title Rows</h3>
-          <div class="big-number" id="snap-titles">548</div>
+          <div class="big-number" id="snap-titles">550</div>
           <p class="muted">semantic gaps</p>
         </div>
         <div class="panel span-12">
@@ -1429,7 +1425,7 @@ composite                               ≈ <strong>55</strong></div>
 
     <footer>
       <div class="footer-credit">
-        <span>by</span><span class="sigil">$</span><img class="footer-gif" src="liquid_transparent.gif" alt=""><a href="https://sardistic.com/">sardistic.com</a><span class="slash">/</span><a href="https://github.com/sardistic/cyr">GitHub</a>
+        <span>by</span><img class="footer-gif" src="liquid_transparent.gif" alt=""><a href="https://sardistic.com/">sardistic.com</a><span class="slash">/</span><a href="https://github.com/sardistic/cyr">GitHub</a>
       </div>
       Fan-made model, not an official schedule. Data: <a href="data/stream-data.json">JSON</a>, <a href="data/sully-streams.csv">Sully CSV</a>, <a href="data/exact-streams.csv">TwitchMetrics CSV</a>, <a href="data/title-semantics.csv">semantics CSV</a>.
     </footer>
@@ -2056,7 +2052,7 @@ composite                               ≈ <strong>55</strong></div>
       const el = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
       el('hstat-monthly', '~' + avgMonthly);
       el('hstat-median', (sg.median || 17.8).toFixed(1) + 'h');
-      el('hstat-count', (sources.sullygnome_stream_table || 2422).toLocaleString());
+      el('hstat-count', (sources.sullygnome_stream_table || 2436).toLocaleString());
       const p95row = (stats.gap_cdf || []).find(([h, p]) => p >= 95);
       el('hstat-p95', p95row ? p95row[0] + 'h' : '73.6h');
 
@@ -2089,8 +2085,8 @@ composite                               ≈ <strong>55</strong></div>
       // ── Source note ──
       const sn = document.getElementById('source-note');
       if (sn) {
-        const total = (sources.sullygnome_stream_table || 2422).toLocaleString();
-        const titles = (sources.youtube_archive_grouped_dates || 548).toLocaleString();
+        const total = (sources.sullygnome_stream_table || 2436).toLocaleString();
+        const titles = (sources.youtube_archive_grouped_dates || 550).toLocaleString();
         const genAt = new Date(D.generated_at || new Date()).toLocaleDateString('en-US', {
           timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric'
         });
@@ -2118,7 +2114,7 @@ composite                               ≈ <strong>55</strong></div>
       }
 
       // ── Model Snapshot ──
-      const total = sources.sullygnome_stream_table || 2422;
+      const total = sources.sullygnome_stream_table || 2436;
       el('snap-streams', total.toLocaleString());
       el('snap-gaps', (total - 1).toLocaleString());
       const years = Object.keys(stats.sully_yearly_counts || {}).sort();
@@ -2126,7 +2122,7 @@ composite                               ≈ <strong>55</strong></div>
         el('snap-coverage', `${years[0]}–${years[years.length-1].slice(2)}`);
         el('snap-coverage-sub', `Jan ${years[0]}–${MN[new Date().getUTCMonth()]} ${years[years.length-1]}`);
       }
-      el('snap-titles', (sources.youtube_archive_grouped_dates || 548).toLocaleString());
+      el('snap-titles', (sources.youtube_archive_grouped_dates || 550).toLocaleString());
       el('snap-mean', (sg.mean || 27.8).toFixed(1) + ' hours');
       el('snap-median', (sg.median || 17.8).toFixed(1) + ' hours');
       el('snap-p95', (p95row ? p95row[0] : 73.6) + ' hours');
