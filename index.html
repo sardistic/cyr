@@ -23,21 +23,66 @@
       --violet: #ad91ff;
       --shadow: 0 22px 70px rgba(0, 0, 0, .42);
       --glow: 0 0 26px rgba(98, 211, 148, .20), 0 0 54px rgba(98, 185, 223, .12);
+      --mouse-x: 50vw;
+      --mouse-y: 50vh;
+      --mouse-pan-x: 0px;
+      --mouse-pan-y: 0px;
+      --circuit-y: 0px;
+      --scan-y: 0px;
+      --scroll-progress: 0;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
+      min-height: 100vh;
       background:
-        linear-gradient(180deg, rgba(11,16,19,.30), rgba(9,13,16,.96)),
-        radial-gradient(circle at 12% 0%, rgba(98,211,148,.18), transparent 33rem),
-        radial-gradient(circle at 88% 8%, rgba(98,185,223,.16), transparent 30rem),
-        radial-gradient(circle at 45% 88%, rgba(228,184,93,.10), transparent 28rem),
+        linear-gradient(180deg, rgba(15,15,15,.88), rgba(9,13,16,.96)),
         var(--paper);
       color: var(--ink);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.45;
+      overflow-x: hidden;
+      isolation: isolate;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: -80px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::before {
+      background-color: #0f0f0f;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(34, 197, 94, 0.15) 19px, rgba(34, 197, 94, 0.15) 20px, transparent 20px, transparent 39px, rgba(34, 197, 94, 0.15) 39px, rgba(34, 197, 94, 0.15) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(34, 197, 94, 0.15) 19px, rgba(34, 197, 94, 0.15) 20px, transparent 20px, transparent 39px, rgba(34, 197, 94, 0.15) 39px, rgba(34, 197, 94, 0.15) 40px),
+        radial-gradient(circle at 20px 20px, rgba(16, 185, 129, 0.18) 2px, transparent 2px),
+        radial-gradient(circle at 40px 40px, rgba(16, 185, 129, 0.18) 2px, transparent 2px);
+      background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px;
+      background-position:
+        var(--mouse-pan-x) var(--circuit-y),
+        var(--mouse-pan-x) var(--circuit-y),
+        var(--mouse-pan-x) var(--circuit-y),
+        var(--mouse-pan-x) var(--circuit-y);
+      opacity: .82;
+      transform: translate3d(0, var(--mouse-pan-y), 0);
+      transition: opacity .35s ease;
+      will-change: background-position, transform;
+    }
+
+    body::after {
+      background:
+        linear-gradient(180deg, rgba(15,15,15,.20), rgba(9,13,16,.92) 72%, rgba(9,13,16,.98)),
+        radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(98,211,148,.18), transparent 260px),
+        linear-gradient(180deg, transparent 0, transparent calc(50% + var(--scan-y)), rgba(98,211,148,.10) calc(50% + var(--scan-y) + 1px), transparent calc(50% + var(--scan-y) + 72px)),
+        linear-gradient(90deg, rgba(98,185,223,.08), transparent 32%, transparent 68%, rgba(228,184,93,.07));
+      opacity: .95;
+      will-change: background;
     }
 
     @keyframes riseIn {
@@ -61,9 +106,23 @@
     }
 
     main {
+      position: relative;
+      z-index: 1;
       width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
       padding: 28px 0 56px;
+    }
+
+    .scroll-reveal {
+      opacity: .24;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+      will-change: opacity, transform;
+    }
+
+    .scroll-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     header {
@@ -137,7 +196,10 @@
 
     .metric, .panel, .timeline-row, .source-note {
       border: 1px solid var(--line);
-      background: rgba(17, 24, 28, .86);
+      background:
+        linear-gradient(180deg, rgba(17, 24, 28, .90), rgba(13, 19, 22, .86)),
+        rgba(17, 24, 28, .86);
+      backdrop-filter: blur(4px);
       box-shadow: var(--shadow);
       animation: riseIn .55s ease-out both;
       transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
@@ -1089,6 +1151,24 @@
         display: none;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+
+      body::before {
+        transform: none;
+      }
+
+      .scroll-reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1446,6 +1526,64 @@ composite                               ≈ <strong>55</strong></div>
       muted: css.getPropertyValue('--muted').trim(),
       ink: css.getPropertyValue('--ink').trim()
     };
+
+    function setupAmbientMotion() {
+      const root = document.documentElement;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const pointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+      let queued = false;
+
+      function paint() {
+        queued = false;
+        const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+        const panX = ((pointer.x / Math.max(1, window.innerWidth)) - .5) * 28;
+        const panY = ((pointer.y / Math.max(1, window.innerHeight)) - .5) * 18;
+
+        root.style.setProperty('--mouse-x', pointer.x + 'px');
+        root.style.setProperty('--mouse-y', pointer.y + 'px');
+        root.style.setProperty('--mouse-pan-x', panX.toFixed(2) + 'px');
+        root.style.setProperty('--mouse-pan-y', panY.toFixed(2) + 'px');
+        root.style.setProperty('--circuit-y', (-window.scrollY * .08).toFixed(2) + 'px');
+        root.style.setProperty('--scan-y', ((window.scrollY * .16) % 180).toFixed(2) + 'px');
+        root.style.setProperty('--scroll-progress', progress.toFixed(4));
+      }
+
+      function queuePaint() {
+        if (queued || reduceMotion) return;
+        queued = true;
+        requestAnimationFrame(paint);
+      }
+
+      if (!reduceMotion) {
+        window.addEventListener('pointermove', (event) => {
+          pointer.x = event.clientX;
+          pointer.y = event.clientY;
+          queuePaint();
+        }, { passive: true });
+        window.addEventListener('scroll', queuePaint, { passive: true });
+        window.addEventListener('resize', queuePaint);
+        paint();
+      }
+
+      const revealItems = document.querySelectorAll('header > *, main > section, .ball-section, footer');
+      revealItems.forEach((item) => item.classList.add('scroll-reveal'));
+
+      if (!('IntersectionObserver' in window) || reduceMotion) {
+        revealItems.forEach((item) => item.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+
+      revealItems.forEach((item) => observer.observe(item));
+    }
+
+    setupAmbientMotion();
 
     function setupCanvas(canvas) {
       const ratio = window.devicePixelRatio || 1;
