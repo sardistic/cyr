@@ -28,8 +28,6 @@
       --mouse-pan-x: 0px;
       --mouse-pan-y: 0px;
       --circuit-y: 0px;
-      --scan-y: 0px;
-      --scroll-progress: 0;
     }
 
     * { box-sizing: border-box; }
@@ -77,12 +75,20 @@
 
     body::after {
       background:
-        linear-gradient(180deg, rgba(15,15,15,.20), rgba(9,13,16,.92) 72%, rgba(9,13,16,.98)),
-        radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(98,211,148,.18), transparent 260px),
-        linear-gradient(180deg, transparent 0, transparent calc(50% + var(--scan-y)), rgba(98,211,148,.10) calc(50% + var(--scan-y) + 1px), transparent calc(50% + var(--scan-y) + 72px)),
-        linear-gradient(90deg, rgba(98,185,223,.08), transparent 32%, transparent 68%, rgba(228,184,93,.07));
-      opacity: .95;
-      will-change: background;
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(98, 211, 148, 0.36) 19px, rgba(98, 211, 148, 0.36) 20px, transparent 20px, transparent 39px, rgba(98, 211, 148, 0.36) 39px, rgba(98, 211, 148, 0.36) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(98, 211, 148, 0.36) 19px, rgba(98, 211, 148, 0.36) 20px, transparent 20px, transparent 39px, rgba(98, 211, 148, 0.36) 39px, rgba(98, 211, 148, 0.36) 40px),
+        radial-gradient(circle at 20px 20px, rgba(110, 231, 183, 0.72) 2px, transparent 2px),
+        radial-gradient(circle at 40px 40px, rgba(110, 231, 183, 0.72) 2px, transparent 2px);
+      background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px;
+      background-position:
+        var(--mouse-pan-x) var(--circuit-y),
+        var(--mouse-pan-x) var(--circuit-y),
+        var(--mouse-pan-x) var(--circuit-y),
+        var(--mouse-pan-x) var(--circuit-y);
+      opacity: .9;
+      -webkit-mask-image: radial-gradient(circle 190px at var(--mouse-x) var(--mouse-y), #000 0 24%, rgba(0,0,0,.72) 45%, transparent 78%);
+      mask-image: radial-gradient(circle 190px at var(--mouse-x) var(--mouse-y), #000 0 24%, rgba(0,0,0,.72) 45%, transparent 78%);
+      will-change: background-position, mask-image, -webkit-mask-image;
     }
 
     @keyframes riseIn {
@@ -1535,8 +1541,6 @@ composite                               ≈ <strong>55</strong></div>
 
       function paint() {
         queued = false;
-        const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-        const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
         const panX = ((pointer.x / Math.max(1, window.innerWidth)) - .5) * 28;
         const panY = ((pointer.y / Math.max(1, window.innerHeight)) - .5) * 18;
 
@@ -1545,8 +1549,6 @@ composite                               ≈ <strong>55</strong></div>
         root.style.setProperty('--mouse-pan-x', panX.toFixed(2) + 'px');
         root.style.setProperty('--mouse-pan-y', panY.toFixed(2) + 'px');
         root.style.setProperty('--circuit-y', (-window.scrollY * .08).toFixed(2) + 'px');
-        root.style.setProperty('--scan-y', ((window.scrollY * .16) % 180).toFixed(2) + 'px');
-        root.style.setProperty('--scroll-progress', progress.toFixed(4));
       }
 
       function queuePaint() {
