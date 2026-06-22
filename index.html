@@ -57,10 +57,29 @@
     body::before {
       background-color: #0f0f0f;
       background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(34, 197, 94, 0.15) 19px, rgba(34, 197, 94, 0.15) 20px, transparent 20px, transparent 39px, rgba(34, 197, 94, 0.15) 39px, rgba(34, 197, 94, 0.15) 40px),
-        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(34, 197, 94, 0.15) 19px, rgba(34, 197, 94, 0.15) 20px, transparent 20px, transparent 39px, rgba(34, 197, 94, 0.15) 39px, rgba(34, 197, 94, 0.15) 40px),
-        radial-gradient(circle at 20px 20px, rgba(16, 185, 129, 0.18) 2px, transparent 2px),
-        radial-gradient(circle at 40px 40px, rgba(16, 185, 129, 0.18) 2px, transparent 2px);
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(34, 197, 94, 0.07) 19px, rgba(34, 197, 94, 0.07) 20px, transparent 20px, transparent 39px, rgba(34, 197, 94, 0.07) 39px, rgba(34, 197, 94, 0.07) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(34, 197, 94, 0.07) 19px, rgba(34, 197, 94, 0.07) 20px, transparent 20px, transparent 39px, rgba(34, 197, 94, 0.07) 39px, rgba(34, 197, 94, 0.07) 40px),
+        radial-gradient(circle at 20px 20px, rgba(16, 185, 129, 0.10) 1.5px, transparent 2px),
+        radial-gradient(circle at 40px 40px, rgba(16, 185, 129, 0.10) 1.5px, transparent 2px);
+      background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px;
+      background-position:
+        var(--mouse-pan-x) var(--circuit-y),
+        var(--mouse-pan-x) var(--circuit-y),
+        var(--mouse-pan-x) var(--circuit-y),
+        var(--mouse-pan-x) var(--circuit-y);
+      opacity: .62;
+      transform: translate3d(0, var(--mouse-pan-y), 0);
+      transition: opacity .35s ease;
+      will-change: background-position, transform;
+    }
+
+    body::after {
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(98, 211, 148, 0.28) 19px, rgba(98, 211, 148, 0.28) 20px, transparent 20px, transparent 39px, rgba(98, 211, 148, 0.28) 39px, rgba(98, 211, 148, 0.28) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(98, 211, 148, 0.28) 19px, rgba(98, 211, 148, 0.28) 20px, transparent 20px, transparent 39px, rgba(98, 211, 148, 0.28) 39px, rgba(98, 211, 148, 0.28) 40px),
+        radial-gradient(circle at 20px 20px, rgba(110, 231, 183, 0.68) 1.5px, transparent 2px),
+        radial-gradient(circle at 40px 40px, rgba(110, 231, 183, 0.68) 1.5px, transparent 2px);
       background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px;
       background-position:
         var(--mouse-pan-x) var(--circuit-y),
@@ -68,26 +87,8 @@
         var(--mouse-pan-x) var(--circuit-y),
         var(--mouse-pan-x) var(--circuit-y);
       opacity: .82;
-      transform: translate3d(0, var(--mouse-pan-y), 0);
-      transition: opacity .35s ease;
-      will-change: background-position, transform;
-    }
-
-    body::after {
-      background:
-        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(98, 211, 148, 0.36) 19px, rgba(98, 211, 148, 0.36) 20px, transparent 20px, transparent 39px, rgba(98, 211, 148, 0.36) 39px, rgba(98, 211, 148, 0.36) 40px),
-        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(98, 211, 148, 0.36) 19px, rgba(98, 211, 148, 0.36) 20px, transparent 20px, transparent 39px, rgba(98, 211, 148, 0.36) 39px, rgba(98, 211, 148, 0.36) 40px),
-        radial-gradient(circle at 20px 20px, rgba(110, 231, 183, 0.72) 2px, transparent 2px),
-        radial-gradient(circle at 40px 40px, rgba(110, 231, 183, 0.72) 2px, transparent 2px);
-      background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px;
-      background-position:
-        var(--mouse-pan-x) var(--circuit-y),
-        var(--mouse-pan-x) var(--circuit-y),
-        var(--mouse-pan-x) var(--circuit-y),
-        var(--mouse-pan-x) var(--circuit-y);
-      opacity: .9;
-      -webkit-mask-image: radial-gradient(circle 190px at var(--mouse-x) var(--mouse-y), #000 0 24%, rgba(0,0,0,.72) 45%, transparent 78%);
-      mask-image: radial-gradient(circle 190px at var(--mouse-x) var(--mouse-y), #000 0 24%, rgba(0,0,0,.72) 45%, transparent 78%);
+      -webkit-mask-image: radial-gradient(circle 92px at var(--mouse-x) var(--mouse-y), #000 0 34%, rgba(0,0,0,.62) 56%, transparent 100%);
+      mask-image: radial-gradient(circle 92px at var(--mouse-x) var(--mouse-y), #000 0 34%, rgba(0,0,0,.62) 56%, transparent 100%);
       will-change: background-position, mask-image, -webkit-mask-image;
     }
 
