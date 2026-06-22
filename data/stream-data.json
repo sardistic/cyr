@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-21T23:53:19Z",
+  "generated_at": "2026-06-22T04:18:18Z",
   "sources": {
     "sullygnome_stream_table": 2436,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 36,
-    "exact_merged_rows": 37,
+    "exact_merged_rows": 36,
     "youtube_archive_segments": 1001,
     "youtube_archive_grouped_dates": 550
   },
@@ -25,9 +25,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 36,
-      "mean": 39.22,
-      "median": 29.43,
+      "count": 35,
+      "mean": 39.7,
+      "median": 29.8,
       "max": 119.59
     },
     "archive_gap_days": {
@@ -377,7 +377,7 @@
       {
         "gap_h": 16.2,
         "started_at": "2026-05-18T00:27:16Z",
-        "game": "Subnautica"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 19.2,
@@ -387,7 +387,7 @@
       {
         "gap_h": 18.6,
         "started_at": "2026-05-20T02:51:27Z",
-        "game": "Death Stranding"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 11.7,
@@ -6732,8 +6732,8 @@
       "duration_seconds": 32400,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "IRL"
+        "IRL",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 134,
       "peak_viewers": 237,
@@ -19884,9 +19884,9 @@
       "duration_seconds": 43200,
       "title": null,
       "games": [
-        "Golf It!",
         "Just Chatting",
         "The Coin Game",
+        "Golf It!",
         "Pummel Party",
         "Unlisted on Twitch"
       ],
@@ -19907,8 +19907,8 @@
       "duration_seconds": 24000,
       "title": null,
       "games": [
-        "VRChat",
         "Just Chatting",
+        "VRChat",
         "Minecraft"
       ],
       "avg_viewers": 2023,
@@ -19967,8 +19967,8 @@
       "duration_seconds": 46200,
       "title": null,
       "games": [
-        "Pogostuck: Rage With Your Friends",
         "Just Chatting",
+        "Pogostuck: Rage With Your Friends",
         "Minecraft",
         "VRChat"
       ],
@@ -21819,8 +21819,8 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
-        "Phasmophobia",
-        "Just Chatting"
+        "Just Chatting",
+        "Phasmophobia"
       ],
       "avg_viewers": 2033,
       "peak_viewers": 2936,
@@ -22713,8 +22713,8 @@
       "duration_seconds": 48360,
       "title": null,
       "games": [
-        "Just Chatting",
         "VRChat",
+        "Just Chatting",
         "World of Warcraft"
       ],
       "avg_viewers": 1537,
@@ -22879,8 +22879,8 @@
       "duration_seconds": 21300,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Yakuza: Like a Dragon"
+        "Yakuza: Like a Dragon",
+        "Just Chatting"
       ],
       "avg_viewers": 1133,
       "peak_viewers": 1343,
@@ -22938,9 +22938,9 @@
       "duration_seconds": 27900,
       "title": null,
       "games": [
+        "Yakuza: Like a Dragon",
         "Just Chatting",
-        "Among Us",
-        "Yakuza: Like a Dragon"
+        "Among Us"
       ],
       "avg_viewers": 1063,
       "peak_viewers": 1302,
@@ -30991,11 +30991,11 @@
       "duration_seconds": 34560,
       "title": null,
       "games": [
+        "The Quarry",
         "Just Chatting",
         "Ultimate Epic Battle Simulator 2",
         "Planet Crafter",
-        "Little Nightmares II",
-        "The Quarry"
+        "Little Nightmares II"
       ],
       "avg_viewers": 2291,
       "peak_viewers": 3494,
@@ -31281,10 +31281,10 @@
       "duration_seconds": 46920,
       "title": null,
       "games": [
+        "Satisfactory",
         "Just Chatting",
         "Weed Shop 3",
-        "DayZ",
-        "Satisfactory"
+        "DayZ"
       ],
       "avg_viewers": 3772,
       "peak_viewers": 11875,
@@ -41981,8 +41981,8 @@
       "duration_seconds": 10020,
       "title": null,
       "games": [
-        "IRL",
-        "Just Chatting"
+        "Just Chatting",
+        "IRL"
       ],
       "avg_viewers": 2029,
       "peak_viewers": 2855,
@@ -46835,8 +46835,8 @@
       "duration_seconds": 19080,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Guilty as Sock!"
+        "Guilty as Sock!",
+        "Just Chatting"
       ],
       "avg_viewers": 3639,
       "peak_viewers": 4660,
@@ -47422,8 +47422,8 @@
       "duration_seconds": 21900,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Sleeping Dogs"
+        "Sleeping Dogs",
+        "Just Chatting"
       ],
       "avg_viewers": 3149,
       "peak_viewers": 4433,
@@ -47992,8 +47992,8 @@
       "duration_seconds": 20640,
       "title": null,
       "games": [
-        "Just Chatting",
-        "The Elder Scrolls V: Skyrim - Special Edition"
+        "The Elder Scrolls V: Skyrim - Special Edition",
+        "Just Chatting"
       ],
       "avg_viewers": 2485,
       "peak_viewers": 3349,
@@ -48109,9 +48109,9 @@
       "duration_seconds": 23640,
       "title": null,
       "games": [
+        "Retro Rewind: Video Store Simulator",
         "Just Chatting",
-        "Weed Shop 4: Highland",
-        "Retro Rewind: Video Store Simulator"
+        "Weed Shop 4: Highland"
       ],
       "avg_viewers": 2815,
       "peak_viewers": 4742,
@@ -48461,8 +48461,8 @@
       "duration_seconds": 26280,
       "title": null,
       "games": [
-        "Subnautica",
         "Just Chatting",
+        "Subnautica",
         "Subnautica 2"
       ],
       "avg_viewers": 2920,
@@ -48502,8 +48502,8 @@
       "duration_seconds": 16740,
       "title": null,
       "games": [
-        "Death Stranding",
-        "Just Chatting"
+        "Just Chatting",
+        "Death Stranding"
       ],
       "avg_viewers": 2871,
       "peak_viewers": 3430,
@@ -48847,22 +48847,12 @@
     {
       "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
-      "id": "2753226000",
-      "started_at": "2026-04-21T01:57:00Z",
-      "duration_label": "06:47:10",
-      "duration_seconds": 24430,
-      "title": "WE ARE BACK BABY. OH WE ARE BACK. W33D SHOP 4 IS OUT.",
-      "views": 78058
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
       "id": "2753954306",
       "started_at": "2026-04-22T00:31:01Z",
       "duration_label": "04:09:30",
       "duration_seconds": 14970,
       "title": "TODAY I AM CUTTING HAIR WITH ZERO TRAINING - I AM NOT QUALIFIED - I DONT KNOW WHAT @THESUSHIDRAGON WILL LOOK LIKE WHEN THIS ENDS - HELP",
-      "views": 91167
+      "views": 91175
     },
     {
       "source": "twitchmetrics_vod",
@@ -48872,7 +48862,7 @@
       "duration_label": "05:04:40",
       "duration_seconds": 18280,
       "title": "AUTHENTIC CHINESE FOOD NIGHT - CRITICS WONT SHUT UP ABOUT THIS PLACE - PRAYING THEY HAVE LEFT HANDED CHOPSTICKS",
-      "views": 51516
+      "views": 51521
     },
     {
       "source": "twitchmetrics_vod",
@@ -48882,7 +48872,7 @@
       "duration_label": "02:18:32",
       "duration_seconds": 8312,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH @WILLNEFF \ud83c\udf55 2 MEN 1 PIE \ud83c\udf55 POST PHOTOS IN !DISCORD , WE WILL REVIEW LATER",
-      "views": 49099
+      "views": 49105
     },
     {
       "source": "twitchmetrics_vod",
@@ -48892,7 +48882,7 @@
       "duration_label": "06:04:50",
       "duration_seconds": 21890,
       "title": "FULL WEEK! NEW SEGMENT: FLOP FILM MONDAY , YOU KNOW THIS WILL BE GOOD. STREAMING A PARTY THIS EVENING - NMP FRIED CHICKEN COLLAB TOMORROW",
-      "views": 88315
+      "views": 88320
     },
     {
       "source": "twitchmetrics_vod",
@@ -48902,7 +48892,7 @@
       "duration_label": "07:22:30",
       "duration_seconds": 26550,
       "title": "STOP SAYING I LOOK LIKE GOSLING - SKYRIM RP - DEBRA THE ADOPTED CABBAGE BORN - LET'S SEE WHAT HAPPENS.",
-      "views": 127964
+      "views": 127966
     },
     {
       "source": "twitchmetrics_vod",
@@ -48912,7 +48902,7 @@
       "duration_label": "06:39:10",
       "duration_seconds": 23950,
       "title": "SPENDING QUALITY TIME WITH CHAT - CLEANING MY MOLD INFESTED ARMOR OUTSIDE - THE SPORES ARE FLYING - I CHOSE TO IGNORE THE WARNING SIGNS",
-      "views": 101978
+      "views": 101980
     },
     {
       "source": "twitchmetrics_vod",
@@ -48922,7 +48912,7 @@
       "duration_label": "20:55:00",
       "duration_seconds": 75300,
       "title": "NOT ENDING STREAM UNTIL WE FINISH THIS 1000 PIECE PUZZLE - 1 SUB = REMOVE 1 PIECE - WILL WE BEAT CHAT?",
-      "views": 268634
+      "views": 268636
     },
     {
       "source": "twitchmetrics_vod",
@@ -48932,7 +48922,7 @@
       "duration_label": "06:12:50",
       "duration_seconds": 22370,
       "title": "TODAY I LEARN PIANO WITH @MIAMAKESMUSIC THEN WE THROW HER INTO ROCK CLIMBING - FIRST TIME USING CHALK - BAN REQUEST WITH ARTHER TOMORROW",
-      "views": 115240
+      "views": 115242
     },
     {
       "source": "twitchmetrics_vod",
@@ -48952,7 +48942,7 @@
       "duration_label": "05:36:22",
       "duration_seconds": 20182,
       "title": "HAIL WATCH PARTY TONIGHT? SUBNAUTICUH & KITCHEN STREAM WITH CHAT",
-      "views": 87244
+      "views": 87245
     },
     {
       "source": "twitchmetrics_vod",
@@ -48962,7 +48952,7 @@
       "duration_label": "06:06:30",
       "duration_seconds": 21990,
       "title": "FILM FLOP MONDAY : GYMKATA w. @WAKEWILDER - THEN WE PLAY SUBNAUTICUH INTO THE NIGHT",
-      "views": 113411
+      "views": 113412
     },
     {
       "source": "twitchmetrics_vod",
@@ -48972,7 +48962,7 @@
       "duration_label": "04:46:00",
       "duration_seconds": 17160,
       "title": "Just Chatting",
-      "views": 76108
+      "views": 76109
     },
     {
       "source": "twitchmetrics_vod",
@@ -48982,7 +48972,7 @@
       "duration_label": "09:13:50",
       "duration_seconds": 33230,
       "title": "ACTUALLY BEATING SUBNAUTICUH TONIGHT. NO COMPLAINING. NO RAGING. ORGANIZED. MOTIVATED. BEAUTIFUL",
-      "views": 126772
+      "views": 126774
     },
     {
       "source": "twitchmetrics_vod",
@@ -48992,7 +48982,7 @@
       "duration_label": "04:03:30",
       "duration_seconds": 14610,
       "title": "FINALLY BEATING SUBNAUTICA 1 FOR THE FIRST TIME EVER (EVERYONE IS PLAYING SUBNAUTICA 2 AND HERE I AM ALL ALONE)",
-      "views": 64603
+      "views": 64605
     },
     {
       "source": "twitchmetrics_vod",
@@ -49002,7 +48992,7 @@
       "duration_label": "13:05:20",
       "duration_seconds": 47120,
       "title": "ROCK CLIMBING WITH @MISTERARTHER - IT'S HIS FIRST TIME - WHAT COULD POSSIBLY GO WRONG",
-      "views": 196731
+      "views": 196732
     },
     {
       "source": "twitchmetrics_vod",
@@ -49012,7 +49002,7 @@
       "duration_label": "07:20:20",
       "duration_seconds": 26420,
       "title": "FINALLY FINISHING SUBNAUTICA - FIRST TIME , FINAL DAY - HUGE REACTION - VIRAL HD1080P",
-      "views": 107993
+      "views": 107994
     },
     {
       "source": "twitchmetrics_vod",
@@ -49022,7 +49012,7 @@
       "duration_label": "05:30:10",
       "duration_seconds": 19810,
       "title": "OH YOU KNOW. SUBNAUTICA 2 WITH @WILLNEFF - DROPS & GIVING AWAY A FREE KEY",
-      "views": 80056
+      "views": 80060
     },
     {
       "source": "twitchmetrics_vod",
@@ -49032,7 +49022,7 @@
       "duration_label": "04:53:10",
       "duration_seconds": 17590,
       "title": "DEATH STRANDING FIRST TIME EVER - IS IT GOOD?? WALKING SIM OR NOT?? WILL CHAT ANGER ME? WILL THE POWER GO OUT?",
-      "views": 79673
+      "views": 79675
     },
     {
       "source": "twitchmetrics_vod",
@@ -49052,7 +49042,7 @@
       "duration_label": "05:57:42",
       "duration_seconds": 21462,
       "title": "BREAKING \u26a0\ufe0f @MISTERARTHER IS COMING OVER TO RATE MY STREAM SETUP & TECH ROOM. WILL I PASS?!",
-      "views": 89325
+      "views": 89334
     },
     {
       "source": "twitchmetrics_vod",
@@ -49062,7 +49052,7 @@
       "duration_label": "04:21:00",
       "duration_seconds": 15660,
       "title": "HOTDOGS & CHILI WITH @JULIAKINS & MISTERARTHER - BUT IN THE YEAR 1999",
-      "views": 107005
+      "views": 107019
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -49207,7 +49197,7 @@
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": null,
+      "id": "2799916861",
       "started_at": "2026-06-18T21:51:51Z",
       "duration_label": "4 hours",
       "duration_seconds": null,
