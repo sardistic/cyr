@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-24T21:26:39Z",
+  "generated_at": "2026-06-24T22:49:26Z",
   "sources": {
     "sullygnome_stream_table": 2437,
     "twitchmetrics_stream_logs": 15,
-    "twitchmetrics_vods": 35,
-    "exact_merged_rows": 35,
+    "twitchmetrics_vods": 0,
+    "exact_merged_rows": 15,
     "youtube_archive_segments": 1001,
     "youtube_archive_grouped_dates": 550
   },
@@ -25,10 +25,10 @@
       }
     },
     "exact_gap_hours": {
-      "count": 34,
-      "mean": 39.46,
-      "median": 29.43,
-      "max": 119.59
+      "count": 14,
+      "mean": 39.12,
+      "median": 34.19,
+      "max": 94.85
     },
     "archive_gap_days": {
       "count": 549,
@@ -377,7 +377,7 @@
       {
         "gap_h": 19.2,
         "started_at": "2026-05-19T02:57:34Z",
-        "game": "Just Chatting"
+        "game": "Subnautica 2"
       },
       {
         "gap_h": 18.6,
@@ -772,7 +772,12 @@
         ]
       }
     },
-    "live_stream": null
+    "live_stream": {
+      "started_at": "2026-06-24T22:13:45Z",
+      "game": "Just Chatting",
+      "title": "BLUE COLLAR LARP STREAM - FIXING A VAN IN MISERABLE HEAT -NO TRAINING - BRUTAL HEAT - WOULD YOU FIRE ME OR HIRE ME IF I SHOWED UP !submit",
+      "viewers": 932
+    }
   },
   "sully_streams": [
     {
@@ -3505,8 +3510,8 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
-        "Final Fantasy X/X-2 HD Remaster",
-        "Doki Doki Literature Club!"
+        "Doki Doki Literature Club!",
+        "Final Fantasy X/X-2 HD Remaster"
       ],
       "avg_viewers": 72,
       "peak_viewers": 153,
@@ -12392,9 +12397,9 @@
       "duration_seconds": 24480,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
         "Just Chatting",
-        "Jump King"
+        "Jump King",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 2222,
       "peak_viewers": 3860,
@@ -19686,9 +19691,9 @@
       "duration_seconds": 34680,
       "title": null,
       "games": [
+        "Grand Theft Auto V",
         "Just Chatting",
-        "Call of Duty: Warzone",
-        "Grand Theft Auto V"
+        "Call of Duty: Warzone"
       ],
       "avg_viewers": 2022,
       "peak_viewers": 3124,
@@ -20007,8 +20012,8 @@
       "duration_seconds": 24900,
       "title": null,
       "games": [
-        "VRChat",
-        "Just Chatting"
+        "Just Chatting",
+        "VRChat"
       ],
       "avg_viewers": 2490,
       "peak_viewers": 3864,
@@ -22754,8 +22759,8 @@
       "duration_seconds": 17100,
       "title": null,
       "games": [
-        "World of Warcraft",
-        "Just Chatting"
+        "Just Chatting",
+        "World of Warcraft"
       ],
       "avg_viewers": 1327,
       "peak_viewers": 1755,
@@ -46916,8 +46921,8 @@
       "duration_seconds": 38820,
       "title": null,
       "games": [
-        "MineMogul",
         "Just Chatting",
+        "MineMogul",
         "Where Winds Meet"
       ],
       "avg_viewers": 3091,
@@ -47247,9 +47252,9 @@
       "duration_seconds": 39540,
       "title": null,
       "games": [
-        "Tainted Grail: The Fall of Avalon",
         "Just Chatting",
-        "RollerCoaster Tycoon Classic"
+        "RollerCoaster Tycoon Classic",
+        "Tainted Grail: The Fall of Avalon"
       ],
       "avg_viewers": 2711,
       "peak_viewers": 3985,
@@ -47971,8 +47976,8 @@
       "duration_seconds": 14460,
       "title": null,
       "games": [
-        "The Elder Scrolls V: Skyrim",
-        "Just Chatting"
+        "Just Chatting",
+        "The Elder Scrolls V: Skyrim"
       ],
       "avg_viewers": 2860,
       "peak_viewers": 4573,
@@ -48205,8 +48210,8 @@
       "duration_seconds": 26340,
       "title": null,
       "games": [
-        "The Elder Scrolls V: Skyrim - Special Edition",
-        "Just Chatting"
+        "Just Chatting",
+        "The Elder Scrolls V: Skyrim - Special Edition"
       ],
       "avg_viewers": 2850,
       "peak_viewers": 3542,
@@ -48225,8 +48230,8 @@
       "duration_seconds": 23160,
       "title": null,
       "games": [
-        "Retro Rewind: Video Store Simulator",
-        "Just Chatting"
+        "Just Chatting",
+        "Retro Rewind: Video Store Simulator"
       ],
       "avg_viewers": 2533,
       "peak_viewers": 3497,
@@ -48400,8 +48405,8 @@
       "duration_seconds": 32820,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 2668,
       "peak_viewers": 3567,
@@ -48420,8 +48425,8 @@
       "duration_seconds": 14400,
       "title": null,
       "games": [
-        "Subnautica",
-        "Just Chatting"
+        "Just Chatting",
+        "Subnautica"
       ],
       "avg_viewers": 2381,
       "peak_viewers": 2803,
@@ -48460,8 +48465,8 @@
       "duration_seconds": 26280,
       "title": null,
       "games": [
-        "Subnautica",
         "Just Chatting",
+        "Subnautica",
         "Subnautica 2"
       ],
       "avg_viewers": 2920,
@@ -48481,8 +48486,8 @@
       "duration_seconds": 19080,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica 2"
+        "Subnautica 2",
+        "Just Chatting"
       ],
       "avg_viewers": 2547,
       "peak_viewers": 3841,
@@ -48862,206 +48867,6 @@
     }
   ],
   "exact_rows": [
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2755513110",
-      "started_at": "2026-04-24T00:14:14Z",
-      "duration_label": "05:04:40",
-      "duration_seconds": 18280,
-      "title": "AUTHENTIC CHINESE FOOD NIGHT - CRITICS WONT SHUT UP ABOUT THIS PLACE - PRAYING THEY HAVE LEFT HANDED CHOPSTICKS",
-      "views": 51529
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2756348169",
-      "started_at": "2026-04-25T01:12:30Z",
-      "duration_label": "02:18:32",
-      "duration_seconds": 8312,
-      "title": "\ud83c\udf55 PIZZA FRIDAY WITH @WILLNEFF \ud83c\udf55 2 MEN 1 PIE \ud83c\udf55 POST PHOTOS IN !DISCORD , WE WILL REVIEW LATER",
-      "views": 49113
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2758572597",
-      "started_at": "2026-04-27T20:08:55Z",
-      "duration_label": "06:04:50",
-      "duration_seconds": 21890,
-      "title": "FULL WEEK! NEW SEGMENT: FLOP FILM MONDAY , YOU KNOW THIS WILL BE GOOD. STREAMING A PARTY THIS EVENING - NMP FRIED CHICKEN COLLAB TOMORROW",
-      "views": 88323
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2759453493",
-      "started_at": "2026-04-28T22:41:47Z",
-      "duration_label": "07:22:30",
-      "duration_seconds": 26550,
-      "title": "STOP SAYING I LOOK LIKE GOSLING - SKYRIM RP - DEBRA THE ADOPTED CABBAGE BORN - LET'S SEE WHAT HAPPENS.",
-      "views": 127970
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2760178829",
-      "started_at": "2026-04-29T20:49:25Z",
-      "duration_label": "06:39:10",
-      "duration_seconds": 23950,
-      "title": "SPENDING QUALITY TIME WITH CHAT - CLEANING MY MOLD INFESTED ARMOR OUTSIDE - THE SPORES ARE FLYING - I CHOSE TO IGNORE THE WARNING SIGNS",
-      "views": 101982
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2761885876",
-      "started_at": "2026-05-01T22:32:30Z",
-      "duration_label": "20:55:00",
-      "duration_seconds": 75300,
-      "title": "NOT ENDING STREAM UNTIL WE FINISH THIS 1000 PIECE PUZZLE - 1 SUB = REMOVE 1 PIECE - WILL WE BEAT CHAT?",
-      "views": 268638
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2765841959",
-      "started_at": "2026-05-06T22:08:05Z",
-      "duration_label": "06:12:50",
-      "duration_seconds": 22370,
-      "title": "TODAY I LEARN PIANO WITH @MIAMAKESMUSIC THEN WE THROW HER INTO ROCK CLIMBING - FIRST TIME USING CHALK - BAN REQUEST WITH ARTHER TOMORROW",
-      "views": 115245
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2767408259",
-      "started_at": "2026-05-08T22:29:27Z",
-      "duration_label": "05:34:10",
-      "duration_seconds": 20050,
-      "title": "FRIDAY FUNDAY - DOING HOUSE CHORES WITH CHAT - IM SURE EVERYONE WILL BE NORMAL ABOUT THIS",
-      "views": 97267
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2769183694",
-      "started_at": "2026-05-11T02:35:41Z",
-      "duration_label": "05:36:22",
-      "duration_seconds": 20182,
-      "title": "HAIL WATCH PARTY TONIGHT? SUBNAUTICUH & KITCHEN STREAM WITH CHAT",
-      "views": 87246
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2769857411",
-      "started_at": "2026-05-12T00:39:27Z",
-      "duration_label": "06:06:30",
-      "duration_seconds": 21990,
-      "title": "FILM FLOP MONDAY : GYMKATA w. @WAKEWILDER - THEN WE PLAY SUBNAUTICUH INTO THE NIGHT",
-      "views": 113415
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2770625992",
-      "started_at": "2026-05-13T00:44:50Z",
-      "duration_label": "04:46:00",
-      "duration_seconds": 17160,
-      "title": "Just Chatting",
-      "views": 76110
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2771389144",
-      "started_at": "2026-05-14T00:23:31Z",
-      "duration_label": "09:13:50",
-      "duration_seconds": 33230,
-      "title": "ACTUALLY BEATING SUBNAUTICUH TONIGHT. NO COMPLAINING. NO RAGING. ORGANIZED. MOTIVATED. BEAUTIFUL",
-      "views": 126775
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2772005922",
-      "started_at": "2026-05-14T19:45:31Z",
-      "duration_label": "04:03:30",
-      "duration_seconds": 14610,
-      "title": "FINALLY BEATING SUBNAUTICA 1 FOR THE FIRST TIME EVER (EVERYONE IS PLAYING SUBNAUTICA 2 AND HERE I AM ALL ALONE)",
-      "views": 64606
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2773660571",
-      "started_at": "2026-05-16T19:23:41Z",
-      "duration_label": "13:05:20",
-      "duration_seconds": 47120,
-      "title": "ROCK CLIMBING WITH @MISTERARTHER - IT'S HIS FIRST TIME - WHAT COULD POSSIBLY GO WRONG",
-      "views": 196737
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2774691425",
-      "started_at": "2026-05-18T00:27:21Z",
-      "duration_label": "07:20:20",
-      "duration_seconds": 26420,
-      "title": "FINALLY FINISHING SUBNAUTICA - FIRST TIME , FINAL DAY - HUGE REACTION - VIRAL HD1080P",
-      "views": 107996
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2775538170",
-      "started_at": "2026-05-19T02:57:39Z",
-      "duration_label": "05:30:10",
-      "duration_seconds": 19810,
-      "title": "OH YOU KNOW. SUBNAUTICA 2 WITH @WILLNEFF - DROPS & GIVING AWAY A FREE KEY",
-      "views": 80062
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2776318437",
-      "started_at": "2026-05-20T02:51:32Z",
-      "duration_label": "04:53:10",
-      "duration_seconds": 17590,
-      "title": "DEATH STRANDING FIRST TIME EVER - IS IT GOOD?? WALKING SIM OR NOT?? WILL CHAT ANGER ME? WILL THE POWER GO OUT?",
-      "views": 79675
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2776786111",
-      "started_at": "2026-05-20T19:14:57Z",
-      "duration_label": "04:03:50",
-      "duration_seconds": 14630,
-      "title": "HI BB IT'S ME - TIME TO PLAY DEATH STRANDING 1ST TIME EVER - IS THIS GAME GOOD??",
-      "views": 72848
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2779396780",
-      "started_at": "2026-05-24T00:50:50Z",
-      "duration_label": "05:57:42",
-      "duration_seconds": 21462,
-      "title": "BREAKING \u26a0\ufe0f @MISTERARTHER IS COMING OVER TO RATE MY STREAM SETUP & TECH ROOM. WILL I PASS?!",
-      "views": 89337
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2780917024",
-      "started_at": "2026-05-25T22:33:41Z",
-      "duration_label": "04:21:00",
-      "duration_seconds": 15660,
-      "title": "HOTDOGS & CHILI WITH @JULIAKINS & MISTERARTHER - BUT IN THE YEAR 1999",
-      "views": 107024
-    },
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
