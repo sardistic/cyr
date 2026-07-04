@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-04T00:06:56Z",
+  "generated_at": "2026-07-04T04:11:29Z",
   "sources": {
     "sullygnome_stream_table": 2443,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 35,
-    "exact_merged_rows": 35,
+    "exact_merged_rows": 36,
     "youtube_archive_segments": 1000,
     "youtube_archive_grouped_dates": 550
   },
@@ -25,9 +25,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 34,
-      "mean": 39.56,
-      "median": 29.43,
+      "count": 35,
+      "mean": 39.19,
+      "median": 29.06,
       "max": 124.16
     },
     "archive_gap_days": {
@@ -10869,8 +10869,8 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
-        "Just Chatting",
-        "Unlisted on Twitch"
+        "Unlisted on Twitch",
+        "Just Chatting"
       ],
       "avg_viewers": 66,
       "peak_viewers": 78,
@@ -19448,9 +19448,9 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
-        "Command &amp; Conquer Remastered Collection",
         "\u5922\u4e09\u570b",
-        "Just Chatting"
+        "Just Chatting",
+        "Command &amp; Conquer Remastered Collection"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 1848,
@@ -25577,8 +25577,8 @@
         "Grand Theft Auto V",
         "Ranch Simulator",
         "OBEY",
-        "SCP: Terminal",
         "Friday the 13th: The Game",
+        "SCP: Terminal",
         "Can't Drive This"
       ],
       "avg_viewers": 1396,
@@ -29666,8 +29666,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Zenith: The Last City",
-        "Blade &amp; Sorcery"
+        "Blade &amp; Sorcery",
+        "Zenith: The Last City"
       ],
       "avg_viewers": 2333,
       "peak_viewers": 7192,
@@ -32536,8 +32536,8 @@
       "duration_seconds": 45720,
       "title": null,
       "games": [
-        "Kenshi",
-        "Just Chatting"
+        "Just Chatting",
+        "Kenshi"
       ],
       "avg_viewers": 2728,
       "peak_viewers": 4153,
@@ -48421,8 +48421,8 @@
       "duration_seconds": 14400,
       "title": null,
       "games": [
-        "Subnautica",
-        "Just Chatting"
+        "Just Chatting",
+        "Subnautica"
       ],
       "avg_viewers": 2381,
       "peak_viewers": 2803,
@@ -48461,9 +48461,9 @@
       "duration_seconds": 26280,
       "title": null,
       "games": [
+        "Just Chatting",
         "Subnautica",
-        "Subnautica 2",
-        "Just Chatting"
+        "Subnautica 2"
       ],
       "avg_viewers": 2920,
       "peak_viewers": 3718,
@@ -49169,24 +49169,24 @@
       "views": 87732
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2787804532",
-      "started_at": "2026-06-03T18:19:57Z",
-      "duration_label": "6 hours",
-      "duration_seconds": null,
+      "started_at": "2026-06-03T18:20:02Z",
+      "duration_label": "06:05:20",
+      "duration_seconds": 21920,
       "title": "FINDING WHAT GAME IVE SOMEHOW NEVER PLAYED THAT EVERYONE ELSE HAS - CHAT WILL JUDGE MY IGNORANCE !discord",
-      "views": null
+      "views": 97848
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2789686239",
-      "started_at": "2026-06-06T00:23:42Z",
-      "duration_label": "5 hours",
-      "duration_seconds": null,
+      "started_at": "2026-06-06T00:23:48Z",
+      "duration_label": "05:10:09",
+      "duration_seconds": 18609,
       "title": "TONIGHT WE ATTEMPT TO MAKE CINEMA MAGIC  - READING CHAT'S MONOLOGUES AND SCRIPTS AND TRYING NOT TO LAUGH . WITH @phinttv .",
-      "views": null
+      "views": 65163
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -49319,14 +49319,24 @@
       "views": null
     },
     {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
       "id": "2810020947",
-      "started_at": "2026-07-01T23:20:12Z",
-      "duration_label": "06:45:40",
-      "duration_seconds": 24340,
+      "started_at": "2026-07-01T23:20:07Z",
+      "duration_label": "7 hours",
+      "duration_seconds": null,
       "title": "PLAYING GAMES WITH FRIENDS - NEVER PLAYED THIS MECCA CHAMELION GAME BEFORE - LET'S SEE IF I CAN HANG (3.4k Subs no viewers)",
-      "views": 165056
+      "views": null
+    },
+    {
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
+      "id": null,
+      "started_at": "2026-07-03T01:49:58Z",
+      "duration_label": "6 hours",
+      "duration_seconds": null,
+      "title": "relax. you've nothing to do and it's gaming night with cyr. mecca chameleon with chat, perhaps? what do you think, cuh?",
+      "views": null
     }
   ],
   "archive_grouped_dates": [
