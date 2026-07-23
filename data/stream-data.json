@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-23T06:32:00Z",
+  "generated_at": "2026-07-23T09:13:21Z",
   "sources": {
     "sullygnome_stream_table": 2452,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 33,
     "exact_merged_rows": 33,
-    "youtube_archive_segments": 1036,
-    "youtube_archive_grouped_dates": 562
+    "youtube_archive_segments": 1038,
+    "youtube_archive_grouped_dates": 564
   },
   "stats": {
     "sully_gap_hours": {
@@ -31,18 +31,18 @@
       "max": 138.03
     },
     "archive_gap_days": {
-      "count": 561,
-      "mean": 2.62,
+      "count": 563,
+      "mean": 2.65,
       "median": 1,
       "max": 81,
       "bins": {
-        "1": 308,
+        "1": 309,
         "2": 104,
         "3": 56,
         "4-5": 52,
         "6-7": 17,
         "8-14": 14,
-        "15+": 10
+        "15+": 11
       }
     },
     "archive_monthly_counts": {
@@ -91,7 +91,8 @@
       "2025-12": 14,
       "2026-01": 16,
       "2026-02": 17,
-      "2026-03": 7
+      "2026-03": 7,
+      "2026-04": 2
     },
     "sully_monthly_counts": {
       "2017-01": 1,
@@ -593,7 +594,7 @@
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 561,
+        "sample_size": 563,
         "features": {
           "challenge": {
             "count": 19,
@@ -603,7 +604,7 @@
           },
           "collab": {
             "count": 192,
-            "share": 34.2,
+            "share": 34.1,
             "median_gap_days": 2.0,
             "p90_gap_days": 5.0
           },
@@ -615,19 +616,19 @@
           },
           "food_cooking": {
             "count": 84,
-            "share": 15.0,
+            "share": 14.9,
             "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           },
           "gameplay_arc": {
-            "count": 332,
-            "share": 59.2,
-            "median_gap_days": 1.0,
+            "count": 333,
+            "share": 59.1,
+            "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
           "recovery_risk": {
             "count": 34,
-            "share": 6.1,
+            "share": 6.0,
             "median_gap_days": 2.0,
             "p90_gap_days": 4.7
           },
@@ -639,14 +640,14 @@
           },
           "travel_irl": {
             "count": 61,
-            "share": 10.9,
+            "share": 10.8,
             "median_gap_days": 2,
             "p90_gap_days": 5.0
           },
           "unclassified": {
-            "count": 81,
-            "share": 14.4,
-            "median_gap_days": 1,
+            "count": 82,
+            "share": 14.6,
+            "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           }
         },
@@ -658,8 +659,8 @@
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 527,
-            "share": 93.9,
+            "count": 529,
+            "share": 94.0,
             "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
@@ -678,15 +679,15 @@
             "p90_gap_days": 2.0
           },
           "low": {
-            "count": 200,
+            "count": 201,
             "share": 35.7,
-            "median_gap_days": 2.0,
+            "median_gap_days": 2,
             "p90_gap_days": 6.0
           },
           "medium": {
-            "count": 334,
+            "count": 335,
             "share": 59.5,
-            "median_gap_days": 1.0,
+            "median_gap_days": 1,
             "p90_gap_days": 4.0
           }
         }
@@ -18501,8 +18502,8 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1670,
       "peak_viewers": 2531,
@@ -28395,8 +28396,8 @@
       "duration_seconds": 28380,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Jump King"
+        "Jump King",
+        "Just Chatting"
       ],
       "avg_viewers": 2437,
       "peak_viewers": 3196,
@@ -28434,8 +28435,8 @@
       "duration_seconds": 28320,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Jump King"
+        "Jump King",
+        "Just Chatting"
       ],
       "avg_viewers": 2395,
       "peak_viewers": 3326,
@@ -35793,8 +35794,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Fortnite",
-        "Old School RuneScape"
+        "Old School RuneScape",
+        "Fortnite"
       ],
       "avg_viewers": 2483,
       "peak_viewers": 3467,
@@ -37092,8 +37093,8 @@
       "duration_seconds": 34680,
       "title": null,
       "games": [
-        "Just Chatting",
-        "World of Warcraft"
+        "World of Warcraft",
+        "Just Chatting"
       ],
       "avg_viewers": 3078,
       "peak_viewers": 6406,
@@ -37132,8 +37133,8 @@
       "duration_seconds": 34440,
       "title": null,
       "games": [
-        "Just Chatting",
-        "World of Warcraft"
+        "World of Warcraft",
+        "Just Chatting"
       ],
       "avg_viewers": 1989,
       "peak_viewers": 2749,
@@ -37272,8 +37273,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "World of Warcraft",
         "Cities: Skylines II",
+        "World of Warcraft",
         "Atomic Picnic"
       ],
       "avg_viewers": 2297,
@@ -37332,8 +37333,8 @@
       "duration_seconds": 39840,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 9401,
       "peak_viewers": 14270,
@@ -38867,8 +38868,8 @@
       "duration_seconds": 20460,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Hell Let Loose"
+        "Hell Let Loose",
+        "Just Chatting"
       ],
       "avg_viewers": 2615,
       "peak_viewers": 4011,
@@ -40389,8 +40390,8 @@
       "duration_seconds": 20340,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Vintage Story"
+        "Vintage Story",
+        "Just Chatting"
       ],
       "avg_viewers": 1867,
       "peak_viewers": 3788,
@@ -40623,8 +40624,8 @@
       "duration_seconds": 12060,
       "title": null,
       "games": [
-        "Unlisted on Twitch",
-        "Just Chatting"
+        "Just Chatting",
+        "Unlisted on Twitch"
       ],
       "avg_viewers": 10193,
       "peak_viewers": 14784,
@@ -42029,8 +42030,8 @@
       "duration_seconds": 15240,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Path of Exile 2"
+        "Path of Exile 2",
+        "Just Chatting"
       ],
       "avg_viewers": 705,
       "peak_viewers": 972,
@@ -42166,8 +42167,8 @@
       "duration_seconds": 25860,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Baldur's Gate 3"
+        "Baldur's Gate 3",
+        "Just Chatting"
       ],
       "avg_viewers": 2160,
       "peak_viewers": 2879,
@@ -42186,8 +42187,8 @@
       "duration_seconds": 16080,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Baldur's Gate 3"
+        "Baldur's Gate 3",
+        "Just Chatting"
       ],
       "avg_viewers": 3184,
       "peak_viewers": 8435,
@@ -42304,8 +42305,8 @@
       "duration_seconds": 20100,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Baldur's Gate 3"
+        "Baldur's Gate 3",
+        "Just Chatting"
       ],
       "avg_viewers": 2188,
       "peak_viewers": 2891,
@@ -43016,8 +43017,8 @@
       "duration_seconds": 25260,
       "title": null,
       "games": [
-        "Cabin Crew Life Simulator",
         "Just Chatting",
+        "Cabin Crew Life Simulator",
         "Kingdom Come: Deliverance II"
       ],
       "avg_viewers": 2347,
@@ -46099,9 +46100,9 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
+        "Music",
         "Just Chatting",
-        "Bounty Star",
-        "Music"
+        "Bounty Star"
       ],
       "avg_viewers": 3256,
       "peak_viewers": 4093,
@@ -47194,8 +47195,8 @@
       "duration_seconds": 16200,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Chivalry 2"
+        "Chivalry 2",
+        "Just Chatting"
       ],
       "avg_viewers": 2792,
       "peak_viewers": 3444,
@@ -48369,8 +48370,8 @@
       "duration_seconds": 21960,
       "title": null,
       "games": [
-        "Subnautica",
-        "Just Chatting"
+        "Just Chatting",
+        "Subnautica"
       ],
       "avg_viewers": 3035,
       "peak_viewers": 5060,
@@ -58312,6 +58313,34 @@
       "urls": [
         "https://www.youtube.com/watch?v=1Cyc21Ckuso"
       ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-04-07",
+      "segment_count": 1,
+      "duration_seconds_sum": 14835,
+      "primary_title": "Cyr Plays SkyrimRP Roleplay #001 - FULL GAMEPLAY [04/07/2026] | Cyr VODs",
+      "titles": [
+        "Cyr Plays SkyrimRP Roleplay #001 - FULL GAMEPLAY [04/07/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=qxBv-v-mJZo"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-04-08",
+      "segment_count": 1,
+      "duration_seconds_sum": 12354,
+      "primary_title": "Cyr Plays SkyrimRP Roleplay #002 - FULL GAMEPLAY [04/08/2026] | Cyr VODs",
+      "titles": [
+        "Cyr Plays SkyrimRP Roleplay #002 - FULL GAMEPLAY [04/08/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=erLV_Pf3sWg"
+      ]
     }
   ],
   "title_semantic_rows": [
@@ -64754,6 +64783,28 @@
       "sentiment_score": 0,
       "intensity": "medium",
       "intensity_score": 1
+    },
+    {
+      "date": "2026-03-16",
+      "gap_days": 22,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-04-07",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
     }
   ]
 }
