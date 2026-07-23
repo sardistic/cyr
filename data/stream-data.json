@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-23T15:18:58Z",
+  "generated_at": "2026-07-23T16:57:59Z",
   "sources": {
     "sullygnome_stream_table": 2452,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 33,
     "exact_merged_rows": 33,
-    "youtube_archive_segments": 1040,
-    "youtube_archive_grouped_dates": 565
+    "youtube_archive_segments": 1041,
+    "youtube_archive_grouped_dates": 566
   },
   "stats": {
     "sully_gap_hours": {
@@ -31,9 +31,9 @@
       "max": 138.03
     },
     "archive_gap_days": {
-      "count": 564,
-      "mean": 2.65,
-      "median": 1.0,
+      "count": 565,
+      "mean": 2.67,
+      "median": 1,
       "max": 81,
       "bins": {
         "1": 310,
@@ -42,7 +42,7 @@
         "4-5": 52,
         "6-7": 17,
         "8-14": 14,
-        "15+": 11
+        "15+": 12
       }
     },
     "archive_monthly_counts": {
@@ -92,7 +92,7 @@
       "2026-01": 16,
       "2026-02": 17,
       "2026-03": 7,
-      "2026-04": 3
+      "2026-04": 4
     },
     "sully_monthly_counts": {
       "2017-01": 1,
@@ -594,7 +594,7 @@
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 564,
+        "sample_size": 565,
         "features": {
           "challenge": {
             "count": 19,
@@ -603,9 +603,9 @@
             "p90_gap_days": 4.2
           },
           "collab": {
-            "count": 192,
-            "share": 34.0,
-            "median_gap_days": 2.0,
+            "count": 193,
+            "share": 34.2,
+            "median_gap_days": 2,
             "p90_gap_days": 5.0
           },
           "event_drops": {
@@ -621,9 +621,9 @@
             "p90_gap_days": 5.0
           },
           "gameplay_arc": {
-            "count": 334,
-            "share": 59.2,
-            "median_gap_days": 1.0,
+            "count": 335,
+            "share": 59.3,
+            "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
           "recovery_risk": {
@@ -659,9 +659,9 @@
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 530,
+            "count": 531,
             "share": 94.0,
-            "median_gap_days": 1.0,
+            "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
           "positive": {
@@ -685,9 +685,9 @@
             "p90_gap_days": 6.0
           },
           "medium": {
-            "count": 335,
-            "share": 59.4,
-            "median_gap_days": 1,
+            "count": 336,
+            "share": 59.5,
+            "median_gap_days": 1.0,
             "p90_gap_days": 4.0
           }
         }
@@ -20017,8 +20017,8 @@
       "duration_seconds": 24900,
       "title": null,
       "games": [
-        "Just Chatting",
-        "VRChat"
+        "VRChat",
+        "Just Chatting"
       ],
       "avg_viewers": 2490,
       "peak_viewers": 3864,
@@ -23947,9 +23947,9 @@
       "duration_seconds": 41820,
       "title": null,
       "games": [
+        "Rust",
         "Just Chatting",
-        "Monopoly Plus",
-        "Rust"
+        "Monopoly Plus"
       ],
       "avg_viewers": 2939,
       "peak_viewers": 4130,
@@ -23968,8 +23968,8 @@
       "duration_seconds": 42480,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Rust"
+        "Rust",
+        "Just Chatting"
       ],
       "avg_viewers": 2796,
       "peak_viewers": 6473,
@@ -32788,9 +32788,9 @@
         "Warhammer 40,000: Darktide",
         "Just Chatting",
         "Goat Simulator 3",
+        "Farmer's Life",
         "Dwarf Fortress",
-        "Fall Guys",
-        "Farmer's Life"
+        "Fall Guys"
       ],
       "avg_viewers": 1936,
       "peak_viewers": 2503,
@@ -34466,8 +34466,8 @@
       "duration_seconds": 40380,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Dark Souls: Remastered"
+        "Dark Souls: Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 3358,
       "peak_viewers": 11079,
@@ -34568,9 +34568,9 @@
       "duration_seconds": 48900,
       "title": null,
       "games": [
-        "Just Chatting",
         "PowerWash Simulator",
         "DARK SOULS III",
+        "Just Chatting",
         "Poker"
       ],
       "avg_viewers": 2884,
@@ -38827,9 +38827,9 @@
       "duration_seconds": 39240,
       "title": null,
       "games": [
+        "Hell Let Loose",
         "Just Chatting",
-        "Arma Reforger",
-        "Hell Let Loose"
+        "Arma Reforger"
       ],
       "avg_viewers": 4639,
       "peak_viewers": 8256,
@@ -40153,8 +40153,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Drug Dealer Simulator 2",
-        "Subnautica"
+        "Subnautica",
+        "Drug Dealer Simulator 2"
       ],
       "avg_viewers": 1915,
       "peak_viewers": 2889,
@@ -42305,8 +42305,8 @@
       "duration_seconds": 20100,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Baldur's Gate 3"
+        "Baldur's Gate 3",
+        "Just Chatting"
       ],
       "avg_viewers": 2188,
       "peak_viewers": 2891,
@@ -42326,8 +42326,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Fast Food: Restaurant Simulator",
-        "Storage Hunter Simulator"
+        "Storage Hunter Simulator",
+        "Fast Food: Restaurant Simulator"
       ],
       "avg_viewers": 2470,
       "peak_viewers": 5309,
@@ -42365,8 +42365,8 @@
       "duration_seconds": 11460,
       "title": null,
       "games": [
-        "Just Chatting",
-        "IRL"
+        "IRL",
+        "Just Chatting"
       ],
       "avg_viewers": 2513,
       "peak_viewers": 3385,
@@ -42443,9 +42443,9 @@
       "duration_seconds": 25440,
       "title": null,
       "games": [
-        "Just Chatting",
         "Baldur's Gate 3",
-        "Project Zomboid"
+        "Project Zomboid",
+        "Just Chatting"
       ],
       "avg_viewers": 2316,
       "peak_viewers": 3271,
@@ -42464,8 +42464,8 @@
       "duration_seconds": 15300,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Storage Hunter Simulator"
+        "Storage Hunter Simulator",
+        "Just Chatting"
       ],
       "avg_viewers": 3585,
       "peak_viewers": 9518,
@@ -42543,8 +42543,8 @@
       "duration_seconds": 31440,
       "title": null,
       "games": [
-        "Just Chatting",
         "TrickShot Simulator",
+        "Just Chatting",
         "Project Zomboid"
       ],
       "avg_viewers": 2326,
@@ -42604,8 +42604,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Project Zomboid",
-        "Baldur's Gate 3"
+        "Baldur's Gate 3",
+        "Project Zomboid"
       ],
       "avg_viewers": 2761,
       "peak_viewers": 3838,
@@ -42721,8 +42721,8 @@
       "duration_seconds": 15900,
       "title": null,
       "games": [
-        "Just Chatting",
-        "No Man's Sky"
+        "No Man's Sky",
+        "Just Chatting"
       ],
       "avg_viewers": 2865,
       "peak_viewers": 3878,
@@ -46353,8 +46353,8 @@
       "duration_seconds": 29460,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Marvel Rivals"
+        "Marvel Rivals",
+        "Just Chatting"
       ],
       "avg_viewers": 4083,
       "peak_viewers": 5207,
@@ -47509,9 +47509,9 @@
       "duration_seconds": 270000,
       "title": null,
       "games": [
-        "Just Chatting",
         "Special Events",
         "IRL",
+        "Just Chatting",
         "Kingdom Come: Deliverance II",
         "Marathon"
       ],
@@ -47804,8 +47804,8 @@
       "duration_seconds": 20280,
       "title": null,
       "games": [
-        "Crimson Desert",
-        "Just Chatting"
+        "Just Chatting",
+        "Crimson Desert"
       ],
       "avg_viewers": 1887,
       "peak_viewers": 3309,
@@ -47903,8 +47903,8 @@
       "duration_seconds": 25800,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Teardown"
+        "Teardown",
+        "Just Chatting"
       ],
       "avg_viewers": 2162,
       "peak_viewers": 2825,
@@ -48350,8 +48350,8 @@
       "duration_seconds": 19500,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 2552,
       "peak_viewers": 3135,
@@ -48370,8 +48370,8 @@
       "duration_seconds": 21960,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 3035,
       "peak_viewers": 5060,
@@ -58357,6 +58357,20 @@
         "https://www.youtube.com/watch?v=jsINYcYqvwM",
         "https://www.youtube.com/watch?v=hJN0s1PK-Ug"
       ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-04-24",
+      "segment_count": 1,
+      "duration_seconds_sum": 7365,
+      "primary_title": "2 MEN 1 PIE \ud83c\udf55 Pizza Friday x Will Neff - [04/24/2026] | Cyr VODs",
+      "titles": [
+        "2 MEN 1 PIE \ud83c\udf55 Pizza Friday x Will Neff - [04/24/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=edhM1ropUAg"
+      ]
     }
   ],
   "title_semantic_rows": [
@@ -64832,6 +64846,18 @@
       "sentiment_score": 0,
       "intensity": "low",
       "intensity_score": 0
+    },
+    {
+      "date": "2026-04-09",
+      "gap_days": 15,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
     }
   ]
 }
