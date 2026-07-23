@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-23T09:13:21Z",
+  "generated_at": "2026-07-23T11:28:46Z",
   "sources": {
     "sullygnome_stream_table": 2452,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 33,
     "exact_merged_rows": 33,
-    "youtube_archive_segments": 1038,
-    "youtube_archive_grouped_dates": 564
+    "youtube_archive_segments": 1040,
+    "youtube_archive_grouped_dates": 565
   },
   "stats": {
     "sully_gap_hours": {
@@ -31,12 +31,12 @@
       "max": 138.03
     },
     "archive_gap_days": {
-      "count": 563,
+      "count": 564,
       "mean": 2.65,
-      "median": 1,
+      "median": 1.0,
       "max": 81,
       "bins": {
-        "1": 309,
+        "1": 310,
         "2": 104,
         "3": 56,
         "4-5": 52,
@@ -92,7 +92,7 @@
       "2026-01": 16,
       "2026-02": 17,
       "2026-03": 7,
-      "2026-04": 2
+      "2026-04": 3
     },
     "sully_monthly_counts": {
       "2017-01": 1,
@@ -594,7 +594,7 @@
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 563,
+        "sample_size": 564,
         "features": {
           "challenge": {
             "count": 19,
@@ -604,7 +604,7 @@
           },
           "collab": {
             "count": 192,
-            "share": 34.1,
+            "share": 34.0,
             "median_gap_days": 2.0,
             "p90_gap_days": 5.0
           },
@@ -621,9 +621,9 @@
             "p90_gap_days": 5.0
           },
           "gameplay_arc": {
-            "count": 333,
-            "share": 59.1,
-            "median_gap_days": 1,
+            "count": 334,
+            "share": 59.2,
+            "median_gap_days": 1.0,
             "p90_gap_days": 4.0
           },
           "recovery_risk": {
@@ -646,7 +646,7 @@
           },
           "unclassified": {
             "count": 82,
-            "share": 14.6,
+            "share": 14.5,
             "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           }
@@ -659,9 +659,9 @@
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 529,
+            "count": 530,
             "share": 94.0,
-            "median_gap_days": 1,
+            "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           },
           "positive": {
@@ -679,14 +679,14 @@
             "p90_gap_days": 2.0
           },
           "low": {
-            "count": 201,
-            "share": 35.7,
-            "median_gap_days": 2,
+            "count": 202,
+            "share": 35.8,
+            "median_gap_days": 2.0,
             "p90_gap_days": 6.0
           },
           "medium": {
             "count": 335,
-            "share": 59.5,
+            "share": 59.4,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
           }
@@ -6020,11 +6020,11 @@
       "duration_seconds": 18900,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
         "Monopoly",
+        "Desolate",
+        "Grand Theft Auto V",
         "Monopoly Plus",
-        "Unlisted on Twitch",
-        "Desolate"
+        "Unlisted on Twitch"
       ],
       "avg_viewers": 78,
       "peak_viewers": 140,
@@ -9941,8 +9941,8 @@
       "duration_seconds": 12480,
       "title": null,
       "games": [
-        "Mortal Kombat 11",
-        "Just Chatting"
+        "Just Chatting",
+        "Mortal Kombat 11"
       ],
       "avg_viewers": 39,
       "peak_viewers": 54,
@@ -16081,8 +16081,8 @@
       "duration_seconds": 26880,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 2451,
       "peak_viewers": 4200,
@@ -18502,8 +18502,8 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1670,
       "peak_viewers": 2531,
@@ -28396,8 +28396,8 @@
       "duration_seconds": 28380,
       "title": null,
       "games": [
-        "Jump King",
-        "Just Chatting"
+        "Just Chatting",
+        "Jump King"
       ],
       "avg_viewers": 2437,
       "peak_viewers": 3196,
@@ -28435,8 +28435,8 @@
       "duration_seconds": 28320,
       "title": null,
       "games": [
-        "Jump King",
-        "Just Chatting"
+        "Just Chatting",
+        "Jump King"
       ],
       "avg_viewers": 2395,
       "peak_viewers": 3326,
@@ -28670,8 +28670,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Super Mario 64",
-        "Gas Station Simulator"
+        "Gas Station Simulator",
+        "Super Mario 64"
       ],
       "avg_viewers": 6922,
       "peak_viewers": 18079,
@@ -28827,9 +28827,9 @@
       "duration_seconds": 26100,
       "title": null,
       "games": [
+        "Watch Parties",
         "Just Chatting",
-        "WorldBox",
-        "Watch Parties"
+        "WorldBox"
       ],
       "avg_viewers": 1890,
       "peak_viewers": 3777,
@@ -33416,9 +33416,9 @@
       "duration_seconds": 23760,
       "title": null,
       "games": [
-        "Just Chatting",
         "Star Citizen",
-        "Kingdom Come: Deliverance"
+        "Kingdom Come: Deliverance",
+        "Just Chatting"
       ],
       "avg_viewers": 5117,
       "peak_viewers": 6833,
@@ -33438,9 +33438,9 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Star Citizen",
         "GODDESS OF VICTORY: NIKKE",
-        "Kingdom Come: Deliverance"
+        "Kingdom Come: Deliverance",
+        "Star Citizen"
       ],
       "avg_viewers": 3128,
       "peak_viewers": 4799,
@@ -33459,9 +33459,9 @@
       "duration_seconds": 24840,
       "title": null,
       "games": [
+        "Sons of the Forest",
         "Just Chatting",
-        "Star Citizen",
-        "Sons of the Forest"
+        "Star Citizen"
       ],
       "avg_viewers": 3102,
       "peak_viewers": 4163,
@@ -35794,8 +35794,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Old School RuneScape",
-        "Fortnite"
+        "Fortnite",
+        "Old School RuneScape"
       ],
       "avg_viewers": 2483,
       "peak_viewers": 3467,
@@ -35915,8 +35915,8 @@
       "duration_seconds": 87120,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Starfield"
+        "Starfield",
+        "Just Chatting"
       ],
       "avg_viewers": 4394,
       "peak_viewers": 7782,
@@ -36096,8 +36096,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "The Matchless KungFu",
-        "Old School RuneScape"
+        "Old School RuneScape",
+        "The Matchless KungFu"
       ],
       "avg_viewers": 2141,
       "peak_viewers": 3438,
@@ -37093,8 +37093,8 @@
       "duration_seconds": 34680,
       "title": null,
       "games": [
-        "World of Warcraft",
-        "Just Chatting"
+        "Just Chatting",
+        "World of Warcraft"
       ],
       "avg_viewers": 3078,
       "peak_viewers": 6406,
@@ -37133,8 +37133,8 @@
       "duration_seconds": 34440,
       "title": null,
       "games": [
-        "World of Warcraft",
-        "Just Chatting"
+        "Just Chatting",
+        "World of Warcraft"
       ],
       "avg_viewers": 1989,
       "peak_viewers": 2749,
@@ -37273,8 +37273,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Cities: Skylines II",
         "World of Warcraft",
+        "Cities: Skylines II",
         "Atomic Picnic"
       ],
       "avg_viewers": 2297,
@@ -37333,8 +37333,8 @@
       "duration_seconds": 39840,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 9401,
       "peak_viewers": 14270,
@@ -38868,8 +38868,8 @@
       "duration_seconds": 20460,
       "title": null,
       "games": [
-        "Hell Let Loose",
-        "Just Chatting"
+        "Just Chatting",
+        "Hell Let Loose"
       ],
       "avg_viewers": 2615,
       "peak_viewers": 4011,
@@ -40390,8 +40390,8 @@
       "duration_seconds": 20340,
       "title": null,
       "games": [
-        "Vintage Story",
-        "Just Chatting"
+        "Just Chatting",
+        "Vintage Story"
       ],
       "avg_viewers": 1867,
       "peak_viewers": 3788,
@@ -40624,8 +40624,8 @@
       "duration_seconds": 12060,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Unlisted on Twitch"
+        "Unlisted on Twitch",
+        "Just Chatting"
       ],
       "avg_viewers": 10193,
       "peak_viewers": 14784,
@@ -40899,8 +40899,8 @@
       "duration_seconds": 17880,
       "title": null,
       "games": [
-        "Just Chatting",
-        "IRL"
+        "IRL",
+        "Just Chatting"
       ],
       "avg_viewers": 8237,
       "peak_viewers": 11765,
@@ -42030,8 +42030,8 @@
       "duration_seconds": 15240,
       "title": null,
       "games": [
-        "Path of Exile 2",
-        "Just Chatting"
+        "Just Chatting",
+        "Path of Exile 2"
       ],
       "avg_viewers": 705,
       "peak_viewers": 972,
@@ -42167,8 +42167,8 @@
       "duration_seconds": 25860,
       "title": null,
       "games": [
-        "Baldur's Gate 3",
-        "Just Chatting"
+        "Just Chatting",
+        "Baldur's Gate 3"
       ],
       "avg_viewers": 2160,
       "peak_viewers": 2879,
@@ -42187,8 +42187,8 @@
       "duration_seconds": 16080,
       "title": null,
       "games": [
-        "Baldur's Gate 3",
-        "Just Chatting"
+        "Just Chatting",
+        "Baldur's Gate 3"
       ],
       "avg_viewers": 3184,
       "peak_viewers": 8435,
@@ -42305,8 +42305,8 @@
       "duration_seconds": 20100,
       "title": null,
       "games": [
-        "Baldur's Gate 3",
-        "Just Chatting"
+        "Just Chatting",
+        "Baldur's Gate 3"
       ],
       "avg_viewers": 2188,
       "peak_viewers": 2891,
@@ -46100,9 +46100,9 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
-        "Music",
         "Just Chatting",
-        "Bounty Star"
+        "Bounty Star",
+        "Music"
       ],
       "avg_viewers": 3256,
       "peak_viewers": 4093,
@@ -47195,8 +47195,8 @@
       "duration_seconds": 16200,
       "title": null,
       "games": [
-        "Chivalry 2",
-        "Just Chatting"
+        "Just Chatting",
+        "Chivalry 2"
       ],
       "avg_viewers": 2792,
       "peak_viewers": 3444,
@@ -58341,6 +58341,22 @@
       "urls": [
         "https://www.youtube.com/watch?v=erLV_Pf3sWg"
       ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-04-09",
+      "segment_count": 2,
+      "duration_seconds_sum": 24323,
+      "primary_title": "Cyr Plays STARFIELD #010 (Terran Armada DLC) - FULL GAMEPLAY [04/09/2026] | Cyr VODs",
+      "titles": [
+        "Cyr Plays STARFIELD #010 (Terran Armada DLC) - FULL GAMEPLAY [04/09/2026] | Cyr VODs",
+        "LIVE PIANO LESSONS w/ @MiaMakesMusic1 [04/09/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=jsINYcYqvwM",
+        "https://www.youtube.com/watch?v=hJN0s1PK-Ug"
+      ]
     }
   ],
   "title_semantic_rows": [
@@ -64797,6 +64813,17 @@
     },
     {
       "date": "2026-04-07",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-04-08",
       "gap_days": 1,
       "features": [
         "gameplay_arc"
