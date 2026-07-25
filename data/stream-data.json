@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-25T06:20:50Z",
+  "generated_at": "2026-07-25T08:32:17Z",
   "sources": {
-    "sullygnome_stream_table": 2453,
+    "sullygnome_stream_table": 2454,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 33,
     "exact_merged_rows": 33,
@@ -10,13 +10,13 @@
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2452,
+      "count": 2453,
       "mean": 27.94,
       "median": 17.9,
       "max": 1197.0,
       "bins": {
         "0-12h": 481,
-        "12-24h": 1249,
+        "12-24h": 1250,
         "1-2d": 418,
         "2-3d": 172,
         "3-5d": 101,
@@ -208,7 +208,7 @@
       "2026-04": 17,
       "2026-05": 19,
       "2026-06": 16,
-      "2026-07": 12
+      "2026-07": 13
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -220,7 +220,7 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 117
+      "2026": 118
     },
     "dow_hour": {
       "dow": {
@@ -229,12 +229,12 @@
         "Wed": 433,
         "Thu": 387,
         "Fri": 350,
-        "Sat": 241,
+        "Sat": 242,
         "Sun": 205
       },
       "hour_utc": {
         "0": 192,
-        "1": 115,
+        "1": 116,
         "2": 121,
         "3": 120,
         "4": 75,
@@ -270,47 +270,47 @@
       ],
       [
         6,
-        9.3
+        9.29
       ],
       [
         9,
-        10.89
+        10.88
       ],
       [
         12,
-        19.78
+        19.77
       ],
       [
         15,
-        33.65
+        33.63
       ],
       [
         18,
-        50.65
+        50.63
       ],
       [
         21,
-        63.87
+        63.84
       ],
       [
         24,
-        70.6
+        70.61
       ],
       [
         30,
-        74.43
+        74.44
       ],
       [
         36,
-        76.47
+        76.48
       ],
       [
         42,
-        81.85
+        81.86
       ],
       [
         48,
-        87.64
+        87.65
       ],
       [
         54,
@@ -318,7 +318,7 @@
       ],
       [
         60,
-        89.72
+        89.73
       ],
       [
         66,
@@ -330,7 +330,7 @@
       ],
       [
         84,
-        95.51
+        95.52
       ],
       [
         96,
@@ -338,7 +338,7 @@
       ],
       [
         108,
-        98.16
+        98.17
       ],
       [
         120,
@@ -378,11 +378,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 64.5,
-        "started_at": "2026-06-15T20:31:47Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 46.8,
         "started_at": "2026-06-18T00:20:08Z",
@@ -477,22 +472,14 @@
         "gap_h": 66.7,
         "started_at": "2026-07-23T20:56:27Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 23.7,
+        "started_at": "2026-07-25T01:44:44Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-07-11T01:04:00Z",
-        "ended_at_iso": "2026-07-11T05:00:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Dawson Oaks Trailer Park"
-        ],
-        "duration_h": 3.9,
-        "duration_label": "236 minutes",
-        "avg_viewers": 1499,
-        "peak_viewers": 1739,
-        "followers_gained": 6
-      },
       {
         "started_at": "2026-07-13T00:30:21Z",
         "ended_at_iso": "2026-07-13T06:00:00+00:00",
@@ -580,15 +567,27 @@
         "avg_viewers": 1558,
         "peak_viewers": 1742,
         "followers_gained": -39
+      },
+      {
+        "started_at": "2026-07-25T01:44:44Z",
+        "ended_at_iso": "2026-07-25T06:30:00+00:00",
+        "games": [
+          "Just Chatting"
+        ],
+        "duration_h": 4.8,
+        "duration_label": "286 minutes",
+        "avg_viewers": 1576,
+        "peak_viewers": 1753,
+        "followers_gained": -25
       }
     ],
     "last_stream": {
-      "started_at": "2026-07-23T20:56:27Z",
-      "ended_at_iso": "2026-07-24T02:00:00+00:00",
+      "started_at": "2026-07-25T01:44:44Z",
+      "ended_at_iso": "2026-07-25T06:30:00+00:00",
       "games": [
         "Just Chatting"
       ],
-      "duration_label": "304 minutes"
+      "duration_label": "286 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -693,11 +692,11 @@
       "game_analysis": {
         "categories": {
           "Just Chatting only": {
-            "count": 481,
+            "count": 482,
             "share": 19.6,
-            "median_gap_hours": 26.64,
-            "p90_gap_hours": 72.6,
-            "avg_viewers": 3737.0
+            "median_gap_hours": 26.65,
+            "p90_gap_hours": 72.59,
+            "avg_viewers": 3733.0
           },
           "Other games": {
             "count": 673,
@@ -731,7 +730,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1577
+            "count": 1578
           },
           {
             "game": "Grand Theft Auto V",
@@ -780,12 +779,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-07-25T01:44:44Z",
-      "game": "Just Chatting",
-      "title": "\ud83c\udf55 PIZZA FRIDAY W/ PAUL(BRITISH\ud83c\uddec\ud83c\udde7) POPPING HIS STREAMING VIRGINITY. KEEP DA UK JOKES COMIN\ud83c\udf55 ft @SICKNASTEE \ud83c\udf55",
-      "viewers": 1688
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -1746,8 +1740,8 @@
       "duration_seconds": 3600,
       "title": null,
       "games": [
-        "IRL",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "IRL"
       ],
       "avg_viewers": 36,
       "peak_viewers": 42,
@@ -18728,10 +18722,10 @@
       "duration_seconds": 27420,
       "title": null,
       "games": [
-        "UNO",
         "Grand Theft Auto V",
         "Left 4 Dead 2",
-        "Just Chatting"
+        "Just Chatting",
+        "UNO"
       ],
       "avg_viewers": 1464,
       "peak_viewers": 2027,
@@ -21851,8 +21845,8 @@
       "duration_seconds": 22860,
       "title": null,
       "games": [
-        "Just Chatting",
         "Phasmophobia",
+        "Just Chatting",
         "Left 4 Dead 2"
       ],
       "avg_viewers": 1060,
@@ -23392,8 +23386,8 @@
       "duration_seconds": 20820,
       "title": null,
       "games": [
-        "Just Chatting",
         "VRChat",
+        "Just Chatting",
         "Dungeons &amp; Dragons"
       ],
       "avg_viewers": 1153,
@@ -25523,8 +25517,8 @@
       "games": [
         "Just Chatting",
         "ALTF4",
-        "The Universim",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "The Universim"
       ],
       "avg_viewers": 1756,
       "peak_viewers": 6552,
@@ -25588,10 +25582,10 @@
         "Just Chatting",
         "Grand Theft Auto V",
         "Ranch Simulator",
-        "OBEY",
+        "SCP: Terminal",
         "Friday the 13th: The Game",
         "Can't Drive This",
-        "SCP: Terminal"
+        "OBEY"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 2172,
@@ -28651,8 +28645,8 @@
       "duration_seconds": 34740,
       "title": null,
       "games": [
-        "Super Mario Maker 2",
         "Just Chatting",
+        "Super Mario Maker 2",
         "Gas Station Simulator"
       ],
       "avg_viewers": 4434,
@@ -31004,10 +30998,10 @@
       "title": null,
       "games": [
         "Just Chatting",
+        "Ultimate Epic Battle Simulator 2",
         "Planet Crafter",
         "Little Nightmares II",
-        "The Quarry",
-        "Ultimate Epic Battle Simulator 2"
+        "The Quarry"
       ],
       "avg_viewers": 2291,
       "peak_viewers": 3494,
@@ -35247,8 +35241,8 @@
       "duration_seconds": 37320,
       "title": null,
       "games": [
-        "Vaudeville",
         "Just Chatting",
+        "Vaudeville",
         "Forever Skies",
         "Kenshi"
       ],
@@ -35476,8 +35470,8 @@
       "duration_seconds": 26100,
       "title": null,
       "games": [
-        "Dark and Darker",
-        "Just Chatting"
+        "Just Chatting",
+        "Dark and Darker"
       ],
       "avg_viewers": 2160,
       "peak_viewers": 3196,
@@ -35797,8 +35791,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Old School RuneScape",
-        "Fortnite"
+        "Fortnite",
+        "Old School RuneScape"
       ],
       "avg_viewers": 2483,
       "peak_viewers": 3467,
@@ -36893,8 +36887,8 @@
       "duration_seconds": 49740,
       "title": null,
       "games": [
-        "Just Chatting",
-        "World of Warcraft"
+        "World of Warcraft",
+        "Just Chatting"
       ],
       "avg_viewers": 5219,
       "peak_viewers": 12625,
@@ -37034,8 +37028,8 @@
       "duration_seconds": 13680,
       "title": null,
       "games": [
-        "Just Chatting",
-        "World of Warcraft"
+        "World of Warcraft",
+        "Just Chatting"
       ],
       "avg_viewers": 2918,
       "peak_viewers": 5232,
@@ -39495,8 +39489,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Rumble Club",
-        "Star Citizen"
+        "Star Citizen",
+        "Rumble Club"
       ],
       "avg_viewers": 1249,
       "peak_viewers": 1733,
@@ -39773,9 +39767,9 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Splodey",
         "The Elder Scrolls Online",
-        "Ready or Not"
+        "Ready or Not",
+        "Splodey"
       ],
       "avg_viewers": 1379,
       "peak_viewers": 1869,
@@ -40314,8 +40308,8 @@
       "duration_seconds": 11520,
       "title": null,
       "games": [
-        "Subnautica",
-        "Just Chatting"
+        "Just Chatting",
+        "Subnautica"
       ],
       "avg_viewers": 1380,
       "peak_viewers": 1846,
@@ -41298,8 +41292,8 @@
       "duration_seconds": 18540,
       "title": null,
       "games": [
-        "Old School RuneScape",
-        "Just Chatting"
+        "Just Chatting",
+        "Old School RuneScape"
       ],
       "avg_viewers": 2379,
       "peak_viewers": 3750,
@@ -41381,9 +41375,9 @@
       "duration_seconds": 19800,
       "title": null,
       "games": [
-        "Norland",
         "Just Chatting",
         "Liar's Bar",
+        "Norland",
         "Noita"
       ],
       "avg_viewers": 2020,
@@ -42407,8 +42401,8 @@
       "duration_seconds": 23040,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Storage Hunter Simulator"
+        "Storage Hunter Simulator",
+        "Just Chatting"
       ],
       "avg_viewers": 2215,
       "peak_viewers": 2799,
@@ -42803,8 +42797,8 @@
       "duration_seconds": 30180,
       "title": null,
       "games": [
-        "No Man's Sky",
-        "Just Chatting"
+        "Just Chatting",
+        "No Man's Sky"
       ],
       "avg_viewers": 2826,
       "peak_viewers": 4035,
@@ -42920,9 +42914,9 @@
       "duration_seconds": 40800,
       "title": null,
       "games": [
-        "Kingdom Come: Deliverance II",
         "Just Chatting",
-        "A Game About Digging A Hole"
+        "A Game About Digging A Hole",
+        "Kingdom Come: Deliverance II"
       ],
       "avg_viewers": 2613,
       "peak_viewers": 3532,
@@ -42981,8 +42975,8 @@
       "duration_seconds": 35700,
       "title": null,
       "games": [
-        "Kingdom Come: Deliverance II",
-        "Just Chatting"
+        "Just Chatting",
+        "Kingdom Come: Deliverance II"
       ],
       "avg_viewers": 3193,
       "peak_viewers": 5697,
@@ -45157,8 +45151,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "PEAK",
-        "GUG"
+        "GUG",
+        "PEAK"
       ],
       "avg_viewers": 3107,
       "peak_viewers": 4427,
@@ -45373,8 +45367,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Midnight Murder Club",
-        "Waterpark Simulator"
+        "Waterpark Simulator",
+        "Midnight Murder Club"
       ],
       "avg_viewers": 3879,
       "peak_viewers": 5140,
@@ -45755,8 +45749,8 @@
       "duration_seconds": 39600,
       "title": null,
       "games": [
-        "Rust",
-        "Just Chatting"
+        "Just Chatting",
+        "Rust"
       ],
       "avg_viewers": 6280,
       "peak_viewers": 8189,
@@ -48238,8 +48232,8 @@
       "duration_seconds": 23160,
       "title": null,
       "games": [
-        "Retro Rewind: Video Store Simulator",
-        "Just Chatting"
+        "Just Chatting",
+        "Retro Rewind: Video Store Simulator"
       ],
       "avg_viewers": 2533,
       "peak_viewers": 3497,
@@ -48413,8 +48407,8 @@
       "duration_seconds": 32820,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 2668,
       "peak_viewers": 3567,
@@ -48473,9 +48467,9 @@
       "duration_seconds": 26280,
       "title": null,
       "games": [
-        "Just Chatting",
         "Subnautica",
-        "Subnautica 2"
+        "Subnautica 2",
+        "Just Chatting"
       ],
       "avg_viewers": 2920,
       "peak_viewers": 3718,
@@ -48514,8 +48508,8 @@
       "duration_seconds": 16740,
       "title": null,
       "games": [
-        "Death Stranding",
-        "Just Chatting"
+        "Just Chatting",
+        "Death Stranding"
       ],
       "avg_viewers": 2871,
       "peak_viewers": 3430,
@@ -48669,9 +48663,9 @@
       "duration_seconds": 21360,
       "title": null,
       "games": [
-        "Just Chatting",
         "Dishonored",
         "Nested Lands",
+        "Just Chatting",
         "Warhammer 40,000: Dawn of War"
       ],
       "avg_viewers": 1121,
@@ -49184,6 +49178,25 @@
       "followers_gained": -39,
       "view_minutes": 473632,
       "stream_url": "https://sullygnome.com/channel/stream/320637702235",
+      "range": "2026"
+    },
+    {
+      "source": "sullygnome_stream_table",
+      "precision": "exact_utc_start",
+      "id": "320663424219",
+      "started_at": "2026-07-25T01:44:44Z",
+      "ended_at": "Saturday 25th July 2026 06:30",
+      "duration_label": "286 minutes",
+      "duration_seconds": 17160,
+      "title": null,
+      "games": [
+        "Just Chatting"
+      ],
+      "avg_viewers": 1576,
+      "peak_viewers": 1753,
+      "followers_gained": -25,
+      "view_minutes": 450736,
+      "stream_url": "https://sullygnome.com/channel/stream/320663424219",
       "range": "2026"
     }
   ],
