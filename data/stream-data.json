@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-29T00:04:41Z",
+  "generated_at": "2026-07-29T03:50:02Z",
   "sources": {
     "sullygnome_stream_table": 2456,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 31,
     "exact_merged_rows": 31,
-    "youtube_archive_segments": 1082,
-    "youtube_archive_grouped_dates": 591
+    "youtube_archive_segments": 1088,
+    "youtube_archive_grouped_dates": 594
   },
   "stats": {
     "sully_gap_hours": {
@@ -31,13 +31,13 @@
       "max": 138.03
     },
     "archive_gap_days": {
-      "count": 590,
+      "count": 593,
       "mean": 2.68,
-      "median": 1.0,
+      "median": 1,
       "max": 81,
       "bins": {
-        "1": 317,
-        "2": 112,
+        "1": 319,
+        "2": 113,
         "3": 58,
         "4-5": 56,
         "6-7": 20,
@@ -95,7 +95,7 @@
       "2026-04": 5,
       "2026-05": 7,
       "2026-06": 14,
-      "2026-07": 3
+      "2026-07": 6
     },
     "sully_monthly_counts": {
       "2017-01": 1,
@@ -408,7 +408,7 @@
       {
         "gap_h": 42.8,
         "started_at": "2026-07-01T23:20:07Z",
-        "game": "Just Chatting"
+        "game": "MECCHA CHAMELEON"
       },
       {
         "gap_h": 19.8,
@@ -418,17 +418,17 @@
       {
         "gap_h": 131.6,
         "started_at": "2026-07-08T19:51:55Z",
-        "game": "Just Chatting"
+        "game": "MECCHA CHAMELEON"
       },
       {
         "gap_h": 18.1,
         "started_at": "2026-07-09T20:23:05Z",
-        "game": "Just Chatting"
+        "game": "Trees Hate You"
       },
       {
         "gap_h": 23.8,
         "started_at": "2026-07-11T01:04:00Z",
-        "game": "Dawson Oaks Trailer Park"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 43.5,
@@ -458,7 +458,7 @@
       {
         "gap_h": 64.6,
         "started_at": "2026-07-20T21:08:40Z",
-        "game": "Just Chatting"
+        "game": "How to Make an Atomic Bomb in Your Garden"
       },
       {
         "gap_h": 66.7,
@@ -478,7 +478,7 @@
       {
         "gap_h": 19.5,
         "started_at": "2026-07-28T19:42:04Z",
-        "game": "Just Chatting"
+        "game": "Dirty Business"
       }
     ],
     "recent_streams": [
@@ -524,8 +524,8 @@
         "started_at": "2026-07-20T21:08:40Z",
         "ended_at_iso": "2026-07-21T02:15:00+00:00",
         "games": [
-          "Just Chatting",
-          "How to Make an Atomic Bomb in Your Garden"
+          "How to Make an Atomic Bomb in Your Garden",
+          "Just Chatting"
         ],
         "duration_h": 5.1,
         "duration_label": "307 minutes",
@@ -573,30 +573,30 @@
       },
       {
         "started_at": "2026-07-28T19:42:04Z",
-        "ended_at_iso": "2026-07-28T22:45:00+00:00",
+        "ended_at_iso": "2026-07-29T02:45:00+00:00",
         "games": [
-          "Just Chatting",
-          "Dirty Business"
+          "Dirty Business",
+          "Just Chatting"
         ],
-        "duration_h": 3.0,
-        "duration_label": "183 minutes",
-        "avg_viewers": 2219,
+        "duration_h": 7.0,
+        "duration_label": "423 minutes",
+        "avg_viewers": 2328,
         "peak_viewers": 2500,
         "followers_gained": 0
       }
     ],
     "last_stream": {
       "started_at": "2026-07-28T19:42:04Z",
-      "ended_at_iso": "2026-07-28T22:45:00+00:00",
+      "ended_at_iso": "2026-07-29T02:45:00+00:00",
       "games": [
-        "Just Chatting",
-        "Dirty Business"
+        "Dirty Business",
+        "Just Chatting"
       ],
-      "duration_label": "183 minutes"
+      "duration_label": "423 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 590,
+        "sample_size": 593,
         "features": {
           "challenge": {
             "count": 19,
@@ -606,7 +606,7 @@
           },
           "collab": {
             "count": 198,
-            "share": 33.6,
+            "share": 33.4,
             "median_gap_days": 2.0,
             "p90_gap_days": 5.0
           },
@@ -617,20 +617,20 @@
             "p90_gap_days": 2.2
           },
           "food_cooking": {
-            "count": 89,
-            "share": 15.1,
-            "median_gap_days": 1,
+            "count": 90,
+            "share": 15.2,
+            "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           },
           "gameplay_arc": {
-            "count": 342,
-            "share": 58.0,
-            "median_gap_days": 1.0,
+            "count": 345,
+            "share": 58.2,
+            "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
           "recovery_risk": {
             "count": 34,
-            "share": 5.8,
+            "share": 5.7,
             "median_gap_days": 2.0,
             "p90_gap_days": 4.7
           },
@@ -648,7 +648,7 @@
           },
           "unclassified": {
             "count": 91,
-            "share": 15.4,
+            "share": 15.3,
             "median_gap_days": 1,
             "p90_gap_days": 5.0
           }
@@ -661,9 +661,9 @@
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 552,
+            "count": 555,
             "share": 93.6,
-            "median_gap_days": 1.0,
+            "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
           "positive": {
@@ -675,20 +675,20 @@
         },
         "intensity": {
           "high": {
-            "count": 33,
-            "share": 5.6,
-            "median_gap_days": 1,
+            "count": 34,
+            "share": 5.7,
+            "median_gap_days": 1.0,
             "p90_gap_days": 2.0
           },
           "low": {
             "count": 204,
-            "share": 34.6,
+            "share": 34.4,
             "median_gap_days": 2.0,
             "p90_gap_days": 6.0
           },
           "medium": {
-            "count": 353,
-            "share": 59.8,
+            "count": 355,
+            "share": 59.9,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
           }
@@ -787,8 +787,8 @@
     "live_stream": {
       "started_at": "2026-07-28T19:42:04Z",
       "game": "Dirty Business",
-      "title": "(dont tell her i'm playing this, please. just keep it between you and me)",
-      "viewers": 2500
+      "title": "(dont tell her i'm playing this, please. just keep it between you and me) *CYR FM* activated !media",
+      "viewers": 1966
     }
   },
   "sully_streams": [
@@ -2548,8 +2548,8 @@
       "title": null,
       "games": [
         "IRL",
-        "Grand Theft Auto V",
-        "Happy Wheels"
+        "Happy Wheels",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 57,
       "peak_viewers": 70,
@@ -19464,9 +19464,9 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
-        "Just Chatting",
         "Command &amp; Conquer Remastered Collection",
-        "\u5922\u4e09\u570b"
+        "\u5922\u4e09\u570b",
+        "Just Chatting"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 1848,
@@ -25593,9 +25593,9 @@
         "Grand Theft Auto V",
         "Ranch Simulator",
         "OBEY",
+        "SCP: Terminal",
         "Friday the 13th: The Game",
-        "Can't Drive This",
-        "SCP: Terminal"
+        "Can't Drive This"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 2172,
@@ -29221,8 +29221,8 @@
       "duration_seconds": 34200,
       "title": null,
       "games": [
-        "The Elder Scrolls V: Skyrim - Special Edition",
-        "Just Chatting"
+        "Just Chatting",
+        "The Elder Scrolls V: Skyrim - Special Edition"
       ],
       "avg_viewers": 2994,
       "peak_viewers": 7187,
@@ -29261,8 +29261,8 @@
       "duration_seconds": 13560,
       "title": null,
       "games": [
-        "Escape from Tarkov",
-        "Just Chatting"
+        "Just Chatting",
+        "Escape from Tarkov"
       ],
       "avg_viewers": 3810,
       "peak_viewers": 4439,
@@ -29281,8 +29281,8 @@
       "duration_seconds": 21000,
       "title": null,
       "games": [
-        "Teardown",
-        "Just Chatting"
+        "Just Chatting",
+        "Teardown"
       ],
       "avg_viewers": 2290,
       "peak_viewers": 3902,
@@ -29339,8 +29339,8 @@
       "duration_seconds": 32100,
       "title": null,
       "games": [
-        "Project Zomboid",
-        "Just Chatting"
+        "Just Chatting",
+        "Project Zomboid"
       ],
       "avg_viewers": 3889,
       "peak_viewers": 4909,
@@ -29359,8 +29359,8 @@
       "duration_seconds": 22560,
       "title": null,
       "games": [
-        "Monopoly Plus",
-        "Just Chatting"
+        "Just Chatting",
+        "Monopoly Plus"
       ],
       "avg_viewers": 2140,
       "peak_viewers": 4677,
@@ -29682,8 +29682,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Blade &amp; Sorcery",
-        "Zenith: The Last City"
+        "Zenith: The Last City",
+        "Blade &amp; Sorcery"
       ],
       "avg_viewers": 2333,
       "peak_viewers": 7192,
@@ -31008,10 +31008,10 @@
       "title": null,
       "games": [
         "Just Chatting",
+        "Ultimate Epic Battle Simulator 2",
         "Planet Crafter",
         "Little Nightmares II",
-        "The Quarry",
-        "Ultimate Epic Battle Simulator 2"
+        "The Quarry"
       ],
       "avg_viewers": 2291,
       "peak_viewers": 3494,
@@ -32795,9 +32795,9 @@
         "Warhammer 40,000: Darktide",
         "Just Chatting",
         "Goat Simulator 3",
-        "Farmer's Life",
         "Dwarf Fortress",
-        "Fall Guys"
+        "Fall Guys",
+        "Farmer's Life"
       ],
       "avg_viewers": 1936,
       "peak_viewers": 2503,
@@ -45161,8 +45161,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "PEAK",
-        "GUG"
+        "GUG",
+        "PEAK"
       ],
       "avg_viewers": 3107,
       "peak_viewers": 4427,
@@ -47094,10 +47094,10 @@
       "duration_seconds": 29700,
       "title": null,
       "games": [
+        "BALL x PIT",
         "Just Chatting",
         "Deep Rock Galactic: Survivor",
-        "The Binding of Isaac",
-        "BALL x PIT"
+        "The Binding of Isaac"
       ],
       "avg_viewers": 2870,
       "peak_viewers": 6465,
@@ -48397,8 +48397,8 @@
       "duration_seconds": 17160,
       "title": null,
       "games": [
-        "Subnautica",
-        "Just Chatting"
+        "Just Chatting",
+        "Subnautica"
       ],
       "avg_viewers": 2686,
       "peak_viewers": 3425,
@@ -48417,8 +48417,8 @@
       "duration_seconds": 32820,
       "title": null,
       "games": [
-        "Subnautica",
-        "Just Chatting"
+        "Just Chatting",
+        "Subnautica"
       ],
       "avg_viewers": 2668,
       "peak_viewers": 3567,
@@ -48518,8 +48518,8 @@
       "duration_seconds": 16740,
       "title": null,
       "games": [
-        "Death Stranding",
-        "Just Chatting"
+        "Just Chatting",
+        "Death Stranding"
       ],
       "avg_viewers": 2871,
       "peak_viewers": 3430,
@@ -48734,8 +48734,8 @@
       "duration_seconds": 25320,
       "title": null,
       "games": [
-        "Forza Horizon 6",
-        "Just Chatting"
+        "Just Chatting",
+        "Forza Horizon 6"
       ],
       "avg_viewers": 1163,
       "peak_viewers": 1258,
@@ -48963,8 +48963,8 @@
       "duration_seconds": 24000,
       "title": null,
       "games": [
-        "Just Chatting",
-        "MECCHA CHAMELEON"
+        "MECCHA CHAMELEON",
+        "Just Chatting"
       ],
       "avg_viewers": 1357,
       "peak_viewers": 1499,
@@ -49002,8 +49002,8 @@
       "duration_seconds": 23040,
       "title": null,
       "games": [
-        "Just Chatting",
-        "MECCHA CHAMELEON"
+        "MECCHA CHAMELEON",
+        "Just Chatting"
       ],
       "avg_viewers": 1485,
       "peak_viewers": 1752,
@@ -49022,9 +49022,9 @@
       "duration_seconds": 17520,
       "title": null,
       "games": [
-        "Just Chatting",
         "Trees Hate You",
-        "CAIRN"
+        "CAIRN",
+        "Just Chatting"
       ],
       "avg_viewers": 1413,
       "peak_viewers": 1750,
@@ -49043,8 +49043,8 @@
       "duration_seconds": 14160,
       "title": null,
       "games": [
-        "Dawson Oaks Trailer Park",
-        "Just Chatting"
+        "Just Chatting",
+        "Dawson Oaks Trailer Park"
       ],
       "avg_viewers": 1499,
       "peak_viewers": 1739,
@@ -49161,8 +49161,8 @@
       "duration_seconds": 18420,
       "title": null,
       "games": [
-        "Just Chatting",
-        "How to Make an Atomic Bomb in Your Garden"
+        "How to Make an Atomic Bomb in Your Garden",
+        "Just Chatting"
       ],
       "avg_viewers": 1486,
       "peak_viewers": 1739,
@@ -49235,18 +49235,18 @@
       "precision": "exact_utc_start",
       "id": "320621362266",
       "started_at": "2026-07-28T19:42:04Z",
-      "ended_at": "Tuesday 28th July 2026 22:45",
-      "duration_label": "183 minutes",
-      "duration_seconds": 10980,
+      "ended_at": "Wednesday 29th July 2026 02:45",
+      "duration_label": "423 minutes",
+      "duration_seconds": 25380,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Dirty Business"
+        "Dirty Business",
+        "Just Chatting"
       ],
-      "avg_viewers": 2219,
+      "avg_viewers": 2328,
       "peak_viewers": 2500,
       "followers_gained": 0,
-      "view_minutes": 406077,
+      "view_minutes": 984744,
       "stream_url": "https://sullygnome.com/channel/stream/320621362266",
       "range": "2026"
     }
@@ -54580,18 +54580,20 @@
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2025-01-23",
-      "segment_count": 3,
-      "duration_seconds_sum": 27024,
+      "segment_count": 4,
+      "duration_seconds_sum": 33490,
       "primary_title": "1v1 Arcade Stream vs @penta (Just Chatting) - [01/23/2025] | Cyr VODs",
       "titles": [
         "Cyr VODs [01/23/2025] My therapist told me I need to stop blaming everything on being left handed",
         "Cyr VODs [01/23/2025] THEY ARE PERFORMING ROLLING BLACKOUTS IN MY NEIGHBORHOOD SO POWER IS OUT!",
-        "1v1 Arcade Stream vs @penta (Just Chatting) - [01/23/2025] | Cyr VODs"
+        "1v1 Arcade Stream vs @penta (Just Chatting) - [01/23/2025] | Cyr VODs",
+        "Cyr VODs [01/23/2025] - \"I scale as an entertainer!\" (Just Chatting)"
       ],
       "urls": [
         "https://www.youtube.com/watch?v=z5vcbViyl9o",
         "https://www.youtube.com/watch?v=RTx4k5BruNw",
-        "https://www.youtube.com/watch?v=Lf2FqWtggDA"
+        "https://www.youtube.com/watch?v=Lf2FqWtggDA",
+        "https://www.youtube.com/watch?v=oUwnwabeNHQ"
       ]
     },
     {
@@ -58819,6 +58821,52 @@
         "https://www.youtube.com/watch?v=1PQ51BxOdII",
         "https://www.youtube.com/watch?v=y2k2EO4R9X0"
       ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-10",
+      "segment_count": 1,
+      "duration_seconds_sum": 6576,
+      "primary_title": "TRAILER PARK ROLEPLAY w/ RP GODS! CYR plays DAWSON OAKS Trailer Park #001 - [07/10/2026] | Cyr VODs",
+      "titles": [
+        "TRAILER PARK ROLEPLAY w/ RP GODS! CYR plays DAWSON OAKS Trailer Park #001 - [07/10/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=Jyokg98kPQo"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-12",
+      "segment_count": 3,
+      "duration_seconds_sum": 19178,
+      "primary_title": "Cyr VODs [07/12/2026] - GETTING AN RP LOBBY GOING TONIGHT -WOULD BE NICE IS WUBBY SHOWS UP",
+      "titles": [
+        "CYR reacts to business life of the 90s - [07/12/2026] | Cyr VODs",
+        "This Trailer Park goes WILD! CYR plays DAWSON OAKS Trailer Park #002 - [07/12/2026] | Cyr VODs",
+        "Cyr VODs [07/12/2026] - GETTING AN RP LOBBY GOING TONIGHT -WOULD BE NICE IS WUBBY SHOWS UP"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=YpW56P3_5zk",
+        "https://www.youtube.com/watch?v=caHut0rdEJI",
+        "https://www.youtube.com/watch?v=Gzk0Dvc7RX8"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-13",
+      "segment_count": 1,
+      "duration_seconds_sum": 14847,
+      "primary_title": "LEGO GAME BOY BUILD RACE vs MISTERARTHER - [07/13/2026] | Cyr VODs",
+      "titles": [
+        "LEGO GAME BOY BUILD RACE vs MISTERARTHER - [07/13/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=hs7BYYlH-ks"
+      ]
     }
   ],
   "title_semantic_rows": [
@@ -62600,7 +62648,7 @@
       "sentiment": "neutral",
       "sentiment_score": 0,
       "intensity": "high",
-      "intensity_score": 3
+      "intensity_score": 4
     },
     {
       "date": "2025-01-24",
@@ -65584,6 +65632,40 @@
       "sentiment_score": 0,
       "intensity": "high",
       "intensity_score": 3
+    },
+    {
+      "date": "2026-07-09",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 4
+    },
+    {
+      "date": "2026-07-10",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2026-07-12",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
     }
   ]
 }
