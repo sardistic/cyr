@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-29T14:41:19Z",
+  "generated_at": "2026-07-29T16:22:25Z",
   "sources": {
     "sullygnome_stream_table": 2456,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 31,
     "exact_merged_rows": 31,
-    "youtube_archive_segments": 1096,
-    "youtube_archive_grouped_dates": 598
+    "youtube_archive_segments": 1081,
+    "youtube_archive_grouped_dates": 594
   },
   "stats": {
     "sully_gap_hours": {
@@ -31,17 +31,17 @@
       "max": 138.03
     },
     "archive_gap_days": {
-      "count": 597,
-      "mean": 2.67,
+      "count": 593,
+      "mean": 2.69,
       "median": 1,
       "max": 81,
       "bins": {
-        "1": 321,
-        "2": 114,
-        "3": 59,
+        "1": 318,
+        "2": 110,
+        "3": 61,
         "4-5": 56,
         "6-7": 20,
-        "8-14": 15,
+        "8-14": 16,
         "15+": 12
       }
     },
@@ -84,8 +84,8 @@
       "2025-05": 19,
       "2025-06": 14,
       "2025-07": 12,
-      "2025-08": 22,
-      "2025-09": 19,
+      "2025-08": 20,
+      "2025-09": 15,
       "2025-10": 16,
       "2025-11": 16,
       "2025-12": 14,
@@ -95,7 +95,7 @@
       "2026-04": 5,
       "2026-05": 7,
       "2026-06": 14,
-      "2026-07": 10
+      "2026-07": 12
     },
     "sully_monthly_counts": {
       "2017-01": 1,
@@ -408,7 +408,7 @@
       {
         "gap_h": 42.8,
         "started_at": "2026-07-01T23:20:07Z",
-        "game": "MECCHA CHAMELEON"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 19.8,
@@ -453,7 +453,7 @@
       {
         "gap_h": 23.0,
         "started_at": "2026-07-18T00:15:19Z",
-        "game": "Rainbow Six Siege"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 64.6,
@@ -511,8 +511,8 @@
         "started_at": "2026-07-18T00:15:19Z",
         "ended_at_iso": "2026-07-18T04:30:00+00:00",
         "games": [
-          "Rainbow Six Siege",
-          "Just Chatting"
+          "Just Chatting",
+          "Rainbow Six Siege"
         ],
         "duration_h": 4.2,
         "duration_label": "255 minutes",
@@ -596,17 +596,17 @@
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 597,
+        "sample_size": 593,
         "features": {
           "challenge": {
-            "count": 19,
-            "share": 3.2,
+            "count": 17,
+            "share": 2.9,
             "median_gap_days": 1,
-            "p90_gap_days": 4.2
+            "p90_gap_days": 4.4
           },
           "collab": {
-            "count": 200,
-            "share": 33.5,
+            "count": 198,
+            "share": 33.4,
             "median_gap_days": 2.0,
             "p90_gap_days": 5.0
           },
@@ -617,14 +617,14 @@
             "p90_gap_days": 2.2
           },
           "food_cooking": {
-            "count": 90,
-            "share": 15.1,
+            "count": 86,
+            "share": 14.5,
             "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           },
           "gameplay_arc": {
-            "count": 346,
-            "share": 58.0,
+            "count": 342,
+            "share": 57.7,
             "median_gap_days": 1.0,
             "p90_gap_days": 4.0
           },
@@ -641,29 +641,29 @@
             "p90_gap_days": 5.0
           },
           "travel_irl": {
-            "count": 62,
-            "share": 10.4,
-            "median_gap_days": 2.0,
-            "p90_gap_days": 4.9
+            "count": 61,
+            "share": 10.3,
+            "median_gap_days": 2,
+            "p90_gap_days": 5.0
           },
           "unclassified": {
-            "count": 92,
-            "share": 15.4,
-            "median_gap_days": 1.0,
+            "count": 91,
+            "share": 15.3,
+            "median_gap_days": 1,
             "p90_gap_days": 5.0
           }
         },
         "sentiment": {
           "negative": {
-            "count": 32,
-            "share": 5.4,
-            "median_gap_days": 1.0,
+            "count": 33,
+            "share": 5.6,
+            "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 559,
-            "share": 93.6,
-            "median_gap_days": 1,
+            "count": 554,
+            "share": 93.4,
+            "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           },
           "positive": {
@@ -675,21 +675,21 @@
         },
         "intensity": {
           "high": {
-            "count": 34,
-            "share": 5.7,
+            "count": 32,
+            "share": 5.4,
             "median_gap_days": 1.0,
             "p90_gap_days": 2.0
           },
           "low": {
-            "count": 204,
-            "share": 34.2,
-            "median_gap_days": 2.0,
+            "count": 207,
+            "share": 34.9,
+            "median_gap_days": 2,
             "p90_gap_days": 6.0
           },
           "medium": {
-            "count": 359,
-            "share": 60.1,
-            "median_gap_days": 1,
+            "count": 354,
+            "share": 59.7,
+            "median_gap_days": 1.0,
             "p90_gap_days": 4.0
           }
         }
@@ -2543,8 +2543,8 @@
       "title": null,
       "games": [
         "IRL",
-        "Grand Theft Auto V",
-        "Happy Wheels"
+        "Happy Wheels",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 57,
       "peak_viewers": 70,
@@ -7850,8 +7850,8 @@
       "games": [
         "Grand Theft Auto V",
         "Marbles on Stream",
-        "IRL",
-        "Domina"
+        "Domina",
+        "IRL"
       ],
       "avg_viewers": 126,
       "peak_viewers": 296,
@@ -8504,8 +8504,8 @@
       "duration_seconds": 45000,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 114,
       "peak_viewers": 168,
@@ -10859,8 +10859,8 @@
       "duration_seconds": 35880,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 103,
       "peak_viewers": 171,
@@ -19459,9 +19459,9 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
-        "Just Chatting",
         "Command &amp; Conquer Remastered Collection",
-        "\u5922\u4e09\u570b"
+        "\u5922\u4e09\u570b",
+        "Just Chatting"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 1848,
@@ -23589,8 +23589,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "VRChat",
-        "Rubber Bandits"
+        "Rubber Bandits",
+        "VRChat"
       ],
       "avg_viewers": 1523,
       "peak_viewers": 2155,
@@ -23792,8 +23792,8 @@
       "games": [
         "VRChat",
         "Clustertruck",
-        "Just Chatting",
-        "Vicewave"
+        "Vicewave",
+        "Just Chatting"
       ],
       "avg_viewers": 978,
       "peak_viewers": 1334,
@@ -25588,9 +25588,9 @@
         "Grand Theft Auto V",
         "Ranch Simulator",
         "OBEY",
+        "SCP: Terminal",
         "Friday the 13th: The Game",
-        "Can't Drive This",
-        "SCP: Terminal"
+        "Can't Drive This"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 2172,
@@ -29677,8 +29677,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Blade &amp; Sorcery",
-        "Zenith: The Last City"
+        "Zenith: The Last City",
+        "Blade &amp; Sorcery"
       ],
       "avg_viewers": 2333,
       "peak_viewers": 7192,
@@ -37555,8 +37555,8 @@
       "duration_seconds": 20700,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
         "Just Chatting",
+        "Grand Theft Auto V",
         "Stumble Guys"
       ],
       "avg_viewers": 4791,
@@ -45156,8 +45156,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "PEAK",
-        "GUG"
+        "GUG",
+        "PEAK"
       ],
       "avg_viewers": 3107,
       "peak_viewers": 4427,
@@ -47491,8 +47491,8 @@
       "duration_seconds": 344460,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Fortnite"
+        "Fortnite",
+        "Just Chatting"
       ],
       "avg_viewers": 5818,
       "peak_viewers": 19854,
@@ -48958,8 +48958,8 @@
       "duration_seconds": 24000,
       "title": null,
       "games": [
-        "MECCHA CHAMELEON",
-        "Just Chatting"
+        "Just Chatting",
+        "MECCHA CHAMELEON"
       ],
       "avg_viewers": 1357,
       "peak_viewers": 1499,
@@ -49136,8 +49136,8 @@
       "duration_seconds": 15300,
       "title": null,
       "games": [
-        "Rainbow Six Siege",
-        "Just Chatting"
+        "Just Chatting",
+        "Rainbow Six Siege"
       ],
       "avg_viewers": 1505,
       "peak_viewers": 1746,
@@ -56498,49 +56498,15 @@
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
-      "date": "2025-08-20",
-      "segment_count": 2,
-      "duration_seconds_sum": 22655,
-      "primary_title": "Testing our Trivia Knowledge Once Again (ft. Morgpie, Wake & Mhyochi) - [08/20/2025] | CYR VODs",
-      "titles": [
-        "Testing our Trivia Knowledge Once Again (ft. Morgpie, Wake & Mhyochi) - [08/20/2025] | CYR VODs",
-        "Cyr VODs [08/20/2025] IT'S JUST ONE OF THOSE NIGHTS \ud83d\udd25TESTING MY KNOWLEDGE ONCE AGAIN\ud83d\udd25!5K !clips"
-      ],
-      "urls": [
-        "https://www.youtube.com/watch?v=eoajeXZhY-s",
-        "https://www.youtube.com/watch?v=-CPL2lVojss"
-      ]
-    },
-    {
-      "source": "youtube_archive_grouped",
-      "precision": "stream_date_only",
       "date": "2025-08-21",
-      "segment_count": 3,
-      "duration_seconds_sum": 24284,
-      "primary_title": "Getting Groceries & Cooking DInner (ft. WakeWilder & PeachJars) - [08/21/2025] | CYR VODs",
-      "titles": [
-        "Getting Groceries & Cooking DInner (ft. WakeWilder & PeachJars) - [08/21/2025] | CYR VODs",
-        "Browsing Antiques @ Vintage Store (ft. WakeWilder) - [08/21/2025] | CYR VODs",
-        "Cyr VODs [08/21/2025] FIXING UP THE MANSION. MAKING MASSIVE ADVANCES TO THE HOUSE FINALLY !clips !5k"
-      ],
-      "urls": [
-        "https://www.youtube.com/watch?v=3wVbZD0c4d0",
-        "https://www.youtube.com/watch?v=kLQDHm5SiU4",
-        "https://www.youtube.com/watch?v=kwNOy14WjhA"
-      ]
-    },
-    {
-      "source": "youtube_archive_grouped",
-      "precision": "stream_date_only",
-      "date": "2025-08-22",
       "segment_count": 1,
-      "duration_seconds_sum": 6233,
-      "primary_title": "Cyr VODs [08/22/2025] COOKING BREKKIE WITH CHAT , YORKSHIRE GOLD TEA vs PG TIPS? !clips !5k",
+      "duration_seconds_sum": 5608,
+      "primary_title": "Browsing Antiques @ Vintage Store (ft. WakeWilder) - [08/21/2025] | CYR VODs",
       "titles": [
-        "Cyr VODs [08/22/2025] COOKING BREKKIE WITH CHAT , YORKSHIRE GOLD TEA vs PG TIPS? !clips !5k"
+        "Browsing Antiques @ Vintage Store (ft. WakeWilder) - [08/21/2025] | CYR VODs"
       ],
       "urls": [
-        "https://www.youtube.com/watch?v=T9YOKZvyXmk"
+        "https://www.youtube.com/watch?v=kLQDHm5SiU4"
       ]
     },
     {
@@ -56561,53 +56527,45 @@
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2025-08-25",
-      "segment_count": 2,
-      "duration_seconds_sum": 20434,
-      "primary_title": "We made a song about \"Saying Bye to Grandma\" (feat. Phin) - [08/25/2025]",
+      "segment_count": 1,
+      "duration_seconds_sum": 5505,
+      "primary_title": "CYR plays GEOGUESSR w/ Chat - FULL GAMEPLAY  [08/25/2025] | Cyr VODs",
       "titles": [
-        "CYR plays GEOGUESSR w/ Chat - FULL GAMEPLAY  [08/25/2025] | Cyr VODs",
-        "We made a song about \"Saying Bye to Grandma\" (feat. Phin) - [08/25/2025]"
+        "CYR plays GEOGUESSR w/ Chat - FULL GAMEPLAY  [08/25/2025] | Cyr VODs"
       ],
       "urls": [
-        "https://www.youtube.com/watch?v=cBvicEcfxMA",
-        "https://www.youtube.com/watch?v=0pHx82XhrlM"
+        "https://www.youtube.com/watch?v=cBvicEcfxMA"
       ]
     },
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2025-08-26",
-      "segment_count": 4,
-      "duration_seconds_sum": 23397,
+      "segment_count": 2,
+      "duration_seconds_sum": 16872,
       "primary_title": "Cyr plays Waterpark Simulator #001 - FULL GAMEPLAY [08/26/2025] | Cyr VODs",
       "titles": [
-        "Cyr plays Waterpark Simulator #002 - FULL GAMEPLAY [08/26/2025] | Cyr VODs",
         "Cyr plays Midnight Murder Club (w/ Friends) - FULL GAMEPLAY [08/26/2025] | Cyr VODs",
-        "Cyr plays Waterpark Simulator #001 - FULL GAMEPLAY [08/26/2025] | Cyr VODs",
-        "Cyr VODs [08/26/2025] THERAPIST QUIT I DIDN\u2019T \ud83c\udf36\ufe0fADOPTED SPEEDRUN \ud83c\udf36\ufe0f LEFT-HANDED GAMING ALL NIGHT"
+        "Cyr plays Waterpark Simulator #001 - FULL GAMEPLAY [08/26/2025] | Cyr VODs"
       ],
       "urls": [
-        "https://www.youtube.com/watch?v=yYCGKACZeFM",
         "https://www.youtube.com/watch?v=WRjM-pYKxf4",
-        "https://www.youtube.com/watch?v=x97sr9w9AWY",
-        "https://www.youtube.com/watch?v=15Fwtp6btoc"
+        "https://www.youtube.com/watch?v=x97sr9w9AWY"
       ]
     },
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2025-08-27",
-      "segment_count": 3,
-      "duration_seconds_sum": 16491,
-      "primary_title": "Cyr plays Waterpark Simulator #003 - FULL GAMEPLAY [08/27/2025] | Cyr VODs",
+      "segment_count": 2,
+      "duration_seconds_sum": 6605,
+      "primary_title": "Cooking Hotdogs at Night (feat. WakeWilder) - [08/27/2025] | Cyr VODs",
       "titles": [
         "Cooking Hotdogs at Night (feat. WakeWilder) - [08/27/2025] | Cyr VODs",
-        "Cyr plays Waterpark Simulator #003 - FULL GAMEPLAY [08/27/2025] | Cyr VODs",
         "Cyr VODs [08/27/2025] LEFT HANDED ADOPTED MAN DEFIES ALL GODS - ANY TTS I WILL MAKE A VEO 3 PROMPT"
       ],
       "urls": [
         "https://www.youtube.com/watch?v=rTkuXLqxDXs",
-        "https://www.youtube.com/watch?v=LF3058u7qyE",
         "https://www.youtube.com/watch?v=5JgDigaWt8g"
       ]
     },
@@ -56615,108 +56573,42 @@
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2025-08-29",
-      "segment_count": 2,
-      "duration_seconds_sum": 16369,
+      "segment_count": 1,
+      "duration_seconds_sum": 9643,
       "primary_title": "Cyr plays Waterpark Simulator #004 - FULL GAMEPLAY [08/29/2025] | Cyr VODs",
       "titles": [
-        "Cyr plays Waterpark Simulator #004 - FULL GAMEPLAY [08/29/2025] | Cyr VODs",
-        "Cyr VODs [08/29/2025] HOW TO GET RICH QUICK SPEEDRUN | GOTH WATERPARK PEOPLE FACTORY COMES TO LIFE"
+        "Cyr plays Waterpark Simulator #004 - FULL GAMEPLAY [08/29/2025] | Cyr VODs"
       ],
       "urls": [
-        "https://www.youtube.com/watch?v=pwthtoault8",
-        "https://www.youtube.com/watch?v=QhFOGFZ58jk"
+        "https://www.youtube.com/watch?v=pwthtoault8"
       ]
     },
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2025-08-30",
-      "segment_count": 2,
-      "duration_seconds_sum": 23991,
+      "segment_count": 1,
+      "duration_seconds_sum": 16557,
       "primary_title": "Cyr plays Waterpark Simulator #006 - FULL GAMEPLAY [08/30/2025] | Cyr VODs",
       "titles": [
-        "Cyr plays Waterpark Simulator #006 - FULL GAMEPLAY [08/30/2025] | Cyr VODs",
-        "Cyr plays Waterpark Simulator #005 - FULL GAMEPLAY [08/30/2025] | Cyr VODs"
+        "Cyr plays Waterpark Simulator #006 - FULL GAMEPLAY [08/30/2025] | Cyr VODs"
       ],
       "urls": [
-        "https://www.youtube.com/watch?v=4SqUDPJMUOg",
-        "https://www.youtube.com/watch?v=sWh8xRiqkrE"
-      ]
-    },
-    {
-      "source": "youtube_archive_grouped",
-      "precision": "stream_date_only",
-      "date": "2025-09-01",
-      "segment_count": 1,
-      "duration_seconds_sum": 3673,
-      "primary_title": "Cyr VODs [09/01/2025] GOOD MORNING | ADOPTED CEO OF WATER PARK FORCES EMPLOYEES TO WORK ON LABOR DAY",
-      "titles": [
-        "Cyr VODs [09/01/2025] GOOD MORNING | ADOPTED CEO OF WATER PARK FORCES EMPLOYEES TO WORK ON LABOR DAY"
-      ],
-      "urls": [
-        "https://www.youtube.com/watch?v=oMSOLF1ahWg"
-      ]
-    },
-    {
-      "source": "youtube_archive_grouped",
-      "precision": "stream_date_only",
-      "date": "2025-09-02",
-      "segment_count": 2,
-      "duration_seconds_sum": 10724,
-      "primary_title": "Cyr plays Ale & Tale Tavern #001 (w/ PeachJars & WakeWilder) - FULL GAMEPLAY [09/02/2025] | Cyr VODs",
-      "titles": [
-        "Cyr plays Ale & Tale Tavern #001 (w/ PeachJars & WakeWilder) - FULL GAMEPLAY [09/02/2025] | Cyr VODs",
-        "Cyr VODs [09/02/2025] \ud83d\udd25STOP SAYING I LITERALLY LOOK LIKE RYAN GOSLING \ud83d\udd25"
-      ],
-      "urls": [
-        "https://www.youtube.com/watch?v=aVoio6GuGGc",
-        "https://www.youtube.com/watch?v=q6m89cIBL20"
-      ]
-    },
-    {
-      "source": "youtube_archive_grouped",
-      "precision": "stream_date_only",
-      "date": "2025-09-04",
-      "segment_count": 2,
-      "duration_seconds_sum": 19842,
-      "primary_title": "Cyr plays Waterpark Simulator #007 - FULL GAMEPLAY [09/04/2025] | Cyr VODs",
-      "titles": [
-        "Cyr plays Waterpark Simulator #007 - FULL GAMEPLAY [09/04/2025] | Cyr VODs",
-        "Cyr VODs [09/04/2025] ENJOYING MYSELF WHILE CHAT GASLIGHTS ME INTO THINKING I'M HAVING AUDIO ISSUES"
-      ],
-      "urls": [
-        "https://www.youtube.com/watch?v=xw2HWH8ruWc",
-        "https://www.youtube.com/watch?v=IlmyjqFMgF8"
-      ]
-    },
-    {
-      "source": "youtube_archive_grouped",
-      "precision": "stream_date_only",
-      "date": "2025-09-06",
-      "segment_count": 1,
-      "duration_seconds_sum": 15107,
-      "primary_title": "The GAYEST Pizza Friday, Texas Has EVER Seen! (ft. AustinShow) - [09/06/2025] | Cyr VODs",
-      "titles": [
-        "The GAYEST Pizza Friday, Texas Has EVER Seen! (ft. AustinShow) - [09/06/2025] | Cyr VODs"
-      ],
-      "urls": [
-        "https://www.youtube.com/watch?v=HImPtFEHfCQ"
+        "https://www.youtube.com/watch?v=4SqUDPJMUOg"
       ]
     },
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2025-09-08",
-      "segment_count": 2,
-      "duration_seconds_sum": 16730,
+      "segment_count": 1,
+      "duration_seconds_sum": 11639,
       "primary_title": "Cyr plays Ale & Tale Tavern #002 (w/ PeachJars) - FULL GAMEPLAY [09/08/2025] | Cyr VODs",
       "titles": [
-        "Cyr plays Ale & Tale Tavern #002 (w/ PeachJars) - FULL GAMEPLAY [09/08/2025] | Cyr VODs",
-        "Cyr VODs [09/08/2025] STOP SAYING I \"LOOK\" ADOPTED \ud83d\udd25 CHATTING WITH CHAT \ud83d\udd25 BIG WEEK"
+        "Cyr plays Ale & Tale Tavern #002 (w/ PeachJars) - FULL GAMEPLAY [09/08/2025] | Cyr VODs"
       ],
       "urls": [
-        "https://www.youtube.com/watch?v=dlpq-F8kAFY",
-        "https://www.youtube.com/watch?v=GhmuYk71YsI"
+        "https://www.youtube.com/watch?v=dlpq-F8kAFY"
       ]
     },
     {
@@ -58925,6 +58817,36 @@
       ],
       "urls": [
         "https://www.youtube.com/watch?v=Kao3b8EbkLU"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-23",
+      "segment_count": 2,
+      "duration_seconds_sum": 17759,
+      "primary_title": "Showing MISTER ARTHER how to REALLY rock climb! - [07/23/2026] | Cyr VODs",
+      "titles": [
+        "Showing MISTER ARTHER how to REALLY rock climb! - [07/23/2026] | Cyr VODs",
+        "Cyr VODs [07/23/2026] - ROCK CLIMBING WITH MISTERARTHER TODAY"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=vHsGokWqdXQ",
+        "https://www.youtube.com/watch?v=ShScbZD9fnw"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-24",
+      "segment_count": 1,
+      "duration_seconds_sum": 15058,
+      "primary_title": "PIZZA FRIDAY with my British friend who knows NOTHING about Twitch - [07/24/2026] | Cyr VODs",
+      "titles": [
+        "PIZZA FRIDAY with my British friend who knows NOTHING about Twitch - [07/24/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=Q6y15xAPwzM"
       ]
     }
   ],
@@ -64044,7 +63966,7 @@
     },
     {
       "date": "2025-08-19",
-      "gap_days": 1,
+      "gap_days": 2,
       "features": [
         "gameplay_arc",
         "collab"
@@ -64055,40 +63977,15 @@
       "intensity_score": 3
     },
     {
-      "date": "2025-08-20",
-      "gap_days": 1,
-      "features": [
-        "unclassified"
-      ],
-      "sentiment": "neutral",
-      "sentiment_score": 0,
-      "intensity": "high",
-      "intensity_score": 3
-    },
-    {
       "date": "2025-08-21",
-      "gap_days": 1,
+      "gap_days": 3,
       "features": [
-        "gameplay_arc",
-        "collab",
-        "food_cooking"
-      ],
-      "sentiment": "neutral",
-      "sentiment_score": 1,
-      "intensity": "high",
-      "intensity_score": 4
-    },
-    {
-      "date": "2025-08-22",
-      "gap_days": 2,
-      "features": [
-        "collab",
-        "food_cooking"
+        "collab"
       ],
       "sentiment": "neutral",
       "sentiment_score": 0,
-      "intensity": "high",
-      "intensity_score": 4
+      "intensity": "medium",
+      "intensity_score": 1
     },
     {
       "date": "2025-08-24",
@@ -64105,9 +64002,7 @@
       "date": "2025-08-25",
       "gap_days": 1,
       "features": [
-        "gameplay_arc",
-        "collab",
-        "food_cooking"
+        "gameplay_arc"
       ],
       "sentiment": "neutral",
       "sentiment_score": 0,
@@ -64119,8 +64014,7 @@
       "gap_days": 1,
       "features": [
         "gameplay_arc",
-        "collab",
-        "challenge"
+        "collab"
       ],
       "sentiment": "neutral",
       "sentiment_score": 0,
@@ -64131,7 +64025,6 @@
       "date": "2025-08-27",
       "gap_days": 2,
       "features": [
-        "gameplay_arc",
         "collab",
         "food_cooking"
       ],
@@ -64144,81 +64037,34 @@
       "date": "2025-08-29",
       "gap_days": 1,
       "features": [
-        "gameplay_arc",
-        "challenge"
+        "gameplay_arc"
       ],
       "sentiment": "neutral",
       "sentiment_score": 0,
-      "intensity": "medium",
-      "intensity_score": 1
+      "intensity": "low",
+      "intensity_score": 0
     },
     {
       "date": "2025-08-30",
-      "gap_days": 2,
+      "gap_days": 9,
       "features": [
         "gameplay_arc"
       ],
       "sentiment": "neutral",
       "sentiment_score": 0,
-      "intensity": "medium",
-      "intensity_score": 1
-    },
-    {
-      "date": "2025-09-01",
-      "gap_days": 1,
-      "features": [
-        "unclassified"
-      ],
-      "sentiment": "neutral",
-      "sentiment_score": 1,
-      "intensity": "medium",
-      "intensity_score": 1
-    },
-    {
-      "date": "2025-09-02",
-      "gap_days": 2,
-      "features": [
-        "gameplay_arc"
-      ],
-      "sentiment": "neutral",
-      "sentiment_score": 0,
-      "intensity": "medium",
-      "intensity_score": 1
-    },
-    {
-      "date": "2025-09-04",
-      "gap_days": 2,
-      "features": [
-        "gameplay_arc"
-      ],
-      "sentiment": "neutral",
-      "sentiment_score": 0,
-      "intensity": "medium",
-      "intensity_score": 1
-    },
-    {
-      "date": "2025-09-06",
-      "gap_days": 2,
-      "features": [
-        "travel_irl",
-        "food_cooking"
-      ],
-      "sentiment": "neutral",
-      "sentiment_score": 0,
-      "intensity": "medium",
-      "intensity_score": 1
+      "intensity": "low",
+      "intensity_score": 0
     },
     {
       "date": "2025-09-08",
       "gap_days": 1,
       "features": [
-        "gameplay_arc",
-        "collab"
+        "gameplay_arc"
       ],
       "sentiment": "neutral",
       "sentiment_score": 0,
-      "intensity": "medium",
-      "intensity_score": 1
+      "intensity": "low",
+      "intensity_score": 0
     },
     {
       "date": "2025-09-09",
@@ -65769,6 +65615,28 @@
       "sentiment_score": 0,
       "intensity": "medium",
       "intensity_score": 1
+    },
+    {
+      "date": "2026-07-20",
+      "gap_days": 3,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "negative",
+      "sentiment_score": -1,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2026-07-23",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
     }
   ]
 }
