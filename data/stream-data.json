@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-29T03:50:02Z",
+  "generated_at": "2026-07-29T06:32:36Z",
   "sources": {
     "sullygnome_stream_table": 2456,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 31,
     "exact_merged_rows": 31,
-    "youtube_archive_segments": 1088,
-    "youtube_archive_grouped_dates": 594
+    "youtube_archive_segments": 1096,
+    "youtube_archive_grouped_dates": 598
   },
   "stats": {
     "sully_gap_hours": {
@@ -31,14 +31,14 @@
       "max": 138.03
     },
     "archive_gap_days": {
-      "count": 593,
-      "mean": 2.68,
+      "count": 597,
+      "mean": 2.67,
       "median": 1,
       "max": 81,
       "bins": {
-        "1": 319,
-        "2": 113,
-        "3": 58,
+        "1": 321,
+        "2": 114,
+        "3": 59,
         "4-5": 56,
         "6-7": 20,
         "8-14": 15,
@@ -95,7 +95,7 @@
       "2026-04": 5,
       "2026-05": 7,
       "2026-06": 14,
-      "2026-07": 6
+      "2026-07": 10
     },
     "sully_monthly_counts": {
       "2017-01": 1,
@@ -408,7 +408,7 @@
       {
         "gap_h": 42.8,
         "started_at": "2026-07-01T23:20:07Z",
-        "game": "MECCHA CHAMELEON"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 19.8,
@@ -418,12 +418,12 @@
       {
         "gap_h": 131.6,
         "started_at": "2026-07-08T19:51:55Z",
-        "game": "MECCHA CHAMELEON"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 18.1,
         "started_at": "2026-07-09T20:23:05Z",
-        "game": "Trees Hate You"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 23.8,
@@ -458,7 +458,7 @@
       {
         "gap_h": 64.6,
         "started_at": "2026-07-20T21:08:40Z",
-        "game": "How to Make an Atomic Bomb in Your Garden"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 66.7,
@@ -478,7 +478,7 @@
       {
         "gap_h": 19.5,
         "started_at": "2026-07-28T19:42:04Z",
-        "game": "Dirty Business"
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
@@ -524,8 +524,8 @@
         "started_at": "2026-07-20T21:08:40Z",
         "ended_at_iso": "2026-07-21T02:15:00+00:00",
         "games": [
-          "How to Make an Atomic Bomb in Your Garden",
-          "Just Chatting"
+          "Just Chatting",
+          "How to Make an Atomic Bomb in Your Garden"
         ],
         "duration_h": 5.1,
         "duration_label": "307 minutes",
@@ -573,30 +573,30 @@
       },
       {
         "started_at": "2026-07-28T19:42:04Z",
-        "ended_at_iso": "2026-07-29T02:45:00+00:00",
+        "ended_at_iso": "2026-07-29T03:45:00+00:00",
         "games": [
-          "Dirty Business",
-          "Just Chatting"
+          "Just Chatting",
+          "Dirty Business"
         ],
-        "duration_h": 7.0,
-        "duration_label": "423 minutes",
-        "avg_viewers": 2328,
+        "duration_h": 8.1,
+        "duration_label": "483 minutes",
+        "avg_viewers": 2330,
         "peak_viewers": 2500,
-        "followers_gained": 0
+        "followers_gained": -76
       }
     ],
     "last_stream": {
       "started_at": "2026-07-28T19:42:04Z",
-      "ended_at_iso": "2026-07-29T02:45:00+00:00",
+      "ended_at_iso": "2026-07-29T03:45:00+00:00",
       "games": [
-        "Dirty Business",
-        "Just Chatting"
+        "Just Chatting",
+        "Dirty Business"
       ],
-      "duration_label": "423 minutes"
+      "duration_label": "483 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 593,
+        "sample_size": 597,
         "features": {
           "challenge": {
             "count": 19,
@@ -605,8 +605,8 @@
             "p90_gap_days": 4.2
           },
           "collab": {
-            "count": 198,
-            "share": 33.4,
+            "count": 200,
+            "share": 33.5,
             "median_gap_days": 2.0,
             "p90_gap_days": 5.0
           },
@@ -618,14 +618,14 @@
           },
           "food_cooking": {
             "count": 90,
-            "share": 15.2,
+            "share": 15.1,
             "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           },
           "gameplay_arc": {
-            "count": 345,
-            "share": 58.2,
-            "median_gap_days": 1,
+            "count": 346,
+            "share": 58.0,
+            "median_gap_days": 1.0,
             "p90_gap_days": 4.0
           },
           "recovery_risk": {
@@ -642,14 +642,14 @@
           },
           "travel_irl": {
             "count": 62,
-            "share": 10.5,
+            "share": 10.4,
             "median_gap_days": 2.0,
             "p90_gap_days": 4.9
           },
           "unclassified": {
-            "count": 91,
-            "share": 15.3,
-            "median_gap_days": 1,
+            "count": 92,
+            "share": 15.4,
+            "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           }
         },
@@ -661,7 +661,7 @@
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 555,
+            "count": 559,
             "share": 93.6,
             "median_gap_days": 1,
             "p90_gap_days": 5.0
@@ -682,13 +682,13 @@
           },
           "low": {
             "count": 204,
-            "share": 34.4,
+            "share": 34.2,
             "median_gap_days": 2.0,
             "p90_gap_days": 6.0
           },
           "medium": {
-            "count": 355,
-            "share": 59.9,
+            "count": 359,
+            "share": 60.1,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
           }
@@ -784,12 +784,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-07-28T19:42:04Z",
-      "game": "Dirty Business",
-      "title": "(dont tell her i'm playing this, please. just keep it between you and me) *CYR FM* activated !media",
-      "viewers": 1966
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -28875,9 +28870,9 @@
       "duration_seconds": 25560,
       "title": null,
       "games": [
-        "Just Chatting",
         "The Mortuary Assistant",
-        "Metal Gear Solid V: The Phantom Pain"
+        "Metal Gear Solid V: The Phantom Pain",
+        "Just Chatting"
       ],
       "avg_viewers": 5583,
       "peak_viewers": 9406,
@@ -39253,8 +39248,8 @@
       "duration_seconds": 44880,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Fallout 4"
+        "Fallout 4",
+        "Just Chatting"
       ],
       "avg_viewers": 2940,
       "peak_viewers": 7411,
@@ -39499,8 +39494,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Rumble Club",
-        "Star Citizen"
+        "Star Citizen",
+        "Rumble Club"
       ],
       "avg_viewers": 1249,
       "peak_viewers": 1733,
@@ -39777,9 +39772,9 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Splodey",
         "The Elder Scrolls Online",
-        "Ready or Not"
+        "Ready or Not",
+        "Splodey"
       ],
       "avg_viewers": 1379,
       "peak_viewers": 1869,
@@ -39943,8 +39938,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Bodycam",
-        "Tarisland"
+        "Tarisland",
+        "Bodycam"
       ],
       "avg_viewers": 1266,
       "peak_viewers": 1862,
@@ -40160,8 +40155,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Drug Dealer Simulator 2",
-        "Subnautica"
+        "Subnautica",
+        "Drug Dealer Simulator 2"
       ],
       "avg_viewers": 1915,
       "peak_viewers": 2889,
@@ -45820,9 +45815,9 @@
       "duration_seconds": 32820,
       "title": null,
       "games": [
+        "Megabonk",
         "Just Chatting",
-        "Rust",
-        "Megabonk"
+        "Rust"
       ],
       "avg_viewers": 3934,
       "peak_viewers": 5696,
@@ -46934,8 +46929,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "MineMogul",
-        "Where Winds Meet"
+        "Where Winds Meet",
+        "MineMogul"
       ],
       "avg_viewers": 3091,
       "peak_viewers": 3925,
@@ -47094,10 +47089,10 @@
       "duration_seconds": 29700,
       "title": null,
       "games": [
-        "BALL x PIT",
         "Just Chatting",
         "Deep Rock Galactic: Survivor",
-        "The Binding of Isaac"
+        "The Binding of Isaac",
+        "BALL x PIT"
       ],
       "avg_viewers": 2870,
       "peak_viewers": 6465,
@@ -47140,9 +47135,9 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Aviassembly",
         "Megabonk",
-        "LORT"
+        "LORT",
+        "Aviassembly"
       ],
       "avg_viewers": 2855,
       "peak_viewers": 5588,
@@ -47265,8 +47260,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "RollerCoaster Tycoon Classic",
-        "Tainted Grail: The Fall of Avalon"
+        "Tainted Grail: The Fall of Avalon",
+        "RollerCoaster Tycoon Classic"
       ],
       "avg_viewers": 2711,
       "peak_viewers": 3985,
@@ -48518,8 +48513,8 @@
       "duration_seconds": 16740,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Death Stranding"
+        "Death Stranding",
+        "Just Chatting"
       ],
       "avg_viewers": 2871,
       "peak_viewers": 3430,
@@ -48963,8 +48958,8 @@
       "duration_seconds": 24000,
       "title": null,
       "games": [
-        "MECCHA CHAMELEON",
-        "Just Chatting"
+        "Just Chatting",
+        "MECCHA CHAMELEON"
       ],
       "avg_viewers": 1357,
       "peak_viewers": 1499,
@@ -49002,8 +48997,8 @@
       "duration_seconds": 23040,
       "title": null,
       "games": [
-        "MECCHA CHAMELEON",
-        "Just Chatting"
+        "Just Chatting",
+        "MECCHA CHAMELEON"
       ],
       "avg_viewers": 1485,
       "peak_viewers": 1752,
@@ -49022,9 +49017,9 @@
       "duration_seconds": 17520,
       "title": null,
       "games": [
+        "Just Chatting",
         "Trees Hate You",
-        "CAIRN",
-        "Just Chatting"
+        "CAIRN"
       ],
       "avg_viewers": 1413,
       "peak_viewers": 1750,
@@ -49161,8 +49156,8 @@
       "duration_seconds": 18420,
       "title": null,
       "games": [
-        "How to Make an Atomic Bomb in Your Garden",
-        "Just Chatting"
+        "Just Chatting",
+        "How to Make an Atomic Bomb in Your Garden"
       ],
       "avg_viewers": 1486,
       "peak_viewers": 1739,
@@ -49235,18 +49230,18 @@
       "precision": "exact_utc_start",
       "id": "320621362266",
       "started_at": "2026-07-28T19:42:04Z",
-      "ended_at": "Wednesday 29th July 2026 02:45",
-      "duration_label": "423 minutes",
-      "duration_seconds": 25380,
+      "ended_at": "Wednesday 29th July 2026 03:45",
+      "duration_label": "483 minutes",
+      "duration_seconds": 28980,
       "title": null,
       "games": [
-        "Dirty Business",
-        "Just Chatting"
+        "Just Chatting",
+        "Dirty Business"
       ],
-      "avg_viewers": 2328,
+      "avg_viewers": 2330,
       "peak_viewers": 2500,
-      "followers_gained": 0,
-      "view_minutes": 984744,
+      "followers_gained": -76,
+      "view_minutes": 1125390,
       "stream_url": "https://sullygnome.com/channel/stream/320621362266",
       "range": "2026"
     }
@@ -58867,6 +58862,70 @@
       "urls": [
         "https://www.youtube.com/watch?v=hs7BYYlH-ks"
       ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-14",
+      "segment_count": 2,
+      "duration_seconds_sum": 16088,
+      "primary_title": "I Forced Nick to Rock Climb With Me (ft. Myth) - [07/14/2026] | Cyr VODs",
+      "titles": [
+        "FANCY GREEK DINNER w/ NMPLOL & MYTH - [07/14/2026] | Cyr VODs",
+        "I Forced Nick to Rock Climb With Me (ft. Myth) - [07/14/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=KYOtypO_5zY",
+        "https://www.youtube.com/watch?v=S7C685Yj1p8"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-16",
+      "segment_count": 3,
+      "duration_seconds_sum": 19833,
+      "primary_title": "Rainbow Six Siege but I'm left handed and don't know what I'm doing - [07/16/2026] | Cyr VODs",
+      "titles": [
+        "Cyr VODs [07/16/2026] - how to make an atomic bomb in your garden",
+        "Rainbow Six Siege but I'm left handed and don't know what I'm doing - [07/16/2026] | Cyr VODs",
+        "Cyr VODs [07/16/2026] - THAT SCENE IN TITANIC WHERE ROSE PUSHES JACK BUT I'M ROSE & THERE'S NO WATER"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=42kvB0Y1nMk",
+        "https://www.youtube.com/watch?v=Ju2YsVQ0Qu0",
+        "https://www.youtube.com/watch?v=pwbIPMMS5UQ"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-17",
+      "segment_count": 2,
+      "duration_seconds_sum": 14408,
+      "primary_title": "Rainbow Six Siege but MISTER ARTHER is carrying me - [07/17/2026] | Cyr VODs",
+      "titles": [
+        "Rainbow Six Siege but MISTER ARTHER is carrying me - [07/17/2026] | Cyr VODs",
+        "Cyr VODs [07/17/2026] - giving chat EXACTLY what they want on a friday evening: ME"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=b4lC3U83iwA",
+        "https://www.youtube.com/watch?v=YqkRxSz6LZw"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-20",
+      "segment_count": 1,
+      "duration_seconds_sum": 11132,
+      "primary_title": "WHAT COULD GO WRONG?! CYR plays How to Make an Atomic Bomb in Your Garden #001 - [07/20/2026]",
+      "titles": [
+        "WHAT COULD GO WRONG?! CYR plays How to Make an Atomic Bomb in Your Garden #001 - [07/20/2026]"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=Kao3b8EbkLU"
+      ]
     }
   ],
   "title_semantic_rows": [
@@ -65666,6 +65725,50 @@
       "sentiment_score": 0,
       "intensity": "medium",
       "intensity_score": 2
+    },
+    {
+      "date": "2026-07-13",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-07-14",
+      "gap_days": 2,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-07-16",
+      "gap_days": 1,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-07-17",
+      "gap_days": 3,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
     }
   ]
 }
