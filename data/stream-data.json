@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-30T00:00:01Z",
+  "generated_at": "2026-07-30T03:16:35Z",
   "sources": {
     "sullygnome_stream_table": 2457,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 31,
     "exact_merged_rows": 31,
-    "youtube_archive_segments": 1100,
+    "youtube_archive_segments": 1101,
     "youtube_archive_grouped_dates": 601
   },
   "stats": {
@@ -403,7 +403,7 @@
       {
         "gap_h": 42.8,
         "started_at": "2026-07-01T23:20:07Z",
-        "game": "MECCHA CHAMELEON"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 19.8,
@@ -413,7 +413,7 @@
       {
         "gap_h": 131.6,
         "started_at": "2026-07-08T19:51:55Z",
-        "game": "MECCHA CHAMELEON"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 18.1,
@@ -468,7 +468,7 @@
       {
         "gap_h": 61.7,
         "started_at": "2026-07-27T20:13:04Z",
-        "game": "How to Make an Atomic Bomb in Your Garden"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 19.5,
@@ -549,9 +549,9 @@
         "started_at": "2026-07-27T20:13:04Z",
         "ended_at_iso": "2026-07-28T00:15:00+00:00",
         "games": [
+          "Just Chatting",
           "How to Make an Atomic Bomb in Your Garden",
-          "Dirty Business",
-          "Just Chatting"
+          "Dirty Business"
         ],
         "duration_h": 4.0,
         "duration_label": "242 minutes",
@@ -574,26 +574,26 @@
       },
       {
         "started_at": "2026-07-29T19:50:46Z",
-        "ended_at_iso": "2026-07-29T22:45:00+00:00",
+        "ended_at_iso": "2026-07-30T01:00:00+00:00",
         "games": [
           "Just Chatting",
           "Dirty Business"
         ],
-        "duration_h": 2.9,
-        "duration_label": "175 minutes",
-        "avg_viewers": 1860,
-        "peak_viewers": 2723,
-        "followers_gained": 0
+        "duration_h": 5.2,
+        "duration_label": "310 minutes",
+        "avg_viewers": 2200,
+        "peak_viewers": 2777,
+        "followers_gained": -50
       }
     ],
     "last_stream": {
       "started_at": "2026-07-29T19:50:46Z",
-      "ended_at_iso": "2026-07-29T22:45:00+00:00",
+      "ended_at_iso": "2026-07-30T01:00:00+00:00",
       "games": [
         "Just Chatting",
         "Dirty Business"
       ],
-      "duration_label": "175 minutes"
+      "duration_label": "310 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -785,12 +785,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-07-29T19:50:46Z",
-      "game": "Just Chatting",
-      "title": "quitting.",
-      "viewers": 2380
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -2335,8 +2330,8 @@
       "duration_seconds": 13500,
       "title": null,
       "games": [
-        "IRL",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "IRL"
       ],
       "avg_viewers": 53,
       "peak_viewers": 64,
@@ -18734,8 +18729,8 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
-        "Left 4 Dead 2",
         "Just Chatting",
+        "Left 4 Dead 2",
         "UNO"
       ],
       "avg_viewers": 1464,
@@ -19241,8 +19236,8 @@
       "duration_seconds": 30000,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1888,
       "peak_viewers": 4746,
@@ -28264,8 +28259,8 @@
       "duration_seconds": 37260,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Gas Station Simulator"
+        "Gas Station Simulator",
+        "Just Chatting"
       ],
       "avg_viewers": 2765,
       "peak_viewers": 3366,
@@ -31091,9 +31086,9 @@
       "duration_seconds": 48600,
       "title": null,
       "games": [
-        "Planet Crafter",
         "Just Chatting",
-        "Little Nightmares II"
+        "Little Nightmares II",
+        "Planet Crafter"
       ],
       "avg_viewers": 2510,
       "peak_viewers": 4424,
@@ -31713,8 +31708,8 @@
       "duration_seconds": 9120,
       "title": null,
       "games": [
-        "The Mortuary Assistant",
-        "Just Chatting"
+        "Just Chatting",
+        "The Mortuary Assistant"
       ],
       "avg_viewers": 18813,
       "peak_viewers": 27518,
@@ -32796,9 +32791,9 @@
         "Warhammer 40,000: Darktide",
         "Just Chatting",
         "Goat Simulator 3",
+        "Farmer's Life",
         "Dwarf Fortress",
-        "Fall Guys",
-        "Farmer's Life"
+        "Fall Guys"
       ],
       "avg_viewers": 1936,
       "peak_viewers": 2503,
@@ -35151,9 +35146,9 @@
       "duration_seconds": 47880,
       "title": null,
       "games": [
+        "Unlisted on Twitch",
         "Just Chatting",
-        "NARAKA: BLADEPOINT",
-        "Unlisted on Twitch"
+        "NARAKA: BLADEPOINT"
       ],
       "avg_viewers": 3391,
       "peak_viewers": 6455,
@@ -37501,8 +37496,8 @@
       "duration_seconds": 15900,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 7345,
       "peak_viewers": 11549,
@@ -38344,8 +38339,8 @@
       "duration_seconds": 28440,
       "title": null,
       "games": [
-        "ELDEN RING",
-        "Just Chatting"
+        "Just Chatting",
+        "ELDEN RING"
       ],
       "avg_viewers": 2736,
       "peak_viewers": 3542,
@@ -41958,8 +41953,8 @@
       "duration_seconds": 38640,
       "title": null,
       "games": [
-        "World of Warcraft",
-        "Just Chatting"
+        "Just Chatting",
+        "World of Warcraft"
       ],
       "avg_viewers": 1681,
       "peak_viewers": 2298,
@@ -45740,8 +45735,8 @@
       "duration_seconds": 37140,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Rust"
+        "Rust",
+        "Just Chatting"
       ],
       "avg_viewers": 11362,
       "peak_viewers": 18459,
@@ -47950,8 +47945,8 @@
       "duration_seconds": 33240,
       "title": null,
       "games": [
-        "Horsey Game",
-        "Just Chatting"
+        "Just Chatting",
+        "Horsey Game"
       ],
       "avg_viewers": 2746,
       "peak_viewers": 4133,
@@ -48009,8 +48004,8 @@
       "duration_seconds": 20640,
       "title": null,
       "games": [
-        "The Elder Scrolls V: Skyrim - Special Edition",
-        "Just Chatting"
+        "Just Chatting",
+        "The Elder Scrolls V: Skyrim - Special Edition"
       ],
       "avg_viewers": 2485,
       "peak_viewers": 3349,
@@ -48438,8 +48433,8 @@
       "duration_seconds": 14400,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 2381,
       "peak_viewers": 2803,
@@ -48499,8 +48494,8 @@
       "duration_seconds": 19080,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica 2"
+        "Subnautica 2",
+        "Just Chatting"
       ],
       "avg_viewers": 2547,
       "peak_viewers": 3841,
@@ -48519,8 +48514,8 @@
       "duration_seconds": 16740,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Death Stranding"
+        "Death Stranding",
+        "Just Chatting"
       ],
       "avg_viewers": 2871,
       "peak_viewers": 3430,
@@ -48676,8 +48671,8 @@
       "games": [
         "Just Chatting",
         "Dishonored",
-        "Nested Lands",
-        "Warhammer 40,000: Dawn of War"
+        "Warhammer 40,000: Dawn of War",
+        "Nested Lands"
       ],
       "avg_viewers": 1121,
       "peak_viewers": 1243,
@@ -48964,8 +48959,8 @@
       "duration_seconds": 24000,
       "title": null,
       "games": [
-        "MECCHA CHAMELEON",
-        "Just Chatting"
+        "Just Chatting",
+        "MECCHA CHAMELEON"
       ],
       "avg_viewers": 1357,
       "peak_viewers": 1499,
@@ -49003,8 +48998,8 @@
       "duration_seconds": 23040,
       "title": null,
       "games": [
-        "MECCHA CHAMELEON",
-        "Just Chatting"
+        "Just Chatting",
+        "MECCHA CHAMELEON"
       ],
       "avg_viewers": 1485,
       "peak_viewers": 1752,
@@ -49220,9 +49215,9 @@
       "duration_seconds": 14520,
       "title": null,
       "games": [
+        "Just Chatting",
         "How to Make an Atomic Bomb in Your Garden",
-        "Dirty Business",
-        "Just Chatting"
+        "Dirty Business"
       ],
       "avg_viewers": 2251,
       "peak_viewers": 2500,
@@ -49256,18 +49251,18 @@
       "precision": "exact_utc_start",
       "id": "320639892954",
       "started_at": "2026-07-29T19:50:46Z",
-      "ended_at": "Wednesday 29th July 2026 22:45",
-      "duration_label": "175 minutes",
-      "duration_seconds": 10500,
+      "ended_at": "Thursday 30th July 2026 01:00",
+      "duration_label": "310 minutes",
+      "duration_seconds": 18600,
       "title": null,
       "games": [
         "Just Chatting",
         "Dirty Business"
       ],
-      "avg_viewers": 1860,
-      "peak_viewers": 2723,
-      "followers_gained": 0,
-      "view_minutes": 325500,
+      "avg_viewers": 2200,
+      "peak_viewers": 2777,
+      "followers_gained": -50,
+      "view_minutes": 682000,
       "stream_url": "https://sullygnome.com/channel/stream/320639892954",
       "range": "2026"
     }
@@ -58987,13 +58982,15 @@
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2026-07-28",
-      "segment_count": 1,
-      "duration_seconds_sum": 5829,
-      "primary_title": "Cyr VODs [07/28/2026] - somebody get these BEGGARS out of here! (giving chat EXACTLY what they want)",
+      "segment_count": 2,
+      "duration_seconds_sum": 28764,
+      "primary_title": "Business is THRIVING! CYR plays Dirty Business #002 - [07/28/2026]",
       "titles": [
+        "Business is THRIVING! CYR plays Dirty Business #002 - [07/28/2026]",
         "Cyr VODs [07/28/2026] - somebody get these BEGGARS out of here! (giving chat EXACTLY what they want)"
       ],
       "urls": [
+        "https://www.youtube.com/watch?v=Eo-gekxGucI",
         "https://www.youtube.com/watch?v=PP7kUQ2nQm0"
       ]
     }
