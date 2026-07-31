@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-30T23:08:42Z",
+  "generated_at": "2026-07-31T01:05:02Z",
   "sources": {
     "sullygnome_stream_table": 2458,
     "twitchmetrics_stream_logs": 15,
-    "twitchmetrics_vods": 31,
-    "exact_merged_rows": 31,
+    "twitchmetrics_vods": 32,
+    "exact_merged_rows": 32,
     "youtube_archive_segments": 1101,
     "youtube_archive_grouped_dates": 601
   },
@@ -25,9 +25,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 30,
-      "mean": 47.07,
-      "median": 37.3,
+      "count": 31,
+      "mean": 44.03,
+      "median": 28.8,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -574,26 +574,26 @@
       },
       {
         "started_at": "2026-07-30T19:18:57Z",
-        "ended_at_iso": "2026-07-30T21:45:00+00:00",
+        "ended_at_iso": "2026-07-30T23:45:00+00:00",
         "games": [
           "Just Chatting",
           "Project Zomboid"
         ],
-        "duration_h": 2.5,
-        "duration_label": "147 minutes",
-        "avg_viewers": 2024,
-        "peak_viewers": 2668,
+        "duration_h": 4.5,
+        "duration_label": "267 minutes",
+        "avg_viewers": 2336,
+        "peak_viewers": 2961,
         "followers_gained": 0
       }
     ],
     "last_stream": {
       "started_at": "2026-07-30T19:18:57Z",
-      "ended_at_iso": "2026-07-30T21:45:00+00:00",
+      "ended_at_iso": "2026-07-30T23:45:00+00:00",
       "games": [
         "Just Chatting",
         "Project Zomboid"
       ],
-      "duration_label": "147 minutes"
+      "duration_label": "267 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -789,7 +789,7 @@
       "started_at": "2026-07-30T19:18:57Z",
       "game": "Project Zomboid",
       "title": "PROJECT ZOMBOID RAW HARDCORE SCARED 1ST TIME EVERY BLIND 1080P VIRAL",
-      "viewers": 2818
+      "viewers": 2456
     }
   },
   "sully_streams": [
@@ -902,8 +902,8 @@
       "duration_seconds": 6300,
       "title": null,
       "games": [
-        "PUBG: BATTLEGROUNDS",
-        "IRL"
+        "IRL",
+        "PUBG: BATTLEGROUNDS"
       ],
       "avg_viewers": 42,
       "peak_viewers": 68,
@@ -4991,8 +4991,8 @@
       "duration_seconds": 33300,
       "title": null,
       "games": [
-        "A Way Out",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "A Way Out"
       ],
       "avg_viewers": 207,
       "peak_viewers": 408,
@@ -18202,9 +18202,9 @@
       "duration_seconds": 36900,
       "title": null,
       "games": [
-        "Just Arms",
         "Grand Theft Auto V",
         "Drug Dealer Simulator",
+        "Just Arms",
         "Just Chatting"
       ],
       "avg_viewers": 1079,
@@ -19465,9 +19465,9 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
+        "Just Chatting",
         "Command &amp; Conquer Remastered Collection",
-        "\u5922\u4e09\u570b",
-        "Just Chatting"
+        "\u5922\u4e09\u570b"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 1848,
@@ -22057,8 +22057,8 @@
       "duration_seconds": 25080,
       "title": null,
       "games": [
-        "Phasmophobia",
-        "Party Animals"
+        "Party Animals",
+        "Phasmophobia"
       ],
       "avg_viewers": 1372,
       "peak_viewers": 2838,
@@ -22384,8 +22384,8 @@
       "duration_seconds": 38820,
       "title": null,
       "games": [
-        "Raft",
         "Just Chatting",
+        "Raft",
         "VRChat"
       ],
       "avg_viewers": 1518,
@@ -22710,8 +22710,8 @@
       "duration_seconds": 27900,
       "title": null,
       "games": [
-        "VRChat",
-        "Just Chatting"
+        "Just Chatting",
+        "VRChat"
       ],
       "avg_viewers": 1051,
       "peak_viewers": 1796,
@@ -23595,8 +23595,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Rubber Bandits",
-        "VRChat"
+        "VRChat",
+        "Rubber Bandits"
       ],
       "avg_viewers": 1523,
       "peak_viewers": 2155,
@@ -25594,8 +25594,8 @@
         "Grand Theft Auto V",
         "Ranch Simulator",
         "OBEY",
-        "SCP: Terminal",
         "Friday the 13th: The Game",
+        "SCP: Terminal",
         "Can't Drive This"
       ],
       "avg_viewers": 1396,
@@ -29242,8 +29242,8 @@
       "duration_seconds": 14880,
       "title": null,
       "games": [
-        "Just Chatting",
-        "The Elder Scrolls V: Skyrim - Special Edition"
+        "The Elder Scrolls V: Skyrim - Special Edition",
+        "Just Chatting"
       ],
       "avg_viewers": 3338,
       "peak_viewers": 4230,
@@ -29683,8 +29683,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Zenith: The Last City",
-        "Blade &amp; Sorcery"
+        "Blade &amp; Sorcery",
+        "Zenith: The Last City"
       ],
       "avg_viewers": 2333,
       "peak_viewers": 7192,
@@ -30724,8 +30724,8 @@
       "duration_seconds": 26340,
       "title": null,
       "games": [
-        "Weed Shop 3",
-        "Just Chatting"
+        "Just Chatting",
+        "Weed Shop 3"
       ],
       "avg_viewers": 5533,
       "peak_viewers": 9988,
@@ -31009,10 +31009,10 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Ultimate Epic Battle Simulator 2",
         "Planet Crafter",
         "Little Nightmares II",
-        "The Quarry"
+        "The Quarry",
+        "Ultimate Epic Battle Simulator 2"
       ],
       "avg_viewers": 2291,
       "peak_viewers": 3494,
@@ -35580,8 +35580,8 @@
       "duration_seconds": 28440,
       "title": null,
       "games": [
-        "Just Chatting",
         "Old School RuneScape",
+        "Just Chatting",
         "NARAKA: BLADEPOINT"
       ],
       "avg_viewers": 1416,
@@ -35781,8 +35781,8 @@
       "duration_seconds": 22680,
       "title": null,
       "games": [
-        "WrestleQuest",
-        "Just Chatting"
+        "Just Chatting",
+        "WrestleQuest"
       ],
       "avg_viewers": 2096,
       "peak_viewers": 2870,
@@ -35943,8 +35943,8 @@
       "duration_seconds": 25800,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Starfield"
+        "Starfield",
+        "Just Chatting"
       ],
       "avg_viewers": 2634,
       "peak_viewers": 6632,
@@ -35983,8 +35983,8 @@
       "duration_seconds": 30120,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Starfield"
+        "Starfield",
+        "Just Chatting"
       ],
       "avg_viewers": 2257,
       "peak_viewers": 3160,
@@ -38344,8 +38344,8 @@
       "duration_seconds": 28440,
       "title": null,
       "games": [
-        "Just Chatting",
-        "ELDEN RING"
+        "ELDEN RING",
+        "Just Chatting"
       ],
       "avg_viewers": 2736,
       "peak_viewers": 3542,
@@ -40260,8 +40260,8 @@
       "duration_seconds": 28200,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 1861,
       "peak_viewers": 2583,
@@ -40319,8 +40319,8 @@
       "duration_seconds": 11520,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 1380,
       "peak_viewers": 1846,
@@ -41600,8 +41600,8 @@
       "duration_seconds": 15060,
       "title": null,
       "games": [
-        "Rust",
-        "Just Chatting"
+        "Just Chatting",
+        "Rust"
       ],
       "avg_viewers": 10853,
       "peak_viewers": 15632,
@@ -41680,8 +41680,8 @@
       "duration_seconds": 40500,
       "title": null,
       "games": [
-        "Rust",
-        "Just Chatting"
+        "Just Chatting",
+        "Rust"
       ],
       "avg_viewers": 9367,
       "peak_viewers": 17898,
@@ -41797,8 +41797,8 @@
       "duration_seconds": 34320,
       "title": null,
       "games": [
-        "World of Warcraft",
-        "Just Chatting"
+        "Just Chatting",
+        "World of Warcraft"
       ],
       "avg_viewers": 991,
       "peak_viewers": 1549,
@@ -41817,8 +41817,8 @@
       "duration_seconds": 22080,
       "title": null,
       "games": [
-        "World of Warcraft",
-        "Just Chatting"
+        "Just Chatting",
+        "World of Warcraft"
       ],
       "avg_viewers": 1117,
       "peak_viewers": 1532,
@@ -41856,8 +41856,8 @@
       "duration_seconds": 48000,
       "title": null,
       "games": [
-        "World of Warcraft",
-        "Just Chatting"
+        "Just Chatting",
+        "World of Warcraft"
       ],
       "avg_viewers": 1869,
       "peak_viewers": 3259,
@@ -41896,8 +41896,8 @@
       "duration_seconds": 31860,
       "title": null,
       "games": [
-        "King Arthur: Legends Rise",
         "Just Chatting",
+        "King Arthur: Legends Rise",
         "World of Warcraft"
       ],
       "avg_viewers": 2072,
@@ -45162,8 +45162,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "GUG",
-        "PEAK"
+        "PEAK",
+        "GUG"
       ],
       "avg_viewers": 3107,
       "peak_viewers": 4427,
@@ -48127,8 +48127,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Weed Shop 4: Highland",
-        "Retro Rewind: Video Store Simulator"
+        "Retro Rewind: Video Store Simulator",
+        "Weed Shop 4: Highland"
       ],
       "avg_viewers": 2815,
       "peak_viewers": 4742,
@@ -48418,8 +48418,8 @@
       "duration_seconds": 32820,
       "title": null,
       "games": [
-        "Subnautica",
-        "Just Chatting"
+        "Just Chatting",
+        "Subnautica"
       ],
       "avg_viewers": 2668,
       "peak_viewers": 3567,
@@ -48478,8 +48478,8 @@
       "duration_seconds": 26280,
       "title": null,
       "games": [
-        "Subnautica",
         "Just Chatting",
+        "Subnautica",
         "Subnautica 2"
       ],
       "avg_viewers": 2920,
@@ -48674,9 +48674,9 @@
       "duration_seconds": 21360,
       "title": null,
       "games": [
-        "Nested Lands",
         "Just Chatting",
         "Dishonored",
+        "Nested Lands",
         "Warhammer 40,000: Dawn of War"
       ],
       "avg_viewers": 1121,
@@ -49276,18 +49276,18 @@
       "precision": "exact_utc_start",
       "id": "320600272217",
       "started_at": "2026-07-30T19:18:57Z",
-      "ended_at": "Thursday 30th July 2026 21:45",
-      "duration_label": "147 minutes",
-      "duration_seconds": 8820,
+      "ended_at": "Thursday 30th July 2026 23:45",
+      "duration_label": "267 minutes",
+      "duration_seconds": 16020,
       "title": null,
       "games": [
         "Just Chatting",
         "Project Zomboid"
       ],
-      "avg_viewers": 2024,
-      "peak_viewers": 2668,
+      "avg_viewers": 2336,
+      "peak_viewers": 2961,
       "followers_gained": 0,
-      "view_minutes": 297528,
+      "view_minutes": 623712,
       "stream_url": "https://sullygnome.com/channel/stream/320600272217",
       "range": "2026"
     }
@@ -49296,22 +49296,12 @@
     {
       "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
-      "id": "2784085085",
-      "started_at": "2026-05-30T00:00:18Z",
-      "duration_label": "05:53:10",
-      "duration_seconds": 21190,
-      "title": "DIVING INTO WARHAMMER 40K LORE FOR THE FIRST TIME EVER WITH @PHINTTV. IS IT AS GOOD AS THEY SAY IT IS?",
-      "views": 86988
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
       "id": "2787200613",
       "started_at": "2026-06-02T22:51:16Z",
       "duration_label": "06:43:20",
       "duration_seconds": 24200,
       "title": "BACK AND NOT DISCOURAGED - CUHCORD THRIVES - 2NITE HOMEMADE KAVA FOR @MISTERARTHER - AND A LITTLE SECRET SOMETHING ELSE",
-      "views": 87754
+      "views": 87757
     },
     {
       "source": "twitchmetrics_vod",
@@ -49331,7 +49321,7 @@
       "duration_label": "05:10:09",
       "duration_seconds": 18609,
       "title": "TONIGHT WE ATTEMPT TO MAKE CINEMA MAGIC  - READING CHAT'S MONOLOGUES AND SCRIPTS AND TRYING NOT TO LAUGH . WITH @phinttv .",
-      "views": 65204
+      "views": 65206
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -49501,7 +49491,7 @@
       "duration_label": "05:05:40",
       "duration_seconds": 18340,
       "title": "CHAT, WHAT GAME SHOULD I BE ABLE TO BEAT IN 4-5 HOURS, AND IF I FAIL, THAT MEANS I SHOULD NOT PLAY GAMES? GO",
-      "views": 178186
+      "views": 178187
     },
     {
       "source": "twitchmetrics_vod",
@@ -49511,7 +49501,7 @@
       "duration_label": "04:02:50",
       "duration_seconds": 14570,
       "title": "I HAVE BEEN SUMMONED.",
-      "views": 129899
+      "views": 129901
     },
     {
       "source": "twitchmetrics_vod",
@@ -49521,7 +49511,7 @@
       "duration_label": "05:35:50",
       "duration_seconds": 20150,
       "title": "GETTING AN RP LOBBY GOING TONIGHT FOR DAWSON OAKS - WOULD BE REALLY NICE IS WUBBY SHOWS UP - WOULD BE REALLY NICE IF WILLNEFF SHOWS UP",
-      "views": 182410
+      "views": 182413
     },
     {
       "source": "twitchmetrics_vod",
@@ -49531,7 +49521,7 @@
       "duration_label": "04:19:20",
       "duration_seconds": 15560,
       "title": "1v1 LEGO BUILD RACE WITH @MISTERARTHER 6PM CST - ROCK CLIMBING WITH @MYTH TOMORROW",
-      "views": 172118
+      "views": 172123
     },
     {
       "source": "twitchmetrics_vod",
@@ -49541,7 +49531,7 @@
       "duration_label": "05:43:40",
       "duration_seconds": 20620,
       "title": "ROCK CLIMBING WITH @MYTH & @NMPLOL TODAY - THEN GOING OUT, A FINE BRUNCH WITH THE BOYS !discord",
-      "views": 226664
+      "views": 226680
     },
     {
       "source": "twitchmetrics_vod",
@@ -49551,7 +49541,7 @@
       "duration_label": "04:21:00",
       "duration_seconds": 15660,
       "title": "THAT SCENE IN TITANIC WHERE ROSE PUSHES JACK FROST OFF THE DOOR BUT I'M ROSE AND I'M JACK AND THERE'S NO WATER",
-      "views": 149430
+      "views": 149434
     },
     {
       "source": "twitchmetrics_vod",
@@ -49561,7 +49551,7 @@
       "duration_label": "04:18:20",
       "duration_seconds": 15500,
       "title": "giving chat EXACTLY what they want on a friday evening: ME",
-      "views": 140645
+      "views": 140649
     },
     {
       "source": "twitchmetrics_vod",
@@ -49571,7 +49561,7 @@
       "duration_label": "05:10:20",
       "duration_seconds": 18620,
       "title": "how to make an atomic bomb in your garden",
-      "views": 194933
+      "views": 194947
     },
     {
       "source": "twitchmetrics_vod",
@@ -49581,7 +49571,7 @@
       "duration_label": "05:08:10",
       "duration_seconds": 18490,
       "title": "ROCK CLIMBING WITH @MISTERARTHER",
-      "views": 156429
+      "views": 156461
     },
     {
       "source": "twitchmetrics_vod",
@@ -49591,7 +49581,7 @@
       "duration_label": "04:45:40",
       "duration_seconds": 17140,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH BRITISH FRIEND PAUL WHO HAS NEVER BEEN ON STREAM BEFORE NOR HAS HE EVER SEEN ONE. LET'S SEE WHAT HE THINKS \ud83c\udf55",
-      "views": 160722
+      "views": 160800
     },
     {
       "source": "twitchmetrics_vod",
@@ -49601,7 +49591,27 @@
       "duration_label": "04:13:10",
       "duration_seconds": 15190,
       "title": "HOW TO BUILD AN ATOMIC BOMB IN YOUR GARDEN (AND OTHER FUN GAMES TO GET YOU IN TROUBLE)",
-      "views": 74822
+      "views": 74934
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2831339390",
+      "started_at": "2026-07-28T19:42:09Z",
+      "duration_label": "08:16:30",
+      "duration_seconds": 29790,
+      "title": "somebody get these BEGGARS out of here! (giving chat EXACTLY what they want)",
+      "views": 264857
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2832167727",
+      "started_at": "2026-07-29T19:50:51Z",
+      "duration_label": "05:13:40",
+      "duration_seconds": 18820,
+      "title": "YOUR SLOP GAMING GOD HAS RETURNED. MAKE WAY, ALL YIELD.",
+      "views": 145911
     }
   ],
   "archive_grouped_dates": [
