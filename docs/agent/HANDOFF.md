@@ -1,6 +1,6 @@
 # Agent Handoff
 
-Updated: 2026-08-14 (third pass: games re-sourced from Twitch GQL)
+Updated: 2026-08-14 (fourth pass: viewer-source probe + TwitchMetrics recovery)
 
 ## Active objective
 
@@ -9,8 +9,8 @@ reporting success while serving stale data, and stop depending on SullyGnome —
 which has been behind a Cloudflare challenge since 2026-07-31 — for anything
 that matters.
 
-All three are done. The site is current, runs are green, and the only thing
-SullyGnome still uniquely provides is viewer/follower figures.
+All three are done. The site is current, runs are green, and the only field
+SullyGnome still uniquely provides is follower deltas.
 
 ## Completed work
 
@@ -57,22 +57,41 @@ Third pass — `fc0ff0c`, per-stream games no longer come from SullyGnome:
 - Banner copy updated: a SullyGnome outage now costs "viewer and follower
   figures", not games.
 
+Fourth pass — `f833ded`, hunting the last SullyGnome-only fields:
+
+- Probed the two candidates named as the previous next action. **Both rejected:**
+  TwitchTracker `/streams` and all of Streamscharts return 403 under `chrome`
+  and `safari17_0` impersonation; TwitchTracker's root page clears the challenge
+  but is aggregate-only, with client-rendered (empty in HTML) tables and no
+  per-stream links.
+- Found the figures on a source already in use. `twitchmetrics_blocks()` replaces
+  the `(.*?)</li>` block regex, which stopped at the first *nested* `</li>` — the
+  per-game breakdown — and discarded everything after it, including the avg/peak
+  viewer numbers. All 15 stream-log entries now carry them; VOD/log counts
+  unchanged at 31/15.
+- `attach_viewer_stats()` fills only rows with no figures. SullyGnome wins where
+  it has data: the two sources poll independently and disagree a few percent
+  (2026-06-18 — Sully 1116/1247, TwitchMetrics 1145/1240), so mixing them within
+  one stream would be worse than a gap.
+- **Follower deltas remain SullyGnome-only.** No source found for them.
+
 ## Current behavior
 
-Shipped in three commits — `4be0f7f`, `54a36ea`, `fc0ff0c` — on `main`,
-deployed to https://cyr.mom via Pages.
+Shipped in four commits — `4be0f7f`, `54a36ea`, `fc0ff0c`, `f833ded` — on
+`main`, deployed to https://cyr.mom via Pages.
 
-Source hierarchy as of `fc0ff0c`:
+Source hierarchy as of `f833ded`:
 
 | Source | Role | Status |
 | --- | --- | --- |
-| TwitchMetrics | primary — which streams exist and when | working |
+| TwitchMetrics | primary — which streams exist and when; avg/peak viewers | working |
 | Twitch GQL | per-stream games, live status | working |
 | YouTube archive | title semantics, archive gaps | working |
-| SullyGnome | viewer/follower figures, deep history | **blocked** |
+| SullyGnome | follower deltas, deep history, viewers where present | **blocked** |
 
-SullyGnome is now the only degraded source and the only thing it uniquely
-supplies is viewer/follower figures. Losing it no longer costs streams or games.
+SullyGnome is the only degraded source, and after `f833ded` the only field it
+uniquely supplies is **follower deltas**. Losing it costs no streams, no games,
+and — once TwitchMetrics logs catch up — no viewer figures either.
 
 SullyGnome is fetched through `curl_cffi` TLS impersonation. That clears the
 Cloudflare challenge on the landing page (`PageInfo` parses again) but the
@@ -172,18 +191,27 @@ both sources cover, and match exactly: 2026-07-28 → `[Just Chatting, Dirty
 Business]`, 2026-07-27 → `[Just Chatting, How to Make an Atomic Bomb in Your
 Garden, Dirty Business]`.
 
+Fourth pass (`f833ded`) validated on runner via `workflow_dispatch` run
+31844811545, green, with VOD/log counts unchanged at 31/15. The viewer fill is a
+**no-op today** and that is expected: TwitchMetrics stream logs currently reach
+back only to 2026-07-03, and every stream in that window already has SullyGnome
+figures. The plumbing was verified directly rather than assumed — all 15 log
+entries parse avg/peak (e.g. 2026-06-08T03:10:59Z → 1195/1257), and blanking
+three rows and re-running `attach_viewer_stats()` refilled all three.
+
 ## Uncommitted implementation details
 
-None of the implementation work is uncommitted. It shipped in three commits:
+None of the implementation work is uncommitted. It shipped in four commits:
 `4be0f7f` (stop the silent staleness), `54a36ea` (TwitchMetrics primary, TLS
-impersonation, no failing runs) and `fc0ff0c` (games from Twitch GQL). The
-workflow's own data commits followed each: `d279488`, `71a4375`, `d8d4a75`.
+impersonation, no failing runs), `fc0ff0c` (games from Twitch GQL) and `f833ded`
+(recover TwitchMetrics viewer figures). The workflow's own data commits followed
+each: `d279488`, `71a4375`, `d8d4a75`.
 
 Still untracked and deliberately left alone: `README.md`. It predates this
 session and is not mine to commit.
 
-Uncommitted right now: this file's third-pass update. Working tree is otherwise
-clean at `d8d4a75`.
+Uncommitted right now: this file's fourth-pass update. Working tree is otherwise
+clean.
 
 Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
@@ -233,19 +261,27 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
 ## Next concrete action
 
-Nothing is blocking. Site is current, runs are green, no alerts fire, and games
-are restored from a source that does not depend on SullyGnome.
+**None. This work is complete.** Site is current, runs are green, no alerts
+fire, and every field except follower deltas now has a working non-SullyGnome
+source.
 
-Open and offered to the owner at the end of the session, not yet answered:
-probe **TwitchTracker** (`twitchtracker.com/cyr/streams`) and **Streamscharts**
-(`streamscharts.com/channels/cyr/streams`) for the last SullyGnome-only fields,
-avg/peak viewers and follower deltas. Both are likely Cloudflare-fronted, but
-`curl_cffi` is already wired in so the test is cheap, and they are different
-operators so their block profiles may differ. Twitch Helix is *not* a substitute
-here — it needs a client secret and does not expose per-VOD viewer averages.
+The previous next action (probe TwitchTracker and Streamscharts) was carried out
+in the fourth pass and closed: both are Cloudflare-blocked, and the viewer
+figures were recovered from TwitchMetrics instead. Do not re-probe them without
+new information — the result is recorded above.
 
-If that is not wanted, this work is complete and SullyGnome can simply be left
-degraded.
+Only loose thread, and it is optional: **follower deltas** have no non-SullyGnome
+source. Untried avenues, in order of likely payoff:
+
+1. Twitch Helix `/channels/followers` returns only a *current* total, so it would
+   need the pipeline to snapshot it per run and difference successive values —
+   that yields deltas going forward but never recovers history, and it needs a
+   client secret in repo secrets.
+2. Get past Cloudflare on `sullygnome.com/api/` (headless browser for
+   `cf_clearance`, or a proxy with better IP reputation). The landing page
+   already clears; only `/api/` does not.
+
+If neither is wanted, leave SullyGnome degraded. Nothing depends on it.
 
 ## Deployment and status impact
 
@@ -260,6 +296,7 @@ data while reporting failure.
 
 - `scripts/build_dataset.py` — `gql()`, `fetch_vod_game_index()`,
   `fetch_vod_games_detail()`, `attach_vod_games()`, `open_sully_session()`,
-  `backfill_recent_from_exact()`, `load_cached_sully_rows()`
+  `backfill_recent_from_exact()`, `load_cached_sully_rows()`,
+  `twitchmetrics_blocks()`, `block_viewer_stats()`, `attach_viewer_stats()`
 - `.github/workflows/refresh-data.yml`
 - `index.html` (source note ~L2245, stale banner ~L1200 and CSS ~L935)
