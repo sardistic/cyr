@@ -39,9 +39,16 @@ pipeline from reporting success while serving stale data.
 
 ## Current behavior
 
-Running the pipeline with SullyGnome blocked recovers the 6 streams that were
-missing (2026-07-31, 08-04, 08-05, 08-06, 08-07, 08-10). `last_stream` moves
-from 2026-07-30 to 2026-08-10; row count 2458 → 2464, no duplicates.
+Shipped as `4be0f7f` on `main`, deployed to https://cyr.mom via Pages.
+
+The site now shows all 6 previously-missing streams (2026-07-31, 08-04, 08-05,
+08-06, 08-07, 08-10). `last_stream` moved 2026-07-30 → 2026-08-10, row count
+2458 → 2464, no duplicates. `data_through` is served alongside `generated_at`,
+and the amber "DATA BEHIND" banner is live because `degraded_sources` is
+non-empty.
+
+The workflow now reports **failure** on every run while SullyGnome stays
+blocked, after committing the partial refresh. That is intended.
 
 ## Validation
 
@@ -51,68 +58,88 @@ for `requests` and the cached archive standing in for yt-dlp: exit code 2,
 (2463 gaps, median 17.91h). Inline JS in `index.html` parses clean; banner text
 render-checked.
 
-Not verified: whether the GitHub runner sees the same Cloudflare challenge.
-sullygnome.com returns 403 to this machine for every request, so the scrape
-repair itself could not be tested locally.
+Then verified for real on the runner via `workflow_dispatch` (run
+31782424083, 2026-08-14T08:04Z):
+
+```
+SullyGnome FAILED: ... (http 403, 5690 bytes, title='Just a moment...')
+SullyGnome: falling back to 2458 cached streams
+TwitchMetrics stream logs: 15 / VODs: 31
+Backfilled 6 recent stream(s) from TwitchMetrics: 2026-07-31 … 2026-08-10
+YouTube archive: 1123 segments
+Data through: 2026-08-10T17:38:27Z
+DEGRADED: sullygnome: ...
+```
+
+Committed `d279488`, job went red at the "Fail if a source was degraded" step,
+Pages deployed. Confirmed against the live site: `cyr.mom/data/stream-data.js`
+serves `data_through` 2026-08-10 and a non-empty `degraded_sources`.
+
+**This settles the open question:** the GitHub runner gets the same Cloudflare
+challenge this machine does. It is not a network or markup issue.
 
 ## Uncommitted implementation details
 
-All of the above is uncommitted in the working tree. Nothing committed, nothing
-pushed. Base revision `5d8f694` on `main`, level with `origin/main`.
+None of the implementation work is uncommitted — it shipped as `4be0f7f`
+(`scripts/build_dataset.py`, `.github/workflows/refresh-data.yml`,
+`index.html`, plus `docs/agent/`), followed by the workflow's own data commit
+`d279488`.
 
-Modified (unstaged, 220 insertions / 17 deletions across 3 files):
+Still untracked and deliberately left alone: `README.md`. It predates this
+session and is not mine to commit.
 
-- `scripts/build_dataset.py` — +162/-… : hardened `parse_sully_page_info()`,
-  browser `UA`, cached-table fallback, `load_cached_sully_rows()`,
-  `backfill_recent_from_exact()`, `data_through` / `degraded_sources` in both
-  the JSON payload and the `dash` object written to `stream-data.js`,
-  `sys.exit(2)` on degraded.
-- `.github/workflows/refresh-data.yml` — +19 : `id: pipeline` step that accepts
-  exit 0 or 2 and records `exit_code`, expanded `git add` list, trailing
-  "Fail if a source was degraded" step.
-- `index.html` — +56 : `.stale-banner` CSS block, `#stale-banner` markup after
-  `#live-banner`, and the source-note / banner logic in the inline script.
-
-Untracked: `README.md` (pre-existing, not mine) and `docs/` (the managed-state
-directory, including this file).
-
-No generated data files were modified — the end-to-end test wrote to a scratch
-directory, so `data/` is untouched and still shows the stale Jul 30 payload
-until the pipeline is actually run or the workflow fires.
+Uncommitted right now: this file's post-deploy update.
 
 Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
 ## Risks and unknowns
 
-- The SullyGnome scraper is **not** repaired. The UA and regex work do not
-  defeat a Cloudflare challenge. If the runner is challenged too, the next run
-  will log the exact title/status and the fallback path will carry the site.
-  A real fix needs a TLS-impersonating client (`curl_cffi`, `cloudscraper`) or
-  dropping SullyGnome as a source — that is a dependency decision for the owner.
-- Backfilled rows have no `games`, viewer, or follower figures (TwitchMetrics
-  does not expose them), so the timeline shows those streams with an empty game
-  list and the UI's "Just Chatting" fallback.
-- The workflow will now go red every 30 minutes while SullyGnome stays blocked.
-  That is intentional, but it is noisy.
+- The SullyGnome scraper is **not** repaired, and cannot be by UA/regex work —
+  confirmed Cloudflare challenge on the runner. A real fix needs a
+  TLS-impersonating client (`curl_cffi`, `cloudscraper`) or dropping SullyGnome
+  as a source. That is a dependency decision for the owner and was not taken.
+- While SullyGnome stays blocked the historical table is frozen at its 2458
+  cached rows. Recent streams keep flowing in via TwitchMetrics backfill, but
+  **viewer/follower stats and per-stream game lists stop updating**, and the
+  gap/day-of-week/CDF models slowly drift as backfilled rows carry no games.
+- Backfilled rows have no `games`, viewer, or follower figures, so the timeline
+  renders those streams via the UI's "Just Chatting" fallback. Six such rows are
+  live now — anything the dashboard infers from game category is degraded for
+  them.
+- The workflow goes red every 30 minutes while SullyGnome stays blocked.
+  Intentional, but noisy; it will bury any *unrelated* future failure.
+- The cached-table fallback reads `sully_streams` back out of
+  `stream-data.json`, so the repo file is now load-bearing for the pipeline, not
+  just an output. If it is ever truncated or hand-edited, the fallback silently
+  narrows.
 
 ## Next concrete action
 
-Awaiting owner decision — asked at end of session, not yet answered: commit and
-push these changes, then trigger one `workflow_dispatch` run to see what
-SullyGnome returns to the GitHub runner. That single run is the deciding
-evidence:
+Decide how to handle SullyGnome now that the Cloudflare challenge is confirmed
+on the runner. Three options, none started:
 
-- If the runner also gets `Just a moment...`, SullyGnome needs a
-  TLS-impersonating client (`curl_cffi` / `cloudscraper` added to the workflow's
-  `pip install`) or it should be retired as a source.
-- If the runner gets a normal page, the break is markup-side after all and
-  `SULLY_PAGE_INFO_PATTERNS` is the place to extend.
+1. Add `curl_cffi` (or `cloudscraper`) to the workflow's `pip install` and route
+   `parse_sully_page_info()` / `fetch_sully_range()` through it with browser TLS
+   impersonation. Most likely to restore full history; adds a dependency and may
+   break again on the next Cloudflare policy change.
+2. Retire SullyGnome and rebuild the historical backbone from the cached table
+   plus TwitchMetrics going forward. Loses viewer/follower/game enrichment for
+   new streams.
+3. Leave as-is. The site stays correct and honest, but the model slowly degrades
+   and the workflow stays red.
 
-Either way the fallback path now keeps recent streams on the site.
+If (3) for now, consider silencing the red runs to avoid alert fatigue — e.g.
+fail only when `data_through` falls more than N days behind, rather than on
+every degraded run.
 
 ## Deployment and status impact
 
-GitHub Pages deploys from `main` on push; no other deploy target. Not deployed.
+Deployed. GitHub Pages builds from `main` on push; no other deploy target.
+Live at https://cyr.mom (CNAME `cyr.mom`) serving `data_through` 2026-08-10.
+Deploy reported via `report_event.py --project cyr --kind deploy` (HTTP 201).
+
+Scheduled refresh continues every 30 minutes and will keep committing partial
+data while reporting failure.
 
 ## Most relevant files
 
