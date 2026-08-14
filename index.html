@@ -2263,7 +2263,8 @@ composite                               ≈ <strong>55</strong></div>
         // data_through is the newest stream in the data; generated_at is only when
         // the build last ran, which stays current even when a source is broken.
         const through = D.data_through ? fmtDay(new Date(D.data_through)) : null;
-        sn.textContent = `${total} exact Sully streams · ${titles} title-semantic archive gaps · `
+        // "Sully streams" no longer fits: the table can hold TwitchMetrics-backfilled rows.
+        sn.textContent = `${total} exact stream records · ${titles} title-semantic archive gaps · `
           + (through ? `data through ${through} · checked ${genAt}` : `refreshed ${genAt}`);
       }
 
@@ -2278,13 +2279,21 @@ composite                               ≈ <strong>55</strong></div>
         // Trigger on a broken source, not on days-behind alone: cyr genuinely goes
         // quiet for weeks sometimes, and that's a real gap, not missing data.
         if (degraded.length) {
-          const names = degraded.map(d => String(d).split(':')[0]).join(', ');
+          const names = degraded.map(d => String(d).split(':')[0]);
+          // TwitchMetrics is the primary source, so only its loss can actually hide
+          // streams. Losing SullyGnome costs game/viewer metadata, nothing more —
+          // don't claim streams are missing when they aren't.
+          const streamsAtRisk = names.some(n => n.startsWith('twitchmetrics'));
+          const throughLabel = throughDate.toLocaleDateString('en-US', {
+            timeZone: 'UTC', month: 'short', day: 'numeric'
+          });
           staleMeta.textContent =
-            `Newest stream on record is ${throughDate.toLocaleDateString('en-US', {
-              timeZone: 'UTC', month: 'short', day: 'numeric'
-            })} (${behindDays} day${behindDays === 1 ? '' : 's'} ago). `
-            + (names ? `Upstream source unavailable: ${names}. ` : '')
-            + 'Newer streams may be missing, so forecasts below are running on incomplete data.';
+            `Upstream source unavailable: ${names.join(', ')}. `
+            + (streamsAtRisk
+              ? `Newest stream on record is ${throughLabel} (${behindDays} day${behindDays === 1 ? '' : 's'} ago); `
+                + 'newer streams may be missing, so forecasts are running on incomplete data.'
+              : 'Stream times are current, but game and viewer figures may be missing '
+                + 'from the most recent streams.');
           staleBanner.classList.add('visible');
         }
       }

@@ -11,6 +11,13 @@ from pathlib import Path
 
 import requests
 
+try:
+    # curl_cffi impersonates a real browser's TLS/JA3 fingerprint. SullyGnome sits
+    # behind a Cloudflare challenge that plain requests cannot pass.
+    from curl_cffi import requests as curl_requests
+except ImportError:
+    curl_requests = None
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -29,6 +36,9 @@ TWITCHMETRICS = f"https://www.twitchmetrics.net/c/{CHANNEL_ID}-cyr"
 YOUTUBE_ARCHIVE = "https://www.youtube.com/channel/UCtqSew92vbH79xuLLVssbIA/videos"
 SULLY_PAGE = "https://sullygnome.com/channel/cyr/5000/streams"
 SULLY_CHANNEL_ID = "9451380"
+# Rolling "latest Chrome" — pinned versions (chrome124 etc.) already fail the
+# challenge, so don't pin. safari17_0 is the observed working alternate.
+SULLY_IMPERSONATE = ("chrome", "safari17_0")
 TWITCH_GQL = "https://gql.twitch.tv/gql"
 TWITCH_CLIENT_ID = "kimne78kx3ncx6brgo4mv6wki5h1ko"  # public web client ID
 
@@ -180,8 +190,34 @@ SULLY_PAGE_INFO_PATTERNS = (
 )
 
 
-def parse_sully_page_info():
-    response = requests.get(SULLY_PAGE, headers=UA, timeout=30)
+def open_sully_session():
+    """Session that can pass SullyGnome's Cloudflare challenge, if possible.
+
+    Returns (session, impersonation_label, page_response). Note that curl_cffi
+    only clears the challenge if we let it send its own browser headers — passing
+    our UA dict overrides them and gets the request challenged again — so the
+    landing page is fetched here and handed back rather than re-requested.
+    """
+    if curl_requests is None:
+        print("SullyGnome: curl_cffi not installed, falling back to plain requests.")
+        session = requests.Session()
+        return session, None, session.get(SULLY_PAGE, headers=UA, timeout=30)
+
+    last = None
+    for target in SULLY_IMPERSONATE:
+        try:
+            session = curl_requests.Session(impersonate=target)
+            response = session.get(SULLY_PAGE, timeout=30)
+            if response.status_code == 200 and "Just a moment" not in response.text[:400]:
+                return session, target, response
+            last = (session, response)
+        except Exception as e:  # noqa: BLE001 - transport error, try the next target
+            print(f"SullyGnome: {target} impersonation errored ({type(e).__name__}: {e})")
+    session, response = last if last else (curl_requests.Session(impersonate=SULLY_IMPERSONATE[0]), None)
+    return session, None, response
+
+
+def parse_sully_page_info(response):
     text = response.text
     for pattern in SULLY_PAGE_INFO_PATTERNS:
         match = re.search(pattern, text, re.S)
@@ -213,32 +249,51 @@ def parse_sully_games(value):
     return [parts[i] for i in range(0, len(parts), 3) if parts[i]]
 
 
-def fetch_sully_range(session, page_info, range_name, start=0, length=500):
+def fetch_sully_range(session, page_info, range_name, start=0, length=500, impersonating=False):
     url = (
         "https://sullygnome.com/api/tables/channeltables/streams/"
         f"{range_name}/{SULLY_CHANNEL_ID}/%20/1/1/desc/{start}/{length}"
     )
     headers = {
-        **UA,
+        # Let curl_cffi supply its own browser headers when impersonating —
+        # overriding them breaks the fingerprint and re-triggers the challenge.
+        **({} if impersonating else UA),
+        "Accept": "application/json, text/javascript, */*; q=0.01",
         "Referer": SULLY_PAGE,
         "Timecode": page_info["timecode"],
+        "X-Requested-With": "XMLHttpRequest",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-origin",
     }
     response = session.get(url, headers=headers, timeout=30)
-    response.raise_for_status()
+    if response.status_code != 200:
+        challenged = "Just a moment" in response.text[:400]
+        raise RuntimeError(
+            f"stream table API returned http {response.status_code} for {range_name}"
+            + (" (Cloudflare challenge on /api/ — landing page cleared but the "
+               "API path did not)" if challenged else "")
+        )
     return response.json()
 
 
 def parse_sullygnome_streams():
-    page_info = parse_sully_page_info()
+    session, impersonation, response = open_sully_session()
+    if impersonation:
+        print(f"SullyGnome: landing page cleared via {impersonation} impersonation.")
+    if response is None:
+        raise RuntimeError("SullyGnome landing page could not be fetched at all")
+    page_info = parse_sully_page_info(response)
     filter_info = page_info.get("filterInfo", {})
     min_year = int(filter_info.get("minYear", 2017))
     max_year = int(filter_info.get("maxYear", datetime.utcnow().year))
-    session = requests.Session()
     rows_by_id = {}
     for year in range(min_year, max_year + 1):
         start = 0
         while True:
-            payload = fetch_sully_range(session, page_info, str(year), start=start)
+            payload = fetch_sully_range(
+                session, page_info, str(year), start=start, impersonating=bool(impersonation)
+            )
             data = payload.get("data", [])
             for item in data:
                 stream_id = str(item.get("streamId") or item.get("startDateTime"))
@@ -736,23 +791,9 @@ def main():
 
     degraded = []
 
-    try:
-        sully_rows = parse_sullygnome_streams()
-        print(f"SullyGnome: {len(sully_rows)} streams")
-    except Exception as e:
-        print(f"SullyGnome FAILED: {e}")
-        traceback.print_exc()
-        degraded.append(f"sullygnome: {e}")
-        # Don't abort: the other sources still carry recent streams. Fall back to
-        # the last good table and let TwitchMetrics backfill anything newer.
-        sully_rows = load_cached_sully_rows()
-        if not sully_rows:
-            print("No cached SullyGnome table to fall back on.")
-            if update_live_only(live_stream):
-                print("Exiting — live status updated, historical data unchanged.")
-            sys.exit(1)
-        print(f"SullyGnome: falling back to {len(sully_rows)} cached streams")
-
+    # TwitchMetrics is the primary source: it decides which streams exist and
+    # when. SullyGnome is fetched afterwards for game/viewer enrichment and deep
+    # history, and is allowed to fail.
     try:
         stream_logs = parse_twitchmetrics_stream_logs()
         print(f"TwitchMetrics stream logs: {len(stream_logs)}")
@@ -775,6 +816,24 @@ def main():
         key = row.get("id") or row["started_at"]
         exact_by_key[key] = {**exact_by_key.get(key, {}), **row}
     exact_rows = sorted(exact_by_key.values(), key=lambda r: r["started_at"])
+
+    # SullyGnome: enrichment only. Games, viewer counts and follower deltas come
+    # from here, plus the deep history TwitchMetrics does not expose. A failure
+    # costs metadata, not streams.
+    try:
+        sully_rows = parse_sullygnome_streams()
+        print(f"SullyGnome: {len(sully_rows)} streams")
+    except Exception as e:
+        print(f"SullyGnome unavailable, using cached table: {e}")
+        degraded.append(f"sullygnome: {e}")
+        sully_rows = load_cached_sully_rows()
+        print(f"SullyGnome: fell back to {len(sully_rows)} cached streams")
+
+    if not sully_rows and not exact_rows:
+        print("No stream data from any source — refusing to overwrite good data.")
+        if update_live_only(live_stream):
+            print("Exiting — live status updated, historical data unchanged.")
+        sys.exit(1)
 
     sully_rows = backfill_recent_from_exact(sully_rows, exact_rows)
 
@@ -948,10 +1007,10 @@ def main():
     print(f"Data through: {data_through}")
 
     if degraded:
-        # Files are already written, so the workflow can still commit what we got.
-        # Exiting non-zero makes the broken source visible instead of a green check.
-        print("DEGRADED: " + "; ".join(degraded))
-        sys.exit(2)
+        # Not an error exit: a degraded source is normal operation now, and a red
+        # run every 30 minutes is just noise. The site reports it instead, via the
+        # stale banner driven by degraded_sources.
+        print("DEGRADED (site will show the banner): " + "; ".join(degraded))
 
 
 if __name__ == "__main__":

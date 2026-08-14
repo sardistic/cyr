@@ -23,18 +23,12 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests yt-dlp
+        run: pip install requests yt-dlp curl_cffi
 
-      # Exit 2 means "wrote data, but a source was degraded" — keep going so the
-      # partial refresh still lands, then fail the job at the end.
+      # A degraded source is not a job failure — the site surfaces it via the
+      # stale banner. Only a total data failure exits non-zero.
       - name: Run data pipeline
-        id: pipeline
-        run: |
-          set +e
-          python scripts/build_dataset.py
-          code=$?
-          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
-          [ "$code" -eq 0 ] || [ "$code" -eq 2 ]
+        run: python scripts/build_dataset.py
 
       - name: Commit and push if data changed
         run: |
@@ -46,9 +40,3 @@ jobs:
             git commit -m "Auto-refresh stream data [$(date -u +%Y-%m-%dT%H:%MZ)]" &&
             git push
           )
-
-      - name: Fail if a source was degraded
-        if: steps.pipeline.outputs.exit_code == '2'
-        run: |
-          echo "::error::Data refreshed with degraded sources — see the pipeline step log."
-          exit 1
