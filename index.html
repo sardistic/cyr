@@ -931,6 +931,26 @@
       margin-bottom: 20px;
     }
     .live-banner.visible { display: flex; }
+
+    /* ── Stale-data Banner ── */
+    .stale-banner {
+      display: none;
+      align-items: baseline;
+      gap: 10px;
+      padding: 12px 20px;
+      background: linear-gradient(90deg, rgba(232,168,86,.12), rgba(232,168,86,.04));
+      border: 1px solid rgba(232,168,86,.38);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .stale-banner.visible { display: flex; flex-wrap: wrap; }
+    .stale-banner .stale-label {
+      font-weight: 850;
+      letter-spacing: .04em;
+      color: #e8a856;
+    }
     .live-dot {
       width: 10px; height: 10px;
       background: var(--green);
@@ -1196,6 +1216,11 @@
           <div class="live-meta" id="live-meta"></div>
         </div>
         <div class="live-viewers" id="live-viewers"></div>
+      </div>
+
+      <div class="stale-banner" id="stale-banner">
+        <span class="stale-label">DATA BEHIND</span>
+        <span id="stale-meta"></span>
       </div>
 
       <!-- 7-Day Schedule Forecast -->
@@ -2231,10 +2256,37 @@ composite                               ≈ <strong>55</strong></div>
       if (sn) {
         const total = (sources.sullygnome_stream_table || 2436).toLocaleString();
         const titles = (sources.youtube_archive_grouped_dates || 550).toLocaleString();
-        const genAt = new Date(D.generated_at || new Date()).toLocaleDateString('en-US', {
+        const fmtDay = d => d.toLocaleDateString('en-US', {
           timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric'
         });
-        sn.textContent = `${total} exact Sully streams · ${titles} title-semantic archive gaps · refreshed ${genAt}`;
+        const genAt = fmtDay(new Date(D.generated_at || new Date()));
+        // data_through is the newest stream in the data; generated_at is only when
+        // the build last ran, which stays current even when a source is broken.
+        const through = D.data_through ? fmtDay(new Date(D.data_through)) : null;
+        sn.textContent = `${total} exact Sully streams · ${titles} title-semantic archive gaps · `
+          + (through ? `data through ${through} · checked ${genAt}` : `refreshed ${genAt}`);
+      }
+
+      // ── Stale-data banner ──
+      const staleBanner = document.getElementById('stale-banner');
+      const staleMeta = document.getElementById('stale-meta');
+      if (staleBanner && staleMeta && D.data_through) {
+        const throughDate = new Date(D.data_through);
+        const checkedDate = new Date(D.generated_at || Date.now());
+        const behindDays = Math.floor((checkedDate - throughDate) / 86400000);
+        const degraded = D.degraded_sources || [];
+        // Trigger on a broken source, not on days-behind alone: cyr genuinely goes
+        // quiet for weeks sometimes, and that's a real gap, not missing data.
+        if (degraded.length) {
+          const names = degraded.map(d => String(d).split(':')[0]).join(', ');
+          staleMeta.textContent =
+            `Newest stream on record is ${throughDate.toLocaleDateString('en-US', {
+              timeZone: 'UTC', month: 'short', day: 'numeric'
+            })} (${behindDays} day${behindDays === 1 ? '' : 's'} ago). `
+            + (names ? `Upstream source unavailable: ${names}. ` : '')
+            + 'Newer streams may be missing, so forecasts below are running on incomplete data.';
+          staleBanner.classList.add('visible');
+        }
       }
 
       // ── Recent Evidence ──

@@ -6,7 +6,7 @@ import subprocess
 import sys
 import traceback
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
@@ -16,7 +16,14 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 DATA_DIR.mkdir(exist_ok=True)
 
-UA = {"User-Agent": "Mozilla/5.0"}
+UA = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
 CHANNEL_ID = "37522866"
 TWITCHMETRICS = f"https://www.twitchmetrics.net/c/{CHANNEL_ID}-cyr"
 YOUTUBE_ARCHIVE = "https://www.youtube.com/channel/UCtqSew92vbH79xuLLVssbIA/videos"
@@ -165,12 +172,40 @@ def parse_youtube_archive():
     return rows
 
 
+SULLY_PAGE_INFO_PATTERNS = (
+    r"var PageInfo = (.*?);",
+    r"var\s+PageInfo\s*=\s*(\{.*?\})\s*;",
+    r"\bPageInfo\s*=\s*(\{.*?\})\s*;",
+    r"window\.PageInfo\s*=\s*(\{.*?\})\s*;",
+)
+
+
 def parse_sully_page_info():
-    text = requests.get(SULLY_PAGE, headers=UA, timeout=30).text
-    match = re.search(r"var PageInfo = (.*?);", text)
-    if not match:
-        raise RuntimeError("Could not find SullyGnome PageInfo")
-    return json.loads(match.group(1))
+    response = requests.get(SULLY_PAGE, headers=UA, timeout=30)
+    text = response.text
+    for pattern in SULLY_PAGE_INFO_PATTERNS:
+        match = re.search(pattern, text, re.S)
+        if not match:
+            continue
+        try:
+            return json.loads(match.group(1))
+        except json.JSONDecodeError:
+            continue
+
+    # Last resort: pull the one field fetch_sully_range actually needs.
+    timecode = re.search(r'["\']timecode["\']\s*:\s*["\']([^"\']+)["\']', text)
+    if timecode:
+        print("SullyGnome: PageInfo block not found, recovered timecode only.")
+        return {"timecode": timecode.group(1), "filterInfo": {}}
+
+    # Log enough to diagnose a markup change or a bot challenge from the run log.
+    title = re.search(r"<title[^>]*>(.*?)</title>", text, re.S)
+    raise RuntimeError(
+        "Could not find SullyGnome PageInfo "
+        f"(http {response.status_code}, {len(text)} bytes, "
+        f"title={clean_html(title.group(1)) if title else 'none'!r}, "
+        f"head={text[:200]!r})"
+    )
 
 
 def parse_sully_games(value):
@@ -609,6 +644,66 @@ def analyze_games(sully_rows):
     }
 
 
+def load_cached_sully_rows():
+    """Reuse the last good SullyGnome table when the live scrape fails."""
+    json_path = DATA_DIR / "stream-data.json"
+    if not json_path.exists():
+        return []
+    try:
+        payload = json.loads(json_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return []
+    return payload.get("sully_streams") or []
+
+
+def backfill_recent_from_exact(sully_rows, exact_rows):
+    """Add streams that TwitchMetrics knows about but the Sully table is missing.
+
+    Without this a stale Sully table silently caps `last_stream` and the recent
+    timeline at whatever date the scrape last succeeded.
+    """
+    def to_dt(value):
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+    known = sorted(to_dt(r["started_at"]) for r in sully_rows if r.get("started_at"))
+    # VOD timestamps run a few seconds behind the Sully table's start time for the
+    # same stream, so match on a window rather than an exact timestamp.
+    tolerance = timedelta(minutes=15)
+    added = []
+    for row in exact_rows:
+        started = row.get("started_at")
+        if not started:
+            continue
+        started_dt = to_dt(started)
+        if any(abs(started_dt - k) < tolerance for k in reversed(known)):
+            continue
+        duration_seconds = row.get("duration_seconds") or 0
+        ended_dt = started_dt + timedelta(seconds=duration_seconds) if duration_seconds else None
+        added.append({
+            "source": "twitchmetrics_backfill",
+            "precision": "exact_vod_time",
+            "id": row.get("id"),
+            "started_at": started,
+            # parse_ended_at() re-reads this SullyGnome-style string downstream.
+            "ended_at": ended_dt.strftime("%A %d %B %Y %H:%M") if ended_dt else "",
+            "duration_label": f"{round(duration_seconds / 60)} minutes" if duration_seconds else "",
+            "duration_seconds": duration_seconds,
+            "title": row.get("title"),
+            "games": [],
+            "avg_viewers": None,
+            "peak_viewers": None,
+            "followers_gained": None,
+            "view_minutes": None,
+            "stream_url": f"https://www.twitch.tv/videos/{row['id']}" if row.get("id") else None,
+            "range": started[:4],
+        })
+        known.append(started_dt)
+    if added:
+        print(f"Backfilled {len(added)} recent stream(s) from TwitchMetrics: "
+              f"{', '.join(r['started_at'] for r in added)}")
+    return sorted(sully_rows + added, key=lambda r: r.get("started_at") or "")
+
+
 def update_live_only(live_stream):
     """Patch live_stream into existing data files without re-fetching all sources."""
     json_path = DATA_DIR / "stream-data.json"
@@ -617,9 +712,16 @@ def update_live_only(live_stream):
         return False
     payload = json.loads(json_path.read_text(encoding="utf-8"))
     payload["generated_at"] = datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+    payload["degraded_sources"] = ["all sources unavailable; live status only"]
     payload["stats"]["live_stream"] = live_stream
     (DATA_DIR / "stream-data.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
-    dash = {"generated_at": payload["generated_at"], "sources": payload["sources"], "stats": payload["stats"]}
+    dash = {
+        "generated_at": payload["generated_at"],
+        "data_through": payload.get("data_through"),
+        "degraded_sources": payload["degraded_sources"],
+        "sources": payload["sources"],
+        "stats": payload["stats"],
+    }
     (DATA_DIR / "stream-data.js").write_text("window.__SD=" + json.dumps(dash) + ";", encoding="utf-8")
     print(f"Patched live_stream in existing data (generated_at: {payload['generated_at']}).")
     return True
@@ -632,16 +734,24 @@ def main():
     else:
         print("Not live right now.")
 
+    degraded = []
+
     try:
         sully_rows = parse_sullygnome_streams()
         print(f"SullyGnome: {len(sully_rows)} streams")
     except Exception as e:
         print(f"SullyGnome FAILED: {e}")
         traceback.print_exc()
-        if update_live_only(live_stream):
-            print("Exiting cleanly — live status updated, historical data unchanged.")
-            return
-        sys.exit(1)
+        degraded.append(f"sullygnome: {e}")
+        # Don't abort: the other sources still carry recent streams. Fall back to
+        # the last good table and let TwitchMetrics backfill anything newer.
+        sully_rows = load_cached_sully_rows()
+        if not sully_rows:
+            print("No cached SullyGnome table to fall back on.")
+            if update_live_only(live_stream):
+                print("Exiting — live status updated, historical data unchanged.")
+            sys.exit(1)
+        print(f"SullyGnome: falling back to {len(sully_rows)} cached streams")
 
     try:
         stream_logs = parse_twitchmetrics_stream_logs()
@@ -649,6 +759,7 @@ def main():
     except Exception as e:
         print(f"TwitchMetrics stream logs FAILED (skipping): {e}")
         traceback.print_exc()
+        degraded.append(f"twitchmetrics_stream_logs: {e}")
         stream_logs = []
 
     try:
@@ -657,6 +768,7 @@ def main():
     except Exception as e:
         print(f"TwitchMetrics VODs FAILED (skipping): {e}")
         traceback.print_exc()
+        degraded.append(f"twitchmetrics_vods: {e}")
         vods = []
     exact_by_key = {}
     for row in vods + stream_logs:
@@ -664,12 +776,15 @@ def main():
         exact_by_key[key] = {**exact_by_key.get(key, {}), **row}
     exact_rows = sorted(exact_by_key.values(), key=lambda r: r["started_at"])
 
+    sully_rows = backfill_recent_from_exact(sully_rows, exact_rows)
+
     try:
         archive_segments = parse_youtube_archive()
         print(f"YouTube archive: {len(archive_segments)} segments")
     except Exception as e:
         print(f"YouTube archive FAILED (skipping): {e}")
         traceback.print_exc()
+        degraded.append(f"youtube_archive: {e}")
         archive_segments = []
     archive_groups = group_archive_segments(archive_segments)
     archive_dates = [g["date"] for g in archive_groups]
@@ -682,8 +797,16 @@ def main():
     sully_monthly = Counter(r["started_at"][:7] for r in sully_rows if r.get("started_at"))
     sully_yearly = Counter(r["started_at"][:4] for r in sully_rows if r.get("started_at"))
 
+    data_through = max(
+        (r["started_at"] for r in sully_rows if r.get("started_at")),
+        default=None,
+    )
+
     payload = {
         "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
+        # Newest stream actually in the data, as opposed to when the build ran.
+        "data_through": data_through,
+        "degraded_sources": degraded,
         "sources": {
             "sullygnome_stream_table": len(sully_rows),
             "twitchmetrics_stream_logs": len(stream_logs),
@@ -745,7 +868,13 @@ def main():
 
     (DATA_DIR / "stream-data.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
-    dash = {"generated_at": payload["generated_at"], "sources": payload["sources"], "stats": payload["stats"]}
+    dash = {
+        "generated_at": payload["generated_at"],
+        "data_through": payload["data_through"],
+        "degraded_sources": payload["degraded_sources"],
+        "sources": payload["sources"],
+        "stats": payload["stats"],
+    }
     (DATA_DIR / "stream-data.js").write_text("window.__SD=" + json.dumps(dash) + ";", encoding="utf-8")
 
     with (DATA_DIR / "exact-streams.csv").open("w", newline="", encoding="utf-8") as f:
@@ -816,6 +945,13 @@ def main():
     print(json.dumps(payload["stats"]["exact_gap_hours"], indent=2))
     print(json.dumps(payload["stats"]["archive_gap_days"], indent=2))
     print(json.dumps(payload["stats"]["semantic_analysis"], indent=2))
+    print(f"Data through: {data_through}")
+
+    if degraded:
+        # Files are already written, so the workflow can still commit what we got.
+        # Exiting non-zero makes the broken source visible instead of a green check.
+        print("DEGRADED: " + "; ".join(degraded))
+        sys.exit(2)
 
 
 if __name__ == "__main__":
