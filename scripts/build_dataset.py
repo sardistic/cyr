@@ -130,6 +130,35 @@ def clean_html(value):
     return html.unescape(re.sub(r"<.*?>", "", value or "")).strip()
 
 
+TM_BLOCK_MARK = '<li class="list-group-item d-block">'
+
+
+def twitchmetrics_blocks(text):
+    """Split TwitchMetrics list items on the block marker.
+
+    Matching with a `(.*?)</li>` regex stops at the first *nested* </li> — the
+    per-game breakdown inside each entry — which silently cuts the block off
+    before the avg/peak viewer figures that follow it.
+    """
+    return text.split(TM_BLOCK_MARK)[1:]
+
+
+def parse_int(value):
+    return int(value.replace(",", "").replace("+", "")) if value else None
+
+
+def block_viewer_stats(block):
+    """avg/peak viewers from a TwitchMetrics entry; the numbers sit in sibling
+    elements from their labels, so match against the tag-stripped text."""
+    flat = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", block))
+    avg = re.search(r"([\d,]+) avg viewers", flat)
+    peak = re.search(r"([\d,]+) peak viewers", flat)
+    return (
+        parse_int(avg.group(1)) if avg else None,
+        parse_int(peak.group(1)) if peak else None,
+    )
+
+
 def duration_to_seconds(value):
     if not value:
         return 0
@@ -146,9 +175,8 @@ def duration_to_seconds(value):
 
 def parse_twitchmetrics_stream_logs():
     text = requests.get(f"{TWITCHMETRICS}/streams", headers=UA, timeout=30).text
-    blocks = re.findall(r'<li class="list-group-item d-block">(.*?)</li>', text, re.S)
     rows = []
-    for block in blocks:
+    for block in twitchmetrics_blocks(text):
         title = re.search(r"<h6[^>]*>\s*(.*?)\s*</h6>", block, re.S)
         time_match = re.search(
             r'<time[^>]*datetime="([^"]+)"[^>]*>(.*?)</time>\s*-\s*streamed for\s*([^<\n]+)',
@@ -158,6 +186,7 @@ def parse_twitchmetrics_stream_logs():
         vod = re.search(r'href="https://www\.twitch\.tv/videos/(\d+)"', block)
         if not title or not time_match:
             continue
+        avg_viewers, peak_viewers = block_viewer_stats(block)
         rows.append(
             {
                 "source": "twitchmetrics_stream_log",
@@ -168,17 +197,18 @@ def parse_twitchmetrics_stream_logs():
                 "duration_seconds": None,
                 "title": clean_html(title.group(1)),
                 "views": None,
+                "avg_viewers": avg_viewers,
+                "peak_viewers": peak_viewers,
             }
         )
     return rows
 
 
 def parse_twitchmetrics_vods():
-    blocks_re = re.compile(r'<li class="list-group-item d-block">(.*?)</li>', re.S)
     rows_by_id = {}
     for query in ["", "?sort=published_at-desc", "?page=2", "?page=2&sort=published_at-desc"]:
         text = requests.get(f"{TWITCHMETRICS}/videos{query}", headers=UA, timeout=30).text
-        for block in blocks_re.findall(text):
+        for block in twitchmetrics_blocks(text):
             vod = re.search(r'href="https://www\.twitch\.tv/videos/(\d+)"', block)
             duration = re.search(r"<samp>\s*([^<]+?)\s*</samp>", block, re.S)
             title = re.search(r"<h5[^>]*>\s*(.*?)\s*</h5>", block, re.S)
@@ -811,6 +841,36 @@ def attach_vod_games(rows, vod_index):
     return filled
 
 
+def attach_viewer_stats(rows, exact_rows):
+    """Fill missing avg/peak viewers from TwitchMetrics stream logs.
+
+    Only fills rows that have none — SullyGnome's figures win where they exist.
+    The two sources poll independently and disagree by a few percent, so mixing
+    them within one stream would be worse than leaving a gap.
+    """
+    stats = {}
+    for row in exact_rows:
+        if row.get("avg_viewers") is None and row.get("peak_viewers") is None:
+            continue
+        if row.get("started_at"):
+            stats[row["started_at"][:13]] = row
+    if not stats:
+        return 0
+    filled = 0
+    for row in rows:
+        if row.get("avg_viewers") is not None or not row.get("started_at"):
+            continue
+        match = stats.get(row["started_at"][:13])
+        if not match:
+            continue
+        row["avg_viewers"] = match.get("avg_viewers")
+        row["peak_viewers"] = match.get("peak_viewers")
+        filled += 1
+    if filled:
+        print(f"Filled viewer figures for {filled} stream(s) from TwitchMetrics")
+    return filled
+
+
 def backfill_recent_from_exact(sully_rows, exact_rows):
     """Add streams that TwitchMetrics knows about but the Sully table is missing.
 
@@ -946,6 +1006,8 @@ def main():
         print(f"Twitch VOD game lookup FAILED (skipping): {e}")
         traceback.print_exc()
         degraded.append(f"twitch_vod_games: {e}")
+
+    attach_viewer_stats(sully_rows, exact_rows)
 
     try:
         archive_segments = parse_youtube_archive()
