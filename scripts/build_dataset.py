@@ -65,6 +65,67 @@ def fetch_twitch_live():
         return None
 
 
+def gql(query):
+    if query.count("{") != query.count("}"):
+        raise RuntimeError(f"unbalanced GQL query braces: {query}")
+    r = requests.post(TWITCH_GQL, headers={"Client-Id": TWITCH_CLIENT_ID}, json={"query": query}, timeout=20)
+    r.raise_for_status()
+    payload = r.json()
+    if payload.get("errors"):
+        raise RuntimeError(f"GQL errors: {payload['errors']}")
+    return payload.get("data") or {}
+
+
+def fetch_vod_game_index(limit=100):
+    """Game lists per VOD, from Twitch's own GQL — no auth, no Cloudflare.
+
+    SullyGnome used to be the only source of per-stream games. Twitch exposes the
+    same thing: a VOD's base game, plus chapter markers when the game changed
+    mid-stream. Spot-checked against SullyGnome's old records and they match.
+
+    Returns {vod_id: {"started_at": iso, "games": [...]}}; games may be a single
+    entry when the stream never switched category.
+    """
+    # Plain concatenation, not an f-string: these queries are mostly braces and
+    # f-string escaping makes them unreadable and easy to get wrong.
+    query = (
+        '{user(login:"cyr"){videos(first:' + str(limit) + ",type:ARCHIVE,sort:TIME){edges{node{"
+        "id createdAt game{name}"
+        "}}}}}"
+    )
+    data = gql(query)
+    edges = (((data.get("user") or {}).get("videos") or {}).get("edges")) or []
+    index = {}
+    for edge in edges:
+        node = edge.get("node") or {}
+        if not node.get("id"):
+            continue
+        base = (node.get("game") or {}).get("name")
+        index[str(node["id"])] = {
+            "started_at": node.get("createdAt"),
+            "games": [base] if base else [],
+        }
+    return index
+
+
+def fetch_vod_games_detail(vod_id):
+    """Full ordered game list for one VOD via its chapter markers."""
+    query = (
+        '{video(id:"' + str(vod_id) + '"){moments(first:50,momentRequestType:VIDEO_CHAPTER_MARKERS){edges{node{'
+        "description details{... on GameChangeMomentDetails{game{name}}}"
+        "}}}}}"
+    )
+    data = gql(query)
+    edges = ((((data.get("video") or {}).get("moments")) or {}).get("edges")) or []
+    games = []
+    for edge in edges:
+        node = edge.get("node") or {}
+        name = (((node.get("details") or {}).get("game")) or {}).get("name") or node.get("description")
+        if name and name not in games:
+            games.append(name)
+    return games
+
+
 def clean_html(value):
     return html.unescape(re.sub(r"<.*?>", "", value or "")).strip()
 
@@ -711,6 +772,45 @@ def load_cached_sully_rows():
     return payload.get("sully_streams") or []
 
 
+def attach_vod_games(rows, vod_index):
+    """Fill empty `games` from Twitch VOD data, keyed by VOD id then start time.
+
+    Only touches rows that have no games — SullyGnome's list wins where it exists,
+    since it also carries the viewer/follower figures alongside.
+    """
+    if not vod_index:
+        return 0
+    by_time = {
+        v["started_at"][:13]: (vid, v)
+        for vid, v in vod_index.items()
+        if v.get("started_at")
+    }
+    filled = 0
+    for row in rows:
+        if row.get("games"):
+            continue
+        vid, entry = None, None
+        if row.get("id") and str(row["id"]) in vod_index:
+            vid, entry = str(row["id"]), vod_index[str(row["id"])]
+        elif row.get("started_at") and row["started_at"][:13] in by_time:
+            vid, entry = by_time[row["started_at"][:13]]
+        if not entry:
+            continue
+        games = entry["games"]
+        try:
+            detailed = fetch_vod_games_detail(vid)
+            if detailed:
+                games = detailed
+        except Exception as e:  # noqa: BLE001 - markers are a bonus, base game still applies
+            print(f"  VOD {vid} chapter markers unavailable ({type(e).__name__}), using base game")
+        if games:
+            row["games"] = games
+            filled += 1
+    if filled:
+        print(f"Filled games for {filled} stream(s) from Twitch VOD data")
+    return filled
+
+
 def backfill_recent_from_exact(sully_rows, exact_rows):
     """Add streams that TwitchMetrics knows about but the Sully table is missing.
 
@@ -836,6 +936,16 @@ def main():
         sys.exit(1)
 
     sully_rows = backfill_recent_from_exact(sully_rows, exact_rows)
+
+    # Games for anything SullyGnome could not describe, straight from Twitch.
+    try:
+        vod_index = fetch_vod_game_index()
+        print(f"Twitch VOD game index: {len(vod_index)} VODs")
+        attach_vod_games(sully_rows, vod_index)
+    except Exception as e:
+        print(f"Twitch VOD game lookup FAILED (skipping): {e}")
+        traceback.print_exc()
+        degraded.append(f"twitch_vod_games: {e}")
 
     try:
         archive_segments = parse_youtube_archive()

@@ -2292,8 +2292,8 @@ composite                               ≈ <strong>55</strong></div>
             + (streamsAtRisk
               ? `Newest stream on record is ${throughLabel} (${behindDays} day${behindDays === 1 ? '' : 's'} ago); `
                 + 'newer streams may be missing, so forecasts are running on incomplete data.'
-              : 'Stream times are current, but game and viewer figures may be missing '
-                + 'from the most recent streams.');
+              : 'Stream times and games are current; viewer and follower figures may be '
+                + 'missing from the most recent streams.');
           staleBanner.classList.add('visible');
         }
       }
