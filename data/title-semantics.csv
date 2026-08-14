@@ -358,7 +358,7 @@ date,gap_days,features,sentiment,sentiment_score,intensity,intensity_score
 2025-02-27,1,gameplay_arc,neutral,1,medium,1
 2025-02-28,3,gameplay_arc,neutral,0,medium,1
 2025-03-03,1,unclassified,neutral,0,medium,1
-2025-03-04,1,"gameplay_arc, collab",neutral,1,high,3
+2025-03-04,1,"gameplay_arc, collab",neutral,1,high,4
 2025-03-05,1,"food_cooking, return_marker",neutral,0,medium,1
 2025-03-06,1,unclassified,neutral,0,medium,2
 2025-03-07,3,"collab, food_cooking",neutral,0,medium,1
@@ -547,4 +547,63 @@ date,gap_days,features,sentiment,sentiment_score,intensity,intensity_score
 2026-02-17,3,collab,neutral,0,medium,2
 2026-02-20,1,unclassified,neutral,0,medium,1
 2026-02-21,1,unclassified,neutral,0,high,4
-2026-02-22,1,food_cooking,neutral,0,medium,2
+2026-02-22,1,"food_cooking, recovery_risk",neutral,0,high,4
+2026-02-23,1,travel_irl,neutral,0,medium,1
+2026-02-24,1,"collab, challenge, recovery_risk",neutral,1,high,4
+2026-02-25,1,"gameplay_arc, collab, event_drops, travel_irl, food_cooking, recovery_risk",positive,4,high,4
+2026-02-26,1,recovery_risk,neutral,0,high,4
+2026-02-27,1,recovery_risk,neutral,0,high,3
+2026-02-28,2,unclassified,neutral,0,medium,1
+2026-03-02,2,recovery_risk,neutral,0,medium,1
+2026-03-04,7,unclassified,neutral,0,low,0
+2026-03-11,1,unclassified,neutral,0,medium,2
+2026-03-12,1,gameplay_arc,negative,-1,medium,2
+2026-03-13,2,unclassified,neutral,0,medium,1
+2026-03-15,1,unclassified,neutral,0,medium,1
+2026-03-16,22,unclassified,neutral,1,medium,1
+2026-04-07,1,gameplay_arc,neutral,0,low,0
+2026-04-08,1,gameplay_arc,neutral,0,low,0
+2026-04-09,15,"gameplay_arc, collab",neutral,0,medium,2
+2026-04-24,6,food_cooking,neutral,0,low,0
+2026-04-30,4,unclassified,negative,-1,medium,2
+2026-05-04,2,unclassified,neutral,0,medium,1
+2026-05-06,10,unclassified,neutral,0,medium,1
+2026-05-16,7,gameplay_arc,neutral,1,low,0
+2026-05-23,2,unclassified,neutral,0,medium,1
+2026-05-25,3,unclassified,neutral,0,medium,1
+2026-05-28,1,collab,neutral,0,medium,1
+2026-05-29,4,gameplay_arc,neutral,1,medium,1
+2026-06-02,1,return_marker,negative,-1,medium,1
+2026-06-03,2,gameplay_arc,negative,-1,medium,2
+2026-06-05,2,unclassified,neutral,0,medium,1
+2026-06-07,4,gameplay_arc,neutral,0,high,3
+2026-06-11,1,collab,neutral,1,high,4
+2026-06-12,3,food_cooking,neutral,0,medium,1
+2026-06-15,2,unclassified,neutral,0,medium,2
+2026-06-17,1,travel_irl,neutral,0,medium,1
+2026-06-18,5,food_cooking,neutral,0,medium,2
+2026-06-23,1,unclassified,negative,-1,high,3
+2026-06-24,1,"gameplay_arc, food_cooking",neutral,0,medium,1
+2026-06-25,2,collab,neutral,0,high,3
+2026-06-27,2,gameplay_arc,neutral,1,medium,2
+2026-06-29,2,unclassified,neutral,0,medium,1
+2026-07-01,7,collab,neutral,0,high,3
+2026-07-08,1,"gameplay_arc, collab, food_cooking",neutral,0,high,3
+2026-07-09,1,"gameplay_arc, food_cooking",neutral,0,high,4
+2026-07-10,2,gameplay_arc,neutral,0,medium,2
+2026-07-12,1,gameplay_arc,neutral,0,medium,2
+2026-07-13,1,gameplay_arc,neutral,0,medium,1
+2026-07-14,2,collab,neutral,0,medium,1
+2026-07-16,1,collab,neutral,0,medium,1
+2026-07-17,3,unclassified,neutral,0,medium,1
+2026-07-20,3,unclassified,negative,-1,high,3
+2026-07-23,1,collab,neutral,1,medium,2
+2026-07-24,3,"collab, food_cooking",neutral,0,medium,1
+2026-07-27,1,"gameplay_arc, food_cooking",neutral,0,high,4
+2026-07-28,1,unclassified,neutral,0,high,3
+2026-07-29,1,"food_cooking, return_marker",neutral,0,medium,2
+2026-07-30,1,unclassified,neutral,0,high,3
+2026-07-31,4,"gameplay_arc, food_cooking, return_marker, recovery_risk",neutral,0,high,4
+2026-08-04,1,recovery_risk,neutral,1,high,3
+2026-08-05,1,recovery_risk,neutral,0,medium,2
+2026-08-06,1,unclassified,neutral,1,medium,2

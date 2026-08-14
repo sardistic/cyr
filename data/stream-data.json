@@ -1,44 +1,48 @@
 {
-  "generated_at": "2026-08-14T07:23:47Z",
+  "generated_at": "2026-08-14T08:04:58Z",
+  "data_through": "2026-08-10T17:38:27Z",
+  "degraded_sources": [
+    "sullygnome: Could not find SullyGnome PageInfo (http 403, 5690 bytes, title='Just a moment...', head='<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam')"
+  ],
   "sources": {
-    "sullygnome_stream_table": 2458,
+    "sullygnome_stream_table": 2464,
     "twitchmetrics_stream_logs": 15,
-    "twitchmetrics_vods": 32,
-    "exact_merged_rows": 32,
-    "youtube_archive_segments": 1101,
-    "youtube_archive_grouped_dates": 601
+    "twitchmetrics_vods": 31,
+    "exact_merged_rows": 36,
+    "youtube_archive_segments": 1123,
+    "youtube_archive_grouped_dates": 609
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2457,
-      "mean": 27.94,
+      "count": 2463,
+      "mean": 27.96,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 481,
-        "12-24h": 1253,
+        "12-24h": 1257,
         "1-2d": 418,
-        "2-3d": 173,
-        "3-5d": 101,
+        "2-3d": 174,
+        "3-5d": 102,
         "5-7d": 15,
         "7+d": 16
       }
     },
     "exact_gap_hours": {
-      "count": 31,
-      "mean": 44.03,
-      "median": 28.8,
+      "count": 35,
+      "mean": 43.61,
+      "median": 28.68,
       "max": 138.03
     },
     "archive_gap_days": {
-      "count": 600,
-      "mean": 2.67,
+      "count": 608,
+      "mean": 2.65,
       "median": 1.0,
       "max": 81,
       "bins": {
-        "1": 322,
+        "1": 329,
         "2": 114,
-        "3": 60,
+        "3": 61,
         "4-5": 57,
         "6-7": 20,
         "8-14": 15,
@@ -95,7 +99,8 @@
       "2026-04": 5,
       "2026-05": 7,
       "2026-06": 14,
-      "2026-07": 13
+      "2026-07": 17,
+      "2026-08": 4
     },
     "sully_monthly_counts": {
       "2017-01": 1,
@@ -210,7 +215,8 @@
       "2026-04": 17,
       "2026-05": 19,
       "2026-06": 16,
-      "2026-07": 17
+      "2026-07": 18,
+      "2026-08": 5
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -222,15 +228,15 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 122
+      "2026": 128
     },
     "dow_hour": {
       "dow": {
-        "Mon": 439,
-        "Tue": 400,
-        "Wed": 434,
-        "Thu": 388,
-        "Fri": 350,
+        "Mon": 440,
+        "Tue": 401,
+        "Wed": 435,
+        "Thu": 389,
+        "Fri": 352,
         "Sat": 242,
         "Sun": 205
       },
@@ -250,12 +256,12 @@
         "12": 1,
         "13": 10,
         "14": 12,
-        "15": 21,
-        "16": 77,
-        "17": 167,
-        "18": 168,
-        "19": 175,
-        "20": 257,
+        "15": 22,
+        "16": 78,
+        "17": 168,
+        "18": 169,
+        "19": 176,
+        "20": 258,
         "21": 292,
         "22": 282,
         "23": 247
@@ -268,23 +274,23 @@
       ],
       [
         3,
-        6.47
+        6.46
       ],
       [
         6,
-        9.28
+        9.26
       ],
       [
         9,
-        10.87
+        10.84
       ],
       [
         12,
-        19.74
+        19.69
       ],
       [
         15,
-        33.58
+        33.54
       ],
       [
         18,
@@ -292,47 +298,47 @@
       ],
       [
         21,
-        63.86
+        63.87
       ],
       [
         24,
-        70.61
+        70.6
       ],
       [
         30,
-        74.44
+        74.42
       ],
       [
         36,
-        76.48
+        76.45
       ],
       [
         42,
-        81.85
+        81.81
       ],
       [
         48,
-        87.63
+        87.58
       ],
       [
         54,
-        89.05
+        89.0
       ],
       [
         60,
-        89.7
+        89.65
       ],
       [
         66,
-        92.1
+        92.04
       ],
       [
         72,
-        94.63
+        94.6
       ],
       [
         84,
-        95.52
+        95.53
       ],
       [
         96,
@@ -352,7 +358,7 @@
       ],
       [
         144,
-        99.06
+        99.07
       ],
       [
         156,
@@ -380,36 +386,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 19.6,
-        "started_at": "2026-06-26T00:03:27Z",
-        "game": "Just Chatting"
-      },
-      {
-        "gap_h": 17.7,
-        "started_at": "2026-06-27T02:39:53Z",
-        "game": "Just Chatting"
-      },
-      {
-        "gap_h": 66.2,
-        "started_at": "2026-06-29T23:59:38Z",
-        "game": "Just Chatting"
-      },
-      {
-        "gap_h": 42.8,
-        "started_at": "2026-07-01T23:20:07Z",
-        "game": "Just Chatting"
-      },
-      {
-        "gap_h": 19.8,
-        "started_at": "2026-07-03T01:49:58Z",
-        "game": "Just Chatting"
-      },
-      {
-        "gap_h": 131.6,
-        "started_at": "2026-07-08T19:51:55Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 18.1,
         "started_at": "2026-07-09T20:23:05Z",
@@ -479,86 +455,39 @@
         "gap_h": 18.3,
         "started_at": "2026-07-30T19:18:57Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 17.2,
+        "started_at": "2026-07-31T19:55:57Z",
+        "game": ""
+      },
+      {
+        "gap_h": 82.3,
+        "started_at": "2026-08-04T15:06:20Z",
+        "game": ""
+      },
+      {
+        "gap_h": 20.5,
+        "started_at": "2026-08-05T20:08:32Z",
+        "game": ""
+      },
+      {
+        "gap_h": 12.4,
+        "started_at": "2026-08-06T18:32:00Z",
+        "game": ""
+      },
+      {
+        "gap_h": 16.3,
+        "started_at": "2026-08-07T16:26:31Z",
+        "game": ""
+      },
+      {
+        "gap_h": 68.9,
+        "started_at": "2026-08-10T17:38:27Z",
+        "game": ""
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-07-18T00:15:19Z",
-        "ended_at_iso": "2026-07-18T04:30:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Rainbow Six Siege"
-        ],
-        "duration_h": 4.2,
-        "duration_label": "255 minutes",
-        "avg_viewers": 1505,
-        "peak_viewers": 1746,
-        "followers_gained": -30
-      },
-      {
-        "started_at": "2026-07-20T21:08:40Z",
-        "ended_at_iso": "2026-07-21T02:15:00+00:00",
-        "games": [
-          "Just Chatting",
-          "How to Make an Atomic Bomb in Your Garden"
-        ],
-        "duration_h": 5.1,
-        "duration_label": "307 minutes",
-        "avg_viewers": 1486,
-        "peak_viewers": 1739,
-        "followers_gained": -52
-      },
-      {
-        "started_at": "2026-07-23T20:56:27Z",
-        "ended_at_iso": "2026-07-24T02:00:00+00:00",
-        "games": [
-          "Just Chatting"
-        ],
-        "duration_h": 5.1,
-        "duration_label": "304 minutes",
-        "avg_viewers": 1558,
-        "peak_viewers": 1742,
-        "followers_gained": -39
-      },
-      {
-        "started_at": "2026-07-25T01:44:44Z",
-        "ended_at_iso": "2026-07-25T06:30:00+00:00",
-        "games": [
-          "Just Chatting"
-        ],
-        "duration_h": 4.8,
-        "duration_label": "286 minutes",
-        "avg_viewers": 1576,
-        "peak_viewers": 1753,
-        "followers_gained": -25
-      },
-      {
-        "started_at": "2026-07-27T20:13:04Z",
-        "ended_at_iso": "2026-07-28T00:15:00+00:00",
-        "games": [
-          "Just Chatting",
-          "How to Make an Atomic Bomb in Your Garden",
-          "Dirty Business"
-        ],
-        "duration_h": 4.0,
-        "duration_label": "242 minutes",
-        "avg_viewers": 2251,
-        "peak_viewers": 2500,
-        "followers_gained": -29
-      },
-      {
-        "started_at": "2026-07-28T19:42:04Z",
-        "ended_at_iso": "2026-07-29T03:45:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Dirty Business"
-        ],
-        "duration_h": 8.1,
-        "duration_label": "483 minutes",
-        "avg_viewers": 2330,
-        "peak_viewers": 2500,
-        "followers_gained": -76
-      },
       {
         "started_at": "2026-07-29T19:50:46Z",
         "ended_at_iso": "2026-07-30T01:00:00+00:00",
@@ -584,30 +513,87 @@
         "avg_viewers": 2387,
         "peak_viewers": 3036,
         "followers_gained": -37
+      },
+      {
+        "started_at": "2026-07-31T19:55:57Z",
+        "ended_at_iso": "2026-08-01T04:48:00+00:00",
+        "games": [],
+        "duration_h": 8.9,
+        "duration_label": "532 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-04T15:06:20Z",
+        "ended_at_iso": "2026-08-04T23:37:00+00:00",
+        "games": [],
+        "duration_h": 8.5,
+        "duration_label": "511 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-05T20:08:32Z",
+        "ended_at_iso": "2026-08-06T06:08:00+00:00",
+        "games": [],
+        "duration_h": 10.0,
+        "duration_label": "600 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-06T18:32:00Z",
+        "ended_at_iso": "2026-08-07T00:11:00+00:00",
+        "games": [],
+        "duration_h": 5.7,
+        "duration_label": "339 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-07T16:26:31Z",
+        "ended_at_iso": "2026-08-07T20:47:00+00:00",
+        "games": [],
+        "duration_h": 4.3,
+        "duration_label": "260 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-10T17:38:27Z",
+        "ended_at_iso": "2026-08-10T20:30:00+00:00",
+        "games": [],
+        "duration_h": 2.9,
+        "duration_label": "172 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-07-30T19:18:57Z",
-      "ended_at_iso": "2026-07-31T02:45:00+00:00",
-      "games": [
-        "Just Chatting",
-        "Project Zomboid"
-      ],
-      "duration_label": "447 minutes"
+      "started_at": "2026-08-10T17:38:27Z",
+      "ended_at_iso": "2026-08-10T20:30:00+00:00",
+      "games": [],
+      "duration_label": "172 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 600,
+        "sample_size": 608,
         "features": {
           "challenge": {
             "count": 19,
-            "share": 3.2,
+            "share": 3.1,
             "median_gap_days": 1,
             "p90_gap_days": 4.2
           },
           "collab": {
             "count": 202,
-            "share": 33.7,
+            "share": 33.2,
             "median_gap_days": 2.0,
             "p90_gap_days": 5.0
           },
@@ -618,52 +604,52 @@
             "p90_gap_days": 2.2
           },
           "food_cooking": {
-            "count": 91,
-            "share": 15.2,
-            "median_gap_days": 1,
+            "count": 94,
+            "share": 15.5,
+            "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           },
           "gameplay_arc": {
-            "count": 346,
-            "share": 57.7,
+            "count": 348,
+            "share": 57.2,
             "median_gap_days": 1.0,
             "p90_gap_days": 4.0
           },
           "recovery_risk": {
-            "count": 34,
-            "share": 5.7,
-            "median_gap_days": 2.0,
-            "p90_gap_days": 4.7
+            "count": 37,
+            "share": 6.1,
+            "median_gap_days": 2,
+            "p90_gap_days": 4.4
           },
           "return_marker": {
-            "count": 19,
-            "share": 3.2,
+            "count": 21,
+            "share": 3.5,
             "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
           "travel_irl": {
             "count": 62,
-            "share": 10.3,
+            "share": 10.2,
             "median_gap_days": 2.0,
             "p90_gap_days": 4.9
           },
           "unclassified": {
-            "count": 93,
-            "share": 15.5,
-            "median_gap_days": 1,
+            "count": 96,
+            "share": 15.8,
+            "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           }
         },
         "sentiment": {
           "negative": {
             "count": 33,
-            "share": 5.5,
+            "share": 5.4,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 561,
-            "share": 93.5,
+            "count": 569,
+            "share": 93.6,
             "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
@@ -676,21 +662,21 @@
         },
         "intensity": {
           "high": {
-            "count": 35,
-            "share": 5.8,
-            "median_gap_days": 1,
-            "p90_gap_days": 2.0
+            "count": 40,
+            "share": 6.6,
+            "median_gap_days": 1.0,
+            "p90_gap_days": 2.1
           },
           "low": {
             "count": 204,
-            "share": 34.0,
+            "share": 33.6,
             "median_gap_days": 2.0,
             "p90_gap_days": 6.0
           },
           "medium": {
-            "count": 361,
-            "share": 60.2,
-            "median_gap_days": 1,
+            "count": 364,
+            "share": 59.9,
+            "median_gap_days": 1.0,
             "p90_gap_days": 4.0
           }
         }
@@ -699,21 +685,21 @@
         "categories": {
           "Just Chatting only": {
             "count": 483,
-            "share": 19.7,
+            "share": 19.6,
             "median_gap_hours": 26.66,
             "p90_gap_hours": 72.59,
             "avg_viewers": 3728.0
           },
           "Other games": {
-            "count": 675,
-            "share": 27.5,
+            "count": 676,
+            "share": 27.4,
             "median_gap_hours": 25.36,
-            "p90_gap_hours": 72.07,
+            "p90_gap_hours": 72.04,
             "avg_viewers": 2449.0
           },
           "Social sandbox/RP": {
             "count": 1053,
-            "share": 42.9,
+            "share": 42.8,
             "median_gap_hours": 23.88,
             "p90_gap_hours": 48.28,
             "avg_viewers": 1601.0
@@ -724,6 +710,13 @@
             "median_gap_hours": 23.9,
             "p90_gap_hours": 81.69,
             "avg_viewers": 2321.0
+          },
+          "Unknown": {
+            "count": 5,
+            "share": 0.2,
+            "median_gap_hours": 29.04,
+            "p90_gap_hours": 83.98,
+            "avg_viewers": 0
           },
           "Variety stack": {
             "count": 227,
@@ -736,7 +729,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1582
+            "count": 1583
           },
           {
             "game": "Grand Theft Auto V",
@@ -49285,43 +49278,115 @@
       "view_minutes": 1066989,
       "stream_url": "https://sullygnome.com/channel/stream/320600272217",
       "range": "2026"
+    },
+    {
+      "source": "twitchmetrics_backfill",
+      "precision": "exact_vod_time",
+      "id": "2833818604",
+      "started_at": "2026-07-31T19:55:57Z",
+      "ended_at": "Saturday 01 August 2026 04:48",
+      "duration_label": "532 minutes",
+      "duration_seconds": 31950,
+      "title": "that scene in INDEPENDANCE DAY when the guy goes \"i'm BAAAACK\" and flies into the mothership- except it's me and your mom",
+      "games": [],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2833818604",
+      "range": "2026"
+    },
+    {
+      "source": "twitchmetrics_backfill",
+      "precision": "exact_vod_time",
+      "id": "2837053784",
+      "started_at": "2026-08-04T15:06:20Z",
+      "ended_at": "Tuesday 04 August 2026 23:37",
+      "duration_label": "511 minutes",
+      "duration_seconds": 30670,
+      "title": "GOOD MORNING! SEEING HOW MANY ZOMBIES I CAN KILL IN ZOMBOID - LATER I ATTEMPT TO MAKE MY \"OHIO BEEF WELLINGTON\"",
+      "games": [],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2837053784",
+      "range": "2026"
+    },
+    {
+      "source": "twitchmetrics_backfill",
+      "precision": "exact_vod_time",
+      "id": "2838173376",
+      "started_at": "2026-08-05T20:08:32Z",
+      "ended_at": "Thursday 06 August 2026 06:08",
+      "duration_label": "600 minutes",
+      "duration_seconds": 36020,
+      "title": "CALLING OLD 1-800 NUMBERS FROM 90'S COMMERCIALS UNTIL I SUCCESSFULLY BUY A PRODUCT (ZOMBOID LATER?)",
+      "games": [],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2838173376",
+      "range": "2026"
+    },
+    {
+      "source": "twitchmetrics_backfill",
+      "precision": "exact_vod_time",
+      "id": "2838975820",
+      "started_at": "2026-08-06T18:32:00Z",
+      "ended_at": "Friday 07 August 2026 00:11",
+      "duration_label": "339 minutes",
+      "duration_seconds": 20361,
+      "title": "THE WINDS ARE FAVORABLE. DON'T ASK WHY OR HOW. ZOMBOID, HOW MANY ZOMBIES CAN I DESTROY IN ONE LIFE? (MORE THAN 7 DAYS I BET)",
+      "games": [],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2838975820",
+      "range": "2026"
+    },
+    {
+      "source": "twitchmetrics_backfill",
+      "precision": "exact_vod_time",
+      "id": "2839776194",
+      "started_at": "2026-08-07T16:26:31Z",
+      "ended_at": "Friday 07 August 2026 20:47",
+      "duration_label": "260 minutes",
+      "duration_seconds": 15630,
+      "title": "MAKE FUN OF CYR FRIDAY - SURVIVING 7 DAYS & UNALIVING 1000 ZOMBIES",
+      "games": [],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2839776194",
+      "range": "2026"
+    },
+    {
+      "source": "twitchmetrics_backfill",
+      "precision": "exact_vod_time",
+      "id": "2842524127",
+      "started_at": "2026-08-10T17:38:27Z",
+      "ended_at": "Monday 10 August 2026 20:30",
+      "duration_label": "172 minutes",
+      "duration_seconds": 10330,
+      "title": "CYR IN THE KITCHEN - HOMEMADE CLAM CUH CHOWDER 1ST TIME - IN CAPE COD WE SHOULD EXPLORE A BIT AFTER CUH",
+      "games": [],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2842524127",
+      "range": "2026"
     }
   ],
   "exact_rows": [
     {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2787200613",
-      "started_at": "2026-06-02T22:51:16Z",
-      "duration_label": "06:43:20",
-      "duration_seconds": 24200,
-      "title": "BACK AND NOT DISCOURAGED - CUHCORD THRIVES - 2NITE HOMEMADE KAVA FOR @MISTERARTHER - AND A LITTLE SECRET SOMETHING ELSE",
-      "views": 87757
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2787804532",
-      "started_at": "2026-06-03T18:20:02Z",
-      "duration_label": "06:05:20",
-      "duration_seconds": 21920,
-      "title": "FINDING WHAT GAME IVE SOMEHOW NEVER PLAYED THAT EVERYONE ELSE HAS - CHAT WILL JUDGE MY IGNORANCE !discord",
-      "views": 97854
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2789686239",
-      "started_at": "2026-06-06T00:23:48Z",
-      "duration_label": "05:10:09",
-      "duration_seconds": 18609,
-      "title": "TONIGHT WE ATTEMPT TO MAKE CINEMA MAGIC  - READING CHAT'S MONOLOGUES AND SCRIPTS AND TRYING NOT TO LAUGH . WITH @phinttv .",
-      "views": 65206
-    },
-    {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": "2791457675",
+      "id": null,
       "started_at": "2026-06-08T03:10:59Z",
       "duration_label": "6 hours",
       "duration_seconds": null,
@@ -49331,7 +49396,7 @@
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": "2792087792",
+      "id": null,
       "started_at": "2026-06-08T23:43:15Z",
       "duration_label": "7 hours",
       "duration_seconds": null,
@@ -49341,7 +49406,7 @@
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": "2793101996",
+      "id": null,
       "started_at": "2026-06-10T05:31:16Z",
       "duration_label": "3 hours",
       "duration_seconds": null,
@@ -49351,7 +49416,7 @@
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": "2794582065",
+      "id": null,
       "started_at": "2026-06-12T02:18:44Z",
       "duration_label": "5 hours",
       "duration_seconds": null,
@@ -49361,7 +49426,7 @@
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": "2795254493",
+      "id": null,
       "started_at": "2026-06-12T23:30:25Z",
       "duration_label": "5 hours",
       "duration_seconds": null,
@@ -49476,7 +49541,7 @@
       "duration_label": "06:33:12",
       "duration_seconds": 23592,
       "title": "GETTING WILD WITH CHAT - DEALING WITH MY PERSONAL PREGNANCY - FINDING THE SWEATIEST MECCA CHAMELIANS IN CHAT",
-      "views": 200303
+      "views": 200308
     },
     {
       "source": "twitchmetrics_vod",
@@ -49486,7 +49551,7 @@
       "duration_label": "05:05:40",
       "duration_seconds": 18340,
       "title": "CHAT, WHAT GAME SHOULD I BE ABLE TO BEAT IN 4-5 HOURS, AND IF I FAIL, THAT MEANS I SHOULD NOT PLAY GAMES? GO",
-      "views": 178187
+      "views": 178190
     },
     {
       "source": "twitchmetrics_vod",
@@ -49496,7 +49561,7 @@
       "duration_label": "04:02:50",
       "duration_seconds": 14570,
       "title": "I HAVE BEEN SUMMONED.",
-      "views": 129901
+      "views": 129905
     },
     {
       "source": "twitchmetrics_vod",
@@ -49506,7 +49571,7 @@
       "duration_label": "05:35:50",
       "duration_seconds": 20150,
       "title": "GETTING AN RP LOBBY GOING TONIGHT FOR DAWSON OAKS - WOULD BE REALLY NICE IS WUBBY SHOWS UP - WOULD BE REALLY NICE IF WILLNEFF SHOWS UP",
-      "views": 182413
+      "views": 182423
     },
     {
       "source": "twitchmetrics_vod",
@@ -49516,7 +49581,7 @@
       "duration_label": "04:19:20",
       "duration_seconds": 15560,
       "title": "1v1 LEGO BUILD RACE WITH @MISTERARTHER 6PM CST - ROCK CLIMBING WITH @MYTH TOMORROW",
-      "views": 172123
+      "views": 172144
     },
     {
       "source": "twitchmetrics_vod",
@@ -49526,7 +49591,7 @@
       "duration_label": "05:43:40",
       "duration_seconds": 20620,
       "title": "ROCK CLIMBING WITH @MYTH & @NMPLOL TODAY - THEN GOING OUT, A FINE BRUNCH WITH THE BOYS !discord",
-      "views": 226680
+      "views": 226753
     },
     {
       "source": "twitchmetrics_vod",
@@ -49536,7 +49601,7 @@
       "duration_label": "04:21:00",
       "duration_seconds": 15660,
       "title": "THAT SCENE IN TITANIC WHERE ROSE PUSHES JACK FROST OFF THE DOOR BUT I'M ROSE AND I'M JACK AND THERE'S NO WATER",
-      "views": 149434
+      "views": 149449
     },
     {
       "source": "twitchmetrics_vod",
@@ -49546,7 +49611,7 @@
       "duration_label": "04:18:20",
       "duration_seconds": 15500,
       "title": "giving chat EXACTLY what they want on a friday evening: ME",
-      "views": 140649
+      "views": 140670
     },
     {
       "source": "twitchmetrics_vod",
@@ -49556,7 +49621,7 @@
       "duration_label": "05:10:20",
       "duration_seconds": 18620,
       "title": "how to make an atomic bomb in your garden",
-      "views": 194947
+      "views": 194963
     },
     {
       "source": "twitchmetrics_vod",
@@ -49566,7 +49631,7 @@
       "duration_label": "05:08:10",
       "duration_seconds": 18490,
       "title": "ROCK CLIMBING WITH @MISTERARTHER",
-      "views": 156461
+      "views": 156526
     },
     {
       "source": "twitchmetrics_vod",
@@ -49576,7 +49641,7 @@
       "duration_label": "04:45:40",
       "duration_seconds": 17140,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH BRITISH FRIEND PAUL WHO HAS NEVER BEEN ON STREAM BEFORE NOR HAS HE EVER SEEN ONE. LET'S SEE WHAT HE THINKS \ud83c\udf55",
-      "views": 160800
+      "views": 160938
     },
     {
       "source": "twitchmetrics_vod",
@@ -49586,7 +49651,7 @@
       "duration_label": "04:13:10",
       "duration_seconds": 15190,
       "title": "HOW TO BUILD AN ATOMIC BOMB IN YOUR GARDEN (AND OTHER FUN GAMES TO GET YOU IN TROUBLE)",
-      "views": 74934
+      "views": 74985
     },
     {
       "source": "twitchmetrics_vod",
@@ -49596,7 +49661,7 @@
       "duration_label": "08:16:30",
       "duration_seconds": 29790,
       "title": "somebody get these BEGGARS out of here! (giving chat EXACTLY what they want)",
-      "views": 264857
+      "views": 264949
     },
     {
       "source": "twitchmetrics_vod",
@@ -49606,7 +49671,77 @@
       "duration_label": "05:13:40",
       "duration_seconds": 18820,
       "title": "YOUR SLOP GAMING GOD HAS RETURNED. MAKE WAY, ALL YIELD.",
-      "views": 145911
+      "views": 146023
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2832959193",
+      "started_at": "2026-07-30T19:19:02Z",
+      "duration_label": "07:26:40",
+      "duration_seconds": 26800,
+      "title": "NO MOM JOKES TODAY. WILL RESULT IN INSTANT AND IMMEDIATE AND PUBLIC REJECTION",
+      "views": 227220
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2833818604",
+      "started_at": "2026-07-31T19:55:57Z",
+      "duration_label": "08:52:30",
+      "duration_seconds": 31950,
+      "title": "that scene in INDEPENDANCE DAY when the guy goes \"i'm BAAAACK\" and flies into the mothership- except it's me and your mom",
+      "views": 301417
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2837053784",
+      "started_at": "2026-08-04T15:06:20Z",
+      "duration_label": "08:31:10",
+      "duration_seconds": 30670,
+      "title": "GOOD MORNING! SEEING HOW MANY ZOMBIES I CAN KILL IN ZOMBOID - LATER I ATTEMPT TO MAKE MY \"OHIO BEEF WELLINGTON\"",
+      "views": 172132
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2838173376",
+      "started_at": "2026-08-05T20:08:32Z",
+      "duration_label": "10:00:20",
+      "duration_seconds": 36020,
+      "title": "CALLING OLD 1-800 NUMBERS FROM 90'S COMMERCIALS UNTIL I SUCCESSFULLY BUY A PRODUCT (ZOMBOID LATER?)",
+      "views": 284197
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2838975820",
+      "started_at": "2026-08-06T18:32:00Z",
+      "duration_label": "05:39:21",
+      "duration_seconds": 20361,
+      "title": "THE WINDS ARE FAVORABLE. DON'T ASK WHY OR HOW. ZOMBOID, HOW MANY ZOMBIES CAN I DESTROY IN ONE LIFE? (MORE THAN 7 DAYS I BET)",
+      "views": 149932
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2839776194",
+      "started_at": "2026-08-07T16:26:31Z",
+      "duration_label": "04:20:30",
+      "duration_seconds": 15630,
+      "title": "MAKE FUN OF CYR FRIDAY - SURVIVING 7 DAYS & UNALIVING 1000 ZOMBIES",
+      "views": 140607
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2842524127",
+      "started_at": "2026-08-10T17:38:27Z",
+      "duration_label": "02:52:10",
+      "duration_seconds": 10330,
+      "title": "CYR IN THE KITCHEN - HOMEMADE CLAM CUH CHOWDER 1ST TIME - IN CAPE COD WE SHOULD EXPLORE A BIT AFTER CUH",
+      "views": 76282
     }
   ],
   "archive_grouped_dates": [
@@ -49916,16 +50051,14 @@
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2022-07-24",
-      "segment_count": 2,
-      "duration_seconds_sum": 22671,
+      "segment_count": 1,
+      "duration_seconds_sum": 17140,
       "primary_title": "Late Night LEGO Building (Just Chatting) - [07/24/2022] | OTK Cyr VODs",
       "titles": [
-        "Late Night LEGO Building (Just Chatting) - [07/24/2022] | OTK Cyr VODs",
-        "Camp Knut Grocery Shopping w/ Tectone (Just Chatting) - [07/24/2022] | OTK Cyr VODs"
+        "Late Night LEGO Building (Just Chatting) - [07/24/2022] | OTK Cyr VODs"
       ],
       "urls": [
-        "https://www.youtube.com/watch?v=CmKlrmuoEnA",
-        "https://www.youtube.com/watch?v=DmWFinjl9Cw"
+        "https://www.youtube.com/watch?v=CmKlrmuoEnA"
       ]
     },
     {
@@ -59011,6 +59144,24 @@
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
+      "date": "2026-07-27",
+      "segment_count": 3,
+      "duration_seconds_sum": 13656,
+      "primary_title": "Cyr VODs [07/27/2026] - TODAY WE PLAY FUN GAMES THAT GET YOU IN TROUBLE!",
+      "titles": [
+        "Time to get my hands dirty! CYR plays Dirty Business #001 - [07/27/2026]",
+        "I AM DEATH, DESTROYER OF...! CYR plays How to Make an Atomic Bomb in Your Garden #002 - [07/27/2026]",
+        "Cyr VODs [07/27/2026] - TODAY WE PLAY FUN GAMES THAT GET YOU IN TROUBLE!"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=PQlhaDfB9YI",
+        "https://www.youtube.com/watch?v=YA1LVfav5jk",
+        "https://www.youtube.com/watch?v=H6a5P2MbL7Q"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
       "date": "2026-07-28",
       "segment_count": 2,
       "duration_seconds_sum": 28764,
@@ -59022,6 +59173,130 @@
       "urls": [
         "https://www.youtube.com/watch?v=Eo-gekxGucI",
         "https://www.youtube.com/watch?v=PP7kUQ2nQm0"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-29",
+      "segment_count": 5,
+      "duration_seconds_sum": 16463,
+      "primary_title": "I'm DONE! CYR plays Dirty Business #003 - [07/29/2026]",
+      "titles": [
+        "CYR reacts to The Village BIGGEST PIZZA in the Faraway Mountains (Just Chatting) - [07/29/2026]",
+        "I'm DONE! CYR plays Dirty Business #003 - [07/29/2026]",
+        "CYR reacts to Cop Slop (Just Chatting) - [07/29/2026]",
+        "CYR reacts to Pro Chef's Blind Testing Salsa (Just Chatting) - [07/29/2026]",
+        "Cyr VODs [07/29/2026] - YOUR SLOP GAMING GOD HAS RETURNED. MAKE WAY, ALL YIELD."
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=rNJyDzRzVo0",
+        "https://www.youtube.com/watch?v=4V1IAgPwMgE",
+        "https://www.youtube.com/watch?v=Tb71kKdfoxc",
+        "https://www.youtube.com/watch?v=A5pnxavP8WY",
+        "https://www.youtube.com/watch?v=I386sQV77V8"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-30",
+      "segment_count": 2,
+      "duration_seconds_sum": 25741,
+      "primary_title": "CONSUME ME! CYR plays Project Zomboid #001 - [07/30/2026]",
+      "titles": [
+        "CONSUME ME! CYR plays Project Zomboid #001 - [07/30/2026]",
+        "Cyr VODs [07/30/2026] - NO MOM JOKES TODAY! WILL RESULT IN INSTANT AND IMMEDIATE PUBLIC REJECTION"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=_dG5xuopTbQ",
+        "https://www.youtube.com/watch?v=ggxECeHWcJA"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-07-31",
+      "segment_count": 6,
+      "duration_seconds_sum": 52871,
+      "primary_title": "LATE NIGHT VIBING x PEACH JARS\ud83d\udd7a(Just Chatting) - [07/31/2026]",
+      "titles": [
+        "Can you buy products from old 90s commercials? (it's complicated) - [07/31/2026]",
+        "Amateur Cook's Attempt on Homemade BEEF WELLINGTON (Just Chatting) - [07/31/2026]",
+        "LATE NIGHT VIBING x PEACH JARS\ud83d\udd7a(Just Chatting) - [07/31/2026]",
+        "HOPE DIES LAST! CYR plays Project Zomboid #002 - [07/31/2026]",
+        "GOTH WATERPARK IS BACK! CYR plays Waterpark Simulator 1.0 #001 - [07/31/2026]",
+        "Cyr VODs [07/31/2026] - INDEPENDENCE DAY when he goes \"i'm BAACK\" - except it's me and ur mom"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=coyNv19Yvn4",
+        "https://www.youtube.com/watch?v=jSw9TO24HJY",
+        "https://www.youtube.com/watch?v=NtuYjeN9lpg",
+        "https://www.youtube.com/watch?v=OPDhd78rhVM",
+        "https://www.youtube.com/watch?v=1pGrUHL-NXQ",
+        "https://www.youtube.com/watch?v=xNHTqiQV6AA"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-08-04",
+      "segment_count": 2,
+      "duration_seconds_sum": 15494,
+      "primary_title": "I'LL TAKE ALL OF YOU DOWN! CYR plays Project Zomboid #003 - [08/04/2026]",
+      "titles": [
+        "I'LL TAKE ALL OF YOU DOWN! CYR plays Project Zomboid #003 - [08/04/2026]",
+        "Cyr VODs [08/04/2026] - GOOD MORNING! LATER I ATTEMPT TO MAKE MY \"OHIO BEEF WELLINGTON\""
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=O-cXNzqhEX4",
+        "https://www.youtube.com/watch?v=odW54ELZETI"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-08-05",
+      "segment_count": 1,
+      "duration_seconds_sum": 3119,
+      "primary_title": "Cyr VODs [08/05/2026] - CALLING OLD 1-800 NUMBERS FROM THE 90'S TODAY (ZOMBOID LATER?)",
+      "titles": [
+        "Cyr VODs [08/05/2026] - CALLING OLD 1-800 NUMBERS FROM THE 90'S TODAY (ZOMBOID LATER?)"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=tCxE6QjNN68"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-08-06",
+      "segment_count": 2,
+      "duration_seconds_sum": 18016,
+      "primary_title": "THAT WAS MY ONE CHANCE! CYR plays Project Zomboid #004 - [08/06/2026]",
+      "titles": [
+        "THAT WAS MY ONE CHANCE! CYR plays Project Zomboid #004 - [08/06/2026]",
+        "Cyr VODs [08/06/2026] - THE WINDS ARE FAVORABLE. DON'T ASK HOW I DID IT."
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=nfhbgWLCuoM",
+        "https://www.youtube.com/watch?v=GepfcqYkdw4"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-08-07",
+      "segment_count": 2,
+      "duration_seconds_sum": 12857,
+      "primary_title": "THIS IS F&%ING HELL! CYR plays Project Zomboid #005 - [08/07/2026]",
+      "titles": [
+        "THIS IS F&%ING HELL! CYR plays Project Zomboid #005 - [08/07/2026]",
+        "Cyr VODs [08/07/2026] - \"MAKE FUN OF CYR\"-FRIDAY \ud83e\udddf SURVIVING 7 DAYS & UNALIVING 1000 ZOMBIES"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=Zk9dg9ZeiXk",
+        "https://www.youtube.com/watch?v=5Nfwcjk7fc8"
       ]
     }
   ],
@@ -65891,7 +66166,7 @@
     },
     {
       "date": "2026-07-24",
-      "gap_days": 4,
+      "gap_days": 3,
       "features": [
         "collab",
         "food_cooking"
@@ -65900,6 +66175,99 @@
       "sentiment_score": 0,
       "intensity": "medium",
       "intensity_score": 1
+    },
+    {
+      "date": "2026-07-27",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 4
+    },
+    {
+      "date": "2026-07-28",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2026-07-29",
+      "gap_days": 1,
+      "features": [
+        "food_cooking",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2026-07-30",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2026-07-31",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc",
+        "food_cooking",
+        "return_marker",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 4
+    },
+    {
+      "date": "2026-08-04",
+      "gap_days": 1,
+      "features": [
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "high",
+      "intensity_score": 3
+    },
+    {
+      "date": "2026-08-05",
+      "gap_days": 1,
+      "features": [
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2026-08-06",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "medium",
+      "intensity_score": 2
     }
   ]
 }
