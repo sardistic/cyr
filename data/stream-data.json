@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T19:10:21Z",
+  "generated_at": "2026-08-14T19:42:43Z",
   "data_through": "2026-08-10T17:38:27Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
@@ -459,32 +459,32 @@
       {
         "gap_h": 17.2,
         "started_at": "2026-07-31T19:55:57Z",
-        "game": ""
+        "game": "Just Chatting"
       },
       {
         "gap_h": 82.3,
         "started_at": "2026-08-04T15:06:20Z",
-        "game": ""
+        "game": "Just Chatting"
       },
       {
         "gap_h": 20.5,
         "started_at": "2026-08-05T20:08:32Z",
-        "game": ""
+        "game": "Just Chatting"
       },
       {
         "gap_h": 12.4,
         "started_at": "2026-08-06T18:32:00Z",
-        "game": ""
+        "game": "Just Chatting"
       },
       {
         "gap_h": 16.3,
         "started_at": "2026-08-07T16:26:31Z",
-        "game": ""
+        "game": "Just Chatting"
       },
       {
         "gap_h": 68.9,
         "started_at": "2026-08-10T17:38:27Z",
-        "game": ""
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
@@ -517,7 +517,12 @@
       {
         "started_at": "2026-07-31T19:55:57Z",
         "ended_at_iso": "2026-08-01T04:48:00+00:00",
-        "games": [],
+        "games": [
+          "Just Chatting",
+          "WATERPUNK",
+          "Waterpark Simulator",
+          "Project Zomboid"
+        ],
         "duration_h": 8.9,
         "duration_label": "532 minutes",
         "avg_viewers": null,
@@ -527,7 +532,10 @@
       {
         "started_at": "2026-08-04T15:06:20Z",
         "ended_at_iso": "2026-08-04T23:37:00+00:00",
-        "games": [],
+        "games": [
+          "Just Chatting",
+          "Project Zomboid"
+        ],
         "duration_h": 8.5,
         "duration_label": "511 minutes",
         "avg_viewers": null,
@@ -537,7 +545,9 @@
       {
         "started_at": "2026-08-05T20:08:32Z",
         "ended_at_iso": "2026-08-06T06:08:00+00:00",
-        "games": [],
+        "games": [
+          "Just Chatting"
+        ],
         "duration_h": 10.0,
         "duration_label": "600 minutes",
         "avg_viewers": null,
@@ -547,7 +557,10 @@
       {
         "started_at": "2026-08-06T18:32:00Z",
         "ended_at_iso": "2026-08-07T00:11:00+00:00",
-        "games": [],
+        "games": [
+          "Just Chatting",
+          "Project Zomboid"
+        ],
         "duration_h": 5.7,
         "duration_label": "339 minutes",
         "avg_viewers": null,
@@ -557,7 +570,10 @@
       {
         "started_at": "2026-08-07T16:26:31Z",
         "ended_at_iso": "2026-08-07T20:47:00+00:00",
-        "games": [],
+        "games": [
+          "Just Chatting",
+          "Project Zomboid"
+        ],
         "duration_h": 4.3,
         "duration_label": "260 minutes",
         "avg_viewers": null,
@@ -567,7 +583,9 @@
       {
         "started_at": "2026-08-10T17:38:27Z",
         "ended_at_iso": "2026-08-10T20:30:00+00:00",
-        "games": [],
+        "games": [
+          "Just Chatting"
+        ],
         "duration_h": 2.9,
         "duration_label": "172 minutes",
         "avg_viewers": null,
@@ -578,7 +596,9 @@
     "last_stream": {
       "started_at": "2026-08-10T17:38:27Z",
       "ended_at_iso": "2026-08-10T20:30:00+00:00",
-      "games": [],
+      "games": [
+        "Just Chatting"
+      ],
       "duration_label": "172 minutes"
     },
     "semantic_analysis": {
@@ -684,17 +704,17 @@
       "game_analysis": {
         "categories": {
           "Just Chatting only": {
-            "count": 483,
-            "share": 19.6,
-            "median_gap_hours": 26.66,
-            "p90_gap_hours": 72.59,
+            "count": 484,
+            "share": 19.7,
+            "median_gap_hours": 26.65,
+            "p90_gap_hours": 72.58,
             "avg_viewers": 3728.0
           },
           "Other games": {
-            "count": 676,
-            "share": 27.4,
+            "count": 679,
+            "share": 27.6,
             "median_gap_hours": 25.36,
-            "p90_gap_hours": 72.04,
+            "p90_gap_hours": 72.21,
             "avg_viewers": 2449.0
           },
           "Social sandbox/RP": {
@@ -711,25 +731,18 @@
             "p90_gap_hours": 81.69,
             "avg_viewers": 2321.0
           },
-          "Unknown": {
-            "count": 5,
-            "share": 0.2,
-            "median_gap_hours": 29.04,
-            "p90_gap_hours": 83.98,
-            "avg_viewers": 0
-          },
           "Variety stack": {
-            "count": 227,
-            "share": 9.2,
-            "median_gap_hours": 24.69,
-            "p90_gap_hours": 64.75,
+            "count": 228,
+            "share": 9.3,
+            "median_gap_hours": 24.75,
+            "p90_gap_hours": 68.37,
             "avg_viewers": 2612.0
           }
         },
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1583
+            "count": 1588
           },
           {
             "game": "Grand Theft Auto V",
@@ -49288,7 +49301,12 @@
       "duration_label": "532 minutes",
       "duration_seconds": 31950,
       "title": "that scene in INDEPENDANCE DAY when the guy goes \"i'm BAAAACK\" and flies into the mothership- except it's me and your mom",
-      "games": [],
+      "games": [
+        "Just Chatting",
+        "WATERPUNK",
+        "Waterpark Simulator",
+        "Project Zomboid"
+      ],
       "avg_viewers": null,
       "peak_viewers": null,
       "followers_gained": null,
@@ -49305,7 +49323,10 @@
       "duration_label": "511 minutes",
       "duration_seconds": 30670,
       "title": "GOOD MORNING! SEEING HOW MANY ZOMBIES I CAN KILL IN ZOMBOID - LATER I ATTEMPT TO MAKE MY \"OHIO BEEF WELLINGTON\"",
-      "games": [],
+      "games": [
+        "Just Chatting",
+        "Project Zomboid"
+      ],
       "avg_viewers": null,
       "peak_viewers": null,
       "followers_gained": null,
@@ -49322,7 +49343,9 @@
       "duration_label": "600 minutes",
       "duration_seconds": 36020,
       "title": "CALLING OLD 1-800 NUMBERS FROM 90'S COMMERCIALS UNTIL I SUCCESSFULLY BUY A PRODUCT (ZOMBOID LATER?)",
-      "games": [],
+      "games": [
+        "Just Chatting"
+      ],
       "avg_viewers": null,
       "peak_viewers": null,
       "followers_gained": null,
@@ -49339,7 +49362,10 @@
       "duration_label": "339 minutes",
       "duration_seconds": 20361,
       "title": "THE WINDS ARE FAVORABLE. DON'T ASK WHY OR HOW. ZOMBOID, HOW MANY ZOMBIES CAN I DESTROY IN ONE LIFE? (MORE THAN 7 DAYS I BET)",
-      "games": [],
+      "games": [
+        "Just Chatting",
+        "Project Zomboid"
+      ],
       "avg_viewers": null,
       "peak_viewers": null,
       "followers_gained": null,
@@ -49356,7 +49382,10 @@
       "duration_label": "260 minutes",
       "duration_seconds": 15630,
       "title": "MAKE FUN OF CYR FRIDAY - SURVIVING 7 DAYS & UNALIVING 1000 ZOMBIES",
-      "games": [],
+      "games": [
+        "Just Chatting",
+        "Project Zomboid"
+      ],
       "avg_viewers": null,
       "peak_viewers": null,
       "followers_gained": null,
@@ -49373,7 +49402,9 @@
       "duration_label": "172 minutes",
       "duration_seconds": 10330,
       "title": "CYR IN THE KITCHEN - HOMEMADE CLAM CUH CHOWDER 1ST TIME - IN CAPE COD WE SHOULD EXPLORE A BIT AFTER CUH",
-      "games": [],
+      "games": [
+        "Just Chatting"
+      ],
       "avg_viewers": null,
       "peak_viewers": null,
       "followers_gained": null,
