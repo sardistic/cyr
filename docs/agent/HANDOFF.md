@@ -1,6 +1,6 @@
 # Agent Handoff
 
-Updated: 2026-08-14
+Updated: 2026-08-14 (second pass: source reorder + impersonation)
 
 ## Active objective
 
@@ -28,27 +28,43 @@ pipeline from reporting success while serving stale data.
     run a few seconds behind Sully's for the same stream).
   - Payload gains `data_through` (newest stream actually in the data) and
     `degraded_sources`; both are mirrored into `stream-data.js`.
-  - Exits 2 after writing files when any source degraded.
-- `.github/workflows/refresh-data.yml`: tolerates exit 2 so the partial refresh
-  still commits, then fails the job so a broken source shows up red instead of
-  green. Also adds `archive-grouped-dates.csv` and `title-semantics.csv` to the
-  `git add` list — they were being regenerated but never committed.
+  - ~~Exits 2 when any source degraded~~ — superseded by `54a36ea`, see below.
+- `.github/workflows/refresh-data.yml`: adds `archive-grouped-dates.csv` and
+  `title-semantics.csv` to the `git add` list — they were being regenerated but
+  never committed. (The exit-2 / fail-the-job handling this commit added was
+  removed again in `54a36ea`.)
 - `index.html`: source note now reads "data through X · checked Y" instead of
   only "refreshed Y"; new amber `#stale-banner` appears when
   `degraded_sources` is non-empty.
 
 ## Current behavior
 
-Shipped as `4be0f7f` on `main`, deployed to https://cyr.mom via Pages.
+Shipped as `4be0f7f` then reworked in `54a36ea` on `main`, deployed to
+https://cyr.mom via Pages.
+
+Source hierarchy as of `54a36ea`: **TwitchMetrics is primary** — it decides
+which streams exist and when. SullyGnome runs afterwards for game/viewer/
+follower enrichment and deep history, and may fail without consequence. The
+YouTube archive is independent.
+
+SullyGnome is fetched through `curl_cffi` TLS impersonation. That clears the
+Cloudflare challenge on the landing page (`PageInfo` parses again) but the
+`/api/` path is challenged separately and still returns 403 — verified both
+locally and on the runner. So SullyGnome remains degraded in practice; it is
+just no longer fatal.
+
+Runs are **green again**. Degraded sources no longer exit non-zero and the
+"Fail if a source was degraded" step is gone, because a red run every 30
+minutes was pure noise. Only a total data failure (no streams from any source)
+exits 1. The site carries the signal instead, via the banner.
 
 The site now shows all 6 previously-missing streams (2026-07-31, 08-04, 08-05,
 08-06, 08-07, 08-10). `last_stream` moved 2026-07-30 → 2026-08-10, row count
 2458 → 2464, no duplicates. `data_through` is served alongside `generated_at`,
 and the amber "DATA BEHIND" banner is live because `degraded_sources` is
-non-empty.
-
-The workflow now reports **failure** on every run while SullyGnome stays
-blocked, after committing the partial refresh. That is intended.
+non-empty. The banner distinguishes the two failure shapes: losing TwitchMetrics
+can genuinely hide streams, losing SullyGnome only costs game and viewer
+figures, and it no longer claims the former when only the latter happened.
 
 ## Validation
 
@@ -75,15 +91,35 @@ Committed `d279488`, job went red at the "Fail if a source was degraded" step,
 Pages deployed. Confirmed against the live site: `cyr.mom/data/stream-data.js`
 serves `data_through` 2026-08-10 and a non-empty `degraded_sources`.
 
-**This settles the open question:** the GitHub runner gets the same Cloudflare
-challenge this machine does. It is not a network or markup issue.
+**This settled the first open question:** the GitHub runner gets the same
+Cloudflare challenge this machine does. Not a network or markup issue.
+
+Second pass (`54a36ea`) validated the same way, then on the runner via
+`workflow_dispatch` run 31832013144 (2026-08-14T19:09Z), which **passed green**:
+
+```
+TwitchMetrics stream logs: 15 / VODs: 31
+SullyGnome: landing page cleared via chrome impersonation.
+SullyGnome unavailable, using cached table: stream table API returned http 403
+  for 2017 (Cloudflare challenge on /api/ — landing page cleared but the API
+  path did not)
+SullyGnome: fell back to 2464 cached streams
+YouTube archive: 1123 segments
+Data through: 2026-08-10T17:38:27Z
+```
+
+Committed `71a4375`, Pages deployed, live site confirmed serving
+`data_through` 2026-08-10 with `degraded_sources: [sullygnome]`. Impersonation
+targets were matrix-tested against the live site before shipping: rolling
+`chrome` and `safari17_0` clear the landing page; `chrome124`, `chrome131`,
+`firefox135` and `edge101` do not. No target cleared `/api/`.
 
 ## Uncommitted implementation details
 
-None of the implementation work is uncommitted — it shipped as `4be0f7f`
-(`scripts/build_dataset.py`, `.github/workflows/refresh-data.yml`,
-`index.html`, plus `docs/agent/`), followed by the workflow's own data commit
-`d279488`.
+None of the implementation work is uncommitted. It shipped in two commits:
+`4be0f7f` (stop the silent staleness) and `54a36ea` (TwitchMetrics primary,
+TLS impersonation, no failing runs). The workflow's own data commits followed
+each: `d279488` and `71a4375`.
 
 Still untracked and deliberately left alone: `README.md`. It predates this
 session and is not mine to commit.
@@ -92,45 +128,50 @@ Uncommitted right now: this file's post-deploy update.
 
 Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
+## Gotchas worth keeping
+
+- `curl_cffi` only clears the challenge **when it sends its own browser
+  headers**. Passing the module's `UA` dict into an impersonated request
+  overrides them and gets it challenged again. That is why
+  `open_sully_session()` hands back the landing-page response instead of
+  re-requesting it, and why `fetch_sully_range()` omits `UA` when impersonating.
+  This cost a debugging cycle; do not "tidy" those headers back in.
+- Pinned impersonation targets go stale: `chrome124`, `chrome131`, `firefox135`
+  and `edge101` are all challenged today. Rolling `chrome` works, `safari17_0`
+  works. `SULLY_IMPERSONATE` deliberately holds rolling names only.
+- `data/stream-data.json` is now an **input** as well as an output — the
+  cached-table fallback reads `sully_streams` back out of it. Truncating or
+  hand-editing that file silently narrows the historical model.
+
 ## Risks and unknowns
 
-- The SullyGnome scraper is **not** repaired, and cannot be by UA/regex work —
-  confirmed Cloudflare challenge on the runner. A real fix needs a
-  TLS-impersonating client (`curl_cffi`, `cloudscraper`) or dropping SullyGnome
-  as a source. That is a dependency decision for the owner and was not taken.
-- While SullyGnome stays blocked the historical table is frozen at its 2458
-  cached rows. Recent streams keep flowing in via TwitchMetrics backfill, but
-  **viewer/follower stats and per-stream game lists stop updating**, and the
-  gap/day-of-week/CDF models slowly drift as backfilled rows carry no games.
+- TLS impersonation got the landing page but **not** `/api/`. SullyGnome
+  enrichment is still down and may stay down. Untried next steps: a residential
+  proxy, solving the challenge with a headless browser, or a `cloudscraper`
+  attempt on the API path specifically.
+- While SullyGnome stays blocked the historical table is frozen at its cached
+  rows. Recent streams keep flowing via TwitchMetrics, but **viewer/follower
+  stats and per-stream game lists stop updating**, and the game-category parts
+  of the model slowly drift as game-less rows accumulate.
 - Backfilled rows have no `games`, viewer, or follower figures, so the timeline
-  renders those streams via the UI's "Just Chatting" fallback. Six such rows are
-  live now — anything the dashboard infers from game category is degraded for
-  them.
-- The workflow goes red every 30 minutes while SullyGnome stays blocked.
-  Intentional, but noisy; it will bury any *unrelated* future failure.
-- The cached-table fallback reads `sully_streams` back out of
-  `stream-data.json`, so the repo file is now load-bearing for the pipeline, not
-  just an output. If it is ever truncated or hand-edited, the fallback silently
-  narrows.
+  renders them via the UI's "Just Chatting" fallback. Six such rows are live.
+- **Nothing alerts any more.** That was the explicit ask, and it is the right
+  call for this noise level, but it means a future outage of TwitchMetrics — the
+  source that *can* actually hide streams — will surface only as a banner on the
+  site that someone has to look at. If that matters later, alert on
+  `twitchmetrics*` in `degraded_sources` only, not on any degraded source.
 
 ## Next concrete action
 
-Decide how to handle SullyGnome now that the Cloudflare challenge is confirmed
-on the runner. Three options, none started:
+Nothing is blocking. The site is current, runs are green, and no alerts fire.
 
-1. Add `curl_cffi` (or `cloudscraper`) to the workflow's `pip install` and route
-   `parse_sully_page_info()` / `fetch_sully_range()` through it with browser TLS
-   impersonation. Most likely to restore full history; adds a dependency and may
-   break again on the next Cloudflare policy change.
-2. Retire SullyGnome and rebuild the historical backbone from the cached table
-   plus TwitchMetrics going forward. Loses viewer/follower/game enrichment for
-   new streams.
-3. Leave as-is. The site stays correct and honest, but the model slowly degrades
-   and the workflow stays red.
+If restoring game/viewer enrichment becomes worthwhile, the open question is
+narrow: get past Cloudflare on `sullygnome.com/api/` specifically, given the
+landing page already clears. Worth trying in order — `cloudscraper` against the
+API path, then a headless browser to mint a `cf_clearance` cookie the session
+can reuse, then a proxy with better IP reputation.
 
-If (3) for now, consider silencing the red runs to avoid alert fatigue — e.g.
-fail only when `data_through` falls more than N days behind, rather than on
-every degraded run.
+Otherwise leave it. Recent streams do not depend on it.
 
 ## Deployment and status impact
 
