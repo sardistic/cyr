@@ -126,6 +126,43 @@ def fetch_vod_games_detail(vod_id):
     return games
 
 
+def parse_twitch_vods(limit=100):
+    """Stream rows straight from Twitch's own VOD list.
+
+    TwitchMetrics indexes new streams on its own schedule, and has sat days
+    behind before now. With SullyGnome blocked that left no source live enough
+    to notice a new stream, so `data_through` froze while the runs stayed green.
+    Twitch lists the VOD as soon as the stream ends, so this is what keeps the
+    recent end of the timeline moving.
+    """
+    query = (
+        '{user(login:"cyr"){videos(first:' + str(limit) + ",type:ARCHIVE,sort:TIME){edges{node{"
+        "id createdAt lengthSeconds title viewCount"
+        "}}}}}"
+    )
+    data = gql(query)
+    edges = (((data.get("user") or {}).get("videos") or {}).get("edges")) or []
+    rows = []
+    for edge in edges:
+        node = edge.get("node") or {}
+        if not node.get("id") or not node.get("createdAt"):
+            continue
+        seconds = int(node.get("lengthSeconds") or 0)
+        rows.append(
+            {
+                "source": "twitch_vod",
+                "precision": "exact_vod_time",
+                "id": str(node["id"]),
+                "started_at": node["createdAt"],
+                "duration_label": seconds_to_label(seconds),
+                "duration_seconds": seconds,
+                "title": clean_html(node.get("title")),
+                "views": node.get("viewCount"),
+            }
+        )
+    return rows
+
+
 def clean_html(value):
     return html.unescape(re.sub(r"<.*?>", "", value or "")).strip()
 
@@ -171,6 +208,42 @@ def duration_to_seconds(value):
     if len(parts) == 2:
         return parts[0] * 60 + parts[1]
     return parts[0] if parts else 0
+
+
+def seconds_to_label(seconds):
+    """HH:MM:SS, matching the duration strings TwitchMetrics renders."""
+    seconds = int(seconds or 0)
+    return f"{seconds // 3600:02d}:{seconds % 3600 // 60:02d}:{seconds % 60:02d}"
+
+
+def stitch_split_vods(rows, max_gap=timedelta(minutes=10)):
+    """Merge VOD rows that are one stream Twitch split across two recordings.
+
+    A drop and reconnect ends the VOD and opens a new one seconds later. Left
+    alone the pair counts as two streams and puts a bogus sub-hour entry into
+    the gap stats.
+    """
+    def to_dt(value):
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+    stitched = []
+    for row in sorted(rows, key=lambda r: r["started_at"]):
+        prev = stitched[-1] if stitched else None
+        if prev and prev.get("duration_seconds") and row.get("duration_seconds"):
+            start, prev_start = to_dt(row["started_at"]), to_dt(prev["started_at"])
+            if timedelta(0) <= start - (prev_start + timedelta(seconds=prev["duration_seconds"])) <= max_gap:
+                # Earliest start wins; the link follows the longest segment.
+                if row["duration_seconds"] > prev["duration_seconds"]:
+                    prev["id"] = row.get("id")
+                    prev["title"] = row.get("title") or prev.get("title")
+                total = int((start - prev_start).total_seconds()) + row["duration_seconds"]
+                prev["duration_seconds"] = total
+                prev["duration_label"] = seconds_to_label(total)
+                prev["views"] = (prev.get("views") or 0) + (row.get("views") or 0)
+                print(f"Stitched split VOD into {prev['started_at']} ({seconds_to_label(total)})")
+                continue
+        stitched.append(dict(row))
+    return stitched
 
 
 def parse_twitchmetrics_stream_logs():
@@ -872,7 +945,7 @@ def attach_viewer_stats(rows, exact_rows):
 
 
 def backfill_recent_from_exact(sully_rows, exact_rows):
-    """Add streams that TwitchMetrics knows about but the Sully table is missing.
+    """Add streams the exact sources know about but the Sully table is missing.
 
     Without this a stale Sully table silently caps `last_stream` and the recent
     timeline at whatever date the scrape last succeeded.
@@ -895,7 +968,9 @@ def backfill_recent_from_exact(sully_rows, exact_rows):
         duration_seconds = row.get("duration_seconds") or 0
         ended_dt = started_dt + timedelta(seconds=duration_seconds) if duration_seconds else None
         added.append({
-            "source": "twitchmetrics_backfill",
+            # Which upstream actually surfaced the stream — twitch_vod or one of
+            # the twitchmetrics_* parses — so a stale source stays diagnosable.
+            "source": f"{row.get('source') or 'exact'}_backfill",
             "precision": "exact_vod_time",
             "id": row.get("id"),
             "started_at": started,
@@ -914,8 +989,8 @@ def backfill_recent_from_exact(sully_rows, exact_rows):
         })
         known.append(started_dt)
     if added:
-        print(f"Backfilled {len(added)} recent stream(s) from TwitchMetrics: "
-              f"{', '.join(r['started_at'] for r in added)}")
+        print(f"Backfilled {len(added)} recent stream(s): "
+              f"{', '.join(r['started_at'] + ' via ' + r['source'] for r in added)}")
     return sorted(sully_rows + added, key=lambda r: r.get("started_at") or "")
 
 
@@ -971,11 +1046,25 @@ def main():
         traceback.print_exc()
         degraded.append(f"twitchmetrics_vods: {e}")
         vods = []
+    try:
+        twitch_vods = parse_twitch_vods()
+        print(f"Twitch VODs: {len(twitch_vods)}")
+    except Exception as e:
+        print(f"Twitch VOD list FAILED (skipping): {e}")
+        traceback.print_exc()
+        degraded.append(f"twitch_vods: {e}")
+        twitch_vods = []
+
     exact_by_key = {}
-    for row in vods + stream_logs:
+    # Twitch first, TwitchMetrics after: where both describe a VOD, keep the
+    # TwitchMetrics parse this pipeline has always used. Empty fields never
+    # overwrite a populated one — a stream log with no duration must not blank
+    # out the VOD length the stitcher needs.
+    for row in twitch_vods + vods + stream_logs:
         key = row.get("id") or row["started_at"]
-        exact_by_key[key] = {**exact_by_key.get(key, {}), **row}
-    exact_rows = sorted(exact_by_key.values(), key=lambda r: r["started_at"])
+        merged = exact_by_key.setdefault(key, {})
+        merged.update({k: v for k, v in row.items() if v is not None})
+    exact_rows = stitch_split_vods(exact_by_key.values())
 
     # SullyGnome: enrichment only. Games, viewer counts and follower deltas come
     # from here, plus the deep history TwitchMetrics does not expose. A failure
