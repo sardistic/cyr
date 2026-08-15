@@ -228,6 +228,19 @@ figures. The plumbing was verified directly rather than assumed — all 15 log
 entries parse avg/peak (e.g. 2026-06-08T03:10:59Z → 1195/1257), and blanking
 three rows and re-running `attach_viewer_stats()` refilled all three.
 
+Fifth pass (`b7b2cd0`) validated against a scratch copy of `data/` first — one
+stream backfilled (`2026-08-14T22:33:47Z via twitch_vod_backfill`), the split
+VOD stitched to 06:42:00, games filled, rows 2464 → 2465. Re-ran in place to
+confirm idempotency: second run backfilled nothing, 2465 rows, 2465 unique
+starts, no duplicates. Before adding the stitcher, the existing 36 exact rows
+were checked for adjacent VODs within 30 minutes of each other's end — zero, so
+no historical figure moves.
+
+Then on the runner via `workflow_dispatch` run 31912676079, green, same output,
+committed `84a7dbf`. Pages deploy 31912700968 succeeded and a cache-busted fetch
+of `cyr.mom/data/stream-data.js` serves `generated_at` 2026-08-15T22:39:22Z with
+`data_through` **2026-08-14T22:33:47Z**.
+
 ## Uncommitted implementation details
 
 None of the implementation work is uncommitted. It shipped in five commits:
@@ -240,21 +253,11 @@ stream source). The workflow's own data commits followed each: `d279488`,
 Still untracked and deliberately left alone: `README.md`. It predates this
 session and is not mine to commit.
 
-Uncommitted right now: this file's fourth-pass update. Working tree is otherwise
-clean.
+Nothing is uncommitted. The fifth-pass code shipped as `b7b2cd0` and this file's
+fifth-pass update as `69394dd`; both are pushed. The working tree holds only the
+untracked `README.md` noted above.
 
 Generated Git state is in `.agent/runtime/WORKTREE.md`.
-
-Fifth pass (`b7b2cd0`) validated against a scratch copy of `data/` first — one
-stream backfilled (`2026-08-14T22:33:47Z via twitch_vod_backfill`), the split
-VOD stitched to 06:42:00, games filled, rows 2464 → 2465. Re-ran in place to
-confirm idempotency: second run backfilled nothing, 2465 rows, 2465 unique
-starts, no duplicates.
-
-Then on the runner via `workflow_dispatch` run 31912676079, green, same output,
-committed `84a7dbf`. Pages deploy 31912700968 succeeded and a cache-busted fetch
-of `cyr.mom/data/stream-data.js` serves `generated_at` 2026-08-15T22:39:22Z with
-`data_through` **2026-08-14T22:33:47Z**.
 
 ## Gotchas worth keeping
 
