@@ -12,6 +12,13 @@ that matters.
 All three are done. The site is current, runs are green, and the only field
 SullyGnome still uniquely provides is follower deltas.
 
+Reopened 2026-08-15 by a second instance of the same failure, reported as "not
+autorunning to fetch new data": the schedule and the runs were fine, but no
+remaining source was live enough to notice a new stream, so `data_through` sat
+at 2026-08-10 for five days while every run committed a fresh `generated_at`.
+Closed by `b7b2cd0` — Twitch's own VOD list now sources new streams, and the
+site is current through 2026-08-14.
+
 ## Completed work
 
 - Diagnosed the cause: the SullyGnome scrape has failed on every scheduled run
