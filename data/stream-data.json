@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-08-15T22:20:22Z",
-  "data_through": "2026-08-10T17:38:27Z",
+  "generated_at": "2026-08-15T22:39:22Z",
+  "data_through": "2026-08-14T22:33:47Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2464,
+    "sullygnome_stream_table": 2465,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 31,
-    "exact_merged_rows": 36,
+    "exact_merged_rows": 37,
     "youtube_archive_segments": 1124,
     "youtube_archive_grouped_dates": 610
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2463,
-      "mean": 27.96,
+      "count": 2464,
+      "mean": 27.99,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
@@ -23,15 +23,15 @@
         "12-24h": 1257,
         "1-2d": 418,
         "2-3d": 174,
-        "3-5d": 102,
+        "3-5d": 103,
         "5-7d": 15,
         "7+d": 16
       }
     },
     "exact_gap_hours": {
-      "count": 35,
-      "mean": 43.61,
-      "median": 28.68,
+      "count": 36,
+      "mean": 45.2,
+      "median": 28.74,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -216,7 +216,7 @@
       "2026-05": 19,
       "2026-06": 16,
       "2026-07": 18,
-      "2026-08": 5
+      "2026-08": 6
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -228,7 +228,7 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 128
+      "2026": 129
     },
     "dow_hour": {
       "dow": {
@@ -236,7 +236,7 @@
         "Tue": 401,
         "Wed": 435,
         "Thu": 389,
-        "Fri": 352,
+        "Fri": 353,
         "Sat": 242,
         "Sun": 205
       },
@@ -263,7 +263,7 @@
         "19": 176,
         "20": 258,
         "21": 292,
-        "22": 282,
+        "22": 283,
         "23": 247
       }
     },
@@ -274,11 +274,11 @@
       ],
       [
         3,
-        6.46
+        6.45
       ],
       [
         6,
-        9.26
+        9.25
       ],
       [
         9,
@@ -286,63 +286,63 @@
       ],
       [
         12,
-        19.69
+        19.68
       ],
       [
         15,
-        33.54
+        33.52
       ],
       [
         18,
-        50.59
+        50.57
       ],
       [
         21,
-        63.87
+        63.84
       ],
       [
         24,
-        70.6
+        70.58
       ],
       [
         30,
-        74.42
+        74.39
       ],
       [
         36,
-        76.45
+        76.42
       ],
       [
         42,
-        81.81
+        81.78
       ],
       [
         48,
-        87.58
+        87.54
       ],
       [
         54,
-        89.0
+        88.96
       ],
       [
         60,
-        89.65
+        89.61
       ],
       [
         66,
-        92.04
+        92.0
       ],
       [
         72,
-        94.6
+        94.56
       ],
       [
         84,
-        95.53
+        95.5
       ],
       [
         96,
-        97.44
+        97.4
       ],
       [
         108,
@@ -386,11 +386,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 18.1,
-        "started_at": "2026-07-09T20:23:05Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 23.8,
         "started_at": "2026-07-11T01:04:00Z",
@@ -485,22 +480,14 @@
         "gap_h": 68.9,
         "started_at": "2026-08-10T17:38:27Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 98.1,
+        "started_at": "2026-08-14T22:33:47Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-07-29T19:50:46Z",
-        "ended_at_iso": "2026-07-30T01:00:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Dirty Business"
-        ],
-        "duration_h": 5.2,
-        "duration_label": "310 minutes",
-        "avg_viewers": 2200,
-        "peak_viewers": 2777,
-        "followers_gained": -50
-      },
       {
         "started_at": "2026-07-30T19:18:57Z",
         "ended_at_iso": "2026-07-31T02:45:00+00:00",
@@ -591,15 +578,27 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-14T22:33:47Z",
+        "ended_at_iso": "2026-08-15T05:15:00+00:00",
+        "games": [
+          "Just Chatting"
+        ],
+        "duration_h": 6.7,
+        "duration_label": "402 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-08-10T17:38:27Z",
-      "ended_at_iso": "2026-08-10T20:30:00+00:00",
+      "started_at": "2026-08-14T22:33:47Z",
+      "ended_at_iso": "2026-08-15T05:15:00+00:00",
       "games": [
         "Just Chatting"
       ],
-      "duration_label": "172 minutes"
+      "duration_label": "402 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -704,10 +703,10 @@
       "game_analysis": {
         "categories": {
           "Just Chatting only": {
-            "count": 484,
+            "count": 485,
             "share": 19.7,
-            "median_gap_hours": 26.65,
-            "p90_gap_hours": 72.58,
+            "median_gap_hours": 26.66,
+            "p90_gap_hours": 72.78,
             "avg_viewers": 3728.0
           },
           "Other games": {
@@ -719,7 +718,7 @@
           },
           "Social sandbox/RP": {
             "count": 1053,
-            "share": 42.8,
+            "share": 42.7,
             "median_gap_hours": 23.88,
             "p90_gap_hours": 48.28,
             "avg_viewers": 1601.0
@@ -742,7 +741,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1588
+            "count": 1589
           },
           {
             "game": "Grand Theft Auto V",
@@ -49411,66 +49410,70 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2842524127",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2846385201",
+      "started_at": "2026-08-14T22:33:47Z",
+      "ended_at": "Saturday 15 August 2026 05:15",
+      "duration_label": "402 minutes",
+      "duration_seconds": 24120,
+      "title": "\ud83c\udf55 PIZZA FRIDAY WITH @MEESTERKEEM \ud83c\udf55 WHO WILL EMBARRASS THEMSELVES LESS TONIGHT?",
+      "games": [
+        "Just Chatting"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2846385201",
+      "range": "2026"
     }
   ],
   "exact_rows": [
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": null,
       "started_at": "2026-06-08T03:10:59Z",
       "duration_label": "6 hours",
-      "duration_seconds": null,
       "title": "LATE NIGHT CYR TIME - THERAPIST SAID MY VIEWCAP ISN'T AS BAD AS MY STREAM SETUP - SO I ROTATED MY DESK, NEW SETUP.",
-      "views": null,
       "avg_viewers": 1195,
       "peak_viewers": 1257
     },
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": null,
       "started_at": "2026-06-08T23:43:15Z",
       "duration_label": "7 hours",
-      "duration_seconds": null,
       "title": "FILM FLOP MONDAY - SAMURAI COP - FORZA WINNER POV LATER",
-      "views": null,
       "avg_viewers": 1175,
       "peak_viewers": 1249
     },
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": null,
       "started_at": "2026-06-10T05:31:16Z",
       "duration_label": "3 hours",
-      "duration_seconds": null,
       "title": "LATE NIGHT CYR - 40K FIGURINE BUILD SPEEDRUN - WILL NAME THEM AFTER CHATTERSj",
-      "views": null,
       "avg_viewers": 1164,
       "peak_viewers": 1242
     },
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": null,
       "started_at": "2026-06-12T02:18:44Z",
       "duration_label": "5 hours",
-      "duration_seconds": null,
       "title": "BIG NEWS TODAY BIG PLANS COMING - FINISHING THESE 40K MINIS AND RESENTING CHAT\ud83c\udf55PIZZA FRIDAY WITH NMPLOL TOMORROW \ud83c\udde8\ud83c\udde6 MONTREAL ON SATURDAY\ud83c\udde8\ud83c\udde6",
-      "views": null,
       "avg_viewers": 1180,
       "peak_viewers": 1242
     },
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": null,
       "started_at": "2026-06-12T23:30:25Z",
       "duration_label": "5 hours",
-      "duration_seconds": null,
       "title": "\ud83c\udf55 PIZZA FRIDAY 1.2K \ud83c\udf55 w/ @NMPLOL @MISTERARTHER @JULIAKINS & MORE (NOT SURE WHO'S COMING YET) \ud83c\udf55 WHO CAN MAKE THE BEST PIZZA?! \ud83c\udf55 @CYR247",
-      "views": null,
       "avg_viewers": 1184,
       "peak_viewers": 1250
     },
@@ -49480,9 +49483,9 @@
       "id": "2797507239",
       "started_at": "2026-06-15T20:31:47Z",
       "duration_label": "5 hours",
-      "duration_seconds": null,
+      "duration_seconds": 18355,
       "title": "TODAY @xqc TEACHES ME SKATEBOARDING - HOW FRENCH AM I? - TRYING FRENCH FOOD -  IS MONTREAL IN MY DNA OR IS THE WHOLE THING A LIE? !DISCORD",
-      "views": null,
+      "views": 62260,
       "avg_viewers": 1174,
       "peak_viewers": 1246
     },
@@ -49492,9 +49495,9 @@
       "id": "2799236203",
       "started_at": "2026-06-18T00:20:08Z",
       "duration_label": "4 hours",
-      "duration_seconds": null,
+      "duration_seconds": 14858,
       "title": "OFF-ROADING IN A JAPANESE SUV AS THE SUN SETS IN THE HILLS OF MONTREAL - THEN TRYING A&W AND TIM HORTONS BLIND RUN",
-      "views": null,
+      "views": 64880,
       "avg_viewers": 1146,
       "peak_viewers": 1236
     },
@@ -49504,9 +49507,9 @@
       "id": "2799916861",
       "started_at": "2026-06-18T21:51:51Z",
       "duration_label": "4 hours",
-      "duration_seconds": null,
+      "duration_seconds": 16026,
       "title": "IRON CHEF 1v1 AGAINST @XQC - RANDOM COUNTRY - RANDOM DISH - SEND IT - CUH IN CUHNADA , CUHBEC",
-      "views": null,
+      "views": 54799,
       "avg_viewers": 1145,
       "peak_viewers": 1240
     },
@@ -49516,9 +49519,9 @@
       "id": "2803963004",
       "started_at": "2026-06-24T02:01:24Z",
       "duration_label": "5 hours",
-      "duration_seconds": null,
+      "duration_seconds": 18680,
       "title": "MAKING HOMEMADE SKYLINE CHILI (CINNAMON CHILI ON SPAGHETTI) - IS IT AS BAD AS THEY SAY?! - WE SHALL FIND OUT - BIG STREAM ANNOUNCEMENT",
-      "views": null,
+      "views": 66050,
       "avg_viewers": 1105,
       "peak_viewers": 1247
     },
@@ -49528,9 +49531,9 @@
       "id": "2804583711",
       "started_at": "2026-06-24T22:13:45Z",
       "duration_label": "7 hours",
-      "duration_seconds": null,
+      "duration_seconds": 23350,
       "title": "BLUE COLLAR LARP STREAM - FIXING A VAN IN MISERABLE HEAT -NO TRAINING - BRUTAL HEAT - WOULD YOU FIRE ME OR HIRE ME IF I SHOWED UP !submit",
-      "views": null,
+      "views": 94605,
       "avg_viewers": 1120,
       "peak_viewers": 1247
     },
@@ -49540,9 +49543,9 @@
       "id": "2805427726",
       "started_at": "2026-06-26T00:03:27Z",
       "duration_label": "9 hours",
-      "duration_seconds": null,
+      "duration_seconds": 33000,
       "title": "CAN TWO MEN SAVE ARBYS - HOMEMADE BEEF N CHEDDAR WITH @PENTA FROM SCRATCH - NOT SPONSORED JUST MORBIDLY CURIOUS",
-      "views": null,
+      "views": 106444,
       "avg_viewers": 1165,
       "peak_viewers": 1252
     },
@@ -49552,9 +49555,9 @@
       "id": "2806312431",
       "started_at": "2026-06-27T02:39:53Z",
       "duration_label": "3 hours",
-      "duration_seconds": null,
+      "duration_seconds": 11549,
       "title": "FINE DINING WITH @MISTERARTHER - IT'S HIS FIRST TIME - TIME FOR SOME FRIDAY FUN",
-      "views": null,
+      "views": 58342,
       "avg_viewers": 1395,
       "peak_viewers": 1482
     },
@@ -49564,9 +49567,9 @@
       "id": "2808519782",
       "started_at": "2026-06-29T23:59:38Z",
       "duration_label": "5 hours",
-      "duration_seconds": null,
+      "duration_seconds": 16310,
       "title": "MATCHING VIEWERS TO THEIR CARS - FACE VS VEHICLE - WHO LOOKS LIKE THEY SHOULD NOT BE ON THE ROAD - THANK YOU @PAYMONEYWUBBY !SUBMIT",
-      "views": null,
+      "views": 84924,
       "avg_viewers": 1174,
       "peak_viewers": 1239
     },
@@ -49576,9 +49579,9 @@
       "id": "2810020947",
       "started_at": "2026-07-01T23:20:07Z",
       "duration_label": "7 hours",
-      "duration_seconds": null,
+      "duration_seconds": 24340,
       "title": "PLAYING GAMES WITH FRIENDS - NEVER PLAYED THIS MECCA CHAMELION GAME BEFORE - LET'S SEE IF I CAN HANG (3.4k Subs no viewers)",
-      "views": null,
+      "views": 165525,
       "avg_viewers": 1382,
       "peak_viewers": 1499
     },
@@ -49588,9 +49591,9 @@
       "id": "2810900553",
       "started_at": "2026-07-03T01:49:58Z",
       "duration_label": "6 hours",
-      "duration_seconds": null,
+      "duration_seconds": 23090,
       "title": "relax. you've nothing to do and it's gaming night with cyr. mecca chameleon with chat, perhaps? what do you think, cuh?",
-      "views": null,
+      "views": 155267,
       "avg_viewers": 1406,
       "peak_viewers": 1487
     },
@@ -49803,6 +49806,16 @@
       "duration_seconds": 10330,
       "title": "CYR IN THE KITCHEN - HOMEMADE CLAM CUH CHOWDER 1ST TIME - IN CAPE COD WE SHOULD EXPLORE A BIT AFTER CUH",
       "views": 76282
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2846385201",
+      "started_at": "2026-08-14T22:33:47Z",
+      "duration_label": "06:42:00",
+      "duration_seconds": 24120,
+      "title": "\ud83c\udf55 PIZZA FRIDAY WITH @MEESTERKEEM \ud83c\udf55 WHO WILL EMBARRASS THEMSELVES LESS TONIGHT?",
+      "views": 256885
     }
   ],
   "archive_grouped_dates": [
