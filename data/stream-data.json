@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-08-15T20:21:42Z",
+  "generated_at": "2026-08-15T20:48:18Z",
   "data_through": "2026-08-10T17:38:27Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2464,
