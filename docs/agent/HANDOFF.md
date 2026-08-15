@@ -1,6 +1,6 @@
 # Agent Handoff
 
-Updated: 2026-08-14 (fourth pass: viewer-source probe + TwitchMetrics recovery)
+Updated: 2026-08-15 (fifth pass: Twitch VOD list as a stream source)
 
 ## Active objective
 
@@ -75,23 +75,52 @@ Fourth pass — `f833ded`, hunting the last SullyGnome-only fields:
   one stream would be worse than a gap.
 - **Follower deltas remain SullyGnome-only.** No source found for them.
 
+Fifth pass — `b7b2cd0`, the pipeline could not see new streams:
+
+- Reported as "not autorunning to fetch new data". The automation was fine —
+  the schedule fired every 30 minutes, every run was green, every run pushed a
+  commit. Those commits only moved `generated_at`: `data_through` had been
+  frozen at 2026-08-10 for five days while cyr streamed on 08-14.
+- Cause: the fourth pass left **TwitchMetrics as the only source that can
+  introduce a stream** (SullyGnome serves cached rows only). TwitchMetrics
+  indexes on its own schedule and simply had not picked the 08-14 stream up —
+  verified directly, its `/videos` page tops out at VOD `2842524127` (08-10).
+  A source that lags is invisible here: nothing fails, the run just re-fetches
+  what it already had.
+- `parse_twitch_vods()` reads the VOD list from the Twitch GQL endpoint already
+  used for live status and games. Twitch publishes a VOD when the stream ends,
+  so it sees new streams immediately. Rows join the same `exact_rows` merge that
+  feeds `backfill_recent_from_exact()`, so no new merge path was needed.
+- `stitch_split_vods()` merges VODs that are one stream split by a reconnect.
+  The 08-14 stream arrived as two VODs 14 seconds apart (`2846356160` +
+  `2846385201`); untreated they would count as two streams and put a bogus
+  sub-hour entry in the gap stats. Checked before adding: zero such pairs exist
+  in the previous 36 exact rows, so this changes no historical figure.
+- The merge no longer lets an empty field overwrite a populated one, and
+  backfilled rows are tagged with the upstream that surfaced them
+  (`twitch_vod_backfill`) rather than a hardcoded `twitchmetrics_backfill`.
+
 ## Current behavior
 
-Shipped in four commits — `4be0f7f`, `54a36ea`, `fc0ff0c`, `f833ded` — on
-`main`, deployed to https://cyr.mom via Pages.
+Shipped in five commits — `4be0f7f`, `54a36ea`, `fc0ff0c`, `f833ded`,
+`b7b2cd0` — on `main`, deployed to https://cyr.mom via Pages.
 
-Source hierarchy as of `f833ded`:
+Source hierarchy as of `b7b2cd0`:
 
 | Source | Role | Status |
 | --- | --- | --- |
-| TwitchMetrics | primary — which streams exist and when; avg/peak viewers | working |
-| Twitch GQL | per-stream games, live status | working |
+| Twitch GQL | primary — which streams exist and when; games; live status | working |
+| TwitchMetrics | avg/peak viewers; corroborates the VOD list | working, lags |
 | YouTube archive | title semantics, archive gaps | working |
 | SullyGnome | follower deltas, deep history, viewers where present | **blocked** |
 
 SullyGnome is the only degraded source, and after `f833ded` the only field it
 uniquely supplies is **follower deltas**. Losing it costs no streams, no games,
 and — once TwitchMetrics logs catch up — no viewer figures either.
+
+As of `b7b2cd0` the recent end of the timeline no longer depends on any scraped
+third party: Twitch itself supplies new streams. TwitchMetrics lagging is now a
+metadata delay, not a missing stream.
 
 SullyGnome is fetched through `curl_cffi` TLS impersonation. That clears the
 Cloudflare challenge on the landing page (`PageInfo` parses again) but the
@@ -201,11 +230,12 @@ three rows and re-running `attach_viewer_stats()` refilled all three.
 
 ## Uncommitted implementation details
 
-None of the implementation work is uncommitted. It shipped in four commits:
+None of the implementation work is uncommitted. It shipped in five commits:
 `4be0f7f` (stop the silent staleness), `54a36ea` (TwitchMetrics primary, TLS
-impersonation, no failing runs), `fc0ff0c` (games from Twitch GQL) and `f833ded`
-(recover TwitchMetrics viewer figures). The workflow's own data commits followed
-each: `d279488`, `71a4375`, `d8d4a75`.
+impersonation, no failing runs), `fc0ff0c` (games from Twitch GQL), `f833ded`
+(recover TwitchMetrics viewer figures) and `b7b2cd0` (Twitch VOD list as a
+stream source). The workflow's own data commits followed each: `d279488`,
+`71a4375`, `d8d4a75`, `84a7dbf`.
 
 Still untracked and deliberately left alone: `README.md`. It predates this
 session and is not mine to commit.
@@ -214,6 +244,17 @@ Uncommitted right now: this file's fourth-pass update. Working tree is otherwise
 clean.
 
 Generated Git state is in `.agent/runtime/WORKTREE.md`.
+
+Fifth pass (`b7b2cd0`) validated against a scratch copy of `data/` first — one
+stream backfilled (`2026-08-14T22:33:47Z via twitch_vod_backfill`), the split
+VOD stitched to 06:42:00, games filled, rows 2464 → 2465. Re-ran in place to
+confirm idempotency: second run backfilled nothing, 2465 rows, 2465 unique
+starts, no duplicates.
+
+Then on the runner via `workflow_dispatch` run 31912676079, green, same output,
+committed `84a7dbf`. Pages deploy 31912700968 succeeded and a cache-busted fetch
+of `cyr.mom/data/stream-data.js` serves `generated_at` 2026-08-15T22:39:22Z with
+`data_through` **2026-08-14T22:33:47Z**.
 
 ## Gotchas worth keeping
 
@@ -237,6 +278,13 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
 - When checking a fix against the live site, wait for the Pages deploy to
   complete and cache-bust the fetch. A stale CDN copy briefly made a correct
   change look broken here.
+- **Green runs are not evidence the data moved.** Every run commits, because
+  `generated_at` always changes, so the commit log looks alive even when no
+  source produced anything new. Check `data_through`, never the run status or
+  the commit timestamps. This is exactly what hid the five-day freeze.
+- A scraped aggregator lagging looks identical to nothing having happened. Keep
+  at least one first-party source (Twitch GQL) able to introduce a stream on its
+  own; do not let the pipeline's recent end depend solely on a third party.
 
 ## Risks and unknowns
 
@@ -254,49 +302,55 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
   undocumented, so it can change without notice; a failure is caught and lands
   in `degraded_sources` as `twitch_vod_games`.
 - **Nothing alerts any more.** That was the explicit ask, and it is the right
-  call for this noise level, but it means a future outage of TwitchMetrics — the
-  source that *can* actually hide streams — will surface only as a banner on the
-  site that someone has to look at. If that matters later, alert on
-  `twitchmetrics*` in `degraded_sources` only, not on any degraded source.
+  call for this noise level, but it means a future outage will surface only as a
+  banner on the site that someone has to look at. If that matters later, alert
+  on `twitch_vods` in `degraded_sources` — after `b7b2cd0` that is the source
+  that can actually hide streams — not on any degraded source.
+- **A lagging source still fails silently.** `b7b2cd0` fixed the case that bit
+  us, but nothing yet notices `data_through` standing still while the runs stay
+  green. If Twitch GQL breaks the same way, the same five-day freeze recurs with
+  no signal. The cheap guard would be to fail, or at least warn, when
+  `data_through` has not moved in N days *and* a live stream was observed since.
 
 ## Next concrete action
 
-**None. This work is complete.** Site is current, runs are green, no alerts
-fire, and every field except follower deltas now has a working non-SullyGnome
-source.
+**None required.** Site is current through 2026-08-14, runs are green, and new
+streams now reach the dataset from Twitch itself within a refresh cycle.
 
-The previous next action (probe TwitchTracker and Streamscharts) was carried out
-in the fourth pass and closed: both are Cloudflare-blocked, and the viewer
-figures were recovered from TwitchMetrics instead. Do not re-probe them without
-new information — the result is recorded above.
+Two optional threads, higher value first:
 
-Only loose thread, and it is optional: **follower deltas** have no non-SullyGnome
-source. Untried avenues, in order of likely payoff:
-
-1. Twitch Helix `/channels/followers` returns only a *current* total, so it would
-   need the pipeline to snapshot it per run and difference successive values —
-   that yields deltas going forward but never recovers history, and it needs a
-   client secret in repo secrets.
-2. Get past Cloudflare on `sullygnome.com/api/` (headless browser for
-   `cf_clearance`, or a proxy with better IP reputation). The landing page
-   already clears; only `/api/` does not.
+1. **Staleness guard.** Nothing detects `data_through` standing still while runs
+   stay green — the failure mode of this fifth pass. See the last entry under
+   Risks for the shape of a cheap check.
+2. **Follower deltas** still have no non-SullyGnome source. Untried avenues, in
+   order of likely payoff:
+   - Twitch Helix `/channels/followers` returns only a *current* total, so it
+     would need the pipeline to snapshot it per run and difference successive
+     values — that yields deltas going forward but never recovers history, and
+     it needs a client secret in repo secrets.
+   - Get past Cloudflare on `sullygnome.com/api/` (headless browser for
+     `cf_clearance`, or a proxy with better IP reputation). The landing page
+     already clears; only `/api/` does not.
 
 If neither is wanted, leave SullyGnome degraded. Nothing depends on it.
 
 ## Deployment and status impact
 
 Deployed. GitHub Pages builds from `main` on push; no other deploy target.
-Live at https://cyr.mom (CNAME `cyr.mom`) serving `data_through` 2026-08-10.
-Deploy reported via `report_event.py --project cyr --kind deploy` (HTTP 201).
+Live at https://cyr.mom (CNAME `cyr.mom`) serving `data_through` 2026-08-14.
+Deploy reported via `report_event.py --project cyr --kind deploy`.
 
-Scheduled refresh continues every 30 minutes and will keep committing partial
-data while reporting failure.
+Scheduled refresh continues every 30 minutes. It commits on every run because
+`generated_at` always changes, and it exits non-zero only on a total data
+failure — so read `data_through`, not the run status, to tell whether the data
+actually moved.
 
 ## Most relevant files
 
-- `scripts/build_dataset.py` — `gql()`, `fetch_vod_game_index()`,
-  `fetch_vod_games_detail()`, `attach_vod_games()`, `open_sully_session()`,
-  `backfill_recent_from_exact()`, `load_cached_sully_rows()`,
-  `twitchmetrics_blocks()`, `block_viewer_stats()`, `attach_viewer_stats()`
+- `scripts/build_dataset.py` — `gql()`, `parse_twitch_vods()`,
+  `stitch_split_vods()`, `fetch_vod_game_index()`, `fetch_vod_games_detail()`,
+  `attach_vod_games()`, `open_sully_session()`, `backfill_recent_from_exact()`,
+  `load_cached_sully_rows()`, `twitchmetrics_blocks()`, `block_viewer_stats()`,
+  `attach_viewer_stats()`
 - `.github/workflows/refresh-data.yml`
 - `index.html` (source note ~L2245, stale banner ~L1200 and CSS ~L935)
