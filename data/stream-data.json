@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-08-16T21:19:31Z",
-  "data_through": "2026-08-14T22:33:47Z",
+  "generated_at": "2026-08-16T21:44:40Z",
+  "data_through": "2026-08-16T21:30:51Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2465,
+    "sullygnome_stream_table": 2466,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 31,
-    "exact_merged_rows": 37,
+    "exact_merged_rows": 38,
     "youtube_archive_segments": 1124,
     "youtube_archive_grouped_dates": 610
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2464,
-      "mean": 27.99,
+      "count": 2465,
+      "mean": 28.0,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 481,
         "12-24h": 1257,
-        "1-2d": 418,
+        "1-2d": 419,
         "2-3d": 174,
         "3-5d": 103,
         "5-7d": 15,
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 36,
-      "mean": 45.2,
-      "median": 28.74,
+      "count": 37,
+      "mean": 45.25,
+      "median": 28.8,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -216,7 +216,7 @@
       "2026-05": 19,
       "2026-06": 16,
       "2026-07": 18,
-      "2026-08": 6
+      "2026-08": 7
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -228,7 +228,7 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 129
+      "2026": 130
     },
     "dow_hour": {
       "dow": {
@@ -238,7 +238,7 @@
         "Thu": 389,
         "Fri": 353,
         "Sat": 242,
-        "Sun": 205
+        "Sun": 206
       },
       "hour_utc": {
         "0": 192,
@@ -262,7 +262,7 @@
         "18": 169,
         "19": 176,
         "20": 258,
-        "21": 292,
+        "21": 293,
         "22": 283,
         "23": 247
       }
@@ -282,7 +282,7 @@
       ],
       [
         9,
-        10.84
+        10.83
       ],
       [
         12,
@@ -290,27 +290,27 @@
       ],
       [
         15,
-        33.52
+        33.51
       ],
       [
         18,
-        50.57
+        50.55
       ],
       [
         21,
-        63.84
+        63.81
       ],
       [
         24,
-        70.58
+        70.55
       ],
       [
         30,
-        74.39
+        74.36
       ],
       [
         36,
-        76.42
+        76.39
       ],
       [
         42,
@@ -318,11 +318,11 @@
       ],
       [
         48,
-        87.54
+        87.55
       ],
       [
         54,
-        88.96
+        88.97
       ],
       [
         60,
@@ -330,7 +330,7 @@
       ],
       [
         66,
-        92.0
+        92.01
       ],
       [
         72,
@@ -386,11 +386,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 23.8,
-        "started_at": "2026-07-11T01:04:00Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 43.5,
         "started_at": "2026-07-13T00:30:21Z",
@@ -485,22 +480,14 @@
         "gap_h": 98.1,
         "started_at": "2026-08-14T22:33:47Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 40.3,
+        "started_at": "2026-08-16T21:30:51Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-07-30T19:18:57Z",
-        "ended_at_iso": "2026-07-31T02:45:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Project Zomboid"
-        ],
-        "duration_h": 7.5,
-        "duration_label": "447 minutes",
-        "avg_viewers": 2387,
-        "peak_viewers": 3036,
-        "followers_gained": -37
-      },
       {
         "started_at": "2026-07-31T19:55:57Z",
         "ended_at_iso": "2026-08-01T04:48:00+00:00",
@@ -590,15 +577,27 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-16T21:30:51Z",
+        "ended_at_iso": "2026-08-16T21:44:00+00:00",
+        "games": [
+          "Just Chatting"
+        ],
+        "duration_h": 0.2,
+        "duration_label": "14 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-08-14T22:33:47Z",
-      "ended_at_iso": "2026-08-15T05:15:00+00:00",
+      "started_at": "2026-08-16T21:30:51Z",
+      "ended_at_iso": "2026-08-16T21:44:00+00:00",
       "games": [
         "Just Chatting"
       ],
-      "duration_label": "402 minutes"
+      "duration_label": "14 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -703,15 +702,15 @@
       "game_analysis": {
         "categories": {
           "Just Chatting only": {
-            "count": 485,
+            "count": 486,
             "share": 19.7,
-            "median_gap_hours": 26.66,
-            "p90_gap_hours": 72.78,
+            "median_gap_hours": 26.71,
+            "p90_gap_hours": 72.75,
             "avg_viewers": 3728.0
           },
           "Other games": {
             "count": 679,
-            "share": 27.6,
+            "share": 27.5,
             "median_gap_hours": 25.36,
             "p90_gap_hours": 72.21,
             "avg_viewers": 2449.0
@@ -732,7 +731,7 @@
           },
           "Variety stack": {
             "count": 228,
-            "share": 9.3,
+            "share": 9.2,
             "median_gap_hours": 24.75,
             "p90_gap_hours": 68.37,
             "avg_viewers": 2612.0
@@ -741,7 +740,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1589
+            "count": 1590
           },
           {
             "game": "Grand Theft Auto V",
@@ -790,7 +789,12 @@
         ]
       }
     },
-    "live_stream": null
+    "live_stream": {
+      "started_at": "2026-08-16T21:30:46Z",
+      "game": "Just Chatting",
+      "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
+      "viewers": 1353
+    }
   },
   "sully_streams": [
     {
@@ -49429,6 +49433,25 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2846385201",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2848205603",
+      "started_at": "2026-08-16T21:30:51Z",
+      "ended_at": "Sunday 16 August 2026 21:44",
+      "duration_label": "14 minutes",
+      "duration_seconds": 817,
+      "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
+      "games": [
+        "Just Chatting"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2848205603",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -49815,7 +49838,17 @@
       "duration_label": "06:42:00",
       "duration_seconds": 24120,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH @MEESTERKEEM \ud83c\udf55 WHO WILL EMBARRASS THEMSELVES LESS TONIGHT?",
-      "views": 257406
+      "views": 257416
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2848205603",
+      "started_at": "2026-08-16T21:30:51Z",
+      "duration_label": "00:13:37",
+      "duration_seconds": 817,
+      "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
+      "views": 0
     }
   ],
   "archive_grouped_dates": [
