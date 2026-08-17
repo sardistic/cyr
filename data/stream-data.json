@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-17T16:56:33Z",
+  "generated_at": "2026-08-17T17:28:43Z",
   "data_through": "2026-08-16T21:30:51Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
   ],
   "sources": {
     "sullygnome_stream_table": 2466,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 32,
-    "exact_merged_rows": 37,
+    "exact_merged_rows": 38,
     "youtube_archive_segments": 1124,
     "youtube_archive_grouped_dates": 610
   },
@@ -30,9 +30,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 36,
-      "mean": 45.2,
-      "median": 28.74,
+      "count": 37,
+      "mean": 45.25,
+      "median": 28.8,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -49832,6 +49832,16 @@
       "duration_seconds": 24120,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH @MEESTERKEEM \ud83c\udf55 WHO WILL EMBARRASS THEMSELVES LESS TONIGHT?",
       "views": 257349
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2848205603",
+      "started_at": "2026-08-16T21:30:51Z",
+      "duration_label": "05:01:30",
+      "duration_seconds": 18090,
+      "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
+      "views": 229827
     }
   ],
   "archive_grouped_dates": [
