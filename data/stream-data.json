@@ -1,27 +1,26 @@
 {
-  "generated_at": "2026-08-17T20:55:04Z",
-  "data_through": "2026-08-16T21:30:51Z",
+  "generated_at": "2026-08-17T21:25:48Z",
+  "data_through": "2026-08-17T21:06:29Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2466,
+    "sullygnome_stream_table": 2467,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 32,
-    "exact_merged_rows": 38,
+    "exact_merged_rows": 39,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2465,
+      "count": 2466,
       "mean": 28.0,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 481,
-        "12-24h": 1257,
+        "12-24h": 1258,
         "1-2d": 419,
         "2-3d": 174,
         "3-5d": 103,
@@ -30,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 37,
-      "mean": 45.25,
-      "median": 28.8,
+      "count": 38,
+      "mean": 44.68,
+      "median": 28.74,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -217,7 +216,7 @@
       "2026-05": 19,
       "2026-06": 16,
       "2026-07": 18,
-      "2026-08": 7
+      "2026-08": 8
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -229,11 +228,11 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 130
+      "2026": 131
     },
     "dow_hour": {
       "dow": {
-        "Mon": 440,
+        "Mon": 441,
         "Tue": 401,
         "Wed": 435,
         "Thu": 389,
@@ -263,7 +262,7 @@
         "18": 169,
         "19": 176,
         "20": 258,
-        "21": 293,
+        "21": 294,
         "22": 283,
         "23": 247
       }
@@ -287,35 +286,35 @@
       ],
       [
         12,
-        19.68
+        19.67
       ],
       [
         15,
-        33.51
+        33.5
       ],
       [
         18,
-        50.55
+        50.53
       ],
       [
         21,
-        63.81
+        63.79
       ],
       [
         24,
-        70.55
+        70.56
       ],
       [
         30,
-        74.36
+        74.37
       ],
       [
         36,
-        76.39
+        76.4
       ],
       [
         42,
-        81.78
+        81.79
       ],
       [
         48,
@@ -327,7 +326,7 @@
       ],
       [
         60,
-        89.61
+        89.62
       ],
       [
         66,
@@ -335,7 +334,7 @@
       ],
       [
         72,
-        94.56
+        94.57
       ],
       [
         84,
@@ -347,7 +346,7 @@
       ],
       [
         108,
-        98.17
+        98.18
       ],
       [
         120,
@@ -355,7 +354,7 @@
       ],
       [
         132,
-        98.9
+        98.91
       ],
       [
         144,
@@ -387,11 +386,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 43.5,
-        "started_at": "2026-07-13T00:30:21Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 16.8,
         "started_at": "2026-07-13T22:48:18Z",
@@ -486,24 +480,14 @@
         "gap_h": 40.3,
         "started_at": "2026-08-16T21:30:51Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 23.4,
+        "started_at": "2026-08-17T21:06:29Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-07-31T19:55:57Z",
-        "ended_at_iso": "2026-08-01T04:48:00+00:00",
-        "games": [
-          "Just Chatting",
-          "WATERPUNK",
-          "Waterpark Simulator",
-          "Project Zomboid"
-        ],
-        "duration_h": 8.9,
-        "duration_label": "532 minutes",
-        "avg_viewers": null,
-        "peak_viewers": null,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-04T15:06:20Z",
         "ended_at_iso": "2026-08-04T23:37:00+00:00",
@@ -590,15 +574,27 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-17T21:06:29Z",
+        "ended_at_iso": "2026-08-17T21:25:00+00:00",
+        "games": [
+          "Just Chatting"
+        ],
+        "duration_h": 0.3,
+        "duration_label": "19 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-08-16T21:30:51Z",
-      "ended_at_iso": "2026-08-16T21:44:00+00:00",
+      "started_at": "2026-08-17T21:06:29Z",
+      "ended_at_iso": "2026-08-17T21:25:00+00:00",
       "games": [
         "Just Chatting"
       ],
-      "duration_label": "14 minutes"
+      "duration_label": "19 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -703,10 +699,10 @@
       "game_analysis": {
         "categories": {
           "Just Chatting only": {
-            "count": 486,
+            "count": 487,
             "share": 19.7,
-            "median_gap_hours": 26.71,
-            "p90_gap_hours": 72.75,
+            "median_gap_hours": 26.66,
+            "p90_gap_hours": 72.72,
             "avg_viewers": 3728.0
           },
           "Other games": {
@@ -741,7 +737,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1590
+            "count": 1591
           },
           {
             "game": "Grand Theft Auto V",
@@ -790,7 +786,12 @@
         ]
       }
     },
-    "live_stream": null
+    "live_stream": {
+      "started_at": "2026-08-17T21:06:24Z",
+      "game": "Just Chatting",
+      "title": "TEACHING MYSELF HOW TO JUGGLE IN ONE STREAM BECAUSE I'M A CLOWN - MOVIE NIGHT TONIGHT IN !DISCORD AFTER STREAM",
+      "viewers": 1486
+    }
   },
   "sully_streams": [
     {
@@ -49448,6 +49449,25 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2848205603",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2849049662",
+      "started_at": "2026-08-17T21:06:29Z",
+      "ended_at": "Monday 17 August 2026 21:25",
+      "duration_label": "19 minutes",
+      "duration_seconds": 1145,
+      "title": "TEACHING MYSELF HOW TO JUGGLE IN ONE STREAM BECAUSE I'M A CLOWN - MOVIE NIGHT TONIGHT IN !DISCORD AFTER STREAM",
+      "games": [
+        "Just Chatting"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2849049662",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -49841,7 +49861,17 @@
       "duration_label": "05:01:30",
       "duration_seconds": 18090,
       "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
-      "views": 229916
+      "views": 229943
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2849049662",
+      "started_at": "2026-08-17T21:06:29Z",
+      "duration_label": "00:19:05",
+      "duration_seconds": 1145,
+      "title": "TEACHING MYSELF HOW TO JUGGLE IN ONE STREAM BECAUSE I'M A CLOWN - MOVIE NIGHT TONIGHT IN !DISCORD AFTER STREAM",
+      "views": 2
     }
   ],
   "archive_grouped_dates": [
