@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-08-17T09:40:34Z",
+  "generated_at": "2026-08-17T10:31:24Z",
   "data_through": "2026-08-16T21:30:51Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
   ],
   "sources": {
     "sullygnome_stream_table": 2466,
@@ -49840,7 +49841,7 @@
       "duration_label": "05:01:30",
       "duration_seconds": 18090,
       "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
-      "views": 465
+      "views": 229657
     }
   ],
   "archive_grouped_dates": [
