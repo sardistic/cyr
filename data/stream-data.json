@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-17T19:27:29Z",
+  "generated_at": "2026-08-17T19:52:37Z",
   "data_through": "2026-08-16T21:30:51Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2466,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 32,
-    "exact_merged_rows": 38,
-    "youtube_archive_segments": 1124,
-    "youtube_archive_grouped_dates": 610
+    "exact_merged_rows": 37,
+    "youtube_archive_segments": 1126,
+    "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
@@ -30,21 +30,21 @@
       }
     },
     "exact_gap_hours": {
-      "count": 37,
-      "mean": 45.25,
-      "median": 28.8,
+      "count": 36,
+      "mean": 45.2,
+      "median": 28.74,
       "max": 138.03
     },
     "archive_gap_days": {
-      "count": 609,
+      "count": 610,
       "mean": 2.65,
-      "median": 1,
+      "median": 1.0,
       "max": 81,
       "bins": {
         "1": 329,
         "2": 114,
         "3": 62,
-        "4-5": 57,
+        "4-5": 58,
         "6-7": 20,
         "8-14": 15,
         "15+": 12
@@ -101,7 +101,7 @@
       "2026-05": 7,
       "2026-06": 14,
       "2026-07": 17,
-      "2026-08": 5
+      "2026-08": 6
     },
     "sully_monthly_counts": {
       "2017-01": 1,
@@ -602,7 +602,7 @@
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 609,
+        "sample_size": 610,
         "features": {
           "challenge": {
             "count": 19,
@@ -612,7 +612,7 @@
           },
           "collab": {
             "count": 202,
-            "share": 33.2,
+            "share": 33.1,
             "median_gap_days": 2.0,
             "p90_gap_days": 5.0
           },
@@ -623,15 +623,15 @@
             "p90_gap_days": 2.2
           },
           "food_cooking": {
-            "count": 94,
-            "share": 15.4,
-            "median_gap_days": 1.0,
+            "count": 95,
+            "share": 15.6,
+            "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
           "gameplay_arc": {
-            "count": 348,
-            "share": 57.1,
-            "median_gap_days": 1.0,
+            "count": 349,
+            "share": 57.2,
+            "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
           "recovery_risk": {
@@ -667,9 +667,9 @@
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 570,
+            "count": 571,
             "share": 93.6,
-            "median_gap_days": 1.0,
+            "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
           "positive": {
@@ -687,14 +687,14 @@
             "p90_gap_days": 2.1
           },
           "low": {
-            "count": 204,
-            "share": 33.5,
-            "median_gap_days": 2.0,
+            "count": 205,
+            "share": 33.6,
+            "median_gap_days": 2,
             "p90_gap_days": 6.0
           },
           "medium": {
             "count": 365,
-            "share": 59.9,
+            "share": 59.8,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
           }
@@ -49832,16 +49832,6 @@
       "duration_seconds": 24120,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH @MEESTERKEEM \ud83c\udf55 WHO WILL EMBARRASS THEMSELVES LESS TONIGHT?",
       "views": 257349
-    },
-    {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2848205603",
-      "started_at": "2026-08-16T21:30:51Z",
-      "duration_label": "05:01:30",
-      "duration_seconds": 18090,
-      "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
-      "views": 229884
     }
   ],
   "archive_grouped_dates": [
@@ -59412,6 +59402,22 @@
       "urls": [
         "https://www.youtube.com/watch?v=dLoQgpLeSYE"
       ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-08-14",
+      "segment_count": 2,
+      "duration_seconds_sum": 21759,
+      "primary_title": "Pizza Friday w/ MeesterKeem (He REALLY loves pizza!) - [08/14/2026]",
+      "titles": [
+        "CYR can't stop looking at his crazy YouTube recommendations - [08/14/2026]",
+        "Pizza Friday w/ MeesterKeem (He REALLY loves pizza!) - [08/14/2026]"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=eFbKj_7w4Tw",
+        "https://www.youtube.com/watch?v=Z1iL3IhYVHE"
+      ]
     }
   ],
   "title_semantic_rows": [
@@ -66393,6 +66399,18 @@
       "sentiment_score": 1,
       "intensity": "medium",
       "intensity_score": 2
+    },
+    {
+      "date": "2026-08-10",
+      "gap_days": 4,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
     }
   ]
 }
