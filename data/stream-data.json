@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T23:44:37Z",
+  "generated_at": "2026-08-17T01:14:28Z",
   "data_through": "2026-08-16T21:30:51Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
@@ -7,7 +7,7 @@
   "sources": {
     "sullygnome_stream_table": 2466,
     "twitchmetrics_stream_logs": 15,
-    "twitchmetrics_vods": 31,
+    "twitchmetrics_vods": 32,
     "exact_merged_rows": 38,
     "youtube_archive_segments": 1124,
     "youtube_archive_grouped_dates": 610
@@ -793,7 +793,7 @@
       "started_at": "2026-08-16T21:30:46Z",
       "game": "Shift at Midnight",
       "title": "SCARY GAME WITH @PEACHJARS \ud83d\udc80 SHIFT AT MIDNIGHT \ud83d\udc80 1ST TIME DADDY HUBBY \ud83d\udc80  @CYR247",
-      "viewers": 2124
+      "viewers": 2028
     }
   },
   "sully_streams": [
@@ -49503,12 +49503,9 @@
     {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
-      "id": "2797507239",
       "started_at": "2026-06-15T20:31:47Z",
       "duration_label": "5 hours",
-      "duration_seconds": 18355,
       "title": "TODAY @xqc TEACHES ME SKATEBOARDING - HOW FRENCH AM I? - TRYING FRENCH FOOD -  IS MONTREAL IN MY DNA OR IS THE WHOLE THING A LIE? !DISCORD",
-      "views": 62260,
       "avg_viewers": 1174,
       "peak_viewers": 1246
     },
@@ -49520,7 +49517,7 @@
       "duration_label": "4 hours",
       "duration_seconds": 14858,
       "title": "OFF-ROADING IN A JAPANESE SUV AS THE SUN SETS IN THE HILLS OF MONTREAL - THEN TRYING A&W AND TIM HORTONS BLIND RUN",
-      "views": 64880,
+      "views": 64888,
       "avg_viewers": 1146,
       "peak_viewers": 1236
     },
@@ -49532,7 +49529,7 @@
       "duration_label": "4 hours",
       "duration_seconds": 16026,
       "title": "IRON CHEF 1v1 AGAINST @XQC - RANDOM COUNTRY - RANDOM DISH - SEND IT - CUH IN CUHNADA , CUHBEC",
-      "views": 54799,
+      "views": 54801,
       "avg_viewers": 1145,
       "peak_viewers": 1240
     },
@@ -49544,7 +49541,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 18680,
       "title": "MAKING HOMEMADE SKYLINE CHILI (CINNAMON CHILI ON SPAGHETTI) - IS IT AS BAD AS THEY SAY?! - WE SHALL FIND OUT - BIG STREAM ANNOUNCEMENT",
-      "views": 66050,
+      "views": 66051,
       "avg_viewers": 1105,
       "peak_viewers": 1247
     },
@@ -49556,7 +49553,7 @@
       "duration_label": "7 hours",
       "duration_seconds": 23350,
       "title": "BLUE COLLAR LARP STREAM - FIXING A VAN IN MISERABLE HEAT -NO TRAINING - BRUTAL HEAT - WOULD YOU FIRE ME OR HIRE ME IF I SHOWED UP !submit",
-      "views": 94605,
+      "views": 94610,
       "avg_viewers": 1120,
       "peak_viewers": 1247
     },
@@ -49568,7 +49565,7 @@
       "duration_label": "9 hours",
       "duration_seconds": 33000,
       "title": "CAN TWO MEN SAVE ARBYS - HOMEMADE BEEF N CHEDDAR WITH @PENTA FROM SCRATCH - NOT SPONSORED JUST MORBIDLY CURIOUS",
-      "views": 106444,
+      "views": 106449,
       "avg_viewers": 1165,
       "peak_viewers": 1252
     },
@@ -49580,7 +49577,7 @@
       "duration_label": "3 hours",
       "duration_seconds": 11549,
       "title": "FINE DINING WITH @MISTERARTHER - IT'S HIS FIRST TIME - TIME FOR SOME FRIDAY FUN",
-      "views": 58342,
+      "views": 58346,
       "avg_viewers": 1395,
       "peak_viewers": 1482
     },
@@ -49592,7 +49589,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 16310,
       "title": "MATCHING VIEWERS TO THEIR CARS - FACE VS VEHICLE - WHO LOOKS LIKE THEY SHOULD NOT BE ON THE ROAD - THANK YOU @PAYMONEYWUBBY !SUBMIT",
-      "views": 84924,
+      "views": 84926,
       "avg_viewers": 1174,
       "peak_viewers": 1239
     },
@@ -49604,7 +49601,7 @@
       "duration_label": "7 hours",
       "duration_seconds": 24340,
       "title": "PLAYING GAMES WITH FRIENDS - NEVER PLAYED THIS MECCA CHAMELION GAME BEFORE - LET'S SEE IF I CAN HANG (3.4k Subs no viewers)",
-      "views": 165525,
+      "views": 165526,
       "avg_viewers": 1382,
       "peak_viewers": 1499
     },
@@ -49616,7 +49613,7 @@
       "duration_label": "6 hours",
       "duration_seconds": 23090,
       "title": "relax. you've nothing to do and it's gaming night with cyr. mecca chameleon with chat, perhaps? what do you think, cuh?",
-      "views": 155267,
+      "views": 155269,
       "avg_viewers": 1406,
       "peak_viewers": 1487
     },
@@ -49628,7 +49625,7 @@
       "duration_label": "06:33:12",
       "duration_seconds": 23592,
       "title": "GETTING WILD WITH CHAT - DEALING WITH MY PERSONAL PREGNANCY - FINDING THE SWEATIEST MECCA CHAMELIANS IN CHAT",
-      "views": 200308
+      "views": 200309
     },
     {
       "source": "twitchmetrics_vod",
@@ -49638,7 +49635,7 @@
       "duration_label": "05:05:40",
       "duration_seconds": 18340,
       "title": "CHAT, WHAT GAME SHOULD I BE ABLE TO BEAT IN 4-5 HOURS, AND IF I FAIL, THAT MEANS I SHOULD NOT PLAY GAMES? GO",
-      "views": 178190
+      "views": 178191
     },
     {
       "source": "twitchmetrics_vod",
@@ -49648,7 +49645,7 @@
       "duration_label": "04:02:50",
       "duration_seconds": 14570,
       "title": "I HAVE BEEN SUMMONED.",
-      "views": 129905
+      "views": 129907
     },
     {
       "source": "twitchmetrics_vod",
@@ -49658,7 +49655,7 @@
       "duration_label": "05:35:50",
       "duration_seconds": 20150,
       "title": "GETTING AN RP LOBBY GOING TONIGHT FOR DAWSON OAKS - WOULD BE REALLY NICE IS WUBBY SHOWS UP - WOULD BE REALLY NICE IF WILLNEFF SHOWS UP",
-      "views": 182423
+      "views": 182424
     },
     {
       "source": "twitchmetrics_vod",
@@ -49668,7 +49665,7 @@
       "duration_label": "04:19:20",
       "duration_seconds": 15560,
       "title": "1v1 LEGO BUILD RACE WITH @MISTERARTHER 6PM CST - ROCK CLIMBING WITH @MYTH TOMORROW",
-      "views": 172144
+      "views": 172145
     },
     {
       "source": "twitchmetrics_vod",
@@ -49678,7 +49675,7 @@
       "duration_label": "05:43:40",
       "duration_seconds": 20620,
       "title": "ROCK CLIMBING WITH @MYTH & @NMPLOL TODAY - THEN GOING OUT, A FINE BRUNCH WITH THE BOYS !discord",
-      "views": 226753
+      "views": 226759
     },
     {
       "source": "twitchmetrics_vod",
@@ -49688,7 +49685,7 @@
       "duration_label": "04:21:00",
       "duration_seconds": 15660,
       "title": "THAT SCENE IN TITANIC WHERE ROSE PUSHES JACK FROST OFF THE DOOR BUT I'M ROSE AND I'M JACK AND THERE'S NO WATER",
-      "views": 149449
+      "views": 149453
     },
     {
       "source": "twitchmetrics_vod",
@@ -49698,7 +49695,7 @@
       "duration_label": "04:18:20",
       "duration_seconds": 15500,
       "title": "giving chat EXACTLY what they want on a friday evening: ME",
-      "views": 140670
+      "views": 140673
     },
     {
       "source": "twitchmetrics_vod",
@@ -49708,7 +49705,7 @@
       "duration_label": "05:10:20",
       "duration_seconds": 18620,
       "title": "how to make an atomic bomb in your garden",
-      "views": 194963
+      "views": 194965
     },
     {
       "source": "twitchmetrics_vod",
@@ -49718,7 +49715,7 @@
       "duration_label": "05:08:10",
       "duration_seconds": 18490,
       "title": "ROCK CLIMBING WITH @MISTERARTHER",
-      "views": 156526
+      "views": 156540
     },
     {
       "source": "twitchmetrics_vod",
@@ -49728,7 +49725,7 @@
       "duration_label": "04:45:40",
       "duration_seconds": 17140,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH BRITISH FRIEND PAUL WHO HAS NEVER BEEN ON STREAM BEFORE NOR HAS HE EVER SEEN ONE. LET'S SEE WHAT HE THINKS \ud83c\udf55",
-      "views": 160938
+      "views": 160949
     },
     {
       "source": "twitchmetrics_vod",
@@ -49738,7 +49735,7 @@
       "duration_label": "04:13:10",
       "duration_seconds": 15190,
       "title": "HOW TO BUILD AN ATOMIC BOMB IN YOUR GARDEN (AND OTHER FUN GAMES TO GET YOU IN TROUBLE)",
-      "views": 74985
+      "views": 74991
     },
     {
       "source": "twitchmetrics_vod",
@@ -49748,7 +49745,7 @@
       "duration_label": "08:16:30",
       "duration_seconds": 29790,
       "title": "somebody get these BEGGARS out of here! (giving chat EXACTLY what they want)",
-      "views": 264949
+      "views": 264958
     },
     {
       "source": "twitchmetrics_vod",
@@ -49758,7 +49755,7 @@
       "duration_label": "05:13:40",
       "duration_seconds": 18820,
       "title": "YOUR SLOP GAMING GOD HAS RETURNED. MAKE WAY, ALL YIELD.",
-      "views": 146023
+      "views": 146026
     },
     {
       "source": "twitchmetrics_vod",
@@ -49768,7 +49765,7 @@
       "duration_label": "07:26:40",
       "duration_seconds": 26800,
       "title": "NO MOM JOKES TODAY. WILL RESULT IN INSTANT AND IMMEDIATE AND PUBLIC REJECTION",
-      "views": 227220
+      "views": 227229
     },
     {
       "source": "twitchmetrics_vod",
@@ -49778,7 +49775,7 @@
       "duration_label": "08:52:30",
       "duration_seconds": 31950,
       "title": "that scene in INDEPENDANCE DAY when the guy goes \"i'm BAAAACK\" and flies into the mothership- except it's me and your mom",
-      "views": 301417
+      "views": 301437
     },
     {
       "source": "twitchmetrics_vod",
@@ -49788,7 +49785,7 @@
       "duration_label": "08:31:10",
       "duration_seconds": 30670,
       "title": "GOOD MORNING! SEEING HOW MANY ZOMBIES I CAN KILL IN ZOMBOID - LATER I ATTEMPT TO MAKE MY \"OHIO BEEF WELLINGTON\"",
-      "views": 172132
+      "views": 172144
     },
     {
       "source": "twitchmetrics_vod",
@@ -49798,7 +49795,7 @@
       "duration_label": "10:00:20",
       "duration_seconds": 36020,
       "title": "CALLING OLD 1-800 NUMBERS FROM 90'S COMMERCIALS UNTIL I SUCCESSFULLY BUY A PRODUCT (ZOMBOID LATER?)",
-      "views": 284197
+      "views": 284222
     },
     {
       "source": "twitchmetrics_vod",
@@ -49808,7 +49805,7 @@
       "duration_label": "05:39:21",
       "duration_seconds": 20361,
       "title": "THE WINDS ARE FAVORABLE. DON'T ASK WHY OR HOW. ZOMBOID, HOW MANY ZOMBIES CAN I DESTROY IN ONE LIFE? (MORE THAN 7 DAYS I BET)",
-      "views": 149932
+      "views": 149958
     },
     {
       "source": "twitchmetrics_vod",
@@ -49818,7 +49815,7 @@
       "duration_label": "04:20:30",
       "duration_seconds": 15630,
       "title": "MAKE FUN OF CYR FRIDAY - SURVIVING 7 DAYS & UNALIVING 1000 ZOMBIES",
-      "views": 140607
+      "views": 140647
     },
     {
       "source": "twitchmetrics_vod",
@@ -49828,27 +49825,27 @@
       "duration_label": "02:52:10",
       "duration_seconds": 10330,
       "title": "CYR IN THE KITCHEN - HOMEMADE CLAM CUH CHOWDER 1ST TIME - IN CAPE COD WE SHOULD EXPLORE A BIT AFTER CUH",
-      "views": 76282
+      "views": 76792
     },
     {
-      "source": "twitch_vod",
+      "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
       "id": "2846385201",
       "started_at": "2026-08-14T22:33:47Z",
       "duration_label": "06:42:00",
       "duration_seconds": 24120,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH @MEESTERKEEM \ud83c\udf55 WHO WILL EMBARRASS THEMSELVES LESS TONIGHT?",
-      "views": 257445
+      "views": 257349
     },
     {
       "source": "twitch_vod",
       "precision": "exact_vod_time",
       "id": "2848205603",
       "started_at": "2026-08-16T21:30:51Z",
-      "duration_label": "02:13:31",
-      "duration_seconds": 8011,
+      "duration_label": "03:43:19",
+      "duration_seconds": 13399,
       "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
-      "views": 68
+      "views": 113
     }
   ],
   "archive_grouped_dates": [
