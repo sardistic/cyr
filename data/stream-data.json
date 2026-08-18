@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-08-18T01:11:34Z",
+  "generated_at": "2026-08-18T02:36:01Z",
   "data_through": "2026-08-17T21:06:29Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2467,
@@ -791,7 +790,7 @@
       "started_at": "2026-08-17T21:06:24Z",
       "game": "Just Chatting",
       "title": "\ud83e\udd21 TEACHING MYSELF HOW TO JUGGLE IN ONE STREAM BECAUSE I'M A CLOWN \ud83e\udd21 MOVIE NIGHT IN !DISCORD AFTER STREAM \ud83e\udd21 @CYR247",
-      "viewers": 2087
+      "viewers": 1499
     }
   },
   "sully_streams": [
@@ -49862,17 +49861,17 @@
       "duration_label": "05:01:30",
       "duration_seconds": 18090,
       "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
-      "views": 229976
+      "views": 229980
     },
     {
       "source": "twitch_vod",
       "precision": "exact_vod_time",
       "id": "2849049662",
       "started_at": "2026-08-17T21:06:29Z",
-      "duration_label": "04:04:51",
-      "duration_seconds": 14691,
+      "duration_label": "05:29:15",
+      "duration_seconds": 19755,
       "title": "TEACHING MYSELF HOW TO JUGGLE IN ONE STREAM BECAUSE I'M A CLOWN - MOVIE NIGHT TONIGHT IN !DISCORD AFTER STREAM",
-      "views": 99
+      "views": 133
     }
   ],
   "archive_grouped_dates": [
