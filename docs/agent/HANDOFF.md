@@ -1,8 +1,16 @@
 # Agent Handoff
 
-Updated: 2026-08-15 (fifth pass: Twitch VOD list as a stream source)
+Updated: 2026-08-18 (sixth pass: stop filing a live stream as a finished one)
 
 ## Active objective
+
+Sixth pass, 2026-08-18 — reported as "time since last stream ended: 7h 57m, it
+hasn't been that long". The site was reading the elapsed metric off a stream
+recorded as 19 minutes long that had actually run 6h03m. Fixed and deployed in
+`22998df`; the live site now reads the true end time. Details under "Sixth
+pass" below.
+
+### Earlier objective (closed)
 
 Recent streams were missing from the dashboard. Restore them, stop the pipeline
 reporting success while serving stale data, and stop depending on SullyGnome —
@@ -107,10 +115,35 @@ Fifth pass — `b7b2cd0`, the pipeline could not see new streams:
   backfilled rows are tagged with the upstream that surfaced them
   (`twitch_vod_backfill`) rather than a hardcoded `twitchmetrics_backfill`.
 
+Sixth pass — `22998df`, a live stream was being filed as a finished one:
+
+- Twitch publishes a VOD when the stream *starts* and reports the length it has
+  reached so far. The 30-minute refresh that lands mid-stream therefore reads a
+  6-hour stream as however many minutes it was in. `backfill_recent_from_exact()`
+  only ever added rows, so that first partial reading was permanent: the 08-17
+  stream sat on the site as "19 minutes, ended 21:25" and the 08-16 one as
+  "14 minutes". Every derived metric hangs off `last_stream.ended_at_iso`, so
+  the site claimed 7h57m since the last stream ended when the real figure was
+  2h20m — along with the wrong percentile, conditional probabilities and
+  median-target time.
+- `drop_in_progress_vods()` keeps the VOD Twitch is still writing to out of the
+  completed set. Live status is the signal; the VOD's own end time (start +
+  length within ~2 minutes of now) is the backstop for when `fetch_twitch_live()`
+  fails, at the cost of holding a genuinely finished stream back one cycle. It
+  runs *before* `stitch_split_vods()` so a reconnect cannot fold the still-growing
+  VOD into the finished one and freeze that row too.
+- `refresh_backfilled_row()` lets a later run correct a row already filed from a
+  partial reading — that is what repaired 08-16 (14m → 5h02m) and 08-17
+  (19m → 6h03m) in place, with no data surgery. Only rows this pipeline
+  backfilled are touched; SullyGnome's own figures are left alone, and a shorter
+  reading never shrinks a row.
+- The front end needed no change: `applyLiveMode()` already overrides the whole
+  elapsed panel while live, so excluding the in-progress VOD costs nothing there.
+
 ## Current behavior
 
-Shipped in five commits — `4be0f7f`, `54a36ea`, `fc0ff0c`, `f833ded`,
-`b7b2cd0` — on `main`, deployed to https://cyr.mom via Pages.
+Shipped in six commits — `4be0f7f`, `54a36ea`, `fc0ff0c`, `f833ded`,
+`b7b2cd0`, `22998df` — on `main`, deployed to https://cyr.mom via Pages.
 
 Source hierarchy as of `b7b2cd0`:
 
@@ -248,6 +281,29 @@ committed `84a7dbf`. Pages deploy 31912700968 succeeded and a cache-busted fetch
 of `cyr.mom/data/stream-data.js` serves `generated_at` 2026-08-15T22:39:22Z with
 `data_through` **2026-08-14T22:33:47Z**.
 
+Sixth pass (`22998df`) — ground truth first: Twitch GQL says VOD `2849049662`
+started 2026-08-17T21:06:29Z and ran 21770s, ending 03:09:19Z. The shipped data
+said it ended 21:25.
+
+Unit-checked both new functions against that case: live status identifies the
+in-progress VOD; with live status missing the end-time backstop catches it; a
+stream that finished an hour ago is kept; a live *reconnect* does not drop the
+earlier finished VOD of the same stream; the refresh is idempotent, never
+shrinks a row, and skips non-backfilled rows. `parse_ended_at()` round-trips the
+corrected `ended_at` string.
+
+Then the full build against a scratch copy of `data/`: rows 2467 → 2467, no
+additions, no removals, no duplicate starts, gap count unchanged at 2466, median
+17.91h unchanged, mean 28.00 → 27.99 (the two corrected gaps). `last_stream`
+moved from "19 minutes, ended 21:25" to "363 minutes, ended 03:09". A second run
+corrected nothing — idempotent.
+
+Ran in place, committed and pushed as `22998df`; the scheduled run's data commit
+had landed first, so the rebase kept the corrected data files. Pages deploy for
+`22998df` succeeded and a cache-busted fetch of `cyr.mom/data/stream-data.js`
+serves `ended_at_iso` **2026-08-18T03:09:00+00:00** — 2h26m elapsed at the time
+of the check, against the 7h57m that was reported.
+
 ## Uncommitted implementation details
 
 None of the implementation work is uncommitted. It shipped in five commits:
@@ -261,8 +317,9 @@ Still untracked and deliberately left alone: `README.md`. It predates this
 session and is not mine to commit.
 
 Nothing is uncommitted. The fifth-pass code shipped as `b7b2cd0` and this file's
-fifth-pass update as `69394dd`; both are pushed. The working tree holds only the
-untracked `README.md` noted above.
+fifth-pass update as `69394dd`; the sixth pass shipped as `22998df` with its
+corrected data files in the same commit. All pushed. The working tree holds only
+the untracked `README.md` noted above.
 
 Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
@@ -295,6 +352,15 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
 - A scraped aggregator lagging looks identical to nothing having happened. Keep
   at least one first-party source (Twitch GQL) able to introduce a stream on its
   own; do not let the pipeline's recent end depend solely on a third party.
+- **A VOD is published when the stream starts, not when it ends**, and its
+  `lengthSeconds` grows while the stream runs. Anything reading that list has to
+  ask whether the newest entry is still recording — `drop_in_progress_vods()`
+  does. Sixth pass fixed this once; keep it in mind for any new VOD consumer.
+- **Backfill that only ever adds makes a bad first reading permanent.** Rows
+  matched as "already known" used to be skipped outright, so a partial duration
+  captured mid-stream was never revisited. That is why
+  `refresh_backfilled_row()` exists — a matched row is now an opportunity to
+  correct, not just a reason to skip.
 
 ## Risks and unknowns
 
@@ -324,8 +390,14 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
 ## Next concrete action
 
-**None required.** Site is current through 2026-08-14, runs are green, and new
-streams now reach the dataset from Twitch itself within a refresh cycle.
+**None required.** Site is current through 2026-08-17 with the true stream end
+time, runs are green, and new streams reach the dataset from Twitch itself
+within a refresh cycle of going *offline*.
+
+One thing to watch on the next live stream: the elapsed metric should stay on
+the *previous* stream's end while `applyLiveMode()` covers the panel, and the
+finished stream should appear at full duration on the first refresh after he
+goes offline. That path has been unit-checked but not yet seen live.
 
 Two optional threads, higher value first:
 
@@ -347,7 +419,7 @@ If neither is wanted, leave SullyGnome degraded. Nothing depends on it.
 ## Deployment and status impact
 
 Deployed. GitHub Pages builds from `main` on push; no other deploy target.
-Live at https://cyr.mom (CNAME `cyr.mom`) serving `data_through` 2026-08-14.
+Live at https://cyr.mom (CNAME `cyr.mom`) serving `data_through` 2026-08-17.
 Deploy reported via `report_event.py --project cyr --kind deploy`.
 
 Scheduled refresh continues every 30 minutes. It commits on every run because
@@ -358,6 +430,7 @@ actually moved.
 ## Most relevant files
 
 - `scripts/build_dataset.py` — `gql()`, `parse_twitch_vods()`,
+  `drop_in_progress_vods()`, `refresh_backfilled_row()`,
   `stitch_split_vods()`, `fetch_vod_game_index()`, `fetch_vod_games_detail()`,
   `attach_vod_games()`, `open_sully_session()`, `backfill_recent_from_exact()`,
   `load_cached_sully_rows()`, `twitchmetrics_blocks()`, `block_viewer_stats()`,
