@@ -306,15 +306,23 @@ of the check, against the 7h57m that was reported.
 
 ## Uncommitted implementation details
 
-None of the implementation work is uncommitted. It shipped in five commits:
+None of the implementation work is uncommitted. It shipped in six commits:
 `4be0f7f` (stop the silent staleness), `54a36ea` (TwitchMetrics primary, TLS
 impersonation, no failing runs), `fc0ff0c` (games from Twitch GQL), `f833ded`
-(recover TwitchMetrics viewer figures) and `b7b2cd0` (Twitch VOD list as a
-stream source). The workflow's own data commits followed each: `d279488`,
-`71a4375`, `d8d4a75`, `84a7dbf`.
+(recover TwitchMetrics viewer figures), `b7b2cd0` (Twitch VOD list as a
+stream source) and `22998df` (don't file a live stream as a finished one). The
+workflow's own data commits followed each: `d279488`, `71a4375`, `d8d4a75`,
+`84a7dbf`; `22998df` carried its own corrected data files.
 
 Still untracked and deliberately left alone: `README.md`. It predates this
 session and is not mine to commit.
+
+Worth knowing: that untracked `README.md` is the *only* thing in the working
+tree, and it is enough to make the handoff hook read the repository as dirty on
+every session — an untracked file counts. So expect the Stop hook to ask for a
+handoff update once per session even when everything is committed and pushed.
+Either commit or remove `README.md` (an owner decision, not an agent one) and
+that stops.
 
 Nothing is uncommitted. The fifth-pass code shipped as `b7b2cd0` and this file's
 fifth-pass update as `69394dd`; the sixth pass shipped as `22998df` with its
