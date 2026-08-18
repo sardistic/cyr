@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-18T05:31:45Z",
+  "generated_at": "2026-08-18T05:57:27Z",
   "data_through": "2026-08-17T21:06:29Z",
   "degraded_sources": [
-    "sullygnome: Could not find SullyGnome PageInfo (http 403, 5775 bytes, title='Just a moment...', head='<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam')"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2467,
@@ -49856,7 +49856,7 @@
       "duration_label": "05:01:30",
       "duration_seconds": 18090,
       "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
-      "views": 229994
+      "views": 229996
     },
     {
       "source": "twitch_vod",
@@ -49866,7 +49866,7 @@
       "duration_label": "06:02:50",
       "duration_seconds": 21770,
       "title": "TEACHING MYSELF HOW TO JUGGLE IN ONE STREAM BECAUSE I'M A CLOWN - MOVIE NIGHT TONIGHT IN !DISCORD AFTER STREAM",
-      "views": 306
+      "views": 332
     }
   ],
   "archive_grouped_dates": [
