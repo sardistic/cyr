@@ -216,6 +216,42 @@ def seconds_to_label(seconds):
     return f"{seconds // 3600:02d}:{seconds % 3600 // 60:02d}:{seconds % 60:02d}"
 
 
+def to_dt(value):
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
+def drop_in_progress_vods(rows, live_stream, now=None, settle=timedelta(minutes=2)):
+    """Drop the VOD Twitch is still recording into.
+
+    Twitch publishes a VOD the moment a stream starts, and reports the length it
+    has reached so far. A run landing mid-stream therefore reads a live 6-hour
+    stream as however many minutes it was in, and nothing later corrects the
+    start time it was filed under, so the whole timeline hangs off a stream that
+    "ended" minutes after it began.
+
+    Live status is the reliable signal; the end-time check is the backstop for
+    when that call fails, at the cost of holding a genuinely finished stream
+    back for one cycle.
+    """
+    now = now or datetime.now(timezone.utc)
+    live_start = to_dt(live_stream["started_at"]) if live_stream else None
+    kept, dropped = [], []
+    for row in rows:
+        started = row.get("started_at")
+        seconds = row.get("duration_seconds")
+        if started and live_start and abs(to_dt(started) - live_start) < timedelta(minutes=15):
+            dropped.append(row)
+            continue
+        if started and seconds and to_dt(started) + timedelta(seconds=seconds) > now - settle:
+            dropped.append(row)
+            continue
+        kept.append(row)
+    for row in dropped:
+        print(f"Skipping in-progress VOD {row.get('id')} ({row.get('started_at')}, "
+              f"{row.get('duration_label')} so far)")
+    return kept
+
+
 def stitch_split_vods(rows, max_gap=timedelta(minutes=10)):
     """Merge VOD rows that are one stream Twitch split across two recordings.
 
@@ -223,9 +259,6 @@ def stitch_split_vods(rows, max_gap=timedelta(minutes=10)):
     alone the pair counts as two streams and puts a bogus sub-hour entry into
     the gap stats.
     """
-    def to_dt(value):
-        return datetime.fromisoformat(value.replace("Z", "+00:00"))
-
     stitched = []
     for row in sorted(rows, key=lambda r: r["started_at"]):
         prev = stitched[-1] if stitched else None
@@ -944,26 +977,53 @@ def attach_viewer_stats(rows, exact_rows):
     return filled
 
 
+def refresh_backfilled_row(row, exact):
+    """Correct a backfilled row from the exact source's current figures.
+
+    Backfill only ever *adds*, so a row filed from a partial reading kept that
+    reading for good. Only rows this pipeline backfilled are touched: SullyGnome's
+    own figures are left alone, since the two sources disagree slightly and mixing
+    them within one stream reads worse than either alone.
+    """
+    seconds = exact.get("duration_seconds") or 0
+    if not str(row.get("source", "")).endswith("_backfill"):
+        return False
+    if seconds <= (row.get("duration_seconds") or 0):
+        return False
+    ended_dt = to_dt(row["started_at"]) + timedelta(seconds=seconds)
+    was = row.get("duration_label")
+    row["duration_seconds"] = seconds
+    row["duration_label"] = f"{round(seconds / 60)} minutes"
+    row["ended_at"] = ended_dt.strftime("%A %d %B %Y %H:%M")
+    row["title"] = exact.get("title") or row.get("title")
+    print(f"Corrected {row['started_at']}: {was} → {row['duration_label']} "
+          f"(ended {row['ended_at']})")
+    return True
+
+
 def backfill_recent_from_exact(sully_rows, exact_rows):
     """Add streams the exact sources know about but the Sully table is missing.
 
     Without this a stale Sully table silently caps `last_stream` and the recent
     timeline at whatever date the scrape last succeeded.
     """
-    def to_dt(value):
-        return datetime.fromisoformat(value.replace("Z", "+00:00"))
-
-    known = sorted(to_dt(r["started_at"]) for r in sully_rows if r.get("started_at"))
+    known = sorted(
+        ((to_dt(r["started_at"]), r) for r in sully_rows if r.get("started_at")),
+        key=lambda pair: pair[0],
+    )
     # VOD timestamps run a few seconds behind the Sully table's start time for the
     # same stream, so match on a window rather than an exact timestamp.
     tolerance = timedelta(minutes=15)
     added = []
+    corrected = 0
     for row in exact_rows:
         started = row.get("started_at")
         if not started:
             continue
         started_dt = to_dt(started)
-        if any(abs(started_dt - k) < tolerance for k in reversed(known)):
+        match = next((r for k, r in reversed(known) if abs(started_dt - k) < tolerance), None)
+        if match is not None:
+            corrected += refresh_backfilled_row(match, row)
             continue
         duration_seconds = row.get("duration_seconds") or 0
         ended_dt = started_dt + timedelta(seconds=duration_seconds) if duration_seconds else None
@@ -987,10 +1047,12 @@ def backfill_recent_from_exact(sully_rows, exact_rows):
             "stream_url": f"https://www.twitch.tv/videos/{row['id']}" if row.get("id") else None,
             "range": started[:4],
         })
-        known.append(started_dt)
+        known.append((started_dt, added[-1]))
     if added:
         print(f"Backfilled {len(added)} recent stream(s): "
               f"{', '.join(r['started_at'] + ' via ' + r['source'] for r in added)}")
+    if corrected:
+        print(f"Corrected duration on {corrected} previously backfilled stream(s)")
     return sorted(sully_rows + added, key=lambda r: r.get("started_at") or "")
 
 
@@ -1064,7 +1126,9 @@ def main():
         key = row.get("id") or row["started_at"]
         merged = exact_by_key.setdefault(key, {})
         merged.update({k: v for k, v in row.items() if v is not None})
-    exact_rows = stitch_split_vods(exact_by_key.values())
+    # Before stitching: a reconnect would otherwise fold the still-growing VOD
+    # into the finished one and freeze that row's duration too.
+    exact_rows = stitch_split_vods(drop_in_progress_vods(exact_by_key.values(), live_stream))
 
     # SullyGnome: enrichment only. Games, viewer counts and follower deltas come
     # from here, plus the deep history TwitchMetrics does not expose. A failure
