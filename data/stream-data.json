@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-08-19T21:24:45Z",
+  "generated_at": "2026-08-19T21:50:50Z",
   "data_through": "2026-08-18T17:18:42Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2468,
@@ -790,7 +789,7 @@
       "started_at": "2026-08-19T17:17:02Z",
       "game": "Project Zomboid",
       "title": "NAME 1 PERSON WHO PLAYS ZOMBOID BETTER THAN ME, I'LL WAIT: _______________________",
-      "viewers": 2111
+      "viewers": 2105
     }
   },
   "sully_streams": [
