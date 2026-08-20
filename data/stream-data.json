@@ -1,15 +1,14 @@
 {
-  "generated_at": "2026-08-20T06:58:58Z",
+  "generated_at": "2026-08-20T07:48:56Z",
   "data_through": "2026-08-19T17:17:07Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2469,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 33,
-    "exact_merged_rows": 40,
+    "exact_merged_rows": 41,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 611
   },
@@ -30,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 39,
-      "mean": 44.05,
-      "median": 28.68,
+      "count": 40,
+      "mean": 43.55,
+      "median": 27.92,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -49912,6 +49911,16 @@
       "duration_seconds": 5666,
       "title": "Day 435 of no water, just to see if it's a lie to control us (doing manual labor around @Peachjars house today because I'm buff and strong",
       "views": 21
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2850676541",
+      "started_at": "2026-08-19T17:17:07Z",
+      "duration_label": "05:12:20",
+      "duration_seconds": 18740,
+      "title": "acting as chill as possible no matter what to see if it makes me cooler (helping @peachjars with manual labor)",
+      "views": 161840
     }
   ],
   "archive_grouped_dates": [
