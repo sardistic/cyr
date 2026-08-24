@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-08-24T09:55:46Z",
+  "generated_at": "2026-08-24T10:37:17Z",
   "data_through": "2026-08-23T20:07:16Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2470,
@@ -49957,7 +49956,7 @@
       "duration_label": "11:19:21",
       "duration_seconds": 40761,
       "title": "MEN BRUNCH WITH @MISTERARTHER @JOSHINAROUND and THEN some RP on Wardog?!",
-      "views": 1099
+      "views": 1132
     }
   ],
   "archive_grouped_dates": [
