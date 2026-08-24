@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-08-24T06:57:32Z",
-  "data_through": "2026-08-19T17:17:07Z",
+  "generated_at": "2026-08-24T08:00:01Z",
+  "data_through": "2026-08-23T20:07:16Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2469,
+    "sullygnome_stream_table": 2470,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 34,
-    "exact_merged_rows": 41,
+    "exact_merged_rows": 42,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2468,
-      "mean": 27.98,
+      "count": 2469,
+      "mean": 28.01,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
@@ -23,15 +23,15 @@
         "12-24h": 1260,
         "1-2d": 419,
         "2-3d": 174,
-        "3-5d": 103,
+        "3-5d": 104,
         "5-7d": 15,
         "7+d": 16
       }
     },
     "exact_gap_hours": {
-      "count": 40,
-      "mean": 43.55,
-      "median": 27.92,
+      "count": 41,
+      "mean": 44.9,
+      "median": 28.68,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -216,7 +216,7 @@
       "2026-05": 19,
       "2026-06": 16,
       "2026-07": 18,
-      "2026-08": 10
+      "2026-08": 11
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -228,7 +228,7 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 133
+      "2026": 134
     },
     "dow_hour": {
       "dow": {
@@ -238,7 +238,7 @@
         "Thu": 389,
         "Fri": 353,
         "Sat": 242,
-        "Sun": 206
+        "Sun": 207
       },
       "hour_utc": {
         "0": 192,
@@ -261,7 +261,7 @@
         "17": 170,
         "18": 169,
         "19": 176,
-        "20": 258,
+        "20": 259,
         "21": 294,
         "22": 283,
         "23": 247
@@ -278,67 +278,67 @@
       ],
       [
         6,
-        9.24
+        9.23
       ],
       [
         9,
-        10.82
+        10.81
       ],
       [
         12,
-        19.65
+        19.64
       ],
       [
         15,
-        33.51
+        33.5
       ],
       [
         18,
-        50.53
+        50.51
       ],
       [
         21,
-        63.86
+        63.83
       ],
       [
         24,
-        70.58
+        70.55
       ],
       [
         30,
-        74.39
+        74.36
       ],
       [
         36,
-        76.42
+        76.39
       ],
       [
         42,
-        81.81
+        81.77
       ],
       [
         48,
-        87.56
+        87.53
       ],
       [
         54,
-        88.98
+        88.94
       ],
       [
         60,
-        89.63
+        89.59
       ],
       [
         66,
-        92.02
+        91.98
       ],
       [
         72,
-        94.57
+        94.53
       ],
       [
         84,
-        95.5
+        95.46
       ],
       [
         96,
@@ -386,11 +386,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 46.1,
-        "started_at": "2026-07-16T21:06:16Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 23.0,
         "started_at": "2026-07-18T00:15:19Z",
@@ -485,22 +480,14 @@
         "gap_h": 18.9,
         "started_at": "2026-08-19T17:17:07Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 93.6,
+        "started_at": "2026-08-23T20:07:16Z",
+        "game": "Project Zomboid"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-06T18:32:00Z",
-        "ended_at_iso": "2026-08-07T00:11:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Project Zomboid"
-        ],
-        "duration_h": 5.7,
-        "duration_label": "339 minutes",
-        "avg_viewers": null,
-        "peak_viewers": null,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-07T16:26:31Z",
         "ended_at_iso": "2026-08-07T20:47:00+00:00",
@@ -586,16 +573,33 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-23T20:07:16Z",
+        "ended_at_iso": "2026-08-24T07:26:00+00:00",
+        "games": [
+          "Project Zomboid",
+          "Just Chatting",
+          "Wardogz",
+          "WARDOGS"
+        ],
+        "duration_h": 11.3,
+        "duration_label": "679 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-08-19T17:17:07Z",
-      "ended_at_iso": "2026-08-19T22:29:00+00:00",
+      "started_at": "2026-08-23T20:07:16Z",
+      "ended_at_iso": "2026-08-24T07:26:00+00:00",
       "games": [
+        "Project Zomboid",
         "Just Chatting",
-        "Project Zomboid"
+        "Wardogz",
+        "WARDOGS"
       ],
-      "duration_label": "312 minutes"
+      "duration_label": "679 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -707,15 +711,15 @@
             "avg_viewers": 3728.0
           },
           "Other games": {
-            "count": 679,
+            "count": 680,
             "share": 27.5,
-            "median_gap_hours": 25.36,
-            "p90_gap_hours": 72.21,
+            "median_gap_hours": 25.38,
+            "p90_gap_hours": 72.28,
             "avg_viewers": 2449.0
           },
           "Social sandbox/RP": {
             "count": 1053,
-            "share": 42.7,
+            "share": 42.6,
             "median_gap_hours": 23.88,
             "p90_gap_hours": 48.28,
             "avg_viewers": 1601.0
@@ -738,7 +742,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1593
+            "count": 1594
           },
           {
             "game": "Grand Theft Auto V",
@@ -787,12 +791,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-08-23T20:07:11Z",
-      "game": "Just Chatting",
-      "title": "<message deleted>",
-      "viewers": 2105
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -49508,6 +49507,28 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2850676541",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2854569597",
+      "started_at": "2026-08-23T20:07:16Z",
+      "ended_at": "Monday 24 August 2026 07:26",
+      "duration_label": "679 minutes",
+      "duration_seconds": 40761,
+      "title": "MEN BRUNCH WITH @MISTERARTHER @JOSHINAROUND and THEN some RP on Wardog?!",
+      "games": [
+        "Project Zomboid",
+        "Just Chatting",
+        "Wardogz",
+        "WARDOGS"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2854569597",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -49926,6 +49947,16 @@
       "duration_seconds": 18740,
       "title": "acting as chill as possible no matter what to see if it makes me cooler (helping @peachjars with manual labor)",
       "views": 163516
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2854569597",
+      "started_at": "2026-08-23T20:07:16Z",
+      "duration_label": "11:19:21",
+      "duration_seconds": 40761,
+      "title": "MEN BRUNCH WITH @MISTERARTHER @JOSHINAROUND and THEN some RP on Wardog?!",
+      "views": 1002
     }
   ],
   "archive_grouped_dates": [
