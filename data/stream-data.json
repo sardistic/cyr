@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T02:45:27Z",
+  "generated_at": "2026-08-24T03:53:55Z",
   "data_through": "2026-08-19T17:17:07Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
@@ -9,8 +9,8 @@
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 34,
     "exact_merged_rows": 41,
-    "youtube_archive_segments": 1126,
-    "youtube_archive_grouped_dates": 611
+    "youtube_archive_segments": 1124,
+    "youtube_archive_grouped_dates": 609
   },
   "stats": {
     "sully_gap_hours": {
@@ -35,17 +35,17 @@
       "max": 138.03
     },
     "archive_gap_days": {
-      "count": 610,
-      "mean": 2.65,
+      "count": 608,
+      "mean": 2.66,
       "median": 1.0,
       "max": 81,
       "bins": {
         "1": 329,
-        "2": 114,
+        "2": 112,
         "3": 62,
-        "4-5": 58,
+        "4-5": 57,
         "6-7": 20,
-        "8-14": 15,
+        "8-14": 16,
         "15+": 12
       }
     },
@@ -62,9 +62,9 @@
       "2023-02": 13,
       "2023-03": 10,
       "2023-04": 15,
-      "2023-05": 15,
+      "2023-05": 14,
       "2023-06": 2,
-      "2023-07": 9,
+      "2023-07": 8,
       "2023-08": 10,
       "2023-09": 10,
       "2023-10": 5,
@@ -599,7 +599,7 @@
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 610,
+        "sample_size": 608,
         "features": {
           "challenge": {
             "count": 19,
@@ -608,9 +608,9 @@
             "p90_gap_days": 4.2
           },
           "collab": {
-            "count": 202,
+            "count": 201,
             "share": 33.1,
-            "median_gap_days": 2.0,
+            "median_gap_days": 2,
             "p90_gap_days": 5.0
           },
           "event_drops": {
@@ -627,7 +627,7 @@
           },
           "gameplay_arc": {
             "count": 349,
-            "share": 57.2,
+            "share": 57.4,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
@@ -639,20 +639,20 @@
           },
           "return_marker": {
             "count": 21,
-            "share": 3.4,
+            "share": 3.5,
             "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
           "travel_irl": {
-            "count": 62,
-            "share": 10.2,
-            "median_gap_days": 2.0,
-            "p90_gap_days": 4.9
+            "count": 61,
+            "share": 10.0,
+            "median_gap_days": 2,
+            "p90_gap_days": 5.0
           },
           "unclassified": {
-            "count": 97,
-            "share": 15.9,
-            "median_gap_days": 1,
+            "count": 96,
+            "share": 15.8,
+            "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           }
         },
@@ -664,7 +664,7 @@
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 571,
+            "count": 569,
             "share": 93.6,
             "median_gap_days": 1,
             "p90_gap_days": 5.0
@@ -684,15 +684,15 @@
             "p90_gap_days": 2.1
           },
           "low": {
-            "count": 205,
+            "count": 204,
             "share": 33.6,
-            "median_gap_days": 2,
+            "median_gap_days": 2.0,
             "p90_gap_days": 6.0
           },
           "medium": {
-            "count": 365,
-            "share": 59.8,
-            "median_gap_days": 1,
+            "count": 364,
+            "share": 59.9,
+            "median_gap_days": 1.0,
             "p90_gap_days": 4.0
           }
         }
@@ -789,9 +789,9 @@
     },
     "live_stream": {
       "started_at": "2026-08-23T20:07:11Z",
-      "game": "Project Zomboid",
+      "game": "Just Chatting",
       "title": "<message deleted>",
-      "viewers": 2058
+      "viewers": 2083
     }
   },
   "sully_streams": [
@@ -51542,20 +51542,6 @@
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
-      "date": "2023-05-01",
-      "segment_count": 1,
-      "duration_seconds_sum": 17803,
-      "primary_title": "Exploring Austin, TX and Golfing w/ @Myth_YT  (Just Chatting) - [05/01/2023] | Cyr VODs",
-      "titles": [
-        "Exploring Austin, TX and Golfing w/ @Myth_YT  (Just Chatting) - [05/01/2023] | Cyr VODs"
-      ],
-      "urls": [
-        "https://www.youtube.com/watch?v=0fBwnwVI80A"
-      ]
-    },
-    {
-      "source": "youtube_archive_grouped",
-      "precision": "stream_date_only",
       "date": "2023-05-03",
       "segment_count": 1,
       "duration_seconds_sum": 11175,
@@ -51807,20 +51793,6 @@
       ],
       "urls": [
         "https://www.youtube.com/watch?v=lngXp-efhc0"
-      ]
-    },
-    {
-      "source": "youtube_archive_grouped",
-      "precision": "stream_date_only",
-      "date": "2023-07-12",
-      "segment_count": 1,
-      "duration_seconds_sum": 6192,
-      "primary_title": "Grilling Sausages & Unpacking (Just Chatting) - [07/12/2023] | Cyr VODs",
-      "titles": [
-        "Grilling Sausages & Unpacking (Just Chatting) - [07/12/2023] | Cyr VODs"
-      ],
-      "urls": [
-        "https://www.youtube.com/watch?v=6ZesnNOH4yE"
       ]
     },
     {
@@ -60734,7 +60706,7 @@
     },
     {
       "date": "2023-04-25",
-      "gap_days": 6,
+      "gap_days": 8,
       "features": [
         "gameplay_arc",
         "collab"
@@ -60743,18 +60715,6 @@
       "sentiment_score": 0,
       "intensity": "medium",
       "intensity_score": 2
-    },
-    {
-      "date": "2023-05-01",
-      "gap_days": 2,
-      "features": [
-        "collab",
-        "travel_irl"
-      ],
-      "sentiment": "neutral",
-      "sentiment_score": 0,
-      "intensity": "medium",
-      "intensity_score": 1
     },
     {
       "date": "2023-05-03",
@@ -60948,7 +60908,7 @@
     },
     {
       "date": "2023-07-07",
-      "gap_days": 5,
+      "gap_days": 7,
       "features": [
         "collab",
         "food_cooking"
@@ -60957,17 +60917,6 @@
       "sentiment_score": 0,
       "intensity": "medium",
       "intensity_score": 1
-    },
-    {
-      "date": "2023-07-12",
-      "gap_days": 2,
-      "features": [
-        "unclassified"
-      ],
-      "sentiment": "neutral",
-      "sentiment_score": 0,
-      "intensity": "low",
-      "intensity_score": 0
     },
     {
       "date": "2023-07-14",
