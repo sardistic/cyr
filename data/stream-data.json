@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T11:26:59Z",
+  "generated_at": "2026-08-25T11:55:35Z",
   "data_through": "2026-08-24T21:12:59Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
@@ -9,7 +9,7 @@
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 34,
     "exact_merged_rows": 43,
-    "youtube_archive_segments": 1126,
+    "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
@@ -49974,7 +49974,7 @@
       "duration_label": "11:19:21",
       "duration_seconds": 40761,
       "title": "MEN BRUNCH WITH @MISTERARTHER @JOSHINAROUND and THEN some RP on Wardog?!",
-      "views": 445929
+      "views": 445932
     },
     {
       "source": "twitch_vod",
@@ -49984,7 +49984,7 @@
       "duration_label": "04:44:40",
       "duration_seconds": 17080,
       "title": "MY SHRINK SAID I SHOULD DO SOME WAR RP TO HELP ME BECOME A MORE ACTIVE LISTENER. (movie night in !discord , IDIOCRACY)",
-      "views": 396
+      "views": 405
     }
   ],
   "archive_grouped_dates": [
@@ -50294,14 +50294,16 @@
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2022-07-24",
-      "segment_count": 1,
-      "duration_seconds_sum": 17140,
+      "segment_count": 2,
+      "duration_seconds_sum": 22671,
       "primary_title": "Late Night LEGO Building (Just Chatting) - [07/24/2022] | OTK Cyr VODs",
       "titles": [
-        "Late Night LEGO Building (Just Chatting) - [07/24/2022] | OTK Cyr VODs"
+        "Late Night LEGO Building (Just Chatting) - [07/24/2022] | OTK Cyr VODs",
+        "Camp Knut Grocery Shopping w/ Tectone (Just Chatting) - [07/24/2022] | OTK Cyr VODs"
       ],
       "urls": [
-        "https://www.youtube.com/watch?v=CmKlrmuoEnA"
+        "https://www.youtube.com/watch?v=CmKlrmuoEnA",
+        "https://www.youtube.com/watch?v=DmWFinjl9Cw"
       ]
     },
     {
