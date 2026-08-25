@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-08-25T20:56:51Z",
+  "generated_at": "2026-08-25T21:31:42Z",
   "data_through": "2026-08-24T21:12:59Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2471,
@@ -794,7 +793,7 @@
       "started_at": "2026-08-25T17:31:45Z",
       "game": "Once Human",
       "title": "ONCE HUMAN CONSOLE LAUNCH BABY! !oncehumanconsole !receiptchallenge #ad",
-      "viewers": 1496
+      "viewers": 1510
     }
   },
   "sully_streams": [
@@ -49980,7 +49979,7 @@
       "duration_label": "11:19:21",
       "duration_seconds": 40761,
       "title": "MEN BRUNCH WITH @MISTERARTHER @JOSHINAROUND and THEN some RP on Wardog?!",
-      "views": 445981
+      "views": 445983
     },
     {
       "source": "twitch_vod",
@@ -49990,7 +49989,7 @@
       "duration_label": "04:44:40",
       "duration_seconds": 17080,
       "title": "MY SHRINK SAID I SHOULD DO SOME WAR RP TO HELP ME BECOME A MORE ACTIVE LISTENER. (movie night in !discord , IDIOCRACY)",
-      "views": 255041
+      "views": 255042
     }
   ],
   "archive_grouped_dates": [
