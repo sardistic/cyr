@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-08-25T03:48:05Z",
+  "generated_at": "2026-08-25T04:38:07Z",
   "data_through": "2026-08-24T21:12:59Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
   ],
   "sources": {
     "sullygnome_stream_table": 2471,
@@ -49974,7 +49975,7 @@
       "duration_label": "11:19:21",
       "duration_seconds": 40761,
       "title": "MEN BRUNCH WITH @MISTERARTHER @JOSHINAROUND and THEN some RP on Wardog?!",
-      "views": 445874
+      "views": 445883
     },
     {
       "source": "twitch_vod",
@@ -49984,7 +49985,7 @@
       "duration_label": "04:44:40",
       "duration_seconds": 17080,
       "title": "MY SHRINK SAID I SHOULD DO SOME WAR RP TO HELP ME BECOME A MORE ACTIVE LISTENER. (movie night in !discord , IDIOCRACY)",
-      "views": 230
+      "views": 259
     }
   ],
   "archive_grouped_dates": [
