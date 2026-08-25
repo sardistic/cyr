@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-08-25T01:14:03Z",
-  "data_through": "2026-08-23T20:07:16Z",
+  "generated_at": "2026-08-25T02:39:06Z",
+  "data_through": "2026-08-24T21:12:59Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2470,
+    "sullygnome_stream_table": 2471,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 34,
-    "exact_merged_rows": 42,
+    "exact_merged_rows": 43,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2469,
-      "mean": 28.01,
+      "count": 2470,
+      "mean": 28.0,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 481,
-        "12-24h": 1260,
+        "12-24h": 1261,
         "1-2d": 419,
         "2-3d": 174,
         "3-5d": 104,
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 41,
-      "mean": 44.9,
-      "median": 28.68,
+      "count": 42,
+      "mean": 44.43,
+      "median": 27.92,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -216,7 +216,7 @@
       "2026-05": 19,
       "2026-06": 16,
       "2026-07": 18,
-      "2026-08": 11
+      "2026-08": 12
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -228,11 +228,11 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 134
+      "2026": 135
     },
     "dow_hour": {
       "dow": {
-        "Mon": 441,
+        "Mon": 442,
         "Tue": 402,
         "Wed": 436,
         "Thu": 389,
@@ -262,7 +262,7 @@
         "18": 169,
         "19": 176,
         "20": 259,
-        "21": 294,
+        "21": 295,
         "22": 283,
         "23": 247
       }
@@ -290,31 +290,31 @@
       ],
       [
         15,
-        33.5
+        33.52
       ],
       [
         18,
-        50.51
+        50.53
       ],
       [
         21,
-        63.83
+        63.85
       ],
       [
         24,
-        70.55
+        70.57
       ],
       [
         30,
-        74.36
+        74.37
       ],
       [
         36,
-        76.39
+        76.4
       ],
       [
         42,
-        81.77
+        81.78
       ],
       [
         48,
@@ -322,11 +322,11 @@
       ],
       [
         54,
-        88.94
+        88.95
       ],
       [
         60,
-        89.59
+        89.6
       ],
       [
         66,
@@ -338,7 +338,7 @@
       ],
       [
         84,
-        95.46
+        95.47
       ],
       [
         96,
@@ -386,11 +386,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 23.0,
-        "started_at": "2026-07-18T00:15:19Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 64.6,
         "started_at": "2026-07-20T21:08:40Z",
@@ -485,22 +480,14 @@
         "gap_h": 93.6,
         "started_at": "2026-08-23T20:07:16Z",
         "game": "Project Zomboid"
+      },
+      {
+        "gap_h": 13.8,
+        "started_at": "2026-08-24T21:12:59Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-07T16:26:31Z",
-        "ended_at_iso": "2026-08-07T20:47:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Project Zomboid"
-        ],
-        "duration_h": 4.3,
-        "duration_label": "260 minutes",
-        "avg_viewers": null,
-        "peak_viewers": null,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-10T17:38:27Z",
         "ended_at_iso": "2026-08-10T20:30:00+00:00",
@@ -588,18 +575,29 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-24T21:12:59Z",
+        "ended_at_iso": "2026-08-25T01:57:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Project P.I.T.T."
+        ],
+        "duration_h": 4.7,
+        "duration_label": "285 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-08-23T20:07:16Z",
-      "ended_at_iso": "2026-08-24T07:26:00+00:00",
+      "started_at": "2026-08-24T21:12:59Z",
+      "ended_at_iso": "2026-08-25T01:57:00+00:00",
       "games": [
-        "Project Zomboid",
         "Just Chatting",
-        "Wardogz",
-        "WARDOGS"
+        "Project P.I.T.T."
       ],
-      "duration_label": "679 minutes"
+      "duration_label": "285 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -732,17 +730,17 @@
             "avg_viewers": 2321.0
           },
           "Variety stack": {
-            "count": 228,
-            "share": 9.2,
-            "median_gap_hours": 24.75,
-            "p90_gap_hours": 68.37,
+            "count": 229,
+            "share": 9.3,
+            "median_gap_hours": 24.8,
+            "p90_gap_hours": 67.75,
             "avg_viewers": 2612.0
           }
         },
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1594
+            "count": 1595
           },
           {
             "game": "Grand Theft Auto V",
@@ -791,12 +789,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-08-24T21:12:54Z",
-      "game": "Project P.I.T.T.",
-      "title": "MY SHRINK SAID I SHOULD DO SOME WAR RP TO HELP ME BECOME A MORE ACTIVE LISTENER. (movie night in !discord , IDIOCRACY)",
-      "viewers": 2117
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -49534,6 +49527,26 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2854569597",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2855482803",
+      "started_at": "2026-08-24T21:12:59Z",
+      "ended_at": "Tuesday 25 August 2026 01:57",
+      "duration_label": "285 minutes",
+      "duration_seconds": 17080,
+      "title": "MY SHRINK SAID I SHOULD DO SOME WAR RP TO HELP ME BECOME A MORE ACTIVE LISTENER. (movie night in !discord , IDIOCRACY)",
+      "games": [
+        "Just Chatting",
+        "Project P.I.T.T."
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2855482803",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -49961,7 +49974,17 @@
       "duration_label": "11:19:21",
       "duration_seconds": 40761,
       "title": "MEN BRUNCH WITH @MISTERARTHER @JOSHINAROUND and THEN some RP on Wardog?!",
-      "views": 445845
+      "views": 445857
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2855482803",
+      "started_at": "2026-08-24T21:12:59Z",
+      "duration_label": "04:44:40",
+      "duration_seconds": 17080,
+      "title": "MY SHRINK SAID I SHOULD DO SOME WAR RP TO HELP ME BECOME A MORE ACTIVE LISTENER. (movie night in !discord , IDIOCRACY)",
+      "views": 180
     }
   ],
   "archive_grouped_dates": [
