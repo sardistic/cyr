@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-08-26T22:23:46Z",
-  "data_through": "2026-08-25T17:31:50Z",
+  "generated_at": "2026-08-27T03:27:15Z",
+  "data_through": "2026-08-26T16:58:28Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2472,
+    "sullygnome_stream_table": 2473,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 35,
-    "exact_merged_rows": 44,
-    "youtube_archive_segments": 1125,
-    "youtube_archive_grouped_dates": 609
+    "exact_merged_rows": 45,
+    "youtube_archive_segments": 1127,
+    "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2471,
+      "count": 2472,
       "mean": 28.0,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 481,
-        "12-24h": 1262,
+        "12-24h": 1263,
         "1-2d": 419,
         "2-3d": 174,
         "3-5d": 104,
@@ -29,23 +29,23 @@
       }
     },
     "exact_gap_hours": {
-      "count": 43,
-      "mean": 43.87,
-      "median": 27.15,
+      "count": 44,
+      "mean": 43.4,
+      "median": 26.88,
       "max": 138.03
     },
     "archive_gap_days": {
-      "count": 608,
-      "mean": 2.66,
+      "count": 610,
+      "mean": 2.65,
       "median": 1.0,
       "max": 81,
       "bins": {
         "1": 329,
-        "2": 112,
+        "2": 114,
         "3": 62,
-        "4-5": 57,
+        "4-5": 58,
         "6-7": 20,
-        "8-14": 16,
+        "8-14": 15,
         "15+": 12
       }
     },
@@ -62,9 +62,9 @@
       "2023-02": 13,
       "2023-03": 10,
       "2023-04": 15,
-      "2023-05": 14,
+      "2023-05": 15,
       "2023-06": 2,
-      "2023-07": 8,
+      "2023-07": 9,
       "2023-08": 10,
       "2023-09": 10,
       "2023-10": 5,
@@ -216,7 +216,7 @@
       "2026-05": 19,
       "2026-06": 16,
       "2026-07": 18,
-      "2026-08": 13
+      "2026-08": 14
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -228,13 +228,13 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 136
+      "2026": 137
     },
     "dow_hour": {
       "dow": {
         "Mon": 442,
         "Tue": 403,
-        "Wed": 436,
+        "Wed": 437,
         "Thu": 389,
         "Fri": 353,
         "Sat": 242,
@@ -257,7 +257,7 @@
         "13": 10,
         "14": 12,
         "15": 22,
-        "16": 78,
+        "16": 79,
         "17": 171,
         "18": 169,
         "19": 176,
@@ -278,43 +278,43 @@
       ],
       [
         6,
-        9.23
+        9.22
       ],
       [
         9,
-        10.81
+        10.8
       ],
       [
         12,
-        19.63
+        19.62
       ],
       [
         15,
-        33.51
+        33.5
       ],
       [
         18,
-        50.55
+        50.53
       ],
       [
         21,
-        63.86
+        63.83
       ],
       [
         24,
-        70.58
+        70.59
       ],
       [
         30,
-        74.38
+        74.39
       ],
       [
         36,
-        76.41
+        76.42
       ],
       [
         42,
-        81.79
+        81.8
       ],
       [
         48,
@@ -322,7 +322,7 @@
       ],
       [
         54,
-        88.95
+        88.96
       ],
       [
         60,
@@ -386,11 +386,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 66.7,
-        "started_at": "2026-07-23T20:56:27Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 23.7,
         "started_at": "2026-07-25T01:44:44Z",
@@ -485,21 +480,14 @@
         "gap_h": 15.6,
         "started_at": "2026-08-25T17:31:50Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 22.1,
+        "started_at": "2026-08-26T16:58:28Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-14T22:33:47Z",
-        "ended_at_iso": "2026-08-15T05:15:00+00:00",
-        "games": [
-          "Just Chatting"
-        ],
-        "duration_h": 6.7,
-        "duration_label": "402 minutes",
-        "avg_viewers": null,
-        "peak_viewers": null,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-16T21:30:51Z",
         "ended_at_iso": "2026-08-17T02:32:00+00:00",
@@ -591,22 +579,37 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-26T16:58:28Z",
+        "ended_at_iso": "2026-08-27T01:28:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Project P.I.T.T.",
+          "Arma Reforger",
+          "Hell Let Loose"
+        ],
+        "duration_h": 8.5,
+        "duration_label": "510 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-08-25T17:31:50Z",
-      "ended_at_iso": "2026-08-25T18:53:00+00:00",
+      "started_at": "2026-08-26T16:58:28Z",
+      "ended_at_iso": "2026-08-27T01:28:00+00:00",
       "games": [
         "Just Chatting",
-        "Special Events",
-        "Once Human",
-        "Project P.I.T.T."
+        "Project P.I.T.T.",
+        "Arma Reforger",
+        "Hell Let Loose"
       ],
-      "duration_label": "81 minutes"
+      "duration_label": "510 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 608,
+        "sample_size": 610,
         "features": {
           "challenge": {
             "count": 19,
@@ -615,9 +618,9 @@
             "p90_gap_days": 4.2
           },
           "collab": {
-            "count": 201,
+            "count": 202,
             "share": 33.1,
-            "median_gap_days": 2,
+            "median_gap_days": 2.0,
             "p90_gap_days": 5.0
           },
           "event_drops": {
@@ -634,7 +637,7 @@
           },
           "gameplay_arc": {
             "count": 349,
-            "share": 57.4,
+            "share": 57.2,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
@@ -646,20 +649,20 @@
           },
           "return_marker": {
             "count": 21,
-            "share": 3.5,
+            "share": 3.4,
             "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
           "travel_irl": {
-            "count": 61,
-            "share": 10.0,
-            "median_gap_days": 2,
-            "p90_gap_days": 5.0
+            "count": 62,
+            "share": 10.2,
+            "median_gap_days": 2.0,
+            "p90_gap_days": 4.9
           },
           "unclassified": {
-            "count": 96,
-            "share": 15.8,
-            "median_gap_days": 1.0,
+            "count": 97,
+            "share": 15.9,
+            "median_gap_days": 1,
             "p90_gap_days": 5.0
           }
         },
@@ -671,7 +674,7 @@
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 569,
+            "count": 571,
             "share": 93.6,
             "median_gap_days": 1,
             "p90_gap_days": 5.0
@@ -691,15 +694,15 @@
             "p90_gap_days": 2.1
           },
           "low": {
-            "count": 204,
+            "count": 205,
             "share": 33.6,
-            "median_gap_days": 2.0,
+            "median_gap_days": 2,
             "p90_gap_days": 6.0
           },
           "medium": {
-            "count": 364,
-            "share": 59.9,
-            "median_gap_days": 1.0,
+            "count": 365,
+            "share": 59.8,
+            "median_gap_days": 1,
             "p90_gap_days": 4.0
           }
         }
@@ -715,7 +718,7 @@
           },
           "Other games": {
             "count": 681,
-            "share": 27.6,
+            "share": 27.5,
             "median_gap_hours": 25.36,
             "p90_gap_hours": 72.25,
             "avg_viewers": 2449.0
@@ -735,17 +738,17 @@
             "avg_viewers": 2321.0
           },
           "Variety stack": {
-            "count": 229,
+            "count": 230,
             "share": 9.3,
-            "median_gap_hours": 24.8,
-            "p90_gap_hours": 67.75,
+            "median_gap_hours": 24.75,
+            "p90_gap_hours": 67.12,
             "avg_viewers": 2612.0
           }
         },
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1596
+            "count": 1597
           },
           {
             "game": "Grand Theft Auto V",
@@ -794,12 +797,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-08-26T16:58:23Z",
-      "game": "Just Chatting",
-      "title": "<message deleted>",
-      "viewers": 2105
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -49579,6 +49577,28 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2856195027",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2857063630",
+      "started_at": "2026-08-26T16:58:28Z",
+      "ended_at": "Thursday 27 August 2026 01:28",
+      "duration_label": "510 minutes",
+      "duration_seconds": 30580,
+      "title": "TODAY, I'M GOING TO BREAK THIS DUCK GAME. (RUBIKS CUBE CHALLENGE TOMORROW)",
+      "games": [
+        "Just Chatting",
+        "Project P.I.T.T.",
+        "Arma Reforger",
+        "Hell Let Loose"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2857063630",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -50021,6 +50041,16 @@
       "duration_seconds": 4879,
       "title": "OH SCRO, YOU AINT EVER SEEN SOMEONE REACT TO GAMESCOM LIKE THIS BEFORE: THEN WE PLAY SOME ONCE HUMAN, AND GAME IT UP SOME MORE!",
       "views": 26
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2857063630",
+      "started_at": "2026-08-26T16:58:28Z",
+      "duration_label": "08:29:40",
+      "duration_seconds": 30580,
+      "title": "TODAY, I'M GOING TO BREAK THIS DUCK GAME. (RUBIKS CUBE CHALLENGE TOMORROW)",
+      "views": 347
     }
   ],
   "archive_grouped_dates": [
@@ -51639,6 +51669,20 @@
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
+      "date": "2023-05-01",
+      "segment_count": 1,
+      "duration_seconds_sum": 17803,
+      "primary_title": "Exploring Austin, TX and Golfing w/ @Myth_YT  (Just Chatting) - [05/01/2023] | Cyr VODs",
+      "titles": [
+        "Exploring Austin, TX and Golfing w/ @Myth_YT  (Just Chatting) - [05/01/2023] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=0fBwnwVI80A"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
       "date": "2023-05-03",
       "segment_count": 1,
       "duration_seconds_sum": 11175,
@@ -51890,6 +51934,20 @@
       ],
       "urls": [
         "https://www.youtube.com/watch?v=lngXp-efhc0"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2023-07-12",
+      "segment_count": 1,
+      "duration_seconds_sum": 6192,
+      "primary_title": "Grilling Sausages & Unpacking (Just Chatting) - [07/12/2023] | Cyr VODs",
+      "titles": [
+        "Grilling Sausages & Unpacking (Just Chatting) - [07/12/2023] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=6ZesnNOH4yE"
       ]
     },
     {
@@ -60803,7 +60861,7 @@
     },
     {
       "date": "2023-04-25",
-      "gap_days": 8,
+      "gap_days": 6,
       "features": [
         "gameplay_arc",
         "collab"
@@ -60812,6 +60870,18 @@
       "sentiment_score": 0,
       "intensity": "medium",
       "intensity_score": 2
+    },
+    {
+      "date": "2023-05-01",
+      "gap_days": 2,
+      "features": [
+        "collab",
+        "travel_irl"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
     },
     {
       "date": "2023-05-03",
@@ -61005,7 +61075,7 @@
     },
     {
       "date": "2023-07-07",
-      "gap_days": 7,
+      "gap_days": 5,
       "features": [
         "collab",
         "food_cooking"
@@ -61014,6 +61084,17 @@
       "sentiment_score": 0,
       "intensity": "medium",
       "intensity_score": 1
+    },
+    {
+      "date": "2023-07-12",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
     },
     {
       "date": "2023-07-14",
