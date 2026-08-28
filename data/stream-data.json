@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-08-28T00:15:26Z",
-  "data_through": "2026-08-27T18:16:27Z",
+  "generated_at": "2026-08-28T11:39:01Z",
+  "data_through": "2026-08-28T00:38:58Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2474,
+    "sullygnome_stream_table": 2475,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 35,
-    "exact_merged_rows": 37,
+    "exact_merged_rows": 38,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2473,
-      "mean": 27.99,
+      "count": 2474,
+      "mean": 27.98,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
-        "0-12h": 481,
+        "0-12h": 482,
         "12-24h": 1264,
         "1-2d": 419,
         "2-3d": 174,
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 36,
-      "mean": 41.84,
-      "median": 26.55,
+      "count": 37,
+      "mean": 40.88,
+      "median": 26.5,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -216,7 +216,7 @@
       "2026-05": 19,
       "2026-06": 16,
       "2026-07": 18,
-      "2026-08": 15
+      "2026-08": 16
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -228,7 +228,7 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 138
+      "2026": 139
     },
     "dow_hour": {
       "dow": {
@@ -236,12 +236,12 @@
         "Tue": 403,
         "Wed": 437,
         "Thu": 390,
-        "Fri": 353,
+        "Fri": 354,
         "Sat": 242,
         "Sun": 207
       },
       "hour_utc": {
-        "0": 192,
+        "0": 193,
         "1": 116,
         "2": 121,
         "3": 120,
@@ -278,35 +278,35 @@
       ],
       [
         6,
-        9.22
+        9.26
       ],
       [
         9,
-        10.8
+        10.83
       ],
       [
         12,
-        19.61
+        19.64
       ],
       [
         15,
-        33.48
+        33.51
       ],
       [
         18,
-        50.55
+        50.57
       ],
       [
         21,
-        63.85
+        63.86
       ],
       [
         24,
-        70.6
+        70.61
       ],
       [
         30,
-        74.4
+        74.41
       ],
       [
         36,
@@ -314,7 +314,7 @@
       ],
       [
         42,
-        81.8
+        81.81
       ],
       [
         48,
@@ -322,7 +322,7 @@
       ],
       [
         54,
-        88.96
+        88.97
       ],
       [
         60,
@@ -330,7 +330,7 @@
       ],
       [
         66,
-        91.99
+        92.0
       ],
       [
         72,
@@ -386,11 +386,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 61.7,
-        "started_at": "2026-07-27T20:13:04Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 19.5,
         "started_at": "2026-07-28T19:42:04Z",
@@ -485,21 +480,14 @@
         "gap_h": 16.8,
         "started_at": "2026-08-27T18:16:27Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 4.0,
+        "started_at": "2026-08-28T00:38:58Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-17T21:06:29Z",
-        "ended_at_iso": "2026-08-18T03:09:00+00:00",
-        "games": [
-          "Just Chatting"
-        ],
-        "duration_h": 6.0,
-        "duration_label": "363 minutes",
-        "avg_viewers": 1707,
-        "peak_viewers": 2136,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-18T17:18:42Z",
         "ended_at_iso": "2026-08-18T22:21:00+00:00",
@@ -594,15 +582,29 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-28T00:38:58Z",
+        "ended_at_iso": "2026-08-28T05:44:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Project Zomboid"
+        ],
+        "duration_h": 5.1,
+        "duration_label": "306 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-08-27T18:16:27Z",
-      "ended_at_iso": "2026-08-27T20:39:00+00:00",
+      "started_at": "2026-08-28T00:38:58Z",
+      "ended_at_iso": "2026-08-28T05:44:00+00:00",
       "games": [
-        "Just Chatting"
+        "Just Chatting",
+        "Project Zomboid"
       ],
-      "duration_label": "143 minutes"
+      "duration_label": "306 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -707,10 +709,10 @@
       "game_analysis": {
         "categories": {
           "Just Chatting only": {
-            "count": 489,
+            "count": 490,
             "share": 19.8,
-            "median_gap_hours": 26.64,
-            "p90_gap_hours": 72.66,
+            "median_gap_hours": 26.63,
+            "p90_gap_hours": 72.63,
             "avg_viewers": 3707.0
           },
           "Other games": {
@@ -745,7 +747,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1598
+            "count": 1599
           },
           {
             "game": "Grand Theft Auto V",
@@ -49615,6 +49617,26 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2858034445",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2858344330",
+      "started_at": "2026-08-28T00:38:58Z",
+      "ended_at": "Friday 28 August 2026 05:44",
+      "duration_label": "306 minutes",
+      "duration_seconds": 18331,
+      "title": "ohhhhh hubby i love it when u put some cyr on the living room tv at night when u cook me dinner aka kraft mac n cheese with hot dogs...",
+      "games": [
+        "Just Chatting",
+        "Project Zomboid"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2858344330",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -50001,7 +50023,7 @@
       "duration_label": "08:29:40",
       "duration_seconds": 30580,
       "title": "TODAY, I'M GOING TO BREAK THIS DUCK GAME. (RUBIKS CUBE CHALLENGE TOMORROW)",
-      "views": 320913
+      "views": 320926
     },
     {
       "source": "twitch_vod",
@@ -50011,7 +50033,17 @@
       "duration_label": "02:23:00",
       "duration_seconds": 8580,
       "title": "BIGGEST DAY IN GAMING HISTORY \ud83d\udd25AUTHENTIC NON PERFORMATIVE REACTION TO GTA VI \ud83d\udd25 CALL ME OUT IF MY REACTION IS FAKE",
-      "views": 316
+      "views": 59129
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2858344330",
+      "started_at": "2026-08-28T00:38:58Z",
+      "duration_label": "05:05:31",
+      "duration_seconds": 18331,
+      "title": "ohhhhh hubby i love it when u put some cyr on the living room tv at night when u cook me dinner aka kraft mac n cheese with hot dogs...",
+      "views": 476
     }
   ],
   "archive_grouped_dates": [
