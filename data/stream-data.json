@@ -1,27 +1,26 @@
 {
-  "generated_at": "2026-08-27T14:30:54Z",
-  "data_through": "2026-08-26T16:58:28Z",
+  "generated_at": "2026-08-28T00:15:26Z",
+  "data_through": "2026-08-27T18:16:27Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2473,
+    "sullygnome_stream_table": 2474,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 35,
-    "exact_merged_rows": 36,
+    "exact_merged_rows": 37,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2472,
-      "mean": 28.0,
+      "count": 2473,
+      "mean": 27.99,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 481,
-        "12-24h": 1263,
+        "12-24h": 1264,
         "1-2d": 419,
         "2-3d": 174,
         "3-5d": 104,
@@ -30,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 35,
-      "mean": 42.31,
-      "median": 26.61,
+      "count": 36,
+      "mean": 41.84,
+      "median": 26.55,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -217,7 +216,7 @@
       "2026-05": 19,
       "2026-06": 16,
       "2026-07": 18,
-      "2026-08": 14
+      "2026-08": 15
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -229,14 +228,14 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 137
+      "2026": 138
     },
     "dow_hour": {
       "dow": {
         "Mon": 442,
         "Tue": 403,
         "Wed": 437,
-        "Thu": 389,
+        "Thu": 390,
         "Fri": 353,
         "Sat": 242,
         "Sun": 207
@@ -260,7 +259,7 @@
         "15": 22,
         "16": 79,
         "17": 171,
-        "18": 169,
+        "18": 170,
         "19": 176,
         "20": 259,
         "21": 295,
@@ -287,31 +286,31 @@
       ],
       [
         12,
-        19.62
+        19.61
       ],
       [
         15,
-        33.5
+        33.48
       ],
       [
         18,
-        50.53
+        50.55
       ],
       [
         21,
-        63.83
+        63.85
       ],
       [
         24,
-        70.59
+        70.6
       ],
       [
         30,
-        74.39
+        74.4
       ],
       [
         36,
-        76.42
+        76.43
       ],
       [
         42,
@@ -319,7 +318,7 @@
       ],
       [
         48,
-        87.54
+        87.55
       ],
       [
         54,
@@ -327,7 +326,7 @@
       ],
       [
         60,
-        89.6
+        89.61
       ],
       [
         66,
@@ -387,11 +386,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 23.7,
-        "started_at": "2026-07-25T01:44:44Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 61.7,
         "started_at": "2026-07-27T20:13:04Z",
@@ -486,21 +480,14 @@
         "gap_h": 22.1,
         "started_at": "2026-08-26T16:58:28Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 16.8,
+        "started_at": "2026-08-27T18:16:27Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-16T21:30:51Z",
-        "ended_at_iso": "2026-08-17T02:32:00+00:00",
-        "games": [
-          "Just Chatting"
-        ],
-        "duration_h": 5.0,
-        "duration_label": "302 minutes",
-        "avg_viewers": 1953,
-        "peak_viewers": 2167,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-17T21:06:29Z",
         "ended_at_iso": "2026-08-18T03:09:00+00:00",
@@ -595,18 +582,27 @@
         "avg_viewers": 1802,
         "peak_viewers": 2172,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-27T18:16:27Z",
+        "ended_at_iso": "2026-08-27T20:39:00+00:00",
+        "games": [
+          "Just Chatting"
+        ],
+        "duration_h": 2.4,
+        "duration_label": "143 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-08-26T16:58:28Z",
-      "ended_at_iso": "2026-08-27T01:28:00+00:00",
+      "started_at": "2026-08-27T18:16:27Z",
+      "ended_at_iso": "2026-08-27T20:39:00+00:00",
       "games": [
-        "Just Chatting",
-        "Project P.I.T.T.",
-        "Arma Reforger",
-        "Hell Let Loose"
+        "Just Chatting"
       ],
-      "duration_label": "510 minutes"
+      "duration_label": "143 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -739,17 +735,17 @@
             "avg_viewers": 2321.0
           },
           "Variety stack": {
-            "count": 230,
+            "count": 231,
             "share": 9.3,
-            "median_gap_hours": 24.75,
-            "p90_gap_hours": 67.12,
-            "avg_viewers": 2605.0
+            "median_gap_hours": 24.8,
+            "p90_gap_hours": 66.5,
+            "avg_viewers": 2601.0
           }
         },
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1597
+            "count": 1598
           },
           {
             "game": "Grand Theft Auto V",
@@ -49600,6 +49596,25 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2857063630",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2858034445",
+      "started_at": "2026-08-27T18:16:27Z",
+      "ended_at": "Thursday 27 August 2026 20:39",
+      "duration_label": "143 minutes",
+      "duration_seconds": 8580,
+      "title": "BIGGEST DAY IN GAMING HISTORY \ud83d\udd25AUTHENTIC NON PERFORMATIVE REACTION TO GTA VI \ud83d\udd25 CALL ME OUT IF MY REACTION IS FAKE",
+      "games": [
+        "Just Chatting"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2858034445",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -49986,7 +50001,17 @@
       "duration_label": "08:29:40",
       "duration_seconds": 30580,
       "title": "TODAY, I'M GOING TO BREAK THIS DUCK GAME. (RUBIKS CUBE CHALLENGE TOMORROW)",
-      "views": 522
+      "views": 320913
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2858034445",
+      "started_at": "2026-08-27T18:16:27Z",
+      "duration_label": "02:23:00",
+      "duration_seconds": 8580,
+      "title": "BIGGEST DAY IN GAMING HISTORY \ud83d\udd25AUTHENTIC NON PERFORMATIVE REACTION TO GTA VI \ud83d\udd25 CALL ME OUT IF MY REACTION IS FAKE",
+      "views": 316
     }
   ],
   "archive_grouped_dates": [
