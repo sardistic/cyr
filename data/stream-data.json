@@ -1,15 +1,14 @@
 {
-  "generated_at": "2026-08-29T18:48:13Z",
+  "generated_at": "2026-08-29T21:31:34Z",
   "data_through": "2026-08-28T21:00:21Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2476,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 35,
-    "exact_merged_rows": 35,
+    "exact_merged_rows": 39,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
@@ -30,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 34,
-      "mean": 43.56,
-      "median": 26.88,
+      "count": 38,
+      "mean": 40.34,
+      "median": 25.9,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -50039,6 +50038,46 @@
       "title": "SCROT, I'M GOING TO BREAK THIS DUCK GAME. (RUBIKS CUBE CHALLENGE TOMORROW)",
       "avg_viewers": 1802,
       "peak_viewers": 2172
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2857063630",
+      "started_at": "2026-08-26T16:58:28Z",
+      "duration_label": "08:29:40",
+      "duration_seconds": 30580,
+      "title": "TODAY, I'M GOING TO BREAK THIS DUCK GAME. (RUBIKS CUBE CHALLENGE TOMORROW)",
+      "views": 320949
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2858034445",
+      "started_at": "2026-08-27T18:16:27Z",
+      "duration_label": "02:23:00",
+      "duration_seconds": 8580,
+      "title": "BIGGEST DAY IN GAMING HISTORY \ud83d\udd25AUTHENTIC NON PERFORMATIVE REACTION TO GTA VI \ud83d\udd25 CALL ME OUT IF MY REACTION IS FAKE",
+      "views": 59238
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2858344330",
+      "started_at": "2026-08-28T00:38:58Z",
+      "duration_label": "05:05:31",
+      "duration_seconds": 18331,
+      "title": "ohhhhh hubby i love it when u put some cyr on the living room tv at night when u cook me dinner aka kraft mac n cheese with hot dogs...",
+      "views": 77133
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2859074607",
+      "started_at": "2026-08-28T21:00:21Z",
+      "duration_label": "08:22:30",
+      "duration_seconds": 30150,
+      "title": "FRIDAY - FAST FOOD PHILLYCHEESE STEAK REVIEW & 100 reasons why I think Wubby is an alien pretending to be a human",
+      "views": 455346
     }
   ],
   "archive_grouped_dates": [
