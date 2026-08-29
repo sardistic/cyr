@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-08-29T03:31:45Z",
-  "data_through": "2026-08-28T00:38:58Z",
+  "generated_at": "2026-08-29T10:50:50Z",
+  "data_through": "2026-08-28T21:00:21Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2475,
+    "sullygnome_stream_table": 2476,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 35,
-    "exact_merged_rows": 38,
+    "exact_merged_rows": 39,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2474,
+      "count": 2475,
       "mean": 27.98,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 482,
-        "12-24h": 1264,
+        "12-24h": 1265,
         "1-2d": 419,
         "2-3d": 174,
         "3-5d": 104,
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 37,
-      "mean": 40.88,
-      "median": 26.5,
+      "count": 38,
+      "mean": 40.34,
+      "median": 25.9,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -216,7 +216,7 @@
       "2026-05": 19,
       "2026-06": 16,
       "2026-07": 18,
-      "2026-08": 16
+      "2026-08": 17
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -228,7 +228,7 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 139
+      "2026": 140
     },
     "dow_hour": {
       "dow": {
@@ -236,7 +236,7 @@
         "Tue": 403,
         "Wed": 437,
         "Thu": 390,
-        "Fri": 354,
+        "Fri": 355,
         "Sat": 242,
         "Sun": 207
       },
@@ -262,7 +262,7 @@
         "18": 170,
         "19": 176,
         "20": 259,
-        "21": 295,
+        "21": 296,
         "22": 283,
         "23": 247
       }
@@ -274,11 +274,11 @@
       ],
       [
         3,
-        6.43
+        6.42
       ],
       [
         6,
-        9.26
+        9.25
       ],
       [
         9,
@@ -290,35 +290,35 @@
       ],
       [
         15,
-        33.51
+        33.49
       ],
       [
         18,
-        50.57
+        50.59
       ],
       [
         21,
-        63.86
+        63.88
       ],
       [
         24,
-        70.61
+        70.63
       ],
       [
         30,
-        74.41
+        74.42
       ],
       [
         36,
-        76.43
+        76.44
       ],
       [
         42,
-        81.81
+        81.82
       ],
       [
         48,
-        87.55
+        87.56
       ],
       [
         54,
@@ -326,7 +326,7 @@
       ],
       [
         60,
-        89.61
+        89.62
       ],
       [
         66,
@@ -334,7 +334,7 @@
       ],
       [
         72,
-        94.54
+        94.55
       ],
       [
         84,
@@ -386,11 +386,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 19.5,
-        "started_at": "2026-07-28T19:42:04Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 16.1,
         "started_at": "2026-07-29T19:50:46Z",
@@ -485,21 +480,14 @@
         "gap_h": 4.0,
         "started_at": "2026-08-28T00:38:58Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 15.3,
+        "started_at": "2026-08-28T21:00:21Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-18T17:18:42Z",
-        "ended_at_iso": "2026-08-18T22:21:00+00:00",
-        "games": [
-          "Just Chatting"
-        ],
-        "duration_h": 5.0,
-        "duration_label": "303 minutes",
-        "avg_viewers": 1991,
-        "peak_viewers": 2163,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-19T17:17:07Z",
         "ended_at_iso": "2026-08-19T22:29:00+00:00",
@@ -595,16 +583,31 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-28T21:00:21Z",
+        "ended_at_iso": "2026-08-29T05:22:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Berry Bury Berry",
+          "Manor Lords"
+        ],
+        "duration_h": 8.4,
+        "duration_label": "502 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-08-28T00:38:58Z",
-      "ended_at_iso": "2026-08-28T05:44:00+00:00",
+      "started_at": "2026-08-28T21:00:21Z",
+      "ended_at_iso": "2026-08-29T05:22:00+00:00",
       "games": [
         "Just Chatting",
-        "Project Zomboid"
+        "Berry Bury Berry",
+        "Manor Lords"
       ],
-      "duration_label": "306 minutes"
+      "duration_label": "502 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -716,15 +719,15 @@
             "avg_viewers": 3707.0
           },
           "Other games": {
-            "count": 681,
-            "share": 27.5,
+            "count": 682,
+            "share": 27.6,
             "median_gap_hours": 25.36,
-            "p90_gap_hours": 72.25,
+            "p90_gap_hours": 72.24,
             "avg_viewers": 2447.0
           },
           "Social sandbox/RP": {
             "count": 1053,
-            "share": 42.6,
+            "share": 42.5,
             "median_gap_hours": 23.88,
             "p90_gap_hours": 48.28,
             "avg_viewers": 1601.0
@@ -747,7 +750,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1599
+            "count": 1600
           },
           {
             "game": "Grand Theft Auto V",
@@ -796,12 +799,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-08-28T21:00:16Z",
-      "game": "Manor Lords",
-      "title": "PERFORMATIVE REACTIONS ONLY 12/10 YOU WONT BELIEVE WHAT HAPPENS NEXT GONE WRONG",
-      "viewers": 1490
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -49642,6 +49640,27 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2858344330",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2859074607",
+      "started_at": "2026-08-28T21:00:21Z",
+      "ended_at": "Saturday 29 August 2026 05:22",
+      "duration_label": "502 minutes",
+      "duration_seconds": 30150,
+      "title": "FRIDAY - FAST FOOD PHILLYCHEESE STEAK REVIEW & 100 reasons why I think Wubby is an alien pretending to be a human",
+      "games": [
+        "Just Chatting",
+        "Berry Bury Berry",
+        "Manor Lords"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2859074607",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -50028,7 +50047,7 @@
       "duration_label": "08:29:40",
       "duration_seconds": 30580,
       "title": "TODAY, I'M GOING TO BREAK THIS DUCK GAME. (RUBIKS CUBE CHALLENGE TOMORROW)",
-      "views": 320940
+      "views": 320943
     },
     {
       "source": "twitch_vod",
@@ -50038,7 +50057,7 @@
       "duration_label": "02:23:00",
       "duration_seconds": 8580,
       "title": "BIGGEST DAY IN GAMING HISTORY \ud83d\udd25AUTHENTIC NON PERFORMATIVE REACTION TO GTA VI \ud83d\udd25 CALL ME OUT IF MY REACTION IS FAKE",
-      "views": 59205
+      "views": 59219
     },
     {
       "source": "twitch_vod",
@@ -50048,7 +50067,17 @@
       "duration_label": "05:05:31",
       "duration_seconds": 18331,
       "title": "ohhhhh hubby i love it when u put some cyr on the living room tv at night when u cook me dinner aka kraft mac n cheese with hot dogs...",
-      "views": 77091
+      "views": 77109
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2859074607",
+      "started_at": "2026-08-28T21:00:21Z",
+      "duration_label": "08:22:30",
+      "duration_seconds": 30150,
+      "title": "FRIDAY - FAST FOOD PHILLYCHEESE STEAK REVIEW & 100 reasons why I think Wubby is an alien pretending to be a human",
+      "views": 483
     }
   ],
   "archive_grouped_dates": [
