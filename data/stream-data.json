@@ -1,14 +1,15 @@
 {
-  "generated_at": "2026-08-31T10:46:02Z",
+  "generated_at": "2026-08-31T17:55:28Z",
   "data_through": "2026-08-30T19:31:07Z",
   "degraded_sources": [
+    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2477,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 36,
-    "exact_merged_rows": 36,
+    "exact_merged_rows": 35,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
@@ -29,9 +30,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 35,
-      "mean": 41.03,
-      "median": 25.3,
+      "count": 34,
+      "mean": 40.87,
+      "median": 25.2,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -50063,16 +50064,6 @@
       "duration_seconds": 30150,
       "title": "FRIDAY - FAST FOOD PHILLYCHEESE STEAK REVIEW & 100 reasons why I think Wubby is an alien pretending to be a human",
       "views": 455736
-    },
-    {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2860938604",
-      "started_at": "2026-08-30T19:31:07Z",
-      "duration_label": "06:05:10",
-      "duration_seconds": 21910,
-      "title": "So....can I play ELDEN RING without having a MENTAL BREAKDOWN? It's time for Debra to return. Let's find out. BACKSEATERS? I welcome you.",
-      "views": 637
     }
   ],
   "archive_grouped_dates": [
