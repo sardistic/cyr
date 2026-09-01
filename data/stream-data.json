@@ -1,16 +1,14 @@
 {
-  "generated_at": "2026-09-01T17:10:42Z",
+  "generated_at": "2026-09-01T20:03:23Z",
   "data_through": "2026-08-31T20:41:00Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2478,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 36,
-    "exact_merged_rows": 35,
+    "exact_merged_rows": 37,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
@@ -31,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 34,
-      "mean": 40.87,
-      "median": 25.2,
+      "count": 36,
+      "mean": 40.59,
+      "median": 25.23,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -50085,6 +50083,26 @@
       "duration_seconds": 30150,
       "title": "FRIDAY - FAST FOOD PHILLYCHEESE STEAK REVIEW & 100 reasons why I think Wubby is an alien pretending to be a human",
       "views": 455736
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2860938604",
+      "started_at": "2026-08-30T19:31:07Z",
+      "duration_label": "06:05:10",
+      "duration_seconds": 21910,
+      "title": "So....can I play ELDEN RING without having a MENTAL BREAKDOWN? It's time for Debra to return. Let's find out. BACKSEATERS? I welcome you.",
+      "views": 2766676
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2861857860",
+      "started_at": "2026-08-31T20:41:00Z",
+      "duration_label": "04:41:20",
+      "duration_seconds": 16880,
+      "title": "i make the mario triple jump sound when going up the stairs (yes it's on repeat) ZOMBOID ZOMBOID ZOMBOID",
+      "views": 3121856
     }
   ],
   "archive_grouped_dates": [
