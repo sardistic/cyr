@@ -1,27 +1,26 @@
 {
-  "generated_at": "2026-09-01T01:41:26Z",
-  "data_through": "2026-08-30T19:31:07Z",
+  "generated_at": "2026-09-01T07:20:42Z",
+  "data_through": "2026-08-31T20:41:00Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2477,
+    "sullygnome_stream_table": 2478,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 36,
-    "exact_merged_rows": 35,
+    "exact_merged_rows": 37,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2476,
+      "count": 2477,
       "mean": 27.98,
-      "median": 17.9,
+      "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 482,
-        "12-24h": 1265,
+        "12-24h": 1266,
         "1-2d": 420,
         "2-3d": 174,
         "3-5d": 104,
@@ -30,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 34,
-      "mean": 40.87,
-      "median": 25.2,
+      "count": 36,
+      "mean": 40.59,
+      "median": 25.23,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -217,7 +216,7 @@
       "2026-05": 19,
       "2026-06": 16,
       "2026-07": 18,
-      "2026-08": 18
+      "2026-08": 19
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -229,11 +228,11 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 141
+      "2026": 142
     },
     "dow_hour": {
       "dow": {
-        "Mon": 442,
+        "Mon": 443,
         "Tue": 403,
         "Wed": 437,
         "Thu": 390,
@@ -262,7 +261,7 @@
         "17": 171,
         "18": 170,
         "19": 177,
-        "20": 259,
+        "20": 260,
         "21": 296,
         "22": 283,
         "23": 247
@@ -287,31 +286,31 @@
       ],
       [
         12,
-        19.63
+        19.62
       ],
       [
         15,
-        33.52
+        33.51
       ],
       [
         18,
-        50.61
+        50.59
       ],
       [
         21,
-        63.89
+        63.91
       ],
       [
         24,
-        70.6
+        70.61
       ],
       [
         30,
-        74.39
+        74.4
       ],
       [
         36,
-        76.41
+        76.42
       ],
       [
         42,
@@ -319,11 +318,11 @@
       ],
       [
         48,
-        87.56
+        87.57
       ],
       [
         54,
-        88.97
+        88.98
       ],
       [
         60,
@@ -331,7 +330,7 @@
       ],
       [
         66,
-        92.0
+        92.01
       ],
       [
         72,
@@ -387,11 +386,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 18.3,
-        "started_at": "2026-07-30T19:18:57Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 17.2,
         "started_at": "2026-07-31T19:55:57Z",
@@ -486,24 +480,14 @@
         "gap_h": 38.2,
         "started_at": "2026-08-30T19:31:07Z",
         "game": "Manor Lords"
+      },
+      {
+        "gap_h": 19.1,
+        "started_at": "2026-08-31T20:41:00Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-23T20:07:16Z",
-        "ended_at_iso": "2026-08-24T07:26:00+00:00",
-        "games": [
-          "Project Zomboid",
-          "Just Chatting",
-          "Wardogz",
-          "WARDOGS"
-        ],
-        "duration_h": 11.3,
-        "duration_label": "679 minutes",
-        "avg_viewers": 1966,
-        "peak_viewers": 2182,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-24T21:12:59Z",
         "ended_at_iso": "2026-08-25T01:57:00+00:00",
@@ -599,17 +583,31 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-08-31T20:41:00Z",
+        "ended_at_iso": "2026-09-01T01:22:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Project Zomboid",
+          "ELDEN RING"
+        ],
+        "duration_h": 4.7,
+        "duration_label": "281 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-08-30T19:31:07Z",
-      "ended_at_iso": "2026-08-31T01:36:00+00:00",
+      "started_at": "2026-08-31T20:41:00Z",
+      "ended_at_iso": "2026-09-01T01:22:00+00:00",
       "games": [
-        "Manor Lords",
         "Just Chatting",
+        "Project Zomboid",
         "ELDEN RING"
       ],
-      "duration_label": "365 minutes"
+      "duration_label": "281 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -742,17 +740,17 @@
             "avg_viewers": 2321.0
           },
           "Variety stack": {
-            "count": 232,
+            "count": 233,
             "share": 9.4,
-            "median_gap_hours": 24.81,
-            "p90_gap_hours": 66.2,
+            "median_gap_hours": 24.82,
+            "p90_gap_hours": 65.91,
             "avg_viewers": 2601.0
           }
         },
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1601
+            "count": 1602
           },
           {
             "game": "Grand Theft Auto V",
@@ -49684,6 +49682,27 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2860938604",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2861857860",
+      "started_at": "2026-08-31T20:41:00Z",
+      "ended_at": "Tuesday 01 September 2026 01:22",
+      "duration_label": "281 minutes",
+      "duration_seconds": 16880,
+      "title": "i make the mario triple jump sound when going up the stairs (yes it's on repeat) ZOMBOID ZOMBOID ZOMBOID",
+      "games": [
+        "Just Chatting",
+        "Project Zomboid",
+        "ELDEN RING"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2861857860",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -50064,6 +50083,26 @@
       "duration_seconds": 30150,
       "title": "FRIDAY - FAST FOOD PHILLYCHEESE STEAK REVIEW & 100 reasons why I think Wubby is an alien pretending to be a human",
       "views": 455736
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2860938604",
+      "started_at": "2026-08-30T19:31:07Z",
+      "duration_label": "06:05:10",
+      "duration_seconds": 21910,
+      "title": "So....can I play ELDEN RING without having a MENTAL BREAKDOWN? It's time for Debra to return. Let's find out. BACKSEATERS? I welcome you.",
+      "views": 2766638
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2861857860",
+      "started_at": "2026-08-31T20:41:00Z",
+      "duration_label": "04:41:20",
+      "duration_seconds": 16880,
+      "title": "i make the mario triple jump sound when going up the stairs (yes it's on repeat) ZOMBOID ZOMBOID ZOMBOID",
+      "views": 352
     }
   ],
   "archive_grouped_dates": [
