@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-09-02T17:59:05Z",
-  "data_through": "2026-09-01T20:07:18Z",
+  "generated_at": "2026-09-02T20:56:39Z",
+  "data_through": "2026-09-02T16:28:35Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2479,
+    "sullygnome_stream_table": 2480,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 37,
-    "exact_merged_rows": 37,
+    "exact_merged_rows": 38,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2478,
-      "mean": 27.97,
+      "count": 2479,
+      "mean": 27.96,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
-        "0-12h": 482,
+        "0-12h": 483,
         "12-24h": 1267,
         "1-2d": 420,
         "2-3d": 174,
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 36,
-      "mean": 40.51,
-      "median": 25.13,
+      "count": 37,
+      "mean": 39.96,
+      "median": 25.09,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -217,7 +217,7 @@
       "2026-06": 16,
       "2026-07": 18,
       "2026-08": 19,
-      "2026-09": 1
+      "2026-09": 2
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -229,13 +229,13 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 143
+      "2026": 144
     },
     "dow_hour": {
       "dow": {
         "Mon": 443,
         "Tue": 404,
-        "Wed": 437,
+        "Wed": 438,
         "Thu": 390,
         "Fri": 355,
         "Sat": 242,
@@ -258,7 +258,7 @@
         "13": 10,
         "14": 12,
         "15": 22,
-        "16": 79,
+        "16": 80,
         "17": 171,
         "18": 170,
         "19": 177,
@@ -275,7 +275,7 @@
       ],
       [
         3,
-        6.42
+        6.41
       ],
       [
         6,
@@ -283,47 +283,47 @@
       ],
       [
         9,
-        10.82
+        10.81
       ],
       [
         12,
-        19.61
+        19.65
       ],
       [
         15,
-        33.49
+        33.52
       ],
       [
         18,
-        50.56
+        50.58
       ],
       [
         21,
-        63.92
+        63.94
       ],
       [
         24,
-        70.62
+        70.63
       ],
       [
         30,
-        74.41
+        74.43
       ],
       [
         36,
-        76.43
+        76.44
       ],
       [
         42,
-        81.84
+        81.85
       ],
       [
         48,
-        87.57
+        87.58
       ],
       [
         54,
-        88.98
+        88.99
       ],
       [
         60,
@@ -387,11 +387,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 82.3,
-        "started_at": "2026-08-04T15:06:20Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 20.5,
         "started_at": "2026-08-05T20:08:32Z",
@@ -486,24 +481,14 @@
         "gap_h": 18.8,
         "started_at": "2026-09-01T20:07:18Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 11.6,
+        "started_at": "2026-09-02T16:28:35Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-25T17:31:50Z",
-        "ended_at_iso": "2026-08-26T02:36:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Special Events",
-          "Once Human",
-          "Project P.I.T.T."
-        ],
-        "duration_h": 9.1,
-        "duration_label": "545 minutes",
-        "avg_viewers": 1606,
-        "peak_viewers": 2169,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-26T16:58:28Z",
         "ended_at_iso": "2026-08-27T01:28:00+00:00",
@@ -598,16 +583,29 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-09-02T16:28:35Z",
+        "ended_at_iso": "2026-09-02T20:52:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Bodycam"
+        ],
+        "duration_h": 4.4,
+        "duration_label": "264 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-09-01T20:07:18Z",
-      "ended_at_iso": "2026-09-02T04:53:00+00:00",
+      "started_at": "2026-09-02T16:28:35Z",
+      "ended_at_iso": "2026-09-02T20:52:00+00:00",
       "games": [
         "Just Chatting",
-        "ELDEN RING"
+        "Bodycam"
       ],
-      "duration_label": "526 minutes"
+      "duration_label": "264 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -719,8 +717,8 @@
             "avg_viewers": 3707.0
           },
           "Other games": {
-            "count": 682,
-            "share": 27.5,
+            "count": 683,
+            "share": 27.6,
             "median_gap_hours": 25.36,
             "p90_gap_hours": 72.24,
             "avg_viewers": 2447.0
@@ -750,7 +748,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1603
+            "count": 1604
           },
           {
             "game": "Grand Theft Auto V",
@@ -799,12 +797,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-09-02T16:28:30Z",
-      "game": "Bodycam",
-      "title": "cuh, PLEASE stop saying that I look EXACTLY like Ryan Gosling? I get it guys. I look amazing. BODYCAM & ELDEN RING TOP CHARTS TODAY",
-      "viewers": 1504
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -49728,6 +49721,26 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2862699800",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2863390041",
+      "started_at": "2026-09-02T16:28:35Z",
+      "ended_at": "Wednesday 02 September 2026 20:52",
+      "duration_label": "264 minutes",
+      "duration_seconds": 15840,
+      "title": "cuh, PLEASE stop saying that I look EXACTLY like Ryan Gosling? I get it guys. I look amazing. BODYCAM & ELDEN RING TOP CHARTS TODAY",
+      "games": [
+        "Just Chatting",
+        "Bodycam"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2863390041",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -50127,7 +50140,17 @@
       "duration_label": "08:46:10",
       "duration_seconds": 31570,
       "title": "BREAKING: i'm wearing an anime shirt, & tier 2 subs can now post gifs in chat and I don't know how I feel about it yet",
-      "views": 962
+      "views": 356896
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2863390041",
+      "started_at": "2026-09-02T16:28:35Z",
+      "duration_label": "04:24:00",
+      "duration_seconds": 15840,
+      "title": "cuh, PLEASE stop saying that I look EXACTLY like Ryan Gosling? I get it guys. I look amazing. BODYCAM & ELDEN RING TOP CHARTS TODAY",
+      "views": 231
     }
   ],
   "archive_grouped_dates": [
