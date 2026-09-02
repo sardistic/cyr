@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T22:43:51Z",
+  "generated_at": "2026-09-02T00:50:54Z",
   "data_through": "2026-08-31T20:41:00Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
@@ -7,8 +7,8 @@
   "sources": {
     "sullygnome_stream_table": 2478,
     "twitchmetrics_stream_logs": 15,
-    "twitchmetrics_vods": 36,
-    "exact_merged_rows": 37,
+    "twitchmetrics_vods": 37,
+    "exact_merged_rows": 36,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 36,
-      "mean": 40.59,
-      "median": 25.23,
+      "count": 35,
+      "mean": 41.0,
+      "median": 25.16,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -803,7 +803,7 @@
       "started_at": "2026-09-01T20:07:13Z",
       "game": "ELDEN RING",
       "title": "new plastic surgery be nice stop calling me greater value i might cry",
-      "viewers": 2117
+      "viewers": 2153
     }
   },
   "sully_streams": [
@@ -49714,22 +49714,12 @@
     {
       "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
-      "id": "2810020947",
-      "started_at": "2026-07-01T23:20:12Z",
-      "duration_label": "06:45:40",
-      "duration_seconds": 24340,
-      "title": "PLAYING GAMES WITH FRIENDS - NEVER PLAYED THIS MECCA CHAMELION GAME BEFORE - LET'S SEE IF I CAN HANG (3.4k Subs no viewers)",
-      "views": 165532
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
       "id": "2810900553",
       "started_at": "2026-07-03T01:50:03Z",
       "duration_label": "06:24:50",
       "duration_seconds": 23090,
       "title": "relax. you've nothing to do and it's gaming night with cyr. mecca chameleon with chat, perhaps? what do you think, cuh?",
-      "views": 155282
+      "views": 155289
     },
     {
       "source": "twitchmetrics_vod",
@@ -49739,7 +49729,7 @@
       "duration_label": "06:33:12",
       "duration_seconds": 23592,
       "title": "GETTING WILD WITH CHAT - DEALING WITH MY PERSONAL PREGNANCY - FINDING THE SWEATIEST MECCA CHAMELIANS IN CHAT",
-      "views": 200313
+      "views": 200315
     },
     {
       "source": "twitchmetrics_vod",
@@ -49749,7 +49739,7 @@
       "duration_label": "05:05:40",
       "duration_seconds": 18340,
       "title": "CHAT, WHAT GAME SHOULD I BE ABLE TO BEAT IN 4-5 HOURS, AND IF I FAIL, THAT MEANS I SHOULD NOT PLAY GAMES? GO",
-      "views": 178195
+      "views": 178196
     },
     {
       "source": "twitchmetrics_vod",
@@ -49759,7 +49749,7 @@
       "duration_label": "04:02:50",
       "duration_seconds": 14570,
       "title": "I HAVE BEEN SUMMONED.",
-      "views": 129913
+      "views": 129915
     },
     {
       "source": "twitchmetrics_vod",
@@ -49769,7 +49759,7 @@
       "duration_label": "05:35:50",
       "duration_seconds": 20150,
       "title": "GETTING AN RP LOBBY GOING TONIGHT FOR DAWSON OAKS - WOULD BE REALLY NICE IS WUBBY SHOWS UP - WOULD BE REALLY NICE IF WILLNEFF SHOWS UP",
-      "views": 182431
+      "views": 182432
     },
     {
       "source": "twitchmetrics_vod",
@@ -49779,7 +49769,7 @@
       "duration_label": "04:19:20",
       "duration_seconds": 15560,
       "title": "1v1 LEGO BUILD RACE WITH @MISTERARTHER 6PM CST - ROCK CLIMBING WITH @MYTH TOMORROW",
-      "views": 172153
+      "views": 172154
     },
     {
       "source": "twitchmetrics_vod",
@@ -49789,7 +49779,7 @@
       "duration_label": "05:43:40",
       "duration_seconds": 20620,
       "title": "ROCK CLIMBING WITH @MYTH & @NMPLOL TODAY - THEN GOING OUT, A FINE BRUNCH WITH THE BOYS !discord",
-      "views": 226774
+      "views": 226776
     },
     {
       "source": "twitchmetrics_vod",
@@ -49799,7 +49789,7 @@
       "duration_label": "04:21:00",
       "duration_seconds": 15660,
       "title": "THAT SCENE IN TITANIC WHERE ROSE PUSHES JACK FROST OFF THE DOOR BUT I'M ROSE AND I'M JACK AND THERE'S NO WATER",
-      "views": 149456
+      "views": 149457
     },
     {
       "source": "twitchmetrics_vod",
@@ -49809,7 +49799,7 @@
       "duration_label": "04:18:20",
       "duration_seconds": 15500,
       "title": "giving chat EXACTLY what they want on a friday evening: ME",
-      "views": 140679
+      "views": 140682
     },
     {
       "source": "twitchmetrics_vod",
@@ -49819,7 +49809,7 @@
       "duration_label": "05:10:20",
       "duration_seconds": 18620,
       "title": "how to make an atomic bomb in your garden",
-      "views": 194973
+      "views": 194974
     },
     {
       "source": "twitchmetrics_vod",
@@ -49829,7 +49819,7 @@
       "duration_label": "05:08:10",
       "duration_seconds": 18490,
       "title": "ROCK CLIMBING WITH @MISTERARTHER",
-      "views": 156563
+      "views": 156564
     },
     {
       "source": "twitchmetrics_vod",
@@ -49839,7 +49829,7 @@
       "duration_label": "04:45:40",
       "duration_seconds": 17140,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH BRITISH FRIEND PAUL WHO HAS NEVER BEEN ON STREAM BEFORE NOR HAS HE EVER SEEN ONE. LET'S SEE WHAT HE THINKS \ud83c\udf55",
-      "views": 160969
+      "views": 160970
     },
     {
       "source": "twitchmetrics_vod",
@@ -49849,7 +49839,7 @@
       "duration_label": "04:13:10",
       "duration_seconds": 15190,
       "title": "HOW TO BUILD AN ATOMIC BOMB IN YOUR GARDEN (AND OTHER FUN GAMES TO GET YOU IN TROUBLE)",
-      "views": 75011
+      "views": 75013
     },
     {
       "source": "twitchmetrics_vod",
@@ -49859,7 +49849,7 @@
       "duration_label": "08:16:30",
       "duration_seconds": 29790,
       "title": "somebody get these BEGGARS out of here! (giving chat EXACTLY what they want)",
-      "views": 264978
+      "views": 264982
     },
     {
       "source": "twitchmetrics_vod",
@@ -49869,7 +49859,7 @@
       "duration_label": "05:13:40",
       "duration_seconds": 18820,
       "title": "YOUR SLOP GAMING GOD HAS RETURNED. MAKE WAY, ALL YIELD.",
-      "views": 146041
+      "views": 146043
     },
     {
       "source": "twitchmetrics_vod",
@@ -49879,7 +49869,7 @@
       "duration_label": "07:26:40",
       "duration_seconds": 26800,
       "title": "NO MOM JOKES TODAY. WILL RESULT IN INSTANT AND IMMEDIATE AND PUBLIC REJECTION",
-      "views": 227279
+      "views": 227284
     },
     {
       "source": "twitchmetrics_vod",
@@ -49889,7 +49879,7 @@
       "duration_label": "08:52:30",
       "duration_seconds": 31950,
       "title": "that scene in INDEPENDANCE DAY when the guy goes \"i'm BAAAACK\" and flies into the mothership- except it's me and your mom",
-      "views": 301506
+      "views": 301513
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -49899,7 +49889,7 @@
       "duration_label": "8 hours",
       "duration_seconds": 30670,
       "title": "GOOD MORNING! SEEING HOW MANY ZOMBIES I CAN KILL IN ZOMBOID - LATER I ATTEMPT TO MAKE MY \"OHIO BEEF WELLINGTON\"",
-      "views": 172167,
+      "views": 172170,
       "avg_viewers": 2336,
       "peak_viewers": 3100
     },
@@ -49911,7 +49901,7 @@
       "duration_label": "10 hours",
       "duration_seconds": 36020,
       "title": "CALLING OLD 1-800 NUMBERS FROM 90'S COMMERCIALS UNTIL I SUCCESSFULLY BUY A PRODUCT (ZOMBOID LATER?)",
-      "views": 284283,
+      "views": 284286,
       "avg_viewers": 2675,
       "peak_viewers": 3100
     },
@@ -49923,7 +49913,7 @@
       "duration_label": "6 hours",
       "duration_seconds": 20361,
       "title": "THE WINDS ARE FAVORABLE. DON'T ASK HOW I DID IT. ZOMBOID, HOW MANY ZOMBIES CAN I DESTROY IN ONE LIFE? (MORE THAN 7 DAYS I BET)",
-      "views": 150007,
+      "views": 150011,
       "avg_viewers": 2460,
       "peak_viewers": 3053
     },
@@ -49935,7 +49925,7 @@
       "duration_label": "4 hours",
       "duration_seconds": 15630,
       "title": "MAKE FUN OF CYR FRIDAY - SURVIVING 7 DAYS & UNALIVING 1000 ZOMBIES",
-      "views": 140691,
+      "views": 140692,
       "avg_viewers": 2352,
       "peak_viewers": 3100
     },
@@ -49947,7 +49937,7 @@
       "duration_label": "3 hours",
       "duration_seconds": 10330,
       "title": "CYR IN THE KITCHEN - HOMEMADE CLAM CUH CHOWDER 1ST TIME - IN CAPE COD WE SHOULD EXPLORE A BIT AFTER CUH",
-      "views": 76864,
+      "views": 76869,
       "avg_viewers": 2465,
       "peak_viewers": 3100
     },
@@ -49959,7 +49949,7 @@
       "duration_label": "06:42:01",
       "duration_seconds": 24121,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH @MEESTERKEEM \ud83c\udf55 WHO WILL EMBARRASS THEMSELVES LESS TONIGHT?",
-      "views": 257813,
+      "views": 257824,
       "avg_viewers": 1020,
       "peak_viewers": 1487
     },
@@ -49971,7 +49961,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 18090,
       "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
-      "views": 230311,
+      "views": 230326,
       "avg_viewers": 1953,
       "peak_viewers": 2167
     },
@@ -49983,7 +49973,7 @@
       "duration_label": "6 hours",
       "duration_seconds": 21770,
       "title": "TEACHING MYSELF HOW TO JUGGLE IN ONE STREAM BECAUSE I'M A CLOWN - MOVIE NIGHT TONIGHT IN !DISCORD AFTER STREAM",
-      "views": 451442,
+      "views": 451445,
       "avg_viewers": 1707,
       "peak_viewers": 2136
     },
@@ -49995,7 +49985,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 18180,
       "title": "acting as chill as possible no matter what to see if it makes me cooler (helping @peachjars with manual labor)",
-      "views": 160683,
+      "views": 160690,
       "avg_viewers": 1991,
       "peak_viewers": 2163
     },
@@ -50007,7 +49997,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 18740,
       "title": "acting as chill as possible no matter what to see if it makes me cooler (helping @peachjars with manual labor)",
-      "views": 163630,
+      "views": 163641,
       "avg_viewers": 1948,
       "peak_viewers": 2161
     },
@@ -50019,7 +50009,7 @@
       "duration_label": "11 hours",
       "duration_seconds": 40761,
       "title": "MEN BRUNCH WITH @MISTERARTHER @JOSHINAROUND and THEN some RP on Wardog?!",
-      "views": 446224,
+      "views": 446255,
       "avg_viewers": 1966,
       "peak_viewers": 2182
     },
@@ -50031,7 +50021,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 17080,
       "title": "MY SHRINK SAID I SHOULD DO SOME WAR RP TO HELP ME BECOME A MORE ACTIVE LISTENER. (movie night in !discord , IDIOCRACY)",
-      "views": 255104,
+      "views": 255114,
       "avg_viewers": 1845,
       "peak_viewers": 2175
     },
@@ -50043,7 +50033,7 @@
       "duration_label": "9 hours",
       "duration_seconds": 32690,
       "title": "OH SCRO, YOU AINT EVER SEEN SOMEONE REACT TO GAMESCOM LIKE THIS BEFORE: THEN WE PLAY SOME ONCE HUMAN, AND GAME IT UP SOME MORE!",
-      "views": 377692,
+      "views": 377701,
       "avg_viewers": 1606,
       "peak_viewers": 2169
     },
@@ -50055,7 +50045,7 @@
       "duration_label": "8 hours",
       "duration_seconds": 30580,
       "title": "SCROT, I'M GOING TO BREAK THIS DUCK GAME. (RUBIKS CUBE CHALLENGE TOMORROW)",
-      "views": 320960,
+      "views": 320972,
       "avg_viewers": 1802,
       "peak_viewers": 2172
     },
@@ -50067,7 +50057,7 @@
       "duration_label": "02:23:00",
       "duration_seconds": 8580,
       "title": "BIGGEST DAY IN GAMING HISTORY \ud83d\udd25AUTHENTIC NON PERFORMATIVE REACTION TO GTA VI \ud83d\udd25 CALL ME OUT IF MY REACTION IS FAKE",
-      "views": 59257
+      "views": 59290
     },
     {
       "source": "twitchmetrics_vod",
@@ -50077,7 +50067,7 @@
       "duration_label": "05:05:31",
       "duration_seconds": 18331,
       "title": "ohhhhh hubby i love it when u put some cyr on the living room tv at night when u cook me dinner aka kraft mac n cheese with hot dogs...",
-      "views": 77158
+      "views": 77190
     },
     {
       "source": "twitchmetrics_vod",
@@ -50087,27 +50077,27 @@
       "duration_label": "08:22:30",
       "duration_seconds": 30150,
       "title": "FRIDAY - FAST FOOD PHILLYCHEESE STEAK REVIEW & 100 reasons why I think Wubby is an alien pretending to be a human",
-      "views": 455736
+      "views": 455834
     },
     {
-      "source": "twitch_vod",
+      "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
       "id": "2860938604",
       "started_at": "2026-08-30T19:31:07Z",
       "duration_label": "06:05:10",
       "duration_seconds": 21910,
       "title": "So....can I play ELDEN RING without having a MENTAL BREAKDOWN? It's time for Debra to return. Let's find out. BACKSEATERS? I welcome you.",
-      "views": 2766690
+      "views": 2766673
     },
     {
-      "source": "twitch_vod",
+      "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
       "id": "2861857860",
       "started_at": "2026-08-31T20:41:00Z",
       "duration_label": "04:41:20",
       "duration_seconds": 16880,
       "title": "i make the mario triple jump sound when going up the stairs (yes it's on repeat) ZOMBOID ZOMBOID ZOMBOID",
-      "views": 3121919
+      "views": 3121819
     }
   ],
   "archive_grouped_dates": [
