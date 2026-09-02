@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-09-02T00:50:54Z",
-  "data_through": "2026-08-31T20:41:00Z",
+  "generated_at": "2026-09-02T05:28:28Z",
+  "data_through": "2026-09-01T20:07:18Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2478,
+    "sullygnome_stream_table": 2479,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 37,
-    "exact_merged_rows": 36,
+    "exact_merged_rows": 37,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2477,
-      "mean": 27.98,
+      "count": 2478,
+      "mean": 27.97,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 482,
-        "12-24h": 1266,
+        "12-24h": 1267,
         "1-2d": 420,
         "2-3d": 174,
         "3-5d": 104,
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 35,
-      "mean": 41.0,
-      "median": 25.16,
+      "count": 36,
+      "mean": 40.51,
+      "median": 25.13,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -216,7 +216,8 @@
       "2026-05": 19,
       "2026-06": 16,
       "2026-07": 18,
-      "2026-08": 19
+      "2026-08": 19,
+      "2026-09": 1
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -228,12 +229,12 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 142
+      "2026": 143
     },
     "dow_hour": {
       "dow": {
         "Mon": 443,
-        "Tue": 403,
+        "Tue": 404,
         "Wed": 437,
         "Thu": 390,
         "Fri": 355,
@@ -261,7 +262,7 @@
         "17": 171,
         "18": 170,
         "19": 177,
-        "20": 260,
+        "20": 261,
         "21": 296,
         "22": 283,
         "23": 247
@@ -278,7 +279,7 @@
       ],
       [
         6,
-        9.25
+        9.24
       ],
       [
         9,
@@ -286,35 +287,35 @@
       ],
       [
         12,
-        19.62
+        19.61
       ],
       [
         15,
-        33.51
+        33.49
       ],
       [
         18,
-        50.59
+        50.56
       ],
       [
         21,
-        63.91
+        63.92
       ],
       [
         24,
-        70.61
+        70.62
       ],
       [
         30,
-        74.4
+        74.41
       ],
       [
         36,
-        76.42
+        76.43
       ],
       [
         42,
-        81.83
+        81.84
       ],
       [
         48,
@@ -326,7 +327,7 @@
       ],
       [
         60,
-        89.62
+        89.63
       ],
       [
         66,
@@ -386,11 +387,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 17.2,
-        "started_at": "2026-07-31T19:55:57Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 82.3,
         "started_at": "2026-08-04T15:06:20Z",
@@ -485,22 +481,14 @@
         "gap_h": 19.1,
         "started_at": "2026-08-31T20:41:00Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 18.8,
+        "started_at": "2026-09-01T20:07:18Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-24T21:12:59Z",
-        "ended_at_iso": "2026-08-25T01:57:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Project P.I.T.T."
-        ],
-        "duration_h": 4.7,
-        "duration_label": "285 minutes",
-        "avg_viewers": 1845,
-        "peak_viewers": 2175,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-25T17:31:50Z",
         "ended_at_iso": "2026-08-26T02:36:00+00:00",
@@ -597,17 +585,29 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-09-01T20:07:18Z",
+        "ended_at_iso": "2026-09-02T04:53:00+00:00",
+        "games": [
+          "Just Chatting",
+          "ELDEN RING"
+        ],
+        "duration_h": 8.8,
+        "duration_label": "526 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-08-31T20:41:00Z",
-      "ended_at_iso": "2026-09-01T01:22:00+00:00",
+      "started_at": "2026-09-01T20:07:18Z",
+      "ended_at_iso": "2026-09-02T04:53:00+00:00",
       "games": [
         "Just Chatting",
-        "Project Zomboid",
         "ELDEN RING"
       ],
-      "duration_label": "281 minutes"
+      "duration_label": "526 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -740,17 +740,17 @@
             "avg_viewers": 2321.0
           },
           "Variety stack": {
-            "count": 233,
+            "count": 234,
             "share": 9.4,
-            "median_gap_hours": 24.82,
-            "p90_gap_hours": 65.91,
+            "median_gap_hours": 24.81,
+            "p90_gap_hours": 65.62,
             "avg_viewers": 2601.0
           }
         },
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1602
+            "count": 1603
           },
           {
             "game": "Grand Theft Auto V",
@@ -799,12 +799,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-09-01T20:07:13Z",
-      "game": "ELDEN RING",
-      "title": "new plastic surgery be nice stop calling me greater value i might cry",
-      "viewers": 2153
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -49708,6 +49703,26 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2861857860",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2862699800",
+      "started_at": "2026-09-01T20:07:18Z",
+      "ended_at": "Wednesday 02 September 2026 04:53",
+      "duration_label": "526 minutes",
+      "duration_seconds": 31570,
+      "title": "BREAKING: i'm wearing an anime shirt, & tier 2 subs can now post gifs in chat and I don't know how I feel about it yet",
+      "games": [
+        "Just Chatting",
+        "ELDEN RING"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2862699800",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -50098,6 +50113,16 @@
       "duration_seconds": 16880,
       "title": "i make the mario triple jump sound when going up the stairs (yes it's on repeat) ZOMBOID ZOMBOID ZOMBOID",
       "views": 3121819
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2862699800",
+      "started_at": "2026-09-01T20:07:18Z",
+      "duration_label": "08:46:10",
+      "duration_seconds": 31570,
+      "title": "BREAKING: i'm wearing an anime shirt, & tier 2 subs can now post gifs in chat and I don't know how I feel about it yet",
+      "views": 646
     }
   ],
   "archive_grouped_dates": [
