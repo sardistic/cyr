@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-09-03T19:07:57Z",
+  "generated_at": "2026-09-03T21:49:14Z",
   "data_through": "2026-09-02T16:28:35Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
   ],
   "sources": {
     "sullygnome_stream_table": 2480,
@@ -801,7 +802,7 @@
       "started_at": "2026-09-03T17:26:16Z",
       "game": "A Weird Game About Sausage",
       "title": "CUH. WAR RP RETURNS, AND WE COULD POSSIBLY BE GOING ROCK CLIMBING TODAY",
-      "viewers": 2131
+      "viewers": 2104
     }
   },
   "sully_streams": [
@@ -50145,7 +50146,7 @@
       "duration_label": "08:46:10",
       "duration_seconds": 31570,
       "title": "BREAKING: i'm wearing an anime shirt, & tier 2 subs can now post gifs in chat and I don't know how I feel about it yet",
-      "views": 356953
+      "views": 356963
     },
     {
       "source": "twitch_vod",
@@ -50155,7 +50156,7 @@
       "duration_label": "04:24:00",
       "duration_seconds": 15840,
       "title": "cuh, PLEASE stop saying that I look EXACTLY like Ryan Gosling? I get it guys. I look amazing. BODYCAM & ELDEN RING TOP CHARTS TODAY",
-      "views": 227278
+      "views": 227292
     }
   ],
   "archive_grouped_dates": [
