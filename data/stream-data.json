@@ -1,14 +1,15 @@
 {
-  "generated_at": "2026-09-04T03:10:25Z",
+  "generated_at": "2026-09-04T08:08:57Z",
   "data_through": "2026-09-02T16:28:35Z",
   "degraded_sources": [
+    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2480,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 37,
-    "exact_merged_rows": 38,
+    "exact_merged_rows": 36,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
@@ -29,9 +30,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 37,
-      "mean": 39.96,
-      "median": 25.09,
+      "count": 35,
+      "mean": 41.0,
+      "median": 25.16,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -797,12 +798,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-09-03T17:26:16Z",
-      "game": "IRL",
-      "title": "CLIMBING ROCK CUH \ud83e\uddd7",
-      "viewers": 2085
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -50136,26 +50132,6 @@
       "duration_seconds": 16880,
       "title": "i make the mario triple jump sound when going up the stairs (yes it's on repeat) ZOMBOID ZOMBOID ZOMBOID",
       "views": 3121819
-    },
-    {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2862699800",
-      "started_at": "2026-09-01T20:07:18Z",
-      "duration_label": "08:46:10",
-      "duration_seconds": 31570,
-      "title": "BREAKING: i'm wearing an anime shirt, & tier 2 subs can now post gifs in chat and I don't know how I feel about it yet",
-      "views": 356971
-    },
-    {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2863390041",
-      "started_at": "2026-09-02T16:28:35Z",
-      "duration_label": "04:24:00",
-      "duration_seconds": 15840,
-      "title": "cuh, PLEASE stop saying that I look EXACTLY like Ryan Gosling? I get it guys. I look amazing. BODYCAM & ELDEN RING TOP CHARTS TODAY",
-      "views": 227302
     }
   ],
   "archive_grouped_dates": [
