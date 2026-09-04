@@ -1,27 +1,26 @@
 {
-  "generated_at": "2026-09-04T08:08:57Z",
-  "data_through": "2026-09-02T16:28:35Z",
+  "generated_at": "2026-09-04T12:51:10Z",
+  "data_through": "2026-09-03T17:26:21Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2480,
+    "sullygnome_stream_table": 2481,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 37,
-    "exact_merged_rows": 36,
+    "exact_merged_rows": 39,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2479,
+      "count": 2480,
       "mean": 27.96,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 483,
-        "12-24h": 1267,
+        "12-24h": 1268,
         "1-2d": 420,
         "2-3d": 174,
         "3-5d": 104,
@@ -30,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 35,
-      "mean": 41.0,
-      "median": 25.16,
+      "count": 38,
+      "mean": 39.57,
+      "median": 25.03,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -218,7 +217,7 @@
       "2026-06": 16,
       "2026-07": 18,
       "2026-08": 19,
-      "2026-09": 2
+      "2026-09": 3
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -230,14 +229,14 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 144
+      "2026": 145
     },
     "dow_hour": {
       "dow": {
         "Mon": 443,
         "Tue": 404,
         "Wed": 438,
-        "Thu": 390,
+        "Thu": 391,
         "Fri": 355,
         "Sat": 242,
         "Sun": 208
@@ -260,7 +259,7 @@
         "14": 12,
         "15": 22,
         "16": 80,
-        "17": 171,
+        "17": 172,
         "18": 170,
         "19": 177,
         "20": 261,
@@ -280,7 +279,7 @@
       ],
       [
         6,
-        9.24
+        9.23
       ],
       [
         9,
@@ -288,31 +287,31 @@
       ],
       [
         12,
-        19.65
+        19.64
       ],
       [
         15,
-        33.52
+        33.51
       ],
       [
         18,
-        50.58
+        50.56
       ],
       [
         21,
-        63.94
+        63.95
       ],
       [
         24,
-        70.63
+        70.65
       ],
       [
         30,
-        74.43
+        74.44
       ],
       [
         36,
-        76.44
+        76.45
       ],
       [
         42,
@@ -328,15 +327,15 @@
       ],
       [
         60,
-        89.63
+        89.64
       ],
       [
         66,
-        92.01
+        92.02
       ],
       [
         72,
-        94.55
+        94.56
       ],
       [
         84,
@@ -348,7 +347,7 @@
       ],
       [
         108,
-        98.18
+        98.19
       ],
       [
         120,
@@ -388,11 +387,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 20.5,
-        "started_at": "2026-08-05T20:08:32Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 12.4,
         "started_at": "2026-08-06T18:32:00Z",
@@ -487,24 +481,14 @@
         "gap_h": 11.6,
         "started_at": "2026-09-02T16:28:35Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 20.6,
+        "started_at": "2026-09-03T17:26:21Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-26T16:58:28Z",
-        "ended_at_iso": "2026-08-27T01:28:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Project P.I.T.T.",
-          "Arma Reforger",
-          "Hell Let Loose"
-        ],
-        "duration_h": 8.5,
-        "duration_label": "510 minutes",
-        "avg_viewers": 1802,
-        "peak_viewers": 2172,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-27T18:16:27Z",
         "ended_at_iso": "2026-08-27T20:39:00+00:00",
@@ -597,16 +581,31 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-09-03T17:26:21Z",
+        "ended_at_iso": "2026-09-04T06:21:00+00:00",
+        "games": [
+          "Just Chatting",
+          "A Weird Game About Sausage",
+          "IRL"
+        ],
+        "duration_h": 12.9,
+        "duration_label": "775 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-09-02T16:28:35Z",
-      "ended_at_iso": "2026-09-02T20:52:00+00:00",
+      "started_at": "2026-09-03T17:26:21Z",
+      "ended_at_iso": "2026-09-04T06:21:00+00:00",
       "games": [
         "Just Chatting",
-        "Bodycam"
+        "A Weird Game About Sausage",
+        "IRL"
       ],
-      "duration_label": "264 minutes"
+      "duration_label": "775 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -718,10 +717,10 @@
             "avg_viewers": 3707.0
           },
           "Other games": {
-            "count": 683,
+            "count": 684,
             "share": 27.6,
             "median_gap_hours": 25.36,
-            "p90_gap_hours": 72.24,
+            "p90_gap_hours": 72.23,
             "avg_viewers": 2447.0
           },
           "Social sandbox/RP": {
@@ -749,7 +748,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1604
+            "count": 1605
           },
           {
             "game": "Grand Theft Auto V",
@@ -49742,6 +49741,27 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2863390041",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2864289496",
+      "started_at": "2026-09-03T17:26:21Z",
+      "ended_at": "Friday 04 September 2026 06:21",
+      "duration_label": "775 minutes",
+      "duration_seconds": 46490,
+      "title": "CUH. WAR RP RETURNS, AND WE COULD POSSIBLY BE GOING ROCK CLIMBING TODAY",
+      "games": [
+        "Just Chatting",
+        "A Weird Game About Sausage",
+        "IRL"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2864289496",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -50132,6 +50152,36 @@
       "duration_seconds": 16880,
       "title": "i make the mario triple jump sound when going up the stairs (yes it's on repeat) ZOMBOID ZOMBOID ZOMBOID",
       "views": 3121819
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2862699800",
+      "started_at": "2026-09-01T20:07:18Z",
+      "duration_label": "08:46:10",
+      "duration_seconds": 31570,
+      "title": "BREAKING: i'm wearing an anime shirt, & tier 2 subs can now post gifs in chat and I don't know how I feel about it yet",
+      "views": 356976
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2863390041",
+      "started_at": "2026-09-02T16:28:35Z",
+      "duration_label": "04:24:00",
+      "duration_seconds": 15840,
+      "title": "cuh, PLEASE stop saying that I look EXACTLY like Ryan Gosling? I get it guys. I look amazing. BODYCAM & ELDEN RING TOP CHARTS TODAY",
+      "views": 227323
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2864289496",
+      "started_at": "2026-09-03T17:26:21Z",
+      "duration_label": "12:54:50",
+      "duration_seconds": 46490,
+      "title": "CUH. WAR RP RETURNS, AND WE COULD POSSIBLY BE GOING ROCK CLIMBING TODAY",
+      "views": 1456
     }
   ],
   "archive_grouped_dates": [
