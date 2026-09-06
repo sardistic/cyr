@@ -1,15 +1,14 @@
 {
-  "generated_at": "2026-09-06T15:38:25Z",
+  "generated_at": "2026-09-06T18:03:19Z",
   "data_through": "2026-09-05T19:47:50Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2482,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 37,
-    "exact_merged_rows": 36,
+    "exact_merged_rows": 40,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
@@ -30,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 35,
-      "mean": 41.0,
-      "median": 25.16,
+      "count": 39,
+      "mean": 39.85,
+      "median": 25.09,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -50173,6 +50172,46 @@
       "duration_seconds": 16880,
       "title": "i make the mario triple jump sound when going up the stairs (yes it's on repeat) ZOMBOID ZOMBOID ZOMBOID",
       "views": 3121819
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2862699800",
+      "started_at": "2026-09-01T20:07:18Z",
+      "duration_label": "08:46:10",
+      "duration_seconds": 31570,
+      "title": "BREAKING: i'm wearing an anime shirt, & tier 2 subs can now post gifs in chat and I don't know how I feel about it yet",
+      "views": 357027
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2863390041",
+      "started_at": "2026-09-02T16:28:35Z",
+      "duration_label": "04:24:00",
+      "duration_seconds": 15840,
+      "title": "cuh, PLEASE stop saying that I look EXACTLY like Ryan Gosling? I get it guys. I look amazing. BODYCAM & ELDEN RING TOP CHARTS TODAY",
+      "views": 227396
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2864289496",
+      "started_at": "2026-09-03T17:26:21Z",
+      "duration_label": "12:54:50",
+      "duration_seconds": 46490,
+      "title": "CUH. WAR RP RETURNS, AND WE COULD POSSIBLY BE GOING ROCK CLIMBING TODAY",
+      "views": 593313
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2866244637",
+      "started_at": "2026-09-05T19:47:50Z",
+      "duration_label": "05:33:40",
+      "duration_seconds": 20020,
+      "title": "ZOMBOID RP FUN FOR THE WHOLE FAMILY, LIVE LAUGH LOVE TEAM CAPTAIN CYR ON @GOOSEY @PAYMONEYWUBBY SERVER #BLESSED #FYP #COMEDY",
+      "views": 901
     }
   ],
   "archive_grouped_dates": [
