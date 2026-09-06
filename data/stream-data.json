@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-09-05T23:35:08Z",
-  "data_through": "2026-09-03T17:26:21Z",
+  "generated_at": "2026-09-06T03:12:55Z",
+  "data_through": "2026-09-05T19:47:50Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2481,
+    "sullygnome_stream_table": 2482,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 37,
-    "exact_merged_rows": 39,
+    "exact_merged_rows": 40,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2480,
-      "mean": 27.96,
+      "count": 2481,
+      "mean": 27.97,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 483,
         "12-24h": 1268,
-        "1-2d": 420,
+        "1-2d": 421,
         "2-3d": 174,
         "3-5d": 104,
         "5-7d": 15,
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 38,
-      "mean": 39.57,
-      "median": 25.03,
+      "count": 39,
+      "mean": 39.85,
+      "median": 25.09,
       "max": 138.03
     },
     "archive_gap_days": {
@@ -217,7 +217,7 @@
       "2026-06": 16,
       "2026-07": 18,
       "2026-08": 19,
-      "2026-09": 3
+      "2026-09": 4
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -229,7 +229,7 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 145
+      "2026": 146
     },
     "dow_hour": {
       "dow": {
@@ -238,7 +238,7 @@
         "Wed": 438,
         "Thu": 391,
         "Fri": 355,
-        "Sat": 242,
+        "Sat": 243,
         "Sun": 208
       },
       "hour_utc": {
@@ -261,7 +261,7 @@
         "16": 80,
         "17": 172,
         "18": 170,
-        "19": 177,
+        "19": 178,
         "20": 261,
         "21": 296,
         "22": 283,
@@ -283,47 +283,47 @@
       ],
       [
         9,
-        10.81
+        10.8
       ],
       [
         12,
-        19.64
+        19.63
       ],
       [
         15,
-        33.51
+        33.49
       ],
       [
         18,
-        50.56
+        50.54
       ],
       [
         21,
-        63.95
+        63.93
       ],
       [
         24,
-        70.65
+        70.62
       ],
       [
         30,
-        74.44
+        74.41
       ],
       [
         36,
-        76.45
+        76.42
       ],
       [
         42,
-        81.85
+        81.86
       ],
       [
         48,
-        87.58
+        87.59
       ],
       [
         54,
-        88.99
+        89.0
       ],
       [
         60,
@@ -339,7 +339,7 @@
       ],
       [
         84,
-        95.48
+        95.49
       ],
       [
         96,
@@ -367,7 +367,7 @@
       ],
       [
         168,
-        99.35
+        99.36
       ],
       [
         240,
@@ -387,11 +387,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 12.4,
-        "started_at": "2026-08-06T18:32:00Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 16.3,
         "started_at": "2026-08-07T16:26:31Z",
@@ -486,21 +481,14 @@
         "gap_h": 20.6,
         "started_at": "2026-09-03T17:26:21Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 37.4,
+        "started_at": "2026-09-05T19:47:50Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-27T18:16:27Z",
-        "ended_at_iso": "2026-08-27T20:39:00+00:00",
-        "games": [
-          "Just Chatting"
-        ],
-        "duration_h": 2.4,
-        "duration_label": "143 minutes",
-        "avg_viewers": null,
-        "peak_viewers": null,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-28T00:38:58Z",
         "ended_at_iso": "2026-08-28T05:44:00+00:00",
@@ -595,17 +583,29 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-09-05T19:47:50Z",
+        "ended_at_iso": "2026-09-06T01:21:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Project Zomboid"
+        ],
+        "duration_h": 5.6,
+        "duration_label": "334 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-09-03T17:26:21Z",
-      "ended_at_iso": "2026-09-04T06:21:00+00:00",
+      "started_at": "2026-09-05T19:47:50Z",
+      "ended_at_iso": "2026-09-06T01:21:00+00:00",
       "games": [
         "Just Chatting",
-        "A Weird Game About Sausage",
-        "IRL"
+        "Project Zomboid"
       ],
-      "duration_label": "775 minutes"
+      "duration_label": "334 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -725,7 +725,7 @@
           },
           "Social sandbox/RP": {
             "count": 1053,
-            "share": 42.5,
+            "share": 42.4,
             "median_gap_hours": 23.88,
             "p90_gap_hours": 48.28,
             "avg_viewers": 1601.0
@@ -738,17 +738,17 @@
             "avg_viewers": 2321.0
           },
           "Variety stack": {
-            "count": 234,
-            "share": 9.4,
-            "median_gap_hours": 24.81,
-            "p90_gap_hours": 65.62,
+            "count": 235,
+            "share": 9.5,
+            "median_gap_hours": 24.82,
+            "p90_gap_hours": 65.33,
             "avg_viewers": 2601.0
           }
         },
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1605
+            "count": 1606
           },
           {
             "game": "Grand Theft Auto V",
@@ -756,7 +756,7 @@
           },
           {
             "game": "IRL",
-            "count": 153
+            "count": 154
           },
           {
             "game": "VRChat",
@@ -797,12 +797,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-09-05T19:47:45Z",
-      "game": "Project Zomboid",
-      "title": "ZOMBOID RP FUN FOR THE WHOLE FAMILY, LIVE LAUGH LOVE TEAM CAPTAIN CYR ON @GOOSEY @PAYMONEYWUBBY SERVER #BLESSED #FYP #COMEDY",
-      "viewers": 1499
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -49767,6 +49762,26 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2864289496",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2866244637",
+      "started_at": "2026-09-05T19:47:50Z",
+      "ended_at": "Sunday 06 September 2026 01:21",
+      "duration_label": "334 minutes",
+      "duration_seconds": 20020,
+      "title": "ZOMBOID RP FUN FOR THE WHOLE FAMILY, LIVE LAUGH LOVE TEAM CAPTAIN CYR ON @GOOSEY @PAYMONEYWUBBY SERVER #BLESSED #FYP #COMEDY",
+      "games": [
+        "Just Chatting",
+        "Project Zomboid"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2866244637",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -50166,7 +50181,7 @@
       "duration_label": "08:46:10",
       "duration_seconds": 31570,
       "title": "BREAKING: i'm wearing an anime shirt, & tier 2 subs can now post gifs in chat and I don't know how I feel about it yet",
-      "views": 357016
+      "views": 357021
     },
     {
       "source": "twitch_vod",
@@ -50176,7 +50191,7 @@
       "duration_label": "04:24:00",
       "duration_seconds": 15840,
       "title": "cuh, PLEASE stop saying that I look EXACTLY like Ryan Gosling? I get it guys. I look amazing. BODYCAM & ELDEN RING TOP CHARTS TODAY",
-      "views": 227382
+      "views": 227384
     },
     {
       "source": "twitch_vod",
@@ -50186,7 +50201,17 @@
       "duration_label": "12:54:50",
       "duration_seconds": 46490,
       "title": "CUH. WAR RP RETURNS, AND WE COULD POSSIBLY BE GOING ROCK CLIMBING TODAY",
-      "views": 593245
+      "views": 593267
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2866244637",
+      "started_at": "2026-09-05T19:47:50Z",
+      "duration_label": "05:33:40",
+      "duration_seconds": 20020,
+      "title": "ZOMBOID RP FUN FOR THE WHOLE FAMILY, LIVE LAUGH LOVE TEAM CAPTAIN CYR ON @GOOSEY @PAYMONEYWUBBY SERVER #BLESSED #FYP #COMEDY",
+      "views": 415
     }
   ],
   "archive_grouped_dates": [
