@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-09-07T00:42:54Z",
-  "data_through": "2026-09-05T19:47:50Z",
+  "generated_at": "2026-09-07T05:43:48Z",
+  "data_through": "2026-09-06T19:44:14Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2482,
+    "sullygnome_stream_table": 2483,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 40,
-    "exact_merged_rows": 39,
+    "exact_merged_rows": 40,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2481,
-      "mean": 27.97,
+      "count": 2482,
+      "mean": 27.96,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 483,
-        "12-24h": 1268,
+        "12-24h": 1269,
         "1-2d": 421,
         "2-3d": 174,
         "3-5d": 104,
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 38,
-      "mean": 37.26,
-      "median": 25.03,
+      "count": 39,
+      "mean": 36.92,
+      "median": 24.96,
       "max": 100.92
     },
     "archive_gap_days": {
@@ -217,7 +217,7 @@
       "2026-06": 16,
       "2026-07": 18,
       "2026-08": 19,
-      "2026-09": 4
+      "2026-09": 5
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -229,7 +229,7 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 146
+      "2026": 147
     },
     "dow_hour": {
       "dow": {
@@ -239,7 +239,7 @@
         "Thu": 391,
         "Fri": 355,
         "Sat": 243,
-        "Sun": 208
+        "Sun": 209
       },
       "hour_utc": {
         "0": 193,
@@ -261,7 +261,7 @@
         "16": 80,
         "17": 172,
         "18": 170,
-        "19": 178,
+        "19": 179,
         "20": 261,
         "21": 296,
         "22": 283,
@@ -287,35 +287,35 @@
       ],
       [
         12,
-        19.63
+        19.62
       ],
       [
         15,
-        33.49
+        33.48
       ],
       [
         18,
-        50.54
+        50.52
       ],
       [
         21,
-        63.93
+        63.94
       ],
       [
         24,
-        70.62
+        70.63
       ],
       [
         30,
-        74.41
+        74.42
       ],
       [
         36,
-        76.42
+        76.43
       ],
       [
         42,
-        81.86
+        81.87
       ],
       [
         48,
@@ -327,7 +327,7 @@
       ],
       [
         60,
-        89.64
+        89.65
       ],
       [
         66,
@@ -387,11 +387,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 16.3,
-        "started_at": "2026-08-07T16:26:31Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 68.9,
         "started_at": "2026-08-10T17:38:27Z",
@@ -486,22 +481,14 @@
         "gap_h": 37.4,
         "started_at": "2026-09-05T19:47:50Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 18.4,
+        "started_at": "2026-09-06T19:44:14Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-28T00:38:58Z",
-        "ended_at_iso": "2026-08-28T05:44:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Project Zomboid"
-        ],
-        "duration_h": 5.1,
-        "duration_label": "306 minutes",
-        "avg_viewers": null,
-        "peak_viewers": null,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-28T21:00:21Z",
         "ended_at_iso": "2026-08-29T05:22:00+00:00",
@@ -596,16 +583,29 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-09-06T19:44:14Z",
+        "ended_at_iso": "2026-09-07T02:32:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Project Zomboid"
+        ],
+        "duration_h": 6.8,
+        "duration_label": "408 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-09-05T19:47:50Z",
-      "ended_at_iso": "2026-09-06T01:21:00+00:00",
+      "started_at": "2026-09-06T19:44:14Z",
+      "ended_at_iso": "2026-09-07T02:32:00+00:00",
       "games": [
         "Just Chatting",
         "Project Zomboid"
       ],
-      "duration_label": "334 minutes"
+      "duration_label": "408 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -711,13 +711,13 @@
         "categories": {
           "Just Chatting only": {
             "count": 490,
-            "share": 19.8,
+            "share": 19.7,
             "median_gap_hours": 26.63,
             "p90_gap_hours": 72.63,
             "avg_viewers": 3707.0
           },
           "Other games": {
-            "count": 684,
+            "count": 685,
             "share": 27.6,
             "median_gap_hours": 25.36,
             "p90_gap_hours": 72.23,
@@ -748,7 +748,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1606
+            "count": 1607
           },
           {
             "game": "Grand Theft Auto V",
@@ -797,12 +797,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-09-06T19:44:09Z",
-      "game": "Just Chatting",
-      "title": "TESTING",
-      "viewers": 1467
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -49787,6 +49782,26 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2866244637",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2867182524",
+      "started_at": "2026-09-06T19:44:14Z",
+      "ended_at": "Monday 07 September 2026 02:32",
+      "duration_label": "408 minutes",
+      "duration_seconds": 24510,
+      "title": "THIS PROJECT ZOMBOID RP SERVER MADE LOCAL TWITCH STREAMER CYR LOSE HIS MIND! (GONE WRONG)",
+      "games": [
+        "Just Chatting",
+        "Project Zomboid"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2867182524",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -50207,6 +50222,16 @@
       "duration_seconds": 20020,
       "title": "ZOMBOID RP FUN FOR THE WHOLE FAMILY, LIVE LAUGH LOVE TEAM CAPTAIN CYR ON @GOOSEY @PAYMONEYWUBBY SERVER #BLESSED #FYP #COMEDY",
       "views": 196958
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2867182524",
+      "started_at": "2026-09-06T19:44:14Z",
+      "duration_label": "06:48:30",
+      "duration_seconds": 24510,
+      "title": "THIS PROJECT ZOMBOID RP SERVER MADE LOCAL TWITCH STREAMER CYR LOSE HIS MIND! (GONE WRONG)",
+      "views": 433
     }
   ],
   "archive_grouped_dates": [
