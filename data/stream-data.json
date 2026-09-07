@@ -1,15 +1,14 @@
 {
-  "generated_at": "2026-09-07T20:42:54Z",
+  "generated_at": "2026-09-07T23:17:54Z",
   "data_through": "2026-09-06T19:44:14Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2483,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 40,
-    "exact_merged_rows": 39,
+    "exact_merged_rows": 40,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 611
   },
@@ -30,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 38,
-      "mean": 37.26,
-      "median": 25.03,
+      "count": 39,
+      "mean": 36.92,
+      "median": 24.96,
       "max": 100.92
     },
     "archive_gap_days": {
@@ -800,9 +799,9 @@
     },
     "live_stream": {
       "started_at": "2026-09-07T19:52:13Z",
-      "game": "Just Chatting",
+      "game": "Worming from Home",
       "title": "birds started speaking english to me and they keep screaming from the trees \"HELP!!!\" \"HELP US!!! OH GOD PLEASE!!\"",
-      "viewers": 900
+      "viewers": 1556
     }
   },
   "sully_streams": [
@@ -50228,6 +50227,16 @@
       "duration_seconds": 20020,
       "title": "ZOMBOID RP FUN FOR THE WHOLE FAMILY, LIVE LAUGH LOVE TEAM CAPTAIN CYR ON @GOOSEY @PAYMONEYWUBBY SERVER #BLESSED #FYP #COMEDY",
       "views": 196958
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2867182524",
+      "started_at": "2026-09-06T19:44:14Z",
+      "duration_label": "06:48:30",
+      "duration_seconds": 24510,
+      "title": "THIS PROJECT ZOMBOID RP SERVER MADE LOCAL TWITCH STREAMER CYR LOSE HIS MIND! (GONE WRONG)",
+      "views": 362396
     }
   ],
   "archive_grouped_dates": [
