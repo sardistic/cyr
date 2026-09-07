@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T05:43:48Z",
+  "generated_at": "2026-09-07T11:43:20Z",
   "data_through": "2026-09-06T19:44:14Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
@@ -9,7 +9,7 @@
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 40,
     "exact_merged_rows": 40,
-    "youtube_archive_segments": 1127,
+    "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
@@ -50231,7 +50231,7 @@
       "duration_label": "06:48:30",
       "duration_seconds": 24510,
       "title": "THIS PROJECT ZOMBOID RP SERVER MADE LOCAL TWITCH STREAMER CYR LOSE HIS MIND! (GONE WRONG)",
-      "views": 433
+      "views": 579
     }
   ],
   "archive_grouped_dates": [
@@ -59779,16 +59779,14 @@
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2026-08-07",
-      "segment_count": 2,
-      "duration_seconds_sum": 12857,
+      "segment_count": 1,
+      "duration_seconds_sum": 6491,
       "primary_title": "THIS IS F&%ING HELL! CYR plays Project Zomboid #005 - [08/07/2026]",
       "titles": [
-        "THIS IS F&%ING HELL! CYR plays Project Zomboid #005 - [08/07/2026]",
-        "Cyr VODs [08/07/2026] - \"MAKE FUN OF CYR\"-FRIDAY \ud83e\udddf SURVIVING 7 DAYS & UNALIVING 1000 ZOMBIES"
+        "THIS IS F&%ING HELL! CYR plays Project Zomboid #005 - [08/07/2026]"
       ],
       "urls": [
-        "https://www.youtube.com/watch?v=Zk9dg9ZeiXk",
-        "https://www.youtube.com/watch?v=5Nfwcjk7fc8"
+        "https://www.youtube.com/watch?v=Zk9dg9ZeiXk"
       ]
     },
     {
@@ -66798,9 +66796,9 @@
         "unclassified"
       ],
       "sentiment": "neutral",
-      "sentiment_score": 1,
+      "sentiment_score": 0,
       "intensity": "medium",
-      "intensity_score": 2
+      "intensity_score": 1
     },
     {
       "date": "2026-08-10",
