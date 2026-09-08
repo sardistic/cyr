@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-09-08T06:17:27Z",
+  "generated_at": "2026-09-08T11:35:10Z",
   "data_through": "2026-09-07T19:52:18Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2484,
@@ -486,7 +485,7 @@
       {
         "gap_h": 17.3,
         "started_at": "2026-09-07T19:52:18Z",
-        "game": ""
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
@@ -587,7 +586,10 @@
       {
         "started_at": "2026-09-07T19:52:18Z",
         "ended_at_iso": "2026-09-08T01:41:00+00:00",
-        "games": [],
+        "games": [
+          "Just Chatting",
+          "Worming from Home"
+        ],
         "duration_h": 5.8,
         "duration_label": "349 minutes",
         "avg_viewers": null,
@@ -598,7 +600,10 @@
     "last_stream": {
       "started_at": "2026-09-07T19:52:18Z",
       "ended_at_iso": "2026-09-08T01:41:00+00:00",
-      "games": [],
+      "games": [
+        "Just Chatting",
+        "Worming from Home"
+      ],
       "duration_label": "349 minutes"
     },
     "semantic_analysis": {
@@ -49806,7 +49811,10 @@
       "duration_label": "349 minutes",
       "duration_seconds": 20930,
       "title": "birds started speaking english to me and they keep screaming from the trees \"HELP!!!\" \"HELP US!!! OH GOD PLEASE!!\"",
-      "games": [],
+      "games": [
+        "Just Chatting",
+        "Worming from Home"
+      ],
       "avg_viewers": null,
       "peak_viewers": null,
       "followers_gained": null,
@@ -50242,7 +50250,7 @@
       "duration_label": "06:48:30",
       "duration_seconds": 24510,
       "title": "THIS PROJECT ZOMBOID RP SERVER MADE LOCAL TWITCH STREAMER CYR LOSE HIS MIND! (GONE WRONG)",
-      "views": 362416
+      "views": 362426
     },
     {
       "source": "twitch_vod",
@@ -50252,7 +50260,7 @@
       "duration_label": "05:48:50",
       "duration_seconds": 20930,
       "title": "birds started speaking english to me and they keep screaming from the trees \"HELP!!!\" \"HELP US!!! OH GOD PLEASE!!\"",
-      "views": 347
+      "views": 450
     }
   ],
   "archive_grouped_dates": [
