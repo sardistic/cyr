@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-09-09T04:59:50Z",
-  "data_through": "2026-09-07T19:52:18Z",
+  "generated_at": "2026-09-09T09:35:40Z",
+  "data_through": "2026-09-08T16:15:47Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2484,
+    "sullygnome_stream_table": 2485,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 41,
-    "exact_merged_rows": 39,
+    "exact_merged_rows": 40,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2483,
-      "mean": 27.96,
+      "count": 2484,
+      "mean": 27.95,
       "median": 17.91,
       "max": 1197.0,
       "bins": {
         "0-12h": 483,
-        "12-24h": 1270,
+        "12-24h": 1271,
         "1-2d": 421,
         "2-3d": 174,
         "3-5d": 104,
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 38,
-      "mean": 37.13,
-      "median": 24.79,
+      "count": 39,
+      "mean": 36.7,
+      "median": 24.61,
       "max": 100.92
     },
     "archive_gap_days": {
@@ -217,7 +217,7 @@
       "2026-06": 16,
       "2026-07": 18,
       "2026-08": 19,
-      "2026-09": 6
+      "2026-09": 7
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -229,12 +229,12 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 148
+      "2026": 149
     },
     "dow_hour": {
       "dow": {
         "Mon": 444,
-        "Tue": 404,
+        "Tue": 405,
         "Wed": 438,
         "Thu": 391,
         "Fri": 355,
@@ -258,7 +258,7 @@
         "13": 10,
         "14": 12,
         "15": 22,
-        "16": 80,
+        "16": 81,
         "17": 172,
         "18": 170,
         "19": 180,
@@ -291,27 +291,27 @@
       ],
       [
         15,
-        33.47
+        33.49
       ],
       [
         18,
-        50.54
+        50.56
       ],
       [
         21,
-        63.95
+        63.97
       ],
       [
         24,
-        70.64
+        70.65
       ],
       [
         30,
-        74.43
+        74.44
       ],
       [
         36,
-        76.44
+        76.45
       ],
       [
         42,
@@ -335,7 +335,7 @@
       ],
       [
         72,
-        94.56
+        94.57
       ],
       [
         84,
@@ -363,7 +363,7 @@
       ],
       [
         156,
-        99.23
+        99.24
       ],
       [
         168,
@@ -387,11 +387,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 98.1,
-        "started_at": "2026-08-14T22:33:47Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 40.3,
         "started_at": "2026-08-16T21:30:51Z",
@@ -486,23 +481,14 @@
         "gap_h": 17.3,
         "started_at": "2026-09-07T19:52:18Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 14.6,
+        "started_at": "2026-09-08T16:15:47Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-30T19:31:07Z",
-        "ended_at_iso": "2026-08-31T01:36:00+00:00",
-        "games": [
-          "Manor Lords",
-          "Just Chatting",
-          "ELDEN RING"
-        ],
-        "duration_h": 6.1,
-        "duration_label": "365 minutes",
-        "avg_viewers": null,
-        "peak_viewers": null,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-08-31T20:41:00Z",
         "ended_at_iso": "2026-09-01T01:22:00+00:00",
@@ -595,16 +581,29 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-09-08T16:15:47Z",
+        "ended_at_iso": "2026-09-08T18:53:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Grand Theft Auto V"
+        ],
+        "duration_h": 2.6,
+        "duration_label": "158 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-09-07T19:52:18Z",
-      "ended_at_iso": "2026-09-08T01:41:00+00:00",
+      "started_at": "2026-09-08T16:15:47Z",
+      "ended_at_iso": "2026-09-08T18:53:00+00:00",
       "games": [
         "Just Chatting",
-        "Worming from Home"
+        "Grand Theft Auto V"
       ],
-      "duration_label": "349 minutes"
+      "duration_label": "158 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -716,9 +715,9 @@
             "avg_viewers": 3707.0
           },
           "Other games": {
-            "count": 686,
-            "share": 27.6,
-            "median_gap_hours": 25.35,
+            "count": 687,
+            "share": 27.7,
+            "median_gap_hours": 25.34,
             "p90_gap_hours": 72.22,
             "avg_viewers": 2447.0
           },
@@ -747,7 +746,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1608
+            "count": 1609
           },
           {
             "game": "Grand Theft Auto V",
@@ -796,12 +795,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-09-08T16:15:42Z",
-      "game": "Grand Theft Auto V",
-      "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA BADGE FOR SUBS! !discord",
-      "viewers": 2091
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -49826,6 +49820,26 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2868083384",
       "range": "2026"
+    },
+    {
+      "source": "twitchmetrics_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2868768794",
+      "started_at": "2026-09-08T16:15:47Z",
+      "ended_at": "Tuesday 08 September 2026 18:53",
+      "duration_label": "158 minutes",
+      "duration_seconds": 9450,
+      "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA BADGE FOR SUBS! !discord",
+      "games": [
+        "Just Chatting",
+        "Grand Theft Auto V"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2868768794",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -50246,6 +50260,16 @@
       "duration_seconds": 20930,
       "title": "birds started speaking english to me and they keep screaming from the trees \"HELP!!!\" \"HELP US!!! OH GOD PLEASE!!\"",
       "views": 568
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2868768794",
+      "started_at": "2026-09-08T16:15:47Z",
+      "duration_label": "02:37:30",
+      "duration_seconds": 9450,
+      "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA BADGE FOR SUBS! !discord",
+      "views": 106
     }
   ],
   "archive_grouped_dates": [
