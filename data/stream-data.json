@@ -1,8 +1,7 @@
 {
-  "generated_at": "2026-09-09T22:58:12Z",
+  "generated_at": "2026-09-10T00:57:31Z",
   "data_through": "2026-09-09T18:14:02Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
     "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
   ],
@@ -10,7 +9,7 @@
     "sullygnome_stream_table": 2486,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 41,
-    "exact_merged_rows": 40,
+    "exact_merged_rows": 41,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 611
   },
@@ -31,9 +30,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 39,
-      "mean": 36.7,
-      "median": 24.61,
+      "count": 40,
+      "mean": 36.43,
+      "median": 24.79,
       "max": 100.92
     },
     "archive_gap_days": {
@@ -800,7 +799,7 @@
       "started_at": "2026-09-09T20:15:55Z",
       "game": "Grand Theft Auto V",
       "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA NoPixel V BADGE FOR 1 GIFTED SUB! !discord",
-      "viewers": 2102
+      "viewers": 2138
     }
   },
   "sully_streams": [
@@ -50296,6 +50295,16 @@
       "duration_seconds": 9450,
       "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA BADGE FOR SUBS! !discord",
       "views": 106
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2869717261",
+      "started_at": "2026-09-09T18:14:02Z",
+      "duration_label": "02:01:20",
+      "duration_seconds": 7280,
+      "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA NoPixel V BADGE FOR 1 GIFTED SUB! !discord",
+      "views": 244
     }
   ],
   "archive_grouped_dates": [
