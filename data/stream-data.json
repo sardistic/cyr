@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-09-10T00:57:31Z",
+  "generated_at": "2026-09-10T05:44:07Z",
   "data_through": "2026-09-09T18:14:02Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
     "sullygnome_stream_table": 2486,
@@ -584,13 +583,13 @@
       },
       {
         "started_at": "2026-09-09T18:14:02Z",
-        "ended_at_iso": "2026-09-09T20:15:00+00:00",
+        "ended_at_iso": "2026-09-10T03:42:00+00:00",
         "games": [
           "Grand Theft Auto V",
           "Just Chatting"
         ],
-        "duration_h": 2.0,
-        "duration_label": "121 minutes",
+        "duration_h": 9.5,
+        "duration_label": "568 minutes",
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
@@ -598,12 +597,12 @@
     ],
     "last_stream": {
       "started_at": "2026-09-09T18:14:02Z",
-      "ended_at_iso": "2026-09-09T20:15:00+00:00",
+      "ended_at_iso": "2026-09-10T03:42:00+00:00",
       "games": [
         "Grand Theft Auto V",
         "Just Chatting"
       ],
-      "duration_label": "121 minutes"
+      "duration_label": "568 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -795,12 +794,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-09-09T20:15:55Z",
-      "game": "Grand Theft Auto V",
-      "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA NoPixel V BADGE FOR 1 GIFTED SUB! !discord",
-      "viewers": 2138
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -49851,9 +49845,9 @@
       "precision": "exact_vod_time",
       "id": "2869717261",
       "started_at": "2026-09-09T18:14:02Z",
-      "ended_at": "Wednesday 09 September 2026 20:15",
-      "duration_label": "121 minutes",
-      "duration_seconds": 7280,
+      "ended_at": "Thursday 10 September 2026 03:42",
+      "duration_label": "568 minutes",
+      "duration_seconds": 34078,
       "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA NoPixel V BADGE FOR 1 GIFTED SUB! !discord",
       "games": [
         "Grand Theft Auto V",
@@ -50299,12 +50293,12 @@
     {
       "source": "twitch_vod",
       "precision": "exact_vod_time",
-      "id": "2869717261",
+      "id": "2869811690",
       "started_at": "2026-09-09T18:14:02Z",
-      "duration_label": "02:01:20",
-      "duration_seconds": 7280,
+      "duration_label": "09:27:58",
+      "duration_seconds": 34078,
       "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA NoPixel V BADGE FOR 1 GIFTED SUB! !discord",
-      "views": 244
+      "views": 28965
     }
   ],
   "archive_grouped_dates": [
