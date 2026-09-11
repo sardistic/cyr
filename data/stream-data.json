@@ -1,28 +1,26 @@
 {
-  "generated_at": "2026-09-11T01:20:50Z",
-  "data_through": "2026-09-09T18:14:02Z",
+  "generated_at": "2026-09-11T06:26:07Z",
+  "data_through": "2026-09-10T17:58:32Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2486,
+    "sullygnome_stream_table": 2487,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 43,
-    "exact_merged_rows": 40,
+    "exact_merged_rows": 41,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2485,
-      "mean": 27.95,
-      "median": 17.91,
+      "count": 2486,
+      "mean": 27.94,
+      "median": 17.9,
       "max": 1197.0,
       "bins": {
         "0-12h": 483,
-        "12-24h": 1272,
+        "12-24h": 1273,
         "1-2d": 421,
         "2-3d": 174,
         "3-5d": 104,
@@ -31,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 39,
-      "mean": 36.15,
-      "median": 24.61,
+      "count": 40,
+      "mean": 35.84,
+      "median": 24.38,
       "max": 100.92
     },
     "archive_gap_days": {
@@ -219,7 +217,7 @@
       "2026-06": 16,
       "2026-07": 18,
       "2026-08": 19,
-      "2026-09": 8
+      "2026-09": 9
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -231,14 +229,14 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 150
+      "2026": 151
     },
     "dow_hour": {
       "dow": {
         "Mon": 444,
         "Tue": 405,
         "Wed": 439,
-        "Thu": 391,
+        "Thu": 392,
         "Fri": 355,
         "Sat": 243,
         "Sun": 209
@@ -261,7 +259,7 @@
         "14": 12,
         "15": 22,
         "16": 81,
-        "17": 172,
+        "17": 173,
         "18": 171,
         "19": 180,
         "20": 261,
@@ -281,7 +279,7 @@
       ],
       [
         6,
-        9.22
+        9.21
       ],
       [
         9,
@@ -289,35 +287,35 @@
       ],
       [
         12,
-        19.6
+        19.59
       ],
       [
         15,
-        33.52
+        33.55
       ],
       [
         18,
-        50.58
+        50.6
       ],
       [
         21,
-        63.98
+        64.0
       ],
       [
         24,
-        70.66
+        70.68
       ],
       [
         30,
-        74.45
+        74.46
       ],
       [
         36,
-        76.46
+        76.47
       ],
       [
         42,
-        81.89
+        81.9
       ],
       [
         48,
@@ -325,7 +323,7 @@
       ],
       [
         54,
-        89.01
+        89.02
       ],
       [
         60,
@@ -333,7 +331,7 @@
       ],
       [
         66,
-        92.03
+        92.04
       ],
       [
         72,
@@ -345,7 +343,7 @@
       ],
       [
         96,
-        97.42
+        97.43
       ],
       [
         108,
@@ -389,11 +387,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 18.6,
-        "started_at": "2026-08-17T21:06:29Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 14.2,
         "started_at": "2026-08-18T17:18:42Z",
@@ -488,22 +481,14 @@
         "gap_h": 12.8,
         "started_at": "2026-09-09T18:14:02Z",
         "game": "Grand Theft Auto V"
+      },
+      {
+        "gap_h": 14.3,
+        "started_at": "2026-09-10T17:58:32Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-09-01T20:07:18Z",
-        "ended_at_iso": "2026-09-02T04:53:00+00:00",
-        "games": [
-          "Just Chatting",
-          "ELDEN RING"
-        ],
-        "duration_h": 8.8,
-        "duration_label": "526 minutes",
-        "avg_viewers": null,
-        "peak_viewers": null,
-        "followers_gained": null
-      },
       {
         "started_at": "2026-09-02T16:28:35Z",
         "ended_at_iso": "2026-09-02T20:52:00+00:00",
@@ -595,16 +580,29 @@
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null
+      },
+      {
+        "started_at": "2026-09-10T17:58:32Z",
+        "ended_at_iso": "2026-09-10T18:53:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Grand Theft Auto V"
+        ],
+        "duration_h": 0.9,
+        "duration_label": "55 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-09-09T18:14:02Z",
-      "ended_at_iso": "2026-09-10T03:42:00+00:00",
+      "started_at": "2026-09-10T17:58:32Z",
+      "ended_at_iso": "2026-09-10T18:53:00+00:00",
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
-      "duration_label": "568 minutes"
+      "duration_label": "55 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -723,9 +721,9 @@
             "avg_viewers": 2447.0
           },
           "Social sandbox/RP": {
-            "count": 1054,
+            "count": 1055,
             "share": 42.4,
-            "median_gap_hours": 23.89,
+            "median_gap_hours": 23.88,
             "p90_gap_hours": 48.27,
             "avg_viewers": 1601.0
           },
@@ -747,11 +745,11 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1610
+            "count": 1611
           },
           {
             "game": "Grand Theft Auto V",
-            "count": 898
+            "count": 899
           },
           {
             "game": "IRL",
@@ -796,12 +794,7 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-09-10T17:58:27Z",
-      "game": "Grand Theft Auto V",
-      "title": "UCHIHA JONES - NOPIXEL V - DILLY DALLY SHILLY SHALLY -  FRED DURST RP RETURNS @ 3K SUBS - UCHIHA  BADGE FOR 1 GIFTED SUB! - !discord",
-      "viewers": 2101
-    }
+    "live_stream": null
   },
   "sully_streams": [
     {
@@ -49866,6 +49859,26 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2869717261",
       "range": "2026"
+    },
+    {
+      "source": "twitchmetrics_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2870549312",
+      "started_at": "2026-09-10T17:58:32Z",
+      "ended_at": "Thursday 10 September 2026 18:53",
+      "duration_label": "55 minutes",
+      "duration_seconds": 3284,
+      "title": "UCHIHA JONES - NOPIXEL V - DILLY DALLY SHILLY SHALLY -  UCHIHA  BADGE FOR 1 GIFTED SUB! !discord",
+      "games": [
+        "Just Chatting",
+        "Grand Theft Auto V"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": null,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2870549312",
+      "range": "2026"
     }
   ],
   "exact_rows": [
@@ -50296,6 +50309,16 @@
       "duration_seconds": 34078,
       "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA NoPixel V BADGE FOR 1 GIFTED SUB! !discord",
       "views": 140910
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2870549312",
+      "started_at": "2026-09-10T17:58:32Z",
+      "duration_label": "54:44",
+      "duration_seconds": 3284,
+      "title": "UCHIHA JONES - NOPIXEL V - DILLY DALLY SHILLY SHALLY -  UCHIHA  BADGE FOR 1 GIFTED SUB! !discord",
+      "views": 32
     }
   ],
   "archive_grouped_dates": [
