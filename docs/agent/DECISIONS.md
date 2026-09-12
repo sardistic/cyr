@@ -74,3 +74,49 @@ belong. The residual ~1% — multi-day marathons — are clipped at the axis and
 marked with a chevron; the tooltip still reports their true end time. It also
 means `dow_profile`'s weekday keys are CT stream-days, which is not the same
 bucketing as `dow_hour`'s UTC start-days used by the schedule cards.
+
+### 2026-09-11 — A live sighting is the staleness signal, not elapsed time
+
+Context: In August every source stopped being live enough to notice new streams.
+`data_through` stood still for five days while each run committed a fresh
+`generated_at`, so the workflow stayed green and the site served stale data under
+a "checked just now" label. The 2026-08-14 decision had deliberately moved all
+signalling onto the site banner, but nothing computed this condition, so the
+banner had nothing to show. The obvious guard — fail when `data_through` has not
+moved in N days — cannot work here: this channel genuinely goes quiet for weeks,
+and a correct quiet period is indistinguishable from a broken pipeline by elapsed
+time alone.
+
+Decision: Use live status as the discriminator. It is fetched by a different call
+than the stream list, so a stream observed live that never becomes a recorded
+stream is positive evidence that the list is broken rather than the channel being
+idle. The build carries `stats.last_live_seen` across runs and appends a
+`stale_pipeline` entry to `degraded_sources` when that sighting is at least
+`STALE_LIVE_HOURS` (24) old and still newer than `data_through`. The site gives
+that its own banner copy, distinct from "an upstream source is down".
+
+Consequences: The failure mode that hid five days of streams now surfaces within a
+day of recurring, without false-positiving on quiet weeks. The guard is only as
+good as live status: it cannot fire until a run has observed him live at least
+once, so a fresh checkout starts with `last_live_seen` null and silent, and if
+Twitch's live-status call breaks at the same time as the stream list, nothing
+fires. It fails safe — silent, never noisy — which is the right direction for a
+banner nobody is paged by.
+
+### 2026-09-11 — Derived stats degrade; only missing data fails a run
+
+Context: The 2026-08-14 rule that no source may silently gate the pipeline was
+about fetching. Everything computed afterwards — the histograms, quantiles and
+CDFs in the stats block — was still called inline while building the payload, so a
+throw in any of them aborted a run that had already collected the streams
+successfully.
+
+Decision: `safe_stat()` wraps a derived stat, returning a default and appending
+`stat_<name>` to `degraded_sources` on failure. Applied to `dow_hour` and
+`dow_profile`; the same treatment fits any other presentational stat.
+
+Consequences: A broken panel costs its own panel. The dashboard degrades a piece
+at a time instead of the refresh failing whole, and the page already hides
+anything whose stat is missing. The cost is that a genuinely broken computation is
+now quiet unless someone reads `degraded_sources`.
+

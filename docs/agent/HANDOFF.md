@@ -1,8 +1,16 @@
 # Agent Handoff
 
-Updated: 2026-09-11 (eighth pass: CT labelling, schedule scoring, CDN staleness)
+Updated: 2026-09-11 (ninth pass: pipeline guards — `7ac2fa2`)
 
 ## Active objective
+
+Ninth pass, 2026-09-11 — "fix that", against the open items this session had
+flagged. Three shipped as `7ac2fa2`: the staleness guard that has been outstanding
+since the fifth pass, `safe_stat()` so a derived stat cannot fail a run, and
+`DAY_ORIGIN_HOUR` de-duplicated. One item was **not** done and needs a decision
+from the owner — see "Next concrete action".
+
+### Eighth pass objective (closed)
 
 Eighth pass, 2026-09-11 — "fix that and anything else you see", following the
 candle chart. Three fixes shipped as `582d445`: the UTC-to-CT conversion the page
@@ -42,6 +50,25 @@ remaining source was live enough to notice a new stream, so `data_through` sat
 at 2026-08-10 for five days while every run committed a fresh `generated_at`.
 Closed by `b7b2cd0` — Twitch's own VOD list now sources new streams, and the
 site is current through 2026-08-14.
+
+## Ninth pass — pipeline guards (`7ac2fa2`)
+
+- **Staleness guard.** `check_pipeline_freshness()` plus `stats.last_live_seen`,
+  carried across runs. Degrades with a `stale_pipeline` entry when a live sighting
+  at least `STALE_LIVE_HOURS` (24) old is still newer than `data_through`. Rationale
+  and limits in the 2026-09-11 DECISIONS entry. The site gives it its own banner —
+  "streams are happening and not reaching the dataset" — rather than the
+  "upstream source unavailable" copy, which would have been misleading.
+  **It is armed but has never fired, and cannot until a run observes him live:**
+  `last_live_seen` is currently null.
+- **`safe_stat()`.** `dow_hour` and `dow_profile` now degrade instead of aborting
+  the run. This was the risk flagged when they were added — both were called inline
+  in the payload, outside the degraded-source handling.
+- **`DAY_ORIGIN_HOUR` de-duplicated.** The builder ships
+  `stats.day_origin_hour`; the page reads it and keeps the literal only as a
+  fallback for older payloads. The axis, tick labels and the caption all derive from
+  it, so a change in the builder moves the chart rather than silently shifting the
+  modelled candles against the observed ones.
 
 ## Eighth pass — CT labelling, scoring, freshness (`582d445`)
 
@@ -305,6 +332,26 @@ Zomboid arc spanning 07-30 → 08-07 that was previously invisible:
 
 ## Validation
 
+Ninth pass:
+
+- `check_pipeline_freshness()` unit-tested against eight cases, all passing: the
+  August failure (live seen 5d ago, `data_through` 6d back) fires; a genuine quiet
+  period where the data recorded the last stream does not; a stream live right now
+  does not; a sighting 6h old is inside the grace window and does not; 25h old does;
+  no sighting, no `data_through`, and unparseable timestamps are all silent and do
+  not throw. Carry-forward checked in both directions — a live run stamps a fresh
+  sighting, an offline run preserves the previous one.
+- `safe_stat()` checked on both paths: passes the value through, and on a throw
+  returns the default with `stat_<name>` appended to `degraded_sources`.
+- Banner branches driven from injected payloads over HTTP: a `stale_pipeline` entry
+  produces the new copy, a `sullygnome` entry still produces the old copy unchanged,
+  and no console errors in either.
+- `day_origin_hour` verified three ways: read from the payload (6), falls back to 6
+  when the field is absent, and follows the builder to 9 — with the axis and caption
+  moving with it.
+- Data refresh regression re-run after all of it; still picks up a changed payload,
+  no-ops on an unchanged one.
+
 Eighth pass:
 
 - UTC→CT confusion matrix computed from all 2,467 rows before changing anything:
@@ -458,8 +505,8 @@ of the check, against the 7h57m that was reported.
 
 ## Uncommitted implementation details
 
-**Nothing is uncommitted.** The eighth pass shipped as `582d445`; the seventh as
-`77d19ff`, rebased onto `65d4b80`. Both pushed to `main`. The working tree holds only the untracked
+**Nothing is uncommitted.** Ninth pass `7ac2fa2`, eighth `582d445` + `6a34c92`,
+seventh `77d19ff` (rebased onto `65d4b80`). All pushed to `main`. The working tree holds only the untracked
 `README.md` noted below.
 
 The rebase had to resolve `data/stream-data.json` and `data/stream-data.js`: the
@@ -562,9 +609,14 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
   instead of reading a shared cached copy. That is the point — the file changes
   every 30 minutes — but it does move load onto Pages, and the interval is the
   knob if that ever matters.
-- **Two `DAY_ORIGIN_HOUR` constants must stay in step** — one in
-  `scripts/build_dataset.py`, one in `index.html`. Change one alone and the
-  modelled candles silently shift against the observed ones. There is no check.
+- ~~Two `DAY_ORIGIN_HOUR` constants must stay in step~~ — fixed in `7ac2fa2`; the
+  builder ships the value and the page reads it.
+- **The staleness guard cannot fire until a run sees him live.** `last_live_seen`
+  starts null and is only stamped when `live_stream` is non-null on some run. So a
+  fresh checkout, or a period where Twitch's live-status call breaks at the same
+  time as the stream list, leaves the guard silent. It fails safe rather than
+  noisy, which is the right direction, but it is not coverage for "the whole Twitch
+  path is down".
 - `dow_hour` carries both bucketings now (`dow`/`hour_utc` in UTC,
   `dow_ct`/`hour_ct` on the CT stream day). They are not interchangeable — a
   reader that mixes them reintroduces exactly the error `582d445` removed. Anything
@@ -599,6 +651,21 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
 ## Next concrete action
 
+**Follower deltas — needs an owner decision, not an agent one.** This is the one
+item from the flagged list that was not fixed, because both routes require a choice
+only the owner can make:
+
+1. Twitch Helix `/channels/followers` returns a *current total* only, so the
+   pipeline would have to snapshot it per run and difference successive values.
+   That yields deltas going forward but never recovers history, and it needs a
+   client secret in repository secrets.
+2. Get past Cloudflare on `sullygnome.com/api/` — a headless browser to mint
+   `cf_clearance`, or a proxy with better IP reputation. The landing page already
+   clears; only `/api/` does not.
+
+Neither is blocked on engineering. Say which and it is a short piece of work; until
+then SullyGnome stays degraded and nothing depends on it.
+
 **Watch the next scheduled refresh.** `77d19ff` and `582d445` added
 `compute_dow_profile()` and the `_ct` histograms to the stats payload, and both
 are called inline rather than inside the degraded-source handling — if either
@@ -606,11 +673,9 @@ throws, the whole run fails instead of degrading. Neither has yet run on the
 runner; every payload so far came from the local recompute. Confirm one green
 scheduled run and that the live page still draws before treating this as settled.
 
-**Then, optional, in rough value order:**
-
-1. **Nothing alerts on a lagging `data_through`** — the fifth pass's failure mode,
-   still unguarded. See the Risks section for the shape of a cheap check.
-2. **Follower deltas** still have no non-SullyGnome source.
+**Then:** watch for the staleness guard's first real firing. It is armed but
+unproven against a live incident — the unit tests cover the logic, nothing has
+exercised it end to end on the runner.
 
 **Previously closed:**
 
@@ -642,9 +707,10 @@ If neither is wanted, leave SullyGnome degraded. Nothing depends on it.
 
 ## Deployment and status impact
 
-Seventh and eighth passes deployed to https://cyr.mom in three commits:
-`77d19ff` (candle chart), `582d445` (CT labelling, scoring, freshness) and
-`6a34c92` (payload-content comparison), each pushed to `main` on 2026-09-11 and
+Seventh through ninth passes deployed to https://cyr.mom in four commits:
+`77d19ff` (candle chart), `582d445` (CT labelling, scoring, freshness),
+`6a34c92` (payload-content comparison) and `7ac2fa2` (pipeline guards), each
+pushed to `main` on 2026-09-11 and
 each reported via `report_event.py --project cyr --kind deploy`. No
 infrastructure touched — this repo is Pages-from-`main`, with no container, host or
 tunnel involvement.
@@ -662,7 +728,12 @@ Deployed. GitHub Pages builds from `main` on push; no other deploy target.
 Live at https://cyr.mom (CNAME `cyr.mom`) serving `data_through` 2026-08-17.
 Deploy reported via `report_event.py --project cyr --kind deploy`.
 
-Scheduled refresh continues every 30 minutes. It commits on every run because
+Scheduled refresh is declared as every 30 minutes (`cron: '*/30 * * * *'`) but
+**does not run anywhere near that often**: observed intervals on 2026-09-11 were
+2–5 hours (06:25, 11:40, 15:57, 19:04, 21:50, 23:53 UTC), which is ordinary GitHub
+throttling of scheduled workflows, not a fault. Assume hours, not minutes, when
+reasoning about how quickly anything reaches the site — the page's own 5-minute
+data re-fetch is what keeps an open tab current between runs, not the cron. It commits on every run because
 `generated_at` always changes, and it exits non-zero only on a total data
 failure — so read `data_through`, not the run status, to tell whether the data
 actually moved.
