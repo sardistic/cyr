@@ -1,6 +1,6 @@
 # Agent Handoff
 
-Updated: 2026-09-11 (ninth pass: pipeline guards — `7ac2fa2`)
+Updated: 2026-09-12 (ninth pass: pipeline guards, push race — `7ac2fa2`, `b0d91d2`)
 
 ## Active objective
 
@@ -51,7 +51,27 @@ at 2026-08-10 for five days while every run committed a fresh `generated_at`.
 Closed by `b7b2cd0` — Twitch's own VOD list now sources new streams, and the
 site is current through 2026-08-14.
 
-## Ninth pass — pipeline guards (`7ac2fa2`)
+## Ninth pass — pipeline guards (`7ac2fa2`, workflow fix)
+
+**The refresh workflow could lose a whole run to a push race.** Found by running
+one: `gh workflow run refresh-data.yml` was dispatched to verify the new builder
+code on the runner, a docs commit was pushed while it was in flight, and the job
+died at `git push` with a non-fast-forward — discarding data it had already
+fetched from every source. The step ran `commit && push` with no rebase, so
+*anything* landing on `main` during the ~90 seconds a run takes would do this. It
+now retries up to three times, rebasing onto `origin/main` between attempts and
+resolving a conflict in `data/` in favour of the run's own build outputs, which
+are regenerated whole and always supersede what is upstream. A `concurrency` group
+keeps two refresh runs from racing each other into the same conflict, queued rather
+than cancelled so a run that has already hit the sources gets to finish.
+
+That dispatched run did prove the thing it was meant to prove: the pipeline itself
+ran clean on the runner. TwitchMetrics 15 logs / 43 VODs, SullyGnome fell back to
+cache as expected, Twitch VOD games hit a transient GQL "service error" and
+degraded properly, **no `stat_*` entries** — so `compute_dow_profile()` and the
+`_ct` histograms computed without throwing on real runner data. The only failure
+was the push.
+
 
 - **Staleness guard.** `check_pipeline_freshness()` plus `stats.last_live_seen`,
   carried across runs. Degrades with a `stale_pipeline` entry when a live sighting
@@ -334,6 +354,16 @@ Zomboid arc spanning 07-30 → 08-07 that was previously invisible:
 
 Ninth pass:
 
+- Workflow push step simulated locally against a real bare remote, three cases,
+  all passing: nothing else landed (pushes first attempt); an unrelated commit
+  landed mid-run (rebases, pushes on the second attempt, both the data and the
+  other commit survive); a competing data commit landed mid-run (rebases, conflict
+  resolved to this run's outputs, both commits in history). The first version of
+  that harness passed for the wrong reason — the competing push was silently
+  failing so the rebase path never ran — which is why the setup steps now abort
+  loudly.
+- Verified on the runner via `workflow_dispatch` (run 34667936716): pipeline clean,
+  no `stat_*` degradation, failure isolated to the push.
 - `check_pipeline_freshness()` unit-tested against eight cases, all passing: the
   August failure (live seen 5d ago, `data_through` 6d back) fires; a genuine quiet
   period where the data recorded the last stream does not; a stream live right now
@@ -611,6 +641,10 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
   knob if that ever matters.
 - ~~Two `DAY_ORIGIN_HOUR` constants must stay in step~~ — fixed in `7ac2fa2`; the
   builder ships the value and the page reads it.
+- **The workflow's data commits can now rebase over other work.** That is the
+  point, but it means a data refresh will quietly reorder itself after a code
+  commit pushed at the same moment. Harmless for build outputs; worth knowing if
+  the job ever starts committing something that is not a build output.
 - **The staleness guard cannot fire until a run sees him live.** `last_live_seen`
   starts null and is only stamped when `live_stream` is non-null on some run. So a
   fresh checkout, or a period where Twitch's live-status call breaks at the same

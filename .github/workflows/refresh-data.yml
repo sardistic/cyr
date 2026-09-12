@@ -8,6 +8,13 @@ on:
 permissions:
   contents: write
 
+# Two refresh runs pushing data commits at once would race each other into the
+# same conflict this job now retries through. Queue them instead of cancelling:
+# a run that has already fetched from the sources should be allowed to finish.
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -30,13 +37,41 @@ jobs:
       - name: Run data pipeline
         run: python scripts/build_dataset.py
 
+      # The push races anything else landing on main during the ~90s this job
+      # takes — a code commit, a docs commit, another run. It used to fail the
+      # whole refresh on that, throwing away data already fetched from the
+      # sources. Rebase onto whatever arrived and try again.
       - name: Commit and push if data changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/stream-data.js data/stream-data.json data/sully-streams.csv \
                   data/exact-streams.csv data/archive-grouped-dates.csv data/title-semantics.csv
-          git diff --staged --quiet && echo "No changes." || (
-            git commit -m "Auto-refresh stream data [$(date -u +%Y-%m-%dT%H:%MZ)]" &&
-            git push
-          )
+          if git diff --staged --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -m "Auto-refresh stream data [$(date -u +%Y-%m-%dT%H:%MZ)]"
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected; rebasing onto origin/main (attempt $attempt)."
+            git fetch origin main || true
+            # These files are build outputs, always regenerated whole, so this
+            # run's copies supersede whatever is upstream. During a rebase the
+            # commit being replayed is "theirs".
+            if ! git rebase origin/main; then
+              git checkout --theirs -- data/ 2>/dev/null || true
+              git add data/
+              GIT_EDITOR=true git rebase --continue || {
+                echo "Could not reconcile with origin/main."
+                git rebase --abort || true
+                exit 1
+              }
+            fi
+            sleep 3
+          done
+          echo "Push still failing after 3 attempts."
+          exit 1
