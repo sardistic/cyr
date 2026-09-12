@@ -362,8 +362,13 @@ Ninth pass:
   that harness passed for the wrong reason — the competing push was silently
   failing so the rebase path never ran — which is why the setup steps now abort
   loudly.
-- Verified on the runner via `workflow_dispatch` (run 34667936716): pipeline clean,
-  no `stat_*` degradation, failure isolated to the push.
+- Verified on the runner via `workflow_dispatch` twice. Run 34667936716: pipeline
+  clean, no `stat_*` degradation, failure isolated to the push. Run 34668118683
+  after the workflow fix: **success**, "Pushed on attempt 1", and it produced
+  `41515c6` — the first payload built entirely by the builder on the runner rather
+  than by the local recompute, carrying `day_origin_hour: 6`, seven `dow_profile`
+  weekdays, `dow_ct`, 24 `recent_streams` and only the long-standing `sullygnome`
+  degradation. That closes the "watch the next scheduled refresh" item.
 - `check_pipeline_freshness()` unit-tested against eight cases, all passing: the
   August failure (live seen 5d ago, `data_through` 6d back) fires; a genuine quiet
   period where the data recorded the last stream does not; a stream live right now
@@ -700,16 +705,14 @@ only the owner can make:
 Neither is blocked on engineering. Say which and it is a short piece of work; until
 then SullyGnome stays degraded and nothing depends on it.
 
-**Watch the next scheduled refresh.** `77d19ff` and `582d445` added
-`compute_dow_profile()` and the `_ct` histograms to the stats payload, and both
-are called inline rather than inside the degraded-source handling — if either
-throws, the whole run fails instead of degrading. Neither has yet run on the
-runner; every payload so far came from the local recompute. Confirm one green
-scheduled run and that the live page still draws before treating this as settled.
+~~**Watch the next scheduled refresh.**~~ Done — run 34668118683 built and pushed
+`41515c6` green, with every new field present. `safe_stat()` also makes the
+original concern moot: a throwing stat now degrades rather than failing the run.
 
 **Then:** watch for the staleness guard's first real firing. It is armed but
-unproven against a live incident — the unit tests cover the logic, nothing has
-exercised it end to end on the runner.
+unproven against a live incident — the unit tests cover the logic, and nothing has
+exercised it end to end, which cannot happen until a run observes him live
+(`last_live_seen` is still null).
 
 **Previously closed:**
 
