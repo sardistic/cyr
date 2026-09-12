@@ -1610,11 +1610,11 @@ composite                               ≈ <strong>55</strong></div>
       <h2>Schedule Patterns</h2>
       <div class="grid">
         <div class="panel span-6">
-          <h3>Day of Week <span class="muted" style="font-size:13px;font-weight:400">(UTC — Mon UTC ≈ Sun night CT)</span></h3>
+          <h3>Day of Week <span class="muted" style="font-size:13px;font-weight:400">(CT stream day)</span></h3>
           <canvas id="dowChart" width="760" height="260" aria-label="Day of week chart"></canvas>
         </div>
         <div class="panel span-6">
-          <h3>Start Hour <span class="muted" style="font-size:13px;font-weight:400">(UTC — peak 20–23 h ≈ 3–6 PM CT)</span></h3>
+          <h3>Start Hour <span class="muted" style="font-size:13px;font-weight:400">(CT — peak 3–6 PM)</span></h3>
           <canvas id="hourChart" width="760" height="260" aria-label="Start hour chart"></canvas>
         </div>
       </div>
@@ -1977,13 +1977,17 @@ composite                               ≈ <strong>55</strong></div>
       const canvas = document.querySelector('#dowChart');
       if (!canvas) return;
       const { ctx, width, height } = setupCanvas(canvas);
-      const dowData = stats.dow_hour?.dow;
+      // CT stream-days where the payload has them; the UTC series is the fallback
+      // for an older payload and is labelled as such.
+      const dowData = stats.dow_hour?.dow_ct || stats.dow_hour?.dow;
+      const dowIsCT = !!stats.dow_hour?.dow_ct;
       if (!dowData) return;
 
-      const labels    = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-      const etApprox  = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']; // UTC day → approx ET night
+      const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
       const values = labels.map(l => dowData[l] || 0);
       const max = Math.max(...values);
+      // Highlight the genuinely busy days rather than fixed positions.
+      const busyFloor = max * 0.9;
 
       const left = 44, bottom = 52, top = 18;
       drawAxes(ctx, width, height, left, bottom);
@@ -1996,9 +2000,7 @@ composite                               ≈ <strong>55</strong></div>
 
       values.forEach((v, i) => {
         const x = left + 12 + i * step;
-        // Mon UTC (i=0) = Sun night ET — highlight weekstart + Mon
-        const isHighlight = i === 0 || i >= 5;
-        const c = isHighlight ? colors.green : colors.blue;
+        const c = v >= busyFloor ? colors.green : colors.blue;
         const h = (height - bottom - top) * (v / gridMax);
         const y = height - bottom - h;
         ctx.fillStyle = c;
@@ -2009,27 +2011,27 @@ composite                               ≈ <strong>55</strong></div>
         ctx.fillText(v, x + barW / 2, y - 6);
         ctx.fillStyle = colors.muted;
         ctx.font = '700 12px system-ui';
-        ctx.fillText(labels[i], x + barW / 2, height - 30);
-        ctx.fillStyle = 'rgba(153,170,173,.55)';
-        ctx.font = '10px system-ui';
-        ctx.fillText('≈' + etApprox[i] + ' CT', x + barW / 2, height - 14);
+        ctx.fillText(labels[i], x + barW / 2, height - 26);
       });
 
       ctx.fillStyle = colors.muted;
       ctx.font = '11px system-ui';
       ctx.textAlign = 'left';
-      ctx.fillText('green = Mon UTC (Sun night CT) · Sat/Sun UTC', left, 14);
+      ctx.fillText(dowIsCT ? 'streams per weekday · CT · green = busiest'
+                           : 'streams per weekday · UTC start day', left, 14);
     }
 
     function drawHourChart() {
       const canvas = document.querySelector('#hourChart');
       if (!canvas) return;
       const { ctx, width, height } = setupCanvas(canvas);
-      const hourData = stats.dow_hour?.hour_utc;
+      const hourData = stats.dow_hour?.hour_ct || stats.dow_hour?.hour_utc;
+      const hourIsCT = !!stats.dow_hour?.hour_ct;
       if (!hourData) return;
 
       const values = Array.from({ length: 24 }, (_, h) => hourData[String(h)] || 0);
       const max = Math.max(...values);
+      const peakFloor = max * 0.5;
       const left = 44, bottom = 42, top = 18;
       drawAxes(ctx, width, height, left, bottom);
       const gridMax = Math.ceil(max / 50) * 50 + 50;
@@ -2041,9 +2043,7 @@ composite                               ≈ <strong>55</strong></div>
 
       values.forEach((v, h) => {
         const x = left + 4 + h * step;
-        // 20-23 UTC ≈ 4-7 PM ET (peak zone); 0-4 UTC ≈ 8 PM-midnight ET
-        const isEveningET = (h >= 19 && h <= 23) || h <= 4;
-        const c = isEveningET ? colors.green : colors.blue;
+        const c = v >= peakFloor ? colors.green : colors.blue;
         const bH = (height - bottom - top) * (v / gridMax);
         const y = height - bottom - bH;
         ctx.fillStyle = c;
@@ -2059,7 +2059,8 @@ composite                               ≈ <strong>55</strong></div>
       ctx.fillStyle = colors.muted;
       ctx.font = '11px system-ui';
       ctx.textAlign = 'left';
-      ctx.fillText('stream start hour UTC  ·  green ≈ CT evening window', left, 14);
+      ctx.fillText(hourIsCT ? 'stream start hour · CT · green = peak window'
+                            : 'stream start hour · UTC', left, 14);
     }
 
     function buildFeatureBars() {
@@ -2201,11 +2202,10 @@ composite                               ≈ <strong>55</strong></div>
       const canvas = document.getElementById('dowMini');
       if (!canvas) return;
       const { ctx, width, height } = setupCanvas(canvas);
-      const dowData = stats.dow_hour?.dow;
+      const dowData = stats.dow_hour?.dow_ct || stats.dow_hour?.dow;
       if (!dowData) return;
 
-      const labels   = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-      const etLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      const labels = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
       const values = labels.map(l => dowData[l] || 0);
       const max = Math.max(...values);
       const padB = 12;
@@ -2217,15 +2217,15 @@ composite                               ≈ <strong>55</strong></div>
         const x = i * slotW + (slotW - barW) / 2;
         const bH = Math.max(2, ((height - padB) * 0.85) * (v / max));
         const y = height - padB - bH;
-        const isHighlight = i === 0 || i >= 5;
+        const isHighlight = v >= max * 0.9;
         ctx.fillStyle = isHighlight ? colors.green : 'rgba(98,185,223,.32)';
         ctx.globalAlpha = 0.85 + 0.15 * (v / max);
         ctx.fillRect(x, y, barW, bH);
         ctx.globalAlpha = 1;
-        ctx.fillStyle = i === 0 ? colors.green : colors.muted;
+        ctx.fillStyle = isHighlight ? colors.green : colors.muted;
         ctx.font = '700 9px system-ui';
         ctx.textAlign = 'center';
-        ctx.fillText('≈' + etLabels[i], x + barW / 2, height - 1);
+        ctx.fillText(labels[i], x + barW / 2, height - 1);
       });
     }
 
@@ -3398,11 +3398,20 @@ composite                               ≈ <strong>55</strong></div>
       const container = document.getElementById('schedule-days');
       if (!container) return;
 
-      const dowCounts = stats.dow_hour?.dow || {};
-      const utcDowNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      // CT stream-day counts, so the cards and the candle chart below them are
+      // bucketed the same way. An older payload falls back to the UTC series.
+      const dowCounts = stats.dow_hour?.dow_ct || stats.dow_hour?.dow || {};
       const etDowNames  = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
       const monthNames  = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-      const dowMin = 291, dowMax = 430;
+      // Range from the data, not baked in — the old 291/430 pair had drifted off
+      // the real 206/441 spread and squashed every score toward the top.
+      const dowValues = Object.values(dowCounts).filter(v => typeof v === 'number');
+      const dowMin = dowValues.length ? Math.min(...dowValues) : 0;
+      const dowMax = dowValues.length ? Math.max(...dowValues) : 1;
+      const dowSpread = Math.max(dowMax - dowMin, 1);
+      const peakDow = dowValues.length
+        ? Object.keys(dowCounts).reduce((a, b) => (dowCounts[a] >= dowCounts[b] ? a : b))
+        : null;
 
       const lastEndStr = stats.last_stream?.ended_at_iso;
       const lastEnd = lastEndStr ? new Date(lastEndStr) : null;
@@ -3421,12 +3430,17 @@ composite                               ≈ <strong>55</strong></div>
         dayEnd.setDate(dayStart.getDate() + 1);
 
         const dow = etDowNames[dayStart.getDay()];
-        const utcDow = utcDowNames[dayStart.getUTCDay()];
         const dateLabel = monthNames[dayStart.getMonth()] + ' ' + dayStart.getDate();
 
         // DOW score (0–1) from historical frequency
-        const dowCount = dowCounts[utcDow] || 320;
-        const dowScore = (dowCount - dowMin) / (dowMax - dowMin);
+        const dowCount = dowCounts[dow] ?? dowMin;
+        const dowScore = (dowCount - dowMin) / dowSpread;
+        // How this weekday compares to the busiest one. The gap model alone says
+        // only "a stream is due by now"; it cannot say he is half as likely to
+        // start one on a Saturday, which the record plainly shows. Applied as a
+        // multiplier so a quiet day is damped at every horizon, not just the far
+        // ones where the DOW term already carries weight.
+        const dowFactor = dowMax ? dowCount / dowMax : 1;
 
         // Hours-from-lastEnd for this day's window
         const winStartH = lastEnd ? (dayStart - lastEnd) / 3600000 : i * 24;
@@ -3442,7 +3456,7 @@ composite                               ≈ <strong>55</strong></div>
           const pT = (cdfLookup(winEndH) ?? 0) / 100;
           const pGap = Math.max(0, (pT - pE) / Math.max(1 - pE, 0.01));
           const gapWeight = Math.max(0, 1 - i * 0.35); // fades out after day 2
-          score = pGap * gapWeight + dowScore * (1 - gapWeight) * 0.85 + 0.15;
+          score = (pGap * gapWeight + dowScore * (1 - gapWeight) * 0.85 + 0.15) * dowFactor;
         }
 
         // Map score to card config
@@ -3466,11 +3480,10 @@ composite                               ≈ <strong>55</strong></div>
             label = '~' + Math.round(score * 100) + '%'; icon = '⛈'; color = 'var(--green)'; cls = 'today';
             barColor = 'linear-gradient(90deg,var(--green),var(--blue))';
           }
-        } else if (dow === 'Mon') {
-          // Monday UTC = Sunday ET night = peak DOW in dataset
+        } else if (dow === peakDow) {
           label = 'Peak'; icon = '⛈'; color = 'var(--green)'; cls = 'peak';
           barColor = 'linear-gradient(90deg,var(--green),var(--gold))';
-          type = 'Peak DOW'; desc = 'Mon UTC · Sun CT night';
+          type = 'Peak DOW'; desc = dowCount + ' streams, most of any day';
         } else if (score > 0.60) {
           label = 'High'; icon = '⛈'; color = 'var(--green)'; cls = 'arc-watch';
           barColor = 'linear-gradient(90deg,var(--green),var(--blue))';
@@ -3519,8 +3532,8 @@ composite                               ≈ <strong>55</strong></div>
         const future = cardMeta.slice(1);
 
         // Best non-peak future day by score
-        const peakDay = future.find(c => c.dow === 'Mon');
-        const bestFuture = future.filter(c => c.dow !== 'Mon').sort((a, b) => b.score - a.score)[0];
+        const peakDay = future.find(c => c.dow === peakDow);
+        const bestFuture = future.filter(c => c.dow !== peakDow).sort((a, b) => b.score - a.score)[0];
         const lowDays = future.filter(c => c.label === 'Low');
 
         let parts = [];
@@ -3547,7 +3560,7 @@ composite                               ≈ <strong>55</strong></div>
 
         // Peak DOW
         if (peakDay) {
-          parts.push(`<strong>${peakDay.dow} ${peakDay.dateLabel}</strong> carries the strongest historical signal — Mon UTC (Sun CT night) leads all days at ${dowCounts['Mon']} streams.`);
+          parts.push(`<strong>${peakDay.dow} ${peakDay.dateLabel}</strong> carries the strongest historical signal — ${peakDay.dow} leads every other day at ${dowCounts[peakDow]} streams.`);
         }
 
         summary.innerHTML = parts.join(' ');
@@ -3556,6 +3569,54 @@ composite                               ≈ <strong>55</strong></div>
 
     updateForecast();
     setInterval(updateForecast, 60000);
+
+    // ── Keep the data fresh past the CDN ──
+    // The workflow regenerates data/stream-data.js every 30 minutes, but the edge
+    // in front of Pages serves it with a 4-hour max-age and index.html references
+    // it at a fixed URL. A visitor who lands on a warm cache can therefore sit on
+    // hours-old data while the page reports it as current — wrong live status,
+    // wrong elapsed clock, wrong "checked at". Re-fetch it on its own, past both
+    // caches, and repaint when it has actually moved.
+    const DATA_URL = 'data/stream-data.js';
+    const DATA_REFRESH_MS = 5 * 60 * 1000;
+
+    async function refreshData() {
+      let fresh;
+      try {
+        const res = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) return false;
+        const text = await res.text();
+        const body = text.replace(/^\s*window\.__SD\s*=\s*/, '').replace(/;\s*$/, '');
+        fresh = JSON.parse(body);
+      } catch (err) {
+        // Offline, a partial response, a half-written file mid-deploy: keep
+        // showing what we already have rather than blanking the page.
+        return false;
+      }
+      if (!fresh || !fresh.stats || fresh.generated_at === D.generated_at) return false;
+
+      // `stats` is bound to this object, so refill it in place instead of
+      // rebinding — every render function reads through that one reference.
+      for (const key of Object.keys(stats)) delete stats[key];
+      Object.assign(stats, fresh.stats);
+      D.stats = stats;
+      D.generated_at = fresh.generated_at;
+      D.data_through = fresh.data_through;
+      D.degraded_sources = fresh.degraded_sources;
+      D.sources = fresh.sources;
+
+      render();
+      populateDynamicSections();
+      updateForecast();
+      return true;
+    }
+
+    refreshData();
+    setInterval(refreshData, DATA_REFRESH_MS);
+    // A tab left open overnight should catch up the moment it is looked at again.
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') refreshData();
+    });
 
     // ── Magic 8-Ball ──
     (function() {

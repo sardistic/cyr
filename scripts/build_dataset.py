@@ -702,22 +702,40 @@ def compute_gap_cdf(gap_values):
 
 
 def compute_dow_hour(rows):
+    """Day-of-week and start-hour histograms, in UTC and in site-local time.
+
+    The UTC series are kept because they are what earlier payloads carried. The
+    site presents CT, though, and the two are not a one-day shift apart: a UTC
+    Monday is a CT Monday 73% of the time and a CT Sunday only 27%, because the
+    start-hour mode is mid-afternoon CT, not late evening. Anything user-facing
+    should read the `_ct` series and label it CT.
+    """
     dow_labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     dow_counts = Counter()
     hour_counts = Counter()
+    dow_ct_counts = Counter()
+    hour_ct_counts = Counter()
     for row in rows:
         started = row.get("started_at")
         if not started:
             continue
         try:
             dt = datetime.fromisoformat(started.replace("Z", "+00:00"))
-            dow_counts[dow_labels[dt.weekday()]] += 1
-            hour_counts[dt.hour] += 1
         except ValueError:
             continue
+        dow_counts[dow_labels[dt.weekday()]] += 1
+        hour_counts[dt.hour] += 1
+        local = dt.astimezone(SITE_TZ)
+        day = local.date()
+        if local.hour < DAY_ORIGIN_HOUR:
+            day -= timedelta(days=1)
+        dow_ct_counts[dow_labels[day.weekday()]] += 1
+        hour_ct_counts[local.hour] += 1
     return {
         "dow": {label: dow_counts[label] for label in dow_labels},
         "hour_utc": {str(h): hour_counts[h] for h in range(24)},
+        "dow_ct": {label: dow_ct_counts[label] for label in dow_labels},
+        "hour_ct": {str(h): hour_ct_counts[h] for h in range(24)},
     }
 
 
