@@ -1,14 +1,16 @@
 {
-  "generated_at": "2026-09-12T15:44:07Z",
+  "generated_at": "2026-09-12T18:08:53Z",
   "data_through": "2026-09-11T17:58:05Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
+    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
   ],
   "sources": {
     "sullygnome_stream_table": 2488,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 43,
-    "exact_merged_rows": 42,
+    "exact_merged_rows": 41,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 611
   },
@@ -29,9 +31,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 41,
-      "mean": 35.55,
-      "median": 24.14,
+      "count": 40,
+      "mean": 35.84,
+      "median": 24.38,
       "max": 100.92
     },
     "archive_gap_days": {
@@ -1142,8 +1144,13 @@
         ]
       }
     },
-    "live_stream": null,
-    "last_live_seen": null
+    "live_stream": {
+      "started_at": "2026-09-12T17:05:12Z",
+      "game": "Grand Theft Auto V",
+      "title": "UCHIHA JONES - NOPIXEL V - CAR OWNER DILLY DALLY SHILLY SHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
+      "viewers": 1573
+    },
+    "last_live_seen": "2026-09-12T18:08:53Z"
   },
   "sully_streams": [
     {
@@ -50688,16 +50695,6 @@
       "duration_seconds": 3284,
       "title": "UCHIHA JONES - NOPIXEL V - DILLY DALLY SHILLY SHALLY -  UCHIHA  BADGE FOR 1 GIFTED SUB! !discord",
       "views": 32
-    },
-    {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2871409677",
-      "started_at": "2026-09-11T17:58:05Z",
-      "duration_label": "05:29:40",
-      "duration_seconds": 19780,
-      "title": "UCHIHA JONES - NOPIXEL V - RP OVERLOAD OVERHEAT WEALTHY DILLY DALLY SHILLY SHALLY GOOG - UCHIHA  BADGE FOR 1 GIFTED SUB! - !discord",
-      "views": 119150
     }
   ],
   "archive_grouped_dates": [
