@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T23:53:49Z",
+  "generated_at": "2026-09-12T02:36:46Z",
   "data_through": "2026-09-11T17:58:05Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
@@ -303,6 +303,107 @@
         "23": 75
       }
     },
+    "dow_profile": {
+      "Mon": {
+        "n": 73,
+        "start_p10": 6.7,
+        "start_p25": 8.85,
+        "start_p50": 10.54,
+        "start_p75": 12.99,
+        "end_p50": 17.51,
+        "end_p90": 20.52,
+        "dur_p25": 4.87,
+        "dur_p50": 6.13,
+        "dur_p75": 7.27,
+        "active_rate": 0.692,
+        "window_days": 730
+      },
+      "Tue": {
+        "n": 84,
+        "start_p10": 6.13,
+        "start_p25": 7.39,
+        "start_p50": 10.01,
+        "start_p75": 13.82,
+        "end_p50": 17.38,
+        "end_p90": 20.86,
+        "dur_p25": 4.11,
+        "dur_p50": 5.12,
+        "dur_p75": 6.69,
+        "active_rate": 0.769,
+        "window_days": 730
+      },
+      "Wed": {
+        "n": 77,
+        "start_p10": 5.48,
+        "start_p25": 6.93,
+        "start_p50": 9.01,
+        "start_p75": 12.34,
+        "end_p50": 16.26,
+        "end_p90": 19.36,
+        "dur_p25": 4.4,
+        "dur_p50": 5.48,
+        "dur_p75": 7.02,
+        "active_rate": 0.74,
+        "window_days": 730
+      },
+      "Thu": {
+        "n": 79,
+        "start_p10": 5.94,
+        "start_p25": 8.47,
+        "start_p50": 10.54,
+        "start_p75": 13.22,
+        "end_p50": 16.76,
+        "end_p90": 20.5,
+        "dur_p25": 4.38,
+        "dur_p50": 5.58,
+        "dur_p75": 7.6,
+        "active_rate": 0.74,
+        "window_days": 730
+      },
+      "Fri": {
+        "n": 63,
+        "start_p10": 5.46,
+        "start_p25": 7.86,
+        "start_p50": 10.86,
+        "start_p75": 12.83,
+        "end_p50": 16.51,
+        "end_p90": 19.45,
+        "dur_p25": 3.78,
+        "dur_p50": 4.8,
+        "dur_p75": 6.19,
+        "active_rate": 0.596,
+        "window_days": 730
+      },
+      "Sat": {
+        "n": 34,
+        "start_p10": 5.17,
+        "start_p25": 8.49,
+        "start_p50": 10.44,
+        "start_p75": 13.06,
+        "end_p50": 15.63,
+        "end_p90": 19.61,
+        "dur_p25": 3.58,
+        "dur_p50": 4.16,
+        "dur_p75": 5.9,
+        "active_rate": 0.317,
+        "window_days": 730
+      },
+      "Sun": {
+        "n": 45,
+        "start_p10": 7.83,
+        "start_p25": 9.02,
+        "start_p50": 12.61,
+        "start_p75": 15.07,
+        "end_p50": 18.26,
+        "end_p90": 20.76,
+        "dur_p25": 3.77,
+        "dur_p50": 5.18,
+        "dur_p75": 6.78,
+        "active_rate": 0.423,
+        "window_days": 730
+      }
+    },
+    "day_origin_hour": 6,
     "gap_cdf": [
       [
         0,
@@ -1042,107 +1143,6 @@
       }
     },
     "live_stream": null,
-    "dow_profile": {
-      "Mon": {
-        "n": 73,
-        "start_p10": 6.7,
-        "start_p25": 8.85,
-        "start_p50": 10.54,
-        "start_p75": 12.99,
-        "end_p50": 17.51,
-        "end_p90": 20.52,
-        "dur_p25": 4.87,
-        "dur_p50": 6.13,
-        "dur_p75": 7.27,
-        "active_rate": 0.692,
-        "window_days": 730
-      },
-      "Tue": {
-        "n": 84,
-        "start_p10": 6.13,
-        "start_p25": 7.39,
-        "start_p50": 10.01,
-        "start_p75": 13.82,
-        "end_p50": 17.38,
-        "end_p90": 20.86,
-        "dur_p25": 4.11,
-        "dur_p50": 5.12,
-        "dur_p75": 6.69,
-        "active_rate": 0.769,
-        "window_days": 730
-      },
-      "Wed": {
-        "n": 77,
-        "start_p10": 5.48,
-        "start_p25": 6.93,
-        "start_p50": 9.01,
-        "start_p75": 12.34,
-        "end_p50": 16.26,
-        "end_p90": 19.36,
-        "dur_p25": 4.4,
-        "dur_p50": 5.48,
-        "dur_p75": 7.02,
-        "active_rate": 0.74,
-        "window_days": 730
-      },
-      "Thu": {
-        "n": 79,
-        "start_p10": 5.94,
-        "start_p25": 8.47,
-        "start_p50": 10.54,
-        "start_p75": 13.22,
-        "end_p50": 16.76,
-        "end_p90": 20.5,
-        "dur_p25": 4.38,
-        "dur_p50": 5.58,
-        "dur_p75": 7.6,
-        "active_rate": 0.74,
-        "window_days": 730
-      },
-      "Fri": {
-        "n": 63,
-        "start_p10": 5.46,
-        "start_p25": 7.86,
-        "start_p50": 10.86,
-        "start_p75": 12.83,
-        "end_p50": 16.51,
-        "end_p90": 19.45,
-        "dur_p25": 3.78,
-        "dur_p50": 4.8,
-        "dur_p75": 6.19,
-        "active_rate": 0.596,
-        "window_days": 730
-      },
-      "Sat": {
-        "n": 34,
-        "start_p10": 5.17,
-        "start_p25": 8.49,
-        "start_p50": 10.44,
-        "start_p75": 13.06,
-        "end_p50": 15.63,
-        "end_p90": 19.61,
-        "dur_p25": 3.58,
-        "dur_p50": 4.16,
-        "dur_p75": 5.9,
-        "active_rate": 0.317,
-        "window_days": 730
-      },
-      "Sun": {
-        "n": 45,
-        "start_p10": 7.83,
-        "start_p25": 9.02,
-        "start_p50": 12.61,
-        "start_p75": 15.07,
-        "end_p50": 18.26,
-        "end_p90": 20.76,
-        "dur_p25": 3.77,
-        "dur_p50": 5.18,
-        "dur_p75": 6.78,
-        "active_rate": 0.423,
-        "window_days": 730
-      }
-    },
-    "day_origin_hour": 6,
     "last_live_seen": null
   },
   "sully_streams": [
@@ -50697,7 +50697,7 @@
       "duration_label": "05:29:40",
       "duration_seconds": 19780,
       "title": "UCHIHA JONES - NOPIXEL V - RP OVERLOAD OVERHEAT WEALTHY DILLY DALLY SHILLY SHALLY GOOG - UCHIHA  BADGE FOR 1 GIFTED SUB! - !discord",
-      "views": 821
+      "views": 118121
     }
   ],
   "archive_grouped_dates": [
