@@ -1,13 +1,13 @@
 # Agent Handoff
 
-Updated: 2026-09-11 (seventh pass: session-candle chart under the 7-day schedule)
+Updated: 2026-09-11 (seventh pass: session-candle chart, shipped as `77d19ff`)
 
 ## Active objective
 
 Seventh pass, 2026-09-11 — feature request: a candlestick chart under the 7-day
 schedule strip showing modelled windows for the next 7 days and observed sessions
-for the last 7, with stream length readable off the candle. Built and verified in
-a headless browser; **not committed or deployed** — it sits in the working tree.
+for the last 7, with stream length readable off the candle. Built, verified in a
+headless browser against live data, and **shipped as `77d19ff`** on `main`.
 Details under "Seventh pass" below.
 
 ### Earlier objective (closed)
@@ -35,7 +35,7 @@ at 2026-08-10 for five days while every run committed a fresh `generated_at`.
 Closed by `b7b2cd0` — Twitch's own VOD list now sources new streams, and the
 site is current through 2026-08-14.
 
-## Seventh pass — session candles (uncommitted)
+## Seventh pass — session candles (`77d19ff`)
 
 - `scripts/build_dataset.py`:
   - `DAY_ORIGIN_HOUR = 6` and `stream_day_offsets()` express every session as hours
@@ -61,9 +61,10 @@ site is current through 2026-08-14.
   - The strip hides itself when `dow_profile` is absent, so an older cached payload
     degrades rather than erroring.
 - Verified with Playwright at 1280px and 430px: no console errors, no page-level
-  horizontal overflow, tooltips and the table populate. The observed half was
-  exercised by shifting the cached streams into the last-7-day window, since the
-  local checkout's data stops at 2026-08-17.
+  horizontal overflow, tooltips and the table populate. First checked against
+  shifted cached streams, then against the real data pulled in during the rebase —
+  6 of the last 7 days streaming, 41h42m on air, lengths from 0.9h to 13.2h, all
+  legible as candle bodies.
 
 ## Completed work
 
@@ -386,8 +387,18 @@ of the check, against the 7h57m that was reported.
 
 ## Uncommitted implementation details
 
-**The whole seventh pass is uncommitted.** Four modified files in the working
-tree, no commit, no deploy:
+**Nothing is uncommitted.** The seventh pass shipped as `77d19ff`, rebased onto
+`65d4b80` and pushed to `main`. The working tree holds only the untracked
+`README.md` noted below.
+
+The rebase had to resolve `data/stream-data.json` and `data/stream-data.js`: the
+scheduled refresh had committed 360 times since this checkout's base, so the
+upstream copies were taken whole and the recompute rerun on top of them to
+reinstate `dow_profile` and the wider `recent_streams`. **Do this the same way if
+it recurs** — never keep the local data files over upstream's, they are a month
+stale; take upstream and recompute.
+
+What shipped in that commit:
 
 - `scripts/build_dataset.py` — `DAY_ORIGIN_HOUR`, `stream_day_offsets()`,
   `compute_dow_profile()`, `recent_streams` widened from 8 to 24, and
@@ -396,13 +407,11 @@ tree, no commit, no deploy:
   `.schedule-days`, and the chart code (`candleModel()`, `drawCandles()`,
   `buildCandles()`, `candleHover()`, `centerCandleScroll()`) above
   `buildSchedule()`, which now calls `buildCandles()` on every refresh tick.
-- `data/stream-data.json` and `data/stream-data.js` — recomputed locally from
-  the cached `sully_streams` (no network) so the page works before the next
-  scheduled run regenerates them.
+- `data/stream-data.json` and `data/stream-data.js` — carrying `dow_profile` and
+  24 `recent_streams`, recomputed from upstream's current rows. The next
+  scheduled run regenerates both from the builder itself.
 
-`docs/agent/DECISIONS.md` gained the 6 AM stream-day entry.
-
-Everything from the first six passes is committed. It shipped in six commits:
+`docs/agent/DECISIONS.md` gained the 6 AM stream-day entry. It shipped in six commits:
 `4be0f7f` (stop the silent staleness), `54a36ea` (TwitchMetrics primary, TLS
 impersonation, no failing runs), `fc0ff0c` (games from Twitch GQL), `f833ded`
 (recover TwitchMetrics viewer figures), `b7b2cd0` (Twitch VOD list as a
@@ -513,11 +522,11 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
 ## Next concrete action
 
-**Commit and deploy the candle chart if it is wanted** — it is working-tree only.
-`data/stream-data.json` and `data/stream-data.js` carry a locally recomputed
-`dow_profile` and the longer `recent_streams`; the next scheduled run regenerates
-both from the builder, so committing them is optional but keeps the page working
-before that run.
+**Watch the next scheduled refresh.** `77d19ff` is the first commit where a run
+regenerates `dow_profile` from the builder rather than from the local recompute.
+If `compute_dow_profile()` throws, the run fails outright — it is called inline in
+the stats payload, not wrapped in the degraded-source handling. Confirm one green
+run, and that the live panel still draws, before treating this as settled.
 
 **Then: the schedule cards' UTC→CT claim is wrong.** `buildSchedule()` treats
 Monday UTC as "Sunday night CT" and labels it the peak day, and the chart headings
@@ -560,10 +569,10 @@ If neither is wanted, leave SullyGnome degraded. Nothing depends on it.
 
 ## Deployment and status impact
 
-**The seventh pass is not deployed and not committed.** The candle chart exists
-only in this working tree; https://cyr.mom is still serving the sixth-pass page.
-Nothing was pushed, so no `report_event.py --kind deploy` was filed. Shipping it
-is a commit and push to `main` — Pages does the rest.
+Seventh pass deployed: `77d19ff` pushed to `main` 2026-09-11, GitHub Pages
+rebuilding to https://cyr.mom. Reported via `report_event.py --project cyr
+--kind deploy`. No infrastructure touched — this repo is Pages-from-`main`, with
+no container, host or tunnel involvement.
 
 Prior state, unchanged:
 
