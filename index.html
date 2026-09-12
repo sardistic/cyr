@@ -3579,13 +3579,19 @@ composite                               ≈ <strong>55</strong></div>
     // caches, and repaint when it has actually moved.
     const DATA_URL = 'data/stream-data.js';
     const DATA_REFRESH_MS = 5 * 60 * 1000;
+    // Compare the payload itself, not its generated_at. A rebuild can change the
+    // stats without moving that timestamp — a new field computed from rows that
+    // were already there does exactly that — and the whole point of this path is
+    // to notice when what we are holding differs from what is being served.
+    let lastPayloadText = null;
 
     async function refreshData() {
-      let fresh;
+      let fresh, text;
       try {
         const res = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
         if (!res.ok) return false;
-        const text = await res.text();
+        text = await res.text();
+        if (text === lastPayloadText) return false;
         const body = text.replace(/^\s*window\.__SD\s*=\s*/, '').replace(/;\s*$/, '');
         fresh = JSON.parse(body);
       } catch (err) {
@@ -3593,7 +3599,8 @@ composite                               ≈ <strong>55</strong></div>
         // showing what we already have rather than blanking the page.
         return false;
       }
-      if (!fresh || !fresh.stats || fresh.generated_at === D.generated_at) return false;
+      if (!fresh || !fresh.stats) return false;
+      lastPayloadText = text;
 
       // `stats` is bound to this object, so refill it in place instead of
       // rebinding — every render function reads through that one reference.
