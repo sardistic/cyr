@@ -1,8 +1,16 @@
 # Agent Handoff
 
-Updated: 2026-09-11 (seventh pass: session-candle chart, shipped as `77d19ff`)
+Updated: 2026-09-11 (eighth pass: CT labelling, schedule scoring, CDN staleness)
 
 ## Active objective
+
+Eighth pass, 2026-09-11 — "fix that and anything else you see", following the
+candle chart. Three fixes shipped as `582d445`: the UTC-to-CT conversion the page
+had been asserting was wrong, the schedule cards' day-of-week scoring was keyed to
+a stale hardcoded range, and the data file went stale behind the CDN. Details
+under "Eighth pass" below.
+
+### Seventh pass objective (closed)
 
 Seventh pass, 2026-09-11 — feature request: a candlestick chart under the 7-day
 schedule strip showing modelled windows for the next 7 days and observed sessions
@@ -34,6 +42,50 @@ remaining source was live enough to notice a new stream, so `data_through` sat
 at 2026-08-10 for five days while every run committed a fresh `generated_at`.
 Closed by `b7b2cd0` — Twitch's own VOD list now sources new streams, and the
 site is current through 2026-08-14.
+
+## Eighth pass — CT labelling, scoring, freshness (`582d445`)
+
+All three came from the same root: the page presents CT but reasoned in UTC.
+
+1. **The UTC-to-CT claim was false.** `drawDowChart()`, `drawDowMini()`, the two
+   Schedule Patterns headings and `buildSchedule()`'s summary all asserted
+   "Mon UTC = Sun night CT" and shifted weekday labels a day back on that basis.
+   Measured over the full history, a UTC Monday is a **CT Monday 73%** of the time
+   and a CT Sunday only 27%; the start-hour mode is 4 PM CT, not late evening.
+   `compute_dow_hour()` now also emits `dow_ct` and `hour_ct`, bucketed on the same
+   6 AM CT stream day as `dow_profile`, and every user-facing chart reads those and
+   says CT. The UTC series stay in the payload as the fallback for an older one.
+   The start-hour chart is materially more readable as a result: in CT the
+   distribution is one clean peak at 4 PM instead of a curve split across the
+   midnight wrap.
+2. **The schedule cards' DOW range was hardcoded** at `dowMin = 291, dowMax = 430`
+   against a real spread of 216–436. Quiet days scored *negative*, which damped
+   them — by accident. Deriving the range from the data removed the accident and
+   pushed Saturday and Sunday to "High", the two quietest days in the record. So
+   the DOW term became a **multiplier** on the blended score (`dowCount / dowMax`),
+   which damps a quiet day at every horizon rather than only at the far end where
+   the additive term already carried weight. Cards now read Sat "Possible", Sun
+   "Low", Mon "Peak". The peak branch keys off whichever day actually leads instead
+   of a hardcoded `'Mon'`.
+3. **Data went stale behind the CDN.** The workflow regenerates
+   `data/stream-data.js` every 30 minutes, but the edge serves it with
+   `max-age=14400` at a fixed URL, so a visitor on a warm cache could sit on
+   four-hour-old data while the page reported it as current — wrong live status,
+   wrong elapsed clock, wrong "checked at". `refreshData()` re-fetches the payload
+   with `cache: 'no-store'` and a cache-busting query on load, every 5 minutes, and
+   on `visibilitychange`, repainting only when `generated_at` has moved. It refills
+   `stats` in place so the reference every render function closes over stays valid,
+   and a failed fetch keeps what is already on screen.
+
+   Corrected in `6a34c92`: the first cut compared `generated_at` to decide whether
+   anything had moved. That timestamp comes from the refresh workflow, so a rebuild
+   that changes the stats without rerunning it — adding a field computed from rows
+   that were already present, which is what both of this session's commits did —
+   serves a different payload under an unchanged timestamp and was skipped. Caught
+   on the live site: cyr.mom was holding the cached `stream-data.js` and never
+   picked up `dow_ct`. It now compares the response body against the last one
+   accepted, which also means the first fetch after load repaints once and thereby
+   recovers any page served new HTML against a stale cached payload.
 
 ## Seventh pass — session candles (`77d19ff`)
 
@@ -253,7 +305,26 @@ Zomboid arc spanning 07-30 → 08-07 that was previously invisible:
 
 ## Validation
 
-Seventh pass (chart), all local — nothing was deployed:
+Eighth pass:
+
+- UTC→CT confusion matrix computed from all 2,467 rows before changing anything:
+  UTC Mon → CT Mon 73% / CT Sun 27%, and similarly same-day for every other
+  weekday (Sat is the loosest at 58/42). The page's one-day shift was the minority
+  case in every column.
+- Schedule cards read back from the rendered DOM after each scoring change. The
+  intermediate state — Sat "High", Sun "Likely" — is what caught the hardcoded
+  range having been load-bearing; final state is Sat "Possible", Sun "Low", Mon
+  "Peak", weekdays "High".
+- `refreshData()` tested against a real HTTP server: loaded the page, rewrote
+  `stream-data.js` underneath it, and confirmed the page picked up the new
+  `generated_at`, `data_through` and stream count with no reload, kept
+  `D.stats === stats`, no-opped on an unchanged payload, and left the candle panel
+  drawn. No console errors. (Over `file://` the fetch is blocked by the browser and
+  the catch swallows it — that is why this had to be tested over HTTP.)
+- Both rebuilt charts screenshot-checked; `node --check` on the page script;
+  `py_compile` on the builder.
+
+Seventh pass (chart), all local:
 
 - `python -m py_compile scripts/build_dataset.py`; `compute_dow_profile()`
   exercised against no rows, one row, and a row with no timestamp (returns `{}`,
@@ -387,8 +458,8 @@ of the check, against the 7h57m that was reported.
 
 ## Uncommitted implementation details
 
-**Nothing is uncommitted.** The seventh pass shipped as `77d19ff`, rebased onto
-`65d4b80` and pushed to `main`. The working tree holds only the untracked
+**Nothing is uncommitted.** The eighth pass shipped as `582d445`; the seventh as
+`77d19ff`, rebased onto `65d4b80`. Both pushed to `main`. The working tree holds only the untracked
 `README.md` noted below.
 
 The rebase had to resolve `data/stream-data.json` and `data/stream-data.js`: the
@@ -477,21 +548,27 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
 ## Risks and unknowns
 
-- **The schedule cards and the candle chart disagree, and the cards are wrong.**
-  `buildSchedule()` treats Monday UTC as "Sunday night CT" and labels it the peak
-  day; the Schedule Patterns headings repeat the claim. But the dominant start
-  hour is 20–23 UTC, which is 3–6 PM CT the *same* day, so UTC start-days and CT
-  stream-days land on nearly the same weekday — all-time CT counts run Mon 433 /
-  Tue 419 / Wed 405 / Thu 395 / Fri 347 / Sun 253 / Sat 215 against UTC Mon 441 /
-  Tue 401 / Wed 435 / Thu 389 / Fri 353 / Sat 242 / Sun 206. So the cards call
-  Sunday a peak while the chart directly below calls it quiet, from one dataset.
-  Left alone deliberately: correcting it changes the forecast the page publishes.
+- **The schedule model changed, and the cards now forecast differently.** The DOW
+  multiplier in `582d445` lowers every non-peak day relative to what the page used
+  to publish — Saturday most of all, at roughly half the peak day's factor. That is
+  the defensible reading of the record, but it is a model change, not a relabel,
+  and nobody has watched it against outcomes yet. If it damps too hard, the factor
+  is one expression in `buildSchedule()`.
+- **A payload can change without `generated_at` moving.** That is what `6a34c92`
+  fixed, and it is worth remembering in the other direction too: `generated_at` is
+  a workflow-run timestamp, not a content hash, so nothing should treat it as one.
+- **`refreshData()` defeats edge caching for the data file by design.** Every
+  visitor now pulls ~11 KB from origin on load and every 5 minutes thereafter
+  instead of reading a shared cached copy. That is the point — the file changes
+  every 30 minutes — but it does move load onto Pages, and the interval is the
+  knob if that ever matters.
 - **Two `DAY_ORIGIN_HOUR` constants must stay in step** — one in
   `scripts/build_dataset.py`, one in `index.html`. Change one alone and the
   modelled candles silently shift against the observed ones. There is no check.
-- The chart's weekday profile is bucketed on CT stream-days while `dow_hour`,
-  which the cards use, is bucketed on UTC start-days. Both are in the payload;
-  they are not interchangeable.
+- `dow_hour` carries both bucketings now (`dow`/`hour_utc` in UTC,
+  `dow_ct`/`hour_ct` on the CT stream day). They are not interchangeable — a
+  reader that mixes them reintroduces exactly the error `582d445` removed. Anything
+  user-facing takes the `_ct` series.
 - `active_rate` divides active days by the number of that weekday in the window,
   so a long break reads as a low rate for every weekday in it. That is the honest
   reading of "how often does he stream on a Tuesday" but it is not a conditional
@@ -522,22 +599,18 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
 ## Next concrete action
 
-**Watch the next scheduled refresh.** `77d19ff` is the first commit where a run
-regenerates `dow_profile` from the builder rather than from the local recompute.
-If `compute_dow_profile()` throws, the run fails outright — it is called inline in
-the stats payload, not wrapped in the degraded-source handling. Confirm one green
-run, and that the live panel still draws, before treating this as settled.
+**Watch the next scheduled refresh.** `77d19ff` and `582d445` added
+`compute_dow_profile()` and the `_ct` histograms to the stats payload, and both
+are called inline rather than inside the degraded-source handling — if either
+throws, the whole run fails instead of degrading. Neither has yet run on the
+runner; every payload so far came from the local recompute. Confirm one green
+scheduled run and that the live page still draws before treating this as settled.
 
-**Then: the schedule cards' UTC→CT claim is wrong.** `buildSchedule()` treats
-Monday UTC as "Sunday night CT" and labels it the peak day, and the chart headings
-repeat it ("Mon UTC ≈ Sun night CT"). The dominant start hour is 20–23 UTC, which
-is 3–6 PM CT *the same day*, so UTC start-days and CT stream-days land on nearly
-the same weekday: all-time CT counts are Mon 433 / Tue 419 / Wed 405 / Thu 395 /
-Fri 347 / Sun 253 / Sat 215 against UTC Mon 441 / Tue 401 / Wed 435 / Thu 389 /
-Fri 353 / Sat 242 / Sun 206. The cards therefore call Sunday a peak and the candle
-chart below calls it a quiet day, from the same data. Fixing it means reworking the
-`dow === 'Mon'` peak branch and the copy around it — left alone deliberately,
-since it changes the forecast the page has been giving.
+**Then, optional, in rough value order:**
+
+1. **Nothing alerts on a lagging `data_through`** — the fifth pass's failure mode,
+   still unguarded. See the Risks section for the shape of a cheap check.
+2. **Follower deltas** still have no non-SullyGnome source.
 
 **Previously closed:**
 
@@ -569,10 +642,19 @@ If neither is wanted, leave SullyGnome degraded. Nothing depends on it.
 
 ## Deployment and status impact
 
-Seventh pass deployed: `77d19ff` pushed to `main` 2026-09-11, GitHub Pages
-rebuilding to https://cyr.mom. Reported via `report_event.py --project cyr
---kind deploy`. No infrastructure touched — this repo is Pages-from-`main`, with
-no container, host or tunnel involvement.
+Seventh and eighth passes deployed to https://cyr.mom in three commits:
+`77d19ff` (candle chart), `582d445` (CT labelling, scoring, freshness) and
+`6a34c92` (payload-content comparison), each pushed to `main` on 2026-09-11 and
+each reported via `report_event.py --project cyr --kind deploy`. No
+infrastructure touched — this repo is Pages-from-`main`, with no container, host or
+tunnel involvement.
+
+**Expect a lag between pushing and seeing a change.** Cloudflare sits in front of
+Pages and served the previous `data/stream-data.js` for several minutes after
+`77d19ff` went live, during which the new HTML loaded against an old payload and
+the candle panel hid itself exactly as its degradation path intends. Verify a
+deploy with a cache-busting query (`?cb=$(date +%s)`) before concluding anything is
+broken. `582d445` is what stops that from affecting real visitors going forward.
 
 Prior state, unchanged:
 
