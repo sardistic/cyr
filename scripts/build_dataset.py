@@ -682,6 +682,67 @@ def last_n_stream_details(rows, n=8):
     return result
 
 
+# A stream seen live should be in the data within a refresh cycle of ending. Give
+# it a day: longer than the longest sessions on record, short enough that a broken
+# pipeline is caught the same day rather than the next week.
+STALE_LIVE_HOURS = 24
+
+
+def check_pipeline_freshness(data_through, live_stream, previous_stats, degraded):
+    """Did we watch a stream happen and then fail to record it?
+
+    Guards the failure that hid five days of streams in August: every source stopped
+    being live enough to notice new ones, `data_through` stood still, and each run
+    still committed a fresh `generated_at` — so the workflow stayed green while the
+    site served old data under a "checked just now" label. Nothing noticed.
+
+    Elapsed time alone cannot be the signal: this channel genuinely goes quiet for
+    weeks, and a correct quiet period looks identical to a broken pipeline. Live
+    status is the discriminator. It comes from a different call than the stream
+    list, so a live sighting that never turns into a recorded stream is positive
+    evidence that the list is broken rather than the channel being idle.
+
+    Returns the `last_live_seen` value to carry into this run's payload.
+    """
+    now = datetime.now(timezone.utc)
+    if live_stream:
+        last_live_seen = now.replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    else:
+        last_live_seen = (previous_stats or {}).get("last_live_seen")
+
+    if not last_live_seen or not data_through:
+        return last_live_seen
+
+    try:
+        seen = datetime.fromisoformat(last_live_seen.replace("Z", "+00:00"))
+        through = datetime.fromisoformat(data_through.replace("Z", "+00:00"))
+    except ValueError:
+        return last_live_seen
+
+    hours_since = (now - seen).total_seconds() / 3600
+    if hours_since >= STALE_LIVE_HOURS and through < seen:
+        message = (
+            f"stale_pipeline: last seen live {last_live_seen} "
+            f"({hours_since:.0f}h ago) but data_through is still {data_through} — "
+            "streams are happening and not reaching the dataset"
+        )
+        print(f"STALE PIPELINE: {message}")
+        degraded.append(message)
+
+    return last_live_seen
+
+
+def load_previous_stats():
+    """Last run's stats block, for the handful of fields that carry across runs."""
+    json_path = DATA_DIR / "stream-data.json"
+    if not json_path.exists():
+        return {}
+    try:
+        return json.loads(json_path.read_text(encoding="utf-8")).get("stats") or {}
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
 def compute_gap_cdf(gap_values):
     """Sparse CDF: [[hours, cumulative_pct], ...] used by the dashboard for live interpolation."""
     if not gap_values:
@@ -699,6 +760,23 @@ def compute_gap_cdf(gap_values):
         count = sum(1 for g in sv if g <= h)
         result.append([h, round(count / n * 100, 2)])
     return result
+
+
+def safe_stat(label, fn, default, degraded):
+    """Compute a derived stat, degrading rather than failing the run.
+
+    The stats block is presentation built on top of the dataset: a histogram or a
+    quantile table that throws should cost its own panel, not the refresh that
+    collected the streams. Sources already work this way (see the 2026-08-14
+    decision); this extends the same rule to the things computed from them.
+    """
+    try:
+        return fn()
+    except Exception as e:
+        print(f"stat {label} FAILED (skipping): {e}")
+        traceback.print_exc()
+        degraded.append(f"stat_{label}: {e}")
+        return default
 
 
 def compute_dow_hour(rows):
@@ -1296,6 +1374,11 @@ def main():
         default=None,
     )
 
+    # Read the previous payload before this run overwrites it.
+    last_live_seen = check_pipeline_freshness(
+        data_through, live_stream, load_previous_stats(), degraded
+    )
+
     payload = {
         "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
         # Newest stream actually in the data, as opposed to when the build ran.
@@ -1333,8 +1416,13 @@ def main():
             "archive_monthly_counts": dict(sorted(monthly.items())),
             "sully_monthly_counts": dict(sorted(sully_monthly.items())),
             "sully_yearly_counts": dict(sorted(sully_yearly.items())),
-            "dow_hour": compute_dow_hour(sully_rows),
-            "dow_profile": compute_dow_profile(sully_rows),
+            "dow_hour": safe_stat(
+                "dow_hour", lambda: compute_dow_hour(sully_rows), {}, degraded),
+            "dow_profile": safe_stat(
+                "dow_profile", lambda: compute_dow_profile(sully_rows), {}, degraded),
+            # One source of truth for the stream-day origin: the page reads this
+            # rather than keeping its own copy of the constant.
+            "day_origin_hour": DAY_ORIGIN_HOUR,
             "gap_cdf": compute_gap_cdf(sully_gap_values),
             "recent_gaps": last_n_gap_details(sully_rows, n=20),
             "recent_streams": last_n_stream_details(sully_rows, n=24),
@@ -1354,6 +1442,9 @@ def main():
                 "game_analysis": game_analysis,
             },
             "live_stream": live_stream,
+            # When he was last observed live, carried across runs so a stream that
+            # never reaches the dataset can be noticed. See check_pipeline_freshness.
+            "last_live_seen": last_live_seen,
         },
         "sully_streams": sully_rows,
         "exact_rows": exact_rows,

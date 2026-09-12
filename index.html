@@ -2403,20 +2403,31 @@ composite                               ≈ <strong>55</strong></div>
         // quiet for weeks sometimes, and that's a real gap, not missing data.
         if (degraded.length) {
           const names = degraded.map(d => String(d).split(':')[0]);
-          // TwitchMetrics is the primary source, so only its loss can actually hide
-          // streams. Losing SullyGnome costs game/viewer metadata, nothing more —
-          // don't claim streams are missing when they aren't.
-          const streamsAtRisk = names.some(n => n.startsWith('twitchmetrics'));
           const throughLabel = throughDate.toLocaleDateString('en-US', {
             timeZone: 'UTC', month: 'short', day: 'numeric'
           });
-          staleMeta.textContent =
-            `Upstream source unavailable: ${names.join(', ')}. `
-            + (streamsAtRisk
-              ? `Newest stream on record is ${throughLabel} (${behindDays} day${behindDays === 1 ? '' : 's'} ago); `
-                + 'newer streams may be missing, so forecasts are running on incomplete data.'
-              : 'Stream times and games are current; viewer and follower figures may be '
-                + 'missing from the most recent streams.');
+          // A stalled pipeline is its own failure and the worst of them: the build
+          // watched a stream happen and never recorded it, so this is not "a source
+          // is down", it is "what you are reading is incomplete and we know it".
+          const stalled = degraded.find(d => String(d).startsWith('stale_pipeline'));
+          // Otherwise: TwitchMetrics is the primary source, so only its loss can
+          // actually hide streams. Losing SullyGnome costs game/viewer metadata,
+          // nothing more — don't claim streams are missing when they aren't.
+          const streamsAtRisk = names.some(n => n.startsWith('twitchmetrics'));
+          if (stalled) {
+            staleMeta.textContent =
+              'Streams are happening but not reaching the dataset. '
+              + `Newest on record is ${throughLabel} (${behindDays} day${behindDays === 1 ? '' : 's'} ago), `
+              + 'and he has been seen live since. Everything below is running on incomplete data.';
+          } else {
+            staleMeta.textContent =
+              `Upstream source unavailable: ${names.join(', ')}. `
+              + (streamsAtRisk
+                ? `Newest stream on record is ${throughLabel} (${behindDays} day${behindDays === 1 ? '' : 's'} ago); `
+                  + 'newer streams may be missing, so forecasts are running on incomplete data.'
+                : 'Stream times and games are current; viewer and follower figures may be '
+                  + 'missing from the most recent streams.');
+          }
           staleBanner.classList.add('visible');
         }
       }
@@ -2951,11 +2962,13 @@ composite                               ≈ <strong>55</strong></div>
     // ── Session candles ──
     // A stream that starts at 9 PM and ends at 3 AM is one session, not two, so the
     // "stream day" runs 6 AM to 6 AM CT and every offset below is hours since that
-    // 6 AM. The builder buckets its per-weekday profile exactly the same way — keep
-    // DAY_ORIGIN_HOUR in step with the constant of the same name in build_dataset.py.
+    // 6 AM. The builder buckets `dow_profile` and the `_ct` histograms on the same
+    // boundary and ships the value it used, so this reads that rather than keeping a
+    // second copy of the constant to drift out of step. The literal is only the
+    // fallback for a payload built before the field existed.
     const CANDLE_TZ = 'America/Chicago';
     const CANDLE_DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    const DAY_ORIGIN_HOUR = 6;
+    const DAY_ORIGIN_HOUR = stats.day_origin_hour ?? 6;
 
     const ctFmt = new Intl.DateTimeFormat('en-CA', {
       timeZone: CANDLE_TZ, year: 'numeric', month: '2-digit', day: '2-digit',
@@ -3325,7 +3338,8 @@ composite                               ≈ <strong>55</strong></div>
             Math.round((strongest.forecast.active_rate || 0) * 100) + '% of ' + strongest.dow +
             's stream); the week models out to roughly <strong>' + Math.round(aheadHours) + 'h</strong> total.'
           : '';
-        sub.innerHTML = 'Each candle spans one session on a 6 AM–6 AM CT day — body height <em>is</em> the stream length. ' +
+        const dayLabel = fmtOffsetShort(0);
+        sub.innerHTML = `Each candle spans one session on a ${dayLabel}–${dayLabel} CT day — body height <em>is</em> the stream length. ` +
           observedBit + ' ' + aheadBit;
       }
 
