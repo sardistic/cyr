@@ -1,8 +1,16 @@
 # Agent Handoff
 
-Updated: 2026-08-18 (sixth pass: stop filing a live stream as a finished one)
+Updated: 2026-09-11 (seventh pass: session-candle chart under the 7-day schedule)
 
 ## Active objective
+
+Seventh pass, 2026-09-11 — feature request: a candlestick chart under the 7-day
+schedule strip showing modelled windows for the next 7 days and observed sessions
+for the last 7, with stream length readable off the candle. Built and verified in
+a headless browser; **not committed or deployed** — it sits in the working tree.
+Details under "Seventh pass" below.
+
+### Earlier objective (closed)
 
 Sixth pass, 2026-08-18 — reported as "time since last stream ended: 7h 57m, it
 hasn't been that long". The site was reading the elapsed metric off a stream
@@ -26,6 +34,36 @@ remaining source was live enough to notice a new stream, so `data_through` sat
 at 2026-08-10 for five days while every run committed a fresh `generated_at`.
 Closed by `b7b2cd0` — Twitch's own VOD list now sources new streams, and the
 site is current through 2026-08-14.
+
+## Seventh pass — session candles (uncommitted)
+
+- `scripts/build_dataset.py`:
+  - `DAY_ORIGIN_HOUR = 6` and `stream_day_offsets()` express every session as hours
+    since 6 AM CT on its "stream day" (see the 2026-09-11 entry in DECISIONS.md for
+    why 6 AM and not noon or midnight).
+  - `compute_dow_profile()` emits `stats.dow_profile`: per CT weekday, the p10/p25/
+    p50/p75 start offset, p50/p90 end offset, p25/p50/p75 duration, `active_rate`
+    (share of that weekday with any stream), `n` and `window_days`. Quantiles come
+    from the last 730 days; a weekday with under 8 recent samples falls back to the
+    full history rather than projecting off two or three streams.
+  - `last_n_stream_details()` now returns 24 streams, not 8, so the observed week is
+    always covered even after a dense run of short sessions.
+- `index.html` — new `.candle-strip` between the schedule strip and the hero:
+  - 14 columns, 7 observed then 7 modelled, y axis 6 AM → 6 AM CT. Observed
+    sessions draw as solid green candles (body height *is* the session length);
+    modelled days draw as hollow violet candles, body median start → median end,
+    dashed wick p10 start → p90 end, opacity scaled by `active_rate`.
+  - A live stream draws as a green candle ending at the current time with a dashed
+    open cap; a session running past its day's end gets a chevron and keeps its true
+    end time in the tooltip.
+  - Per-column hover tooltip, a generated summary line, and a "View as table"
+    fallback carrying the same numbers.
+  - The strip hides itself when `dow_profile` is absent, so an older cached payload
+    degrades rather than erroring.
+- Verified with Playwright at 1280px and 430px: no console errors, no page-level
+  horizontal overflow, tooltips and the table populate. The observed half was
+  exercised by shifting the cached streams into the last-7-day window, since the
+  local checkout's data stops at 2026-08-17.
 
 ## Completed work
 
@@ -142,6 +180,25 @@ Sixth pass — `22998df`, a live stream was being filed as a finished one:
 
 ## Current behavior
 
+As of the seventh pass the header carries two panels: the existing 7-day schedule
+strip, and below it a **Session Candles** chart covering the last 7 days and the
+next 7 on one 6 AM–6 AM CT time-of-day axis.
+
+- Observed days draw one solid green candle per session, start to end, so body
+  height is the session length; two sessions stack, a live stream ends at the
+  current time with a dashed cap, and a day with no stream shows a muted dash.
+- Modelled days draw a hollow violet candle: body median start to median end,
+  dashed wick p10 start to p90 end, opacity scaled by how often that weekday has
+  a stream. A length figure per column prints actual hours (past) or the modelled
+  median (ahead).
+- Hovering a column gives exact times, games, weekday rate and sample size;
+  "View as table" carries the same numbers for anyone not using a pointer.
+- The panel removes itself when `stats.dow_profile` is missing, so a payload
+  built by an older revision of the builder degrades instead of erroring.
+
+Everything below this line describes the data pipeline, unchanged by that pass
+except for the two new stats.
+
 Shipped in six commits — `4be0f7f`, `54a36ea`, `fc0ff0c`, `f833ded`,
 `b7b2cd0`, `22998df` — on `main`, deployed to https://cyr.mom via Pages.
 
@@ -194,6 +251,29 @@ Zomboid arc spanning 07-30 → 08-07 that was previously invisible:
 ```
 
 ## Validation
+
+Seventh pass (chart), all local — nothing was deployed:
+
+- `python -m py_compile scripts/build_dataset.py`; `compute_dow_profile()`
+  exercised against no rows, one row, and a row with no timestamp (returns `{}`,
+  one weekday, `{}` respectively).
+- Day-origin choice measured, not guessed: over the last two years a noon origin
+  leaves 9.1% of sessions running past the end of their day against 1.1% at 6 AM
+  (4 AM 4.0%, 8 AM 1.8%, 10 AM 3.3%).
+- Chart palette run through the dataviz validator against the page's `--paper`
+  surface. Green + violet pass CVD separation, the normal-vision floor, chroma
+  and contrast; they fail only the dark-mode lightness band, which every existing
+  token on this page fails. Green + blue + violet together failed the
+  normal-vision floor at ΔE 14.8, which is why the chart carries two hues and
+  distinguishes observed from modelled by fill, not by a third colour.
+- Page script extracted and `node --check`ed clean.
+- Rendered in headless Chromium at 1280px and 430px: no console errors, no
+  page-level horizontal scroll, tooltip and table populate. The observed half was
+  exercised by shifting the cached streams into the last-7-day window and faking a
+  live session, since the local checkout's data stops at 2026-08-17 and the real
+  observed week is currently empty.
+
+Earlier passes:
 
 Ran the full degraded path against a scratch copy of `data/` with a urllib shim
 for `requests` and the cached archive standing in for yt-dlp: exit code 2,
@@ -306,7 +386,23 @@ of the check, against the 7h57m that was reported.
 
 ## Uncommitted implementation details
 
-None of the implementation work is uncommitted. It shipped in six commits:
+**The whole seventh pass is uncommitted.** Four modified files in the working
+tree, no commit, no deploy:
+
+- `scripts/build_dataset.py` — `DAY_ORIGIN_HOUR`, `stream_day_offsets()`,
+  `compute_dow_profile()`, `recent_streams` widened from 8 to 24, and
+  `dow_profile` added to the stats payload.
+- `index.html` — `.candle-strip` styles, the panel markup after
+  `.schedule-days`, and the chart code (`candleModel()`, `drawCandles()`,
+  `buildCandles()`, `candleHover()`, `centerCandleScroll()`) above
+  `buildSchedule()`, which now calls `buildCandles()` on every refresh tick.
+- `data/stream-data.json` and `data/stream-data.js` — recomputed locally from
+  the cached `sully_streams` (no network) so the page works before the next
+  scheduled run regenerates them.
+
+`docs/agent/DECISIONS.md` gained the 6 AM stream-day entry.
+
+Everything from the first six passes is committed. It shipped in six commits:
 `4be0f7f` (stop the silent staleness), `54a36ea` (TwitchMetrics primary, TLS
 impersonation, no failing runs), `fc0ff0c` (games from Twitch GQL), `f833ded`
 (recover TwitchMetrics viewer figures), `b7b2cd0` (Twitch VOD list as a
@@ -372,6 +468,25 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
 ## Risks and unknowns
 
+- **The schedule cards and the candle chart disagree, and the cards are wrong.**
+  `buildSchedule()` treats Monday UTC as "Sunday night CT" and labels it the peak
+  day; the Schedule Patterns headings repeat the claim. But the dominant start
+  hour is 20–23 UTC, which is 3–6 PM CT the *same* day, so UTC start-days and CT
+  stream-days land on nearly the same weekday — all-time CT counts run Mon 433 /
+  Tue 419 / Wed 405 / Thu 395 / Fri 347 / Sun 253 / Sat 215 against UTC Mon 441 /
+  Tue 401 / Wed 435 / Thu 389 / Fri 353 / Sat 242 / Sun 206. So the cards call
+  Sunday a peak while the chart directly below calls it quiet, from one dataset.
+  Left alone deliberately: correcting it changes the forecast the page publishes.
+- **Two `DAY_ORIGIN_HOUR` constants must stay in step** — one in
+  `scripts/build_dataset.py`, one in `index.html`. Change one alone and the
+  modelled candles silently shift against the observed ones. There is no check.
+- The chart's weekday profile is bucketed on CT stream-days while `dow_hour`,
+  which the cards use, is bucketed on UTC start-days. Both are in the payload;
+  they are not interchangeable.
+- `active_rate` divides active days by the number of that weekday in the window,
+  so a long break reads as a low rate for every weekday in it. That is the honest
+  reading of "how often does he stream on a Tuesday" but it is not a conditional
+  probability, and it is not what the schedule cards' `score` computes.
 - TLS impersonation got the landing page but **not** `/api/`. SullyGnome is
   still down and may stay down. Untried: a residential proxy, a headless browser
   to mint `cf_clearance`, or `cloudscraper` against the API path specifically.
@@ -397,6 +512,25 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
   `data_through` has not moved in N days *and* a live stream was observed since.
 
 ## Next concrete action
+
+**Commit and deploy the candle chart if it is wanted** — it is working-tree only.
+`data/stream-data.json` and `data/stream-data.js` carry a locally recomputed
+`dow_profile` and the longer `recent_streams`; the next scheduled run regenerates
+both from the builder, so committing them is optional but keeps the page working
+before that run.
+
+**Then: the schedule cards' UTC→CT claim is wrong.** `buildSchedule()` treats
+Monday UTC as "Sunday night CT" and labels it the peak day, and the chart headings
+repeat it ("Mon UTC ≈ Sun night CT"). The dominant start hour is 20–23 UTC, which
+is 3–6 PM CT *the same day*, so UTC start-days and CT stream-days land on nearly
+the same weekday: all-time CT counts are Mon 433 / Tue 419 / Wed 405 / Thu 395 /
+Fri 347 / Sun 253 / Sat 215 against UTC Mon 441 / Tue 401 / Wed 435 / Thu 389 /
+Fri 353 / Sat 242 / Sun 206. The cards therefore call Sunday a peak and the candle
+chart below calls it a quiet day, from the same data. Fixing it means reworking the
+`dow === 'Mon'` peak branch and the copy around it — left alone deliberately,
+since it changes the forecast the page has been giving.
+
+**Previously closed:**
 
 **None required.** Site is current through 2026-08-17 with the true stream end
 time, runs are green, and new streams reach the dataset from Twitch itself
@@ -426,6 +560,13 @@ If neither is wanted, leave SullyGnome degraded. Nothing depends on it.
 
 ## Deployment and status impact
 
+**The seventh pass is not deployed and not committed.** The candle chart exists
+only in this working tree; https://cyr.mom is still serving the sixth-pass page.
+Nothing was pushed, so no `report_event.py --kind deploy` was filed. Shipping it
+is a commit and push to `main` — Pages does the rest.
+
+Prior state, unchanged:
+
 Deployed. GitHub Pages builds from `main` on push; no other deploy target.
 Live at https://cyr.mom (CNAME `cyr.mom`) serving `data_through` 2026-08-17.
 Deploy reported via `report_event.py --project cyr --kind deploy`.
@@ -445,3 +586,7 @@ actually moved.
   `attach_viewer_stats()`
 - `.github/workflows/refresh-data.yml`
 - `index.html` (source note ~L2245, stale banner ~L1200 and CSS ~L935)
+- `scripts/build_dataset.py` — `DAY_ORIGIN_HOUR`, `stream_day_offsets()`,
+  `compute_dow_profile()`
+- `index.html` — `.candle-strip` CSS ~L830, markup ~L1330, and `candleModel()` /
+  `drawCandles()` / `buildCandles()` just above `buildSchedule()`

@@ -6,8 +6,9 @@ import subprocess
 import sys
 import traceback
 from collections import Counter, defaultdict
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, time, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -32,6 +33,9 @@ UA = {
     "Accept-Language": "en-US,en;q=0.9",
 }
 CHANNEL_ID = "37522866"
+# The dashboard presents every clock time in this zone; session profiles are
+# bucketed the same way so the chart and the copy agree.
+SITE_TZ = ZoneInfo("America/Chicago")
 TWITCHMETRICS = f"https://www.twitchmetrics.net/c/{CHANNEL_ID}-cyr"
 YOUTUBE_ARCHIVE = "https://www.youtube.com/channel/UCtqSew92vbH79xuLLVssbIA/videos"
 SULLY_PAGE = "https://sullygnome.com/channel/cyr/5000/streams"
@@ -717,6 +721,94 @@ def compute_dow_hour(rows):
     }
 
 
+# A session that starts after midnight belongs to the evening it grew out of, so
+# the "stream day" runs 6 AM to 6 AM local time. Everything below — the chart's y
+# axis included — is expressed as hours since that 6 AM, so a normal night session
+# is one unbroken span instead of two pieces split across a date boundary. 6 AM
+# beats a noon origin on the only measure that matters here: it leaves 1.1% of the
+# last two years' sessions running past the end of their day, against 9.1% at noon,
+# because daytime streams would otherwise be shoved onto the previous day's tail.
+DAY_ORIGIN_HOUR = 6
+
+
+def stream_day_offsets(started_at, duration_seconds):
+    """(stream-day date, start offset, end offset) in hours from the day origin."""
+    try:
+        dt = datetime.fromisoformat(started_at.replace("Z", "+00:00"))
+    except (AttributeError, ValueError):
+        return None
+    local = dt.astimezone(SITE_TZ)
+    day = local.date()
+    if local.hour < DAY_ORIGIN_HOUR:
+        day -= timedelta(days=1)
+    origin = datetime.combine(day, time(DAY_ORIGIN_HOUR), tzinfo=SITE_TZ)
+    start_h = (local - origin).total_seconds() / 3600
+    return day, start_h, start_h + (duration_seconds or 0) / 3600
+
+
+def compute_dow_profile(rows, recent_days=730, min_samples=8):
+    """Per-weekday session shape: when a stream starts, when it ends, how often.
+
+    Feeds the forward half of the candlestick chart. Quantiles come from the last
+    `recent_days` of history so the forecast reflects current habits; a weekday
+    with too few recent samples falls back to the full history rather than
+    projecting off two or three streams.
+    """
+    dow_labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    parsed = []
+    for row in rows:
+        got = stream_day_offsets(row.get("started_at"), row.get("duration_seconds"))
+        if got and got[2] > got[1]:
+            parsed.append(got)
+    if not parsed:
+        return {}
+
+    newest = max(day for day, _, _ in parsed)
+    cutoff = newest - timedelta(days=recent_days)
+
+    def bucket(sample):
+        out = defaultdict(list)
+        for day, start_h, end_h in sample:
+            out[dow_labels[day.weekday()]].append((day, start_h, end_h))
+        return out
+
+    recent = bucket([p for p in parsed if p[0] >= cutoff])
+    everything = bucket(parsed)
+    span_days = (newest - min(day for day, _, _ in parsed)).days + 1
+
+    profile = {}
+    for label in dow_labels:
+        sessions = recent[label]
+        window_days = recent_days
+        if len(sessions) < min_samples:
+            sessions = everything[label]
+            window_days = span_days
+        if not sessions:
+            continue
+        starts = [s for _, s, _ in sessions]
+        ends = [e for _, _, e in sessions]
+        durations = [e - s for _, s, e in sessions]
+        # Streams per that-weekday-occurrence, not per stream: two sessions on one
+        # day should not read as two separate days of streaming.
+        active_days = len({day for day, _, _ in sessions})
+        weekday_count = max(1, round(window_days / 7))
+        profile[label] = {
+            "n": len(sessions),
+            "start_p10": round(percentile(starts, 0.10), 2),
+            "start_p25": round(percentile(starts, 0.25), 2),
+            "start_p50": round(percentile(starts, 0.50), 2),
+            "start_p75": round(percentile(starts, 0.75), 2),
+            "end_p50": round(percentile(ends, 0.50), 2),
+            "end_p90": round(percentile(ends, 0.90), 2),
+            "dur_p25": round(percentile(durations, 0.25), 2),
+            "dur_p50": round(percentile(durations, 0.50), 2),
+            "dur_p75": round(percentile(durations, 0.75), 2),
+            "active_rate": round(min(1.0, active_days / weekday_count), 3),
+            "window_days": window_days,
+        }
+    return profile
+
+
 def mean(values):
     return sum(values) / len(values) if values else 0
 
@@ -1224,9 +1316,10 @@ def main():
             "sully_monthly_counts": dict(sorted(sully_monthly.items())),
             "sully_yearly_counts": dict(sorted(sully_yearly.items())),
             "dow_hour": compute_dow_hour(sully_rows),
+            "dow_profile": compute_dow_profile(sully_rows),
             "gap_cdf": compute_gap_cdf(sully_gap_values),
             "recent_gaps": last_n_gap_details(sully_rows, n=20),
-            "recent_streams": last_n_stream_details(sully_rows, n=8),
+            "recent_streams": last_n_stream_details(sully_rows, n=24),
             "last_stream": (lambda r: {
                 "started_at": r.get("started_at"),
                 "ended_at_iso": (lambda e: e.isoformat() if e else None)(

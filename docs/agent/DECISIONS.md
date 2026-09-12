@@ -54,3 +54,23 @@ the least reliable source. The cost is that nothing alerts: a future
 TwitchMetrics outage — the one source whose loss can actually hide streams —
 will surface only on the page. If that becomes a real risk, alert on
 twitchmetrics* in degraded_sources specifically, not on any degraded source.
+
+### 2026-09-11 — The stream day runs 6 AM to 6 AM CT
+
+Context: The session-candle chart plots a stream's start and end on a time-of-day
+axis. A session that starts at 9 PM and ends at 3 AM is one stream, so a
+midnight-anchored day would cut it in two. A noon anchor keeps night sessions
+whole but shoves daytime streams onto the previous day's tail, where they run off
+the end of the axis: measured over the last two years, 9.1% of sessions ended past
+the end of their day at a noon origin against 1.1% at 6 AM.
+
+Decision: Both the builder (`DAY_ORIGIN_HOUR` in `scripts/build_dataset.py`) and
+the chart (`DAY_ORIGIN_HOUR` in `index.html`) treat 6 AM CT as the start of a
+stream day. `dow_profile` quantiles are bucketed on that basis, so the two
+constants must move together.
+
+Consequences: Night sessions draw as one candle and daytime streams sit where they
+belong. The residual ~1% — multi-day marathons — are clipped at the axis and
+marked with a chevron; the tooltip still reports their true end time. It also
+means `dow_profile`'s weekday keys are CT stream-days, which is not the same
+bucketing as `dow_hour`'s UTC start-days used by the schedule cards.

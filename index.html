@@ -818,6 +818,100 @@
       .sday:nth-child(n+4) { display: none; }
     }
 
+    /* ── Session candles ── */
+    .candle-strip {
+      margin-top: 12px;
+      /* Grid items default to min-width:auto, which would let the chart's min-width
+         widen the whole header column instead of scrolling inside the strip. */
+      min-width: 0;
+      padding: 18px 24px 20px;
+      border: 1px solid var(--line);
+      background: rgba(17,24,28,.84);
+      box-shadow: var(--shadow);
+      animation: riseIn .5s ease-out .12s both;
+    }
+    .candle-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px 24px;
+      margin-bottom: 14px;
+    }
+    .candle-sub {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.6;
+    }
+    .candle-sub strong { color: var(--ink); font-weight: 700; }
+    .candle-legend {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .candle-legend span { display: flex; align-items: center; gap: 7px; }
+    .candle-key {
+      width: 11px; height: 18px; flex-shrink: 0;
+      border-radius: 2px;
+    }
+    .candle-key.observed { background: var(--green); }
+    .candle-key.forecast {
+      border: 2px dashed var(--violet);
+      background: rgba(173,145,255,.14);
+    }
+    .candle-scroll { overflow-x: auto; overflow-y: hidden; min-width: 0; }
+    #candleChart {
+      display: block;
+      width: 100%;
+      min-width: 660px;
+      height: 300px;
+    }
+    .candle-wrap { position: relative; }
+    .candle-tip {
+      position: absolute;
+      z-index: 5;
+      pointer-events: none;
+      min-width: 150px;
+      max-width: 240px;
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      background: rgba(9,13,16,.96);
+      box-shadow: 0 10px 28px rgba(0,0,0,.55);
+      font-size: 11.5px;
+      line-height: 1.5;
+      color: var(--muted);
+      transform: translate(-50%, -100%);
+    }
+    .candle-tip[hidden] { display: none; }
+    .candle-tip b { color: var(--ink); font-weight: 800; display: block; font-size: 12px; margin-bottom: 3px; }
+    .candle-tip .tip-tag {
+      font-size: 9.5px; font-weight: 800; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--violet);
+    }
+    .candle-tip .tip-tag.observed { color: var(--green); }
+    .candle-table { margin-top: 12px; }
+    .candle-table summary {
+      cursor: pointer; font-size: 11px; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase; color: var(--muted);
+    }
+    .candle-table summary:hover { color: var(--ink); }
+    .candle-table table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12px; }
+    .candle-table th, .candle-table td {
+      text-align: left; padding: 5px 10px 5px 0;
+      border-bottom: 1px solid rgba(42,56,61,.55); color: var(--muted);
+    }
+    .candle-table th { color: var(--ink); font-weight: 700; }
+    @media (max-width: 560px) {
+      .candle-strip { padding: 16px 14px 18px; }
+    }
+
     /* ── Rationale expander ── */
     .rationale {
       margin-top: 12px;
@@ -1230,6 +1324,35 @@
           <strong>Tonight:</strong> Slim — under 2 hours remain in the window. <strong>Tuesday</strong> is the primary target: the gap is in the 65th–80th percentile zone and arc-resumption conditions are elevated after two consecutive JC breaks — most gaps resolve here. <strong>Wednesday</strong> likely follows if Death Stranding picks back up. <strong>Thursday and Friday</strong> are genuine lows — the quietest UTC days in 9 years of data (Wed–Thu night ET), and by then any gap would be a long-tail outlier. <strong>Saturday</strong> ticks back up slightly. <strong>Sunday June 1</strong> is the strongest long-range signal — Monday UTC has the highest stream count of any day in the dataset (430 streams), equivalent to Sunday night ET.
         </p>
         <div class="schedule-days" id="schedule-days"></div>
+      </div>
+
+      <!-- Session candles: observed last 7 days vs modelled next 7 -->
+      <div class="candle-strip" id="candle-strip">
+        <div class="candle-head">
+          <div>
+            <div class="schedule-kicker" id="candle-kicker">Session Candles · last 7 days vs next 7</div>
+            <p class="candle-sub" id="candle-sub"></p>
+          </div>
+          <div class="candle-legend">
+            <span><i class="candle-key observed"></i>Observed session</span>
+            <span><i class="candle-key forecast"></i>Modelled window</span>
+          </div>
+        </div>
+        <div class="candle-wrap">
+          <div class="candle-scroll">
+            <canvas id="candleChart" aria-label="Candlestick chart of stream start and end times: solid candles for the last seven days of observed sessions, hollow candles for modelled windows over the next seven days. Body height is stream length."></canvas>
+          </div>
+          <div class="candle-tip" id="candle-tip" hidden></div>
+        </div>
+        <details class="candle-table">
+          <summary>View as table</summary>
+          <table>
+            <thead>
+              <tr><th>Day</th><th>Kind</th><th>Start</th><th>End</th><th>Length</th></tr>
+            </thead>
+            <tbody id="candle-table-body"></tbody>
+          </table>
+        </details>
       </div>
 
       <div class="hero">
@@ -2676,6 +2799,7 @@ composite                               ≈ <strong>55</strong></div>
 
       // Update schedule strip
       buildSchedule(elapsedH);
+      buildCandles();
 
       // ── Answer panel + Probability Windows table ──
       const etOpts = { timeZone: 'America/Chicago' };
@@ -2823,6 +2947,452 @@ composite                               ≈ <strong>55</strong></div>
         }
       });
     }
+
+    // ── Session candles ──
+    // A stream that starts at 9 PM and ends at 3 AM is one session, not two, so the
+    // "stream day" runs 6 AM to 6 AM CT and every offset below is hours since that
+    // 6 AM. The builder buckets its per-weekday profile exactly the same way — keep
+    // DAY_ORIGIN_HOUR in step with the constant of the same name in build_dataset.py.
+    const CANDLE_TZ = 'America/Chicago';
+    const CANDLE_DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const DAY_ORIGIN_HOUR = 6;
+
+    const ctFmt = new Intl.DateTimeFormat('en-CA', {
+      timeZone: CANDLE_TZ, year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', hour12: false
+    });
+
+    function ctParts(date) {
+      const out = {};
+      for (const part of ctFmt.formatToParts(date)) {
+        if (part.type !== 'literal') out[part.type] = part.value;
+      }
+      const hour = out.hour === '24' ? 0 : Number(out.hour);
+      return { key: out.year + '-' + out.month + '-' + out.day, hour, minute: Number(out.minute) };
+    }
+
+    function shiftKey(key, days) {
+      const d = new Date(key + 'T00:00:00Z');
+      d.setUTCDate(d.getUTCDate() + days);
+      return d.toISOString().slice(0, 10);
+    }
+
+    function streamDayKey(date) {
+      const p = ctParts(date);
+      return p.hour < DAY_ORIGIN_HOUR ? shiftKey(p.key, -1) : p.key;
+    }
+
+    // The day origin on `key` as an absolute instant. Two corrections converge
+    // through any DST shift, which matters because the axis origin would otherwise
+    // slide an hour twice a year.
+    function ctOrigin(key) {
+      let d = new Date(key + 'T' + String(DAY_ORIGIN_HOUR).padStart(2, '0') + ':00:00Z');
+      for (let i = 0; i < 2; i++) {
+        const p = ctParts(d);
+        const driftMin = (p.hour * 60 + p.minute) - DAY_ORIGIN_HOUR * 60;
+        if (!driftMin) break;
+        d = new Date(d.getTime() - driftMin * 60000);
+      }
+      return d;
+    }
+
+    function offsetFromOrigin(date, key) {
+      return (date - ctOrigin(key)) / 3600000;
+    }
+
+    // 0 = 6 AM CT, 18 = midnight, 24 = 6 AM the next morning.
+    function fmtOffset(h) {
+      const total = Math.round(((h % 24) + 24) % 24 * 60) + DAY_ORIGIN_HOUR * 60;
+      let hr = Math.floor(total / 60) % 24;
+      const min = total % 60;
+      const ampm = hr < 12 ? 'AM' : 'PM';
+      hr = hr % 12 === 0 ? 12 : hr % 12;
+      return hr + ':' + String(min).padStart(2, '0') + ' ' + ampm;
+    }
+
+    // Axis ticks land on the hour, so drop the minutes and keep the gutter narrow.
+    function fmtOffsetShort(h) {
+      return fmtOffset(h).replace(':00', '');
+    }
+
+    function fmtHours(h) {
+      return fmtDuration(Math.round(h * 60));
+    }
+
+    function keyLabel(key) {
+      const d = new Date(key + 'T12:00:00Z');
+      return CANDLE_DOW[d.getUTCDay()] + ' ' + (d.getUTCMonth() + 1) + '/' + d.getUTCDate();
+    }
+
+    function candleModel() {
+      const profile = stats.dow_profile || {};
+      if (!Object.keys(profile).length) return null;
+
+      const now = new Date();
+      const todayKey = streamDayKey(now);
+      const nowOffset = offsetFromOrigin(now, todayKey);
+
+      // Observed sessions bucketed onto their stream day.
+      const observed = {};
+      for (const st of stats.recent_streams || []) {
+        if (!st.started_at) continue;
+        const start = new Date(st.started_at);
+        const end = st.ended_at_iso
+          ? new Date(st.ended_at_iso)
+          : new Date(start.getTime() + (st.duration_h || 0) * 3600000);
+        const key = streamDayKey(start);
+        (observed[key] = observed[key] || []).push({
+          startH: offsetFromOrigin(start, key),
+          endH: offsetFromOrigin(end, key),
+          games: st.games || [],
+          live: false
+        });
+      }
+
+      const live = stats.live_stream;
+      if (live && live.started_at) {
+        const start = new Date(live.started_at);
+        const key = streamDayKey(start);
+        (observed[key] = observed[key] || []).push({
+          startH: offsetFromOrigin(start, key),
+          endH: offsetFromOrigin(now, key),
+          games: live.game ? [live.game] : [],
+          live: true
+        });
+      }
+
+      const columns = [];
+      for (let i = -7; i <= 6; i++) {
+        const key = shiftKey(todayKey, i);
+        const dow = CANDLE_DOW[new Date(key + 'T12:00:00Z').getUTCDay()];
+        const sessions = (observed[key] || []).sort((a, b) => a.startH - b.startH);
+        const prof = profile[dow] || null;
+        columns.push({
+          key, dow, label: keyLabel(key),
+          isPast: i < 0,
+          isToday: i === 0,
+          sessions,
+          // Past columns are history; today onward is where the model speaks. Today
+          // carries both when he is already live.
+          forecast: i >= 0 ? prof : null,
+          profile: prof
+        });
+      }
+      return { columns, nowOffset, todayKey, now };
+    }
+
+    function drawCandles(model) {
+      const canvas = document.getElementById('candleChart');
+      if (!canvas) return null;
+      const { ctx, width, height } = setupCanvas(canvas);
+      const { columns, nowOffset } = model;
+
+      const padL = 54, padR = 12, padT = 18, padB = 46;
+      const plotW = width - padL - padR;
+      const plotH = height - padT - padB;
+      const colW = plotW / columns.length;
+      const bodyW = Math.min(20, colW * 0.5);
+      const y = h => padT + plotH * (Math.min(Math.max(h, 0), 24) / 24);
+
+      ctx.clearRect(0, 0, width, height);
+
+      // Hour grid — morning at the top, running down through the night to the next
+      // morning at the base. Midnight gets its own heavier rule.
+      const midnightH = 24 - DAY_ORIGIN_HOUR;
+      ctx.font = '11px system-ui';
+      ctx.textAlign = 'right';
+      // Ticks step off midnight, so the heaviest rule lands on the grid, not between it.
+      for (const h of [midnightH - 16, midnightH - 12, midnightH - 8, midnightH - 4, midnightH, midnightH + 4]) {
+        const isMidnight = h === midnightH;
+        const yy = y(h);
+        ctx.strokeStyle = isMidnight ? 'rgba(153,170,173,.3)' : 'rgba(153,170,173,.11)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(padL, yy);
+        ctx.lineTo(width - padR, yy);
+        ctx.stroke();
+        ctx.fillStyle = isMidnight ? 'rgba(237,247,241,.75)' : colors.muted;
+        ctx.font = isMidnight ? '700 11px system-ui' : '11px system-ui';
+        ctx.fillText(fmtOffsetShort(h), padL - 8, yy + 4);
+      }
+
+      // Divider between what happened and what is modelled.
+      const splitX = padL + colW * 7;
+      ctx.save();
+      ctx.setLineDash([4, 4]);
+      ctx.strokeStyle = 'rgba(173,145,255,.45)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(splitX, padT - 6);
+      ctx.lineTo(splitX, height - padB + 6);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.font = '700 10px system-ui';
+      ctx.textAlign = 'right';
+      ctx.fillStyle = colors.green;
+      ctx.fillText('OBSERVED', splitX - 8, padT - 6);
+      ctx.textAlign = 'left';
+      ctx.fillStyle = colors.violet;
+      ctx.fillText('FORECAST', splitX + 8, padT - 6);
+
+      columns.forEach((col, i) => {
+        const cx = padL + colW * (i + 0.5);
+
+        if (col.isToday) {
+          ctx.fillStyle = 'rgba(98,211,148,.05)';
+          ctx.fillRect(cx - colW / 2, padT, colW, plotH);
+        }
+
+        // Modelled window: dashed wick p10 start → p90 end, body median start → median
+        // end. Body height is the typical session length; the wick is the envelope.
+        if (col.forecast) {
+          const f = col.forecast;
+          ctx.save();
+          ctx.globalAlpha = 0.42 + 0.58 * (f.active_rate == null ? 0.5 : f.active_rate);
+          ctx.strokeStyle = colors.violet;
+          ctx.setLineDash([3, 3]);
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(cx, y(f.start_p10));
+          ctx.lineTo(cx, y(f.end_p90));
+          ctx.stroke();
+          ctx.setLineDash([]);
+
+          const top = y(f.start_p50);
+          const bot = Math.max(y(f.end_p50), top + 3);
+          ctx.fillStyle = 'rgba(173,145,255,.16)';
+          ctx.strokeStyle = colors.violet;
+          ctx.lineWidth = 2;
+          roundRect(ctx, cx - bodyW / 2, top, bodyW, bot - top, 4);
+          ctx.fill();
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // Observed sessions: solid bodies, one per session, 2px apart.
+        col.sessions.forEach(sess => {
+          const top = y(sess.startH);
+          const bot = Math.max(y(sess.endH), top + 5);
+          ctx.save();
+          ctx.fillStyle = sess.live ? colors.green : 'rgba(98,211,148,.9)';
+          roundRect(ctx, cx - bodyW / 2, top, bodyW, bot - top - 2, 4);
+          ctx.fill();
+          if (sess.live) {
+            ctx.strokeStyle = colors.green;
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([2, 2]);
+            ctx.beginPath();
+            ctx.moveTo(cx - bodyW / 2, bot - 2);
+            ctx.lineTo(cx + bodyW / 2, bot - 2);
+            ctx.stroke();
+          } else if (sess.endH > 24) {
+            // Ran past the end of its day — the candle is cut off, so mark it.
+            ctx.fillStyle = colors.green;
+            ctx.beginPath();
+            ctx.moveTo(cx - 4, bot + 2);
+            ctx.lineTo(cx + 4, bot + 2);
+            ctx.lineTo(cx, bot + 7);
+            ctx.closePath();
+            ctx.fill();
+          }
+          ctx.restore();
+        });
+
+        if (col.isPast && !col.sessions.length) {
+          ctx.strokeStyle = 'rgba(153,170,173,.3)';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(cx - 6, y(12));
+          ctx.lineTo(cx + 6, y(12));
+          ctx.stroke();
+        }
+
+        // Day label, then the length readout as its own axis row.
+        ctx.textAlign = 'center';
+        ctx.font = col.isToday ? '800 10.5px system-ui' : '700 10.5px system-ui';
+        ctx.fillStyle = col.isToday ? colors.green : colors.muted;
+        ctx.fillText(col.dow, cx, height - padB + 16);
+        ctx.font = '600 10px system-ui';
+        ctx.fillStyle = 'rgba(153,170,173,.65)';
+        ctx.fillText(col.label.split(' ')[1], cx, height - padB + 28);
+
+        const len = columnLength(col);
+        if (len != null) {
+          ctx.font = '800 10px system-ui';
+          ctx.fillStyle = col.isPast ? 'rgba(98,211,148,.85)' : 'rgba(173,145,255,.85)';
+          ctx.fillText(len.toFixed(1) + 'h', cx, height - padB + 40);
+        }
+      });
+
+      // Where the clock stands right now, on today's column.
+      const todayIdx = columns.findIndex(c => c.isToday);
+      if (todayIdx >= 0 && nowOffset >= 0 && nowOffset <= 24) {
+        const cx = padL + colW * (todayIdx + 0.5);
+        ctx.strokeStyle = 'rgba(237,247,241,.5)';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([2, 3]);
+        ctx.beginPath();
+        ctx.moveTo(padL, y(nowOffset));
+        ctx.lineTo(width - padR, y(nowOffset));
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = colors.ink;
+        ctx.beginPath();
+        ctx.arc(cx, y(nowOffset), 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      return { padL, colW, count: columns.length };
+    }
+
+    function roundRect(ctx, x, yy, w, h, r) {
+      const rad = Math.min(r, w / 2, Math.abs(h) / 2);
+      ctx.beginPath();
+      if (ctx.roundRect) { ctx.roundRect(x, yy, w, h, rad); return; }
+      ctx.moveTo(x + rad, yy);
+      ctx.arcTo(x + w, yy, x + w, yy + h, rad);
+      ctx.arcTo(x + w, yy + h, x, yy + h, rad);
+      ctx.arcTo(x, yy + h, x, yy, rad);
+      ctx.arcTo(x, yy, x + w, yy, rad);
+      ctx.closePath();
+    }
+
+    // Hours of stream in a column: actual total for past days, modelled median ahead.
+    function columnLength(col) {
+      if (col.sessions.length) {
+        return col.sessions.reduce((sum, s) => sum + (s.endH - s.startH), 0);
+      }
+      if (col.isPast) return null;
+      return col.forecast ? col.forecast.dur_p50 : null;
+    }
+
+    function candleTipHtml(col) {
+      const parts = ['<b>' + col.label + '</b>'];
+      if (col.sessions.length) {
+        parts.push('<span class="tip-tag observed">' + (col.isToday ? 'Today' : 'Observed') + '</span>');
+        col.sessions.forEach(s => {
+          const dur = fmtHours(s.endH - s.startH);
+          parts.push(fmtOffset(s.startH) + ' → ' + (s.live ? 'now' : fmtOffset(s.endH)) +
+            ' · <strong>' + dur + '</strong>' + (s.live ? ' · live' : ''));
+          if (s.games.length) parts.push('<span style="opacity:.7">' + s.games.join(', ') + '</span>');
+        });
+      } else if (col.isPast) {
+        parts.push('<span class="tip-tag observed">Observed</span>No stream.');
+      }
+      if (col.forecast) {
+        const f = col.forecast;
+        const rate = Math.round((f.active_rate || 0) * 100);
+        parts.push('<span class="tip-tag">Modelled</span>');
+        parts.push('Typical ' + fmtOffset(f.start_p50) + ' → ' + fmtOffset(f.end_p50) +
+          ' · <strong>' + fmtHours(f.dur_p50) + '</strong>');
+        parts.push('Window ' + fmtOffset(f.start_p10) + ' – ' + fmtOffset(f.end_p90));
+        parts.push('<span style="opacity:.7">Streams ' + rate + '% of ' + col.dow + 's · n=' + f.n + '</span>');
+      }
+      return parts.join('<br>');
+    }
+
+    let candleGeom = null;
+    let candleColumns = [];
+
+    function buildCandles() {
+      const strip = document.getElementById('candle-strip');
+      if (!strip) return;
+      const model = candleModel();
+      if (!model) { strip.style.display = 'none'; return; }
+      strip.style.display = '';
+      candleColumns = model.columns;
+      candleGeom = drawCandles(model);
+      centerCandleScroll();
+
+      const past = model.columns.filter(c => c.isPast);
+      const ahead = model.columns.filter(c => !c.isPast);
+      const activeDays = past.filter(c => c.sessions.length);
+      const pastHours = activeDays.reduce((sum, c) => sum + columnLength(c), 0);
+      const aheadHours = ahead.reduce((sum, c) =>
+        sum + (c.forecast ? c.forecast.dur_p50 * (c.forecast.active_rate || 0) : 0), 0);
+
+      const sub = document.getElementById('candle-sub');
+      if (sub) {
+        const observedBit = activeDays.length
+          ? '<strong>' + activeDays.length + ' of the last 7 days</strong> had a stream — ' +
+            fmtHours(pastHours) + ' on air, longest ' + fmtHours(Math.max.apply(null, activeDays.map(columnLength))) + '.'
+          : '<strong>No streams in the last 7 days.</strong>';
+        const strongest = ahead.filter(c => c.forecast)
+          .sort((a, b) => (b.forecast.active_rate || 0) - (a.forecast.active_rate || 0))[0];
+        const aheadBit = strongest
+          ? 'Ahead, <strong>' + strongest.label + '</strong> is the likeliest night (' +
+            Math.round((strongest.forecast.active_rate || 0) * 100) + '% of ' + strongest.dow +
+            's stream); the week models out to roughly <strong>' + Math.round(aheadHours) + 'h</strong> total.'
+          : '';
+        sub.innerHTML = 'Each candle spans one session on a 6 AM–6 AM CT day — body height <em>is</em> the stream length. ' +
+          observedBit + ' ' + aheadBit;
+      }
+
+      const tbody = document.getElementById('candle-table-body');
+      if (tbody) {
+        const rows = [];
+        model.columns.forEach(col => {
+          if (col.sessions.length) {
+            col.sessions.forEach(s => {
+              rows.push('<tr><td>' + col.label + '</td><td>' + (s.live ? 'Live' : 'Observed') + '</td><td>' +
+                fmtOffset(s.startH) + '</td><td>' + (s.live ? 'now' : fmtOffset(s.endH)) + '</td><td>' +
+                fmtHours(s.endH - s.startH) + '</td></tr>');
+            });
+          } else if (col.isPast) {
+            rows.push('<tr><td>' + col.label + '</td><td>Observed</td><td colspan="3">No stream</td></tr>');
+          }
+          if (col.forecast) {
+            const f = col.forecast;
+            rows.push('<tr><td>' + col.label + '</td><td>Modelled (' +
+              Math.round((f.active_rate || 0) * 100) + '%)</td><td>' + fmtOffset(f.start_p50) + '</td><td>' +
+              fmtOffset(f.end_p50) + '</td><td>' + fmtHours(f.dur_p50) + '</td></tr>');
+          }
+        });
+        tbody.innerHTML = rows.join('');
+      }
+    }
+
+    // Narrow screens scroll the chart. Open it on the boundary — the forecast half is
+    // the point — but only until the reader scrolls it themselves.
+    let candleScrolled = false;
+    function centerCandleScroll() {
+      const scroller = document.querySelector('.candle-scroll');
+      if (!scroller || candleScrolled || !candleGeom) return;
+      const overflow = scroller.scrollWidth - scroller.clientWidth;
+      if (overflow <= 0) return;
+      const todayIdx = candleColumns.findIndex(c => c.isToday);
+      const target = candleGeom.padL + candleGeom.colW * todayIdx - scroller.clientWidth * 0.35;
+      scroller.scrollLeft = Math.min(Math.max(target, 0), overflow);
+    }
+
+    function candleHover(event) {
+      const canvas = document.getElementById('candleChart');
+      const tip = document.getElementById('candle-tip');
+      if (!canvas || !tip || !candleGeom) return;
+      const rect = canvas.getBoundingClientRect();
+      const idx = Math.floor((event.clientX - rect.left - candleGeom.padL) / candleGeom.colW);
+      if (idx < 0 || idx >= candleGeom.count || !candleColumns[idx]) { tip.hidden = true; return; }
+      const wrap = tip.parentElement.getBoundingClientRect();
+      tip.innerHTML = candleTipHtml(candleColumns[idx]);
+      tip.hidden = false;
+      const cx = rect.left - wrap.left + candleGeom.padL + candleGeom.colW * (idx + 0.5);
+      tip.style.left = Math.min(Math.max(cx, 90), wrap.width - 90) + 'px';
+      tip.style.top = (event.clientY - wrap.top - 14) + 'px';
+    }
+
+    (function bindCandleHover() {
+      const canvas = document.getElementById('candleChart');
+      const tip = document.getElementById('candle-tip');
+      if (!canvas || !tip) return;
+      canvas.addEventListener('pointermove', candleHover);
+      canvas.addEventListener('pointerdown', candleHover);
+      canvas.addEventListener('pointerleave', () => { tip.hidden = true; });
+      const scroller = document.querySelector('.candle-scroll');
+      if (scroller) scroller.addEventListener('scroll', () => { candleScrolled = true; }, { once: true });
+    })();
+
+    window.addEventListener('resize', () => { if (candleColumns.length) buildCandles(); });
 
     function buildSchedule(elapsedH) {
       const container = document.getElementById('schedule-days');
