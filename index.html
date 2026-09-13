@@ -1582,6 +1582,7 @@ composite                               ≈ <strong>55</strong></div>
               <tr><th>Median gap (end→start)</th><td id="snap-median">17.8 hours</td></tr>
               <tr><th>95th percentile</th><td id="snap-p95">73.6 hours</td></tr>
               <tr><th>Largest gap</th><td id="snap-maxgap">—</td></tr>
+              <tr id="snap-followers-row" hidden><th>Followers (Twitch)</th><td id="snap-followers">—</td></tr>
             </tbody>
           </table>
         </div>
@@ -2301,7 +2302,6 @@ composite                               ≈ <strong>55</strong></div>
       const sg = stats.sully_gap_hours || {};
 
       function fmtD(iso) { const d = new Date(iso); return MN[d.getUTCMonth()] + ' ' + d.getUTCDate(); }
-      function fmtT(iso) { return new Date(iso).toISOString().slice(11,16); }
       function primaryGame(games) { return (games || []).find(g => g !== 'Just Chatting') || null; }
       function gameClass(games) {
         const g = primaryGame(games);
@@ -2442,11 +2442,26 @@ composite                               ≈ <strong>55</strong></div>
             ? 'background:rgba(173,145,255,.15);color:var(--violet)'
             : 'background:rgba(98,185,223,.15);color:var(--blue)';
           const tagLabel = cls === 'arc' ? 'Arc' : 'Chat';
-          const fol = s.followers_gained >= 0 ? `+${s.followers_gained}` : `${s.followers_gained}`;
+          // No figure at all is a gap, not zero — `null >= 0` is true in JS and
+          // used to print "+null followers". A figure differenced from follower
+          // snapshots is approximate and says so.
+          let fol = '';
+          if (typeof s.followers_gained === 'number') {
+            const sign = s.followers_gained >= 0 ? '+' : '';
+            const approx = s.followers_gained_source === 'snapshot' ? '≈' : '';
+            fol = ` · ${approx}${sign}${s.followers_gained.toLocaleString()} followers`;
+          }
+          // Same rule for viewers: a missing figure is a gap, not "0 avg / 0 peak".
+          const viewers = (typeof s.avg_viewers === 'number' && typeof s.peak_viewers === 'number')
+            ? ` · ${s.avg_viewers.toLocaleString()} avg / ${s.peak_viewers.toLocaleString()} peak`
+            : '';
           const dh = Math.round(s.duration_h);
+          const startCT = new Date(s.started_at).toLocaleTimeString('en-US', {
+            timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit'
+          });
           return `<div class="timeline-row">
             <div class="date">${fmtD(s.started_at)}</div>
-            <div class="title">${fmtT(s.started_at)} UTC · ${pg} · ${dh}h · ${(s.avg_viewers||0).toLocaleString()} avg / ${(s.peak_viewers||0).toLocaleString()} peak · ${fol} followers</div>
+            <div class="title">${startCT} CT · ${pg} · ${dh}h${viewers}${fol}</div>
             <div class="tag" style="${tagStyle}">${tagLabel}</div>
           </div>`;
         }).join('');
@@ -2456,6 +2471,20 @@ composite                               ≈ <strong>55</strong></div>
       const total = sources.sullygnome_stream_table || 2436;
       el('snap-streams', total.toLocaleString());
       el('snap-gaps', (total - 1).toLocaleString());
+
+      const followers = stats.followers;
+      const folRow = document.getElementById('snap-followers-row');
+      if (folRow && followers && typeof followers.total === 'number') {
+        const bits = [followers.total.toLocaleString()];
+        if (typeof followers.gained_7d === 'number') {
+          const sign = followers.gained_7d >= 0 ? '+' : '';
+          bits.push(`${sign}${followers.gained_7d.toLocaleString()} in 7d`);
+        }
+        el('snap-followers', bits.join(' · '));
+        folRow.hidden = false;
+      } else if (folRow) {
+        folRow.hidden = true;
+      }
       const years = Object.keys(stats.sully_yearly_counts || {}).sort();
       if (years.length) {
         el('snap-coverage', `${years[0]}–${years[years.length-1].slice(2)}`);

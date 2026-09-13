@@ -120,3 +120,30 @@ at a time instead of the refresh failing whole, and the page already hides
 anything whose stat is missing. The cost is that a genuinely broken computation is
 now quiet unless someone reads `degraded_sources`.
 
+### 2026-09-13 — Follower deltas come from differencing per-run totals
+
+Context: SullyGnome was the only source of per-stream follower gains and has been
+behind a Cloudflare challenge since 2026-07-31. The two routes considered — a
+Twitch Helix client secret in repository secrets, or defeating the challenge with
+a headless browser — both needed an owner decision and neither was clean. A third
+was overlooked: the unauthenticated Twitch GQL call the builder already makes for
+live status and VODs also returns the channel's follower total.
+
+Decision: Each run snapshots the total into `follower_snapshots` at the top level
+of `stream-data.json` (kept out of `stats` so it never reaches the dashboard
+payload every tab re-fetches), pruned to 90 days. `attach_follower_deltas()` fills
+`followers_gained` on rows no source described by differencing the last snapshot
+at or before the stream's start from the first at or after its end, requiring each
+side of the bracket to be within 8 hours, and marks the row
+`followers_gained_source: "snapshot"` with the idle slack recorded. SullyGnome's
+own figure is never overwritten. The site renders snapshot-derived figures with a
+≈ and omits a missing figure entirely rather than printing zero.
+
+Consequences: Recent streams get a follower figure without any secret, any
+credential, or any bot-challenge circumvention. The figure is approximate: runs
+land 2–5 hours apart, so a bracket can carry a few hours of idle drift on either
+side, and the ≈ is load-bearing. It cannot recover history — a stream only gets a
+delta once snapshots exist on both sides of it, so nothing before 2026-09-13 will
+ever be filled this way. If the schedule cadence ever tightens the figures tighten
+with it, automatically.
+

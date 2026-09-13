@@ -677,7 +677,8 @@ def last_n_stream_details(rows, n=8):
             "duration_label": r.get("duration_label", ""),
             "avg_viewers": r.get("avg_viewers", 0),
             "peak_viewers": r.get("peak_viewers", 0),
-            "followers_gained": r.get("followers_gained", 0),
+            "followers_gained": r.get("followers_gained"),
+            "followers_gained_source": r.get("followers_gained_source"),
         })
     return result
 
@@ -754,15 +755,130 @@ def check_pipeline_freshness(data_through, newest_end, live_stream, previous_sta
     return last_live_seen
 
 
-def load_previous_stats():
-    """Last run's stats block, for the handful of fields that carry across runs."""
+def load_previous_payload():
+    """Last run's full payload, for the handful of fields that carry across runs."""
     json_path = DATA_DIR / "stream-data.json"
     if not json_path.exists():
         return {}
     try:
-        return json.loads(json_path.read_text(encoding="utf-8")).get("stats") or {}
+        return json.loads(json_path.read_text(encoding="utf-8")) or {}
     except (json.JSONDecodeError, OSError):
         return {}
+
+
+# ── Followers ──────────────────────────────────────────────────────────────────
+# SullyGnome was the only source of per-stream follower deltas, and it has been
+# behind a Cloudflare challenge since 2026-07-31. Twitch's own GQL endpoint — the
+# same unauthenticated call already used for live status and VODs — exposes the
+# channel's follower *total*. A total is not a delta, but a total sampled every
+# run is: difference the snapshot before a stream started from the one after it
+# ended and you have that stream's gain, to within whatever drifted in while the
+# channel was idle between snapshots. Rows filled this way are marked so the site
+# can present them as approximate.
+
+FOLLOWER_SNAPSHOT_DAYS = 90
+# Runs land 2-5 hours apart, so a stream's bracketing snapshots can each sit a
+# few hours off its boundaries. Past this the idle drift swamps the signal.
+FOLLOWER_BRACKET_MAX = timedelta(hours=8)
+
+
+def fetch_follower_total():
+    data = gql('{ user(id: "' + CHANNEL_ID + '") { followers { totalCount } } }')
+    total = ((data.get("user") or {}).get("followers") or {}).get("totalCount")
+    if not isinstance(total, int):
+        raise RuntimeError(f"no follower total in GQL response: {data}")
+    return total
+
+
+def update_follower_snapshots(previous, total, now):
+    """Append this run's total to the carried series and drop what has aged out."""
+    snaps = [s for s in (previous or []) if isinstance(s, list) and len(s) == 2]
+    if total is not None:
+        snaps.append([now.replace(microsecond=0).isoformat().replace("+00:00", "Z"), total])
+    cutoff = now - timedelta(days=FOLLOWER_SNAPSHOT_DAYS)
+    kept = []
+    for stamp, value in snaps:
+        try:
+            if datetime.fromisoformat(stamp.replace("Z", "+00:00")) >= cutoff:
+                kept.append([stamp, value])
+        except ValueError:
+            continue
+    kept.sort()
+    return kept
+
+
+def attach_follower_deltas(rows, snapshots):
+    """Fill `followers_gained` on rows no source described, from bracketing snapshots.
+
+    Only rows with no figure, or whose figure came from an earlier snapshot pass,
+    are touched — SullyGnome's per-stream count wins wherever it exists.
+    """
+    parsed = []
+    for stamp, value in snapshots:
+        try:
+            parsed.append((datetime.fromisoformat(stamp.replace("Z", "+00:00")), value))
+        except ValueError:
+            continue
+    if len(parsed) < 2:
+        return 0
+    parsed.sort()
+
+    filled = 0
+    for row in rows:
+        if row.get("followers_gained") is not None and row.get("followers_gained_source") != "snapshot":
+            continue
+        started = row.get("started_at")
+        if not started:
+            continue
+        try:
+            start = datetime.fromisoformat(started.replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        end = parse_ended_at(row.get("ended_at", ""))
+        if end is None:
+            end = start + timedelta(seconds=row.get("duration_seconds") or 0)
+        if end <= start:
+            continue
+
+        before = next((snap for snap in reversed(parsed) if snap[0] <= start), None)
+        after = next((snap for snap in parsed if snap[0] >= end), None)
+        if before is None or after is None:
+            continue
+        if start - before[0] > FOLLOWER_BRACKET_MAX or after[0] - end > FOLLOWER_BRACKET_MAX:
+            continue
+
+        row["followers_gained"] = after[1] - before[1]
+        row["followers_gained_source"] = "snapshot"
+        # How much idle time the bracket includes beyond the stream itself, so a
+        # reader can judge how approximate the figure is.
+        row["followers_gained_slack_h"] = round(
+            ((start - before[0]) + (after[0] - end)).total_seconds() / 3600, 1
+        )
+        filled += 1
+    return filled
+
+
+def follower_summary(snapshots, now):
+    """Current total and the change over the last week, for the dashboard."""
+    if not snapshots:
+        return None
+    latest_stamp, latest = snapshots[-1]
+    week_ago = now - timedelta(days=7)
+    baseline = None
+    for stamp, value in snapshots:
+        try:
+            if datetime.fromisoformat(stamp.replace("Z", "+00:00")) <= week_ago:
+                baseline = value
+            else:
+                break
+        except ValueError:
+            continue
+    return {
+        "total": latest,
+        "as_of": latest_stamp,
+        "gained_7d": (latest - baseline) if baseline is not None else None,
+        "snapshots": len(snapshots),
+    }
 
 
 def compute_gap_cdf(gap_values):
@@ -1372,6 +1488,23 @@ def main():
 
     attach_viewer_stats(sully_rows, exact_rows)
 
+    # Follower total from Twitch, snapshotted per run; deltas for the rows
+    # SullyGnome never described come from differencing the series.
+    previous_payload = load_previous_payload()
+    run_now = datetime.now(timezone.utc)
+    try:
+        follower_total = fetch_follower_total()
+        print(f"Twitch followers: {follower_total}")
+    except Exception as e:
+        print(f"Twitch follower total FAILED (skipping): {e}")
+        degraded.append(f"twitch_followers: {e}")
+        follower_total = None
+    follower_snapshots = update_follower_snapshots(
+        previous_payload.get("follower_snapshots"), follower_total, run_now
+    )
+    filled = attach_follower_deltas(sully_rows, follower_snapshots)
+    print(f"Follower deltas from snapshots: {filled} rows ({len(follower_snapshots)} snapshots held)")
+
     try:
         archive_segments = parse_youtube_archive()
         print(f"YouTube archive: {len(archive_segments)} segments")
@@ -1399,7 +1532,7 @@ def main():
     # Read the previous payload before this run overwrites it.
     last_live_seen = check_pipeline_freshness(
         data_through, newest_recorded_end(sully_rows), live_stream,
-        load_previous_stats(), degraded,
+        previous_payload.get("stats") or {}, degraded,
     )
 
     payload = {
@@ -1468,7 +1601,12 @@ def main():
             # When he was last observed live, carried across runs so a stream that
             # never reaches the dataset can be noticed. See check_pipeline_freshness.
             "last_live_seen": last_live_seen,
+            "followers": follower_summary(follower_snapshots, run_now),
         },
+        # Kept out of `stats` deliberately: the dashboard payload is re-fetched
+        # every few minutes by every open tab, and this series only needs to reach
+        # the next run of the builder.
+        "follower_snapshots": follower_snapshots,
         "sully_streams": sully_rows,
         "exact_rows": exact_rows,
         "archive_grouped_dates": archive_groups,
