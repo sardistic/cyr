@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T00:38:25Z",
+  "generated_at": "2026-09-13T01:45:57Z",
   "data_through": "2026-09-12T17:05:17Z",
   "degraded_sources": [
     "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
@@ -1171,11 +1171,21 @@
     "last_live_seen": "2026-09-12T22:51:49Z",
     "followers": {
       "total": 651351,
-      "as_of": "2026-09-13T01:43:42Z",
+      "as_of": "2026-09-13T01:45:40Z",
       "gained_7d": null,
-      "snapshots": 1
+      "snapshots": 2
     }
   },
+  "follower_snapshots": [
+    [
+      "2026-09-13T01:43:42Z",
+      651351
+    ],
+    [
+      "2026-09-13T01:45:40Z",
+      651351
+    ]
+  ],
   "sully_streams": [
     {
       "source": "sullygnome_stream_table",
@@ -50748,7 +50758,7 @@
       "duration_label": "05:29:40",
       "duration_seconds": 19780,
       "title": "UCHIHA JONES - NOPIXEL V - RP OVERLOAD OVERHEAT WEALTHY DILLY DALLY SHILLY SHALLY GOOG - UCHIHA  BADGE FOR 1 GIFTED SUB! - !discord",
-      "views": 119401
+      "views": 119412
     },
     {
       "source": "twitch_vod",
@@ -50758,7 +50768,7 @@
       "duration_label": "05:49:10",
       "duration_seconds": 20950,
       "title": "UCHIHA JONES - NOPIXEL V - CAR OWNER DILLYDALLYSHILLYSHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
-      "views": 659
+      "views": 148455
     }
   ],
   "archive_grouped_dates": [
@@ -67341,11 +67351,5 @@
       "intensity": "low",
       "intensity_score": 0
     }
-  ],
-  "follower_snapshots": [
-    [
-      "2026-09-13T01:43:42Z",
-      651351
-    ]
   ]
 }
