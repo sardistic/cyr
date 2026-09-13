@@ -686,9 +686,20 @@ def last_n_stream_details(rows, n=8):
 # it a day: longer than the longest sessions on record, short enough that a broken
 # pipeline is caught the same day rather than the next week.
 STALE_LIVE_HOURS = 24
+# Recorded end times are minute-rounded and can trail the true end by a source's
+# polling interval, so a sighting a little after the recorded end is still that
+# stream, not a new one.
+RECORDED_END_SLACK = timedelta(minutes=30)
 
 
-def check_pipeline_freshness(data_through, live_stream, previous_stats, degraded):
+def newest_recorded_end(rows):
+    """End time of the latest recorded stream, or None if no row carries one."""
+    ends = [parse_ended_at(r.get("ended_at", "")) for r in rows]
+    ends = [e for e in ends if e]
+    return max(ends) if ends else None
+
+
+def check_pipeline_freshness(data_through, newest_end, live_stream, previous_stats, degraded):
     """Did we watch a stream happen and then fail to record it?
 
     Guards the failure that hid five days of streams in August: every source stopped
@@ -702,6 +713,12 @@ def check_pipeline_freshness(data_through, live_stream, previous_stats, degraded
     list, so a live sighting that never turns into a recorded stream is positive
     evidence that the list is broken rather than the channel being idle.
 
+    The sighting is compared against the newest recorded *end*, not the newest
+    start (`data_through`). A sighting always falls after the start of the stream
+    it happened during, so comparing starts would flag every correctly recorded
+    stream a day later. It is "unrecorded" only if it falls after the last recorded
+    stream had already ended.
+
     Returns the `last_live_seen` value to carry into this run's payload.
     """
     now = datetime.now(timezone.utc)
@@ -710,20 +727,25 @@ def check_pipeline_freshness(data_through, live_stream, previous_stats, degraded
     else:
         last_live_seen = (previous_stats or {}).get("last_live_seen")
 
-    if not last_live_seen or not data_through:
+    if not last_live_seen:
         return last_live_seen
 
     try:
         seen = datetime.fromisoformat(last_live_seen.replace("Z", "+00:00"))
-        through = datetime.fromisoformat(data_through.replace("Z", "+00:00"))
+        recorded = newest_end
+        if recorded is None and data_through:
+            recorded = datetime.fromisoformat(data_through.replace("Z", "+00:00"))
     except ValueError:
+        return last_live_seen
+    if recorded is None:
         return last_live_seen
 
     hours_since = (now - seen).total_seconds() / 3600
-    if hours_since >= STALE_LIVE_HOURS and through < seen:
+    if hours_since >= STALE_LIVE_HOURS and seen > recorded + RECORDED_END_SLACK:
+        recorded_label = recorded.replace(microsecond=0).isoformat().replace("+00:00", "Z")
         message = (
             f"stale_pipeline: last seen live {last_live_seen} "
-            f"({hours_since:.0f}h ago) but data_through is still {data_through} — "
+            f"({hours_since:.0f}h ago) but the newest recorded stream ended {recorded_label} — "
             "streams are happening and not reaching the dataset"
         )
         print(f"STALE PIPELINE: {message}")
@@ -1376,7 +1398,8 @@ def main():
 
     # Read the previous payload before this run overwrites it.
     last_live_seen = check_pipeline_freshness(
-        data_through, live_stream, load_previous_stats(), degraded
+        data_through, newest_recorded_end(sully_rows), live_stream,
+        load_previous_stats(), degraded,
     )
 
     payload = {

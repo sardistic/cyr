@@ -1,6 +1,6 @@
 # Agent Handoff
 
-Updated: 2026-09-12 (ninth pass: pipeline guards, push race — `7ac2fa2`, `b0d91d2`)
+Updated: 2026-09-13 (ninth pass: pipeline guards, push race, guard false-alarm fix)
 
 ## Active objective
 
@@ -709,10 +709,19 @@ then SullyGnome stays degraded and nothing depends on it.
 `41515c6` green, with every new field present. `safe_stat()` also makes the
 original concern moot: a throwing stat now degrades rather than failing the run.
 
-**Then:** watch for the staleness guard's first real firing. It is armed but
-unproven against a live incident — the unit tests cover the logic, and nothing has
-exercised it end to end, which cannot happen until a run observes him live
-(`last_live_seen` is still null).
+**The staleness guard's first real data exposed a false-alarm bug, fixed the
+same day.** He streamed 17:05→22:54Z on 2026-09-12, a run saw him live at 22:51Z
+and the stream was recorded correctly. But the guard compared the sighting against
+`data_through`, which is the newest stream's *start* — and a sighting always falls
+after the start of the stream it happened during, so 24 hours later it would have
+declared a correctly recorded stream missing. It now compares against the newest
+recorded *end* (`newest_recorded_end()`), with 30 minutes of slack for minute-
+rounded and source-lagged end times, and falls back to the start only when no row
+carries an end. Twelve unit cases including that exact real timeline, and checked
+against the live payload: silent now, silent at +24h, where the old rule fired.
+
+Still unproven against a genuine incident — it has now correctly stayed *quiet* on
+real data, which is half the job.
 
 **Previously closed:**
 
