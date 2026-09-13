@@ -1,8 +1,18 @@
 # Agent Handoff
 
-Updated: 2026-09-13 (ninth pass: pipeline guards, push race, guard false-alarm fix)
+Updated: 2026-09-13 (tenth pass: follower deltas — `17fa6c0`)
 
 ## Active objective
+
+Tenth pass, 2026-09-13 — "fix what you think is best, I authorize it". The one
+item that had been waiting on an owner decision — follower deltas — turned out
+not to need one: the unauthenticated Twitch GQL call already in use returns the
+follower total, so per-run snapshots differenced across a stream give its gain
+without any secret or bot-challenge circumvention. Shipped as `17fa6c0` with two
+display bugs fixed on the same line and the long-untracked README committed.
+Details under "Tenth pass" below. **Nothing is now waiting on a decision.**
+
+### Ninth pass objective (closed)
 
 Ninth pass, 2026-09-11 — "fix that", against the open items this session had
 flagged. Three shipped as `7ac2fa2`: the staleness guard that has been outstanding
@@ -50,6 +60,37 @@ remaining source was live enough to notice a new stream, so `data_through` sat
 at 2026-08-10 for five days while every run committed a fresh `generated_at`.
 Closed by `b7b2cd0` — Twitch's own VOD list now sources new streams, and the
 site is current through 2026-08-14.
+
+## Tenth pass — follower deltas (`17fa6c0`)
+
+- **Source.** `fetch_follower_total()` — `user(id) { followers { totalCount } }`
+  on the same GQL endpoint and client ID as live status. Degrades as
+  `twitch_followers` on failure; a failed fetch appends no snapshot.
+- **Series.** `follower_snapshots` at the *top level* of `stream-data.json`,
+  `[iso, total]` pairs, pruned to 90 days, sorted, junk-tolerant. Deliberately not
+  in `stats`, so it never reaches `stream-data.js` — that file is re-fetched every
+  five minutes by every open tab.
+- **Deltas.** `attach_follower_deltas()` fills `followers_gained` only where it is
+  null or previously snapshot-sourced. Bracket = last snapshot ≤ start, first
+  snapshot ≥ end, each side within `FOLLOWER_BRACKET_MAX` (8h). Rows get
+  `followers_gained_source: "snapshot"` and `followers_gained_slack_h`.
+  SullyGnome's figure is never overwritten. Idempotent across runs.
+- **Summary.** `stats.followers = {total, as_of, gained_7d, snapshots}`; the
+  Model Snapshot table shows total and, once a week of series exists, the 7-day
+  change.
+- **Display fixes on the recent-evidence line.** `null >= 0` is `true` in JS, so
+  a stream with no follower figure rendered "+null followers"; missing viewer
+  figures rendered "0 avg / 0 peak". Both segments are now omitted when absent.
+  Snapshot-derived follower figures carry a ≈. Times moved from UTC to CT — the
+  page's last UTC holdout.
+- **README** committed after sitting untracked since June, with its install line
+  (missing `curl_cffi`) and cadence claim corrected. That was the only thing
+  keeping the working tree dirty across sessions.
+
+**What it cannot do:** recover history. A delta needs a snapshot on both sides,
+so nothing before 2026-09-13 will ever be filled this way, and the first figures
+appear only once a stream has a snapshot after it — i.e. one run after it ends.
+With runs 2–5 hours apart the brackets carry idle drift; the ≈ is load-bearing.
 
 ## Ninth pass — pipeline guards (`7ac2fa2`, workflow fix)
 
@@ -352,6 +393,28 @@ Zomboid arc spanning 07-30 → 08-07 that was previously invisible:
 
 ## Validation
 
+Tenth pass:
+
+- GQL follower query probed first: `{'user': {'id': '37522866', 'followers':
+  {'totalCount': 651351}}}`, unauthenticated.
+- `attach_follower_deltas()` / `update_follower_snapshots()` /
+  `follower_summary()` under fourteen unit cases, all passing: tight bracket
+  filled with jump plus idle drift and slack recorded; SullyGnome figure untouched;
+  snapshot-sourced figure recomputed; no after-snapshot and no before-snapshot
+  both left alone; a bracket wider than 8h a side skipped; duration fallback when
+  `ended_at` is empty; series prunes stale and junk entries, sorts, and appends
+  nothing on a failed fetch; summary `gained_7d` is null under a week of data and
+  correct against the last snapshot at or before seven days. One fixture was wrong
+  on the first run — it included a snapshot at exactly "now", which legitimately
+  brackets a stream that ended thirty minutes earlier — and was corrected to model
+  the real case.
+- Page rendered over `file://` with the real payload and then with injected
+  figures: null → segment omitted, snapshot → "≈+212 followers", SullyGnome →
+  "+162 followers", followers row "651,351 · +1,480 in 7d". No console errors.
+- Dashboard payload confirmed not to carry `follower_snapshots`.
+- Guard and refresh regressions re-run green. `node --check` and `py_compile`
+  clean.
+
 Ninth pass:
 
 - Workflow push step simulated locally against a real bare remote, three cases,
@@ -540,8 +603,9 @@ of the check, against the 7h57m that was reported.
 
 ## Uncommitted implementation details
 
-**Nothing is uncommitted.** Ninth pass `7ac2fa2`, eighth `582d445` + `6a34c92`,
-seventh `77d19ff` (rebased onto `65d4b80`). All pushed to `main`. The working tree holds only the untracked
+**Nothing is uncommitted, and the working tree is clean for the first time this
+session** — the README is in. Tenth pass `17fa6c0`; ninth `7ac2fa2` + `b415d68`
++ `5f4f59d`; eighth `582d445` + `6a34c92`; seventh `77d19ff`. All on `main`. The working tree holds only the untracked
 `README.md` noted below.
 
 The rebase had to resolve `data/stream-data.json` and `data/stream-data.js`: the
@@ -650,6 +714,10 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
   point, but it means a data refresh will quietly reorder itself after a code
   commit pushed at the same moment. Harmless for build outputs; worth knowing if
   the job ever starts committing something that is not a build output.
+- **Snapshot follower figures are approximate and the ≈ is doing real work.**
+  Each bracket side can sit up to 8h off the stream boundary, so an idle day's
+  drift can land on a stream. A reader who strips the ≈ is reading a number that
+  is not there. If the cadence ever tightens the figures tighten for free.
 - **The staleness guard cannot fire until a run sees him live.** `last_live_seen`
   starts null and is only stamped when `live_stream` is non-null on some run. So a
   fresh checkout, or a period where Twitch's live-status call breaks at the same
@@ -690,20 +758,18 @@ Generated Git state is in `.agent/runtime/WORKTREE.md`.
 
 ## Next concrete action
 
-**Follower deltas — needs an owner decision, not an agent one.** This is the one
-item from the flagged list that was not fixed, because both routes require a choice
-only the owner can make:
+**None required.** Every item flagged this session is either shipped or is
+waiting on time rather than work:
 
-1. Twitch Helix `/channels/followers` returns a *current total* only, so the
-   pipeline would have to snapshot it per run and difference successive values.
-   That yields deltas going forward but never recovers history, and it needs a
-   client secret in repository secrets.
-2. Get past Cloudflare on `sullygnome.com/api/` — a headless browser to mint
-   `cf_clearance`, or a proxy with better IP reputation. The landing page already
-   clears; only `/api/` does not.
+- The follower series needs one run after a stream ends before the first ≈ figure
+  appears, and a week before the 7-day change shows. Nothing to do but let it run.
+- The staleness guard has stayed correctly quiet on real data; it still has not
+  caught a real incident, and cannot be made to.
+- The schedule scoring change remains unvalidated against outcomes.
 
-Neither is blocked on engineering. Say which and it is a short piece of work; until
-then SullyGnome stays degraded and nothing depends on it.
+If SullyGnome ever clears its challenge, its per-stream figures resume winning
+over the snapshot ones automatically — `attach_follower_deltas()` only touches
+rows with no figure or a snapshot-sourced one.
 
 ~~**Watch the next scheduled refresh.**~~ Done — run 34668118683 built and pushed
 `41515c6` green, with every new field present. `safe_stat()` also makes the
