@@ -1,14 +1,15 @@
 {
-  "generated_at": "2026-09-13T23:20:10Z",
+  "generated_at": "2026-09-14T01:23:56Z",
   "data_through": "2026-09-12T17:05:17Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
   ],
   "sources": {
     "sullygnome_stream_table": 2489,
     "twitchmetrics_stream_logs": 15,
-    "twitchmetrics_vods": 43,
-    "exact_merged_rows": 43,
+    "twitchmetrics_vods": 42,
+    "exact_merged_rows": 40,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
@@ -29,8 +30,8 @@
       }
     },
     "exact_gap_hours": {
-      "count": 42,
-      "mean": 35.25,
+      "count": 39,
+      "mean": 35.59,
       "median": 24.14,
       "max": 100.92
     },
@@ -352,11 +353,11 @@
         "start_p25": 8.47,
         "start_p50": 10.54,
         "start_p75": 13.22,
-        "end_p50": 16.76,
+        "end_p50": 17.26,
         "end_p90": 20.5,
-        "dur_p25": 4.38,
-        "dur_p50": 5.58,
-        "dur_p75": 7.6,
+        "dur_p25": 4.39,
+        "dur_p50": 5.63,
+        "dur_p75": 7.71,
         "active_rate": 0.74,
         "window_days": 730
       },
@@ -427,15 +428,15 @@
       ],
       [
         15,
-        33.52
+        33.56
       ],
       [
         18,
-        50.6
+        50.64
       ],
       [
         21,
-        63.99
+        64.03
       ],
       [
         24,
@@ -614,7 +615,7 @@
         "game": "Just Chatting"
       },
       {
-        "gap_h": 23.1,
+        "gap_h": 12.1,
         "started_at": "2026-09-11T17:58:05Z",
         "game": "Just Chatting"
       },
@@ -927,13 +928,13 @@
       },
       {
         "started_at": "2026-09-10T17:58:32Z",
-        "ended_at_iso": "2026-09-10T18:53:00+00:00",
+        "ended_at_iso": "2026-09-11T05:53:00+00:00",
         "games": [
           "Just Chatting",
           "Grand Theft Auto V"
         ],
-        "duration_h": 0.9,
-        "duration_label": "55 minutes",
+        "duration_h": 11.9,
+        "duration_label": "714 minutes",
         "avg_viewers": null,
         "peak_viewers": null,
         "followers_gained": null,
@@ -1167,13 +1168,18 @@
         ]
       }
     },
-    "live_stream": null,
-    "last_live_seen": "2026-09-12T22:51:49Z",
+    "live_stream": {
+      "started_at": "2026-09-14T00:26:25Z",
+      "game": "Grand Theft Auto V",
+      "title": "UCHIHA JONES - NOPIXEL V - MAKING GOOG MOVES - DILLY DALLY SHILLY SHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
+      "viewers": 1484
+    },
+    "last_live_seen": "2026-09-14T01:23:56Z",
     "followers": {
-      "total": 651352,
-      "as_of": "2026-09-13T23:19:55Z",
+      "total": 651361,
+      "as_of": "2026-09-14T01:23:40Z",
       "gained_7d": null,
-      "snapshots": 8
+      "snapshots": 9
     }
   },
   "follower_snapshots": [
@@ -1208,6 +1214,10 @@
     [
       "2026-09-13T23:19:55Z",
       651352
+    ],
+    [
+      "2026-09-14T01:23:40Z",
+      651361
     ]
   ],
   "sully_streams": [
@@ -50279,9 +50289,9 @@
       "precision": "exact_vod_time",
       "id": "2870549312",
       "started_at": "2026-09-10T17:58:32Z",
-      "ended_at": "Thursday 10 September 2026 18:53",
-      "duration_label": "55 minutes",
-      "duration_seconds": 3284,
+      "ended_at": "Friday 11 September 2026 05:53",
+      "duration_label": "714 minutes",
+      "duration_seconds": 42870,
       "title": "UCHIHA JONES - NOPIXEL V - DILLY DALLY SHILLY SHALLY -  UCHIHA  BADGE FOR 1 GIFTED SUB! !discord",
       "games": [
         "Just Chatting",
@@ -50339,42 +50349,12 @@
     {
       "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
-      "id": "2818671995",
-      "started_at": "2026-07-13T00:30:26Z",
-      "duration_label": "05:35:50",
-      "duration_seconds": 20150,
-      "title": "GETTING AN RP LOBBY GOING TONIGHT FOR DAWSON OAKS - WOULD BE REALLY NICE IS WUBBY SHOWS UP - WOULD BE REALLY NICE IF WILLNEFF SHOWS UP",
-      "views": 182436
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2819362154",
-      "started_at": "2026-07-13T22:48:23Z",
-      "duration_label": "04:19:20",
-      "duration_seconds": 15560,
-      "title": "1v1 LEGO BUILD RACE WITH @MISTERARTHER 6PM CST - ROCK CLIMBING WITH @MYTH TOMORROW",
-      "views": 172159
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
-      "id": "2819925835",
-      "started_at": "2026-07-14T17:18:16Z",
-      "duration_label": "05:43:40",
-      "duration_seconds": 20620,
-      "title": "ROCK CLIMBING WITH @MYTH & @NMPLOL TODAY - THEN GOING OUT, A FINE BRUNCH WITH THE BOYS !discord",
-      "views": 226778
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
       "id": "2821654272",
       "started_at": "2026-07-16T21:06:21Z",
       "duration_label": "04:21:00",
       "duration_seconds": 15660,
       "title": "THAT SCENE IN TITANIC WHERE ROSE PUSHES JACK FROST OFF THE DOOR BUT I'M ROSE AND I'M JACK AND THERE'S NO WATER",
-      "views": 149459
+      "views": 149462
     },
     {
       "source": "twitchmetrics_vod",
@@ -50414,7 +50394,7 @@
       "duration_label": "04:45:40",
       "duration_seconds": 17140,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH BRITISH FRIEND PAUL WHO HAS NEVER BEEN ON STREAM BEFORE NOR HAS HE EVER SEEN ONE. LET'S SEE WHAT HE THINKS \ud83c\udf55",
-      "views": 160974
+      "views": 160977
     },
     {
       "source": "twitchmetrics_vod",
@@ -50454,7 +50434,7 @@
       "duration_label": "07:26:40",
       "duration_seconds": 26800,
       "title": "NO MOM JOKES TODAY. WILL RESULT IN INSTANT AND IMMEDIATE AND PUBLIC REJECTION",
-      "views": 227293
+      "views": 227294
     },
     {
       "source": "twitchmetrics_vod",
@@ -50464,7 +50444,7 @@
       "duration_label": "08:52:30",
       "duration_seconds": 31950,
       "title": "that scene in INDEPENDANCE DAY when the guy goes \"i'm BAAAACK\" and flies into the mothership- except it's me and your mom",
-      "views": 301539
+      "views": 301540
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -50486,7 +50466,7 @@
       "duration_label": "10 hours",
       "duration_seconds": 36020,
       "title": "CALLING OLD 1-800 NUMBERS FROM 90'S COMMERCIALS UNTIL I SUCCESSFULLY BUY A PRODUCT (ZOMBOID LATER?)",
-      "views": 284291,
+      "views": 284292,
       "avg_viewers": 2675,
       "peak_viewers": 3100
     },
@@ -50498,7 +50478,7 @@
       "duration_label": "6 hours",
       "duration_seconds": 20361,
       "title": "THE WINDS ARE FAVORABLE. DON'T ASK HOW I DID IT. ZOMBOID, HOW MANY ZOMBIES CAN I DESTROY IN ONE LIFE? (MORE THAN 7 DAYS I BET)",
-      "views": 150019,
+      "views": 150020,
       "avg_viewers": 2460,
       "peak_viewers": 3053
     },
@@ -50510,7 +50490,7 @@
       "duration_label": "4 hours",
       "duration_seconds": 15630,
       "title": "MAKE FUN OF CYR FRIDAY - SURVIVING 7 DAYS & UNALIVING 1000 ZOMBIES",
-      "views": 140699,
+      "views": 140700,
       "avg_viewers": 2352,
       "peak_viewers": 3100
     },
@@ -50522,7 +50502,7 @@
       "duration_label": "3 hours",
       "duration_seconds": 10330,
       "title": "CYR IN THE KITCHEN - HOMEMADE CLAM CUH CHOWDER 1ST TIME - IN CAPE COD WE SHOULD EXPLORE A BIT AFTER CUH",
-      "views": 76875,
+      "views": 76879,
       "avg_viewers": 2465,
       "peak_viewers": 3100
     },
@@ -50534,7 +50514,7 @@
       "duration_label": "06:42:01",
       "duration_seconds": 24121,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH @MEESTERKEEM \ud83c\udf55 WHO WILL EMBARRASS THEMSELVES LESS TONIGHT?",
-      "views": 257842,
+      "views": 257851,
       "avg_viewers": 1020,
       "peak_viewers": 1487
     },
@@ -50546,7 +50526,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 18090,
       "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
-      "views": 230358,
+      "views": 230368,
       "avg_viewers": 1953,
       "peak_viewers": 2167
     },
@@ -50558,7 +50538,7 @@
       "duration_label": "6 hours",
       "duration_seconds": 21770,
       "title": "TEACHING MYSELF HOW TO JUGGLE IN ONE STREAM BECAUSE I'M A CLOWN - MOVIE NIGHT TONIGHT IN !DISCORD AFTER STREAM",
-      "views": 451452,
+      "views": 451456,
       "avg_viewers": 1707,
       "peak_viewers": 2136
     },
@@ -50570,7 +50550,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 18180,
       "title": "acting as chill as possible no matter what to see if it makes me cooler (helping @peachjars with manual labor)",
-      "views": 160708,
+      "views": 160711,
       "avg_viewers": 1991,
       "peak_viewers": 2163
     },
@@ -50582,7 +50562,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 18740,
       "title": "acting as chill as possible no matter what to see if it makes me cooler (helping @peachjars with manual labor)",
-      "views": 163653,
+      "views": 163654,
       "avg_viewers": 1948,
       "peak_viewers": 2161
     },
@@ -50594,7 +50574,7 @@
       "duration_label": "11 hours",
       "duration_seconds": 40761,
       "title": "MEN BRUNCH WITH @MISTERARTHER @JOSHINAROUND and THEN some RP on Wardog?!",
-      "views": 446288,
+      "views": 446291,
       "avg_viewers": 1966,
       "peak_viewers": 2182
     },
@@ -50606,7 +50586,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 17080,
       "title": "MY SHRINK SAID I SHOULD DO SOME WAR RP TO HELP ME BECOME A MORE ACTIVE LISTENER. (movie night in !discord , IDIOCRACY)",
-      "views": 255125,
+      "views": 255129,
       "avg_viewers": 1845,
       "peak_viewers": 2175
     },
@@ -50618,7 +50598,7 @@
       "duration_label": "9 hours",
       "duration_seconds": 32690,
       "title": "OH SCRO, YOU AINT EVER SEEN SOMEONE REACT TO GAMESCOM LIKE THIS BEFORE: THEN WE PLAY SOME ONCE HUMAN, AND GAME IT UP SOME MORE!",
-      "views": 377713,
+      "views": 377715,
       "avg_viewers": 1606,
       "peak_viewers": 2169
     },
@@ -50630,7 +50610,7 @@
       "duration_label": "8 hours",
       "duration_seconds": 30580,
       "title": "SCROT, I'M GOING TO BREAK THIS DUCK GAME. (RUBIKS CUBE CHALLENGE TOMORROW)",
-      "views": 320991,
+      "views": 320994,
       "avg_viewers": 1802,
       "peak_viewers": 2172
     },
@@ -50642,7 +50622,7 @@
       "duration_label": "02:23:00",
       "duration_seconds": 8580,
       "title": "BIGGEST DAY IN GAMING HISTORY \ud83d\udd25AUTHENTIC NON PERFORMATIVE REACTION TO GTA VI \ud83d\udd25 CALL ME OUT IF MY REACTION IS FAKE",
-      "views": 59325
+      "views": 59329
     },
     {
       "source": "twitchmetrics_vod",
@@ -50652,7 +50632,7 @@
       "duration_label": "05:05:31",
       "duration_seconds": 18331,
       "title": "ohhhhh hubby i love it when u put some cyr on the living room tv at night when u cook me dinner aka kraft mac n cheese with hot dogs...",
-      "views": 77219
+      "views": 77222
     },
     {
       "source": "twitchmetrics_vod",
@@ -50662,7 +50642,7 @@
       "duration_label": "08:22:30",
       "duration_seconds": 30150,
       "title": "FRIDAY - FAST FOOD PHILLYCHEESE STEAK REVIEW & 100 reasons why I think Wubby is an alien pretending to be a human",
-      "views": 455883
+      "views": 455885
     },
     {
       "source": "twitchmetrics_vod",
@@ -50672,7 +50652,7 @@
       "duration_label": "06:05:10",
       "duration_seconds": 21910,
       "title": "So....can I play ELDEN RING without having a MENTAL BREAKDOWN? It's time for Debra to return. Let's find out. BACKSEATERS? I welcome you.",
-      "views": 2766798
+      "views": 2766803
     },
     {
       "source": "twitchmetrics_vod",
@@ -50682,7 +50662,7 @@
       "duration_label": "04:41:20",
       "duration_seconds": 16880,
       "title": "i make the mario triple jump sound when going up the stairs (yes it's on repeat) ZOMBOID ZOMBOID ZOMBOID",
-      "views": 3122867
+      "views": 3122873
     },
     {
       "source": "twitchmetrics_vod",
@@ -50692,7 +50672,7 @@
       "duration_label": "08:46:10",
       "duration_seconds": 31570,
       "title": "BREAKING: i'm wearing an anime shirt, & tier 2 subs can now post gifs in chat and I don't know how I feel about it yet",
-      "views": 357054
+      "views": 357064
     },
     {
       "source": "twitchmetrics_vod",
@@ -50702,7 +50682,7 @@
       "duration_label": "04:24:00",
       "duration_seconds": 15840,
       "title": "cuh, PLEASE stop saying that I look EXACTLY like Ryan Gosling? I get it guys. I look amazing. BODYCAM & ELDEN RING TOP CHARTS TODAY",
-      "views": 227442
+      "views": 227453
     },
     {
       "source": "twitchmetrics_vod",
@@ -50712,7 +50692,7 @@
       "duration_label": "12:54:50",
       "duration_seconds": 46490,
       "title": "CUH. WAR RP RETURNS, AND WE COULD POSSIBLY BE GOING ROCK CLIMBING TODAY",
-      "views": 593430
+      "views": 593453
     },
     {
       "source": "twitchmetrics_vod",
@@ -50722,7 +50702,7 @@
       "duration_label": "05:33:40",
       "duration_seconds": 20020,
       "title": "ZOMBOID RP FUN FOR THE WHOLE FAMILY, LIVE LAUGH LOVE TEAM CAPTAIN CYR ON @GOOSEY @PAYMONEYWUBBY SERVER #BLESSED #FYP #COMEDY",
-      "views": 197194
+      "views": 197211
     },
     {
       "source": "twitchmetrics_vod",
@@ -50732,7 +50712,7 @@
       "duration_label": "06:48:30",
       "duration_seconds": 24510,
       "title": "THIS PROJECT ZOMBOID RP SERVER MADE LOCAL TWITCH STREAMER CYR LOSE HIS MIND! (GONE WRONG)",
-      "views": 362497
+      "views": 362520
     },
     {
       "source": "twitchmetrics_vod",
@@ -50742,7 +50722,7 @@
       "duration_label": "05:48:50",
       "duration_seconds": 20930,
       "title": "birds started speaking english to me and they keep screaming from the trees \"HELP!!!\" \"HELP US!!! OH GOD PLEASE!!\"",
-      "views": 198298
+      "views": 198337
     },
     {
       "source": "twitchmetrics_vod",
@@ -50752,7 +50732,7 @@
       "duration_label": "13:11:00",
       "duration_seconds": 47460,
       "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA BADGE FOR SUBS! !discord",
-      "views": 174373
+      "views": 175301
     },
     {
       "source": "twitchmetrics_vod",
@@ -50762,37 +50742,37 @@
       "duration_label": "09:27:58",
       "duration_seconds": 34078,
       "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA NoPixel V BADGE FOR 1 GIFTED SUB! !discord",
-      "views": 140910
+      "views": 141772
     },
     {
       "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
       "id": "2870549312",
       "started_at": "2026-09-10T17:58:32Z",
-      "duration_label": "54:44",
-      "duration_seconds": 3284,
+      "duration_label": "11:54:30",
+      "duration_seconds": 42870,
       "title": "UCHIHA JONES - NOPIXEL V - DILLY DALLY SHILLY SHALLY -  UCHIHA  BADGE FOR 1 GIFTED SUB! !discord",
-      "views": 32
+      "views": 558887
     },
     {
-      "source": "twitch_vod",
+      "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
       "id": "2871409677",
       "started_at": "2026-09-11T17:58:05Z",
       "duration_label": "05:29:40",
       "duration_seconds": 19780,
       "title": "UCHIHA JONES - NOPIXEL V - RP OVERLOAD OVERHEAT WEALTHY DILLY DALLY SHILLY SHALLY GOOG - UCHIHA  BADGE FOR 1 GIFTED SUB! - !discord",
-      "views": 119634
+      "views": 119591
     },
     {
-      "source": "twitch_vod",
+      "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
       "id": "2872324004",
       "started_at": "2026-09-12T17:05:17Z",
       "duration_label": "05:49:10",
       "duration_seconds": 20950,
       "title": "UCHIHA JONES - NOPIXEL V - CAR OWNER DILLYDALLYSHILLYSHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
-      "views": 150195
+      "views": 149864
     }
   ],
   "archive_grouped_dates": [
