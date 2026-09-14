@@ -1,28 +1,27 @@
 {
-  "generated_at": "2026-09-14T01:23:56Z",
-  "data_through": "2026-09-12T17:05:17Z",
+  "generated_at": "2026-09-14T06:46:04Z",
+  "data_through": "2026-09-14T00:26:30Z",
   "degraded_sources": [
-    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: stream table API returned http 403 for 2017 (Cloudflare challenge on /api/ \u2014 landing page cleared but the API path did not)"
   ],
   "sources": {
-    "sullygnome_stream_table": 2489,
+    "sullygnome_stream_table": 2490,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 42,
-    "exact_merged_rows": 40,
+    "exact_merged_rows": 41,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2488,
+      "count": 2489,
       "mean": 27.93,
       "median": 17.9,
       "max": 1197.0,
       "bins": {
         "0-12h": 483,
         "12-24h": 1275,
-        "1-2d": 421,
+        "1-2d": 422,
         "2-3d": 174,
         "3-5d": 104,
         "5-7d": 15,
@@ -30,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 39,
-      "mean": 35.59,
-      "median": 24.14,
+      "count": 40,
+      "mean": 35.48,
+      "median": 24.38,
       "max": 100.92
     },
     "archive_gap_days": {
@@ -218,7 +217,7 @@
       "2026-06": 16,
       "2026-07": 18,
       "2026-08": 19,
-      "2026-09": 11
+      "2026-09": 12
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -230,11 +229,11 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 153
+      "2026": 154
     },
     "dow_hour": {
       "dow": {
-        "Mon": 444,
+        "Mon": 445,
         "Tue": 405,
         "Wed": 439,
         "Thu": 392,
@@ -243,7 +242,7 @@
         "Sun": 209
       },
       "hour_utc": {
-        "0": 193,
+        "0": 194,
         "1": 116,
         "2": 121,
         "3": 120,
@@ -275,7 +274,7 @@
         "Thu": 399,
         "Fri": 349,
         "Sat": 217,
-        "Sun": 256
+        "Sun": 257
       },
       "hour_ct": {
         "0": 58,
@@ -297,7 +296,7 @@
         "16": 336,
         "17": 272,
         "18": 211,
-        "19": 167,
+        "19": 168,
         "20": 100,
         "21": 142,
         "22": 88,
@@ -348,17 +347,17 @@
         "window_days": 730
       },
       "Thu": {
-        "n": 79,
-        "start_p10": 5.94,
-        "start_p25": 8.47,
-        "start_p50": 10.54,
-        "start_p75": 13.22,
-        "end_p50": 17.26,
+        "n": 78,
+        "start_p10": 5.9,
+        "start_p25": 8.39,
+        "start_p50": 10.62,
+        "start_p75": 13.23,
+        "end_p50": 17.51,
         "end_p90": 20.5,
         "dur_p25": 4.39,
         "dur_p50": 5.63,
         "dur_p75": 7.71,
-        "active_rate": 0.74,
+        "active_rate": 0.731,
         "window_days": 730
       },
       "Fri": {
@@ -390,17 +389,17 @@
         "window_days": 730
       },
       "Sun": {
-        "n": 45,
-        "start_p10": 7.83,
-        "start_p25": 9.02,
-        "start_p50": 12.61,
-        "start_p75": 15.07,
+        "n": 46,
+        "start_p10": 7.84,
+        "start_p25": 9.05,
+        "start_p50": 12.63,
+        "start_p75": 15.02,
         "end_p50": 18.26,
         "end_p90": 20.76,
-        "dur_p25": 3.77,
-        "dur_p50": 5.18,
-        "dur_p75": 6.78,
-        "active_rate": 0.423,
+        "dur_p25": 3.81,
+        "dur_p50": 5.23,
+        "dur_p75": 6.67,
+        "active_rate": 0.433,
         "window_days": 730
       }
     },
@@ -428,35 +427,35 @@
       ],
       [
         15,
-        33.56
+        33.55
       ],
       [
         18,
-        50.64
+        50.62
       ],
       [
         21,
-        64.03
+        64.0
       ],
       [
         24,
-        70.7
+        70.67
       ],
       [
         30,
-        74.48
+        74.49
       ],
       [
         36,
-        76.49
+        76.5
       ],
       [
         42,
-        81.91
+        81.92
       ],
       [
         48,
-        87.62
+        87.63
       ],
       [
         54,
@@ -472,7 +471,7 @@
       ],
       [
         72,
-        94.57
+        94.58
       ],
       [
         84,
@@ -492,7 +491,7 @@
       ],
       [
         132,
-        98.91
+        98.92
       ],
       [
         144,
@@ -524,11 +523,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 93.6,
-        "started_at": "2026-08-23T20:07:16Z",
-        "game": "Project Zomboid"
-      },
       {
         "gap_h": 13.8,
         "started_at": "2026-08-24T21:12:59Z",
@@ -623,22 +617,14 @@
         "gap_h": 17.6,
         "started_at": "2026-09-12T17:05:17Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 25.5,
+        "started_at": "2026-09-14T00:26:30Z",
+        "game": "Grand Theft Auto V"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-08-16T21:30:51Z",
-        "ended_at_iso": "2026-08-17T02:32:00+00:00",
-        "games": [
-          "Just Chatting"
-        ],
-        "duration_h": 5.0,
-        "duration_label": "302 minutes",
-        "avg_viewers": 1953,
-        "peak_viewers": 2167,
-        "followers_gained": null,
-        "followers_gained_source": null
-      },
       {
         "started_at": "2026-08-17T21:06:29Z",
         "ended_at_iso": "2026-08-18T03:09:00+00:00",
@@ -967,16 +953,28 @@
         "peak_viewers": null,
         "followers_gained": null,
         "followers_gained_source": null
+      },
+      {
+        "started_at": "2026-09-14T00:26:30Z",
+        "ended_at_iso": "2026-09-14T05:56:00+00:00",
+        "games": [
+          "Grand Theft Auto V"
+        ],
+        "duration_h": 5.5,
+        "duration_label": "330 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": 86,
+        "followers_gained_source": "snapshot"
       }
     ],
     "last_stream": {
-      "started_at": "2026-09-12T17:05:17Z",
-      "ended_at_iso": "2026-09-12T22:54:00+00:00",
+      "started_at": "2026-09-14T00:26:30Z",
+      "ended_at_iso": "2026-09-14T05:56:00+00:00",
       "games": [
-        "Just Chatting",
         "Grand Theft Auto V"
       ],
-      "duration_label": "349 minutes"
+      "duration_label": "330 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -1095,10 +1093,10 @@
             "avg_viewers": 2447.0
           },
           "Social sandbox/RP": {
-            "count": 1057,
+            "count": 1058,
             "share": 42.5,
-            "median_gap_hours": 23.88,
-            "p90_gap_hours": 48.27,
+            "median_gap_hours": 23.89,
+            "p90_gap_hours": 48.26,
             "avg_viewers": 1601.0
           },
           "Story/survival arc": {
@@ -1119,11 +1117,11 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1613
+            "count": 1614
           },
           {
             "game": "Grand Theft Auto V",
-            "count": 901
+            "count": 902
           },
           {
             "game": "IRL",
@@ -1168,18 +1166,13 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-09-14T00:26:25Z",
-      "game": "Grand Theft Auto V",
-      "title": "UCHIHA JONES - NOPIXEL V - MAKING GOOG MOVES - DILLY DALLY SHILLY SHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
-      "viewers": 1484
-    },
+    "live_stream": null,
     "last_live_seen": "2026-09-14T01:23:56Z",
     "followers": {
-      "total": 651361,
-      "as_of": "2026-09-14T01:23:40Z",
+      "total": 651438,
+      "as_of": "2026-09-14T06:45:52Z",
       "gained_7d": null,
-      "snapshots": 9
+      "snapshots": 10
     }
   },
   "follower_snapshots": [
@@ -1218,6 +1211,10 @@
     [
       "2026-09-14T01:23:40Z",
       651361
+    ],
+    [
+      "2026-09-14T06:45:52Z",
+      651438
     ]
   ],
   "sully_streams": [
@@ -50343,6 +50340,27 @@
       "view_minutes": null,
       "stream_url": "https://www.twitch.tv/videos/2872324004",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2873632422",
+      "started_at": "2026-09-14T00:26:30Z",
+      "ended_at": "Monday 14 September 2026 05:56",
+      "duration_label": "330 minutes",
+      "duration_seconds": 19783,
+      "title": "UCHIHA JONES - NOPIXEL V - MAKING GOOG MOVES - DILLY DALLY SHILLY SHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
+      "games": [
+        "Grand Theft Auto V"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": 86,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2873632422",
+      "range": "2026",
+      "followers_gained_source": "snapshot",
+      "followers_gained_slack_h": 1.9
     }
   ],
   "exact_rows": [
@@ -50773,6 +50791,16 @@
       "duration_seconds": 20950,
       "title": "UCHIHA JONES - NOPIXEL V - CAR OWNER DILLYDALLYSHILLYSHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
       "views": 149864
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2873632422",
+      "started_at": "2026-09-14T00:26:30Z",
+      "duration_label": "05:29:43",
+      "duration_seconds": 19783,
+      "title": "UCHIHA JONES - NOPIXEL V - MAKING GOOG MOVES - DILLY DALLY SHILLY SHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
+      "views": 691
     }
   ],
   "archive_grouped_dates": [
