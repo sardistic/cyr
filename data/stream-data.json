@@ -1,7 +1,9 @@
 {
-  "generated_at": "2026-09-15T12:01:51Z",
+  "generated_at": "2026-09-15T17:13:37Z",
   "data_through": "2026-09-14T18:07:25Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30000 milliseconds with 1254 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+  ],
   "sources": {
     "sullygnome_stream_table": 2491,
     "twitchmetrics_stream_logs": 15,
@@ -1165,13 +1167,18 @@
         ]
       }
     },
-    "live_stream": null,
-    "last_live_seen": "2026-09-15T01:11:34Z",
+    "live_stream": {
+      "started_at": "2026-09-15T16:59:28Z",
+      "game": "Just Chatting",
+      "title": "UCHIHA JONES | NOPIXEL V | NEW DAILY QUEST LIST WITH UNLOCKABLE QUESTS | NEW cyrOVERHEAT emote (and uchiha stress meter overlay)",
+      "viewers": 821
+    },
+    "last_live_seen": "2026-09-15T17:13:37Z",
     "followers": {
-      "total": 651575,
-      "as_of": "2026-09-15T12:01:32Z",
+      "total": 651571,
+      "as_of": "2026-09-15T17:13:23Z",
       "gained_7d": null,
-      "snapshots": 16
+      "snapshots": 17
     }
   },
   "follower_snapshots": [
@@ -1238,6 +1245,10 @@
     [
       "2026-09-15T12:01:32Z",
       651575
+    ],
+    [
+      "2026-09-15T17:13:23Z",
+      651571
     ]
   ],
   "sully_streams": [
@@ -50847,7 +50858,7 @@
       "duration_label": "05:29:43",
       "duration_seconds": 19783,
       "title": "UCHIHA JONES - NOPIXEL V - MAKING GOOG MOVES - DILLY DALLY SHILLY SHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
-      "views": 193780
+      "views": 193830
     },
     {
       "source": "twitch_vod",
@@ -50857,7 +50868,7 @@
       "duration_label": "07:57:40",
       "duration_seconds": 28660,
       "title": "UCHIHA JONES - NOPIXEL V - LESS MANIA MORE MONEY - DILLYDALLYSHILLYSHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
-      "views": 1837
+      "views": 2299
     }
   ],
   "archive_grouped_dates": [
