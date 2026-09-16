@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-16T17:29:49Z",
-  "data_through": "2026-09-15T16:59:28Z",
+  "generated_at": "2026-09-16T20:25:25Z",
+  "data_through": "2026-09-16T18:48:59Z",
   "degraded_sources": [],
   "sources": {
-    "sullygnome_stream_table": 2492,
+    "sullygnome_stream_table": 2493,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 44,
     "exact_merged_rows": 42,
@@ -12,13 +12,13 @@
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2491,
-      "mean": 27.92,
-      "median": 17.9,
+      "count": 2492,
+      "mean": 27.91,
+      "median": 17.89,
       "max": 1197.0,
       "bins": {
         "0-12h": 483,
-        "12-24h": 1277,
+        "12-24h": 1278,
         "1-2d": 422,
         "2-3d": 174,
         "3-5d": 104,
@@ -215,7 +215,7 @@
       "2026-06": 16,
       "2026-07": 18,
       "2026-08": 19,
-      "2026-09": 14
+      "2026-09": 15
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -227,13 +227,13 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 156
+      "2026": 157
     },
     "dow_hour": {
       "dow": {
         "Mon": 446,
         "Tue": 406,
-        "Wed": 439,
+        "Wed": 440,
         "Thu": 392,
         "Fri": 356,
         "Sat": 244,
@@ -258,7 +258,7 @@
         "15": 22,
         "16": 82,
         "17": 175,
-        "18": 172,
+        "18": 173,
         "19": 180,
         "20": 261,
         "21": 296,
@@ -268,7 +268,7 @@
       "dow_ct": {
         "Mon": 437,
         "Tue": 424,
-        "Wed": 409,
+        "Wed": 410,
         "Thu": 399,
         "Fri": 349,
         "Sat": 217,
@@ -288,7 +288,7 @@
         "10": 31,
         "11": 117,
         "12": 178,
-        "13": 187,
+        "13": 188,
         "14": 197,
         "15": 252,
         "16": 336,
@@ -417,31 +417,31 @@
       ],
       [
         9,
-        10.76
+        10.75
       ],
       [
         12,
-        19.55
+        19.54
       ],
       [
         15,
-        33.6
+        33.59
       ],
       [
         18,
-        50.66
+        50.68
       ],
       [
         21,
-        64.03
+        64.04
       ],
       [
         24,
-        70.69
+        70.71
       ],
       [
         30,
-        74.51
+        74.52
       ],
       [
         36,
@@ -449,7 +449,7 @@
       ],
       [
         42,
-        81.93
+        81.94
       ],
       [
         48,
@@ -461,7 +461,7 @@
       ],
       [
         60,
-        89.68
+        89.69
       ],
       [
         66,
@@ -473,7 +473,7 @@
       ],
       [
         84,
-        95.5
+        95.51
       ],
       [
         96,
@@ -522,11 +522,6 @@
     ],
     "recent_gaps": [
       {
-        "gap_h": 14.5,
-        "started_at": "2026-08-26T16:58:23Z",
-        "game": "Just Chatting"
-      },
-      {
         "gap_h": 17.0,
         "started_at": "2026-08-27T18:16:22Z",
         "game": "Just Chatting"
@@ -544,7 +539,7 @@
       {
         "gap_h": 38.3,
         "started_at": "2026-08-30T19:31:02Z",
-        "game": "Just Chatting"
+        "game": "Manor Lords"
       },
       {
         "gap_h": 19.2,
@@ -564,12 +559,12 @@
       {
         "gap_h": 20.7,
         "started_at": "2026-09-03T17:26:16Z",
-        "game": "A Weird Game About Sausage"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 37.5,
         "started_at": "2026-09-05T19:47:45Z",
-        "game": "Project Zomboid"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 18.5,
@@ -620,30 +615,21 @@
         "gap_h": 15.0,
         "started_at": "2026-09-15T16:59:28Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 15.3,
+        "started_at": "2026-09-16T18:48:59Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
       {
-        "started_at": "2026-08-19T17:17:02Z",
-        "ended_at_iso": "2026-08-19T22:15:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Project Zomboid"
-        ],
-        "duration_h": 5.0,
-        "duration_label": "298 minutes",
-        "avg_viewers": 1952,
-        "peak_viewers": 2193,
-        "followers_gained": -25,
-        "followers_gained_source": null
-      },
-      {
         "started_at": "2026-08-23T20:07:11Z",
         "ended_at_iso": "2026-08-24T07:15:00+00:00",
         "games": [
-          "Project Zomboid",
           "Just Chatting",
-          "WARDOGS"
+          "WARDOGS",
+          "Project Zomboid"
         ],
         "duration_h": 11.1,
         "duration_label": "668 minutes",
@@ -730,8 +716,8 @@
         "ended_at_iso": "2026-08-29T05:15:00+00:00",
         "games": [
           "Just Chatting",
-          "Manor Lords",
-          "Berry Bury Berry"
+          "Berry Bury Berry",
+          "Manor Lords"
         ],
         "duration_h": 8.2,
         "duration_label": "495 minutes",
@@ -744,9 +730,9 @@
         "started_at": "2026-08-30T19:31:02Z",
         "ended_at_iso": "2026-08-31T01:30:00+00:00",
         "games": [
+          "Manor Lords",
           "Just Chatting",
-          "ELDEN RING",
-          "Manor Lords"
+          "ELDEN RING"
         ],
         "duration_h": 6.0,
         "duration_label": "359 minutes",
@@ -802,9 +788,9 @@
         "started_at": "2026-09-03T17:26:16Z",
         "ended_at_iso": "2026-09-04T06:15:00+00:00",
         "games": [
+          "Just Chatting",
           "A Weird Game About Sausage",
-          "IRL",
-          "Just Chatting"
+          "IRL"
         ],
         "duration_h": 12.8,
         "duration_label": "769 minutes",
@@ -817,8 +803,8 @@
         "started_at": "2026-09-05T19:47:45Z",
         "ended_at_iso": "2026-09-06T01:15:00+00:00",
         "games": [
-          "Project Zomboid",
-          "Just Chatting"
+          "Just Chatting",
+          "Project Zomboid"
         ],
         "duration_h": 5.5,
         "duration_label": "328 minutes",
@@ -966,17 +952,28 @@
         "peak_viewers": 2180,
         "followers_gained": 114,
         "followers_gained_source": null
+      },
+      {
+        "started_at": "2026-09-16T18:48:59Z",
+        "ended_at_iso": "2026-09-16T18:45:00+00:00",
+        "games": [
+          "Just Chatting"
+        ],
+        "duration_h": -0.1,
+        "duration_label": "-3 minutes",
+        "avg_viewers": 86,
+        "peak_viewers": 221,
+        "followers_gained": 0,
+        "followers_gained_source": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-09-15T16:59:28Z",
-      "ended_at_iso": "2026-09-16T03:30:00+00:00",
+      "started_at": "2026-09-16T18:48:59Z",
+      "ended_at_iso": "2026-09-16T18:45:00+00:00",
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V",
-        "MARVEL T\u014cKON: Fighting Souls"
+        "Just Chatting"
       ],
-      "duration_label": "631 minutes"
+      "duration_label": "-3 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -1095,10 +1092,10 @@
             "avg_viewers": 2438.0
           },
           "Social sandbox/RP": {
-            "count": 1060,
+            "count": 1061,
             "share": 42.6,
             "median_gap_hours": 23.88,
-            "p90_gap_hours": 48.26,
+            "p90_gap_hours": 48.25,
             "avg_viewers": 1603.0
           },
           "Story/survival arc": {
@@ -1119,11 +1116,11 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1615
+            "count": 1616
           },
           {
             "game": "Grand Theft Auto V",
-            "count": 904
+            "count": 905
           },
           {
             "game": "IRL",
@@ -1168,13 +1165,18 @@
         ]
       }
     },
-    "live_stream": null,
-    "last_live_seen": "2026-09-16T01:32:57Z",
+    "live_stream": {
+      "started_at": "2026-09-16T18:48:59Z",
+      "game": "Just Chatting",
+      "title": "UCHIHA JONES & THE RETURN OF JOE CAINE | $$$ AND POWER POV | NoPixelV | !discord",
+      "viewers": 1535
+    },
+    "last_live_seen": "2026-09-16T20:25:25Z",
     "followers": {
-      "total": 651672,
-      "as_of": "2026-09-16T17:29:36Z",
+      "total": 651665,
+      "as_of": "2026-09-16T20:25:09Z",
       "gained_7d": null,
-      "snapshots": 23
+      "snapshots": 24
     }
   },
   "follower_snapshots": [
@@ -1269,6 +1271,10 @@
     [
       "2026-09-16T17:29:36Z",
       651672
+    ],
+    [
+      "2026-09-16T20:25:09Z",
+      651665
     ]
   ],
   "sully_streams": [
@@ -4022,8 +4028,8 @@
       "duration_seconds": 1800,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Final Fantasy X/X-2 HD Remaster"
+        "Final Fantasy X/X-2 HD Remaster",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 35,
       "peak_viewers": 42,
@@ -24094,9 +24100,9 @@
       "duration_seconds": 17100,
       "title": null,
       "games": [
+        "Just Chatting",
         "Diablo II",
-        "Age of Empires II",
-        "Just Chatting"
+        "Age of Empires II"
       ],
       "avg_viewers": 1138,
       "peak_viewers": 1472,
@@ -24276,9 +24282,9 @@
       "title": null,
       "games": [
         "VRChat",
+        "Just Chatting",
         "Clustertruck",
-        "Vicewave",
-        "Just Chatting"
+        "Vicewave"
       ],
       "avg_viewers": 978,
       "peak_viewers": 1334,
@@ -32388,8 +32394,8 @@
       "duration_seconds": 19320,
       "title": null,
       "games": [
-        "Arcade Paradise",
-        "Just Chatting"
+        "Just Chatting",
+        "Arcade Paradise"
       ],
       "avg_viewers": 4261,
       "peak_viewers": 10104,
@@ -33275,9 +33281,9 @@
         "Warhammer 40,000: Darktide",
         "Just Chatting",
         "Goat Simulator 3",
-        "Farmer's Life",
         "Dwarf Fortress",
-        "Fall Guys"
+        "Fall Guys",
+        "Farmer's Life"
       ],
       "avg_viewers": 1936,
       "peak_viewers": 2503,
@@ -35340,8 +35346,8 @@
       "duration_seconds": 27060,
       "title": null,
       "games": [
-        "Just Chatting",
         "L.A. Noire",
+        "Just Chatting",
         "Holdfast: Nations At War",
         "Mount &amp; Blade II: Bannerlord"
       ],
@@ -36583,8 +36589,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "The Matchless KungFu",
-        "Old School RuneScape"
+        "Old School RuneScape",
+        "The Matchless KungFu"
       ],
       "avg_viewers": 2141,
       "peak_viewers": 3438,
@@ -37580,8 +37586,8 @@
       "duration_seconds": 34680,
       "title": null,
       "games": [
-        "World of Warcraft",
-        "Just Chatting"
+        "Just Chatting",
+        "World of Warcraft"
       ],
       "avg_viewers": 3078,
       "peak_viewers": 6406,
@@ -37620,8 +37626,8 @@
       "duration_seconds": 34440,
       "title": null,
       "games": [
-        "World of Warcraft",
-        "Just Chatting"
+        "Just Chatting",
+        "World of Warcraft"
       ],
       "avg_viewers": 1989,
       "peak_viewers": 2749,
@@ -40362,8 +40368,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "IRL",
-        "Pax Dei"
+        "Pax Dei",
+        "IRL"
       ],
       "avg_viewers": 2667,
       "peak_viewers": 5798,
@@ -40640,8 +40646,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Subnautica",
-        "Drug Dealer Simulator 2"
+        "Drug Dealer Simulator 2",
+        "Subnautica"
       ],
       "avg_viewers": 1915,
       "peak_viewers": 2889,
@@ -40857,8 +40863,8 @@
       "duration_seconds": 25800,
       "title": null,
       "games": [
-        "Just Chatting",
-        "STRETCHER MEN"
+        "STRETCHER MEN",
+        "Just Chatting"
       ],
       "avg_viewers": 2519,
       "peak_viewers": 5488,
@@ -42694,8 +42700,8 @@
       "duration_seconds": 22800,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Baldur's Gate 3"
+        "Baldur's Gate 3",
+        "Just Chatting"
       ],
       "avg_viewers": 2115,
       "peak_viewers": 2678,
@@ -47414,8 +47420,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "MineMogul",
-        "Where Winds Meet"
+        "Where Winds Meet",
+        "MineMogul"
       ],
       "avg_viewers": 3091,
       "peak_viewers": 3925,
@@ -48038,8 +48044,8 @@
       "duration_seconds": 12240,
       "title": null,
       "games": [
-        "World of Warcraft",
-        "Just Chatting"
+        "Just Chatting",
+        "World of Warcraft"
       ],
       "avg_viewers": 2037,
       "peak_viewers": 2471,
@@ -48291,8 +48297,8 @@
       "duration_seconds": 20280,
       "title": null,
       "games": [
-        "Crimson Desert",
-        "Just Chatting"
+        "Just Chatting",
+        "Crimson Desert"
       ],
       "avg_viewers": 1887,
       "peak_viewers": 3309,
@@ -48351,8 +48357,8 @@
       "duration_seconds": 19740,
       "title": null,
       "games": [
-        "Screamer",
-        "Just Chatting"
+        "Just Chatting",
+        "Screamer"
       ],
       "avg_viewers": 2060,
       "peak_viewers": 2713,
@@ -48857,8 +48863,8 @@
       "duration_seconds": 21960,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Subnautica"
+        "Subnautica",
+        "Just Chatting"
       ],
       "avg_viewers": 3035,
       "peak_viewers": 5060,
@@ -48917,8 +48923,8 @@
       "duration_seconds": 14400,
       "title": null,
       "games": [
-        "Subnautica",
-        "Just Chatting"
+        "Just Chatting",
+        "Subnautica"
       ],
       "avg_viewers": 2381,
       "peak_viewers": 2803,
@@ -49214,8 +49220,8 @@
       "duration_seconds": 25320,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Forza Horizon 6"
+        "Forza Horizon 6",
+        "Just Chatting"
       ],
       "avg_viewers": 1163,
       "peak_viewers": 1258,
@@ -49443,8 +49449,8 @@
       "duration_seconds": 24000,
       "title": null,
       "games": [
-        "Just Chatting",
-        "MECCHA CHAMELEON"
+        "MECCHA CHAMELEON",
+        "Just Chatting"
       ],
       "avg_viewers": 1357,
       "peak_viewers": 1499,
@@ -49523,8 +49529,8 @@
       "duration_seconds": 14160,
       "title": null,
       "games": [
-        "Dawson Oaks Trailer Park",
-        "Just Chatting"
+        "Just Chatting",
+        "Dawson Oaks Trailer Park"
       ],
       "avg_viewers": 1499,
       "peak_viewers": 1739,
@@ -49801,8 +49807,8 @@
       "duration_seconds": 30240,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Project Zomboid"
+        "Project Zomboid",
+        "Just Chatting"
       ],
       "avg_viewers": 2245,
       "peak_viewers": 3100,
@@ -49996,9 +50002,9 @@
       "duration_seconds": 40080,
       "title": null,
       "games": [
-        "Project Zomboid",
         "Just Chatting",
-        "WARDOGS"
+        "WARDOGS",
+        "Project Zomboid"
       ],
       "avg_viewers": 1951,
       "peak_viewers": 2196,
@@ -50121,8 +50127,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Manor Lords",
-        "Berry Bury Berry"
+        "Berry Bury Berry",
+        "Manor Lords"
       ],
       "avg_viewers": 1807,
       "peak_viewers": 2177,
@@ -50141,9 +50147,9 @@
       "duration_seconds": 21540,
       "title": null,
       "games": [
+        "Manor Lords",
         "Just Chatting",
-        "ELDEN RING",
-        "Manor Lords"
+        "ELDEN RING"
       ],
       "avg_viewers": 1870,
       "peak_viewers": 2169,
@@ -50223,9 +50229,9 @@
       "duration_seconds": 46140,
       "title": null,
       "games": [
+        "Just Chatting",
         "A Weird Game About Sausage",
-        "IRL",
-        "Just Chatting"
+        "IRL"
       ],
       "avg_viewers": 2021,
       "peak_viewers": 2190,
@@ -50244,8 +50250,8 @@
       "duration_seconds": 19680,
       "title": null,
       "games": [
-        "Project Zomboid",
-        "Just Chatting"
+        "Just Chatting",
+        "Project Zomboid"
       ],
       "avg_viewers": 1418,
       "peak_viewers": 1559,
@@ -50452,6 +50458,25 @@
       "followers_gained": 114,
       "view_minutes": 1150944,
       "stream_url": "https://sullygnome.com/channel/stream/321440906586",
+      "range": "2026"
+    },
+    {
+      "source": "sullygnome_stream_table",
+      "precision": "exact_utc_start",
+      "id": "321455818074",
+      "started_at": "2026-09-16T18:48:59Z",
+      "ended_at": "Wednesday 16th September 2026 18:45",
+      "duration_label": "-3 minutes",
+      "duration_seconds": -180,
+      "title": null,
+      "games": [
+        "Just Chatting"
+      ],
+      "avg_viewers": 86,
+      "peak_viewers": 221,
+      "followers_gained": 0,
+      "view_minutes": -258,
+      "stream_url": "https://sullygnome.com/channel/stream/321455818074",
       "range": "2026"
     }
   ],
