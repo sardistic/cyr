@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-16T01:32:57Z",
+  "generated_at": "2026-09-16T07:19:08Z",
   "data_through": "2026-09-15T16:59:28Z",
   "degraded_sources": [],
   "sources": {
     "sullygnome_stream_table": 2492,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 44,
-    "exact_merged_rows": 41,
+    "exact_merged_rows": 42,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
@@ -27,9 +27,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 40,
-      "mean": 35.25,
-      "median": 24.14,
+      "count": 41,
+      "mean": 34.94,
+      "median": 24.13,
       "max": 100.92
     },
     "archive_gap_days": {
@@ -656,8 +656,8 @@
         "started_at": "2026-08-24T21:12:54Z",
         "ended_at_iso": "2026-08-25T01:45:00+00:00",
         "games": [
-          "Project P.I.T.T.",
-          "Just Chatting"
+          "Just Chatting",
+          "Project P.I.T.T."
         ],
         "duration_h": 4.5,
         "duration_label": "273 minutes",
@@ -730,8 +730,8 @@
         "ended_at_iso": "2026-08-29T05:15:00+00:00",
         "games": [
           "Just Chatting",
-          "Berry Bury Berry",
-          "Manor Lords"
+          "Manor Lords",
+          "Berry Bury Berry"
         ],
         "duration_h": 8.2,
         "duration_label": "495 minutes",
@@ -954,27 +954,29 @@
       },
       {
         "started_at": "2026-09-15T16:59:28Z",
-        "ended_at_iso": "2026-09-16T00:45:00+00:00",
+        "ended_at_iso": "2026-09-16T03:30:00+00:00",
         "games": [
           "Just Chatting",
-          "Grand Theft Auto V"
+          "Grand Theft Auto V",
+          "MARVEL T\u014cKON: Fighting Souls"
         ],
-        "duration_h": 7.8,
-        "duration_label": "466 minutes",
-        "avg_viewers": 1927,
+        "duration_h": 10.5,
+        "duration_label": "631 minutes",
+        "avg_viewers": 1824,
         "peak_viewers": 2180,
-        "followers_gained": 0,
+        "followers_gained": 114,
         "followers_gained_source": null
       }
     ],
     "last_stream": {
       "started_at": "2026-09-15T16:59:28Z",
-      "ended_at_iso": "2026-09-16T00:45:00+00:00",
+      "ended_at_iso": "2026-09-16T03:30:00+00:00",
       "games": [
         "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "MARVEL T\u014cKON: Fighting Souls"
       ],
-      "duration_label": "466 minutes"
+      "duration_label": "631 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -1166,18 +1168,13 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-09-15T16:59:28Z",
-      "game": "MARVEL T\u014cKON: Fighting Souls",
-      "title": "PLAYING MARVEL TOKON FIGHTING SOULS WITH @WILLNEFF #ad !MarvelTokon",
-      "viewers": 1497
-    },
+    "live_stream": null,
     "last_live_seen": "2026-09-16T01:32:57Z",
     "followers": {
-      "total": 651691,
-      "as_of": "2026-09-16T01:32:44Z",
+      "total": 651687,
+      "as_of": "2026-09-16T07:18:55Z",
       "gained_7d": null,
-      "snapshots": 20
+      "snapshots": 21
     }
   },
   "follower_snapshots": [
@@ -1260,6 +1257,10 @@
     [
       "2026-09-16T01:32:44Z",
       651691
+    ],
+    [
+      "2026-09-16T07:18:55Z",
+      651687
     ]
   ],
   "sully_streams": [
@@ -1430,8 +1431,8 @@
       "duration_seconds": 7200,
       "title": null,
       "games": [
-        "PUBG: BATTLEGROUNDS",
-        "Mass Effect 2"
+        "Mass Effect 2",
+        "PUBG: BATTLEGROUNDS"
       ],
       "avg_viewers": 41,
       "peak_viewers": 58,
@@ -2648,8 +2649,8 @@
       "duration_seconds": 10800,
       "title": null,
       "games": [
-        "IRL",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "IRL"
       ],
       "avg_viewers": 48,
       "peak_viewers": 75,
@@ -8326,8 +8327,8 @@
       "games": [
         "Grand Theft Auto V",
         "Marbles on Stream",
-        "IRL",
-        "Domina"
+        "Domina",
+        "IRL"
       ],
       "avg_viewers": 126,
       "peak_viewers": 296,
@@ -19935,9 +19936,9 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
+        "Command &amp; Conquer Remastered Collection",
         "\u5922\u4e09\u570b",
-        "Just Chatting",
-        "Command &amp; Conquer Remastered Collection"
+        "Just Chatting"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 1848,
@@ -23221,8 +23222,8 @@
       "duration_seconds": 31200,
       "title": null,
       "games": [
-        "Just Chatting",
         "Persona 4",
+        "Just Chatting",
         "World of Warcraft"
       ],
       "avg_viewers": 1216,
@@ -24328,8 +24329,8 @@
       "duration_seconds": 33480,
       "title": null,
       "games": [
-        "Rust",
-        "VRChat"
+        "VRChat",
+        "Rust"
       ],
       "avg_viewers": 1898,
       "peak_viewers": 2899,
@@ -26064,9 +26065,9 @@
         "Grand Theft Auto V",
         "Ranch Simulator",
         "OBEY",
+        "SCP: Terminal",
         "Friday the 13th: The Game",
-        "Can't Drive This",
-        "SCP: Terminal"
+        "Can't Drive This"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 2172,
@@ -31479,10 +31480,10 @@
       "title": null,
       "games": [
         "Just Chatting",
+        "Ultimate Epic Battle Simulator 2",
         "Planet Crafter",
         "Little Nightmares II",
-        "The Quarry",
-        "Ultimate Epic Battle Simulator 2"
+        "The Quarry"
       ],
       "avg_viewers": 2291,
       "peak_viewers": 3494,
@@ -33242,8 +33243,8 @@
       "duration_seconds": 25080,
       "title": null,
       "games": [
-        "Just Chatting",
         "Quake",
+        "Just Chatting",
         "Warhammer 40,000: Darktide"
       ],
       "avg_viewers": 1894,
@@ -35188,8 +35189,8 @@
       "duration_seconds": 10320,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Genshin Impact"
+        "Genshin Impact",
+        "Just Chatting"
       ],
       "avg_viewers": 1026,
       "peak_viewers": 2275,
@@ -38674,8 +38675,8 @@
       "duration_seconds": 36000,
       "title": null,
       "games": [
-        "Nightingale",
         "Just Chatting",
+        "Nightingale",
         "ELDEN RING"
       ],
       "avg_viewers": 2481,
@@ -40631,8 +40632,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Drug Dealer Simulator 2",
-        "Subnautica"
+        "Subnautica",
+        "Drug Dealer Simulator 2"
       ],
       "avg_viewers": 1915,
       "peak_viewers": 2889,
@@ -45632,8 +45633,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "PEAK",
-        "GUG"
+        "GUG",
+        "PEAK"
       ],
       "avg_viewers": 3107,
       "peak_viewers": 4427,
@@ -46250,8 +46251,8 @@
       "duration_seconds": 21720,
       "title": null,
       "games": [
-        "Rust",
-        "Just Chatting"
+        "Just Chatting",
+        "Rust"
       ],
       "avg_viewers": 4350,
       "peak_viewers": 7161,
@@ -46312,9 +46313,9 @@
       "duration_seconds": 14820,
       "title": null,
       "games": [
-        "Rust",
         "Just Chatting",
-        "Megabonk"
+        "Megabonk",
+        "Rust"
       ],
       "avg_viewers": 2943,
       "peak_viewers": 4658,
@@ -47224,8 +47225,8 @@
       "duration_seconds": 11160,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Sonic Racing: CrossWorlds"
+        "Sonic Racing: CrossWorlds",
+        "Just Chatting"
       ],
       "avg_viewers": 2522,
       "peak_viewers": 3637,
@@ -47736,8 +47737,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Tainted Grail: The Fall of Avalon",
-        "RollerCoaster Tycoon Classic"
+        "RollerCoaster Tycoon Classic",
+        "Tainted Grail: The Fall of Avalon"
       ],
       "avg_viewers": 2711,
       "peak_viewers": 3985,
@@ -47988,10 +47989,10 @@
       "title": null,
       "games": [
         "Just Chatting",
+        "Marathon",
         "Special Events",
         "IRL",
-        "Kingdom Come: Deliverance II",
-        "Marathon"
+        "Kingdom Come: Deliverance II"
       ],
       "avg_viewers": 4978,
       "peak_viewers": 18367,
@@ -50008,8 +50009,8 @@
       "duration_seconds": 16380,
       "title": null,
       "games": [
-        "Project P.I.T.T.",
-        "Just Chatting"
+        "Just Chatting",
+        "Project P.I.T.T."
       ],
       "avg_viewers": 1823,
       "peak_viewers": 2181,
@@ -50112,8 +50113,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Berry Bury Berry",
-        "Manor Lords"
+        "Manor Lords",
+        "Berry Bury Berry"
       ],
       "avg_viewers": 1807,
       "peak_viewers": 2177,
@@ -50429,18 +50430,19 @@
       "precision": "exact_utc_start",
       "id": "321440906586",
       "started_at": "2026-09-15T16:59:28Z",
-      "ended_at": "Wednesday 16th September 2026 00:45",
-      "duration_label": "466 minutes",
-      "duration_seconds": 27960,
+      "ended_at": "Wednesday 16th September 2026 03:30",
+      "duration_label": "631 minutes",
+      "duration_seconds": 37860,
       "title": null,
       "games": [
         "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "MARVEL T\u014cKON: Fighting Souls"
       ],
-      "avg_viewers": 1927,
+      "avg_viewers": 1824,
       "peak_viewers": 2180,
-      "followers_gained": 0,
-      "view_minutes": 897982,
+      "followers_gained": 114,
+      "view_minutes": 1150944,
       "stream_url": "https://sullygnome.com/channel/stream/321440906586",
       "range": "2026"
     }
@@ -50883,6 +50885,16 @@
       "duration_seconds": 28660,
       "title": "UCHIHA JONES - NOPIXEL V - LESS MANIA MORE MONEY - DILLYDALLYSHILLYSHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
       "views": 259751
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2874946173",
+      "started_at": "2026-09-15T16:59:33Z",
+      "duration_label": "01:53:42",
+      "duration_seconds": 6822,
+      "title": "UCHIHA JONES | NOPIXEL V | NEW DAILY QUEST LIST WITH UNLOCKABLE QUESTS | NEW cyrOVERHEAT emote (and uchiha stress meter overlay)",
+      "views": 84
     }
   ],
   "archive_grouped_dates": [
