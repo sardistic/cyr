@@ -1,12 +1,14 @@
 {
-  "generated_at": "2026-09-18T01:24:42Z",
+  "generated_at": "2026-09-18T06:21:46Z",
   "data_through": "2026-09-17T19:15:00Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 2146 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+  ],
   "sources": {
     "sullygnome_stream_table": 2494,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 44,
-    "exact_merged_rows": 42,
+    "exact_merged_rows": 43,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
@@ -27,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 41,
-      "mean": 33.89,
-      "median": 24.13,
+      "count": 42,
+      "mean": 33.67,
+      "median": 24.14,
       "max": 100.92
     },
     "archive_gap_days": {
@@ -1166,18 +1168,13 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-09-17T19:15:00Z",
-      "game": "Grand Theft Auto V",
-      "title": "UCHIHA JONES - NOPIXEL V - QUESTS & LOTS OF DILLY DALLY SHILLY SHALLY (VIEWERS CAPPED AT 2k DON'T MAKE FUN OF ME PLEASE)",
-      "viewers": 2104
-    },
+    "live_stream": null,
     "last_live_seen": "2026-09-18T01:24:42Z",
     "followers": {
-      "total": 651883,
-      "as_of": "2026-09-18T01:24:26Z",
+      "total": 651937,
+      "as_of": "2026-09-18T06:21:32Z",
       "gained_7d": null,
-      "snapshots": 32
+      "snapshots": 33
     }
   },
   "follower_snapshots": [
@@ -1308,6 +1305,10 @@
     [
       "2026-09-18T01:24:26Z",
       651883
+    ],
+    [
+      "2026-09-18T06:21:32Z",
+      651937
     ]
   ],
   "sully_streams": [
@@ -50982,6 +50983,16 @@
       "duration_seconds": 24550,
       "title": "UCHIHA JONES & THE RETURN OF JOE CAINE | $$$ AND POWER POV | NoPixelV | !discord",
       "views": 178528
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2876785933",
+      "started_at": "2026-09-17T19:15:05Z",
+      "duration_label": "10:23:00",
+      "duration_seconds": 37380,
+      "title": "UCHIHA JONES - NOPIXEL V - QUESTS & LOTS OF DILLY DALLY SHILLY SHALLY (VIEWERS CAPPED AT 2k DON'T MAKE FUN OF ME PLEASE)",
+      "views": 1290
     }
   ],
   "archive_grouped_dates": [
