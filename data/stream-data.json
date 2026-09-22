@@ -1,7 +1,9 @@
 {
-  "generated_at": "2026-09-22T12:24:07Z",
+  "generated_at": "2026-09-22T17:10:12Z",
   "data_through": "2026-09-21T21:35:31Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+  ],
   "sources": {
     "sullygnome_stream_table": 2497,
     "twitchmetrics_stream_logs": 15,
@@ -544,7 +546,7 @@
       {
         "gap_h": 37.5,
         "started_at": "2026-09-05T19:47:45Z",
-        "game": "Just Chatting"
+        "game": "Project Zomboid"
       },
       {
         "gap_h": 18.5,
@@ -655,8 +657,8 @@
         "ended_at_iso": "2026-08-29T05:15:00+00:00",
         "games": [
           "Just Chatting",
-          "Berry Bury Berry",
-          "Manor Lords"
+          "Manor Lords",
+          "Berry Bury Berry"
         ],
         "duration_h": 8.2,
         "duration_label": "495 minutes",
@@ -669,9 +671,9 @@
         "started_at": "2026-08-30T19:31:02Z",
         "ended_at_iso": "2026-08-31T01:30:00+00:00",
         "games": [
+          "ELDEN RING",
           "Manor Lords",
-          "Just Chatting",
-          "ELDEN RING"
+          "Just Chatting"
         ],
         "duration_h": 6.0,
         "duration_label": "359 minutes",
@@ -742,8 +744,8 @@
         "started_at": "2026-09-05T19:47:45Z",
         "ended_at_iso": "2026-09-06T01:15:00+00:00",
         "games": [
-          "Just Chatting",
-          "Project Zomboid"
+          "Project Zomboid",
+          "Just Chatting"
         ],
         "duration_h": 5.5,
         "duration_label": "328 minutes",
@@ -1165,10 +1167,10 @@
     "live_stream": null,
     "last_live_seen": "2026-09-22T01:27:50Z",
     "followers": {
-      "total": 652047,
-      "as_of": "2026-09-22T12:23:54Z",
-      "gained_7d": 472,
-      "snapshots": 60
+      "total": 652044,
+      "as_of": "2026-09-22T17:09:58Z",
+      "gained_7d": 469,
+      "snapshots": 61
     }
   },
   "follower_snapshots": [
@@ -1411,6 +1413,10 @@
     [
       "2026-09-22T12:23:54Z",
       652047
+    ],
+    [
+      "2026-09-22T17:09:58Z",
+      652044
     ]
   ],
   "sully_streams": [
@@ -1424,8 +1430,8 @@
       "duration_seconds": 11700,
       "title": null,
       "games": [
-        "IRL",
         "Dragon Age: Inquisition",
+        "IRL",
         "Rust"
       ],
       "avg_viewers": 108,
@@ -19862,8 +19868,8 @@
       "duration_seconds": 30000,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1888,
       "peak_viewers": 4746,
@@ -29277,8 +29283,8 @@
       "duration_seconds": 34740,
       "title": null,
       "games": [
-        "Super Mario Maker 2",
         "Just Chatting",
+        "Super Mario Maker 2",
         "Gas Station Simulator"
       ],
       "avg_viewers": 4434,
@@ -30161,8 +30167,8 @@
       "duration_seconds": 29880,
       "title": null,
       "games": [
-        "No Man's Sky",
-        "Just Chatting"
+        "Just Chatting",
+        "No Man's Sky"
       ],
       "avg_viewers": 2674,
       "peak_viewers": 9745,
@@ -30181,8 +30187,8 @@
       "duration_seconds": 49020,
       "title": null,
       "games": [
-        "Cities: Skylines",
         "Just Chatting",
+        "Cities: Skylines",
         "Anemoiapolis",
         "Police Simulator: Patrol Officers"
       ],
@@ -30283,8 +30289,8 @@
       "duration_seconds": 14580,
       "title": null,
       "games": [
-        "Vampire Survivors",
-        "Just Chatting"
+        "Just Chatting",
+        "Vampire Survivors"
       ],
       "avg_viewers": 2235,
       "peak_viewers": 2991,
@@ -30363,8 +30369,8 @@
       "duration_seconds": 28620,
       "title": null,
       "games": [
-        "Cities: Skylines",
         "Just Chatting",
+        "Cities: Skylines",
         "The Elder Scrolls V: Skyrim"
       ],
       "avg_viewers": 4655,
@@ -31072,8 +31078,8 @@
       "duration_seconds": 36480,
       "title": null,
       "games": [
-        "Unlisted on Twitch",
-        "Just Chatting"
+        "Just Chatting",
+        "Unlisted on Twitch"
       ],
       "avg_viewers": 11834,
       "peak_viewers": 25719,
@@ -32708,8 +32714,8 @@
       "duration_seconds": 11940,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Parkitect"
+        "Parkitect",
+        "Just Chatting"
       ],
       "avg_viewers": 2176,
       "peak_viewers": 3675,
@@ -36843,8 +36849,8 @@
       "duration_seconds": 41760,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Cyberpunk 2077"
+        "Cyberpunk 2077",
+        "Just Chatting"
       ],
       "avg_viewers": 2006,
       "peak_viewers": 3088,
@@ -39974,9 +39980,9 @@
       "duration_seconds": 14040,
       "title": null,
       "games": [
-        "Just Chatting",
         "Rumble Club",
-        "Rainbow Six Siege"
+        "Rainbow Six Siege",
+        "Just Chatting"
       ],
       "avg_viewers": 1707,
       "peak_viewers": 2257,
@@ -40038,8 +40044,8 @@
       "duration_seconds": 18780,
       "title": null,
       "games": [
-        "Just Chatting",
         "Manor Lords",
+        "Just Chatting",
         "Star Citizen"
       ],
       "avg_viewers": 3102,
@@ -40462,8 +40468,8 @@
       "duration_seconds": 12120,
       "title": null,
       "games": [
-        "Just Chatting",
-        "V Rising"
+        "V Rising",
+        "Just Chatting"
       ],
       "avg_viewers": 1282,
       "peak_viewers": 1908,
@@ -40504,8 +40510,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Pax Dei",
-        "IRL"
+        "IRL",
+        "Pax Dei"
       ],
       "avg_viewers": 2667,
       "peak_viewers": 5798,
@@ -40782,8 +40788,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Subnautica",
-        "Drug Dealer Simulator 2"
+        "Drug Dealer Simulator 2",
+        "Subnautica"
       ],
       "avg_viewers": 1915,
       "peak_viewers": 2889,
@@ -48748,8 +48754,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Retro Rewind: Video Store Simulator",
-        "Weed Shop 4: Highland"
+        "Weed Shop 4: Highland",
+        "Retro Rewind: Video Store Simulator"
       ],
       "avg_viewers": 2815,
       "peak_viewers": 4742,
@@ -49585,8 +49591,8 @@
       "duration_seconds": 24000,
       "title": null,
       "games": [
-        "Just Chatting",
-        "MECCHA CHAMELEON"
+        "MECCHA CHAMELEON",
+        "Just Chatting"
       ],
       "avg_viewers": 1357,
       "peak_viewers": 1499,
@@ -49624,8 +49630,8 @@
       "duration_seconds": 23040,
       "title": null,
       "games": [
-        "MECCHA CHAMELEON",
-        "Just Chatting"
+        "Just Chatting",
+        "MECCHA CHAMELEON"
       ],
       "avg_viewers": 1485,
       "peak_viewers": 1752,
@@ -49743,8 +49749,8 @@
       "duration_seconds": 14940,
       "title": null,
       "games": [
-        "Rainbow Six Siege",
-        "Just Chatting"
+        "Just Chatting",
+        "Rainbow Six Siege"
       ],
       "avg_viewers": 1569,
       "peak_viewers": 1726,
@@ -49783,8 +49789,8 @@
       "duration_seconds": 18420,
       "title": null,
       "games": [
-        "Just Chatting",
-        "How to Make an Atomic Bomb in Your Garden"
+        "How to Make an Atomic Bomb in Your Garden",
+        "Just Chatting"
       ],
       "avg_viewers": 1486,
       "peak_viewers": 1739,
@@ -49841,9 +49847,9 @@
       "duration_seconds": 14520,
       "title": null,
       "games": [
-        "How to Make an Atomic Bomb in Your Garden",
         "Dirty Business",
-        "Just Chatting"
+        "Just Chatting",
+        "How to Make an Atomic Bomb in Your Garden"
       ],
       "avg_viewers": 2251,
       "peak_viewers": 2500,
@@ -49862,8 +49868,8 @@
       "duration_seconds": 28980,
       "title": null,
       "games": [
-        "Dirty Business",
-        "Just Chatting"
+        "Just Chatting",
+        "Dirty Business"
       ],
       "avg_viewers": 2330,
       "peak_viewers": 2500,
@@ -49922,9 +49928,9 @@
       "duration_seconds": 31800,
       "title": null,
       "games": [
+        "Project Zomboid",
         "Just Chatting",
-        "Waterpark Simulator",
-        "Project Zomboid"
+        "Waterpark Simulator"
       ],
       "avg_viewers": 2611,
       "peak_viewers": 3581,
@@ -50138,9 +50144,9 @@
       "duration_seconds": 40080,
       "title": null,
       "games": [
-        "Project Zomboid",
         "Just Chatting",
-        "WARDOGS"
+        "WARDOGS",
+        "Project Zomboid"
       ],
       "avg_viewers": 1951,
       "peak_viewers": 2196,
@@ -50179,9 +50185,9 @@
       "duration_seconds": 32340,
       "title": null,
       "games": [
-        "Just Chatting",
         "Special Events",
         "Once Human",
+        "Just Chatting",
         "Project P.I.T.T."
       ],
       "avg_viewers": 1584,
@@ -50263,8 +50269,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Berry Bury Berry",
-        "Manor Lords"
+        "Manor Lords",
+        "Berry Bury Berry"
       ],
       "avg_viewers": 1807,
       "peak_viewers": 2177,
@@ -50283,9 +50289,9 @@
       "duration_seconds": 21540,
       "title": null,
       "games": [
+        "ELDEN RING",
         "Manor Lords",
-        "Just Chatting",
-        "ELDEN RING"
+        "Just Chatting"
       ],
       "avg_viewers": 1870,
       "peak_viewers": 2169,
@@ -50386,8 +50392,8 @@
       "duration_seconds": 19680,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Project Zomboid"
+        "Project Zomboid",
+        "Just Chatting"
       ],
       "avg_viewers": 1418,
       "peak_viewers": 1559,
@@ -51164,7 +51170,7 @@
       "duration_label": "06:43:20",
       "duration_seconds": 24200,
       "title": "Uchiha Jones | NoPixelV | Goog Bad Guy | VIEWERS CAPPED AT 2k LET'S HOPE TODAY'S THE DAY.",
-      "views": 225894
+      "views": 225925
     },
     {
       "source": "twitch_vod",
@@ -51174,7 +51180,7 @@
       "duration_label": "08:03:40",
       "duration_seconds": 29020,
       "title": "Uchiha Jones - NoPixelV - HUGE BUSINESS - BIG JOE CAINE DAY TOMORROW",
-      "views": 989
+      "views": 1294
     }
   ],
   "archive_grouped_dates": [
