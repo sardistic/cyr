@@ -1,7 +1,10 @@
 {
-  "generated_at": "2026-09-28T22:26:10Z",
+  "generated_at": "2026-09-29T02:12:05Z",
   "data_through": "2026-09-28T18:19:42Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 4422 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+  ],
   "sources": {
     "sullygnome_stream_table": 2503,
     "twitchmetrics_stream_logs": 15,
@@ -1163,15 +1166,15 @@
     "live_stream": {
       "started_at": "2026-09-28T18:19:42Z",
       "game": "Grand Theft Auto V",
-      "title": "JOE CAINE - CASINO PREP POV WEEK - NOPIXEL V",
-      "viewers": 2099
+      "title": "UCHIHA JONES LATE NIGHT EDITION - NOPIXEL V",
+      "viewers": 2051
     },
-    "last_live_seen": "2026-09-28T22:26:10Z",
+    "last_live_seen": "2026-09-29T02:12:05Z",
     "followers": {
-      "total": 653153,
-      "as_of": "2026-09-28T22:25:53Z",
-      "gained_7d": 1124,
-      "snapshots": 96
+      "total": 653146,
+      "as_of": "2026-09-29T02:11:51Z",
+      "gained_7d": 1120,
+      "snapshots": 97
     }
   },
   "follower_snapshots": [
@@ -1558,6 +1561,10 @@
     [
       "2026-09-28T22:25:53Z",
       653153
+    ],
+    [
+      "2026-09-29T02:11:51Z",
+      653146
     ]
   ],
   "sully_streams": [
