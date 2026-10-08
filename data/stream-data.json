@@ -1,12 +1,14 @@
 {
-  "generated_at": "2026-10-08T00:20:00Z",
+  "generated_at": "2026-10-08T06:29:39Z",
   "data_through": "2026-10-07T22:13:06Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+  ],
   "sources": {
     "sullygnome_stream_table": 2512,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 50,
-    "exact_merged_rows": 49,
+    "exact_merged_rows": 50,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 611
   },
@@ -27,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 48,
-      "mean": 30.49,
-      "median": 23.98,
+      "count": 49,
+      "mean": 30.0,
+      "median": 23.97,
       "max": 100.92
     },
     "archive_gap_days": {
@@ -1154,18 +1156,13 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-10-07T22:13:06Z",
-      "game": "Grand Theft Auto V",
-      "title": "CASINO OPEN JOE CAINE ANEURYSM TIME | NoPixel V",
-      "viewers": 2067
-    },
+    "live_stream": null,
     "last_live_seen": "2026-10-08T00:20:00Z",
     "followers": {
-      "total": 653713,
-      "as_of": "2026-10-08T00:19:44Z",
-      "gained_7d": 405,
-      "snapshots": 138
+      "total": 653718,
+      "as_of": "2026-10-08T06:29:27Z",
+      "gained_7d": 383,
+      "snapshots": 139
     }
   },
   "follower_snapshots": [
@@ -1720,6 +1717,10 @@
     [
       "2026-10-08T00:19:44Z",
       653713
+    ],
+    [
+      "2026-10-08T06:29:27Z",
+      653718
     ]
   ],
   "sully_streams": [
@@ -51818,7 +51819,17 @@
       "duration_label": "04:04:52",
       "duration_seconds": 14692,
       "title": "CASINO OPEN JOE CAINE ANEURYSM TIME | NoPixel V",
-      "views": 90353
+      "views": 90422
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2894645572",
+      "started_at": "2026-10-07T22:13:11Z",
+      "duration_label": "03:43:50",
+      "duration_seconds": 13430,
+      "title": "CASINO OPEN JOE CAINE ANEURYSM TIME | NoPixel V",
+      "views": 601
     }
   ],
   "archive_grouped_dates": [
