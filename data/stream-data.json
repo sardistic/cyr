@@ -1,17 +1,16 @@
 {
-  "generated_at": "2026-10-09T00:09:51Z",
+  "generated_at": "2026-10-09T06:30:33Z",
   "data_through": "2026-10-07T22:13:06Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
   ],
   "sources": {
     "sullygnome_stream_table": 2512,
     "twitchmetrics_stream_logs": 15,
-    "twitchmetrics_vods": 50,
-    "exact_merged_rows": 48,
-    "youtube_archive_segments": 1127,
-    "youtube_archive_grouped_dates": 611
+    "twitchmetrics_vods": 51,
+    "exact_merged_rows": 49,
+    "youtube_archive_segments": 1126,
+    "youtube_archive_grouped_dates": 610
   },
   "stats": {
     "sully_gap_hours": {
@@ -30,20 +29,20 @@
       }
     },
     "exact_gap_hours": {
-      "count": 47,
-      "mean": 30.67,
-      "median": 23.99,
+      "count": 48,
+      "mean": 29.1,
+      "median": 23.96,
       "max": 100.92
     },
     "archive_gap_days": {
-      "count": 610,
-      "mean": 2.65,
-      "median": 1.0,
+      "count": 609,
+      "mean": 2.66,
+      "median": 1,
       "max": 81,
       "bins": {
-        "1": 329,
-        "2": 114,
-        "3": 62,
+        "1": 328,
+        "2": 113,
+        "3": 63,
         "4-5": 58,
         "6-7": 20,
         "8-14": 15,
@@ -71,7 +70,7 @@
       "2023-10": 5,
       "2023-11": 2,
       "2023-12": 10,
-      "2024-01": 13,
+      "2024-01": 12,
       "2024-02": 13,
       "2024-03": 8,
       "2024-05": 7,
@@ -969,7 +968,7 @@
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 610,
+        "sample_size": 609,
         "features": {
           "challenge": {
             "count": 19,
@@ -978,9 +977,9 @@
             "p90_gap_days": 4.2
           },
           "collab": {
-            "count": 202,
-            "share": 33.1,
-            "median_gap_days": 2.0,
+            "count": 201,
+            "share": 33.0,
+            "median_gap_days": 2,
             "p90_gap_days": 5.0
           },
           "event_drops": {
@@ -997,7 +996,7 @@
           },
           "gameplay_arc": {
             "count": 349,
-            "share": 57.2,
+            "share": 57.3,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
@@ -1034,9 +1033,9 @@
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 571,
+            "count": 570,
             "share": 93.6,
-            "median_gap_days": 1,
+            "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           },
           "positive": {
@@ -1055,14 +1054,14 @@
           },
           "low": {
             "count": 205,
-            "share": 33.6,
+            "share": 33.7,
             "median_gap_days": 2,
             "p90_gap_days": 6.0
           },
           "medium": {
-            "count": 365,
+            "count": 364,
             "share": 59.8,
-            "median_gap_days": 1,
+            "median_gap_days": 1.0,
             "p90_gap_days": 4.0
           }
         }
@@ -1157,13 +1156,18 @@
         ]
       }
     },
-    "live_stream": null,
-    "last_live_seen": "2026-10-08T00:20:00Z",
+    "live_stream": {
+      "started_at": "2026-10-09T04:35:21Z",
+      "game": "Grand Theft Auto V",
+      "title": "Uchiha Jones | Late Night NoPixel V",
+      "viewers": 2854
+    },
+    "last_live_seen": "2026-10-09T06:30:33Z",
     "followers": {
-      "total": 653654,
-      "as_of": "2026-10-09T00:09:39Z",
-      "gained_7d": 236,
-      "snapshots": 142
+      "total": 653698,
+      "as_of": "2026-10-09T06:30:17Z",
+      "gained_7d": 257,
+      "snapshots": 143
     }
   },
   "follower_snapshots": [
@@ -1734,6 +1738,10 @@
     [
       "2026-10-09T00:09:39Z",
       653654
+    ],
+    [
+      "2026-10-09T06:30:17Z",
+      653698
     ]
   ],
   "sully_streams": [
@@ -51319,22 +51327,12 @@
     {
       "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
-      "id": "2839776194",
-      "started_at": "2026-08-07T16:26:31Z",
-      "duration_label": "04:20:30",
-      "duration_seconds": 15630,
-      "title": "MAKE FUN OF CYR FRIDAY - SURVIVING 7 DAYS & UNALIVING 1000 ZOMBIES",
-      "views": 140705
-    },
-    {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
       "id": "2842524127",
       "started_at": "2026-08-10T17:38:27Z",
       "duration_label": "02:52:10",
       "duration_seconds": 10330,
       "title": "CYR IN THE KITCHEN - HOMEMADE CLAM CUH CHOWDER 1ST TIME - IN CAPE COD WE SHOULD EXPLORE A BIT AFTER CUH",
-      "views": 76896
+      "views": 76897
     },
     {
       "source": "twitchmetrics_vod",
@@ -51344,7 +51342,7 @@
       "duration_label": "06:42:00",
       "duration_seconds": 24120,
       "title": "\ud83c\udf55 PIZZA FRIDAY WITH @MEESTERKEEM \ud83c\udf55 WHO WILL EMBARRASS THEMSELVES LESS TONIGHT?",
-      "views": 257881
+      "views": 257883
     },
     {
       "source": "twitchmetrics_vod",
@@ -51354,7 +51352,7 @@
       "duration_label": "05:01:30",
       "duration_seconds": 18090,
       "title": "ANTAGONIZING MY CHAT AND THEN PLAYING MIDNIGHT SHIFT WITH @PEACHJARS !",
-      "views": 230404
+      "views": 230405
     },
     {
       "source": "twitchmetrics_vod",
@@ -51364,7 +51362,7 @@
       "duration_label": "06:02:50",
       "duration_seconds": 21770,
       "title": "TEACHING MYSELF HOW TO JUGGLE IN ONE STREAM BECAUSE I'M A CLOWN - MOVIE NIGHT TONIGHT IN !DISCORD AFTER STREAM",
-      "views": 451476
+      "views": 451478
     },
     {
       "source": "twitchmetrics_vod",
@@ -51374,7 +51372,7 @@
       "duration_label": "05:03:00",
       "duration_seconds": 18180,
       "title": "Day 435 of no water, just to see if it's a lie to control us (doing manual labor around @Peachjars house today because I'm buff and strong",
-      "views": 160725
+      "views": 160726
     },
     {
       "source": "twitchmetrics_vod",
@@ -51394,7 +51392,7 @@
       "duration_label": "11:19:21",
       "duration_seconds": 40761,
       "title": "MEN BRUNCH WITH @MISTERARTHER @JOSHINAROUND and THEN some RP on Wardog?!",
-      "views": 446323
+      "views": 446326
     },
     {
       "source": "twitchmetrics_vod",
@@ -51414,7 +51412,7 @@
       "duration_label": "09:04:50",
       "duration_seconds": 32690,
       "title": "OH SCRO, YOU AINT EVER SEEN SOMEONE REACT TO GAMESCOM LIKE THIS BEFORE: THEN WE PLAY SOME ONCE HUMAN, AND GAME IT UP SOME MORE!",
-      "views": 377724
+      "views": 377725
     },
     {
       "source": "twitchmetrics_vod",
@@ -51488,7 +51486,7 @@
       "duration_label": "9 hours",
       "duration_seconds": 31570,
       "title": "BREAKING: i'm wearing an anime shirt, & tier 2 subs can now post gifs in chat and I don't know how I feel about it yet",
-      "views": 357093,
+      "views": 357098,
       "avg_viewers": 1966,
       "peak_viewers": 2170
     },
@@ -51500,7 +51498,7 @@
       "duration_label": "4 hours",
       "duration_seconds": 15840,
       "title": "cuh, PLEASE stop saying that I look EXACTLY like Ryan Gosling? I get it guys. I look amazing. BODYCAM & ELDEN RING TOP CHARTS TODAY",
-      "views": 227471,
+      "views": 227472,
       "avg_viewers": 1791,
       "peak_viewers": 2167
     },
@@ -51512,7 +51510,7 @@
       "duration_label": "13 hours",
       "duration_seconds": 46490,
       "title": "CUH. WAR RP RETURNS, AND WE COULD POSSIBLY BE GOING ROCK CLIMBING TODAY",
-      "views": 593520,
+      "views": 593521,
       "avg_viewers": 2031,
       "peak_viewers": 2190
     },
@@ -51524,7 +51522,7 @@
       "duration_label": "6 hours",
       "duration_seconds": 20020,
       "title": "ZOMBOID RP FUN FOR THE WHOLE FAMILY, LIVE LAUGH LOVE TEAM CAPTAIN CYR ON @GOOSEY @PAYMONEYWUBBY SERVER #BLESSED #FYP #COMEDY",
-      "views": 197244,
+      "views": 197245,
       "avg_viewers": 1428,
       "peak_viewers": 1559
     },
@@ -51536,7 +51534,7 @@
       "duration_label": "7 hours",
       "duration_seconds": 24510,
       "title": "THIS PROJECT ZOMBOID RP SERVER MADE LOCAL TWITCH STREAMER CYR LOSE HIS MIND! (GONE WRONG)",
-      "views": 362574,
+      "views": 362575,
       "avg_viewers": 1453,
       "peak_viewers": 1548
     },
@@ -51548,7 +51546,7 @@
       "duration_label": "6 hours",
       "duration_seconds": 20930,
       "title": "birds started speaking english to me and they keep screaming from the trees \"HELP!!!\" \"HELP US!!! OH GOD PLEASE!!\"",
-      "views": 198396,
+      "views": 198397,
       "avg_viewers": 1344,
       "peak_viewers": 1554
     },
@@ -51560,7 +51558,7 @@
       "duration_label": "13 hours",
       "duration_seconds": 47460,
       "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA BADGE FOR SUBS! !discord",
-      "views": 176647,
+      "views": 176690,
       "avg_viewers": 1907,
       "peak_viewers": 2176
     },
@@ -51572,7 +51570,7 @@
       "duration_label": "09:27:58",
       "duration_seconds": 34078,
       "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA NoPixel V BADGE FOR 1 GIFTED SUB! !discord",
-      "views": 142743,
+      "views": 142768,
       "avg_viewers": 1276,
       "peak_viewers": 2088
     },
@@ -51584,7 +51582,7 @@
       "duration_label": "12 hours",
       "duration_seconds": 42870,
       "title": "UCHIHA JONES - NOPIXEL V - DILLY DALLY SHILLY SHALLY -  UCHIHA  BADGE FOR 1 GIFTED SUB! !discord",
-      "views": 559858,
+      "views": 559878,
       "avg_viewers": 2007,
       "peak_viewers": 2180
     },
@@ -51596,7 +51594,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 19780,
       "title": "UCHIHA JONES - NOPIXEL V - RP OVERLOAD OVERHEAT WEALTHY DILLY DALLY SHILLY SHALLY GOOG - UCHIHA  BADGE FOR 1 GIFTED SUB! - !discord",
-      "views": 120365,
+      "views": 120372,
       "avg_viewers": 1842,
       "peak_viewers": 2159
     },
@@ -51608,7 +51606,7 @@
       "duration_label": "6 hours",
       "duration_seconds": 20950,
       "title": "UCHIHA JONES - NOPIXEL V - CAR OWNER DILLY DALLY SHILLY SHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
-      "views": 150975,
+      "views": 150984,
       "avg_viewers": 1791,
       "peak_viewers": 2172
     },
@@ -51620,7 +51618,7 @@
       "duration_label": "5 hours",
       "duration_seconds": 19783,
       "title": "UCHIHA JONES - NOPIXEL V - MAKING GOOG MOVES - DILLY DALLY SHILLY SHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
-      "views": 194488,
+      "views": 194508,
       "avg_viewers": 1776,
       "peak_viewers": 2141
     },
@@ -51632,7 +51630,7 @@
       "duration_label": "07:57:40",
       "duration_seconds": 28660,
       "title": "UCHIHA JONES - NOPIXEL V - LESS MANIA MORE MONEY - DILLYDALLYSHILLYSHALLY - UCHI BADGE FOR 1 GIFTED SUB! - !discord (Capped at 2k VIEWERS)",
-      "views": 260533
+      "views": 260563
     },
     {
       "source": "twitchmetrics_vod",
@@ -51642,7 +51640,7 @@
       "duration_label": "10:39:40",
       "duration_seconds": 38380,
       "title": "UCHIHA JONES | NOPIXEL V | NEW DAILY QUEST LIST WITH UNLOCKABLE QUESTS | NEW cyrOVERHEAT emote (and uchiha stress meter overlay)",
-      "views": 243017
+      "views": 243025
     },
     {
       "source": "twitchmetrics_vod",
@@ -51652,7 +51650,7 @@
       "duration_label": "06:49:10",
       "duration_seconds": 24550,
       "title": "UCHIHA JONES & THE RETURN OF JOE CAINE | $$$ AND POWER POV | NoPixelV | !discord",
-      "views": 179439
+      "views": 179460
     },
     {
       "source": "twitchmetrics_vod",
@@ -51662,7 +51660,7 @@
       "duration_label": "10:23:00",
       "duration_seconds": 37380,
       "title": "UCHIHA JONES - NOPIXEL V - QUESTS & LOTS OF DILLY DALLY SHILLY SHALLY (VIEWERS CAPPED AT 2k DON'T MAKE FUN OF ME PLEASE)",
-      "views": 280295
+      "views": 280319
     },
     {
       "source": "twitchmetrics_vod",
@@ -51672,7 +51670,7 @@
       "duration_label": "05:43:50",
       "duration_seconds": 20630,
       "title": "UCHIHA JONES - NOPIXEL V - YOU THINK I'M A FREAK DONT YOU - BACK FOR SOME MORNING ACTION (maybe some Joe Caine Casino fun today?)",
-      "views": 97594
+      "views": 97606
     },
     {
       "source": "twitchmetrics_vod",
@@ -51682,7 +51680,7 @@
       "duration_label": "06:43:20",
       "duration_seconds": 24200,
       "title": "Uchiha Jones | NoPixelV | Goog Bad Guy | VIEWERS CAPPED AT 2k LET'S HOPE TODAY'S THE DAY.",
-      "views": 226262
+      "views": 226290
     },
     {
       "source": "twitchmetrics_vod",
@@ -51692,7 +51690,7 @@
       "duration_label": "08:03:40",
       "duration_seconds": 29020,
       "title": "Uchiha Jones - NoPixelV - HUGE BUSINESS - BIG JOE CAINE DAY TOMORROW",
-      "views": 364100
+      "views": 364123
     },
     {
       "source": "twitchmetrics_vod",
@@ -51702,7 +51700,7 @@
       "duration_label": "06:41:40",
       "duration_seconds": 24100,
       "title": "GOING OVER NOPIXEL UPDATES - UCHIHA JONES & JOE CAINE TODAY. LET\u2019S goooooooooooooo",
-      "views": 151220
+      "views": 151232
     },
     {
       "source": "twitchmetrics_vod",
@@ -51712,7 +51710,7 @@
       "duration_label": "09:16:10",
       "duration_seconds": 33370,
       "title": "Uchiha Jones - NoPixel V - Special Operator for Art Gallery - DillyDallyShillyShally",
-      "views": 339521
+      "views": 339552
     },
     {
       "source": "twitchmetrics_vod",
@@ -51722,7 +51720,7 @@
       "duration_label": "12:19:40",
       "duration_seconds": 44380,
       "title": "YES- RUST ISLES IS HAPPENING TODAY. WILL BE DOING GTARP UNTIL IT'S TIME",
-      "views": 425428
+      "views": 425443
     },
     {
       "source": "twitchmetrics_vod",
@@ -51732,7 +51730,7 @@
       "duration_label": "04:46:50",
       "duration_seconds": 17210,
       "title": "ANOTHER DAY OF RP , RUST AND GTARP (SHORT DAY TODAY, WILL BE GETTING OFF BY 5PM CST) WILL BE HERE ALL WEEK",
-      "views": 206901
+      "views": 206917
     },
     {
       "source": "twitchmetrics_vod",
@@ -51742,7 +51740,7 @@
       "duration_label": "07:00:40",
       "duration_seconds": 25240,
       "title": "BOTH RUST RP AND GTA RP TODAY",
-      "views": 130152
+      "views": 130161
     },
     {
       "source": "twitchmetrics_vod",
@@ -51752,7 +51750,7 @@
       "duration_label": "11:12:20",
       "duration_seconds": 40340,
       "title": "Uchiha Jones - Joe Caine - CASINO PREP - NoPixel V",
-      "views": 776439
+      "views": 776475
     },
     {
       "source": "twitchmetrics_vod",
@@ -51762,7 +51760,7 @@
       "duration_label": "06:07:50",
       "duration_seconds": 22070,
       "title": "UCHIHA JONES - \"NORMAL GUY\" - NOPIXEL V",
-      "views": 355168
+      "views": 355199
     },
     {
       "source": "twitchmetrics_vod",
@@ -51772,7 +51770,7 @@
       "duration_label": "11:06:40",
       "duration_seconds": 40000,
       "title": "UCHIHA JONES - ART GALLERY SPECIALIST REALITOR - NOPIXEL V - \ud83d\ude2d LAST DAY OF SEPTEMBER \ud83d\ude2d",
-      "views": 417933
+      "views": 417986
     },
     {
       "source": "twitchmetrics_vod",
@@ -51782,7 +51780,7 @@
       "duration_label": "05:25:40",
       "duration_seconds": 19540,
       "title": "Joe Caine - CASINO OPENING EVE - NoPixel V (views still capped at 2k)",
-      "views": 138266
+      "views": 138325
     },
     {
       "source": "twitchmetrics_vod",
@@ -51792,7 +51790,7 @@
       "duration_label": "02:41:40",
       "duration_seconds": 9700,
       "title": "JOE CAINE | CASINO TIME LATE NIGHT | NoPixel V",
-      "views": 334268
+      "views": 334325
     },
     {
       "source": "twitchmetrics_vod",
@@ -51802,7 +51800,7 @@
       "duration_label": "05:29:30",
       "duration_seconds": 19770,
       "title": "Uchiha Jones - Nopixel V",
-      "views": 166022
+      "views": 166291
     },
     {
       "source": "twitchmetrics_vod",
@@ -51812,17 +51810,37 @@
       "duration_label": "06:13:40",
       "duration_seconds": 22420,
       "title": "Uchiha Jones - RP IS FOR NERDS DONT DO IT - NoPixel",
-      "views": 168174
+      "views": 168402
     },
     {
       "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
       "id": "2893583849",
       "started_at": "2026-10-06T17:53:19Z",
-      "duration_label": "59:59",
-      "duration_seconds": 3599,
+      "duration_label": "11:16:10",
+      "duration_seconds": 40570,
       "title": "Joe Caine - NoPixel (UCHIHA LATER?)",
-      "views": 18
+      "views": 310468
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2894344827",
+      "started_at": "2026-10-07T15:44:23Z",
+      "duration_label": "04:04:52",
+      "duration_seconds": 14692,
+      "title": "CASINO OPEN JOE CAINE ANEURYSM TIME | NoPixel V",
+      "views": 90492
+    },
+    {
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
+      "id": "2894645572",
+      "started_at": "2026-10-07T22:13:11Z",
+      "duration_label": "03:43:50",
+      "duration_seconds": 13430,
+      "title": "CASINO OPEN JOE CAINE ANEURYSM TIME | NoPixel V",
+      "views": 109038
     }
   ],
   "archive_grouped_dates": [
@@ -54508,20 +54526,6 @@
       ],
       "urls": [
         "https://www.youtube.com/watch?v=2JjtdKJdNJ4"
-      ]
-    },
-    {
-      "source": "youtube_archive_grouped",
-      "precision": "stream_date_only",
-      "date": "2024-01-27",
-      "segment_count": 1,
-      "duration_seconds_sum": 8154,
-      "primary_title": "Getting Double Teamed in the GYM w/ @WillNeff & @HasanAbi (Just Chatting) - [01/27/2024] | Cyr VODs",
-      "titles": [
-        "Getting Double Teamed in the GYM w/ @WillNeff & @HasanAbi (Just Chatting) - [01/27/2024] | Cyr VODs"
-      ],
-      "urls": [
-        "https://www.youtube.com/watch?v=gpG1YMUTTts"
       ]
     },
     {
@@ -60967,7 +60971,7 @@
       "precision": "stream_date_only",
       "date": "2026-06-23",
       "segment_count": 2,
-      "duration_seconds_sum": 18097,
+      "duration_seconds_sum": 18098,
       "primary_title": "MAKING HOMEMADE SKYLINE CHILI - [06/23/2026] | Cyr VODs",
       "titles": [
         "MAKING HOMEMADE SKYLINE CHILI - [06/23/2026] | Cyr VODs",
@@ -63465,18 +63469,7 @@
     },
     {
       "date": "2024-01-26",
-      "gap_days": 1,
-      "features": [
-        "collab"
-      ],
-      "sentiment": "neutral",
-      "sentiment_score": 0,
-      "intensity": "medium",
-      "intensity_score": 1
-    },
-    {
-      "date": "2024-01-27",
-      "gap_days": 2,
+      "gap_days": 3,
       "features": [
         "collab"
       ],
