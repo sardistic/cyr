@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-10-09T06:30:33Z",
-  "data_through": "2026-10-07T22:13:06Z",
+  "generated_at": "2026-10-09T13:44:04Z",
+  "data_through": "2026-10-09T04:35:26Z",
   "degraded_sources": [
-    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30003 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
   ],
   "sources": {
-    "sullygnome_stream_table": 2512,
+    "sullygnome_stream_table": 2513,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 51,
-    "exact_merged_rows": 49,
+    "exact_merged_rows": 50,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 610
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2511,
+      "count": 2512,
       "mean": 27.85,
       "median": 17.87,
       "max": 1197.0,
       "bins": {
         "0-12h": 488,
         "12-24h": 1288,
-        "1-2d": 425,
+        "1-2d": 426,
         "2-3d": 175,
         "3-5d": 104,
         "5-7d": 15,
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 48,
-      "mean": 29.1,
-      "median": 23.96,
+      "count": 49,
+      "mean": 29.12,
+      "median": 23.97,
       "max": 100.92
     },
     "archive_gap_days": {
@@ -218,7 +218,7 @@
       "2026-07": 18,
       "2026-08": 19,
       "2026-09": 27,
-      "2026-10": 7
+      "2026-10": 8
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -230,7 +230,7 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 176
+      "2026": 177
     },
     "dow_hour": {
       "dow": {
@@ -238,7 +238,7 @@
         "Tue": 409,
         "Wed": 444,
         "Thu": 395,
-        "Fri": 358,
+        "Fri": 359,
         "Sat": 246,
         "Sun": 210
       },
@@ -247,7 +247,7 @@
         "1": 117,
         "2": 121,
         "3": 121,
-        "4": 75,
+        "4": 76,
         "5": 60,
         "6": 30,
         "7": 17,
@@ -272,7 +272,7 @@
         "Mon": 440,
         "Tue": 427,
         "Wed": 414,
-        "Thu": 402,
+        "Thu": 403,
         "Fri": 352,
         "Sat": 218,
         "Sun": 259
@@ -301,22 +301,22 @@
         "20": 101,
         "21": 142,
         "22": 89,
-        "23": 75
+        "23": 76
       }
     },
     "dow_profile": {
       "Mon": {
-        "n": 76,
-        "start_p10": 6.78,
-        "start_p25": 8.19,
-        "start_p50": 10.22,
-        "start_p75": 12.76,
+        "n": 75,
+        "start_p10": 6.76,
+        "start_p25": 8.1,
+        "start_p50": 10.21,
+        "start_p75": 12.68,
         "end_p50": 17.51,
         "end_p90": 20.52,
-        "dur_p25": 4.95,
+        "dur_p25": 4.92,
         "dur_p50": 6.17,
-        "dur_p75": 7.65,
-        "active_rate": 0.721,
+        "dur_p75": 7.71,
+        "active_rate": 0.712,
         "window_days": 730
       },
       "Tue": {
@@ -348,17 +348,17 @@
         "window_days": 730
       },
       "Thu": {
-        "n": 79,
-        "start_p10": 6.37,
-        "start_p25": 8.47,
-        "start_p50": 10.54,
-        "start_p75": 13.22,
-        "end_p50": 18.0,
-        "end_p90": 20.5,
-        "dur_p25": 4.46,
-        "dur_p50": 5.63,
-        "dur_p75": 7.84,
-        "active_rate": 0.74,
+        "n": 80,
+        "start_p10": 6.4,
+        "start_p25": 8.54,
+        "start_p50": 10.62,
+        "start_p75": 13.33,
+        "end_p50": 18.01,
+        "end_p90": 20.59,
+        "dur_p25": 4.4,
+        "dur_p50": 5.61,
+        "dur_p75": 7.8,
+        "active_rate": 0.75,
         "window_days": 730
       },
       "Fri": {
@@ -428,35 +428,35 @@
       ],
       [
         15,
-        33.61
+        33.6
       ],
       [
         18,
-        50.86
+        50.84
       ],
       [
         21,
-        64.16
+        64.13
       ],
       [
         24,
-        70.77
+        70.74
       ],
       [
         30,
-        74.59
+        74.6
       ],
       [
         36,
-        76.58
+        76.59
       ],
       [
         42,
-        82.0
+        82.01
       ],
       [
         48,
-        87.69
+        87.7
       ],
       [
         54,
@@ -468,11 +468,11 @@
       ],
       [
         66,
-        92.11
+        92.12
       ],
       [
         72,
-        94.62
+        94.63
       ],
       [
         84,
@@ -492,7 +492,7 @@
       ],
       [
         132,
-        98.92
+        98.93
       ],
       [
         144,
@@ -524,11 +524,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 15.3,
-        "started_at": "2026-09-16T18:48:59Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 17.8,
         "started_at": "2026-09-17T19:15:00Z",
@@ -623,23 +618,14 @@
         "gap_h": 2.5,
         "started_at": "2026-10-07T22:13:06Z",
         "game": "Grand Theft Auto V"
+      },
+      {
+        "gap_h": 26.8,
+        "started_at": "2026-10-09T04:35:26Z",
+        "game": "Grand Theft Auto V"
       }
     ],
     "recent_streams": [
-      {
-        "started_at": "2026-09-12T17:05:12Z",
-        "ended_at_iso": "2026-09-12T22:45:00+00:00",
-        "games": [
-          "Just Chatting",
-          "Grand Theft Auto V"
-        ],
-        "duration_h": 5.7,
-        "duration_label": "340 minutes",
-        "avg_viewers": 1755,
-        "peak_viewers": 2172,
-        "followers_gained": 33,
-        "followers_gained_source": null
-      },
       {
         "started_at": "2026-09-14T00:26:25Z",
         "ended_at_iso": "2026-09-14T05:45:00+00:00",
@@ -956,15 +942,30 @@
         "peak_viewers": 2069,
         "followers_gained": 29,
         "followers_gained_source": null
+      },
+      {
+        "started_at": "2026-10-09T04:35:26Z",
+        "ended_at_iso": "2026-10-09T08:29:00+00:00",
+        "games": [
+          "Grand Theft Auto V",
+          "Just Chatting"
+        ],
+        "duration_h": 3.9,
+        "duration_label": "234 minutes",
+        "avg_viewers": null,
+        "peak_viewers": null,
+        "followers_gained": 50,
+        "followers_gained_source": "snapshot"
       }
     ],
     "last_stream": {
-      "started_at": "2026-10-07T22:13:06Z",
-      "ended_at_iso": "2026-10-08T01:45:00+00:00",
+      "started_at": "2026-10-09T04:35:26Z",
+      "ended_at_iso": "2026-10-09T08:29:00+00:00",
       "games": [
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
-      "duration_label": "212 minutes"
+      "duration_label": "234 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -1083,10 +1084,10 @@
             "avg_viewers": 2438.0
           },
           "Social sandbox/RP": {
-            "count": 1080,
+            "count": 1081,
             "share": 43.0,
             "median_gap_hours": 23.88,
-            "p90_gap_hours": 48.26,
+            "p90_gap_hours": 48.25,
             "avg_viewers": 1608.0
           },
           "Story/survival arc": {
@@ -1111,7 +1112,7 @@
           },
           {
             "game": "Grand Theft Auto V",
-            "count": 923
+            "count": 924
           },
           {
             "game": "IRL",
@@ -1156,18 +1157,13 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-10-09T04:35:21Z",
-      "game": "Grand Theft Auto V",
-      "title": "Uchiha Jones | Late Night NoPixel V",
-      "viewers": 2854
-    },
+    "live_stream": null,
     "last_live_seen": "2026-10-09T06:30:33Z",
     "followers": {
-      "total": 653698,
-      "as_of": "2026-10-09T06:30:17Z",
-      "gained_7d": 257,
-      "snapshots": 143
+      "total": 653704,
+      "as_of": "2026-10-09T13:43:47Z",
+      "gained_7d": 259,
+      "snapshots": 144
     }
   },
   "follower_snapshots": [
@@ -1742,6 +1738,10 @@
     [
       "2026-10-09T06:30:17Z",
       653698
+    ],
+    [
+      "2026-10-09T13:43:47Z",
+      653704
     ]
   ],
   "sully_streams": [
@@ -51321,6 +51321,28 @@
       "view_minutes": 391140,
       "stream_url": "https://sullygnome.com/channel/stream/321707408089",
       "range": "2026"
+    },
+    {
+      "source": "twitch_vod_backfill",
+      "precision": "exact_vod_time",
+      "id": "2895783373",
+      "started_at": "2026-10-09T04:35:26Z",
+      "ended_at": "Friday 09 October 2026 08:29",
+      "duration_label": "234 minutes",
+      "duration_seconds": 14060,
+      "title": "Uchiha Jones | Late Night NoPixel V",
+      "games": [
+        "Grand Theft Auto V",
+        "Just Chatting"
+      ],
+      "avg_viewers": null,
+      "peak_viewers": null,
+      "followers_gained": 50,
+      "view_minutes": null,
+      "stream_url": "https://www.twitch.tv/videos/2895783373",
+      "range": "2026",
+      "followers_gained_source": "snapshot",
+      "followers_gained_slack_h": 9.7
     }
   ],
   "exact_rows": [
@@ -51841,6 +51863,16 @@
       "duration_seconds": 13430,
       "title": "CASINO OPEN JOE CAINE ANEURYSM TIME | NoPixel V",
       "views": 109038
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2895783373",
+      "started_at": "2026-10-09T04:35:26Z",
+      "duration_label": "03:54:20",
+      "duration_seconds": 14060,
+      "title": "Uchiha Jones | Late Night NoPixel V",
+      "views": 787
     }
   ],
   "archive_grouped_dates": [
