@@ -1,7 +1,9 @@
 {
-  "generated_at": "2026-10-10T15:36:12Z",
+  "generated_at": "2026-10-10T19:50:07Z",
   "data_through": "2026-10-09T20:31:06Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 1192 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+  ],
   "sources": {
     "sullygnome_stream_table": 2514,
     "twitchmetrics_stream_logs": 15,
@@ -1159,10 +1161,10 @@
     "live_stream": null,
     "last_live_seen": "2026-10-10T02:34:21Z",
     "followers": {
-      "total": 653757,
-      "as_of": "2026-10-10T15:35:54Z",
-      "gained_7d": 324,
-      "snapshots": 149
+      "total": 653754,
+      "as_of": "2026-10-10T19:49:52Z",
+      "gained_7d": 328,
+      "snapshots": 150
     }
   },
   "follower_snapshots": [
@@ -1761,6 +1763,10 @@
     [
       "2026-10-10T15:35:54Z",
       653757
+    ],
+    [
+      "2026-10-10T19:49:52Z",
+      653754
     ]
   ],
   "sully_streams": [
@@ -51918,7 +51924,7 @@
       "duration_label": "03:54:20",
       "duration_seconds": 14060,
       "title": "Uchiha Jones | Late Night NoPixel V",
-      "views": 105239
+      "views": 105274
     },
     {
       "source": "twitch_vod",
@@ -51928,7 +51934,7 @@
       "duration_label": "07:38:20",
       "duration_seconds": 27500,
       "title": "UCHIHA \u201cPHOENIX\u201d JONES - ART ASYLUM DAY - NOPIXEL V - NEW UCHIHA YT VID !youtube",
-      "views": 1832
+      "views": 188980
     }
   ],
   "archive_grouped_dates": [
