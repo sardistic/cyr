@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-17T21:36:45Z",
+  "generated_at": "2026-10-17T23:47:32Z",
   "data_through": "2026-10-17T19:35:44Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 4978 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
   ],
   "sources": {
     "sullygnome_stream_table": 2520,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 52,
-    "exact_merged_rows": 51,
+    "exact_merged_rows": 54,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 610
   },
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 50,
-      "mean": 28.33,
-      "median": 23.96,
+      "count": 53,
+      "mean": 27.98,
+      "median": 23.86,
       "max": 98.84
     },
     "archive_gap_days": {
@@ -1164,14 +1164,14 @@
       "started_at": "2026-10-17T19:35:44Z",
       "game": "Grand Theft Auto V",
       "title": "Uchiha \"Phoenix\" Jones | Art & The +1's | NoPixel V",
-      "viewers": 2006
+      "viewers": 2003
     },
-    "last_live_seen": "2026-10-17T21:36:45Z",
+    "last_live_seen": "2026-10-17T23:47:32Z",
     "followers": {
-      "total": 653599,
-      "as_of": "2026-10-17T21:36:29Z",
-      "gained_7d": -155,
-      "snapshots": 188
+      "total": 653596,
+      "as_of": "2026-10-17T23:47:18Z",
+      "gained_7d": -143,
+      "snapshots": 189
     }
   },
   "follower_snapshots": [
@@ -1926,6 +1926,10 @@
     [
       "2026-10-17T21:36:29Z",
       653599
+    ],
+    [
+      "2026-10-17T23:47:18Z",
+      653596
     ]
   ],
   "sully_streams": [
@@ -52201,6 +52205,36 @@
       "duration_seconds": 26580,
       "title": "Uchiha \"PHOENIX\" Jones | NoPixel V | BIG DILLYDALLY BIGGER SHALLY | !Youtube !Phoenix",
       "views": 160626
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2899961067",
+      "started_at": "2026-10-13T20:19:41Z",
+      "duration_label": "08:53:40",
+      "duration_seconds": 32020,
+      "title": "UCHI \"PHOENIX\" JONES - *NEW ARC* DETECTIVE RETURNS? - NoPixelV - !yt for latest uchi vids!",
+      "views": 172181
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2900792562",
+      "started_at": "2026-10-14T19:38:29Z",
+      "duration_label": "04:03:20",
+      "duration_seconds": 14600,
+      "title": "UCHIHA \"PHOENIX\" JONES - THE TEMPERATURE IS GOING UP BIG SERIOUS RP DAY - NoPixel V - !Youtube",
+      "views": 99070
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2901592856",
+      "started_at": "2026-10-15T18:21:16Z",
+      "duration_label": "06:32:40",
+      "duration_seconds": 23560,
+      "title": "Uchiha \"Phoenix\" Jones - Where there's Egg there's Fire - NoPixel V - !YouTube",
+      "views": 120908
     }
   ],
   "archive_grouped_dates": [
