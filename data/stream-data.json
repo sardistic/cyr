@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-20T00:32:56Z",
+  "generated_at": "2026-10-20T05:41:58Z",
   "data_through": "2026-10-19T19:34:32Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
   ],
   "sources": {
     "sullygnome_stream_table": 2521,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 52,
-    "exact_merged_rows": 51,
+    "exact_merged_rows": 59,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 610
   },
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 50,
-      "mean": 28.33,
-      "median": 23.96,
+      "count": 58,
+      "mean": 26.42,
+      "median": 23.74,
       "max": 98.84
     },
     "archive_gap_days": {
@@ -313,9 +313,9 @@
         "start_p75": 12.58,
         "end_p50": 17.51,
         "end_p90": 20.52,
-        "dur_p25": 4.8,
-        "dur_p50": 6.19,
-        "dur_p75": 7.65,
+        "dur_p25": 4.95,
+        "dur_p50": 6.22,
+        "dur_p75": 7.83,
         "active_rate": 0.721,
         "window_days": 730
       },
@@ -537,7 +537,7 @@
       {
         "gap_h": 41.6,
         "started_at": "2026-09-28T18:19:42Z",
-        "game": "Just Chatting"
+        "game": "Grand Theft Auto V"
       },
       {
         "gap_h": 12.9,
@@ -562,7 +562,7 @@
       {
         "gap_h": 43.1,
         "started_at": "2026-10-05T01:23:22Z",
-        "game": "Just Chatting"
+        "game": "Grand Theft Auto V"
       },
       {
         "gap_h": 11.3,
@@ -572,7 +572,7 @@
       {
         "gap_h": 17.6,
         "started_at": "2026-10-06T17:53:14Z",
-        "game": "Just Chatting"
+        "game": "Grand Theft Auto V"
       },
       {
         "gap_h": 10.7,
@@ -607,7 +607,7 @@
       {
         "gap_h": 14.6,
         "started_at": "2026-10-14T19:38:24Z",
-        "game": "Grand Theft Auto V"
+        "game": "Just Chatting"
       },
       {
         "gap_h": 18.9,
@@ -630,8 +630,8 @@
         "started_at": "2026-09-21T21:35:31Z",
         "ended_at_iso": "2026-09-22T05:30:00+00:00",
         "games": [
-          "Grand Theft Auto V",
-          "Just Chatting"
+          "Just Chatting",
+          "Grand Theft Auto V"
         ],
         "duration_h": 7.9,
         "duration_label": "475 minutes",
@@ -714,8 +714,8 @@
         "started_at": "2026-09-28T18:19:42Z",
         "ended_at_iso": "2026-09-29T05:30:00+00:00",
         "games": [
-          "Just Chatting",
-          "Grand Theft Auto V"
+          "Grand Theft Auto V",
+          "Just Chatting"
         ],
         "duration_h": 11.2,
         "duration_label": "671 minutes",
@@ -781,8 +781,8 @@
         "started_at": "2026-10-05T01:23:22Z",
         "ended_at_iso": "2026-10-05T06:45:00+00:00",
         "games": [
-          "Just Chatting",
-          "Grand Theft Auto V"
+          "Grand Theft Auto V",
+          "Just Chatting"
         ],
         "duration_h": 5.4,
         "duration_label": "322 minutes",
@@ -809,8 +809,8 @@
         "started_at": "2026-10-06T17:53:14Z",
         "ended_at_iso": "2026-10-07T05:00:00+00:00",
         "games": [
-          "Just Chatting",
-          "Grand Theft Auto V"
+          "Grand Theft Auto V",
+          "Just Chatting"
         ],
         "duration_h": 11.1,
         "duration_label": "667 minutes",
@@ -904,8 +904,8 @@
         "started_at": "2026-10-14T19:38:24Z",
         "ended_at_iso": "2026-10-14T23:30:00+00:00",
         "games": [
-          "Grand Theft Auto V",
-          "Just Chatting"
+          "Just Chatting",
+          "Grand Theft Auto V"
         ],
         "duration_h": 3.9,
         "duration_label": "232 minutes",
@@ -942,25 +942,25 @@
       },
       {
         "started_at": "2026-10-19T19:34:32Z",
-        "ended_at_iso": "2026-10-19T23:45:00+00:00",
+        "ended_at_iso": "2026-10-20T04:45:00+00:00",
         "games": [
           "Grand Theft Auto V"
         ],
-        "duration_h": 4.2,
-        "duration_label": "251 minutes",
-        "avg_viewers": 1804,
-        "peak_viewers": 2062,
+        "duration_h": 9.2,
+        "duration_label": "551 minutes",
+        "avg_viewers": 1906,
+        "peak_viewers": 2081,
         "followers_gained": 0,
         "followers_gained_source": null
       }
     ],
     "last_stream": {
       "started_at": "2026-10-19T19:34:32Z",
-      "ended_at_iso": "2026-10-19T23:45:00+00:00",
+      "ended_at_iso": "2026-10-20T04:45:00+00:00",
       "games": [
         "Grand Theft Auto V"
       ],
-      "duration_label": "251 minutes"
+      "duration_label": "551 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -1163,14 +1163,14 @@
       "started_at": "2026-10-19T19:34:32Z",
       "game": "Grand Theft Auto V",
       "title": "UCHIHA \"PHOENIX\" JONES - BUSINESS WEEK - NOPIXEL V",
-      "viewers": 2027
+      "viewers": 2013
     },
-    "last_live_seen": "2026-10-20T00:32:56Z",
+    "last_live_seen": "2026-10-20T05:41:58Z",
     "followers": {
-      "total": 653594,
-      "as_of": "2026-10-20T00:32:38Z",
-      "gained_7d": -104,
-      "snapshots": 201
+      "total": 653619,
+      "as_of": "2026-10-20T05:41:42Z",
+      "gained_7d": -67,
+      "snapshots": 202
     }
   },
   "follower_snapshots": [
@@ -1977,6 +1977,10 @@
     [
       "2026-10-20T00:32:38Z",
       653594
+    ],
+    [
+      "2026-10-20T05:41:42Z",
+      653619
     ]
   ],
   "sully_streams": [
@@ -4730,8 +4734,8 @@
       "duration_seconds": 1800,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Final Fantasy X/X-2 HD Remaster"
+        "Final Fantasy X/X-2 HD Remaster",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 35,
       "peak_viewers": 42,
@@ -8496,8 +8500,8 @@
       "duration_seconds": 29700,
       "title": null,
       "games": [
-        "SCUM",
         "Grand Theft Auto V",
+        "SCUM",
         "Fallout: New Vegas",
         "IRL"
       ],
@@ -8556,8 +8560,8 @@
       "duration_seconds": 12600,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "IRL"
+        "IRL",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 239,
       "peak_viewers": 292,
@@ -8598,12 +8602,12 @@
       "title": null,
       "games": [
         "IRL",
+        "The Universim",
         "Fortnite",
         "Unlisted on Twitch",
         "SCUM",
         "Grand Theft Auto V",
-        "Fallout: New Vegas",
-        "The Universim"
+        "Fallout: New Vegas"
       ],
       "avg_viewers": 151,
       "peak_viewers": 242,
@@ -24984,9 +24988,9 @@
       "title": null,
       "games": [
         "VRChat",
-        "Just Chatting",
+        "Clustertruck",
         "Vicewave",
-        "Clustertruck"
+        "Just Chatting"
       ],
       "avg_viewers": 978,
       "peak_viewers": 1334,
@@ -26926,8 +26930,8 @@
       "duration_seconds": 49740,
       "title": null,
       "games": [
-        "Just Chatting",
         "Grand Theft Auto V",
+        "Just Chatting",
         "Sea of Thieves"
       ],
       "avg_viewers": 4309,
@@ -32423,8 +32427,8 @@
       "duration_seconds": 39720,
       "title": null,
       "games": [
-        "SMITE",
         "Just Chatting",
+        "SMITE",
         "DayZ",
         "Satisfactory"
       ],
@@ -33983,9 +33987,9 @@
         "Warhammer 40,000: Darktide",
         "Just Chatting",
         "Goat Simulator 3",
+        "Farmer's Life",
         "Dwarf Fortress",
-        "Fall Guys",
-        "Farmer's Life"
+        "Fall Guys"
       ],
       "avg_viewers": 1936,
       "peak_viewers": 2503,
@@ -39531,8 +39535,8 @@
       "duration_seconds": 28440,
       "title": null,
       "games": [
-        "Just Chatting",
-        "ELDEN RING"
+        "ELDEN RING",
+        "Just Chatting"
       ],
       "avg_viewers": 2736,
       "peak_viewers": 3542,
@@ -39628,8 +39632,8 @@
       "duration_seconds": 18960,
       "title": null,
       "games": [
-        "Just Chatting",
-        "ELDEN RING"
+        "ELDEN RING",
+        "Just Chatting"
       ],
       "avg_viewers": 1555,
       "peak_viewers": 2125,
@@ -39923,8 +39927,8 @@
       "duration_seconds": 11280,
       "title": null,
       "games": [
-        "Just Chatting",
-        "SOUTH PARK: SNOW DAY! "
+        "SOUTH PARK: SNOW DAY! ",
+        "Just Chatting"
       ],
       "avg_viewers": 3063,
       "peak_viewers": 5645,
@@ -40687,8 +40691,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Rumble Club",
-        "Star Citizen"
+        "Star Citizen",
+        "Rumble Club"
       ],
       "avg_viewers": 1249,
       "peak_viewers": 1733,
@@ -41348,8 +41352,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Subnautica",
-        "Drug Dealer Simulator 2"
+        "Drug Dealer Simulator 2",
+        "Subnautica"
       ],
       "avg_viewers": 1915,
       "peak_viewers": 2889,
@@ -50721,8 +50725,8 @@
       "duration_seconds": 40080,
       "title": null,
       "games": [
-        "Project Zomboid",
         "Just Chatting",
+        "Project Zomboid",
         "WARDOGS"
       ],
       "avg_viewers": 1951,
@@ -51269,8 +51273,8 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1669,
       "peak_viewers": 2172,
@@ -51389,8 +51393,8 @@
       "duration_seconds": 40260,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1898,
       "peak_viewers": 2176,
@@ -51486,8 +51490,8 @@
       "duration_seconds": 19320,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 2183,
       "peak_viewers": 2874,
@@ -51526,8 +51530,8 @@
       "duration_seconds": 40020,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1877,
       "peak_viewers": 2085,
@@ -51663,8 +51667,8 @@
       "duration_seconds": 13920,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1751,
       "peak_viewers": 2079,
@@ -51716,17 +51720,17 @@
       "precision": "exact_utc_start",
       "id": "321878762585",
       "started_at": "2026-10-19T19:34:32Z",
-      "ended_at": "Monday 19th October 2026 23:45",
-      "duration_label": "251 minutes",
-      "duration_seconds": 15060,
+      "ended_at": "Tuesday 20th October 2026 04:45",
+      "duration_label": "551 minutes",
+      "duration_seconds": 33060,
       "title": null,
       "games": [
         "Grand Theft Auto V"
       ],
-      "avg_viewers": 1804,
-      "peak_viewers": 2062,
+      "avg_viewers": 1906,
+      "peak_viewers": 2081,
       "followers_gained": 0,
-      "view_minutes": 452804,
+      "view_minutes": 1050206,
       "stream_url": "https://sullygnome.com/channel/stream/321878762585",
       "range": "2026"
     }
@@ -52073,76 +52077,64 @@
       "views": 151266
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2882055709",
-      "started_at": "2026-09-23T17:49:32Z",
-      "duration_label": "9 hours",
+      "started_at": "2026-09-23T17:49:37Z",
+      "duration_label": "09:16:10",
       "duration_seconds": 33370,
       "title": "Uchiha Jones - NoPixel V - Special Operator for Art Gallery - DillyDallyShillyShally",
-      "views": 339614,
-      "avg_viewers": 1825,
-      "peak_viewers": 2176
+      "views": 339614
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2882948832",
-      "started_at": "2026-09-24T18:39:15Z",
-      "duration_label": "12 hours",
+      "started_at": "2026-09-24T18:39:20Z",
+      "duration_label": "12:19:40",
       "duration_seconds": 44380,
       "title": "YES- RUST ISLES IS HAPPENING TODAY. WILL BE DOING GTARP UNTIL IT'S TIME",
-      "views": 425467,
-      "avg_viewers": 1946,
-      "peak_viewers": 2169
+      "views": 425467
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2883795172",
-      "started_at": "2026-09-25T18:23:51Z",
-      "duration_label": "5 hours",
+      "started_at": "2026-09-25T18:23:56Z",
+      "duration_label": "04:46:50",
       "duration_seconds": 17210,
       "title": "ANOTHER DAY OF RP , RUST AND GTARP (SHORT DAY TODAY, WILL BE GETTING OFF BY 5PM CST) WILL BE HERE ALL WEEK",
-      "views": 206936,
-      "avg_viewers": 1898,
-      "peak_viewers": 2186
+      "views": 206936
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2884720556",
-      "started_at": "2026-09-26T17:52:26Z",
-      "duration_label": "7 hours",
+      "started_at": "2026-09-26T17:52:31Z",
+      "duration_label": "07:00:40",
       "duration_seconds": 25240,
       "title": "BOTH RUST RP AND GTA RP TODAY",
-      "views": 130174,
-      "avg_viewers": 2022,
-      "peak_viewers": 2165
+      "views": 130174
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2886535977",
-      "started_at": "2026-09-28T18:19:42Z",
-      "duration_label": "11 hours",
+      "started_at": "2026-09-28T18:19:47Z",
+      "duration_label": "11:12:20",
       "duration_seconds": 40340,
       "title": "Uchiha Jones - Joe Caine - CASINO PREP - NoPixel V",
-      "views": 776541,
-      "avg_viewers": 1935,
-      "peak_viewers": 2176
+      "views": 776541
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2887385539",
-      "started_at": "2026-09-29T18:22:43Z",
-      "duration_label": "6 hours",
+      "started_at": "2026-09-29T18:22:48Z",
+      "duration_label": "06:07:50",
       "duration_seconds": 22070,
       "title": "UCHIHA JONES - \"NORMAL GUY\" - NOPIXEL V",
-      "views": 355267,
-      "avg_viewers": 1783,
-      "peak_viewers": 2159
+      "views": 355267
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -52253,24 +52245,104 @@
       "peak_viewers": 2854
     },
     {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
       "id": "2896326910",
-      "started_at": "2026-10-09T20:31:11Z",
-      "duration_label": "07:38:20",
+      "started_at": "2026-10-09T20:31:06Z",
+      "duration_label": "8 hours",
       "duration_seconds": 27500,
       "title": "UCHIHA \u201cPHOENIX\u201d JONES - ART ASYLUM DAY - NOPIXEL V - NEW UCHIHA YT VID !youtube",
-      "views": 191129
+      "views": 191129,
+      "avg_viewers": 1918,
+      "peak_viewers": 2076
     },
     {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
       "id": "2899256932",
-      "started_at": "2026-10-12T23:33:58Z",
-      "duration_label": "07:23:00",
+      "started_at": "2026-10-12T23:33:53Z",
+      "duration_label": "7 hours",
       "duration_seconds": 26580,
       "title": "Uchiha \"PHOENIX\" Jones | NoPixel V | BIG DILLYDALLY BIGGER SHALLY | !Youtube !Phoenix",
-      "views": 160626
+      "views": 160626,
+      "avg_viewers": 1999,
+      "peak_viewers": 2843
+    },
+    {
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
+      "started_at": "2026-10-13T20:19:36Z",
+      "duration_label": "9 hours",
+      "title": "UCHI \"PHOENIX\" JONES - *NEW ARC* DETECTIVE RETURNS? - NoPixelV - !yt for latest uchi vids!",
+      "avg_viewers": 1944,
+      "peak_viewers": 2066
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2899961067",
+      "started_at": "2026-10-13T20:19:41Z",
+      "duration_label": "08:53:40",
+      "duration_seconds": 32020,
+      "title": "UCHI \"PHOENIX\" JONES - *NEW ARC* DETECTIVE RETURNS? - NoPixelV - !yt for latest uchi vids!",
+      "views": 172240
+    },
+    {
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
+      "started_at": "2026-10-14T19:38:24Z",
+      "duration_label": "4 hours",
+      "title": "UCHIHA \"PHOENIX\" JONES - THE TEMPERATURE IS GOING UP BIG SERIOUS RP DAY - NoPixel V - !Youtube",
+      "avg_viewers": 1885,
+      "peak_viewers": 2057
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2900792562",
+      "started_at": "2026-10-14T19:38:29Z",
+      "duration_label": "04:03:20",
+      "duration_seconds": 14600,
+      "title": "UCHIHA \"PHOENIX\" JONES - THE TEMPERATURE IS GOING UP BIG SERIOUS RP DAY - NoPixel V - !Youtube",
+      "views": 99155
+    },
+    {
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
+      "started_at": "2026-10-15T18:21:11Z",
+      "duration_label": "7 hours",
+      "title": "Uchiha \"Phoenix\" Jones - Where there's Egg there's Fire - NoPixel V - !YouTube",
+      "avg_viewers": 1898,
+      "peak_viewers": 2059
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2901592856",
+      "started_at": "2026-10-15T18:21:16Z",
+      "duration_label": "06:32:40",
+      "duration_seconds": 23560,
+      "title": "Uchiha \"Phoenix\" Jones - Where there's Egg there's Fire - NoPixel V - !YouTube",
+      "views": 121072
+    },
+    {
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
+      "started_at": "2026-10-17T19:35:44Z",
+      "duration_label": "6 hours",
+      "title": "Uchiha \"Phoenix\" Jones | Art & The +1's | NoPixel V",
+      "avg_viewers": 1837,
+      "peak_viewers": 2069
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2903518163",
+      "started_at": "2026-10-17T19:35:49Z",
+      "duration_label": "06:03:30",
+      "duration_seconds": 21810,
+      "title": "Uchiha \"Phoenix\" Jones | Art & The +1's | NoPixel V",
+      "views": 94506
     }
   ],
   "archive_grouped_dates": [
