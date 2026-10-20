@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-20T11:00:22Z",
+  "generated_at": "2026-10-20T15:38:41Z",
   "data_through": "2026-10-19T19:34:32Z",
   "degraded_sources": [
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
   ],
   "sources": {
     "sullygnome_stream_table": 2521,
@@ -1163,9 +1163,9 @@
     "last_live_seen": "2026-10-20T05:41:58Z",
     "followers": {
       "total": 653632,
-      "as_of": "2026-10-20T11:00:08Z",
+      "as_of": "2026-10-20T15:38:25Z",
       "gained_7d": -138,
-      "snapshots": 203
+      "snapshots": 204
     }
   },
   "follower_snapshots": [
@@ -1979,6 +1979,10 @@
     ],
     [
       "2026-10-20T11:00:08Z",
+      653632
+    ],
+    [
+      "2026-10-20T15:38:25Z",
       653632
     ]
   ],
@@ -52284,7 +52288,7 @@
       "duration_label": "08:53:40",
       "duration_seconds": 32020,
       "title": "UCHI \"PHOENIX\" JONES - *NEW ARC* DETECTIVE RETURNS? - NoPixelV - !yt for latest uchi vids!",
-      "views": 172243
+      "views": 172246
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -52303,7 +52307,7 @@
       "duration_label": "04:03:20",
       "duration_seconds": 14600,
       "title": "UCHIHA \"PHOENIX\" JONES - THE TEMPERATURE IS GOING UP BIG SERIOUS RP DAY - NoPixel V - !Youtube",
-      "views": 99157
+      "views": 99160
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -52322,7 +52326,7 @@
       "duration_label": "06:32:40",
       "duration_seconds": 23560,
       "title": "Uchiha \"Phoenix\" Jones - Where there's Egg there's Fire - NoPixel V - !YouTube",
-      "views": 121081
+      "views": 121086
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -52341,7 +52345,7 @@
       "duration_label": "06:03:30",
       "duration_seconds": 21810,
       "title": "Uchiha \"Phoenix\" Jones | Art & The +1's | NoPixel V",
-      "views": 94536
+      "views": 94559
     },
     {
       "source": "twitch_vod",
@@ -52351,7 +52355,7 @@
       "duration_label": "10:20:10",
       "duration_seconds": 37210,
       "title": "UCHIHA \"PHOENIX\" JONES - BUSINESS WEEK - NOPIXEL V",
-      "views": 1296
+      "views": 1615
     }
   ],
   "archive_grouped_dates": [
