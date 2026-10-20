@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-20T15:38:41Z",
+  "generated_at": "2026-10-20T19:51:51Z",
   "data_through": "2026-10-19T19:34:32Z",
   "degraded_sources": [
-    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
   ],
   "sources": {
     "sullygnome_stream_table": 2521,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 52,
-    "exact_merged_rows": 60,
+    "exact_merged_rows": 55,
     "youtube_archive_segments": 1126,
     "youtube_archive_grouped_dates": 610
   },
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 59,
-      "mean": 26.79,
-      "median": 23.74,
+      "count": 54,
+      "mean": 28.38,
+      "median": 23.9,
       "max": 98.84
     },
     "archive_gap_days": {
@@ -562,7 +562,7 @@
       {
         "gap_h": 43.1,
         "started_at": "2026-10-05T01:23:22Z",
-        "game": "Just Chatting"
+        "game": "Grand Theft Auto V"
       },
       {
         "gap_h": 11.3,
@@ -644,8 +644,8 @@
         "started_at": "2026-09-22T17:36:20Z",
         "ended_at_iso": "2026-09-23T00:15:00+00:00",
         "games": [
-          "Grand Theft Auto V",
-          "Just Chatting"
+          "Just Chatting",
+          "Grand Theft Auto V"
         ],
         "duration_h": 6.7,
         "duration_label": "399 minutes",
@@ -781,8 +781,8 @@
         "started_at": "2026-10-05T01:23:22Z",
         "ended_at_iso": "2026-10-05T06:45:00+00:00",
         "games": [
-          "Just Chatting",
-          "Grand Theft Auto V"
+          "Grand Theft Auto V",
+          "Just Chatting"
         ],
         "duration_h": 5.4,
         "duration_label": "322 minutes",
@@ -1159,13 +1159,18 @@
         ]
       }
     },
-    "live_stream": null,
-    "last_live_seen": "2026-10-20T05:41:58Z",
+    "live_stream": {
+      "started_at": "2026-10-20T17:46:06Z",
+      "game": "Grand Theft Auto V",
+      "title": "UCHIHA JONES - ART & NEWS (NEVER CRIME) - NOPIXEL V",
+      "viewers": 2042
+    },
+    "last_live_seen": "2026-10-20T19:51:51Z",
     "followers": {
-      "total": 653632,
-      "as_of": "2026-10-20T15:38:25Z",
-      "gained_7d": -138,
-      "snapshots": 204
+      "total": 653626,
+      "as_of": "2026-10-20T19:51:36Z",
+      "gained_7d": -143,
+      "snapshots": 205
     }
   },
   "follower_snapshots": [
@@ -1984,6 +1989,10 @@
     [
       "2026-10-20T15:38:25Z",
       653632
+    ],
+    [
+      "2026-10-20T19:51:36Z",
+      653626
     ]
   ],
   "sully_streams": [
@@ -3606,8 +3615,8 @@
       "duration_seconds": 11700,
       "title": null,
       "games": [
-        "IRL",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "IRL"
       ],
       "avg_viewers": 64,
       "peak_viewers": 85,
@@ -4737,8 +4746,8 @@
       "duration_seconds": 1800,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Final Fantasy X/X-2 HD Remaster"
+        "Final Fantasy X/X-2 HD Remaster",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 35,
       "peak_viewers": 42,
@@ -11768,9 +11777,9 @@
       "duration_seconds": 21600,
       "title": null,
       "games": [
+        "VRChat",
         "Just Chatting",
-        "Far Cry New Dawn",
-        "VRChat"
+        "Far Cry New Dawn"
       ],
       "avg_viewers": 92,
       "peak_viewers": 249,
@@ -21909,8 +21918,8 @@
       "duration_seconds": 43080,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Fall Guys"
+        "Fall Guys",
+        "Just Chatting"
       ],
       "avg_viewers": 1630,
       "peak_viewers": 2689,
@@ -23516,8 +23525,8 @@
       "duration_seconds": 48360,
       "title": null,
       "games": [
-        "Raft",
-        "Just Chatting"
+        "Just Chatting",
+        "Raft"
       ],
       "avg_viewers": 1564,
       "peak_viewers": 2535,
@@ -23536,9 +23545,9 @@
       "duration_seconds": 30480,
       "title": null,
       "games": [
-        "Music",
         "Just Chatting",
-        "VRChat"
+        "VRChat",
+        "Music"
       ],
       "avg_viewers": 1374,
       "peak_viewers": 2002,
@@ -23578,8 +23587,8 @@
       "duration_seconds": 38820,
       "title": null,
       "games": [
-        "Raft",
         "Just Chatting",
+        "Raft",
         "VRChat"
       ],
       "avg_viewers": 1518,
@@ -24789,8 +24798,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Rubber Bandits",
-        "VRChat"
+        "VRChat",
+        "Rubber Bandits"
       ],
       "avg_viewers": 1523,
       "peak_viewers": 2155,
@@ -24890,8 +24899,8 @@
       "duration_seconds": 25680,
       "title": null,
       "games": [
-        "VRChat",
-        "Just Chatting"
+        "Just Chatting",
+        "VRChat"
       ],
       "avg_viewers": 1023,
       "peak_viewers": 1241,
@@ -24910,8 +24919,8 @@
       "duration_seconds": 21480,
       "title": null,
       "games": [
-        "VRChat",
-        "Just Chatting"
+        "Just Chatting",
+        "VRChat"
       ],
       "avg_viewers": 1322,
       "peak_viewers": 1987,
@@ -24970,8 +24979,8 @@
       "duration_seconds": 20100,
       "title": null,
       "games": [
-        "VRChat",
-        "Just Chatting"
+        "Just Chatting",
+        "VRChat"
       ],
       "avg_viewers": 957,
       "peak_viewers": 1271,
@@ -24991,9 +25000,9 @@
       "title": null,
       "games": [
         "VRChat",
+        "Just Chatting",
         "Clustertruck",
-        "Vicewave",
-        "Just Chatting"
+        "Vicewave"
       ],
       "avg_viewers": 978,
       "peak_viewers": 1334,
@@ -27303,8 +27312,8 @@
       "duration_seconds": 21360,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Sea of Thieves"
+        "Sea of Thieves",
+        "Just Chatting"
       ],
       "avg_viewers": 1763,
       "peak_viewers": 2688,
@@ -27342,8 +27351,8 @@
       "duration_seconds": 44160,
       "title": null,
       "games": [
-        "Just Chatting",
-        "DayZ"
+        "DayZ",
+        "Just Chatting"
       ],
       "avg_viewers": 1871,
       "peak_viewers": 3629,
@@ -30257,9 +30266,9 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Propnight",
         "RimWorld",
-        "Special Events"
+        "Special Events",
+        "Propnight"
       ],
       "avg_viewers": 2394,
       "peak_viewers": 3961,
@@ -32285,9 +32294,9 @@
       "duration_seconds": 48600,
       "title": null,
       "games": [
+        "Planet Crafter",
         "Just Chatting",
-        "Little Nightmares II",
-        "Planet Crafter"
+        "Little Nightmares II"
       ],
       "avg_viewers": 2510,
       "peak_viewers": 4424,
@@ -33990,9 +33999,9 @@
         "Warhammer 40,000: Darktide",
         "Just Chatting",
         "Goat Simulator 3",
-        "Farmer's Life",
         "Dwarf Fortress",
-        "Fall Guys"
+        "Fall Guys",
+        "Farmer's Life"
       ],
       "avg_viewers": 1936,
       "peak_viewers": 2503,
@@ -35465,9 +35474,9 @@
       "duration_seconds": 19860,
       "title": null,
       "games": [
+        "Dark Souls: Remastered",
         "Just Chatting",
-        "Internet Cafe Simulator 2",
-        "Dark Souls: Remastered"
+        "Internet Cafe Simulator 2"
       ],
       "avg_viewers": 2485,
       "peak_viewers": 3800,
@@ -35508,9 +35517,9 @@
       "duration_seconds": 29220,
       "title": null,
       "games": [
+        "Dark Souls: Remastered",
         "Just Chatting",
-        "Dark Souls",
-        "Dark Souls: Remastered"
+        "Dark Souls"
       ],
       "avg_viewers": 3199,
       "peak_viewers": 5438,
@@ -35529,8 +35538,8 @@
       "duration_seconds": 31620,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Dark Souls: Remastered"
+        "Dark Souls: Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 2635,
       "peak_viewers": 3153,
@@ -35549,8 +35558,8 @@
       "duration_seconds": 21300,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Dark Souls: Remastered"
+        "Dark Souls: Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 1835,
       "peak_viewers": 2884,
@@ -35569,8 +35578,8 @@
       "duration_seconds": 22380,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Dark Souls: Remastered"
+        "Dark Souls: Remastered",
+        "Just Chatting"
       ],
       "avg_viewers": 3050,
       "peak_viewers": 4127,
@@ -38735,8 +38744,8 @@
       "duration_seconds": 12540,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 6596,
       "peak_viewers": 12066,
@@ -40694,8 +40703,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Rumble Club",
-        "Star Citizen"
+        "Star Citizen",
+        "Rumble Club"
       ],
       "avg_viewers": 1249,
       "peak_viewers": 1733,
@@ -40972,9 +40981,9 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Splodey",
         "The Elder Scrolls Online",
-        "Ready or Not"
+        "Ready or Not",
+        "Splodey"
       ],
       "avg_viewers": 1379,
       "peak_viewers": 1869,
@@ -41077,8 +41086,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Pax Dei",
-        "IRL"
+        "IRL",
+        "Pax Dei"
       ],
       "avg_viewers": 2667,
       "peak_viewers": 5798,
@@ -45567,8 +45576,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Crystal of Atlan",
-        "Star Wars Battlefront II"
+        "Star Wars Battlefront II",
+        "Crystal of Atlan"
       ],
       "avg_viewers": 3763,
       "peak_viewers": 6530,
@@ -46792,10 +46801,10 @@
       "duration_seconds": 19860,
       "title": null,
       "games": [
-        "Ale &amp; Tale Tavern",
         "Just Chatting",
         "Waterpark Simulator",
-        "Borderlands 4"
+        "Borderlands 4",
+        "Ale &amp; Tale Tavern"
       ],
       "avg_viewers": 2876,
       "peak_viewers": 3695,
@@ -47098,9 +47107,9 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Town to City",
         "Megabonk",
-        "Planet Crafter"
+        "Planet Crafter",
+        "Town to City"
       ],
       "avg_viewers": 3617,
       "peak_viewers": 4842,
@@ -47142,8 +47151,8 @@
         "Just Chatting",
         "Halo: Combat Evolved Anniversary",
         "Halo: The Master Chief Collection",
-        "Waterpark Simulator",
-        "Baby Steps"
+        "Baby Steps",
+        "Waterpark Simulator"
       ],
       "avg_viewers": 3960,
       "peak_viewers": 6555,
@@ -47303,8 +47312,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Bounty Star",
-        "Music"
+        "Music",
+        "Bounty Star"
       ],
       "avg_viewers": 3256,
       "peak_viewers": 4093,
@@ -47752,9 +47761,9 @@
       "duration_seconds": 28560,
       "title": null,
       "games": [
-        "Ultimate Theater Simulator",
         "Just Chatting",
-        "Mount &amp; Blade II: Bannerlord"
+        "Mount &amp; Blade II: Bannerlord",
+        "Ultimate Theater Simulator"
       ],
       "avg_viewers": 3256,
       "peak_viewers": 4810,
@@ -48128,9 +48137,9 @@
       "duration_seconds": 38820,
       "title": null,
       "games": [
+        "Just Chatting",
         "MineMogul",
-        "Where Winds Meet",
-        "Just Chatting"
+        "Where Winds Meet"
       ],
       "avg_viewers": 3091,
       "peak_viewers": 3925,
@@ -48438,8 +48447,8 @@
       "duration_seconds": 24300,
       "title": null,
       "games": [
-        "Half Sword",
         "Just Chatting",
+        "Half Sword",
         "Grand Theft Auto V"
       ],
       "avg_viewers": 3332,
@@ -49929,8 +49938,8 @@
       "duration_seconds": 25320,
       "title": null,
       "games": [
-        "Forza Horizon 6",
-        "Just Chatting"
+        "Just Chatting",
+        "Forza Horizon 6"
       ],
       "avg_viewers": 1163,
       "peak_viewers": 1258,
@@ -50197,8 +50206,8 @@
       "duration_seconds": 23040,
       "title": null,
       "games": [
-        "Just Chatting",
-        "MECCHA CHAMELEON"
+        "MECCHA CHAMELEON",
+        "Just Chatting"
       ],
       "avg_viewers": 1485,
       "peak_viewers": 1752,
@@ -50769,8 +50778,8 @@
       "duration_seconds": 32340,
       "title": null,
       "games": [
-        "Special Events",
         "Just Chatting",
+        "Special Events",
         "Once Human",
         "Project P.I.T.T."
       ],
@@ -50852,9 +50861,9 @@
       "duration_seconds": 29700,
       "title": null,
       "games": [
+        "Manor Lords",
         "Just Chatting",
-        "Berry Bury Berry",
-        "Manor Lords"
+        "Berry Bury Berry"
       ],
       "avg_viewers": 1807,
       "peak_viewers": 2177,
@@ -50935,8 +50944,8 @@
       "duration_seconds": 15420,
       "title": null,
       "games": [
-        "Bodycam",
-        "Just Chatting"
+        "Just Chatting",
+        "Bodycam"
       ],
       "avg_viewers": 1761,
       "peak_viewers": 2172,
@@ -50955,8 +50964,8 @@
       "duration_seconds": 46140,
       "title": null,
       "games": [
-        "A Weird Game About Sausage",
         "Just Chatting",
+        "A Weird Game About Sausage",
         "IRL"
       ],
       "avg_viewers": 2021,
@@ -50976,8 +50985,8 @@
       "duration_seconds": 19680,
       "title": null,
       "games": [
-        "Project Zomboid",
-        "Just Chatting"
+        "Just Chatting",
+        "Project Zomboid"
       ],
       "avg_viewers": 1418,
       "peak_viewers": 1559,
@@ -51036,8 +51045,8 @@
       "duration_seconds": 46800,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1906,
       "peak_viewers": 2185,
@@ -51076,8 +51085,8 @@
       "duration_seconds": 42420,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1991,
       "peak_viewers": 2180,
@@ -51196,8 +51205,8 @@
       "duration_seconds": 24120,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1865,
       "peak_viewers": 2173,
@@ -51236,8 +51245,8 @@
       "duration_seconds": 20580,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1805,
       "peak_viewers": 2179,
@@ -51256,8 +51265,8 @@
       "duration_seconds": 24120,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1926,
       "peak_viewers": 2165,
@@ -51296,8 +51305,8 @@
       "duration_seconds": 23940,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1839,
       "peak_viewers": 2181,
@@ -51493,8 +51502,8 @@
       "duration_seconds": 19320,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 2183,
       "peak_viewers": 2874,
@@ -52281,16 +52290,6 @@
       "peak_viewers": 2066
     },
     {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2899961067",
-      "started_at": "2026-10-13T20:19:41Z",
-      "duration_label": "08:53:40",
-      "duration_seconds": 32020,
-      "title": "UCHI \"PHOENIX\" JONES - *NEW ARC* DETECTIVE RETURNS? - NoPixelV - !yt for latest uchi vids!",
-      "views": 172246
-    },
-    {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
       "started_at": "2026-10-14T19:38:24Z",
@@ -52298,16 +52297,6 @@
       "title": "UCHIHA \"PHOENIX\" JONES - THE TEMPERATURE IS GOING UP BIG SERIOUS RP DAY - NoPixel V - !Youtube",
       "avg_viewers": 1885,
       "peak_viewers": 2057
-    },
-    {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2900792562",
-      "started_at": "2026-10-14T19:38:29Z",
-      "duration_label": "04:03:20",
-      "duration_seconds": 14600,
-      "title": "UCHIHA \"PHOENIX\" JONES - THE TEMPERATURE IS GOING UP BIG SERIOUS RP DAY - NoPixel V - !Youtube",
-      "views": 99160
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -52319,16 +52308,6 @@
       "peak_viewers": 2059
     },
     {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2901592856",
-      "started_at": "2026-10-15T18:21:16Z",
-      "duration_label": "06:32:40",
-      "duration_seconds": 23560,
-      "title": "Uchiha \"Phoenix\" Jones - Where there's Egg there's Fire - NoPixel V - !YouTube",
-      "views": 121086
-    },
-    {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
       "started_at": "2026-10-17T19:35:44Z",
@@ -52336,26 +52315,6 @@
       "title": "Uchiha \"Phoenix\" Jones | Art & The +1's | NoPixel V",
       "avg_viewers": 1837,
       "peak_viewers": 2069
-    },
-    {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2903518163",
-      "started_at": "2026-10-17T19:35:49Z",
-      "duration_label": "06:03:30",
-      "duration_seconds": 21810,
-      "title": "Uchiha \"Phoenix\" Jones | Art & The +1's | NoPixel V",
-      "views": 94559
-    },
-    {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2905304669",
-      "started_at": "2026-10-19T19:34:36Z",
-      "duration_label": "10:20:10",
-      "duration_seconds": 37210,
-      "title": "UCHIHA \"PHOENIX\" JONES - BUSINESS WEEK - NOPIXEL V",
-      "views": 1615
     }
   ],
   "archive_grouped_dates": [
