@@ -1,7 +1,9 @@
 {
-  "generated_at": "2026-10-21T12:11:26Z",
+  "generated_at": "2026-10-21T17:34:29Z",
   "data_through": "2026-10-20T17:46:06Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+  ],
   "sources": {
     "sullygnome_stream_table": 2521,
     "twitchmetrics_stream_logs": 15,
@@ -1154,10 +1156,10 @@
     "live_stream": null,
     "last_live_seen": "2026-10-21T01:24:55Z",
     "followers": {
-      "total": 653596,
-      "as_of": "2026-10-21T12:11:10Z",
-      "gained_7d": -87,
-      "snapshots": 209
+      "total": 653584,
+      "as_of": "2026-10-21T17:34:14Z",
+      "gained_7d": -89,
+      "snapshots": 210
     }
   },
   "follower_snapshots": [
@@ -1996,6 +1998,10 @@
     [
       "2026-10-21T12:11:10Z",
       653596
+    ],
+    [
+      "2026-10-21T17:34:14Z",
+      653584
     ]
   ],
   "sully_streams": [
