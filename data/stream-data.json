@@ -1,7 +1,10 @@
 {
-  "generated_at": "2026-10-22T19:24:45Z",
+  "generated_at": "2026-10-22T22:40:37Z",
   "data_through": "2026-10-20T17:46:06Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+  ],
   "sources": {
     "sullygnome_stream_table": 2521,
     "twitchmetrics_stream_logs": 15,
@@ -1153,16 +1156,16 @@
     },
     "live_stream": {
       "started_at": "2026-10-22T18:29:06Z",
-      "game": "Just Chatting",
+      "game": "Grand Theft Auto V",
       "title": "UCHIHA \"PHOENIX\" JONES - CRIME PAYS - NOPIXEL V",
-      "viewers": 1998
+      "viewers": 1991
     },
-    "last_live_seen": "2026-10-22T19:24:45Z",
+    "last_live_seen": "2026-10-22T22:40:37Z",
     "followers": {
-      "total": 653540,
-      "as_of": "2026-10-22T19:24:30Z",
-      "gained_7d": -92,
-      "snapshots": 216
+      "total": 653530,
+      "as_of": "2026-10-22T22:40:22Z",
+      "gained_7d": -89,
+      "snapshots": 217
     }
   },
   "follower_snapshots": [
@@ -2029,6 +2032,10 @@
     [
       "2026-10-22T19:24:30Z",
       653540
+    ],
+    [
+      "2026-10-22T22:40:22Z",
+      653530
     ]
   ],
   "sully_streams": [
