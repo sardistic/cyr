@@ -1,7 +1,9 @@
 {
-  "generated_at": "2026-10-23T23:20:25Z",
+  "generated_at": "2026-10-24T01:49:51Z",
   "data_through": "2026-10-23T19:16:12Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30001 milliseconds with 5963 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+  ],
   "sources": {
     "sullygnome_stream_table": 2523,
     "twitchmetrics_stream_logs": 15,
@@ -1154,14 +1156,14 @@
       "started_at": "2026-10-23T19:16:12Z",
       "game": "Grand Theft Auto V",
       "title": "Uchiha Jones - TOO MUCH TO DO - NoPixel V",
-      "viewers": 2008
+      "viewers": 1985
     },
-    "last_live_seen": "2026-10-23T23:20:25Z",
+    "last_live_seen": "2026-10-24T01:49:51Z",
     "followers": {
-      "total": 653491,
-      "as_of": "2026-10-23T23:20:11Z",
-      "gained_7d": -106,
-      "snapshots": 223
+      "total": 653498,
+      "as_of": "2026-10-24T01:49:36Z",
+      "gained_7d": -97,
+      "snapshots": 224
     }
   },
   "follower_snapshots": [
@@ -2056,6 +2058,10 @@
     [
       "2026-10-23T23:20:11Z",
       653491
+    ],
+    [
+      "2026-10-24T01:49:36Z",
+      653498
     ]
   ],
   "sully_streams": [
