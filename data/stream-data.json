@@ -1,7 +1,10 @@
 {
-  "generated_at": "2026-11-01T08:47:17Z",
+  "generated_at": "2026-11-01T15:48:43Z",
   "data_through": "2026-10-28T19:51:13Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "sullygnome: Could not find SullyGnome PageInfo (http 403, 5786 bytes, title='Just a moment...', head='<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam')",
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+  ],
   "sources": {
     "sullygnome_stream_table": 2528,
     "twitchmetrics_stream_logs": 15,
@@ -1157,10 +1160,10 @@
     "live_stream": null,
     "last_live_seen": "2026-10-28T21:37:12Z",
     "followers": {
-      "total": 653432,
-      "as_of": "2026-11-01T08:47:05Z",
-      "gained_7d": -72,
-      "snapshots": 265
+      "total": 653426,
+      "as_of": "2026-11-01T15:48:28Z",
+      "gained_7d": -77,
+      "snapshots": 266
     }
   },
   "follower_snapshots": [
@@ -2223,6 +2226,10 @@
     [
       "2026-11-01T08:47:05Z",
       653432
+    ],
+    [
+      "2026-11-01T15:48:28Z",
+      653426
     ]
   ],
   "sully_streams": [
