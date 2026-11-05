@@ -1,14 +1,15 @@
 {
-  "generated_at": "2026-11-05T01:40:24Z",
+  "generated_at": "2026-11-05T09:01:21Z",
   "data_through": "2026-11-04T21:21:04Z",
   "degraded_sources": [
-    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30001 milliseconds with 900 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
   ],
   "sources": {
     "sullygnome_stream_table": 2531,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 53,
-    "exact_merged_rows": 52,
+    "exact_merged_rows": 57,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 610
   },
@@ -29,10 +30,10 @@
       }
     },
     "exact_gap_hours": {
-      "count": 51,
-      "mean": 27.77,
-      "median": 23.99,
-      "max": 75.05
+      "count": 56,
+      "mean": 28.32,
+      "median": 23.97,
+      "max": 118.19
     },
     "archive_gap_days": {
       "count": 609,
@@ -1160,18 +1161,13 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-11-04T21:21:04Z",
-      "game": "World of Warcraft",
-      "title": "HARDCORE PVP UNTIL !LVL30 - WOW FOREVER - 1ST TIME PLAYING - CUNGUS THE HUNTER (NEVER RUN) -",
-      "viewers": 1999
-    },
+    "live_stream": null,
     "last_live_seen": "2026-11-05T01:40:24Z",
     "followers": {
-      "total": 653295,
-      "as_of": "2026-11-05T01:40:06Z",
-      "gained_7d": -249,
-      "snapshots": 279
+      "total": 653267,
+      "as_of": "2026-11-05T09:01:04Z",
+      "gained_7d": -271,
+      "snapshots": 280
     }
   },
   "follower_snapshots": [
@@ -2290,6 +2286,10 @@
     [
       "2026-11-05T01:40:06Z",
       653295
+    ],
+    [
+      "2026-11-05T09:01:04Z",
+      653267
     ]
   ],
   "sully_streams": [
@@ -52592,64 +52592,54 @@
       "views": 310891
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2894344827",
-      "started_at": "2026-10-07T15:44:18Z",
-      "duration_label": "4 hours",
+      "started_at": "2026-10-07T15:44:23Z",
+      "duration_label": "04:04:52",
       "duration_seconds": 14692,
       "title": "CASINO OPEN JOE CAINE ANEURYSM TIME | NoPixel V",
-      "views": 90709,
-      "avg_viewers": 1698,
-      "peak_viewers": 2051
+      "views": 90709
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2894645572",
-      "started_at": "2026-10-07T22:13:06Z",
-      "duration_label": "4 hours",
+      "started_at": "2026-10-07T22:13:11Z",
+      "duration_label": "03:43:50",
       "duration_seconds": 13430,
       "title": "CASINO OPEN JOE CAINE ANEURYSM TIME | NoPixel V",
-      "views": 109856,
-      "avg_viewers": 1853,
-      "peak_viewers": 2058
+      "views": 109856
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2895783373",
-      "started_at": "2026-10-09T04:35:21Z",
-      "duration_label": "4 hours",
+      "started_at": "2026-10-09T04:35:26Z",
+      "duration_label": "03:54:20",
       "duration_seconds": 14060,
       "title": "Uchiha Jones | Late Night NoPixel V",
-      "views": 105926,
-      "avg_viewers": 1996,
-      "peak_viewers": 2854
+      "views": 105926
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2896326910",
-      "started_at": "2026-10-09T20:31:06Z",
-      "duration_label": "8 hours",
+      "started_at": "2026-10-09T20:31:11Z",
+      "duration_label": "07:38:20",
       "duration_seconds": 27500,
       "title": "UCHIHA \u201cPHOENIX\u201d JONES - ART ASYLUM DAY - NOPIXEL V - NEW UCHIHA YT VID !youtube",
-      "views": 191595,
-      "avg_viewers": 1918,
-      "peak_viewers": 2076
+      "views": 191595
     },
     {
-      "source": "twitchmetrics_stream_log",
-      "precision": "exact_utc_start",
+      "source": "twitchmetrics_vod",
+      "precision": "exact_vod_time",
       "id": "2899256932",
-      "started_at": "2026-10-12T23:33:53Z",
-      "duration_label": "7 hours",
+      "started_at": "2026-10-12T23:33:58Z",
+      "duration_label": "07:23:00",
       "duration_seconds": 26580,
       "title": "Uchiha \"PHOENIX\" Jones | NoPixel V | BIG DILLYDALLY BIGGER SHALLY | !Youtube !Phoenix",
-      "views": 161194,
-      "avg_viewers": 1999,
-      "peak_viewers": 2843
+      "views": 161194
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -52772,34 +52762,88 @@
       "peak_viewers": 2046
     },
     {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
       "id": "2911736282",
-      "started_at": "2026-10-26T23:25:57Z",
-      "duration_label": "05:18:10",
+      "started_at": "2026-10-26T23:25:52Z",
+      "duration_label": "5 hours",
       "duration_seconds": 19090,
       "title": "LIMP BIZKIT RP | NOPIXEL V",
-      "views": 174835
+      "views": 174835,
+      "avg_viewers": 1935,
+      "peak_viewers": 2073
     },
     {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
       "id": "2912361563",
-      "started_at": "2026-10-27T18:32:03Z",
-      "duration_label": "08:26:20",
+      "started_at": "2026-10-27T18:31:58Z",
+      "duration_label": "8 hours",
       "duration_seconds": 30380,
       "title": "Uchiha Jones - NO MANIA - NoPixel V",
-      "views": 238224
+      "views": 238224,
+      "avg_viewers": 1972,
+      "peak_viewers": 2748
     },
     {
-      "source": "twitchmetrics_vod",
-      "precision": "exact_vod_time",
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
       "id": "2913310194",
-      "started_at": "2026-10-28T19:51:17Z",
-      "duration_label": "05:39:40",
+      "started_at": "2026-10-28T19:51:13Z",
+      "duration_label": "6 hours",
       "duration_seconds": 20380,
       "title": "uchiha jones \ud83c\udf83 spookiha \ud83c\udf83 nopixel v",
-      "views": 964
+      "views": 964,
+      "avg_viewers": 1885,
+      "peak_viewers": 2049
+    },
+    {
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
+      "started_at": "2026-11-02T18:02:24Z",
+      "duration_label": "9 hours",
+      "title": "New Hair, Same great taste. NO-LIFE NOVEMBER HERE WE COME.",
+      "avg_viewers": 1949,
+      "peak_viewers": 2080
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2917727259",
+      "started_at": "2026-11-02T18:02:29Z",
+      "duration_label": "08:46:50",
+      "duration_seconds": 31610,
+      "title": "New Hair, Same great taste. NO-LIFE NOVEMBER HERE WE COME.",
+      "views": 214778
+    },
+    {
+      "source": "twitchmetrics_stream_log",
+      "precision": "exact_utc_start",
+      "started_at": "2026-11-03T21:50:11Z",
+      "duration_label": "4 hours",
+      "title": "dilly dally shilly shally - remaining calm no matter what today",
+      "avg_viewers": 1914,
+      "peak_viewers": 2062
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2918782383",
+      "started_at": "2026-11-03T21:50:16Z",
+      "duration_label": "04:19:20",
+      "duration_seconds": 15560,
+      "title": "dilly dally shilly shally - remaining calm no matter what today",
+      "views": 148731
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2919643749",
+      "started_at": "2026-11-04T21:21:09Z",
+      "duration_label": "06:35:50",
+      "duration_seconds": 23750,
+      "title": "UCHIHA JONES RP  - ONE LIFE ONE CUNGUS - WORLD OF WARCRAFT FOREVER - NEVER RUN FROM A HUNTER - MY FUTURE IS UNCERTAIN",
+      "views": 359
     }
   ],
   "archive_grouped_dates": [
