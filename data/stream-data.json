@@ -1,7 +1,9 @@
 {
-  "generated_at": "2026-11-05T17:32:42Z",
+  "generated_at": "2026-11-05T23:19:42Z",
   "data_through": "2026-11-04T21:21:04Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30001 milliseconds with 1334 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+  ],
   "sources": {
     "sullygnome_stream_table": 2531,
     "twitchmetrics_stream_logs": 15,
@@ -1158,13 +1160,18 @@
         ]
       }
     },
-    "live_stream": null,
-    "last_live_seen": "2026-11-05T01:40:24Z",
+    "live_stream": {
+      "started_at": "2026-11-05T18:38:07Z",
+      "game": "World of Warcraft",
+      "title": "PVP HARDCORE 1ST PLAYTHROUGH RAW BACKSEAT ENABLED POV NEVER DYING NEVER DIED",
+      "viewers": 2055
+    },
+    "last_live_seen": "2026-11-05T23:19:42Z",
     "followers": {
-      "total": 653251,
-      "as_of": "2026-11-05T17:32:28Z",
-      "gained_7d": -285,
-      "snapshots": 281
+      "total": 653219,
+      "as_of": "2026-11-05T23:19:28Z",
+      "gained_7d": -315,
+      "snapshots": 282
     }
   },
   "follower_snapshots": [
@@ -2291,6 +2298,10 @@
     [
       "2026-11-05T17:32:28Z",
       653251
+    ],
+    [
+      "2026-11-05T23:19:28Z",
+      653219
     ]
   ],
   "sully_streams": [
@@ -52815,7 +52826,7 @@
       "duration_label": "08:46:50",
       "duration_seconds": 31610,
       "title": "New Hair, Same great taste. NO-LIFE NOVEMBER HERE WE COME.",
-      "views": 214786
+      "views": 214797
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -52834,7 +52845,7 @@
       "duration_label": "04:19:20",
       "duration_seconds": 15560,
       "title": "dilly dally shilly shally - remaining calm no matter what today",
-      "views": 148744
+      "views": 148759
     },
     {
       "source": "twitch_vod",
@@ -52844,7 +52855,7 @@
       "duration_label": "06:35:50",
       "duration_seconds": 23750,
       "title": "UCHIHA JONES RP  - ONE LIFE ONE CUNGUS - WORLD OF WARCRAFT FOREVER - NEVER RUN FROM A HUNTER - MY FUTURE IS UNCERTAIN",
-      "views": 592
+      "views": 246210
     }
   ],
   "archive_grouped_dates": [
