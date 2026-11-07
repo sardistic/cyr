@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-07T04:52:24Z",
+  "generated_at": "2026-11-07T11:31:43Z",
   "data_through": "2026-11-06T21:55:51Z",
   "degraded_sources": [],
   "sources": {
     "sullygnome_stream_table": 2533,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 53,
-    "exact_merged_rows": 58,
+    "exact_merged_rows": 59,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 610
   },
@@ -27,9 +27,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 57,
-      "mean": 28.19,
-      "median": 23.94,
+      "count": 58,
+      "mean": 28.18,
+      "median": 23.97,
       "max": 118.19
     },
     "archive_gap_days": {
@@ -366,11 +366,11 @@
         "start_p25": 7.58,
         "start_p50": 10.59,
         "start_p75": 12.63,
-        "end_p50": 16.5,
+        "end_p50": 16.51,
         "end_p90": 19.41,
         "dur_p25": 4.07,
-        "dur_p50": 5.1,
-        "dur_p75": 6.4,
+        "dur_p50": 5.12,
+        "dur_p75": 6.5,
         "active_rate": 0.625,
         "window_days": 730
       },
@@ -946,29 +946,29 @@
       },
       {
         "started_at": "2026-11-06T21:55:51Z",
-        "ended_at_iso": "2026-11-07T02:45:00+00:00",
+        "ended_at_iso": "2026-11-07T05:15:00+00:00",
         "games": [
           "Just Chatting",
           "The Legend of Zelda: Ocarina of Time",
           "The Legend of Zelda: Ocarina of Time"
         ],
-        "duration_h": 4.8,
-        "duration_label": "290 minutes",
-        "avg_viewers": 1882,
+        "duration_h": 7.3,
+        "duration_label": "440 minutes",
+        "avg_viewers": 1920,
         "peak_viewers": 2075,
-        "followers_gained": 0,
+        "followers_gained": -46,
         "followers_gained_source": null
       }
     ],
     "last_stream": {
       "started_at": "2026-11-06T21:55:51Z",
-      "ended_at_iso": "2026-11-07T02:45:00+00:00",
+      "ended_at_iso": "2026-11-07T05:15:00+00:00",
       "games": [
         "Just Chatting",
         "The Legend of Zelda: Ocarina of Time",
         "The Legend of Zelda: Ocarina of Time"
       ],
-      "duration_label": "290 minutes"
+      "duration_label": "440 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -1160,18 +1160,13 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-11-06T21:55:51Z",
-      "game": "The Legend of Zelda: Ocarina of Time",
-      "title": "OCARINA OF TIME REMAKE 1ST TIME - GOOG GAME - GOOG MUSIC - MILLENIALS AND GEN X ONLY ALLOWED - MILLENIAL NUANCED HUMOR ONLY",
-      "viewers": 2013
-    },
+    "live_stream": null,
     "last_live_seen": "2026-11-07T04:52:24Z",
     "followers": {
-      "total": 653150,
-      "as_of": "2026-11-07T04:52:13Z",
-      "gained_7d": -321,
-      "snapshots": 287
+      "total": 653148,
+      "as_of": "2026-11-07T11:31:26Z",
+      "gained_7d": -323,
+      "snapshots": 288
     }
   },
   "follower_snapshots": [
@@ -2322,6 +2317,10 @@
     [
       "2026-11-07T04:52:13Z",
       653150
+    ],
+    [
+      "2026-11-07T11:31:26Z",
+      653148
     ]
   ],
   "sully_streams": [
@@ -6737,8 +6736,8 @@
       "duration_seconds": 22500,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Welcome to the Game II"
+        "Welcome to the Game II",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 107,
       "peak_viewers": 158,
@@ -11968,8 +11967,8 @@
       "duration_seconds": 27780,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 147,
       "peak_viewers": 305,
@@ -12457,8 +12456,8 @@
       "duration_seconds": 10800,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 65,
       "peak_viewers": 87,
@@ -13515,8 +13514,8 @@
       "duration_seconds": 51360,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 2440,
       "peak_viewers": 4314,
@@ -13535,8 +13534,8 @@
       "duration_seconds": 20520,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
         "FINAL FANTASY XIV ONLINE",
+        "Grand Theft Auto V",
         "MORDHAU"
       ],
       "avg_viewers": 2066,
@@ -13844,10 +13843,10 @@
       "duration_seconds": 22380,
       "title": null,
       "games": [
+        "Jump King",
         "Grand Theft Auto V",
         "Just Chatting",
-        "Getting Over It with Bennett Foddy",
-        "Jump King"
+        "Getting Over It with Bennett Foddy"
       ],
       "avg_viewers": 1434,
       "peak_viewers": 1901,
@@ -15309,10 +15308,10 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
-        "egg is broken. heart is too.",
-        "Outlast",
         "Getting Over It with Bennett Foddy",
-        "60 Seconds!"
+        "60 Seconds!",
+        "egg is broken. heart is too.",
+        "Outlast"
       ],
       "avg_viewers": 1582,
       "peak_viewers": 2348,
@@ -16412,8 +16411,8 @@
       "duration_seconds": 22260,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Red Dead Redemption II"
+        "Red Dead Redemption II",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1779,
       "peak_viewers": 2118,
@@ -16489,9 +16488,9 @@
       "duration_seconds": 9720,
       "title": null,
       "games": [
+        "Grand Theft Auto V",
         "Just Chatting",
-        "Red Dead Redemption II",
-        "Grand Theft Auto V"
+        "Red Dead Redemption II"
       ],
       "avg_viewers": 2119,
       "peak_viewers": 2490,
@@ -16937,8 +16936,8 @@
       "duration_seconds": 20400,
       "title": null,
       "games": [
-        "Just Chatting",
         "Grand Theft Auto V",
+        "Just Chatting",
         "Call of Duty: Warzone"
       ],
       "avg_viewers": 1064,
@@ -20997,9 +20996,9 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
+        "Command &amp; Conquer Remastered Collection",
         "\u5922\u4e09\u570b",
-        "Just Chatting",
-        "Command &amp; Conquer Remastered Collection"
+        "Just Chatting"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 1848,
@@ -23309,8 +23308,8 @@
       "duration_seconds": 23460,
       "title": null,
       "games": [
-        "House Flipper",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "House Flipper"
       ],
       "avg_viewers": 1138,
       "peak_viewers": 1619,
@@ -23368,8 +23367,8 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
-        "Phasmophobia",
-        "Just Chatting"
+        "Just Chatting",
+        "Phasmophobia"
       ],
       "avg_viewers": 2033,
       "peak_viewers": 2936,
@@ -23409,8 +23408,8 @@
       "duration_seconds": 22020,
       "title": null,
       "games": [
-        "Phasmophobia",
-        "Just Chatting"
+        "Just Chatting",
+        "Phasmophobia"
       ],
       "avg_viewers": 1813,
       "peak_viewers": 2749,
@@ -23506,9 +23505,9 @@
       "duration_seconds": 31680,
       "title": null,
       "games": [
+        "Just Chatting",
         "VRChat",
         "Among Us",
-        "Just Chatting",
         "Phasmophobia"
       ],
       "avg_viewers": 1604,
@@ -23688,8 +23687,8 @@
       "duration_seconds": 29340,
       "title": null,
       "games": [
-        "VRChat",
-        "Just Chatting"
+        "Just Chatting",
+        "VRChat"
       ],
       "avg_viewers": 1476,
       "peak_viewers": 1804,
@@ -24550,8 +24549,8 @@
       "duration_seconds": 31380,
       "title": null,
       "games": [
-        "Among Us",
         "Just Chatting",
+        "Among Us",
         "VRChat"
       ],
       "avg_viewers": 1343,
@@ -27126,8 +27125,8 @@
         "Grand Theft Auto V",
         "Ranch Simulator",
         "OBEY",
-        "Friday the 13th: The Game",
         "SCP: Terminal",
+        "Friday the 13th: The Game",
         "Can't Drive This"
       ],
       "avg_viewers": 1396,
@@ -29344,8 +29343,8 @@
       "duration_seconds": 4080,
       "title": null,
       "games": [
-        "Road 96",
-        "Just Chatting"
+        "Just Chatting",
+        "Road 96"
       ],
       "avg_viewers": 1088,
       "peak_viewers": 1939,
@@ -29364,8 +29363,8 @@
       "duration_seconds": 11940,
       "title": null,
       "games": [
-        "Road 96",
-        "Just Chatting"
+        "Just Chatting",
+        "Road 96"
       ],
       "avg_viewers": 1410,
       "peak_viewers": 2315,
@@ -29384,8 +29383,8 @@
       "duration_seconds": 53220,
       "title": null,
       "games": [
-        "Risk of Rain 2",
-        "Just Chatting"
+        "Just Chatting",
+        "Risk of Rain 2"
       ],
       "avg_viewers": 2006,
       "peak_viewers": 3606,
@@ -29548,8 +29547,8 @@
       "duration_seconds": 17280,
       "title": null,
       "games": [
-        "Hades",
-        "Just Chatting"
+        "Just Chatting",
+        "Hades"
       ],
       "avg_viewers": 1021,
       "peak_viewers": 2277,
@@ -30872,8 +30871,8 @@
       "duration_seconds": 32100,
       "title": null,
       "games": [
-        "Project Zomboid",
-        "Just Chatting"
+        "Just Chatting",
+        "Project Zomboid"
       ],
       "avg_viewers": 3889,
       "peak_viewers": 4909,
@@ -30892,8 +30891,8 @@
       "duration_seconds": 22560,
       "title": null,
       "games": [
-        "Monopoly Plus",
-        "Just Chatting"
+        "Just Chatting",
+        "Monopoly Plus"
       ],
       "avg_viewers": 2140,
       "peak_viewers": 4677,
@@ -30992,8 +30991,8 @@
       "duration_seconds": 43440,
       "title": null,
       "games": [
-        "Internet Cafe Simulator 2",
-        "Just Chatting"
+        "Just Chatting",
+        "Internet Cafe Simulator 2"
       ],
       "avg_viewers": 4380,
       "peak_viewers": 12816,
@@ -34328,9 +34327,9 @@
         "Warhammer 40,000: Darktide",
         "Just Chatting",
         "Goat Simulator 3",
-        "Farmer's Life",
         "Dwarf Fortress",
-        "Fall Guys"
+        "Fall Guys",
+        "Farmer's Life"
       ],
       "avg_viewers": 1936,
       "peak_viewers": 2503,
@@ -37435,8 +37434,8 @@
       "duration_seconds": 21120,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Cuphead"
+        "Cuphead",
+        "Just Chatting"
       ],
       "avg_viewers": 2520,
       "peak_viewers": 4694,
@@ -41032,8 +41031,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Rumble Club",
-        "Star Citizen"
+        "Star Citizen",
+        "Rumble Club"
       ],
       "avg_viewers": 1249,
       "peak_viewers": 1733,
@@ -41310,9 +41309,9 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Splodey",
         "The Elder Scrolls Online",
-        "Ready or Not"
+        "Ready or Not",
+        "Splodey"
       ],
       "avg_viewers": 1379,
       "peak_viewers": 1869,
@@ -43983,9 +43982,9 @@
       "duration_seconds": 25440,
       "title": null,
       "games": [
+        "Project Zomboid",
         "Just Chatting",
-        "Baldur's Gate 3",
-        "Project Zomboid"
+        "Baldur's Gate 3"
       ],
       "avg_viewers": 2316,
       "peak_viewers": 3271,
@@ -46694,8 +46693,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "PEAK",
-        "GUG"
+        "GUG",
+        "PEAK"
       ],
       "avg_viewers": 3107,
       "peak_viewers": 4427,
@@ -50576,8 +50575,8 @@
       "duration_seconds": 14160,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Dawson Oaks Trailer Park"
+        "Dawson Oaks Trailer Park",
+        "Just Chatting"
       ],
       "avg_viewers": 1499,
       "peak_viewers": 1739,
@@ -51297,8 +51296,8 @@
       "duration_seconds": 19680,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Project Zomboid"
+        "Project Zomboid",
+        "Just Chatting"
       ],
       "avg_viewers": 1418,
       "peak_viewers": 1559,
@@ -51337,8 +51336,8 @@
       "duration_seconds": 20280,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Worming from Home"
+        "Worming from Home",
+        "Just Chatting"
       ],
       "avg_viewers": 1352,
       "peak_viewers": 1554,
@@ -51517,8 +51516,8 @@
       "duration_seconds": 24120,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1865,
       "peak_viewers": 2173,
@@ -51537,8 +51536,8 @@
       "duration_seconds": 36900,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1995,
       "peak_viewers": 2180,
@@ -51577,8 +51576,8 @@
       "duration_seconds": 24120,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1926,
       "peak_viewers": 2165,
@@ -51617,8 +51616,8 @@
       "duration_seconds": 23940,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1839,
       "peak_viewers": 2181,
@@ -52306,19 +52305,19 @@
       "precision": "exact_utc_start",
       "id": "322293863131",
       "started_at": "2026-11-06T21:55:51Z",
-      "ended_at": "Saturday 7th November 2026 02:45",
-      "duration_label": "290 minutes",
-      "duration_seconds": 17400,
+      "ended_at": "Saturday 7th November 2026 05:15",
+      "duration_label": "440 minutes",
+      "duration_seconds": 26400,
       "title": null,
       "games": [
         "Just Chatting",
         "The Legend of Zelda: Ocarina of Time",
         "The Legend of Zelda: Ocarina of Time"
       ],
-      "avg_viewers": 1882,
+      "avg_viewers": 1920,
       "peak_viewers": 2075,
-      "followers_gained": 0,
-      "view_minutes": 545780,
+      "followers_gained": -46,
+      "view_minutes": 844800,
       "stream_url": "https://sullygnome.com/channel/stream/322293863131",
       "range": "2026"
     }
@@ -52887,7 +52886,7 @@
       "duration_label": "08:46:50",
       "duration_seconds": 31610,
       "title": "New Hair, Same great taste. NO-LIFE NOVEMBER HERE WE COME.",
-      "views": 214824
+      "views": 214827
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -52906,7 +52905,7 @@
       "duration_label": "04:19:20",
       "duration_seconds": 15560,
       "title": "dilly dally shilly shally - remaining calm no matter what today",
-      "views": 148797
+      "views": 148799
     },
     {
       "source": "twitch_vod",
@@ -52916,7 +52915,7 @@
       "duration_label": "06:35:50",
       "duration_seconds": 23750,
       "title": "UCHIHA JONES RP  - ONE LIFE ONE CUNGUS - WORLD OF WARCRAFT FOREVER - NEVER RUN FROM A HUNTER - MY FUTURE IS UNCERTAIN",
-      "views": 246276
+      "views": 246281
     },
     {
       "source": "twitch_vod",
@@ -52926,7 +52925,17 @@
       "duration_label": "05:31:30",
       "duration_seconds": 19890,
       "title": "I can't believe cyr is playing \"HARDCORE\" on a PVP server with NO experience. NO WAY this guy will last until !lvl30",
-      "views": 128027
+      "views": 128037
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2921506967",
+      "started_at": "2026-11-06T21:55:56Z",
+      "duration_label": "07:32:00",
+      "duration_seconds": 27120,
+      "title": "OCARINA OF TIME REMAKE 1ST TIME - GOOG GAME - GOOG MUSIC - MILLENIALS UNITE DOWN WITH ALL OTHER GENERATIONS",
+      "views": 376
     }
   ],
   "archive_grouped_dates": [
