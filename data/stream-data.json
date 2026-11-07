@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-06T23:42:00Z",
+  "generated_at": "2026-11-07T04:52:24Z",
   "data_through": "2026-11-06T21:55:51Z",
   "degraded_sources": [],
   "sources": {
     "sullygnome_stream_table": 2533,
     "twitchmetrics_stream_logs": 15,
-    "twitchmetrics_vods": 50,
+    "twitchmetrics_vods": 53,
     "exact_merged_rows": 58,
     "youtube_archive_segments": 1127,
     "youtube_archive_grouped_dates": 610
@@ -368,7 +368,7 @@
         "start_p75": 12.63,
         "end_p50": 16.5,
         "end_p90": 19.41,
-        "dur_p25": 3.93,
+        "dur_p25": 4.07,
         "dur_p50": 5.1,
         "dur_p75": 6.4,
         "active_rate": 0.625,
@@ -946,27 +946,29 @@
       },
       {
         "started_at": "2026-11-06T21:55:51Z",
-        "ended_at_iso": "2026-11-06T22:45:00+00:00",
+        "ended_at_iso": "2026-11-07T02:45:00+00:00",
         "games": [
           "Just Chatting",
+          "The Legend of Zelda: Ocarina of Time",
           "The Legend of Zelda: Ocarina of Time"
         ],
-        "duration_h": 0.8,
-        "duration_label": "50 minutes",
-        "avg_viewers": 1404,
-        "peak_viewers": 2001,
+        "duration_h": 4.8,
+        "duration_label": "290 minutes",
+        "avg_viewers": 1882,
+        "peak_viewers": 2075,
         "followers_gained": 0,
         "followers_gained_source": null
       }
     ],
     "last_stream": {
       "started_at": "2026-11-06T21:55:51Z",
-      "ended_at_iso": "2026-11-06T22:45:00+00:00",
+      "ended_at_iso": "2026-11-07T02:45:00+00:00",
       "games": [
         "Just Chatting",
+        "The Legend of Zelda: Ocarina of Time",
         "The Legend of Zelda: Ocarina of Time"
       ],
-      "duration_label": "50 minutes"
+      "duration_label": "290 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -1162,14 +1164,14 @@
       "started_at": "2026-11-06T21:55:51Z",
       "game": "The Legend of Zelda: Ocarina of Time",
       "title": "OCARINA OF TIME REMAKE 1ST TIME - GOOG GAME - GOOG MUSIC - MILLENIALS AND GEN X ONLY ALLOWED - MILLENIAL NUANCED HUMOR ONLY",
-      "viewers": 1979
+      "viewers": 2013
     },
-    "last_live_seen": "2026-11-06T23:42:00Z",
+    "last_live_seen": "2026-11-07T04:52:24Z",
     "followers": {
-      "total": 653183,
-      "as_of": "2026-11-06T23:41:44Z",
-      "gained_7d": -299,
-      "snapshots": 286
+      "total": 653150,
+      "as_of": "2026-11-07T04:52:13Z",
+      "gained_7d": -321,
+      "snapshots": 287
     }
   },
   "follower_snapshots": [
@@ -2316,6 +2318,10 @@
     [
       "2026-11-06T23:41:44Z",
       653183
+    ],
+    [
+      "2026-11-07T04:52:13Z",
+      653150
     ]
   ],
   "sully_streams": [
@@ -9382,8 +9388,8 @@
       "games": [
         "Grand Theft Auto V",
         "Marbles on Stream",
-        "IRL",
-        "Domina"
+        "Domina",
+        "IRL"
       ],
       "avg_viewers": 126,
       "peak_viewers": 296,
@@ -11982,8 +11988,8 @@
       "duration_seconds": 28800,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 91,
       "peak_viewers": 126,
@@ -12451,8 +12457,8 @@
       "duration_seconds": 10800,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 65,
       "peak_viewers": 87,
@@ -14859,8 +14865,8 @@
       "duration_seconds": 27900,
       "title": null,
       "games": [
-        "Super Mario Maker 2",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Super Mario Maker 2"
       ],
       "avg_viewers": 2249,
       "peak_viewers": 3172,
@@ -15303,10 +15309,10 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
-        "Getting Over It with Bennett Foddy",
-        "60 Seconds!",
         "egg is broken. heart is too.",
-        "Outlast"
+        "Outlast",
+        "Getting Over It with Bennett Foddy",
+        "60 Seconds!"
       ],
       "avg_viewers": 1582,
       "peak_viewers": 2348,
@@ -16483,9 +16489,9 @@
       "duration_seconds": 9720,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
         "Just Chatting",
-        "Red Dead Redemption II"
+        "Red Dead Redemption II",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 2119,
       "peak_viewers": 2490,
@@ -16931,8 +16937,8 @@
       "duration_seconds": 20400,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
         "Just Chatting",
+        "Grand Theft Auto V",
         "Call of Duty: Warzone"
       ],
       "avg_viewers": 1064,
@@ -23303,8 +23309,8 @@
       "duration_seconds": 23460,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "House Flipper"
+        "House Flipper",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1138,
       "peak_viewers": 1619,
@@ -23362,8 +23368,8 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Phasmophobia"
+        "Phasmophobia",
+        "Just Chatting"
       ],
       "avg_viewers": 2033,
       "peak_viewers": 2936,
@@ -23403,8 +23409,8 @@
       "duration_seconds": 22020,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Phasmophobia"
+        "Phasmophobia",
+        "Just Chatting"
       ],
       "avg_viewers": 1813,
       "peak_viewers": 2749,
@@ -23500,9 +23506,9 @@
       "duration_seconds": 31680,
       "title": null,
       "games": [
-        "Just Chatting",
         "VRChat",
         "Among Us",
+        "Just Chatting",
         "Phasmophobia"
       ],
       "avg_viewers": 1604,
@@ -23682,8 +23688,8 @@
       "duration_seconds": 29340,
       "title": null,
       "games": [
-        "Just Chatting",
-        "VRChat"
+        "VRChat",
+        "Just Chatting"
       ],
       "avg_viewers": 1476,
       "peak_viewers": 1804,
@@ -24544,8 +24550,8 @@
       "duration_seconds": 31380,
       "title": null,
       "games": [
-        "Just Chatting",
         "Among Us",
+        "Just Chatting",
         "VRChat"
       ],
       "avg_viewers": 1343,
@@ -25121,8 +25127,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "VRChat",
-        "Rubber Bandits"
+        "Rubber Bandits",
+        "VRChat"
       ],
       "avg_viewers": 1523,
       "peak_viewers": 2155,
@@ -25324,8 +25330,8 @@
       "games": [
         "VRChat",
         "Clustertruck",
-        "Just Chatting",
-        "Vicewave"
+        "Vicewave",
+        "Just Chatting"
       ],
       "avg_viewers": 978,
       "peak_viewers": 1334,
@@ -29338,8 +29344,8 @@
       "duration_seconds": 4080,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Road 96"
+        "Road 96",
+        "Just Chatting"
       ],
       "avg_viewers": 1088,
       "peak_viewers": 1939,
@@ -29358,8 +29364,8 @@
       "duration_seconds": 11940,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Road 96"
+        "Road 96",
+        "Just Chatting"
       ],
       "avg_viewers": 1410,
       "peak_viewers": 2315,
@@ -29378,8 +29384,8 @@
       "duration_seconds": 53220,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Risk of Rain 2"
+        "Risk of Rain 2",
+        "Just Chatting"
       ],
       "avg_viewers": 2006,
       "peak_viewers": 3606,
@@ -29542,8 +29548,8 @@
       "duration_seconds": 17280,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Hades"
+        "Hades",
+        "Just Chatting"
       ],
       "avg_viewers": 1021,
       "peak_viewers": 2277,
@@ -30866,8 +30872,8 @@
       "duration_seconds": 32100,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Project Zomboid"
+        "Project Zomboid",
+        "Just Chatting"
       ],
       "avg_viewers": 3889,
       "peak_viewers": 4909,
@@ -30886,8 +30892,8 @@
       "duration_seconds": 22560,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Monopoly Plus"
+        "Monopoly Plus",
+        "Just Chatting"
       ],
       "avg_viewers": 2140,
       "peak_viewers": 4677,
@@ -30986,8 +30992,8 @@
       "duration_seconds": 43440,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Internet Cafe Simulator 2"
+        "Internet Cafe Simulator 2",
+        "Just Chatting"
       ],
       "avg_viewers": 4380,
       "peak_viewers": 12816,
@@ -31209,8 +31215,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Blade &amp; Sorcery",
-        "Zenith: The Last City"
+        "Zenith: The Last City",
+        "Blade &amp; Sorcery"
       ],
       "avg_viewers": 2333,
       "peak_viewers": 7192,
@@ -33774,9 +33780,9 @@
       "duration_seconds": 31320,
       "title": null,
       "games": [
-        "Don't Starve Together",
         "Just Chatting",
-        "PC Building Simulator 2"
+        "PC Building Simulator 2",
+        "Don't Starve Together"
       ],
       "avg_viewers": 2701,
       "peak_viewers": 4278,
@@ -47634,9 +47640,9 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
-        "Music",
         "Just Chatting",
-        "Bounty Star"
+        "Bounty Star",
+        "Music"
       ],
       "avg_viewers": 3256,
       "peak_viewers": 4093,
@@ -48300,8 +48306,8 @@
       "duration_seconds": 21300,
       "title": null,
       "games": [
-        "Mario Kart World",
-        "Just Chatting"
+        "Just Chatting",
+        "Mario Kart World"
       ],
       "avg_viewers": 3541,
       "peak_viewers": 4639,
@@ -48419,8 +48425,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "The Binding of Isaac",
-        "Agreeee"
+        "Agreeee",
+        "The Binding of Isaac"
       ],
       "avg_viewers": 2759,
       "peak_viewers": 4184,
@@ -48729,8 +48735,8 @@
       "duration_seconds": 16200,
       "title": null,
       "games": [
-        "Chivalry 2",
-        "Just Chatting"
+        "Just Chatting",
+        "Chivalry 2"
       ],
       "avg_viewers": 2792,
       "peak_viewers": 3444,
@@ -48812,8 +48818,8 @@
       "duration_seconds": 8100,
       "title": null,
       "games": [
-        "HELLMART",
-        "Just Chatting"
+        "Just Chatting",
+        "HELLMART"
       ],
       "avg_viewers": 2482,
       "peak_viewers": 3255,
@@ -49184,8 +49190,8 @@
       "duration_seconds": 19020,
       "title": null,
       "games": [
-        "Where Winds Meet",
-        "Just Chatting"
+        "Just Chatting",
+        "Where Winds Meet"
       ],
       "avg_viewers": 1625,
       "peak_viewers": 2789,
@@ -49653,8 +49659,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Retro Rewind: Video Store Simulator",
-        "Weed Shop 4: Highland"
+        "Weed Shop 4: Highland",
+        "Retro Rewind: Video Store Simulator"
       ],
       "avg_viewers": 2815,
       "peak_viewers": 4742,
@@ -52300,18 +52306,19 @@
       "precision": "exact_utc_start",
       "id": "322293863131",
       "started_at": "2026-11-06T21:55:51Z",
-      "ended_at": "Friday 6th November 2026 22:45",
-      "duration_label": "50 minutes",
-      "duration_seconds": 3000,
+      "ended_at": "Saturday 7th November 2026 02:45",
+      "duration_label": "290 minutes",
+      "duration_seconds": 17400,
       "title": null,
       "games": [
         "Just Chatting",
+        "The Legend of Zelda: Ocarina of Time",
         "The Legend of Zelda: Ocarina of Time"
       ],
-      "avg_viewers": 1404,
-      "peak_viewers": 2001,
+      "avg_viewers": 1882,
+      "peak_viewers": 2075,
       "followers_gained": 0,
-      "view_minutes": 70200,
+      "view_minutes": 545780,
       "stream_url": "https://sullygnome.com/channel/stream/322293863131",
       "range": "2026"
     }
@@ -52408,14 +52415,14 @@
       "views": 176926
     },
     {
-      "source": "twitch_vod",
+      "source": "twitchmetrics_vod",
       "precision": "exact_vod_time",
       "id": "2869811690",
       "started_at": "2026-09-09T18:14:02Z",
       "duration_label": "09:27:58",
       "duration_seconds": 34078,
       "title": "UCHIHA JONES - NOPIXEL V - NEW LORE TO BE REVEALED -  UCHIHA NoPixel V BADGE FOR 1 GIFTED SUB! !discord",
-      "views": 142964
+      "views": 142948
     },
     {
       "source": "twitchmetrics_vod",
@@ -52811,7 +52818,7 @@
       "duration_label": "3 hours",
       "duration_seconds": 12230,
       "title": "Uchiha Jones - Too Many Responsibilities, Too Many Mind - NoPixel V",
-      "views": 66859,
+      "views": 66777,
       "avg_viewers": 1736,
       "peak_viewers": 2057
     },
@@ -52859,7 +52866,7 @@
       "duration_label": "6 hours",
       "duration_seconds": 20380,
       "title": "uchiha jones \ud83c\udf83 spookiha \ud83c\udf83 nopixel v",
-      "views": 153537,
+      "views": 964,
       "avg_viewers": 1885,
       "peak_viewers": 2049
     },
@@ -52880,7 +52887,7 @@
       "duration_label": "08:46:50",
       "duration_seconds": 31610,
       "title": "New Hair, Same great taste. NO-LIFE NOVEMBER HERE WE COME.",
-      "views": 214818
+      "views": 214824
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -52899,7 +52906,7 @@
       "duration_label": "04:19:20",
       "duration_seconds": 15560,
       "title": "dilly dally shilly shally - remaining calm no matter what today",
-      "views": 148793
+      "views": 148797
     },
     {
       "source": "twitch_vod",
@@ -52909,7 +52916,7 @@
       "duration_label": "06:35:50",
       "duration_seconds": 23750,
       "title": "UCHIHA JONES RP  - ONE LIFE ONE CUNGUS - WORLD OF WARCRAFT FOREVER - NEVER RUN FROM A HUNTER - MY FUTURE IS UNCERTAIN",
-      "views": 246269
+      "views": 246276
     },
     {
       "source": "twitch_vod",
@@ -52919,7 +52926,7 @@
       "duration_label": "05:31:30",
       "duration_seconds": 19890,
       "title": "I can't believe cyr is playing \"HARDCORE\" on a PVP server with NO experience. NO WAY this guy will last until !lvl30",
-      "views": 128017
+      "views": 128027
     }
   ],
   "archive_grouped_dates": [
