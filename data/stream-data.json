@@ -1,7 +1,9 @@
 {
-  "generated_at": "2026-11-08T18:58:25Z",
+  "generated_at": "2026-11-08T22:44:58Z",
   "data_through": "2026-11-06T21:55:51Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+  ],
   "sources": {
     "sullygnome_stream_table": 2533,
     "twitchmetrics_stream_logs": 15,
@@ -1163,10 +1165,10 @@
     "live_stream": null,
     "last_live_seen": "2026-11-07T04:52:24Z",
     "followers": {
-      "total": 653110,
-      "as_of": "2026-11-08T18:58:12Z",
+      "total": 653105,
+      "as_of": "2026-11-08T22:44:42Z",
       "gained_7d": -316,
-      "snapshots": 294
+      "snapshots": 295
     }
   },
   "follower_snapshots": [
@@ -2345,6 +2347,10 @@
     [
       "2026-11-08T18:58:12Z",
       653110
+    ],
+    [
+      "2026-11-08T22:44:42Z",
+      653105
     ]
   ],
   "sully_streams": [
@@ -52910,7 +52916,7 @@
       "duration_label": "08:46:50",
       "duration_seconds": 31610,
       "title": "New Hair, Same great taste. NO-LIFE NOVEMBER HERE WE COME.",
-      "views": 214843
+      "views": 214845
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -52929,7 +52935,7 @@
       "duration_label": "04:19:20",
       "duration_seconds": 15560,
       "title": "dilly dally shilly shally - remaining calm no matter what today",
-      "views": 148816
+      "views": 148818
     },
     {
       "source": "twitch_vod",
@@ -52939,7 +52945,7 @@
       "duration_label": "06:35:50",
       "duration_seconds": 23750,
       "title": "UCHIHA JONES RP  - ONE LIFE ONE CUNGUS - WORLD OF WARCRAFT FOREVER - NEVER RUN FROM A HUNTER - MY FUTURE IS UNCERTAIN",
-      "views": 246311
+      "views": 246314
     },
     {
       "source": "twitch_vod",
@@ -52949,7 +52955,7 @@
       "duration_label": "05:31:30",
       "duration_seconds": 19890,
       "title": "I can't believe cyr is playing \"HARDCORE\" on a PVP server with NO experience. NO WAY this guy will last until !lvl30",
-      "views": 128088
+      "views": 128092
     },
     {
       "source": "twitch_vod",
@@ -52959,7 +52965,7 @@
       "duration_label": "07:32:00",
       "duration_seconds": 27120,
       "title": "OCARINA OF TIME REMAKE 1ST TIME - GOOG GAME - GOOG MUSIC - MILLENIALS UNITE DOWN WITH ALL OTHER GENERATIONS",
-      "views": 185376
+      "views": 185484
     }
   ],
   "archive_grouped_dates": [
