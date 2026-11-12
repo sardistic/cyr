@@ -1,7 +1,9 @@
 {
-  "generated_at": "2026-11-12T10:42:38Z",
+  "generated_at": "2026-11-12T18:43:26Z",
   "data_through": "2026-11-11T20:14:32Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+  ],
   "sources": {
     "sullygnome_stream_table": 2536,
     "twitchmetrics_stream_logs": 15,
@@ -1166,10 +1168,10 @@
     "live_stream": null,
     "last_live_seen": "2026-11-12T02:44:14Z",
     "followers": {
-      "total": 652913,
-      "as_of": "2026-11-12T10:42:21Z",
-      "gained_7d": -354,
-      "snapshots": 306
+      "total": 652907,
+      "as_of": "2026-11-12T18:43:11Z",
+      "gained_7d": -344,
+      "snapshots": 307
     }
   },
   "follower_snapshots": [
@@ -2396,6 +2398,10 @@
     [
       "2026-11-12T10:42:21Z",
       652913
+    ],
+    [
+      "2026-11-12T18:43:11Z",
+      652907
     ]
   ],
   "sully_streams": [
@@ -11790,8 +11796,8 @@
       "duration_seconds": 17880,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 102,
       "peak_viewers": 123,
@@ -15171,8 +15177,8 @@
       "duration_seconds": 21960,
       "title": null,
       "games": [
-        "Super Mario Maker 2",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Super Mario Maker 2"
       ],
       "avg_viewers": 1889,
       "peak_viewers": 2825,
@@ -15286,8 +15292,8 @@
       "duration_seconds": 23820,
       "title": null,
       "games": [
-        "Cooking Simulator",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Cooking Simulator"
       ],
       "avg_viewers": 1677,
       "peak_viewers": 2617,
@@ -15384,9 +15390,9 @@
       "games": [
         "Grand Theft Auto V",
         "Getting Over It with Bennett Foddy",
+        "60 Seconds!",
         "egg is broken. heart is too.",
-        "Outlast",
-        "60 Seconds!"
+        "Outlast"
       ],
       "avg_viewers": 1582,
       "peak_viewers": 2348,
@@ -21072,8 +21078,8 @@
       "games": [
         "Grand Theft Auto V",
         "Just Chatting",
-        "Command &amp; Conquer Remastered Collection",
-        "\u5922\u4e09\u570b"
+        "\u5922\u4e09\u570b",
+        "Command &amp; Conquer Remastered Collection"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 1848,
@@ -25242,9 +25248,9 @@
       "duration_seconds": 45600,
       "title": null,
       "games": [
-        "VRChat",
         "Just Chatting",
-        "Tanuki Sunset"
+        "Tanuki Sunset",
+        "VRChat"
       ],
       "avg_viewers": 1198,
       "peak_viewers": 2634,
@@ -25263,8 +25269,8 @@
       "duration_seconds": 30780,
       "title": null,
       "games": [
-        "VRChat",
-        "Just Chatting"
+        "Just Chatting",
+        "VRChat"
       ],
       "avg_viewers": 1097,
       "peak_viewers": 1597,
@@ -25322,8 +25328,8 @@
       "duration_seconds": 21480,
       "title": null,
       "games": [
-        "VRChat",
-        "Just Chatting"
+        "Just Chatting",
+        "VRChat"
       ],
       "avg_viewers": 1322,
       "peak_viewers": 1987,
@@ -26889,8 +26895,8 @@
       "duration_seconds": 34200,
       "title": null,
       "games": [
-        "Just Chatting",
-        "The Elder Scrolls V: Skyrim"
+        "The Elder Scrolls V: Skyrim",
+        "Just Chatting"
       ],
       "avg_viewers": 3026,
       "peak_viewers": 4425,
@@ -27201,8 +27207,8 @@
         "Ranch Simulator",
         "OBEY",
         "Friday the 13th: The Game",
-        "Can't Drive This",
-        "SCP: Terminal"
+        "SCP: Terminal",
+        "Can't Drive This"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 2172,
@@ -29020,8 +29026,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Olympic Games Tokyo 2020: The Official Video Game",
-        "Haunt Chaser"
+        "Haunt Chaser",
+        "Olympic Games Tokyo 2020: The Official Video Game"
       ],
       "avg_viewers": 2075,
       "peak_viewers": 2956,
@@ -30828,8 +30834,8 @@
       "duration_seconds": 34200,
       "title": null,
       "games": [
-        "Just Chatting",
-        "The Elder Scrolls V: Skyrim - Special Edition"
+        "The Elder Scrolls V: Skyrim - Special Edition",
+        "Just Chatting"
       ],
       "avg_viewers": 2994,
       "peak_viewers": 7187,
@@ -31655,9 +31661,9 @@
       "duration_seconds": 19620,
       "title": null,
       "games": [
+        "House Builder",
         "Just Chatting",
         "Super Mario Maker 2",
-        "House Builder",
         "Cities: Skylines"
       ],
       "avg_viewers": 2803,
@@ -32469,10 +32475,10 @@
       "duration_seconds": 26400,
       "title": null,
       "games": [
+        "Weed Shop 3",
         "Just Chatting",
         "Gang Beasts",
-        "SMITE",
-        "Weed Shop 3"
+        "SMITE"
       ],
       "avg_viewers": 4393,
       "peak_viewers": 13047,
@@ -32511,8 +32517,8 @@
       "duration_seconds": 35400,
       "title": null,
       "games": [
-        "Just Chatting",
         "Weed Shop 3",
+        "Just Chatting",
         "Ni no Kuni: Cross Worlds"
       ],
       "avg_viewers": 2730,
@@ -32532,8 +32538,8 @@
       "duration_seconds": 44400,
       "title": null,
       "games": [
-        "Just Chatting",
         "Weed Shop 3",
+        "Just Chatting",
         "Witch It"
       ],
       "avg_viewers": 3172,
@@ -32614,11 +32620,11 @@
       "duration_seconds": 34560,
       "title": null,
       "games": [
+        "Just Chatting",
+        "Planet Crafter",
         "Little Nightmares II",
         "The Quarry",
-        "Just Chatting",
-        "Ultimate Epic Battle Simulator 2",
-        "Planet Crafter"
+        "Ultimate Epic Battle Simulator 2"
       ],
       "avg_viewers": 2291,
       "peak_viewers": 3494,
@@ -32697,9 +32703,9 @@
       "duration_seconds": 48600,
       "title": null,
       "games": [
-        "Planet Crafter",
         "Just Chatting",
-        "Little Nightmares II"
+        "Little Nightmares II",
+        "Planet Crafter"
       ],
       "avg_viewers": 2510,
       "peak_viewers": 4424,
@@ -32760,8 +32766,8 @@
       "duration_seconds": 31320,
       "title": null,
       "games": [
-        "DayZ",
-        "Just Chatting"
+        "Just Chatting",
+        "DayZ"
       ],
       "avg_viewers": 3310,
       "peak_viewers": 5392,
@@ -32904,10 +32910,10 @@
       "duration_seconds": 46920,
       "title": null,
       "games": [
-        "DayZ",
-        "Satisfactory",
         "Just Chatting",
-        "Weed Shop 3"
+        "Weed Shop 3",
+        "DayZ",
+        "Satisfactory"
       ],
       "avg_viewers": 3772,
       "peak_viewers": 11875,
@@ -33855,8 +33861,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "PC Building Simulator 2",
-        "Don't Starve Together"
+        "Don't Starve Together",
+        "PC Building Simulator 2"
       ],
       "avg_viewers": 2701,
       "peak_viewers": 4278,
@@ -34402,9 +34408,9 @@
         "Warhammer 40,000: Darktide",
         "Just Chatting",
         "Goat Simulator 3",
-        "Farmer's Life",
         "Dwarf Fortress",
-        "Fall Guys"
+        "Fall Guys",
+        "Farmer's Life"
       ],
       "avg_viewers": 1936,
       "peak_viewers": 2503,
@@ -34564,8 +34570,8 @@
       "duration_seconds": 17640,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Fallout: New Vegas"
+        "Fallout: New Vegas",
+        "Just Chatting"
       ],
       "avg_viewers": 2142,
       "peak_viewers": 2989,
@@ -34604,8 +34610,8 @@
       "duration_seconds": 28680,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Fallout: New Vegas"
+        "Fallout: New Vegas",
+        "Just Chatting"
       ],
       "avg_viewers": 4152,
       "peak_viewers": 10314,
@@ -35577,8 +35583,8 @@
       "duration_seconds": 32940,
       "title": null,
       "games": [
-        "Valheim",
-        "Just Chatting"
+        "Just Chatting",
+        "Valheim"
       ],
       "avg_viewers": 2824,
       "peak_viewers": 4071,
@@ -37648,9 +37654,9 @@
       "duration_seconds": 9840,
       "title": null,
       "games": [
+        "Old School RuneScape",
         "Just Chatting",
-        "Sunkenland",
-        "Old School RuneScape"
+        "Sunkenland"
       ],
       "avg_viewers": 1380,
       "peak_viewers": 1816,
@@ -40800,8 +40806,8 @@
       "duration_seconds": 28920,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Fallout 4"
+        "Fallout 4",
+        "Just Chatting"
       ],
       "avg_viewers": 3565,
       "peak_viewers": 4994,
@@ -40880,8 +40886,8 @@
       "duration_seconds": 7980,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Fallout 4"
+        "Fallout 4",
+        "Just Chatting"
       ],
       "avg_viewers": 1650,
       "peak_viewers": 2335,
@@ -46768,8 +46774,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "GUG",
-        "PEAK"
+        "PEAK",
+        "GUG"
       ],
       "avg_viewers": 3107,
       "peak_viewers": 4427,
@@ -48499,8 +48505,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Agreeee",
-        "The Binding of Isaac"
+        "The Binding of Isaac",
+        "Agreeee"
       ],
       "avg_viewers": 2759,
       "peak_viewers": 4184,
@@ -49733,8 +49739,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Retro Rewind: Video Store Simulator",
-        "Weed Shop 4: Highland"
+        "Weed Shop 4: Highland",
+        "Retro Rewind: Video Store Simulator"
       ],
       "avg_viewers": 2815,
       "peak_viewers": 4742,
@@ -50827,8 +50833,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Dirty Business",
-        "How to Make an Atomic Bomb in Your Garden"
+        "How to Make an Atomic Bomb in Your Garden",
+        "Dirty Business"
       ],
       "avg_viewers": 2251,
       "peak_viewers": 2500,
@@ -50847,8 +50853,8 @@
       "duration_seconds": 28980,
       "title": null,
       "games": [
-        "Dirty Business",
-        "Just Chatting"
+        "Just Chatting",
+        "Dirty Business"
       ],
       "avg_viewers": 2330,
       "peak_viewers": 2500,
@@ -50887,8 +50893,8 @@
       "duration_seconds": 26820,
       "title": null,
       "games": [
-        "Project Zomboid",
-        "Just Chatting"
+        "Just Chatting",
+        "Project Zomboid"
       ],
       "avg_viewers": 2387,
       "peak_viewers": 3036,
@@ -51651,8 +51657,8 @@
       "duration_seconds": 24120,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1926,
       "peak_viewers": 2165,
@@ -51671,8 +51677,8 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1669,
       "peak_viewers": 2172,
@@ -51791,8 +51797,8 @@
       "duration_seconds": 40260,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1898,
       "peak_viewers": 2176,
@@ -52982,7 +52988,7 @@
       "duration_label": "08:06:50",
       "duration_seconds": 29210,
       "title": "OCARINA OF TIME, FINALLY A BIG BOY, DOING BIG BOY TEMPLES. HOW MANY CAN WE BEAT TODAY? MILLENIAL SAFE SPACE",
-      "views": 216514
+      "views": 216523
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -53001,7 +53007,7 @@
       "duration_label": "08:04:00",
       "duration_seconds": 29040,
       "title": "millenials, grab your doggo because we are DOING A THING *ADULTING* - TODAY WE BEAT OCARINA OF TIME REMAKE \ud83d\udcbc BIG DAY, CAN'T WAIT TO SAY \ud83d\udcbc",
-      "views": 185844
+      "views": 185850
     },
     {
       "source": "twitch_vod",
@@ -53011,7 +53017,7 @@
       "duration_label": "06:44:20",
       "duration_seconds": 24260,
       "title": "36 YEAR OLD ADOPTED OHIO BUSINESS MAN FINALLY BEATS OCARINA OF TIME, ONLY TO PLAY BREATH OF THE WILD FOR THE 1ST TIME EVER",
-      "views": 343
+      "views": 487
     }
   ],
   "archive_grouped_dates": [
