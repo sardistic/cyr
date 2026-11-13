@@ -1,14 +1,15 @@
 {
-  "generated_at": "2026-11-13T14:48:43Z",
+  "generated_at": "2026-11-13T21:13:09Z",
   "data_through": "2026-11-12T19:29:30Z",
   "degraded_sources": [
-    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30000 milliseconds with 3144 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    "twitch_vods: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]",
+    "sullygnome: Could not find SullyGnome PageInfo (http 403, 5786 bytes, title='Just a moment...', head='<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam')"
   ],
   "sources": {
     "sullygnome_stream_table": 2537,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 49,
-    "exact_merged_rows": 54,
+    "exact_merged_rows": 50,
     "youtube_archive_segments": 1128,
     "youtube_archive_grouped_dates": 611
   },
@@ -29,9 +30,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 53,
-      "mean": 29.0,
-      "median": 23.86,
+      "count": 49,
+      "mean": 30.37,
+      "median": 23.99,
       "max": 118.19
     },
     "archive_gap_days": {
@@ -1164,13 +1165,18 @@
         ]
       }
     },
-    "live_stream": null,
-    "last_live_seen": "2026-11-12T23:58:50Z",
+    "live_stream": {
+      "started_at": "2026-11-13T19:47:17Z",
+      "game": "Just Chatting",
+      "title": "\ud83d\udea8 NINTENDO STOCK PLUNGES AS 36-YEAR-OLD MAN DISCOVERS BREATH OF THE WILD SWORDS BREAK WHEN USED AS SWORDS \ud83d\udea8 FIRST PLAY THROUGH \ud83d\udea8",
+      "viewers": 1986
+    },
+    "last_live_seen": "2026-11-13T21:13:09Z",
     "followers": {
-      "total": 652914,
-      "as_of": "2026-11-13T14:48:32Z",
-      "gained_7d": -287,
-      "snapshots": 310
+      "total": 652903,
+      "as_of": "2026-11-13T21:12:54Z",
+      "gained_7d": -293,
+      "snapshots": 311
     }
   },
   "follower_snapshots": [
@@ -2413,6 +2419,10 @@
     [
       "2026-11-13T14:48:32Z",
       652914
+    ],
+    [
+      "2026-11-13T21:12:54Z",
+      652903
     ]
   ],
   "sully_streams": [
@@ -53012,16 +53022,6 @@
       "peak_viewers": 2075
     },
     {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2924295500",
-      "started_at": "2026-11-09T20:03:17Z",
-      "duration_label": "08:06:50",
-      "duration_seconds": 29210,
-      "title": "OCARINA OF TIME, FINALLY A BIG BOY, DOING BIG BOY TEMPLES. HOW MANY CAN WE BEAT TODAY? MILLENIAL SAFE SPACE",
-      "views": 216549
-    },
-    {
       "source": "twitchmetrics_stream_log",
       "precision": "exact_utc_start",
       "started_at": "2026-11-10T18:18:24Z",
@@ -53029,36 +53029,6 @@
       "title": "millenials, grab your doggo because we are DOING A THING *ADULTING* - TODAY WE BEAT OCARINA OF TIME REMAKE \ud83d\udcbc BIG DAY, CAN'T WAIT TO SAY \ud83d\udcbc",
       "avg_viewers": 1929,
       "peak_viewers": 2075
-    },
-    {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2925084846",
-      "started_at": "2026-11-10T18:18:29Z",
-      "duration_label": "08:04:00",
-      "duration_seconds": 29040,
-      "title": "millenials, grab your doggo because we are DOING A THING *ADULTING* - TODAY WE BEAT OCARINA OF TIME REMAKE \ud83d\udcbc BIG DAY, CAN'T WAIT TO SAY \ud83d\udcbc",
-      "views": 185881
-    },
-    {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2926109482",
-      "started_at": "2026-11-11T20:14:37Z",
-      "duration_label": "06:44:20",
-      "duration_seconds": 24260,
-      "title": "36 YEAR OLD ADOPTED OHIO BUSINESS MAN FINALLY BEATS OCARINA OF TIME, ONLY TO PLAY BREATH OF THE WILD FOR THE 1ST TIME EVER",
-      "views": 148450
-    },
-    {
-      "source": "twitch_vod",
-      "precision": "exact_vod_time",
-      "id": "2926954083",
-      "started_at": "2026-11-12T19:29:34Z",
-      "duration_label": "06:45:00",
-      "duration_seconds": 24300,
-      "title": "\ud83d\udea8 HYRULE DECLARES STATE OF EMERGENCY AFTER LEARNING ITS SAVIOR IS A 36 YEAR OLD TWITCH STREAMER THAT CAN'T NAVIGATE A SHEIKAH SLATE \ud83d\udea8",
-      "views": 499
     }
   ],
   "archive_grouped_dates": [
