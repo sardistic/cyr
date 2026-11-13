@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-13T06:23:40Z",
+  "generated_at": "2026-11-13T14:48:43Z",
   "data_through": "2026-11-12T19:29:30Z",
   "degraded_sources": [
-    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30001 milliseconds with 3923 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30000 milliseconds with 3144 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
   ],
   "sources": {
     "sullygnome_stream_table": 2537,
@@ -1167,10 +1167,10 @@
     "live_stream": null,
     "last_live_seen": "2026-11-12T23:58:50Z",
     "followers": {
-      "total": 652921,
-      "as_of": "2026-11-13T06:23:28Z",
-      "gained_7d": -286,
-      "snapshots": 309
+      "total": 652914,
+      "as_of": "2026-11-13T14:48:32Z",
+      "gained_7d": -287,
+      "snapshots": 310
     }
   },
   "follower_snapshots": [
@@ -2409,6 +2409,10 @@
     [
       "2026-11-13T06:23:28Z",
       652921
+    ],
+    [
+      "2026-11-13T14:48:32Z",
+      652914
     ]
   ],
   "sully_streams": [
@@ -53015,7 +53019,7 @@
       "duration_label": "08:06:50",
       "duration_seconds": 29210,
       "title": "OCARINA OF TIME, FINALLY A BIG BOY, DOING BIG BOY TEMPLES. HOW MANY CAN WE BEAT TODAY? MILLENIAL SAFE SPACE",
-      "views": 216541
+      "views": 216549
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -53034,7 +53038,7 @@
       "duration_label": "08:04:00",
       "duration_seconds": 29040,
       "title": "millenials, grab your doggo because we are DOING A THING *ADULTING* - TODAY WE BEAT OCARINA OF TIME REMAKE \ud83d\udcbc BIG DAY, CAN'T WAIT TO SAY \ud83d\udcbc",
-      "views": 185875
+      "views": 185881
     },
     {
       "source": "twitch_vod",
@@ -53044,7 +53048,7 @@
       "duration_label": "06:44:20",
       "duration_seconds": 24260,
       "title": "36 YEAR OLD ADOPTED OHIO BUSINESS MAN FINALLY BEATS OCARINA OF TIME, ONLY TO PLAY BREATH OF THE WILD FOR THE 1ST TIME EVER",
-      "views": 148430
+      "views": 148450
     },
     {
       "source": "twitch_vod",
@@ -53054,7 +53058,7 @@
       "duration_label": "06:45:00",
       "duration_seconds": 24300,
       "title": "\ud83d\udea8 HYRULE DECLARES STATE OF EMERGENCY AFTER LEARNING ITS SAVIOR IS A 36 YEAR OLD TWITCH STREAMER THAT CAN'T NAVIGATE A SHEIKAH SLATE \ud83d\udea8",
-      "views": 349
+      "views": 499
     }
   ],
   "archive_grouped_dates": [
