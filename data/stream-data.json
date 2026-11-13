@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-12T23:58:50Z",
+  "generated_at": "2026-11-13T06:23:40Z",
   "data_through": "2026-11-12T19:29:30Z",
   "degraded_sources": [
-    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30001 milliseconds with 3923 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
   ],
   "sources": {
     "sullygnome_stream_table": 2537,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 49,
-    "exact_merged_rows": 53,
+    "exact_merged_rows": 54,
     "youtube_archive_segments": 1128,
     "youtube_archive_grouped_dates": 611
   },
@@ -29,9 +29,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 52,
-      "mean": 29.12,
-      "median": 23.93,
+      "count": 53,
+      "mean": 29.0,
+      "median": 23.86,
       "max": 118.19
     },
     "archive_gap_days": {
@@ -1164,18 +1164,13 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-11-12T19:29:30Z",
-      "game": "The Legend of Zelda: Breath of the Wild",
-      "title": "\ud83d\udea8 NINTENDO'S NINE-YEAR GAMBLE PAYS OFF AS 36-YEAR-OLD MAN FINALLY TRIES BREATH OF THE WILD FOR THE FIRST TIME \ud83d\udea8 GLOBAL MARKETS SUSPENDED",
-      "viewers": 2047
-    },
+    "live_stream": null,
     "last_live_seen": "2026-11-12T23:58:50Z",
     "followers": {
-      "total": 652946,
-      "as_of": "2026-11-12T23:58:38Z",
-      "gained_7d": -273,
-      "snapshots": 308
+      "total": 652921,
+      "as_of": "2026-11-13T06:23:28Z",
+      "gained_7d": -286,
+      "snapshots": 309
     }
   },
   "follower_snapshots": [
@@ -2410,6 +2405,10 @@
     [
       "2026-11-12T23:58:38Z",
       652946
+    ],
+    [
+      "2026-11-13T06:23:28Z",
+      652921
     ]
   ],
   "sully_streams": [
@@ -53016,7 +53015,7 @@
       "duration_label": "08:06:50",
       "duration_seconds": 29210,
       "title": "OCARINA OF TIME, FINALLY A BIG BOY, DOING BIG BOY TEMPLES. HOW MANY CAN WE BEAT TODAY? MILLENIAL SAFE SPACE",
-      "views": 216531
+      "views": 216541
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -53035,7 +53034,7 @@
       "duration_label": "08:04:00",
       "duration_seconds": 29040,
       "title": "millenials, grab your doggo because we are DOING A THING *ADULTING* - TODAY WE BEAT OCARINA OF TIME REMAKE \ud83d\udcbc BIG DAY, CAN'T WAIT TO SAY \ud83d\udcbc",
-      "views": 185863
+      "views": 185875
     },
     {
       "source": "twitch_vod",
@@ -53045,7 +53044,17 @@
       "duration_label": "06:44:20",
       "duration_seconds": 24260,
       "title": "36 YEAR OLD ADOPTED OHIO BUSINESS MAN FINALLY BEATS OCARINA OF TIME, ONLY TO PLAY BREATH OF THE WILD FOR THE 1ST TIME EVER",
-      "views": 148399
+      "views": 148430
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2926954083",
+      "started_at": "2026-11-12T19:29:34Z",
+      "duration_label": "06:45:00",
+      "duration_seconds": 24300,
+      "title": "\ud83d\udea8 HYRULE DECLARES STATE OF EMERGENCY AFTER LEARNING ITS SAVIOR IS A 36 YEAR OLD TWITCH STREAMER THAT CAN'T NAVIGATE A SHEIKAH SLATE \ud83d\udea8",
+      "views": 349
     }
   ],
   "archive_grouped_dates": [
