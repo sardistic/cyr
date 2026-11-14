@@ -1,7 +1,10 @@
 {
-  "generated_at": "2026-11-14T15:36:04Z",
+  "generated_at": "2026-11-14T20:28:02Z",
   "data_through": "2026-11-13T19:47:17Z",
-  "degraded_sources": [],
+  "degraded_sources": [
+    "sullygnome: Failed to perform, curl: (28) Operation timed out after 30000 milliseconds with 5085 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
+    "twitch_vod_games: GQL errors: [{'message': 'service error', 'path': ['user', 'videos']}]"
+  ],
   "sources": {
     "sullygnome_stream_table": 2538,
     "twitchmetrics_stream_logs": 15,
@@ -1162,13 +1165,18 @@
         ]
       }
     },
-    "live_stream": null,
-    "last_live_seen": "2026-11-14T01:35:50Z",
+    "live_stream": {
+      "started_at": "2026-11-14T19:44:52Z",
+      "game": "Just Chatting",
+      "title": "36 YEAR OLD UNVEILS AMBITIOUS FIVE-YEAR PLAN TO REACH BREATH OF THE WILD'S MAIN STORY - MAN DESCRIBES GAME AS 'A BIT BIGGER THAN EXPECTED'",
+      "viewers": 2037
+    },
+    "last_live_seen": "2026-11-14T20:28:02Z",
     "followers": {
-      "total": 652801,
-      "as_of": "2026-11-14T15:35:50Z",
-      "gained_7d": -347,
-      "snapshots": 314
+      "total": 652777,
+      "as_of": "2026-11-14T20:27:45Z",
+      "gained_7d": -357,
+      "snapshots": 315
     }
   },
   "follower_snapshots": [
@@ -2427,6 +2435,10 @@
     [
       "2026-11-14T15:35:50Z",
       652801
+    ],
+    [
+      "2026-11-14T20:27:45Z",
+      652777
     ]
   ],
   "sully_streams": [
@@ -53053,7 +53065,7 @@
       "duration_label": "08:06:50",
       "duration_seconds": 29210,
       "title": "OCARINA OF TIME, FINALLY A BIG BOY, DOING BIG BOY TEMPLES. HOW MANY CAN WE BEAT TODAY? MILLENIAL SAFE SPACE",
-      "views": 216574
+      "views": 216582
     },
     {
       "source": "twitchmetrics_stream_log",
@@ -53072,7 +53084,7 @@
       "duration_label": "08:04:00",
       "duration_seconds": 29040,
       "title": "millenials, grab your doggo because we are DOING A THING *ADULTING* - TODAY WE BEAT OCARINA OF TIME REMAKE \ud83d\udcbc BIG DAY, CAN'T WAIT TO SAY \ud83d\udcbc",
-      "views": 185901
+      "views": 185906
     },
     {
       "source": "twitch_vod",
@@ -53082,7 +53094,7 @@
       "duration_label": "06:44:20",
       "duration_seconds": 24260,
       "title": "36 YEAR OLD ADOPTED OHIO BUSINESS MAN FINALLY BEATS OCARINA OF TIME, ONLY TO PLAY BREATH OF THE WILD FOR THE 1ST TIME EVER",
-      "views": 148534
+      "views": 148546
     },
     {
       "source": "twitch_vod",
@@ -53092,7 +53104,7 @@
       "duration_label": "06:45:00",
       "duration_seconds": 24300,
       "title": "\ud83d\udea8 HYRULE DECLARES STATE OF EMERGENCY AFTER LEARNING ITS SAVIOR IS A 36 YEAR OLD TWITCH STREAMER THAT CAN'T NAVIGATE A SHEIKAH SLATE \ud83d\udea8",
-      "views": 162124
+      "views": 162142
     },
     {
       "source": "twitch_vod",
@@ -53102,7 +53114,7 @@
       "duration_label": "10:37:30",
       "duration_seconds": 38250,
       "title": "\ud83d\udea8 NINTENDO STOCK PLUNGES AS 36-YEAR-OLD MAN DISCOVERS BREATH OF THE WILD SWORDS BREAK WHEN USED AS SWORDS \ud83d\udea8 FIRST PLAY THROUGH \ud83d\udea8",
-      "views": 384
+      "views": 247869
     }
   ],
   "archive_grouped_dates": [
