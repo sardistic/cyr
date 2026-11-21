@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-21T02:02:05Z",
+  "generated_at": "2026-11-21T09:36:51Z",
   "data_through": "2026-11-20T19:00:41Z",
   "degraded_sources": [],
   "sources": {
     "sullygnome_stream_table": 2544,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 48,
-    "exact_merged_rows": 48,
+    "exact_merged_rows": 49,
     "youtube_archive_segments": 1128,
     "youtube_archive_grouped_dates": 611
   },
@@ -27,9 +27,9 @@
       }
     },
     "exact_gap_hours": {
-      "count": 47,
-      "mean": 30.55,
-      "median": 24.05,
+      "count": 48,
+      "mean": 30.43,
+      "median": 24.14,
       "max": 118.19
     },
     "archive_gap_days": {
@@ -370,7 +370,7 @@
         "end_p90": 19.26,
         "dur_p25": 4.07,
         "dur_p50": 5.14,
-        "dur_p75": 6.47,
+        "dur_p75": 6.65,
         "active_rate": 0.635,
         "window_days": 730
       },
@@ -954,27 +954,27 @@
       },
       {
         "started_at": "2026-11-20T19:00:41Z",
-        "ended_at_iso": "2026-11-21T00:45:00+00:00",
+        "ended_at_iso": "2026-11-21T07:15:00+00:00",
         "games": [
           "Just Chatting",
           "Grand Theft Auto VI"
         ],
-        "duration_h": 5.8,
-        "duration_label": "345 minutes",
-        "avg_viewers": 2931,
-        "peak_viewers": 3202,
-        "followers_gained": 0,
+        "duration_h": 12.2,
+        "duration_label": "735 minutes",
+        "avg_viewers": 3026,
+        "peak_viewers": 4005,
+        "followers_gained": 2,
         "followers_gained_source": null
       }
     ],
     "last_stream": {
       "started_at": "2026-11-20T19:00:41Z",
-      "ended_at_iso": "2026-11-21T00:45:00+00:00",
+      "ended_at_iso": "2026-11-21T07:15:00+00:00",
       "games": [
         "Just Chatting",
         "Grand Theft Auto VI"
       ],
-      "duration_label": "345 minutes"
+      "duration_label": "735 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
@@ -1166,18 +1166,13 @@
         ]
       }
     },
-    "live_stream": {
-      "started_at": "2026-11-20T19:00:41Z",
-      "game": "Grand Theft Auto VI",
-      "title": "GTA VI SPOILER FREE: AFTER 14 HOURS OF ANTAGONIZING NPCS, \"AUDITOR\" CONCLUDES VICE CITY HAS AN AGGRESSION PROBLEM, !hyperx #ad",
-      "viewers": 2860
-    },
+    "live_stream": null,
     "last_live_seen": "2026-11-21T02:02:05Z",
     "followers": {
-      "total": 652376,
-      "as_of": "2026-11-21T02:01:47Z",
-      "gained_7d": -483,
-      "snapshots": 336
+      "total": 652372,
+      "as_of": "2026-11-21T09:36:36Z",
+      "gained_7d": -455,
+      "snapshots": 337
     }
   },
   "follower_snapshots": [
@@ -2524,6 +2519,10 @@
     [
       "2026-11-21T02:01:47Z",
       652376
+    ],
+    [
+      "2026-11-21T09:36:36Z",
+      652372
     ]
   ],
   "sully_streams": [
@@ -2537,8 +2536,8 @@
       "duration_seconds": 11700,
       "title": null,
       "games": [
-        "Dragon Age: Inquisition",
         "IRL",
+        "Dragon Age: Inquisition",
         "Rust"
       ],
       "avg_viewers": 108,
@@ -11703,9 +11702,9 @@
       "duration_seconds": 4260,
       "title": null,
       "games": [
-        "Just Chatting",
         "Grand Theft Auto V",
-        "Mortal Kombat 11"
+        "Mortal Kombat 11",
+        "Just Chatting"
       ],
       "avg_viewers": 92,
       "peak_viewers": 148,
@@ -18389,8 +18388,8 @@
       "duration_seconds": 41220,
       "title": null,
       "games": [
-        "Internet Cafe Simulator",
         "Grand Theft Auto V",
+        "Internet Cafe Simulator",
         "Unlisted on Twitch",
         "Just Chatting"
       ],
@@ -20184,8 +20183,8 @@
       "duration_seconds": 22140,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1028,
       "peak_viewers": 1364,
@@ -21139,9 +21138,9 @@
       "duration_seconds": 33240,
       "title": null,
       "games": [
+        "Grand Theft Auto V",
         "Just Chatting",
-        "Unlisted on Twitch",
-        "Grand Theft Auto V"
+        "Unlisted on Twitch"
       ],
       "avg_viewers": 1074,
       "peak_viewers": 1534,
@@ -24930,10 +24929,10 @@
       "duration_seconds": 27900,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Megajump",
         "Teardown",
-        "Watch Parties"
+        "Just Chatting",
+        "Watch Parties",
+        "Megajump"
       ],
       "avg_viewers": 935,
       "peak_viewers": 1231,
@@ -24952,8 +24951,8 @@
       "duration_seconds": 31200,
       "title": null,
       "games": [
-        "Just Chatting",
-        "VRChat"
+        "VRChat",
+        "Just Chatting"
       ],
       "avg_viewers": 1299,
       "peak_viewers": 2145,
@@ -26877,8 +26876,8 @@
       "duration_seconds": 34680,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 2768,
       "peak_viewers": 4418,
@@ -26936,8 +26935,8 @@
       "duration_seconds": 34380,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 4059,
       "peak_viewers": 8285,
@@ -27037,8 +27036,8 @@
       "duration_seconds": 33840,
       "title": null,
       "games": [
-        "The Elder Scrolls V: Skyrim",
-        "Just Chatting"
+        "Just Chatting",
+        "The Elder Scrolls V: Skyrim"
       ],
       "avg_viewers": 2887,
       "peak_viewers": 6951,
@@ -28992,8 +28991,8 @@
       "duration_seconds": 30000,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Muck"
+        "Muck",
+        "Just Chatting"
       ],
       "avg_viewers": 2744,
       "peak_viewers": 3758,
@@ -29525,9 +29524,9 @@
       "duration_seconds": 23100,
       "title": null,
       "games": [
-        "Twelve Minutes",
         "Road 96",
-        "Just Chatting"
+        "Just Chatting",
+        "Twelve Minutes"
       ],
       "avg_viewers": 2112,
       "peak_viewers": 2926,
@@ -31866,8 +31865,8 @@
       "duration_seconds": 41520,
       "title": null,
       "games": [
-        "ELDEN RING",
-        "Just Chatting"
+        "Just Chatting",
+        "ELDEN RING"
       ],
       "avg_viewers": 4945,
       "peak_viewers": 19456,
@@ -32361,8 +32360,8 @@
       "duration_seconds": 39360,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Weed Shop 3"
+        "Weed Shop 3",
+        "Just Chatting"
       ],
       "avg_viewers": 3889,
       "peak_viewers": 5433,
@@ -32743,10 +32742,10 @@
       "title": null,
       "games": [
         "Just Chatting",
+        "Ultimate Epic Battle Simulator 2",
         "Planet Crafter",
         "Little Nightmares II",
-        "The Quarry",
-        "Ultimate Epic Battle Simulator 2"
+        "The Quarry"
       ],
       "avg_viewers": 2291,
       "peak_viewers": 3494,
@@ -33622,8 +33621,8 @@
       "duration_seconds": 21780,
       "title": null,
       "games": [
-        "Just Chatting",
         "The Long Drive",
+        "Just Chatting",
         "Arcade Paradise"
       ],
       "avg_viewers": 4424,
@@ -33941,9 +33940,9 @@
       "duration_seconds": 38220,
       "title": null,
       "games": [
-        "Grounded",
         "Just Chatting",
-        "LEGO Bricktales"
+        "LEGO Bricktales",
+        "Grounded"
       ],
       "avg_viewers": 4174,
       "peak_viewers": 6904,
@@ -38835,8 +38834,8 @@
       "duration_seconds": 34680,
       "title": null,
       "games": [
-        "Just Chatting",
-        "World of Warcraft"
+        "World of Warcraft",
+        "Just Chatting"
       ],
       "avg_viewers": 3078,
       "peak_viewers": 6406,
@@ -38875,8 +38874,8 @@
       "duration_seconds": 34440,
       "title": null,
       "games": [
-        "Just Chatting",
-        "World of Warcraft"
+        "World of Warcraft",
+        "Just Chatting"
       ],
       "avg_viewers": 1989,
       "peak_viewers": 2749,
@@ -39115,8 +39114,8 @@
       "duration_seconds": 37740,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 5985,
       "peak_viewers": 10853,
@@ -39316,8 +39315,8 @@
       "duration_seconds": 14820,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 7763,
       "peak_viewers": 14085,
@@ -41370,8 +41369,8 @@
       "duration_seconds": 22920,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Soulmask"
+        "Soulmask",
+        "Just Chatting"
       ],
       "avg_viewers": 3270,
       "peak_viewers": 6062,
@@ -43374,8 +43373,8 @@
       "duration_seconds": 25620,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Rust"
+        "Rust",
+        "Just Chatting"
       ],
       "avg_viewers": 5575,
       "peak_viewers": 12088,
@@ -43590,8 +43589,8 @@
       "duration_seconds": 48000,
       "title": null,
       "games": [
-        "Just Chatting",
-        "World of Warcraft"
+        "World of Warcraft",
+        "Just Chatting"
       ],
       "avg_viewers": 1869,
       "peak_viewers": 3259,
@@ -49860,9 +49859,9 @@
       "duration_seconds": 23640,
       "title": null,
       "games": [
+        "Retro Rewind: Video Store Simulator",
         "Just Chatting",
-        "Weed Shop 4: Highland",
-        "Retro Rewind: Video Store Simulator"
+        "Weed Shop 4: Highland"
       ],
       "avg_viewers": 2815,
       "peak_viewers": 4742,
@@ -51115,8 +51114,8 @@
       "duration_seconds": 15540,
       "title": null,
       "games": [
-        "Project Zomboid",
-        "Just Chatting"
+        "Just Chatting",
+        "Project Zomboid"
       ],
       "avg_viewers": 2175,
       "peak_viewers": 3100,
@@ -51251,9 +51250,9 @@
       "duration_seconds": 40080,
       "title": null,
       "games": [
+        "Project Zomboid",
         "Just Chatting",
-        "WARDOGS",
-        "Project Zomboid"
+        "WARDOGS"
       ],
       "avg_viewers": 1951,
       "peak_viewers": 2196,
@@ -51292,9 +51291,9 @@
       "duration_seconds": 32340,
       "title": null,
       "games": [
+        "Once Human",
         "Just Chatting",
         "Special Events",
-        "Once Human",
         "Project P.I.T.T."
       ],
       "avg_viewers": 1584,
@@ -51376,8 +51375,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Manor Lords",
-        "Berry Bury Berry"
+        "Berry Bury Berry",
+        "Manor Lords"
       ],
       "avg_viewers": 1807,
       "peak_viewers": 2177,
@@ -51478,8 +51477,8 @@
       "duration_seconds": 46140,
       "title": null,
       "games": [
-        "Just Chatting",
         "A Weird Game About Sausage",
+        "Just Chatting",
         "IRL"
       ],
       "avg_viewers": 2021,
@@ -51519,8 +51518,8 @@
       "duration_seconds": 24360,
       "title": null,
       "games": [
-        "Project Zomboid",
-        "Just Chatting"
+        "Just Chatting",
+        "Project Zomboid"
       ],
       "avg_viewers": 1443,
       "peak_viewers": 1549,
@@ -51559,8 +51558,8 @@
       "duration_seconds": 46800,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1906,
       "peak_viewers": 2185,
@@ -51599,8 +51598,8 @@
       "duration_seconds": 42420,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1991,
       "peak_viewers": 2180,
@@ -51619,8 +51618,8 @@
       "duration_seconds": 19020,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1813,
       "peak_viewers": 2185,
@@ -51639,8 +51638,8 @@
       "duration_seconds": 20400,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1755,
       "peak_viewers": 2172,
@@ -51678,8 +51677,8 @@
       "duration_seconds": 28380,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1926,
       "peak_viewers": 2177,
@@ -51698,9 +51697,9 @@
       "duration_seconds": 37860,
       "title": null,
       "games": [
+        "MARVEL T\u014cKON: Fighting Souls",
         "Just Chatting",
-        "Grand Theft Auto V",
-        "MARVEL T\u014cKON: Fighting Souls"
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1824,
       "peak_viewers": 2180,
@@ -51739,8 +51738,8 @@
       "duration_seconds": 36900,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1995,
       "peak_viewers": 2180,
@@ -51799,8 +51798,8 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1669,
       "peak_viewers": 2172,
@@ -51819,8 +51818,8 @@
       "duration_seconds": 23940,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1839,
       "peak_viewers": 2181,
@@ -51878,9 +51877,9 @@
       "duration_seconds": 16620,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
         "Rust",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1812,
       "peak_viewers": 2186,
@@ -51899,8 +51898,8 @@
       "duration_seconds": 24780,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Rust"
+        "Rust",
+        "Just Chatting"
       ],
       "avg_viewers": 1956,
       "peak_viewers": 2172,
@@ -51919,8 +51918,8 @@
       "duration_seconds": 40260,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1898,
       "peak_viewers": 2176,
@@ -51958,8 +51957,8 @@
       "duration_seconds": 39780,
       "title": null,
       "games": [
-        "Rust",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Rust"
       ],
       "avg_viewers": 2071,
       "peak_viewers": 2872,
@@ -52056,8 +52055,8 @@
       "duration_seconds": 40020,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1877,
       "peak_viewers": 2085,
@@ -52730,18 +52729,18 @@
       "precision": "exact_utc_start",
       "id": "322513903707",
       "started_at": "2026-11-20T19:00:41Z",
-      "ended_at": "Saturday 21st November 2026 00:45",
-      "duration_label": "345 minutes",
-      "duration_seconds": 20700,
+      "ended_at": "Saturday 21st November 2026 07:15",
+      "duration_label": "735 minutes",
+      "duration_seconds": 44100,
       "title": null,
       "games": [
         "Just Chatting",
         "Grand Theft Auto VI"
       ],
-      "avg_viewers": 2931,
-      "peak_viewers": 3202,
-      "followers_gained": 0,
-      "view_minutes": 1011195,
+      "avg_viewers": 3026,
+      "peak_viewers": 4005,
+      "followers_gained": 2,
+      "view_minutes": 2224110,
       "stream_url": "https://sullygnome.com/channel/stream/322513903707",
       "range": "2026"
     }
@@ -53256,6 +53255,16 @@
       "duration_seconds": 5563,
       "title": "GTA VI SPOILER FREE: MAN SUSPENDS ALL STORY MISSIONS TO INVESTIGATE WHETHER NPCS HAVE JOBS , EVALUATING PARKING LOTS FOR FUTURE ROLEPLAY",
       "views": 48
+    },
+    {
+      "source": "twitch_vod",
+      "precision": "exact_vod_time",
+      "id": "2935215401",
+      "started_at": "2026-11-20T19:00:46Z",
+      "duration_label": "12:20:00",
+      "duration_seconds": 44400,
+      "title": "GTA VI SPOILER FREE: AFTER 14 HOURS OF ANTAGONIZING NPCS, \"AUDITOR\" CONCLUDES VICE CITY HAS AN AGGRESSION PROBLEM , PROCEEDS TO STEAL PLANES",
+      "views": 916
     }
   ],
   "archive_grouped_dates": [
