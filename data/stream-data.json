@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-11-23T17:56:17Z",
-  "data_through": "2026-11-20T19:00:41Z",
+  "generated_at": "2026-11-24T03:52:27Z",
+  "data_through": "2026-11-23T18:14:24Z",
   "degraded_sources": [],
   "sources": {
-    "sullygnome_stream_table": 2544,
+    "sullygnome_stream_table": 2545,
     "twitchmetrics_stream_logs": 15,
     "twitchmetrics_vods": 46,
     "exact_merged_rows": 46,
-    "youtube_archive_segments": 1100,
-    "youtube_archive_grouped_dates": 601
+    "youtube_archive_segments": 1128,
+    "youtube_archive_grouped_dates": 611
   },
   "stats": {
     "sully_gap_hours": {
-      "count": 2543,
-      "mean": 27.83,
-      "median": 17.85,
+      "count": 2544,
+      "mean": 27.84,
+      "median": 17.86,
       "max": 1197.0,
       "bins": {
         "0-12h": 490,
         "12-24h": 1309,
         "1-2d": 431,
-        "2-3d": 177,
+        "2-3d": 178,
         "3-5d": 105,
         "5-7d": 15,
         "7+d": 16
@@ -33,18 +33,18 @@
       "max": 118.19
     },
     "archive_gap_days": {
-      "count": 600,
-      "mean": 2.7,
+      "count": 610,
+      "mean": 2.65,
       "median": 1.0,
       "max": 81,
       "bins": {
-        "1": 322,
-        "2": 113,
-        "3": 59,
-        "4-5": 57,
-        "6-7": 21,
+        "1": 329,
+        "2": 114,
+        "3": 62,
+        "4-5": 58,
+        "6-7": 20,
         "8-14": 15,
-        "15+": 13
+        "15+": 12
       }
     },
     "archive_monthly_counts": {
@@ -92,7 +92,7 @@
       "2025-11": 16,
       "2025-12": 14,
       "2026-01": 16,
-      "2026-02": 7,
+      "2026-02": 17,
       "2026-03": 7,
       "2026-04": 5,
       "2026-05": 7,
@@ -217,7 +217,7 @@
       "2026-08": 19,
       "2026-09": 27,
       "2026-10": 23,
-      "2026-11": 16
+      "2026-11": 17
     },
     "sully_yearly_counts": {
       "2017": 146,
@@ -229,11 +229,11 @@
       "2023": 235,
       "2024": 238,
       "2025": 233,
-      "2026": 208
+      "2026": 209
     },
     "dow_hour": {
       "dow": {
-        "Mon": 457,
+        "Mon": 458,
         "Tue": 415,
         "Wed": 449,
         "Thu": 400,
@@ -260,7 +260,7 @@
         "15": 23,
         "16": 83,
         "17": 182,
-        "18": 187,
+        "18": 188,
         "19": 191,
         "20": 267,
         "21": 300,
@@ -268,7 +268,7 @@
         "23": 249
       },
       "dow_ct": {
-        "Mon": 447,
+        "Mon": 448,
         "Tue": 433,
         "Wed": 419,
         "Thu": 408,
@@ -289,7 +289,7 @@
         "9": 20,
         "10": 32,
         "11": 118,
-        "12": 191,
+        "12": 192,
         "13": 201,
         "14": 205,
         "15": 259,
@@ -305,17 +305,17 @@
     },
     "dow_profile": {
       "Mon": {
-        "n": 78,
-        "start_p10": 6.45,
-        "start_p25": 7.82,
-        "start_p50": 10.13,
-        "start_p75": 12.32,
-        "end_p50": 17.38,
+        "n": 79,
+        "start_p10": 6.42,
+        "start_p25": 7.78,
+        "start_p50": 10.12,
+        "start_p75": 12.24,
+        "end_p50": 17.26,
         "end_p90": 20.52,
-        "dur_p25": 5.01,
-        "dur_p50": 6.22,
-        "dur_p75": 7.91,
-        "active_rate": 0.731,
+        "dur_p25": 5.03,
+        "dur_p50": 6.23,
+        "dur_p75": 7.93,
+        "active_rate": 0.74,
         "window_days": 730
       },
       "Tue": {
@@ -333,45 +333,45 @@
         "window_days": 730
       },
       "Wed": {
-        "n": 81,
-        "start_p10": 5.48,
-        "start_p25": 6.84,
+        "n": 80,
+        "start_p10": 5.92,
+        "start_p25": 6.89,
         "start_p50": 8.64,
-        "start_p75": 11.32,
-        "end_p50": 15.27,
-        "end_p90": 19.01,
-        "dur_p25": 4.37,
-        "dur_p50": 5.67,
-        "dur_p75": 6.87,
-        "active_rate": 0.769,
+        "start_p75": 11.37,
+        "end_p50": 15.51,
+        "end_p90": 19.04,
+        "dur_p25": 4.39,
+        "dur_p50": 5.7,
+        "dur_p75": 6.9,
+        "active_rate": 0.76,
         "window_days": 730
       },
       "Thu": {
-        "n": 79,
-        "start_p10": 6.41,
-        "start_p25": 7.7,
+        "n": 77,
+        "start_p10": 6.43,
+        "start_p25": 7.75,
         "start_p50": 10.38,
-        "start_p75": 12.8,
+        "start_p75": 12.88,
         "end_p50": 17.26,
-        "end_p90": 20.66,
+        "end_p90": 20.81,
         "dur_p25": 4.52,
         "dur_p50": 5.92,
         "dur_p75": 7.92,
-        "active_rate": 0.74,
+        "active_rate": 0.731,
         "window_days": 730
       },
       "Fri": {
-        "n": 66,
-        "start_p10": 5.28,
-        "start_p25": 7.44,
-        "start_p50": 10.04,
-        "start_p75": 12.58,
+        "n": 65,
+        "start_p10": 5.24,
+        "start_p25": 7.58,
+        "start_p50": 10.08,
+        "start_p75": 12.6,
         "end_p50": 16.51,
         "end_p90": 19.26,
         "dur_p25": 4.07,
-        "dur_p50": 5.14,
-        "dur_p75": 6.65,
-        "active_rate": 0.635,
+        "dur_p50": 5.12,
+        "dur_p75": 6.7,
+        "active_rate": 0.625,
         "window_days": 730
       },
       "Sat": {
@@ -419,47 +419,47 @@
       ],
       [
         9,
-        10.62
+        10.61
       ],
       [
         12,
-        19.43
+        19.42
       ],
       [
         15,
-        33.58
+        33.57
       ],
       [
         18,
-        50.96
+        50.94
       ],
       [
         21,
-        64.22
+        64.19
       ],
       [
         24,
-        70.78
+        70.75
       ],
       [
         30,
-        74.6
+        74.57
       ],
       [
         36,
-        76.56
+        76.53
       ],
       [
         42,
-        82.03
+        82.0
       ],
       [
         48,
-        87.73
+        87.7
       ],
       [
         54,
-        89.15
+        89.11
       ],
       [
         60,
@@ -523,11 +523,6 @@
       ]
     ],
     "recent_gaps": [
-      {
-        "gap_h": 41.7,
-        "started_at": "2026-10-26T17:14:17Z",
-        "game": "Just Chatting"
-      },
       {
         "gap_h": 1.9,
         "started_at": "2026-10-26T23:25:52Z",
@@ -622,29 +617,20 @@
         "gap_h": 10.5,
         "started_at": "2026-11-20T19:00:41Z",
         "game": "Just Chatting"
+      },
+      {
+        "gap_h": 59.0,
+        "started_at": "2026-11-23T18:14:24Z",
+        "game": "Just Chatting"
       }
     ],
     "recent_streams": [
       {
-        "started_at": "2026-10-20T17:46:06Z",
-        "ended_at_iso": "2026-10-21T02:00:00+00:00",
-        "games": [
-          "Grand Theft Auto V",
-          "Just Chatting"
-        ],
-        "duration_h": 8.2,
-        "duration_label": "494 minutes",
-        "avg_viewers": 1928,
-        "peak_viewers": 2082,
-        "followers_gained": -27,
-        "followers_gained_source": null
-      },
-      {
         "started_at": "2026-10-22T18:29:06Z",
         "ended_at_iso": "2026-10-23T01:45:00+00:00",
         "games": [
-          "Grand Theft Auto V",
-          "Just Chatting"
+          "Just Chatting",
+          "Grand Theft Auto V"
         ],
         "duration_h": 7.3,
         "duration_label": "436 minutes",
@@ -965,31 +951,45 @@
         "peak_viewers": 4005,
         "followers_gained": 2,
         "followers_gained_source": null
+      },
+      {
+        "started_at": "2026-11-23T18:14:24Z",
+        "ended_at_iso": "2026-11-24T02:45:00+00:00",
+        "games": [
+          "Just Chatting",
+          "Grand Theft Auto VI"
+        ],
+        "duration_h": 8.5,
+        "duration_label": "511 minutes",
+        "avg_viewers": 2811,
+        "peak_viewers": 3160,
+        "followers_gained": 0,
+        "followers_gained_source": null
       }
     ],
     "last_stream": {
-      "started_at": "2026-11-20T19:00:41Z",
-      "ended_at_iso": "2026-11-21T07:15:00+00:00",
+      "started_at": "2026-11-23T18:14:24Z",
+      "ended_at_iso": "2026-11-24T02:45:00+00:00",
       "games": [
         "Just Chatting",
         "Grand Theft Auto VI"
       ],
-      "duration_label": "735 minutes"
+      "duration_label": "511 minutes"
     },
     "semantic_analysis": {
       "title_analysis": {
-        "sample_size": 600,
+        "sample_size": 610,
         "features": {
           "challenge": {
             "count": 19,
-            "share": 3.2,
+            "share": 3.1,
             "median_gap_days": 1,
             "p90_gap_days": 4.2
           },
           "collab": {
-            "count": 199,
-            "share": 33.2,
-            "median_gap_days": 2,
+            "count": 202,
+            "share": 33.1,
+            "median_gap_days": 2.0,
             "p90_gap_days": 5.0
           },
           "event_drops": {
@@ -999,38 +999,38 @@
             "p90_gap_days": 2.2
           },
           "food_cooking": {
-            "count": 93,
-            "share": 15.5,
-            "median_gap_days": 2,
+            "count": 96,
+            "share": 15.7,
+            "median_gap_days": 1.0,
             "p90_gap_days": 5.0
           },
           "gameplay_arc": {
-            "count": 345,
-            "share": 57.5,
+            "count": 349,
+            "share": 57.2,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
           "recovery_risk": {
-            "count": 34,
-            "share": 5.7,
-            "median_gap_days": 2.0,
-            "p90_gap_days": 4.7
+            "count": 37,
+            "share": 6.1,
+            "median_gap_days": 2,
+            "p90_gap_days": 4.4
           },
           "return_marker": {
-            "count": 20,
-            "share": 3.3,
-            "median_gap_days": 1.0,
-            "p90_gap_days": 4.1
-          },
-          "travel_irl": {
-            "count": 61,
-            "share": 10.2,
-            "median_gap_days": 2,
+            "count": 21,
+            "share": 3.4,
+            "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
+          "travel_irl": {
+            "count": 62,
+            "share": 10.2,
+            "median_gap_days": 2.0,
+            "p90_gap_days": 4.9
+          },
           "unclassified": {
-            "count": 95,
-            "share": 15.8,
+            "count": 97,
+            "share": 15.9,
             "median_gap_days": 1,
             "p90_gap_days": 5.0
           }
@@ -1038,13 +1038,13 @@
         "sentiment": {
           "negative": {
             "count": 33,
-            "share": 5.5,
+            "share": 5.4,
             "median_gap_days": 1,
             "p90_gap_days": 4.0
           },
           "neutral": {
-            "count": 561,
-            "share": 93.5,
+            "count": 571,
+            "share": 93.6,
             "median_gap_days": 1,
             "p90_gap_days": 5.0
           },
@@ -1057,21 +1057,21 @@
         },
         "intensity": {
           "high": {
-            "count": 37,
-            "share": 6.2,
-            "median_gap_days": 1,
-            "p90_gap_days": 2.4
+            "count": 40,
+            "share": 6.6,
+            "median_gap_days": 1.0,
+            "p90_gap_days": 2.1
           },
           "low": {
-            "count": 201,
-            "share": 33.5,
+            "count": 205,
+            "share": 33.6,
             "median_gap_days": 2,
             "p90_gap_days": 6.0
           },
           "medium": {
-            "count": 362,
-            "share": 60.3,
-            "median_gap_days": 1.0,
+            "count": 365,
+            "share": 59.8,
+            "median_gap_days": 1,
             "p90_gap_days": 4.0
           }
         }
@@ -1086,11 +1086,11 @@
             "avg_viewers": 3707.0
           },
           "Other games": {
-            "count": 700,
-            "share": 27.5,
-            "median_gap_hours": 25.16,
-            "p90_gap_hours": 71.92,
-            "avg_viewers": 2433.0
+            "count": 701,
+            "share": 27.6,
+            "median_gap_hours": 25.17,
+            "p90_gap_hours": 71.89,
+            "avg_viewers": 2434.0
           },
           "Social sandbox/RP": {
             "count": 1098,
@@ -1117,7 +1117,7 @@
         "top_games": [
           {
             "game": "Just Chatting",
-            "count": 1653
+            "count": 1654
           },
           {
             "game": "Grand Theft Auto V",
@@ -1166,13 +1166,18 @@
         ]
       }
     },
-    "live_stream": null,
-    "last_live_seen": "2026-11-21T02:02:05Z",
+    "live_stream": {
+      "started_at": "2026-11-23T18:14:24Z",
+      "game": "Grand Theft Auto VI",
+      "title": "GTA VI \u201cAUDITOR\u201d RETURNS , UNLOCKING SECRET MISSIONS AND LOCATIONS SO I CAN WIN. SEEING HOW BIG OF A DESTRUCTION I CAN CAUSE",
+      "viewers": 2981
+    },
+    "last_live_seen": "2026-11-24T03:52:27Z",
     "followers": {
-      "total": 652317,
-      "as_of": "2026-11-23T17:56:05Z",
-      "gained_7d": -298,
-      "snapshots": 344
+      "total": 652322,
+      "as_of": "2026-11-24T03:52:11Z",
+      "gained_7d": -303,
+      "snapshots": 345
     }
   },
   "follower_snapshots": [
@@ -2551,6 +2556,10 @@
     [
       "2026-11-23T17:56:05Z",
       652317
+    ],
+    [
+      "2026-11-24T03:52:11Z",
+      652322
     ]
   ],
   "sully_streams": [
@@ -4408,8 +4417,8 @@
       "duration_seconds": 9000,
       "title": null,
       "games": [
-        "IRL",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "IRL"
       ],
       "avg_viewers": 89,
       "peak_viewers": 110,
@@ -11400,8 +11409,8 @@
       "duration_seconds": 25560,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 103,
       "peak_viewers": 171,
@@ -21226,9 +21235,9 @@
       "title": null,
       "games": [
         "Grand Theft Auto V",
+        "Command &amp; Conquer Remastered Collection",
         "\u5922\u4e09\u570b",
-        "Just Chatting",
-        "Command &amp; Conquer Remastered Collection"
+        "Just Chatting"
       ],
       "avg_viewers": 1396,
       "peak_viewers": 1848,
@@ -26164,8 +26173,8 @@
       "duration_seconds": 45720,
       "title": null,
       "games": [
-        "Super Mario 64",
-        "Rust"
+        "Rust",
+        "Super Mario 64"
       ],
       "avg_viewers": 2230,
       "peak_viewers": 2674,
@@ -27355,8 +27364,8 @@
         "Grand Theft Auto V",
         "Ranch Simulator",
         "OBEY",
-        "Friday the 13th: The Game",
         "SCP: Terminal",
+        "Friday the 13th: The Game",
         "Can't Drive This"
       ],
       "avg_viewers": 1396,
@@ -29175,8 +29184,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Olympic Games Tokyo 2020: The Official Video Game",
-        "Haunt Chaser"
+        "Haunt Chaser",
+        "Olympic Games Tokyo 2020: The Official Video Game"
       ],
       "avg_viewers": 2075,
       "peak_viewers": 2956,
@@ -40753,8 +40762,8 @@
       "duration_seconds": 10800,
       "title": null,
       "games": [
-        "AFK Journey",
-        "Just Chatting"
+        "Just Chatting",
+        "AFK Journey"
       ],
       "avg_viewers": 964,
       "peak_viewers": 1364,
@@ -41539,9 +41548,9 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "Splodey",
         "The Elder Scrolls Online",
-        "Ready or Not"
+        "Ready or Not",
+        "Splodey"
       ],
       "avg_viewers": 1379,
       "peak_viewers": 1869,
@@ -46923,8 +46932,8 @@
       "title": null,
       "games": [
         "Just Chatting",
-        "PEAK",
-        "GUG"
+        "GUG",
+        "PEAK"
       ],
       "avg_viewers": 3107,
       "peak_viewers": 4427,
@@ -49258,8 +49267,8 @@
       "duration_seconds": 344460,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Fortnite"
+        "Fortnite",
+        "Just Chatting"
       ],
       "avg_viewers": 5818,
       "peak_viewers": 19854,
@@ -50784,8 +50793,8 @@
       "duration_seconds": 17520,
       "title": null,
       "games": [
-        "Just Chatting",
         "Trees Hate You",
+        "Just Chatting",
         "CAIRN"
       ],
       "avg_viewers": 1413,
@@ -50883,8 +50892,8 @@
       "duration_seconds": 14940,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Rainbow Six Siege"
+        "Rainbow Six Siege",
+        "Just Chatting"
       ],
       "avg_viewers": 1569,
       "peak_viewers": 1726,
@@ -51319,10 +51328,10 @@
       "duration_seconds": 32340,
       "title": null,
       "games": [
-        "Once Human",
+        "Project P.I.T.T.",
         "Just Chatting",
         "Special Events",
-        "Project P.I.T.T."
+        "Once Human"
       ],
       "avg_viewers": 1584,
       "peak_viewers": 2169,
@@ -51402,9 +51411,9 @@
       "duration_seconds": 29700,
       "title": null,
       "games": [
+        "Manor Lords",
         "Just Chatting",
-        "Berry Bury Berry",
-        "Manor Lords"
+        "Berry Bury Berry"
       ],
       "avg_viewers": 1807,
       "peak_viewers": 2177,
@@ -51586,8 +51595,8 @@
       "duration_seconds": 46800,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1906,
       "peak_viewers": 2185,
@@ -51626,8 +51635,8 @@
       "duration_seconds": 42420,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1991,
       "peak_viewers": 2180,
@@ -51646,8 +51655,8 @@
       "duration_seconds": 19020,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1813,
       "peak_viewers": 2185,
@@ -51705,8 +51714,8 @@
       "duration_seconds": 28380,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1926,
       "peak_viewers": 2177,
@@ -51725,9 +51734,9 @@
       "duration_seconds": 37860,
       "title": null,
       "games": [
-        "Just Chatting",
         "Grand Theft Auto V",
-        "MARVEL T\u014cKON: Fighting Souls"
+        "MARVEL T\u014cKON: Fighting Souls",
+        "Just Chatting"
       ],
       "avg_viewers": 1824,
       "peak_viewers": 2180,
@@ -51766,8 +51775,8 @@
       "duration_seconds": 36900,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1995,
       "peak_viewers": 2180,
@@ -51826,8 +51835,8 @@
       "duration_seconds": 28500,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1669,
       "peak_viewers": 2172,
@@ -51885,8 +51894,8 @@
       "duration_seconds": 43560,
       "title": null,
       "games": [
-        "Rust",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Rust"
       ],
       "avg_viewers": 1921,
       "peak_viewers": 2174,
@@ -52043,8 +52052,8 @@
       "duration_seconds": 19320,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 2183,
       "peak_viewers": 2874,
@@ -52083,8 +52092,8 @@
       "duration_seconds": 40020,
       "title": null,
       "games": [
-        "Just Chatting",
-        "Grand Theft Auto V"
+        "Grand Theft Auto V",
+        "Just Chatting"
       ],
       "avg_viewers": 1877,
       "peak_viewers": 2085,
@@ -52161,8 +52170,8 @@
       "duration_seconds": 26940,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1887,
       "peak_viewers": 2082,
@@ -52317,8 +52326,8 @@
       "duration_seconds": 26160,
       "title": null,
       "games": [
-        "Grand Theft Auto V",
-        "Just Chatting"
+        "Just Chatting",
+        "Grand Theft Auto V"
       ],
       "avg_viewers": 1876,
       "peak_viewers": 2074,
@@ -52770,6 +52779,26 @@
       "followers_gained": 2,
       "view_minutes": 2224110,
       "stream_url": "https://sullygnome.com/channel/stream/322513903707",
+      "range": "2026"
+    },
+    {
+      "source": "sullygnome_stream_table",
+      "precision": "exact_utc_start",
+      "id": "322387229401",
+      "started_at": "2026-11-23T18:14:24Z",
+      "ended_at": "Tuesday 24th November 2026 02:45",
+      "duration_label": "511 minutes",
+      "duration_seconds": 30660,
+      "title": null,
+      "games": [
+        "Just Chatting",
+        "Grand Theft Auto VI"
+      ],
+      "avg_viewers": 2811,
+      "peak_viewers": 3160,
+      "followers_gained": 0,
+      "view_minutes": 1436421,
+      "stream_url": "https://sullygnome.com/channel/stream/322387229401",
       "range": "2026"
     }
   ],
@@ -61683,6 +61712,80 @@
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
+      "date": "2026-02-02",
+      "segment_count": 3,
+      "duration_seconds_sum": 15163,
+      "primary_title": "Cyr Plays Tainted Grail: The Fall of Avalon #001 - FULL GAMEPLAY [02/02/2026] | Cyr VODs",
+      "titles": [
+        "Cyr Plays Tainted Grail: The Fall of Avalon #001 - FULL GAMEPLAY [02/02/2026] | Cyr VODs",
+        "Cyr Plays RollerCoaster Tycoon Classic #001 - FULL GAMEPLAY [02/02/2026] | Cyr VODs",
+        "I created a PaymoneyWubby tierlist to find out which one is the UGLIEST - [02/02/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=qrOi4tEGojk",
+        "https://www.youtube.com/watch?v=vClvw6m45IY",
+        "https://www.youtube.com/watch?v=_QqRHLExctY"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-02-04",
+      "segment_count": 1,
+      "duration_seconds_sum": 11321,
+      "primary_title": "Building an Iron Lamp from scratch for the first time - [02/04/2026] | Cyr VODs",
+      "titles": [
+        "Building an Iron Lamp from scratch for the first time - [02/04/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=2dnLqaVP7zY"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-02-05",
+      "segment_count": 1,
+      "duration_seconds_sum": 16068,
+      "primary_title": "SETTING UP A BIG TENT IN THE BACKYARD WITH PEACHJARS  - [02/05/2026] | Cyr VODs",
+      "titles": [
+        "SETTING UP A BIG TENT IN THE BACKYARD WITH PEACHJARS  - [02/05/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=U4AVqj-CniU"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-02-10",
+      "segment_count": 1,
+      "duration_seconds_sum": 11650,
+      "primary_title": "Relaxing beach day in Miami, FL w/ PeachJars - [02/10/2026] | Cyr VODs",
+      "titles": [
+        "Relaxing beach day in Miami, FL w/ PeachJars - [02/10/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=it6P9j2yydM"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-02-12",
+      "segment_count": 1,
+      "duration_seconds_sum": 14164,
+      "primary_title": "Surprising Maya & Emily with a HUGE Valentine's dinner - [02/12/2026] | Cyr VODs",
+      "titles": [
+        "Surprising Maya & Emily with a HUGE Valentine's dinner - [02/12/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=1hLvPpkY9k4"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
       "date": "2026-02-15",
       "segment_count": 1,
       "duration_seconds_sum": 18695,
@@ -61697,37 +61800,139 @@
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
-      "date": "2026-02-22",
-      "segment_count": 1,
-      "duration_seconds_sum": 4850,
-      "primary_title": "I made my Chat confess their sins! | Cyr & PeachJars Stream-A-Thon 2026 - Day 2 - [02/22/2026]",
+      "date": "2026-02-16",
+      "segment_count": 2,
+      "duration_seconds_sum": 13792,
+      "primary_title": "Cooking a healthy salmon dish for Zoil - [02/16/2026] | Cyr VODs",
       "titles": [
-        "I made my Chat confess their sins! | Cyr & PeachJars Stream-A-Thon 2026 - Day 2 - [02/22/2026]"
+        "Cyr Plays Sleeping Dogs #001 - FULL GAMEPLAY [02/16/2026] | Cyr VODs",
+        "Cooking a healthy salmon dish for Zoil - [02/16/2026] | Cyr VODs"
       ],
       "urls": [
-        "https://www.youtube.com/watch?v=3gahB5CAzFQ"
+        "https://www.youtube.com/watch?v=GmAaY1-QewY",
+        "https://www.youtube.com/watch?v=_GxTVrJ0QoA"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-02-17",
+      "segment_count": 2,
+      "duration_seconds_sum": 23971,
+      "primary_title": "GOING OUT WITH PHIN AND PEACHJARS! - [02/17/2026] | Cyr VODs",
+      "titles": [
+        "PeachJars forces me to clean my guest room for TheSushiDragon - [02/17/2026] | Cyr VODs",
+        "GOING OUT WITH PHIN AND PEACHJARS! - [02/17/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=SdtclkWYKh4",
+        "https://www.youtube.com/watch?v=0KrMv5mQrWo"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-02-20",
+      "segment_count": 1,
+      "duration_seconds_sum": 12352,
+      "primary_title": "Behind the scenes of our 7-day Stream-A-Thon! - [02/20/2026] | Cyr VODs",
+      "titles": [
+        "Behind the scenes of our 7-day Stream-A-Thon! - [02/20/2026] | Cyr VODs"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=7Qx1OBFVHw0"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-02-21",
+      "segment_count": 5,
+      "duration_seconds_sum": 91860,
+      "primary_title": "SECOND NIGHT OF OUR STREAM-A-THON! | Cyr & PeachJars Stream-A-Thon 2026 - Day 1 - [02/21/2026]",
+      "titles": [
+        "SECOND NIGHT OF OUR STREAM-A-THON! | Cyr & PeachJars Stream-A-Thon 2026 - Day 1 - [02/21/2026]",
+        "FIRST NIGHT OF OUR STREAM-A-THON! | Cyr & PeachJars Stream-A-Thon 2026 - Day 1 - [02/21/2026]",
+        "1ST DAY OF STREAM-A-THON COMES TO AN END | Cyr & PeachJars Stream-A-Thon 2026 - Day 1 - [02/21/2026]",
+        "FRIED CHICKEN w/ NMPLOL | Cyr & PeachJars Stream-A-Thon 2026 - Day 1 - [02/21/2026]",
+        "OUR 7-DAY STREAM-A-THON BEGINS! | Cyr & PeachJars Stream-A-Thon 2026 - Day 1 - [02/21/2026]"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=9WtWFl8FqYA",
+        "https://www.youtube.com/watch?v=2zLVac1V45g",
+        "https://www.youtube.com/watch?v=RY8m-DpOz5k",
+        "https://www.youtube.com/watch?v=fnRNN984yYM",
+        "https://www.youtube.com/watch?v=dItCrZ8fQAI"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-02-22",
+      "segment_count": 5,
+      "duration_seconds_sum": 55535,
+      "primary_title": "FIRST MORNING OF THE STREAM-A-THON! (we got no sleep) | Stream-A-Thon 2026 - Day 2 - [02/22/2026]",
+      "titles": [
+        "FIRST MORNING OF THE STREAM-A-THON! (we got no sleep) | Stream-A-Thon 2026 - Day 2 - [02/22/2026]",
+        "We Cooked Chinese Pork Hot Pot \ud83c\udf72 | Cyr & PeachJars Stream-A-Thon 2026 - Day 2 - [02/22/2026]",
+        "Enjoying our new treadmill way too much! | Cyr & PeachJars Stream-A-Thon 2026 - Day 2 - [02/22/2026]",
+        "I made my Chat confess their sins! | Cyr & PeachJars Stream-A-Thon 2026 - Day 2 - [02/22/2026]",
+        "Karaoke and Fortnite in the Morning | Cyr & PeachJars Stream-A-Thon 2026 - Day 2 - [02/22/2026]"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=44eV9Sa0WI0",
+        "https://www.youtube.com/watch?v=bkQfHwNNqLA",
+        "https://www.youtube.com/watch?v=gf5eeSbOHe0",
+        "https://www.youtube.com/watch?v=3gahB5CAzFQ",
+        "https://www.youtube.com/watch?v=uRc1yS0jqWA"
+      ]
+    },
+    {
+      "source": "youtube_archive_grouped",
+      "precision": "stream_date_only",
+      "date": "2026-02-23",
+      "segment_count": 6,
+      "duration_seconds_sum": 79124,
+      "primary_title": "THIRD NIGHT OF OUR STREAM-A-THON  | Stream-A-Thon 2026 - Day 3 - [02/23/2026]",
+      "titles": [
+        "THIRD NIGHT OF OUR STREAM-A-THON  | Stream-A-Thon 2026 - Day 3 - [02/23/2026]",
+        "Reflecting on our Cosplay Day while making dinnner | Stream-A-Thon 2026 - Day 3 - [02/23/2026]",
+        "Batman Villains GO HARD in Fortnite | Stream-A-Thon 2026 - Day 3 - [02/23/2026]",
+        "Cyr lost his sanity being the Joker for a day | Stream-A-Thon 2026 - Day 3 - [02/23/2026]",
+        "Bootleg Batman Villains go IRL | Stream-A-Thon 2026 - Day 3 - [02/23/2026]",
+        "We turned ourselves into Batman Villains | Stream-A-Thon 2026 - Day 3 - [02/23/2026]"
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=iKf1WX7IRDE",
+        "https://www.youtube.com/watch?v=4_hY0Vae7HQ",
+        "https://www.youtube.com/watch?v=7I51tjm-mug",
+        "https://www.youtube.com/watch?v=aVaVrMBIxK8",
+        "https://www.youtube.com/watch?v=VYgx46NnwQM",
+        "https://www.youtube.com/watch?v=OsjiFHzPvYc"
       ]
     },
     {
       "source": "youtube_archive_grouped",
       "precision": "stream_date_only",
       "date": "2026-02-24",
-      "segment_count": 5,
-      "duration_seconds_sum": 75375,
+      "segment_count": 6,
+      "duration_seconds_sum": 79891,
       "primary_title": "FORTH NIGHT OF OUR STREAM-A-THON  | Stream-A-Thon 2026 - Day 4 - [02/24/2026]",
       "titles": [
         "FORTH NIGHT OF OUR STREAM-A-THON  | Stream-A-Thon 2026 - Day 4 - [02/24/2026]",
         "I Hosted a SPEAK EASY For My Friends ft. Andy Milonakis | Stream-A-Thon 2026 - Day 4 - [02/24/2026]",
         "Shopping & Preperation for CYR's SPEAK EASY \ud83c\udf7a | Stream-A-Thon 2026 - Day 4 - [02/24/2026]",
         "We did a MYSTERY DRINK CHALLENGE (and regretted it) | Stream-A-Thon 2026 - Day 4 - [02/24/2026]",
-        "Reacting to the best Stream-a-thon moments so far! | Stream-A-Thon 2026 - Day 4 - [02/24/2026]"
+        "Reacting to the best Stream-a-thon moments so far! | Stream-A-Thon 2026 - Day 4 - [02/24/2026]",
+        "DAY 4! Halfway through! Breakfast time! | Cyr & PeachJars Stream-A-Thon 2026 - Day 4 - [02/24/2026]"
       ],
       "urls": [
         "https://www.youtube.com/watch?v=0vU1G9jqXrs",
         "https://www.youtube.com/watch?v=e-YtK9IBxLg",
         "https://www.youtube.com/watch?v=TeWbuF9GHhg",
         "https://www.youtube.com/watch?v=_N_-dqVPu-U",
-        "https://www.youtube.com/watch?v=ESTzLLMDNPI"
+        "https://www.youtube.com/watch?v=ESTzLLMDNPI",
+        "https://www.youtube.com/watch?v=bliOEORsGvE"
       ]
     },
     {
@@ -68845,7 +69050,7 @@
     },
     {
       "date": "2026-01-30",
-      "gap_days": 16,
+      "gap_days": 3,
       "features": [
         "gameplay_arc"
       ],
@@ -68855,8 +69060,66 @@
       "intensity_score": 1
     },
     {
+      "date": "2026-02-02",
+      "gap_days": 2,
+      "features": [
+        "gameplay_arc",
+        "food_cooking"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-02-04",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 1,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-02-05",
+      "gap_days": 5,
+      "features": [
+        "collab",
+        "return_marker"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-02-10",
+      "gap_days": 2,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-02-12",
+      "gap_days": 3,
+      "features": [
+        "gameplay_arc",
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
       "date": "2026-02-15",
-      "gap_days": 7,
+      "gap_days": 1,
       "features": [
         "collab",
         "food_cooking"
@@ -68867,10 +69130,68 @@
       "intensity_score": 0
     },
     {
-      "date": "2026-02-22",
-      "gap_days": 2,
+      "date": "2026-02-16",
+      "gap_days": 1,
+      "features": [
+        "gameplay_arc",
+        "food_cooking",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "low",
+      "intensity_score": 0
+    },
+    {
+      "date": "2026-02-17",
+      "gap_days": 3,
+      "features": [
+        "collab"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 2
+    },
+    {
+      "date": "2026-02-20",
+      "gap_days": 1,
       "features": [
         "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "medium",
+      "intensity_score": 1
+    },
+    {
+      "date": "2026-02-21",
+      "gap_days": 1,
+      "features": [
+        "unclassified"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 4
+    },
+    {
+      "date": "2026-02-22",
+      "gap_days": 1,
+      "features": [
+        "food_cooking",
+        "recovery_risk"
+      ],
+      "sentiment": "neutral",
+      "sentiment_score": 0,
+      "intensity": "high",
+      "intensity_score": 4
+    },
+    {
+      "date": "2026-02-23",
+      "gap_days": 1,
+      "features": [
+        "travel_irl"
       ],
       "sentiment": "neutral",
       "sentiment_score": 0,
@@ -68882,12 +69203,13 @@
       "gap_days": 1,
       "features": [
         "collab",
-        "challenge"
+        "challenge",
+        "recovery_risk"
       ],
       "sentiment": "neutral",
       "sentiment_score": 1,
-      "intensity": "medium",
-      "intensity_score": 2
+      "intensity": "high",
+      "intensity_score": 4
     },
     {
       "date": "2026-02-25",
